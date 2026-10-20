@@ -1,7 +1,7 @@
 ---
 title: Enzyme Inhibition Types Compared: Competitive, Noncompetitive, Uncompetitive, Mixed
 description: A side-by-side guide to the four reversible inhibition types, how each changes Km and Vmax, and how to recognize them on a Lineweaver-Burk plot.
-product: aa-enzymes
+product: 1a-amino-acids-proteins
 published: 2026-10-20
 related: michaelis-menten-and-lineweaver-burk, protein-structure-levels-and-denaturation, enzyme-classes-ec-1-to-7
 ---

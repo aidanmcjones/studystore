@@ -1,7 +1,7 @@
 ---
 title: Protein Structure: Primary to Quaternary, and What Denaturation Destroys
 description: The four levels of protein structure, the bonds that hold each level together, and how heat, pH, urea, and SDS unfold proteins, written for the MCAT.
-product: aa-enzymes
+product: 1a-amino-acids-proteins
 published: 2026-10-20
 related: amino-acid-pka-charge-ph-7-4, enzyme-inhibition-types-compared, enzyme-classes-ec-1-to-7
 ---

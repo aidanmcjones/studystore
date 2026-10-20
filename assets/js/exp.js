@@ -126,7 +126,7 @@
   D.addEventListener("click", function (ev) {
     var a = ev.target && ev.target.closest ? ev.target.closest("a") : null; if (!a) return;
     var t = a.getAttribute("data-track"), kind = null;
-    if (isCheckout(a)) kind = "checkout_click";
+    if (isCheckout(a) || (a.hasAttribute("data-buy") && !a.classList.contains("off"))) kind = "checkout_click";
     else if (t === "sampler") kind = "sampler_click";
     else if (t === "cta" || a.closest("aside.cta") || a.closest(".product .row")) kind = "cta_click";
     if (kind) send(kind, W.__ssSeen || {});

@@ -1,0 +1,121 @@
+{
+ "slug": "3a-nervous-endocrine",
+ "cards": [
+  {
+   "src": "assets/packs/3a-nervous-endocrine/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 506
+  },
+  {
+   "src": "assets/packs/3a-nervous-endocrine/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 533
+  },
+  {
+   "src": "assets/packs/3a-nervous-endocrine/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 906
+  },
+  {
+   "src": "assets/packs/3a-nervous-endocrine/card-4.webp",
+   "alt": "Sample multiple choice card: Multiple sclerosis most directly damages which cell type?",
+   "w": 680,
+   "h": 384
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/3a-nervous-endocrine/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/3a-nervous-endocrine/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/3a-nervous-endocrine/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/3a-nervous-endocrine/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A patient develops ascending muscle weakness two weeks after a viral infection, and nerve conduction is slowed. Which cells are the most likely target?",
+   "options": [
+    "Schwann cells",
+    "Oligodendrocytes",
+    "Astrocytes",
+    "Microglia"
+   ],
+   "answer": "A",
+   "explanation": "Guillain-Barre syndrome attacks PNS myelin, made by Schwann cells, which slows conduction. Oligodendrocytes make CNS myelin and are involved in multiple sclerosis. Astrocytes and microglia do not form myelin.",
+   "subtopic": "Neuron structure and glial cells"
+  },
+  {
+   "stem": "Which structure belongs to the PNS?",
+   "options": [
+    "Dorsal horn",
+    "Central canal",
+    "Corpus callosum",
+    "Dorsal root ganglion"
+   ],
+   "answer": "D",
+   "explanation": "The dorsal root ganglion lies outside the cord and holds sensory neuron cell bodies. The dorsal horn and central canal are inside the cord, and the corpus callosum is in the brain.",
+   "subtopic": "Organization of the nervous system (CNS, PNS)"
+  },
+  {
+   "stem": "A subject notices the difference between 100 g and 102 g. Using Weber's law, what difference is needed to notice a change from 400 g?",
+   "options": [
+    "2 g",
+    "4 g",
+    "8 g",
+    "40 g"
+   ],
+   "answer": "C",
+   "explanation": "The JND is a constant fraction (2 percent) of the baseline, so 400 g needs 8 g. A constant 2 g would ignore the baseline, and 4 g or 40 g use the wrong fraction.",
+   "subtopic": "Sensory receptor types and transduction"
+  },
+  {
+   "stem": "After a head injury, a patient loses the sense of smell. What is the most likely damage?",
+   "options": [
+    "The optic chiasm",
+    "Olfactory axons passing through the cribriform plate",
+    "The vagus nerve in the neck",
+    "The cochlear nerve"
+   ],
+   "answer": "B",
+   "explanation": "Fine olfactory axons cross the cribriform plate to the olfactory bulb and can be sheared by trauma. The optic chiasm, vagus and cochlear nerve serve other senses.",
+   "subtopic": "Anterior pituitary hormones"
+  },
+  {
+   "stem": "A patient stops long-term prednisone abruptly and becomes weak and hypotensive. Why?",
+   "options": [
+    "Exogenous steroid suppressed ACTH, so the adrenal cortex had atrophied",
+    "Excess aldosterone caused volume overload",
+    "TSH rose and caused thyrotoxicosis",
+    "The adrenal medulla began producing cortisol"
+   ],
+   "answer": "A",
+   "explanation": "Chronic glucocorticoid suppresses CRH and ACTH, leading to adrenal atrophy and cortisol deficiency when the drug stops. Aldosterone is usually preserved because it depends on RAAS, and the medulla does not make cortisol.",
+   "subtopic": "Adrenal cortex and medulla hormones"
+  }
+ ]
+}

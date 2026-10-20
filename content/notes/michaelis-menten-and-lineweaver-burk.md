@@ -1,7 +1,7 @@
 ---
 title: Michaelis-Menten Kinetics and Lineweaver-Burk Plots Explained
 description: What Km, Vmax, and kcat mean, how to read a Michaelis-Menten curve, and how to pull the numbers out of a Lineweaver-Burk plot, with a worked example.
-product: aa-enzymes
+product: 1a-amino-acids-proteins
 published: 2026-10-20
 related: enzyme-inhibition-types-compared, enzyme-classes-ec-1-to-7, henderson-hasselbalch-for-the-mcat
 ---

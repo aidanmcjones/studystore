@@ -1,7 +1,7 @@
 ---
 title: The Henderson-Hasselbalch Equation for the MCAT
 description: Derive the Henderson-Hasselbalch equation, then use it for buffers, the bicarbonate system in blood, amino acids, and drug ionization, with worked examples.
-product: aa-enzymes
+product: 1a-amino-acids-proteins
 published: 2026-10-20
 related: amino-acid-pka-charge-ph-7-4, michaelis-menten-and-lineweaver-burk, protein-structure-levels-and-denaturation
 ---

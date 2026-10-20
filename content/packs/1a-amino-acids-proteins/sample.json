@@ -1,0 +1,121 @@
+{
+ "slug": "1a-amino-acids-proteins",
+ "cards": [
+  {
+   "src": "assets/packs/1a-amino-acids-proteins/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 856
+  },
+  {
+   "src": "assets/packs/1a-amino-acids-proteins/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 676
+  },
+  {
+   "src": "assets/packs/1a-amino-acids-proteins/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 899
+  },
+  {
+   "src": "assets/packs/1a-amino-acids-proteins/card-4.webp",
+   "alt": "Sample multiple choice card: Side-chain charge of Asp at pH 7.4?",
+   "w": 680,
+   "h": 328
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/1a-amino-acids-proteins/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/1a-amino-acids-proteins/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/1a-amino-acids-proteins/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/1a-amino-acids-proteins/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "What is the approximate net charge of the tripeptide Lys-Asp-Gly at pH 7.4?",
+   "options": [
+    "-1",
+    "0",
+    "+1",
+    "+2"
+   ],
+   "answer": "B",
+   "explanation": "At pH 7.4 the free N-terminal amine is +1, the Lys side chain is +1, the Asp side chain is -1, and the free C-terminal carboxylate is -1, for a net charge of 0. Answering +1 or +2 forgets one or both negative groups, and -1 forgets the N-terminus.",
+   "subtopic": "Side chain pKa values and charge at physiological pH"
+  },
+  {
+   "stem": "Why does the peptide bond not rotate freely?",
+   "options": [
+    "It is a hydrogen bond",
+    "It is an ionic bond",
+    "It is a disulfide",
+    "Resonance gives the C-N bond partial double bond character"
+   ],
+   "answer": "D",
+   "explanation": "Delocalization of the nitrogen lone pair onto oxygen makes the amide plane rigid. A hydrogen bond, ionic bond, or disulfide would be a different type of interaction and would not describe the amide linkage.",
+   "subtopic": "Peptide bond formation, resonance and hydrolysis"
+  },
+  {
+   "stem": "An enzyme transfers an amino group from one molecule to another. Which EC class?",
+   "options": [
+    "Transferase",
+    "Ligase",
+    "Lyase",
+    "Isomerase"
+   ],
+   "answer": "A",
+   "explanation": "Group transfer defines EC 2 (transferases), as with aminotransferases. Ligases join molecules using ATP, lyases cleave without water or redox, and isomerases rearrange one molecule.",
+   "subtopic": "Enzyme classification (EC classes)"
+  },
+  {
+   "stem": "Aspirin inhibits cyclooxygenase by:",
+   "options": [
+    "Covalently acetylating a serine in the active site",
+    "Competing with arachidonic acid reversibly",
+    "Binding the enzyme-substrate complex",
+    "Removing the heme"
+   ],
+   "answer": "A",
+   "explanation": "Aspirin transfers an acetyl group to a Ser, permanently blocking the enzyme. Reversible competitors (such as ibuprofen) behave differently, and aspirin does not target ES or heme.",
+   "subtopic": "Irreversible inhibition and suicide substrates"
+  },
+  {
+   "stem": "Iron in the heme of hemoglobin must be in which state to bind oxygen?",
+   "options": [
+    "Fe2+",
+    "Fe3+",
+    "Fe0",
+    "Fe4+"
+   ],
+   "answer": "A",
+   "explanation": "Fe2+ (ferrous) binds O2 reversibly. Fe3+ (methemoglobin) does not bind oxygen, and Fe0 and Fe4+ are not the physiological states in heme.",
+   "subtopic": "Conjugated proteins, prosthetic groups and glycoproteins"
+  }
+ ]
+}

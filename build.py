@@ -10,19 +10,18 @@ Placeholders in templates:
 import json, re, html, math
 from pathlib import Path
 from mdlite import convert, parse_frontmatter, extract_quiz
+import products_build as PB  # catalog product/bundle/thanks pages (G01)
 
 ROOT = Path(__file__).parent
 site = json.loads((ROOT / "site.json").read_text())
-products = {p["slug"]: p for p in site["products"]}
+products = PB.lookup(site)  # products + bundles + retired-slug aliases
 
 # (template, output, title, description, noindex)
 LATEST_NOTES = ""
 
 PAGES = [
     ("index.html", "index.html", "StudyStore | Original MCAT study packs",
-     "Original, high-yield MCAT study packs: an Anki deck plus a printable cheat sheet. Pack 1: Amino Acids, Proteins and Enzyme Kinetics, $9.", False),
-    ("aa-enzymes.html", "products/aa-enzymes.html", "Amino Acids, Proteins & Enzyme Kinetics MCAT Pack | StudyStore",
-     "120 original Anki cards and a 2-page printable cheat sheet covering amino acids, protein structure, and enzyme kinetics for MCAT prep. $9.", False),
+     "Original, high-yield MCAT study packs: an Anki deck, illustrated study guide, cheat sheet and practice questions for each MCAT content category.", False),
     ("refund.html", "refund.html", "Refund Policy | StudyStore",
      "StudyStore offers a 14-day, no-questions-asked refund on every digital pack.", False),
     ("terms.html", "terms.html", "Terms of Sale | StudyStore",
@@ -38,12 +37,8 @@ def contact():
         return f'Contact: <a href="mailto:{html.escape(e)}">{html.escape(e)}</a>'
     return "Support email launching this week."
 
-def buy(slug, cls="btn"):
-    p = products[slug]
-    url = p.get("checkout_url")
-    if url:
-        return f'<a class="{cls}" href="{html.escape(url)}" rel="noopener">Buy now, {html.escape(p["price"])}</a>'
-    return f'<a class="{cls} off" aria-disabled="true" role="link" tabindex="-1">Available soon</a>'
+def buy(slug, cls="btn", root=""):
+    return PB.buy(products, slug, cls, root)
 
 def render(text, root):
     def sub(m):
@@ -52,11 +47,12 @@ def render(text, root):
         if k == "contact": return contact()
         if ":" in k:
             kind, slug = k.split(":", 1)
-            if kind == "buy": return buy(slug)
-            if kind == "buyghost": return buy(slug, "btn ghost")
+            if kind == "buy": return buy(slug, root=root)
+            if kind == "buyghost": return buy(slug, "btn ghost", root=root)
             if kind == "price": return products[slug]["price"]
             if kind == "title": return html.escape(products[slug]["title"])
         if k == "latest_notes": return LATEST_NOTES
+        if k == "pack_grid": return PB.pack_grid(site, root)
         if k in site and isinstance(site[k], str): return site[k]
         raise KeyError(f"unknown placeholder {k}")
     return re.sub(r"\{\{\s*([^}]+?)\s*\}\}", sub, text)
@@ -187,6 +183,10 @@ idx = f"""<div class="wrap hero" style="padding-bottom:24px">
 emit("notes/index.html", "Free MCAT Study Notes | StudyStore",
      "Free MCAT biochemistry study notes with original diagrams and mini-quizzes: amino acids, enzyme kinetics, inhibition, protein structure, and more.",
      idx, lastmod=max((n["meta"]["published"] for n in notes), default=None))
+
+# ---------- catalog product pages ----------
+PB.build_all(site, products, emit)
+PB.write_redirects(site)
 
 # ---------- regular pages ----------
 for tpl, out, title, desc, noindex in PAGES:

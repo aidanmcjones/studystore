@@ -1,0 +1,16 @@
+/* Catalog product pages (products_build.py). Kept separate from style.css. */
+ul.topics{columns:2;column-gap:28px;padding-left:1.1em;font-size:.95rem}
+ul.topics li{break-inside:avoid;margin:.2em 0}
+@media(max-width:760px){ul.topics{columns:1}}
+.badge+h1,.hero h1 .badge{vertical-align:middle}
+.hero h1 .badge{font-size:.8rem;font-family:inherit}
+.compare{margin-top:20px;border-top:1px solid var(--line);padding-top:14px}
+.compare table{width:100%;font-size:.88rem;border-collapse:collapse}
+.compare td,.compare th{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.quiz ol.opts{list-style:none;padding-left:0;margin:.6em 0}
+.quiz ol.opts li{margin:.25em 0}
+.soonlist{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px 28px}
+.soonlist h4{margin:.6em 0 .2em;font-family:Georgia,serif}
+.soonlist ul{padding-left:1.1em;margin:0;font-size:.93rem}
+.bundles p{margin:.4em 0}
+#upgrade{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin:24px 0}
