@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gibbs Free Energy: Delta G, Spontaneity and Temperature</title>
+<meta name="description" content="Use delta G = delta H - T delta S to predict spontaneity, find the crossover temperature, and link delta G to K and Q, with worked numbers.">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Gibbs Free Energy: Delta G, Spontaneity and Temperature", "description": "Use delta G = delta H - T delta S to predict spontaneity, find the crossover temperature, and link delta G to K and Q, with worked numbers.", "image": "https://www.studystore.co/assets/notes/og-gibbs-free-energy-delta-g-spontaneity.png?v=926cdac978", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "wordCount": 1656, "inLanguage": "en", "mainEntityOfPage": "https://www.studystore.co/notes/gibbs-free-energy-delta-g-spontaneity.html", "author": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}, "publisher": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A reaction has ΔH = -40 kJ/mol and ΔS = -0.080 kJ/(mol·K). Above what temperature is it nonspontaneous?", "acceptedAnswer": {"@type": "Answer", "text": "T = ΔH/ΔS = (-40)/(-0.080) = 500 K. Both signs are negative, so the reaction is spontaneous below 500 K and nonspontaneous above it."}}, {"@type": "Question", "name": "Why can an exothermic reaction with a negative ΔS still be spontaneous at low temperature?", "acceptedAnswer": {"@type": "Answer", "text": "The released heat raises the entropy of the surroundings by -ΔH/T, which is large when T is small. If that gain exceeds the system's loss, ΔS of the universe is positive and ΔG is negative."}}, {"@type": "Question", "name": "A reaction has K = 0.001 at 298 K. What is the sign and approximate size of ΔG°?", "acceptedAnswer": {"@type": "Answer", "text": "K is three factors of 10 below 1, so ΔG° is about +3 × 5.7 = +17 kJ/mol. Positive ΔG° matches K less than 1."}}, {"@type": "Question", "name": "A reaction has a negative ΔG°, but a particular mixture has Q greater than K. Which way does that mixture react?", "acceptedAnswer": {"@type": "Answer", "text": "In reverse, toward reactants. ΔG = RT ln(Q/K) is positive when Q exceeds K, regardless of the sign of ΔG°."}}, {"@type": "Question", "name": "Adding a catalyst lowers a reaction's activation energy. What happens to ΔG and K?", "acceptedAnswer": {"@type": "Answer", "text": "Neither changes. A catalyst speeds both directions equally, so the system reaches the same equilibrium faster."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "StudyStore", "item": "https://www.studystore.co/"}, {"@type": "ListItem", "position": 2, "name": "Free MCAT study notes", "item": "https://www.studystore.co/notes/index.html"}, {"@type": "ListItem", "position": 3, "name": "Gibbs Free Energy: Delta G, Spontaneity and Temperature", "item": "https://www.studystore.co/notes/gibbs-free-energy-delta-g-spontaneity.html"}]}</script>
+
+<link rel="canonical" href="https://www.studystore.co/notes/gibbs-free-energy-delta-g-spontaneity.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="Gibbs Free Energy: Delta G, Spontaneity and Temperature">
+<meta property="og:description" content="Use delta G = delta H - T delta S to predict spontaneity, find the crossover temperature, and link delta G to K and Q, with worked numbers.">
+<meta property="og:url" content="https://www.studystore.co/notes/gibbs-free-energy-delta-g-spontaneity.html">
+<meta property="og:image" content="https://www.studystore.co/assets/notes/og-gibbs-free-energy-delta-g-spontaneity.png?v=926cdac978">
+<meta name="twitter:image" content="https://www.studystore.co/assets/notes/og-gibbs-free-energy-delta-g-spontaneity.png?v=926cdac978">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gibbs Free Energy: Delta G, Spontaneity and Temperature">
+<meta name="twitter:description" content="Use delta G = delta H - T delta S to predict spontaneity, find the crossover temperature, and link delta G to K and Q, with worked numbers.">
+<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1512'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23f2b705'/%3E%3Ccircle cx='21' cy='16' r='4' fill='%233ddc84'/%3E%3Ccircle cx='11' cy='21' r='4' fill='%236aa2ff'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("ss-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css?v=2a5ac25cc0">
+<link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="../assets/js/exp.js?v=f84a42976d" defer></script>
+<script src="../assets/js/site.js?v=6a476378b3" defer></script>
+<script src="../assets/js/buy.js?v=54b73e6567" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="gridbg" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html" aria-label="StudyStore home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Study<b>Store</b></span></a>
+<nav aria-label="Main"><a href="../index.html#packs">Packs</a><a href="../notes/index.html">Notes</a><a href="../tools/index.html">Tools</a><a href="../index.html#faq">FAQ</a><a href="../refund.html">Refunds</a></nav>
+<div class="tools">
+<span class="phread" aria-hidden="true">pH <b>1.0</b></span>
+<button class="themetoggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+</div>
+</div><div class="phbar" aria-hidden="true"><i></i></div></header>
+<main id="main">
+<article class="note wrap narrow">
+<p class="eyebrow">Free MCAT study note</p>
+<h1>Gibbs Free Energy: Delta G, Spontaneity and Temperature</h1>
+<p class="meta">By StudyStore &middot; Published 2026-10-20 &middot; 8 min read &middot; 1656 words</p>
+<div class="prose">
+<p>Gibbs free energy tells you whether a process can happen on its own at constant temperature and pressure. The working equation is <strong>&Delta;G = &Delta;H - T&Delta;S</strong>. If &Delta;G is negative the process is spontaneous (exergonic), if it is positive the process is nonspontaneous as written (endergonic) and the reverse direction is favored, and if it is zero the system is at equilibrium. Spontaneous means thermodynamically allowed. It says nothing about speed.</p>
+<h2 id="where-the-equation-comes-from">Where the equation comes from</h2>
+<p>The second law says a process is spontaneous when the total entropy of the universe rises: &Delta;S<sub>universe</sub> = &Delta;S<sub>system</sub> + &Delta;S<sub>surroundings</sub> &gt; 0. Measuring the surroundings directly is awkward, so chemists rewrite their entropy change in terms of the system.</p>
+<p>At constant pressure, heat released by the system equals heat absorbed by the surroundings, so &Delta;S<sub>surroundings</sub> = -&Delta;H<sub>system</sub>/T. Substituting gives &Delta;S<sub>universe</sub> = &Delta;S - &Delta;H/T. Multiply through by -T and you get -T&Delta;S<sub>universe</sub> = &Delta;H - T&Delta;S, which is defined as &Delta;G. Because of that minus sign, a positive &Delta;S<sub>universe</sub> becomes a negative &Delta;G. So "&Delta;G less than zero" is just the second law written using only properties of the system.</p>
+<p>This derivation also explains why an exothermic reaction can be spontaneous even when the system's entropy falls. The heat it releases raises the entropy of the surroundings, and at low enough temperature that gain outweighs the system's loss.</p>
+<h2 id="the-four-sign-combinations">The four sign combinations</h2>
+<p>&Delta;H and &Delta;S are each either positive or negative, so there are four cases. Temperature is always positive in kelvin, so the -T&Delta;S term always has the opposite sign of &Delta;S.</p>
+<div class="tablewrap"><table><thead><tr><th>&Delta;H</th><th>&Delta;S</th><th>Sign of &Delta;G</th><th>Spontaneous when</th></tr></thead><tbody><tr><td>Negative</td><td>Positive</td><td>Always negative</td><td>At every temperature</td></tr><tr><td>Positive</td><td>Negative</td><td>Always positive</td><td>Never (the reverse is always spontaneous)</td></tr><tr><td>Positive</td><td>Positive</td><td>Negative only if T&Delta;S beats &Delta;H</td><td>Above the crossover temperature</td></tr><tr><td>Negative</td><td>Negative</td><td>Negative only if &Delta;H beats T&Delta;S</td><td>Below the crossover temperature</td></tr></tbody></table></div>
+<p>A memory hook of my own: in the two mixed cases, temperature takes the side of entropy. When entropy helps (&Delta;S positive), heating helps. When entropy hurts (&Delta;S negative), heating hurts.</p>
+<figure><img src="../assets/notes/gibbs-free-energy-delta-g-spontaneity.png?v=e2e68483fe" alt="Delta G plotted against temperature for the four sign combinations of delta H and delta S, with crossover temperatures marked" loading="lazy"><figcaption>Each line has intercept delta H and slope minus delta S. A line crosses zero only when delta H and delta S share a sign.</figcaption></figure>
+<h2 id="the-crossover-temperature">The crossover temperature</h2>
+<p>When &Delta;H and &Delta;S have the same sign, &Delta;G changes sign at one temperature. Set &Delta;G = 0 and solve:</p>
+<p><strong>T = &Delta;H / &Delta;S</strong></p>
+<p>This is the temperature where the system is at equilibrium under standard conditions. For a phase change, it is the melting or boiling point. The estimate assumes &Delta;H and &Delta;S stay roughly constant with temperature, which is a reasonable approximation over a modest range.</p>
+<p>Graphically, &Delta;G = &Delta;H - T&Delta;S is a straight line in T with y-intercept &Delta;H and slope -&Delta;S. A positive &Delta;S gives a line that falls as temperature rises, and a negative &Delta;S gives a line that climbs.</p>
+<h2 id="worked-example-1-melting-ice">Worked example 1: melting ice</h2>
+<p>For H<sub>2</sub>O(s) &rarr; H<sub>2</sub>O(l), approximate values are &Delta;H = +6.01 kJ/mol and &Delta;S = +22.0 J/(mol&middot;K). Both are positive, so melting is favored only at high temperature.</p>
+<ol><li>Convert units so they match: 22.0 J/(mol&middot;K) = 0.0220 kJ/(mol&middot;K).</li><li>Crossover: T = 6.01 / 0.0220 = <strong>273 K</strong>, the normal melting point. The equation reproduces a number you already know, which is a good sanity check.</li><li>At 263 K (-10 C): &Delta;G = 6.01 - (263)(0.0220) = 6.01 - 5.79 = <strong>+0.22 kJ/mol</strong>. Positive, so ice does not melt, and the reverse, freezing, is spontaneous.</li><li>At 283 K (+10 C): &Delta;G = 6.01 - (283)(0.0220) = 6.01 - 6.23 = <strong>-0.22 kJ/mol</strong>. Negative, so ice melts.</li></ol>
+<h2 id="worked-example-2-decomposing-limestone">Worked example 2: decomposing limestone</h2>
+<p>Calcium carbonate breaks down to lime and carbon dioxide: CaCO<sub>3</sub>(s) &rarr; CaO(s) + CO<sub>2</sub>(g). Using approximate standard values &Delta;H&deg; = +178 kJ and &Delta;S&deg; = +161 J/K:</p>
+<ol><li>The reaction makes a mole of gas from a solid, so a large positive &Delta;S makes sense. Breaking the carbonate costs energy, so &Delta;H is positive.</li><li>At 298 K: &Delta;G&deg; = 178 - (298)(0.161) = 178 - 48 = <strong>+130 kJ</strong>. Strongly nonspontaneous at room temperature, which is why limestone buildings survive.</li><li>Crossover: T = 178 / 0.161, about <strong>1106 K</strong>, or roughly 830 C. Above that temperature the decomposition becomes favorable under standard conditions, which is why lime kilns run very hot.</li></ol>
+<p>Treat the 1106 K figure as an estimate, since &Delta;H and &Delta;S drift somewhat at high temperature.</p>
+<h2 id="standard-versus-actual-free-energy">Standard versus actual free energy</h2>
+<p>The degree symbol matters. <strong>&Delta;G&deg;</strong> is the free energy change when every species is in its standard state: 1 M for solutes, 1 atm for gases, pure solids and liquids, at a stated temperature (often 298 K). <strong>&Delta;G</strong> is the free energy change under the conditions actually present. They are linked by the reaction quotient Q:</p>
+<p><strong>&Delta;G = &Delta;G&deg; + RT ln Q</strong></p>
+<p>At equilibrium, &Delta;G = 0 and Q = K, which gives the second key equation:</p>
+<p><strong>&Delta;G&deg; = -RT ln K</strong></p>
+<p>With R = 8.314 J/(mol&middot;K) and T = 298 K, RT ln 10 is about 5.7 kJ/mol. So at room temperature every factor of 10 in K shifts &Delta;G&deg; by about 5.7 kJ/mol, and the sign rules line up:</p>
+<div class="tablewrap"><table><thead><tr><th>K</th><th>&Delta;G&deg;</th><th>At standard conditions</th></tr></thead><tbody><tr><td>Greater than 1</td><td>Negative</td><td>Products favored</td></tr><tr><td>Equal to 1</td><td>Zero</td><td>Neither side favored</td></tr><tr><td>Less than 1</td><td>Positive</td><td>Reactants favored</td></tr></tbody></table></div>
+<p>In biochemistry you will also see &Delta;G&deg;', the standard value adjusted to pH 7. Cells rarely sit at standard concentrations, so the actual &Delta;G inside a cell can differ a lot from either standard value.</p>
+<h2 id="worked-example-3-from-delta-g-deg-to-k-and-q">Worked example 3: from &Delta;G&deg; to K and Q</h2>
+<p>A reaction A &rarr; B has &Delta;G&deg; = -11.4 kJ/mol at 298 K.</p>
+<ol><li><strong>Find K.</strong> log K = 11.4 / 5.7 = 2.0, so K is about <strong>100</strong>. Products are favored at equilibrium.</li><li><strong>Mixture with Q = 1000.</strong> &Delta;G = -11.4 + (2.48)(ln 1000) = -11.4 + (2.48)(6.91) = -11.4 + 17.1 = <strong>+5.7 kJ/mol</strong>. (Here RT = 2.48 kJ/mol.) Even though &Delta;G&deg; is negative, this mixture has too much B, so the reaction runs in reverse toward A.</li><li><strong>Shortcut.</strong> &Delta;G = RT ln(Q/K) = (2.48)(ln 10) = 5.7 kJ/mol. Q is ten times K, so the mixture sits one factor of 10 past equilibrium on the product side.</li></ol>
+<p>The lesson: the sign of &Delta;G&deg; tells you where equilibrium lies, but the sign of &Delta;G tells you which way a particular mixture will move.</p>
+<h2 id="free-energy-adds-up">Free energy adds up</h2>
+<p>Because G is a state function, &Delta;G values for reactions that add together also add together. Cells exploit this by coupling an unfavorable step to a favorable one through a shared intermediate. If a step has &Delta;G&deg;' = +20 kJ/mol and it is coupled to ATP hydrolysis (about -30.5 kJ/mol under biochemical standard conditions), the combined process has &Delta;G&deg;' of about -10.5 kJ/mol and proceeds. The same bookkeeping shows up in membrane transport, where pumping a solute uphill is paid for by ATP, as worked through in the <a href="passive-vs-active-transport.html">transport note</a>.</p>
+<p>Free energy also connects to electrochemistry through &Delta;G = -nFE. A positive cell potential corresponds to a negative &Delta;G, which is why a battery runs on its own. The <a href="galvanic-vs-electrolytic-cells.html">galvanic vs electrolytic note</a> uses that link.</p>
+<h2 id="common-traps">Common traps</h2>
+<ul><li><strong>Mixing joules and kilojoules.</strong> &Delta;S is usually tabulated in J/K and &Delta;H in kJ. Convert one before you combine them. Forgetting this makes T&Delta;S a thousand times too large.</li><li><strong>Using Celsius.</strong> T must be in kelvin. A negative Celsius temperature in the equation gives nonsense.</li><li><strong>Equating exothermic with spontaneous.</strong> A negative &Delta;H helps, but a large negative &Delta;S can still make &Delta;G positive at high temperature.</li><li><strong>Equating spontaneous with fast.</strong> &Delta;G says nothing about activation energy. Diamond turning into graphite is favorable at room conditions and essentially never observed. A catalyst speeds a reaction without changing &Delta;G or K.</li><li><strong>Confusing &Delta;G with &Delta;G&deg;.</strong> At equilibrium &Delta;G = 0, but &Delta;G&deg; is generally not zero. &Delta;G&deg; is zero only when K = 1.</li><li><strong>Reading a positive &Delta;G&deg; as "cannot happen."</strong> If Q is small enough, RT ln Q can make &Delta;G negative and the reaction will run forward.</li></ul>
+<h2 id="one-minute-recap">One-minute recap</h2>
+<p>&Delta;G = &Delta;H - T&Delta;S. Negative means spontaneous, positive means the reverse is favored, zero means equilibrium. With &Delta;H negative and &Delta;S positive the process is always spontaneous; with the opposite signs, never. When the signs match, the crossover temperature T = &Delta;H/&Delta;S divides the two regimes, and temperature sides with entropy. &Delta;G = &Delta;G&deg; + RT ln Q, &Delta;G&deg; = -RT ln K, and at 298 K each factor of 10 in K is about 5.7 kJ/mol. Convert J to kJ and use kelvin.</p>
+</div>
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Chemical Thermodynamics and Kinetics is a $14 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/5e-thermo-kinetics.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
+<p class="meta">Try each question first, then click it to reveal the answer.</p>
+<div class="quiz"><details class="q"><summary>1. A reaction has ΔH = -40 kJ/mol and ΔS = -0.080 kJ/(mol·K). Above what temperature is it nonspontaneous?</summary><div><p>T = ΔH/ΔS = (-40)/(-0.080) = 500 K. Both signs are negative, so the reaction is spontaneous below 500 K and nonspontaneous above it.</p></div></details><details class="q"><summary>2. Why can an exothermic reaction with a negative ΔS still be spontaneous at low temperature?</summary><div><p>The released heat raises the entropy of the surroundings by -ΔH/T, which is large when T is small. If that gain exceeds the system's loss, ΔS of the universe is positive and ΔG is negative.</p></div></details><details class="q"><summary>3. A reaction has K = 0.001 at 298 K. What is the sign and approximate size of ΔG°?</summary><div><p>K is three factors of 10 below 1, so ΔG° is about +3 × 5.7 = +17 kJ/mol. Positive ΔG° matches K less than 1.</p></div></details><details class="q"><summary>4. A reaction has a negative ΔG°, but a particular mixture has Q greater than K. Which way does that mixture react?</summary><div><p>In reverse, toward reactants. ΔG = RT ln(Q/K) is positive when Q exceeds K, regardless of the sign of ΔG°.</p></div></details><details class="q"><summary>5. Adding a catalyst lowers a reaction's activation energy. What happens to ΔG and K?</summary><div><p>Neither changes. A catalyst speeds both directions equally, so the system reaches the same equilibrium faster.</p></div></details></div>
+<h2>Keep studying</h2>
+<ul><li><a href="galvanic-vs-electrolytic-cells.html">Galvanic vs Electrolytic Cells: Signs, Electron Flow and Examples</a></li><li><a href="passive-vs-active-transport.html">Passive vs Active Transport: Types, Examples and Energy Math</a></li><li><a href="index.html">All free notes</a></li></ul>
+
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Chemical Thermodynamics and Kinetics is a $14 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/5e-thermo-kinetics.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div>
+<p class="flabel">StudyStore</p>
+<p>Original, high-yield MCAT study packs. Written from scratch, checked card by card.</p>
+</div>
+<div>
+<p class="flabel">Shop</p>
+<p class="links"><a href="../index.html#packs">Packs</a><a href="../products/index.html">All packs</a><a href="../notes/index.html">Free notes</a></p>
+</div>
+<div>
+<p class="flabel">Policies</p>
+<p class="links"><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><a href="../refund.html">Refund policy</a></p>
+</div>
+</div>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+<p class="wordmark" aria-hidden="true">Study<b>Store</b></p>
+</div></footer>
+</body>
+</html>
