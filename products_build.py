@@ -14,6 +14,8 @@ Placeholders this module answers (see placeholder()):
                            guide_pages cheatsheet_pages questions url tag section_name
   {{feat_anki}} {{feat_quiz}} {{feat_quiz_n}} {{feat_files}} {{feat_file_count}} {{feat_mix}}
   {{feat_marquee}} {{feat_sheet}} {{stat:available}} {{stat:total}} {{stat:bundles}}
+  {{stat:cards}} {{stat:diagrams}} {{stat:questions}}  catalog-wide sums over available packs (home hero)
+  {{stat:price_from}} {{stat:complete_price}}          lowest available pack price; Complete MCAT bundle price
 
 Buy buttons:
   coming_soon                       -> disabled "Coming soon"
@@ -339,6 +341,23 @@ def pack_grid(site, root):
             f'<div class="pgrid catalog">{bundles}</div>' + soon_list(site, root))
 
 
+def stat(site, f):
+    """Catalog-wide numbers for the home page, summed over available packs only."""
+    a = available(site)
+    if f == "available": return str(len(a))
+    if f == "total": return str(len(site.get("products", [])))
+    if f == "bundles": return str(len(site.get("bundles", [])))
+    if f in ("cards", "diagrams", "questions"):
+        return f'{sum(int((p.get("contents") or {}).get(f) or 0) for p in a):,}'
+    if f == "price_from":
+        priced = [p for p in a if p.get("price_usd") is not None]
+        return E(min(priced, key=lambda p: p["price_usd"])["price"]) if priced else ""
+    if f == "complete_price":
+        b = complete_bundle(site)
+        return E(b["price"]) if b else ""
+    raise KeyError("stat:" + f)
+
+
 def placeholder(site, items, k, root):
     """Answer catalog placeholders for build.render(); None if k is not ours."""
     if k == "pack_grid":
@@ -346,9 +365,7 @@ def placeholder(site, items, k, root):
     if k == "home_anki": return home_anki(site)[0]
     if k == "home_anki_n": return str(home_anki(site)[1])
     if k.startswith("stat:"):
-        f = k[5:]
-        return {"available": str(len(available(site))), "total": str(len(site.get("products", []))),
-                "bundles": str(len(site.get("bundles", [])))}[f]
+        return stat(site, k[5:])
     if not k.startswith("feat"):
         return None
     p = featured(site)

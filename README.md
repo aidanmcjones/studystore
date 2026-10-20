@@ -55,7 +55,9 @@ finds pages through `sitemap.xml` (declared in `robots.txt`) and ordinary crawli
   `ls_variants.json` from Lemon Squeezy (read-only), and regenerates preview crops with `tools/gen_previews.py`
   (max 4 cards, 5 questions, partial faded page crops). Set `STUDYSTORE_SITE` to build into another checkout.
 - `products_build.py` renders every pack and bundle page (templates/product.html, bundle.html), the catalog page,
-  thanks.html and `_redirects` (retired slugs). Home numbers come from `{{feat:*}}` placeholders, never hardcoded.
+  thanks.html and `_redirects` (retired slugs). Home numbers come from `{{stat:*}}` (catalog-wide totals over available packs) and
+  `{{feat:*}}` (featured pack) placeholders, never hardcoded. The home page's four scroll-drawn figures (one per MCAT
+  section) are inline SVG/HTML in `templates/index.html`, drawn by `assets/js/site.js` from their formulas.
 - Buy buttons call `/api/checkout` (functions/api/checkout.js). Without the `LS_API_KEY` and `LS_STORE_ID` Pages
   secrets it returns 503 and buttons read "Available soon".
 

@@ -12,6 +12,16 @@
   var lerp = function (a, b, t) { return a + (b - a) * t; };
   var smooth = function (a, b, x) { var t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
   var vh = W.innerHeight, vw = W.innerWidth;
+  var scenes = [];  // section scroll scenes (Fig. 2 to 4), driven by update() like the kinetics plot
+  // continuous step position for a pinned scene: which step block crosses the reference line, and how far
+  function stepPos(steps, narrow) {
+    var L = vh * (narrow ? 0.78 : 0.55), s = 0;
+    for (var j = 0; j < steps.length; j++) {
+      var r = steps[j].getBoundingClientRect();
+      if (r.top <= L) s = j + clamp((L - r.top) / Math.max(1, r.height), 0, 1) * (j === steps.length - 1 ? 1 : 0.999);
+    }
+    return s;
+  }
   W.addEventListener("resize", function () { vh = W.innerHeight; vw = W.innerWidth; resizeAll(); }, { passive: true });
 
   /* ---------- theme ---------- */
@@ -134,6 +144,7 @@
       heroEl.classList.toggle("denat", d > 0.55);
     }
     if (kin) kin.scroll();
+    for (var si = 0; si < scenes.length; si++) scenes[si].scroll();
     if (pack) pack.scroll();
   }
   W.addEventListener("scroll", function () { if (!lenis) onScroll(); }, { passive: true });
@@ -375,18 +386,173 @@
     }
     layout();
     if (RM) { drawAll(); return { scroll: function () {}, resize: layout }; }
-    function scroll() {
-      // continuous step position: which step block crosses the reference line, and how far
-      var L = vh * (narrow ? 0.78 : 0.55), s = 0;
-      for (var j = 0; j < steps.length; j++) {
-        var r = steps[j].getBoundingClientRect();
-        if (r.top <= L) s = j + clamp((L - r.top) / Math.max(1, r.height), 0, 1) * (j === steps.length - 1 ? 1 : 0.999);
-      }
-      draw(clamp(s, 0, 5));
-    }
+    function scroll() { draw(clamp(stepPos(steps, narrow), 0, 5)); }
     draw(0);
     return { scroll: scroll, resize: layout };
   })();
+
+  /* ---------- section scenes (Fig. 2 to 4): one per MCAT section, pinned like the kinetics plot ----------
+   * Each scene reads a continuous step position from stepPos() inside update(); no extra scroll listeners.
+   * Every plotted value is computed from its formula. Reduced motion draws the final labeled state once. */
+  function keyed(keys, s) {
+    // keys: [[s, a, b, ...], ...]; smoothstep between neighbouring keyframes
+    for (var j = 1; j < keys.length; j++) if (s <= keys[j][0]) {
+      var a = keys[j - 1], b = keys[j], t = smooth(a[0], b[0], s), out = [];
+      for (var k = 1; k < a.length; k++) out.push(lerp(a[k], b[k], t));
+      return out;
+    }
+    return keys[keys.length - 1].slice(1);
+  }
+  var f1 = function (x) { return x.toFixed(1); };
+  var capY = function (y) { return clamp(y, -4000, 4000); };
+  function scene(sel, build) {
+    var sec = $(sel); if (!sec) return;
+    var steps = $$(".kstep", sec), cap = $(".kcap", sec), narrow = false, last = -1;
+    var api = {
+      sec: sec,
+      step: function (idx, text) {
+        if (cap && text) cap.textContent = text;
+        if (idx === last) return; last = idx;
+        steps.forEach(function (st, j) { st.classList.toggle("on", j === idx); });
+      }
+    };
+    function layout() { narrow = vw < 760; }
+    layout();
+    var draw = build(api);
+    if (RM) { draw(steps.length, true); steps.forEach(function (st) { st.classList.add("on"); }); return; }
+    draw(0, false);
+    scenes.push({
+      scroll: function () {
+        var r = sec.getBoundingClientRect();
+        if (r.bottom < -vh || r.top > vh * 2) return;  // far off screen: skip the work
+        draw(clamp(stepPos(steps, narrow), 0, steps.length), false);
+      },
+      resize: layout
+    });
+  }
+
+  /* Fig. 2, Chem/Phys: thin converging lens. 1/f = 1/do + 1/di, m = -di/do (distances in units of f). */
+  scene(".scene.optscene", function (api) {
+    var svg = $(".lensplot", api.sec), q = function (c) { return $(c, svg); };
+    var rays = [q(".r1"), q(".r2"), q(".r3")], vx = q(".vext"), ob = q(".arrow.obj"), im = q(".arrow.img");
+    var obT = q(".obj-t"), imT = q(".img-t"), rd = q(".lread"), kd = q(".lkind");
+    var F = 70, X0 = 300, Y0 = 210, H = 56, XR = 590;  // px per f, lens x, axis y, object height
+    var caps = ["Fig. 2. Object beyond 2F.", "Fig. 2. Object at 2F.", "Fig. 2. Object between F and 2F.", "Fig. 2. Object at F.", "Fig. 2. Object inside F."];
+    var keys = [[0, 3], [0.7, 3], [1.3, 2], [1.7, 2], [2.3, 1.5], [2.7, 1.5], [3.3, 1], [3.7, 1], [4.3, 0.5], [5, 0.5]];
+    rays.forEach(function (r) { r.setAttribute("pathLength", "1"); r.style.strokeDasharray = "1 1"; });
+    function arrow(x, ytip) {
+      var d = ytip < Y0 ? 1 : -1;
+      return "M" + f1(x) + " " + Y0 + "V" + f1(ytip) + "M" + f1(x - 7) + " " + f1(ytip + d * 11) + "L" + f1(x) + " " + f1(ytip) + "L" + f1(x + 7) + " " + f1(ytip + d * 11);
+    }
+    return function (s, still) {
+      var dO = still ? 0.5 : keyed(keys, s)[0];
+      var inf = Math.abs(dO - 1) < 0.004;
+      var dI = inf ? Infinity : 1 / (1 - 1 / dO);          // 1/di = 1/f - 1/do
+      var m = inf ? Infinity : -dI / dO;
+      var xo = X0 - dO * F, yt = Y0 - H;
+      ob.setAttribute("d", arrow(xo, yt));
+      obT.setAttribute("x", f1(xo)); obT.setAttribute("y", f1(yt - 14));
+      // ray 1: parallel to the axis, refracts through the far focal point
+      rays[0].setAttribute("d", "M" + f1(xo) + " " + yt + "H" + X0 + "L" + XR + " " + f1(capY(yt + H / F * (XR - X0))));
+      // ray 2: through the optical center, undeviated
+      rays[1].setAttribute("d", "M" + f1(xo) + " " + yt + "L" + XR + " " + f1(capY(Y0 + H / (X0 - xo) * (XR - X0))));
+      // ray 3: on the line through the near focal point, leaves parallel at the image height
+      var yl = inf ? 0 : Y0 + H / (dO - 1);
+      rays[2].setAttribute("d", inf ? "" : "M" + f1(xo) + " " + yt + "L" + X0 + " " + f1(capY(yl)) + "H" + XR);
+      var drawT = still ? 1 : smooth(0.05, 0.6, s);
+      rays.forEach(function (r) { r.style.strokeDashoffset = (1 - drawT).toFixed(3); });
+      var imgO = still ? 1 : smooth(0.45, 0.85, s);
+      var kind;
+      if (inf) {
+        im.setAttribute("d", ""); vx.setAttribute("d", ""); imT.style.opacity = 0;
+        rd.textContent = "do = 1.00f \u00b7 di = infinity"; kind = "rays parallel: no image";
+      } else {
+        var xi = X0 + dI * F, yi = Y0 - m * H, virt = dI < 0;
+        im.setAttribute("d", arrow(xi, capY(yi))); im.classList.toggle("virt", virt); im.style.opacity = imgO;
+        vx.setAttribute("d", virt ? "M" + X0 + " " + yt + "L" + f1(xi) + " " + f1(capY(yi)) + "M" + f1(xo) + " " + yt + "L" + f1(xi) + " " + f1(capY(yi)) + "M" + X0 + " " + f1(capY(yl)) + "H" + f1(xi) : "");
+        vx.style.opacity = imgO;
+        var onScreen = xi > 24 && xi < 576 && yi > 30 && yi < 352;
+        imT.setAttribute("x", f1(xi)); imT.setAttribute("y", f1(m < 0 ? Math.min(yi + 24, 356) : Math.max(yi - 14, 26)));
+        imT.textContent = virt ? "virtual image" : "real image";
+        imT.style.opacity = onScreen ? imgO : 0;
+        var a = Math.abs(m), size = a > 1.02 ? "enlarged" : a < 0.98 ? "reduced" : "same size";
+        rd.textContent = "do = " + dO.toFixed(2) + "f \u00b7 di = " + dI.toFixed(2) + "f \u00b7 m = " + (m > 0 ? "+" : "") + m.toFixed(2);
+        kind = (virt ? "virtual, upright, " : "real, inverted, ") + size + (onScreen ? "" : " (off frame)");
+      }
+      kd.textContent = kind; kd.style.opacity = imgO;
+      var idx = still ? 4 : clamp(Math.floor(s), 0, 4);
+      api.step(idx, still ? "Fig. 2. Object inside F: virtual, upright, enlarged image." : caps[idx]);
+    };
+  });
+
+  /* Fig. 3, Psych/Soc: equal-variance signal detection. Hit = 1 - Phi(c - d'), false alarm = 1 - Phi(c). Illustrative values. */
+  scene(".scene.sdt", function (api) {
+    var svg = $(".sdtplot", api.sec), q = function (c) { return $(c, svg); };
+    var noise = q(".noise"), sig = q(".sig"), hit = q(".hit"), fa = q(".fa"), crit = q(".crit"), critT = q(".crit-t");
+    var dp = q(".dp"), dpT = q(".dp-t"), nT = q(".noise-t"), sT = q(".sig-t"), no = q(".say-no"), yes = q(".say-yes"), rd = q(".sread");
+    var Z0 = -3.2, Z1 = 5.6, X = function (z) { return 30 + (z - Z0) * 62.5; }, Y = function (p) { return 340 - p * 600; };
+    var pdf = function (z) { return Math.exp(-z * z / 2) / Math.sqrt(2 * Math.PI); };
+    function erf(x) {  // Abramowitz and Stegun 7.1.26, |error| < 1.5e-7
+      var t = 1 / (1 + 0.3275911 * Math.abs(x));
+      var y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
+      return x < 0 ? -y : y;
+    }
+    var Phi = function (z) { return 0.5 * (1 + erf(z / Math.SQRT2)); };
+    function curve(mu) {
+      var d = "";
+      for (var z = Z0, k = 0; z <= Z1 + 1e-9; z += 0.08, k++) d += (k ? "L" : "M") + f1(X(z)) + " " + f1(Y(pdf(z - mu)));
+      return d;
+    }
+    function area(mu, c) {
+      var d = "M" + f1(X(c)) + " 340";
+      for (var z = c; z < Z1; z += 0.08) d += "L" + f1(X(z)) + " " + f1(Y(pdf(z - mu)));
+      return d + "L" + f1(X(Z1)) + " " + f1(Y(pdf(Z1 - mu))) + "L" + f1(X(Z1)) + " 340Z";
+    }
+    var pct = function (p) { return (p * 100).toFixed(1) + "%"; };
+    var caps = ["Fig. 3. Heavy overlap, d' = 0.5.", "Fig. 3. The curves separate as d' grows.", "Fig. 3. Hits and false alarms, neutral criterion.", "Fig. 3. Liberal criterion.", "Fig. 3. Conservative criterion."];
+    // [s, d', criterion c on the noise scale]
+    var keys = [[0, 0.5, 0.25], [1.1, 0.5, 0.25], [1.7, 2, 1], [3.1, 2, 1], [3.6, 2, 0.3], [4.1, 2, 0.3], [4.6, 2, 1.7], [5, 2, 1.7]];
+    noise.setAttribute("d", curve(0));
+    [noise, sig].forEach(function (p) { p.setAttribute("pathLength", "1"); p.style.strokeDasharray = "1 1"; });
+    return function (s, still) {
+      var v = keyed(keys, still ? 5 : s), d = v[0], c = v[1];
+      sig.setAttribute("d", curve(d));
+      var drawT = still ? 1 : smooth(0.05, 0.6, s);
+      noise.style.strokeDashoffset = sig.style.strokeDashoffset = (1 - drawT).toFixed(3);
+      var lab = still ? 1 : smooth(0.4, 0.8, s);
+      nT.setAttribute("x", f1(X(-1.3))); nT.setAttribute("y", f1(Y(pdf(1.3)) - 12)); nT.setAttribute("text-anchor", "end");
+      sT.setAttribute("x", f1(X(d + 1.3))); sT.setAttribute("y", f1(Y(pdf(1.3)) - 12)); sT.setAttribute("text-anchor", "start");
+      nT.style.opacity = sT.style.opacity = lab;
+      dp.setAttribute("d", "M" + f1(X(0)) + " 50V64M" + f1(X(0)) + " 57H" + f1(X(d)) + "M" + f1(X(d)) + " 50V64");
+      dpT.setAttribute("x", f1(X(d / 2))); dpT.setAttribute("y", "44"); dpT.textContent = "d' = " + d.toFixed(2);
+      dp.style.opacity = dpT.style.opacity = lab;
+      var sh = still ? 1 : smooth(1.9, 2.3, s);
+      hit.setAttribute("d", area(d, c)); fa.setAttribute("d", area(0, c));
+      hit.style.opacity = (0.2 * sh).toFixed(3); fa.style.opacity = (0.28 * sh).toFixed(3);
+      crit.setAttribute("d", "M" + f1(X(c)) + " 90V340"); critT.setAttribute("x", f1(X(c)));
+      no.setAttribute("x", f1(X(c) - 8)); yes.setAttribute("x", f1(X(c) + 8));
+      [crit, critT, no, yes].forEach(function (el) { el.style.opacity = sh; });
+      var H = 1 - Phi(c - d), FA = 1 - Phi(c);
+      rd.textContent = sh > 0.5 ? "d' = " + d.toFixed(2) + " \u00b7 hit " + pct(H) + " \u00b7 false alarm " + pct(FA) : "d' = " + d.toFixed(2);
+      var idx = still ? 4 : clamp(Math.floor(s), 0, 4);
+      api.step(idx, still ? "Fig. 3. Conservative criterion, d' = 2." : caps[idx]);
+    };
+  });
+
+  /* Fig. 4, CARS: claim, pivot, tone and evidence highlighted in turn while the passage map builds. */
+  scene(".carsscene", function (api) {
+    var marks = $$("mark.hl", api.sec), lis = $$(".pmap li", api.sec);
+    var caps = ["Fig. 4. Main claim.", "Fig. 4. Pivot word: But.", "Fig. 4. Tone word: shortsighted.", "Fig. 4. Evidence, noted in a few words.", "Fig. 4. Passage map complete."];
+    return function (s, still) {
+      marks.forEach(function (el) {
+        var k = +el.getAttribute("data-k");
+        el.style.setProperty("--t", (still ? 1 : clamp((s - k - 0.08) / 0.5, 0, 1)).toFixed(3));
+      });
+      lis.forEach(function (li) { li.classList.toggle("on", still || s >= +li.getAttribute("data-k") + 0.45); });
+      var idx = still ? 4 : clamp(Math.floor(s), 0, 4);
+      api.step(idx, still ? "Fig. 4. Original passage, fully mapped." : caps[idx]);
+    };
+  });
 
   /* ---------- pack assembly ---------- */
   var pack = (function () {
@@ -518,7 +684,7 @@
     };
   })();
 
-  function resizeAll() { if (helix) helix.resize(); if (kin && kin.resize) kin.resize(); update(); }
+  function resizeAll() { if (helix) helix.resize(); if (kin && kin.resize) kin.resize(); scenes.forEach(function (sc) { if (sc.resize) sc.resize(); }); update(); }
 
   W.matchMedia("(prefers-color-scheme: dark)").addEventListener && W.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () { if (helix) helix.palette(); });
 
