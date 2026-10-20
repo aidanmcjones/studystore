@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bernoulli&#x27;s Equation and the Venturi Effect for the MCAT</title>
+<meta name="description" content="Use the continuity equation and Bernoulli&#x27;s equation to find flow speed and pressure in a pipe, with worked Venturi, height and Torricelli examples.">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Bernoulli's Equation and the Venturi Effect for the MCAT", "description": "Use the continuity equation and Bernoulli's equation to find flow speed and pressure in a pipe, with worked Venturi, height and Torricelli examples.", "image": "https://www.studystore.co/assets/notes/og-bernoulli-equation-continuity-venturi.png?v=32c7ed5bb8", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "wordCount": 1644, "inLanguage": "en", "mainEntityOfPage": "https://www.studystore.co/notes/bernoulli-equation-continuity-venturi.html", "author": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}, "publisher": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A pipe carrying water at 1.2 m/s narrows to one third of its original diameter. What is the speed in the narrow section?", "acceptedAnswer": {"@type": "Answer", "text": "One third the diameter means one ninth the area, so the speed is 9 × 1.2 = 10.8 m/s."}}, {"@type": "Question", "name": "Water in a level pipe accelerates from 2.0 m/s to 4.0 m/s as the pipe narrows. By how much does the static pressure fall? (ρ = 1000 kg/m³)", "acceptedAnswer": {"@type": "Answer", "text": "ΔP = ½ρ(v₂² - v₁²) = 0.5 × 1000 × (16 - 4) = 6000 Pa, so the pressure falls by 6.0 kPa."}}, {"@type": "Question", "name": "An open tank holds glycerin, which is denser than water, with a small hole 0.80 m beneath the liquid level. How fast does glycerin leave the hole compared with water from the same depth?", "acceptedAnswer": {"@type": "Answer", "text": "At the same speed, about 4.0 m/s from v = √(2gh). Density cancels in Torricelli's theorem."}}, {"@type": "Question", "name": "Water rises through a vertical pipe of constant diameter by 2.0 m while flowing. How does the pressure at the top compare with the bottom? (ρ = 1000 kg/m³, g = 9.8 m/s²)", "acceptedAnswer": {"@type": "Answer", "text": "Speed is unchanged because the area is unchanged, so the top pressure is lower by ρgh = 19,600 Pa, about 20 kPa."}}, {"@type": "Question", "name": "Which assumption of Bernoulli's equation fails most clearly for blood flowing through a long narrow arteriole?", "acceptedAnswer": {"@type": "Answer", "text": "The nonviscous assumption. Viscous friction makes pressure fall steadily along the vessel, which Poiseuille's law describes."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "StudyStore", "item": "https://www.studystore.co/"}, {"@type": "ListItem", "position": 2, "name": "Free MCAT study notes", "item": "https://www.studystore.co/notes/index.html"}, {"@type": "ListItem", "position": 3, "name": "Bernoulli's Equation and the Venturi Effect for the MCAT", "item": "https://www.studystore.co/notes/bernoulli-equation-continuity-venturi.html"}]}</script>
+
+<link rel="canonical" href="https://www.studystore.co/notes/bernoulli-equation-continuity-venturi.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="Bernoulli&#x27;s Equation and the Venturi Effect for the MCAT">
+<meta property="og:description" content="Use the continuity equation and Bernoulli&#x27;s equation to find flow speed and pressure in a pipe, with worked Venturi, height and Torricelli examples.">
+<meta property="og:url" content="https://www.studystore.co/notes/bernoulli-equation-continuity-venturi.html">
+<meta property="og:image" content="https://www.studystore.co/assets/notes/og-bernoulli-equation-continuity-venturi.png?v=32c7ed5bb8">
+<meta name="twitter:image" content="https://www.studystore.co/assets/notes/og-bernoulli-equation-continuity-venturi.png?v=32c7ed5bb8">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bernoulli&#x27;s Equation and the Venturi Effect for the MCAT">
+<meta name="twitter:description" content="Use the continuity equation and Bernoulli&#x27;s equation to find flow speed and pressure in a pipe, with worked Venturi, height and Torricelli examples.">
+<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1512'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23f2b705'/%3E%3Ccircle cx='21' cy='16' r='4' fill='%233ddc84'/%3E%3Ccircle cx='11' cy='21' r='4' fill='%236aa2ff'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("ss-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css?v=2a5ac25cc0">
+<link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="../assets/js/exp.js?v=f84a42976d" defer></script>
+<script src="../assets/js/site.js?v=6a476378b3" defer></script>
+<script src="../assets/js/buy.js?v=54b73e6567" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="gridbg" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html" aria-label="StudyStore home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Study<b>Store</b></span></a>
+<nav aria-label="Main"><a href="../index.html#packs">Packs</a><a href="../notes/index.html">Notes</a><a href="../tools/index.html">Tools</a><a href="../index.html#faq">FAQ</a><a href="../refund.html">Refunds</a></nav>
+<div class="tools">
+<span class="phread" aria-hidden="true">pH <b>1.0</b></span>
+<button class="themetoggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+</div>
+</div><div class="phbar" aria-hidden="true"><i></i></div></header>
+<main id="main">
+<article class="note wrap narrow">
+<p class="eyebrow">Free MCAT study note</p>
+<h1>Bernoulli&#x27;s Equation and the Venturi Effect for the MCAT</h1>
+<p class="meta">By StudyStore &middot; Published 2026-10-20 &middot; 7 min read &middot; 1644 words</p>
+<div class="prose">
+<p>Bernoulli's equation, P + &amp;frac12;&rho;v<sup>2</sup> + &rho;gh = constant along a streamline, is conservation of energy for a moving ideal fluid, with every term written as energy per unit volume. Pair it with the continuity equation, A<sub>1</sub>v<sub>1</sub> = A<sub>2</sub>v<sub>2</sub>, and most flow problems fall out: a narrower section forces faster flow, and at the same height faster flow means lower pressure. That pressure drop at a constriction is the Venturi effect.</p>
+<h2 id="step-one-continuity-sets-the-speed">Step one: continuity sets the speed</h2>
+<p>For an incompressible fluid in steady flow, no volume can pile up or vanish between two points in a pipe. The volume flow rate Q must be the same everywhere:</p>
+<p><strong>Q = Av = constant, so A<sub>1</sub>v<sub>1</sub> = A<sub>2</sub>v<sub>2</sub></strong></p>
+<p>Q is in m<sup>3</sup>/s. A is the cross-sectional area, and for a round pipe A = &pi;r<sup>2</sup>. The radius enters squared, which is where most errors start:</p>
+<div class="tablewrap"><table><thead><tr><th>Change to the pipe</th><th>Change in area</th><th>Change in speed</th></tr></thead><tbody><tr><td>Radius halved</td><td>Area &times; 1/4</td><td>Speed &times; 4</td></tr><tr><td>Radius doubled</td><td>Area &times; 4</td><td>Speed &times; 1/4</td></tr><tr><td>Diameter cut to 1/3</td><td>Area &times; 1/9</td><td>Speed &times; 9</td></tr></tbody></table></div>
+<p>When a pipe splits into branches, the rule applies to the total area: whatever volume per second enters the junction must leave through all the branches combined. This explains why blood moves slowly through capillaries even though each capillary is tiny: there are so many of them that their combined cross-sectional area is far larger than the aorta's, so the average speed there is far lower.</p>
+<h2 id="step-two-bernoulli-sets-the-pressure">Step two: Bernoulli sets the pressure</h2>
+<p>Bernoulli's equation compares two points on the same streamline:</p>
+<p><strong>P<sub>1</sub> + &amp;frac12;&rho;v<sub>1</sub><sup>2</sup> + &rho;gh<sub>1</sub> = P<sub>2</sub> + &amp;frac12;&rho;v<sub>2</sub><sup>2</sup> + &rho;gh<sub>2</sub></strong></p>
+<p>Read each term as an energy density in J/m<sup>3</sup>, which is the same unit as pascals:</p>
+<ul><li>P is the static pressure, the push the fluid exerts on the pipe wall.</li><li>&amp;frac12;&rho;v<sup>2</sup> is kinetic energy per unit volume, sometimes called dynamic pressure. Compare it with &amp;frac12;mv<sup>2</sup>: the mass has been replaced by density.</li><li>&rho;gh is gravitational potential energy per unit volume. Compare it with mgh.</li></ul>
+<p>The sum stays constant, so if one term rises another must fall. In a horizontal pipe the &rho;gh terms cancel, and the trade is purely between pressure and speed. If the fluid is not moving at all, the speed terms vanish and the equation reduces to the hydrostatic result, P<sub>deep</sub> = P<sub>shallow</sub> + &rho;g&Delta;h.</p>
+<p>Why does pressure fall where flow speeds up? A fluid parcel entering a constriction must accelerate, and something must push it forward. The only push available is a pressure difference, higher behind the parcel than ahead of it. So the pressure has to be lower in the fast, narrow section.</p>
+<figure><img src="../assets/notes/bernoulli-equation-continuity-venturi.png?v=7a3b3038c5" alt="Venturi tube profile above a plot of flow speed and pressure change along the tube, computed from continuity and Bernoulli for water" loading="lazy"><figcaption>When the radius halves, speed rises fourfold and static pressure drops by 4.8 kPa. Both recover in the wide section downstream.</figcaption></figure>
+<h3 id="the-assumptions-behind-it">The assumptions behind it</h3>
+<p>Bernoulli's equation as written assumes an ideal fluid:</p>
+<ol><li>Incompressible (constant density). Good for liquids and for slow gas flows.</li><li>Nonviscous, so no energy is lost to internal friction.</li><li>Steady flow, with velocity at each point not changing in time.</li><li>Laminar flow along a streamline, without turbulence.</li></ol>
+<p>Real fluids in long, narrow tubes violate assumption 2. In that case pressure also falls steadily along the tube even where the area is constant, and Poiseuille's law describes the drop instead: Q = &Delta;P&pi;r<sup>4</sup>/(8&eta;L). Halving the radius in that regime raises resistance 16-fold. Keep the two laws separate. Bernoulli tracks energy trades in an ideal fluid; Poiseuille tracks energy lost to viscosity.</p>
+<h2 id="worked-example-1-a-horizontal-venturi">Worked example 1: a horizontal Venturi</h2>
+<p>Water (&rho; = 1000 kg/m<sup>3</sup>) flows at 0.80 m/s through a horizontal pipe of radius 3.0 cm, which narrows to a radius of 1.5 cm. Find the speed in the narrow section and the pressure difference.</p>
+<ol><li>The radius ratio is 2, so the area ratio is 2<sup>2</sup> = 4 and v<sub>2</sub> = 4 &times; 0.80 = <strong>3.2 m/s</strong>.</li><li>The pipe is horizontal, so P<sub>1</sub> - P<sub>2</sub> = &amp;frac12;&rho;(v<sub>2</sub><sup>2</sup> - v<sub>1</sub><sup>2</sup>).</li><li>P<sub>1</sub> - P<sub>2</sub> = 0.5 &times; 1000 &times; (10.24 - 0.64) = 0.5 &times; 1000 &times; 9.6 = <strong>4800 Pa, about 4.8 kPa</strong>.</li></ol>
+<p>The flow rate is Q = &pi;(0.030)<sup>2</sup>(0.80), about 2.3 &times; 10<sup>-3</sup> m<sup>3</sup>/s, or 2.3 liters per second, in both sections. A Venturi meter uses exactly this logic in reverse: measure the pressure difference with two vertical tubes, then solve for the speed and the flow rate.</p>
+<h2 id="worked-example-2-pushing-water-uphill">Worked example 2: pushing water uphill</h2>
+<p>Water flows through a pipe of constant diameter from a basement up to a faucet 4.0 m higher. How much lower is the pressure at the faucet while the water is flowing?</p>
+<ol><li>Same diameter means same area, so continuity gives v<sub>1</sub> = v<sub>2</sub>. The speed terms cancel.</li><li>Bernoulli leaves P<sub>1</sub> - P<sub>2</sub> = &rho;g(h<sub>2</sub> - h<sub>1</sub>) = 1000 &times; 9.8 &times; 4.0 = <strong>39,200 Pa, about 39 kPa</strong>.</li></ol>
+<p>The water is not slowing down. The pressure, not the speed, pays for the climb. This is the case students miss when they memorize "faster means lower pressure" without the words "at the same height."</p>
+<h2 id="worked-example-3-torricelli-s-theorem">Worked example 3: Torricelli's theorem</h2>
+<p>An open water tank has a small hole 0.45 m below the water surface. The tank is wide, so the surface drops so slowly that its speed is close to zero. How fast does water leave the hole?</p>
+<p>Apply Bernoulli between the surface (point 1) and the hole (point 2). Both are open to the atmosphere, so P<sub>1</sub> = P<sub>2</sub>, and v<sub>1</sub> is about 0. What remains is &rho;gh = &amp;frac12;&rho;v<sub>2</sub><sup>2</sup>, so</p>
+<p>v = &radic;(2gh) = &radic;(2 &times; 9.8 &times; 0.45) = <strong>about 3.0 m/s</strong></p>
+<p>That is the same speed an object would reach falling 0.45 m, and density cancels, so oil would leave at the same speed. If the hole has an area of 2.0 cm<sup>2</sup> (2.0 &times; 10<sup>-4</sup> m<sup>2</sup>), the outflow is Q = Av, about 5.9 &times; 10<sup>-4</sup> m<sup>3</sup>/s, or 0.59 L/s, ignoring the slight narrowing of a real jet.</p>
+<h2 id="blood-vessels-the-classic-applications">Blood vessels: the classic applications</h2>
+<p>Two clinical setups show up again and again in physiology-flavored physics questions.</p>
+<ul><li><strong>Narrowed artery (stenosis).</strong> Continuity says blood speeds up through the narrow segment. In the ideal Bernoulli picture, the faster flow comes with lower static pressure on the wall at that spot. Real blood is viscous, so the narrowing also raises resistance sharply, following the r<sup>4</sup> dependence in Poiseuille's law.</li><li><strong>Widened artery (aneurysm).</strong> The opposite trade. The wide section has slower flow, and by Bernoulli its static pressure is higher than in the normal segments nearby, which pushes outward on an already weakened wall.</li></ul>
+<p>A careful answer names both principles: continuity for the speed, Bernoulli for the pressure at a given height.</p>
+<h2 id="common-traps">Common traps</h2>
+<ul><li><strong>Holding v constant instead of Q.</strong> Flow rate is what is conserved. Speed changes with area.</li><li><strong>Using radius ratios as area ratios.</strong> Area goes as r<sup>2</sup>. A pipe with one third the diameter has one ninth the area and nine times the speed.</li><li><strong>Dropping the height term.</strong> "Faster flow means lower pressure" is only true at the same height. In a vertical or sloped pipe, include &rho;gh.</li><li><strong>Using &rho; = 1 for water.</strong> In SI units, water is 1000 kg/m<sup>3</sup>. Using 1 g/cm<sup>3</sup> with meters per second gives an answer a thousand times too small.</li><li><strong>Thinking density matters for Torricelli.</strong> Exit speed depends only on the depth of the hole below the surface.</li><li><strong>Applying Bernoulli to long viscous flow.</strong> If friction matters, pressure falls along a uniform tube, and Poiseuille's law is the right tool.</li><li><strong>Confusing static pressure with total energy.</strong> The pressure on the wall drops in a constriction, but the fluid has not lost energy. It has converted pressure energy into kinetic energy, and it converts it back downstream.</li></ul>
+<h2 id="one-minute-recap">One-minute recap</h2>
+<p>Continuity: Q = Av is constant, so narrowing a pipe speeds the flow, and speed scales with 1/r<sup>2</sup>. Bernoulli: P + &amp;frac12;&rho;v<sup>2</sup> + &rho;gh is constant along a streamline for an ideal fluid, each term an energy per volume in pascals. At constant height, faster flow means lower static pressure (Venturi effect). At constant speed, higher means lower pressure by &rho;g&Delta;h. With the fluid at rest it becomes the hydrostatic equation, and for a hole in an open tank it gives Torricelli's v = &radic;(2gh). Viscous losses in long tubes belong to Poiseuille's law.</p>
+</div>
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Fluids and Gas Behavior is a $13 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/4b-fluids-gases.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
+<p class="meta">Try each question first, then click it to reveal the answer.</p>
+<div class="quiz"><details class="q"><summary>1. A pipe carrying water at 1.2 m/s narrows to one third of its original diameter. What is the speed in the narrow section?</summary><div><p>One third the diameter means one ninth the area, so the speed is 9 × 1.2 = 10.8 m/s.</p></div></details><details class="q"><summary>2. Water in a level pipe accelerates from 2.0 m/s to 4.0 m/s as the pipe narrows. By how much does the static pressure fall? (ρ = 1000 kg/m³)</summary><div><p>ΔP = ½ρ(v₂² - v₁²) = 0.5 × 1000 × (16 - 4) = 6000 Pa, so the pressure falls by 6.0 kPa.</p></div></details><details class="q"><summary>3. An open tank holds glycerin, which is denser than water, with a small hole 0.80 m beneath the liquid level. How fast does glycerin leave the hole compared with water from the same depth?</summary><div><p>At the same speed, about 4.0 m/s from v = √(2gh). Density cancels in Torricelli's theorem.</p></div></details><details class="q"><summary>4. Water rises through a vertical pipe of constant diameter by 2.0 m while flowing. How does the pressure at the top compare with the bottom? (ρ = 1000 kg/m³, g = 9.8 m/s²)</summary><div><p>Speed is unchanged because the area is unchanged, so the top pressure is lower by ρgh = 19,600 Pa, about 20 kPa.</p></div></details><details class="q"><summary>5. Which assumption of Bernoulli's equation fails most clearly for blood flowing through a long narrow arteriole?</summary><div><p>The nonviscous assumption. Viscous friction makes pressure fall steadily along the vessel, which Poiseuille's law describes.</p></div></details></div>
+<h2>Keep studying</h2>
+<ul><li><a href="work-energy-theorem-conservation-of-energy.html">Work-Energy Theorem and Conservation of Energy for the MCAT</a></li><li><a href="index.html">All free notes</a></li></ul>
+
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Fluids and Gas Behavior is a $13 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/4b-fluids-gases.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div>
+<p class="flabel">StudyStore</p>
+<p>Original, high-yield MCAT study packs. Written from scratch, checked card by card.</p>
+</div>
+<div>
+<p class="flabel">Shop</p>
+<p class="links"><a href="../index.html#packs">Packs</a><a href="../products/index.html">All packs</a><a href="../notes/index.html">Free notes</a></p>
+</div>
+<div>
+<p class="flabel">Policies</p>
+<p class="links"><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><a href="../refund.html">Refund policy</a></p>
+</div>
+</div>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+<p class="wordmark" aria-hidden="true">Study<b>Store</b></p>
+</div></footer>
+</body>
+</html>
