@@ -1317,8 +1317,23 @@
         "Social control and sanctions",
         "Assimilation and multiculturalism"
       ],
-      "status": "coming_soon",
-      "contents": null,
+      "status": "available",
+      "contents": {
+        "cards": 523,
+        "card_types": {
+          "sa": 303,
+          "cz": 55,
+          "mc": 82,
+          "tf": 73,
+          "io": 10
+        },
+        "questions": 49,
+        "passage_sets": 4,
+        "diagrams": 22,
+        "guide_pages": 11,
+        "cheatsheet_pages": 3,
+        "validation": "CLEAN"
+      },
       "ls_name": "StudyStore MCAT 7B: Social Processes and Group Behavior",
       "variant_id": null,
       "checkout_url": null
@@ -1707,7 +1722,7 @@
         "6c-emotion-stress",
         "9b-demographics"
       ],
-      "ready_count": 6,
+      "ready_count": 7,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Psych/Soc Complete Section",
       "variant_id": null,
@@ -1754,7 +1769,7 @@
         "9b-demographics",
         "cars-strategy"
       ],
-      "ready_count": 24,
+      "ready_count": 25,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Complete MCAT (all sections plus CARS)",
       "variant_id": null,

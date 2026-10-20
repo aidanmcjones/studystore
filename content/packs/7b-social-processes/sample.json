@@ -1,0 +1,151 @@
+{
+ "slug": "7b-social-processes",
+ "cards": [
+  {
+   "src": "assets/packs/7b-social-processes/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 642
+  },
+  {
+   "src": "assets/packs/7b-social-processes/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 618
+  },
+  {
+   "src": "assets/packs/7b-social-processes/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 375
+  },
+  {
+   "src": "assets/packs/7b-social-processes/card-4.webp",
+   "alt": "Sample multiple choice card: An expert pool player and a novice each play in front of a crowd. According to Zajonc, what is the likely resu",
+   "w": 680,
+   "h": 412
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/7b-social-processes/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/7b-social-processes/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/7b-social-processes/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/7b-social-processes/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A skilled typist and a beginner each type in front of coworkers. According to Zajonc's drive theory, what is most likely?",
+   "options": [
+    "The typist improves and the beginner worsens",
+    "Both improve because arousal always helps",
+    "Both worsen because evaluation is stressful",
+    "The beginner improves and the typist worsens"
+   ],
+   "answer": "A",
+   "explanation": "Arousal strengthens the dominant response, which is accurate typing for the expert and errors for the beginner. Neither uniform improvement nor uniform decline fits, and reversing the pattern contradicts the theory.",
+   "subtopic": "Social facilitation"
+  },
+  {
+   "stem": "The Stanford prison experiment is most criticized because:",
+   "options": [
+    "It used too many participants",
+    "Guards were coached and demand characteristics were present",
+    "It lacked a control group because of a large sample",
+    "It showed no change in behavior"
+   ],
+   "answer": "B",
+   "explanation": "Reports of guard instruction and role expectations undermine claims that roles alone produced abuse. The study had few participants, and its dramatic results are the source of its fame, not an absence of change.",
+   "subtopic": "Deindividuation"
+  },
+  {
+   "stem": "Which feature distinguishes groupthink from group polarization?",
+   "options": [
+    "Suppression of dissent to preserve unanimity",
+    "Shift toward an extreme position",
+    "Discussion among like-minded people",
+    "Increase in arousal"
+   ],
+   "answer": "A",
+   "explanation": "Groupthink involves self-censorship and pressure on dissenters. Polarization involves shifting to extremes through discussion, so the other options describe polarization or neither.",
+   "subtopic": "Groupthink"
+  },
+  {
+   "stem": "Milgram's agentic state describes a person who:",
+   "options": [
+    "Acts according to personal conscience",
+    "Follows peers",
+    "Feels responsible to the authority and not for the consequences",
+    "Hides in a crowd"
+   ],
+   "answer": "C",
+   "explanation": "People in the agentic state see themselves as instruments. Conscience-driven action is autonomous, peer following is conformity, and crowd anonymity is deindividuation.",
+   "subtopic": "Obedience (Milgram)"
+  },
+  {
+   "stem": "A new hire learns office customs by watching coworkers. This is mainly:",
+   "options": [
+    "Primary socialization in the family",
+    "Anticipatory socialization",
+    "Secondary socialization in the workplace",
+    "Resocialization in a total institution"
+   ],
+   "answer": "C",
+   "explanation": "Adult learning in a new setting is secondary socialization. Primary socialization is early childhood, anticipatory socialization precedes a role, and total institutions are isolated settings.",
+   "subtopic": "Socialization agents"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Triplett's 1898 children's study used what task to show social effects on performance?",
+   "back": "Winding fishing reels; children wound faster when working beside another child than when alone."
+  },
+  {
+   "type": "cz",
+   "text": "Zajonc's drive theory: the presence of others raises {{c1::arousal}}, which enhances the {{c2::dominant response}}.",
+   "extra": "The dominant response is correct on easy tasks and wrong on hard ones."
+  },
+  {
+   "type": "mc",
+   "stem": "Which phenomenon describes a performance advantage from the presence of coactors working on the same task?",
+   "options": [
+    "Coaction effect",
+    "Diffusion of responsibility",
+    "Pluralistic ignorance",
+    "Deindividuation"
+   ],
+   "answer": "A",
+   "why": "Coaction is social facilitation with others doing the same task, as in Triplett's cyclists. The other options describe group effects on helping, belief, or restraint."
+  },
+  {
+   "type": "tf",
+   "statement": "Cottrell argued that mere presence alone, even of a blindfolded audience, is enough to produce social facilitation.",
+   "truth": false,
+   "why": "Cottrell found that a blindfolded audience did not produce the effect, so he attributed arousal to evaluation apprehension. Zajonc is the mere presence theorist."
+  }
+ ]
+}
