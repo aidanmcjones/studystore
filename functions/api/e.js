@@ -2,7 +2,7 @@
 // Stores only: server timestamp, random session id, page path, experiment/variant,
 // event name, referrer domain, utm_source, utm_campaign. Never stores IPs, user
 // agents, cookies, or anything typed by the visitor.
-const EVENTS = new Set(["view", "cta_click", "checkout_click", "sampler_click"]);
+const EVENTS = new Set(["view", "cta_click", "checkout_click", "sampler_click", "subscribe"]);
 const MAX_BODY = 2048;
 const IP_LIMIT = 60;        // requests per minute per IP, held in memory only
 const SID_LIMIT = 200;      // rows per session id per hour (checked in D1)

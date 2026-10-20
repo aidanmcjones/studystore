@@ -606,3 +606,37 @@ html:not(.js) [data-pickscene]:not(#kinetics){display:none}
 /* home quiz bank: without JS show only the first 3 questions; source link under each explanation */
 html:not(.js) .qitem.qx{display:none}
 .qexp .qsrc{display:block;margin-top:8px;font-size:.78rem;opacity:.75}
+
+/* launch waitlist box (waitlist.py, assets/js/waitlist.js). Same ink panel as .cta, but not an aside.cta
+   so the note_cta experiment and cta_click tracking never touch it. */
+.waitlist{display:flex;flex-wrap:wrap;gap:20px 32px;align-items:flex-start;background:var(--ink);color:var(--bg);border-radius:14px;padding:28px;margin:2.4em 0;position:relative;overflow:hidden}
+.waitlist::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,#f2b705,#3fae5a,#1c5bd0)}
+.waitlist .wlcopy{flex:1 1 260px;min-width:0}
+.waitlist .wlform,.waitlist .wldone{flex:1 1 280px;min-width:0}
+.waitlist .eyebrow{color:color-mix(in srgb,var(--bg) 70%,var(--ink));margin-bottom:12px}
+.waitlist h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;line-height:1.1;margin:0 0 .4em;padding:0;border:0}
+.waitlist p{color:color-mix(in srgb,var(--bg) 78%,var(--ink));font-size:.95rem;margin:0 0 .7em;max-width:56ch}
+.waitlist a{color:var(--bg)}
+.waitlist label{display:block;font-weight:600;font-size:.9rem;margin:0 0 6px;color:var(--bg)}
+.waitlist .wlopt{font-weight:400;color:color-mix(in srgb,var(--bg) 70%,var(--ink))}
+.waitlist input:not([type=hidden]),.waitlist select{display:block;width:100%;margin:0 0 14px;font:400 1rem/1.4 var(--f-body);padding:10px 12px;border:1px solid var(--line-2);border-radius:8px;background:var(--bg);color:var(--ink);min-height:44px}
+.waitlist input:focus-visible,.waitlist select:focus-visible,.waitlist .btn:focus-visible,.waitlist a:focus-visible{outline:2px solid var(--acid);outline-offset:3px}
+.waitlist .btn{width:100%;justify-content:center;background:var(--acid);border-color:var(--acid);color:#0d1512}
+.waitlist .btn::before{background:var(--bg)}
+.waitlist .btn[disabled]{opacity:.7;cursor:progress}
+.waitlist .wlnote{font-size:.82rem;margin:12px 0 0}
+.waitlist .wlstatus{margin:6px 0 0;min-height:1.2em;font-size:.9rem}
+.waitlist .wlstatus.err{color:#ff8a90}
+.waitlist .wldone{align-self:center;border:1px solid color-mix(in srgb,var(--bg) 30%,transparent);border-radius:10px;padding:18px}
+.waitlist .wldone-h{font:600 1.2rem/1.2 var(--f-display);color:var(--bg)}
+.waitlist .wldone:focus{outline:none}
+.wlsec{padding:0 0 clamp(24px,4vw,48px)}
+@media (max-width:420px){.waitlist{padding:22px 18px;border-radius:12px}}
+/* owner subscriber stats (/admin/subscribers.html) */
+.stile{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:12px 0 8px}
+.stile div{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:14px}
+.stile b{display:block;font:600 1.8rem/1.1 var(--f-display)}
+.stable{width:100%;border-collapse:collapse;font-size:.92rem;margin:8px 0 20px}
+.stable th,.stable td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.stable td.n,.stable th.n{text-align:right;font-family:var(--f-mono);white-space:nowrap}
+.sbar{display:inline-block;height:8px;border-radius:4px;background:var(--neutral);vertical-align:middle;margin-right:8px}

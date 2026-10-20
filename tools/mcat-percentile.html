@@ -29,14 +29,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
-<link rel="stylesheet" href="../assets/style.css?v=9b1ef481a2">
+<link rel="stylesheet" href="../assets/style.css?v=375ff27687">
 <link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
 <style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
 <script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
-<script src="../assets/js/exp.js?v=f84a42976d" defer></script>
+<script src="../assets/js/exp.js?v=6f3a4358d6" defer></script>
 <script src="../assets/js/site.js?v=1b40ce4c4e" defer></script>
 <script src="../assets/js/buy.js?v=54b73e6567" defer></script>
 <script src="../assets/js/report.js?v=1e5d24d48f" defer></script>
+<script src="../assets/js/waitlist.js?v=749a291649" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -76,6 +77,29 @@
 <p>The total score is the sum of four section scores, each from 118 to 132, so the lowest possible total is 472 and the highest is 528. When you enter a target percentile, the tool returns the lowest total score that reaches it and shows one balanced set of section scores that adds up to that total. It does not convert practice-test raw scores to scaled scores, because AAMC does not publish such a conversion.</p>
 <p>Planning backward from a target? Pair this with the <a href="mcat-study-schedule.html">study schedule generator</a>. This page is not affiliated with or endorsed by AAMC; the numbers are public facts transcribed from the source linked above.</p></div>
 <aside class="cta"><div><strong>Want these facts as spaced-repetition cards?</strong><p>Amino Acids, Proteins and Enzymes is a $19 pack with original Anki cards, a study guide and a printable cheat sheet. <a href="../products/1a-amino-acids-proteins.html" data-track="cta">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<div class="noembed"><section class="waitlist" id="waitlist" aria-labelledby="waitlist-h">
+<div class="wlcopy">
+<p class="eyebrow mono"><span class="dot"></span>Launch list</p>
+<h2 id="waitlist-h">Get launch day access</h2>
+<p>StudyStore packs are available soon; checkout is not open yet. Join the list and we send you one email the day it opens.</p>
+<p>Free right now: the <a href="../notes/index.html" data-track="sampler">free sampler of study notes</a> and <a href="../practice/index.html">practice questions</a>.</p>
+</div>
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist>
+<label for="wl-email">Email</label>
+<input id="wl-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<label for="wl-month">When do you test? <span class="wlopt">(optional)</span></label>
+<select id="wl-month" name="exam_month"><option value="">Not sure</option><option value="2027-01">January 2027</option><option value="2027-02">February 2027</option><option value="2027-03">March 2027</option><option value="2027-04">April 2027</option><option value="2027-05">May 2027</option><option value="2027-06">June 2027</option><option value="2027-07">July 2027</option><option value="2027-08">August 2027</option><option value="2027-09">September 2027</option></select>
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="hp" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="source_page" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn">Get launch day access</button>
+<p class="wlnote">One launch email, then only if you opt in. Unsubscribe anytime. <a href="../privacy.html">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">You are on the list.</p>
+<p>We will send one email when checkout opens. While you wait, <a href="../notes/index.html" data-track="sampler">start with the free sampler notes</a>.</p>
+</div>
+</section></div>
 <section class="noembed"><h2>Questions</h2><details class="q"><summary>Where do the percentile numbers come from?</summary><div><p>From the AAMC table Summary of MCAT Total and Section Scores, Percentile Ranks in Effect May 1, 2026 to April 30, 2027, based on all MCAT results from 2023, 2024 and 2025. StudyStore transcribed the numbers and checked them against the source.</p></div></details><details class="q"><summary>What does a percentile rank mean?</summary><div><p>It is the percentage of scores equal to or less than a given score. For example, AAMC notes that 74 percent of total scores were at or below 508 in the reference group.</p></div></details><details class="q"><summary>Can this convert my practice test raw score to a scaled score?</summary><div><p>No. AAMC does not publish a raw-to-scaled conversion, so this tool does not estimate one.</p></div></details><details class="q"><summary>How often is the table updated?</summary><div><p>AAMC updates percentile ranks each May 1. This page states the date range its numbers are valid for and shows a warning once that range has passed.</p></div></details></section>
 <section class="panel embedbox noembed"><h2>Embed this tool</h2><p class="meta">Free to embed on a club, tutoring or study-group site. The credit link stays in the snippet.</p><textarea id="embed-code" readonly aria-label="Embed code"></textarea><p><button type="button" class="tbtn" id="embed-copy">Copy embed code</button></p></section>
 <section class="noembed"><h2>More free tools</h2><ul><li><a href="index.html">All free tools</a></li><li><a href="amino-acid-quiz.html">Amino Acid Quiz</a></li><li><a href="pka-trainer.html">pKa and Charge at pH Trainer</a></li><li><a href="mcat-study-schedule.html">MCAT Study Schedule Generator</a></li><li><a href="../notes/index.html">Free study notes</a></li></ul></section>

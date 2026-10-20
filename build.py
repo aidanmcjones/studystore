@@ -5,6 +5,7 @@ Usage: python3 build.py
 Placeholders in templates:
   {{root}} relative path to site root, {{site_name}}, {{disclaimer}}, {{contact}},
   {{updated}}, {{base_url}}, {{buy:SLUG}}, {{price:SLUG}}, {{title:SLUG}},
+  {{waitlist}} (launch list box, waitlist.py),
   any other top-level site.json string key.
 """
 import json, re, html, math
@@ -13,6 +14,7 @@ from mdlite import convert, parse_frontmatter, extract_quiz
 import products_build as PB  # catalog product/bundle/thanks pages (G01)
 import practice_build
 from assetver import version_assets
+import waitlist
 
 ROOT = Path(__file__).parent
 site = json.loads((ROOT / "site.json").read_text())
@@ -29,12 +31,13 @@ PAGES = [
     ("terms.html", "terms.html", "Terms of Sale | StudyStore",
      "Terms of sale for StudyStore digital study packs, sold through Lemon Squeezy as merchant of record.", False),
     ("privacy.html", "privacy.html", "Privacy Policy | StudyStore",
-     "StudyStore sets no cookies and collects no personal data. Anonymous first-party page and click counts only. Payments are handled by Lemon Squeezy.", False),
+     "StudyStore sets no cookies. Anonymous first-party page and click counts, and your email only if you join the launch list. Payments by Lemon Squeezy.", False),
     ("404.html", "404.html", "Page not found | StudyStore", "Page not found.", True),
     ("report.html", "report.html", "Report a problem or suggest something | StudyStore",
      "Tell StudyStore about a broken link, a wrong answer, a typo or a display problem, or suggest a topic.", True),
     ("owner.html", "owner.html", "Owner sign-in | StudyStore", "Owner sign-in.", True),
     ("admin_reports.html", "admin/reports.html", "Reports | StudyStore", "Owner report review.", True),
+    ("admin_subscribers.html", "admin/subscribers.html", "Subscribers | StudyStore", "Owner launch list stats.", True),
 ]
 
 def contact():
@@ -58,6 +61,7 @@ def render(text, root):
             if kind == "price": return products[slug]["price"]
             if kind == "title": return html.escape(products[slug]["title"])
         if k == "latest_notes": return LATEST_NOTES
+        if k == "waitlist": return waitlist.box(root)
         v = PB.placeholder(site, products, k, root)  # catalog data: pack_grid, feat:*, stat:*
         if v is not None: return v
         if k in site and isinstance(site[k], str): return site[k]
@@ -209,6 +213,7 @@ def build_note(n, all_notes):
 <ul>{rel}<li><a href="index.html">All free notes</a></li></ul>
 {practice_build.note_links(slug, PRACTICE_LIVE, None)}
 {cta}
+{{{{waitlist}}}}
 <p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
 <p class="meta"><a class="reportlink" href="{{{{root}}}}report.html" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
 </article>"""
@@ -234,7 +239,8 @@ idx = f"""<div class="wrap hero" style="padding-bottom:24px">
 <p class="lead">Plain-language MCAT biochemistry explainers, each with an original diagram and a 5-question mini-quiz. Free, no signup.</p>
 <p class="meta"><a href="../practice/index.html">Looking for practice questions? Browse the free MCAT practice questions by topic.</a></p>
 </div>
-<section><div class="wrap"><div class="notegrid">{"".join(note_card(n, "", "../assets/notes/") for n in notes)}</div></div></section>"""
+<section><div class="wrap"><div class="notegrid">{"".join(note_card(n, "", "../assets/notes/") for n in notes)}</div></div></section>
+<section><div class="wrap narrow">{{{{waitlist}}}}</div></section>"""
 emit("notes/index.html", "Free MCAT Study Notes | StudyStore",
      "Free MCAT biochemistry study notes with original diagrams and mini-quizzes: amino acids, enzyme kinetics, inhibition, protein structure, and more.",
      idx, lastmod=max((n["meta"]["published"] for n in notes), default=None))

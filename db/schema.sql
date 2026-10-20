@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS events (
   page TEXT NOT NULL,             -- path only, no query string
   exp TEXT NOT NULL DEFAULT '',   -- experiment id ('' for plain events)
   variant TEXT NOT NULL DEFAULT '',
-  event TEXT NOT NULL,            -- view | cta_click | checkout_click | sampler_click
+  event TEXT NOT NULL,            -- view | cta_click | checkout_click | sampler_click | subscribe
   ref_domain TEXT NOT NULL DEFAULT '',
   utm_source TEXT NOT NULL DEFAULT '',
   utm_campaign TEXT NOT NULL DEFAULT ''
@@ -42,3 +42,20 @@ CREATE TABLE IF NOT EXISTS reports (
 );
 CREATE INDEX IF NOT EXISTS reports_status ON reports(status);
 CREATE INDEX IF NOT EXISTS reports_dedupe ON reports(dedupe, ts);
+
+-- Launch waitlist (functions/api/subscribe.js). Stores only what the visitor submits: email (lower-cased),
+-- optional test month (YYYY-MM), the page path the form was on, first-touch utm_source/utm_campaign,
+-- a status and a random unsubscribe token. No IP, user agent or cookies.
+CREATE TABLE IF NOT EXISTS subscribers (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  ts INTEGER,                          -- unix seconds (server time) of signup
+  email TEXT UNIQUE,                   -- lower-cased, max 254 chars
+  exam_month TEXT,                     -- 'YYYY-MM' or '' (not sure / not given)
+  source_page TEXT,                    -- path only, no query string
+  utm_source TEXT,
+  utm_campaign TEXT,
+  status TEXT DEFAULT 'active',        -- active | unsubscribed
+  unsub_token TEXT                     -- crypto.randomUUID(), used by /api/unsubscribe?t=
+);
+CREATE INDEX IF NOT EXISTS subscribers_ts ON subscribers(ts);
+CREATE UNIQUE INDEX IF NOT EXISTS subscribers_unsub ON subscribers(unsub_token);

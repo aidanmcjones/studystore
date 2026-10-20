@@ -29,14 +29,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
-<link rel="stylesheet" href="../assets/style.css?v=9b1ef481a2">
+<link rel="stylesheet" href="../assets/style.css?v=375ff27687">
 <link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
 <style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
 <script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
-<script src="../assets/js/exp.js?v=f84a42976d" defer></script>
+<script src="../assets/js/exp.js?v=6f3a4358d6" defer></script>
 <script src="../assets/js/site.js?v=1b40ce4c4e" defer></script>
 <script src="../assets/js/buy.js?v=54b73e6567" defer></script>
 <script src="../assets/js/report.js?v=1e5d24d48f" defer></script>
+<script src="../assets/js/waitlist.js?v=749a291649" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -114,6 +115,29 @@
 <ul><li><a href="index.html">All free notes</a></li></ul>
 
 <aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>CARS Strategy and Reasoning Skills is a $12 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/cars-strategy.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<section class="waitlist" id="waitlist" aria-labelledby="waitlist-h">
+<div class="wlcopy">
+<p class="eyebrow mono"><span class="dot"></span>Launch list</p>
+<h2 id="waitlist-h">Get launch day access</h2>
+<p>StudyStore packs are available soon; checkout is not open yet. Join the list and we send you one email the day it opens.</p>
+<p>Free right now: the <a href="../notes/index.html" data-track="sampler">free sampler of study notes</a> and <a href="../practice/index.html">practice questions</a>.</p>
+</div>
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist>
+<label for="wl-email">Email</label>
+<input id="wl-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<label for="wl-month">When do you test? <span class="wlopt">(optional)</span></label>
+<select id="wl-month" name="exam_month"><option value="">Not sure</option><option value="2027-01">January 2027</option><option value="2027-02">February 2027</option><option value="2027-03">March 2027</option><option value="2027-04">April 2027</option><option value="2027-05">May 2027</option><option value="2027-06">June 2027</option><option value="2027-07">July 2027</option><option value="2027-08">August 2027</option><option value="2027-09">September 2027</option></select>
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="hp" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="source_page" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn">Get launch day access</button>
+<p class="wlnote">One launch email, then only if you opt in. Unsubscribe anytime. <a href="../privacy.html">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">You are on the list.</p>
+<p>We will send one email when checkout opens. While you wait, <a href="../notes/index.html" data-track="sampler">start with the free sampler notes</a>.</p>
+</div>
+</section>
 <p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
 <p class="meta"><a class="reportlink" href="../report.html" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
 </article>

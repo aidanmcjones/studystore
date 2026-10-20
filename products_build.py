@@ -529,7 +529,8 @@ def build_all(site, items, emit):
          '<div class="wrap phero"><p class="eyebrow mono"><span class="dot"></span>Catalog</p><h1 class="split">MCAT packs</h1>'
          f'<p class="lead reveal">One pack per MCAT content category. {len(available(site))} of {len(site.get("products", []))} are ready now; '
          'each one ships only after it passes an accuracy review.</p></div>'
-         '<section class="packs"><div class="wrap">{{pack_grid}}</div></section>')
+         '<section class="packs"><div class="wrap">{{pack_grid}}</div></section>'
+         '<section><div class="wrap narrow">{{waitlist}}</div></section>')
     emit("thanks.html", "Thank you | StudyStore", "Your StudyStore download.",
          (ROOT / "templates" / "thanks.html").read_text(), noindex=True)
 

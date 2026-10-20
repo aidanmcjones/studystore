@@ -76,3 +76,15 @@ finds pages through `sitemap.xml` (declared in `robots.txt`) and ordinary crawli
   `POST /api/reports/<id>`), and see the queue and recent resolutions written back by the private `feedback` job.
 - Lifecycle: pending (public) -> approved -> in_progress -> fixed | needs_human | rejected.
 - Tests: `node tests/functions_test.mjs` (mocked D1).
+
+## Launch waitlist
+
+- `waitlist.py` renders the "Get launch day access" box for the `{{waitlist}}` placeholder (home, product, bundle and
+  catalog pages, notes and the notes index, practice pages and hubs, tools and the tools index). `assets/js/waitlist.js`
+  posts it to `POST /api/subscribe` (functions/api/subscribe.js) and fires the anonymous `subscribe` event through
+  `window.ssTrack` in exp.js; without JS it is a plain form post.
+- D1 table `subscribers` (migration `db/migrations/004_subscribers.sql`): email, optional 2027 test month, source page,
+  first-touch utm tags, status (active or unsubscribed) and a random `unsub_token`. Unsubscribe link:
+  `/api/unsubscribe?t=<unsub_token>` (GET or one-click POST).
+- `/admin/subscribers.html` (owner only, `GET /api/subscribers`, `?export=csv` for the active list).
+- Tests: `node tests/subscribe_test.mjs` (node:sqlite runs the real migration).

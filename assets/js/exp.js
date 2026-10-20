@@ -2,7 +2,8 @@
  * - Anonymous random session id in localStorage (key ss_sid). No cookies, no PII.
  * - Assigns one variant per experiment per session by weight (sticky), swaps text in
  *   elements marked data-exp="<id>" data-exp-field="<field>" (textContent only).
- * - Sends view, cta_click, checkout_click, sampler_click to /api/e via sendBeacon.
+ * - Sends view, cta_click, checkout_click, sampler_click to /api/e via sendBeacon, plus
+ *   subscribe (launch list signup) through window.ssTrack("subscribe") from waitlist.js.
  * - Appends checkout[custom][exp_<id>]=<variant> to Lemon Squeezy buy links.
  * - Sends nothing when Do Not Track or Global Privacy Control is on.
  */
@@ -122,6 +123,9 @@
       } catch (e) {}
     }
   }
+
+  // Named events from other scripts (waitlist.js). Only known names; the email is never sent here.
+  W.ssTrack = function (event) { if (event === "subscribe") send(event, W.__ssSeen || {}); };
 
   D.addEventListener("click", function (ev) {
     var a = ev.target && ev.target.closest ? ev.target.closest("a") : null; if (!a) return;

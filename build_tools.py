@@ -134,6 +134,7 @@ def build(emit, site, products, notes_meta):
 <p class="embed-credit">Free tool by <a href="{url}" target="_top">StudyStore</a></p>
 <div class="prose noembed">{explainer}</div>
 {FOOT_CTA if cta else ""}
+<div class="noembed">{{{{waitlist}}}}</div>
 <section class="noembed"><h2>Questions</h2>{faq_html(slug)}</section>
 {EMBED_BOX if embed else ""}
 <section class="noembed"><h2>More free tools</h2><ul><li><a href="index.html">All free tools</a></li>{others}<li><a href="{{{{root}}}}notes/index.html">Free study notes</a></li></ul></section>
@@ -223,7 +224,8 @@ def build(emit, site, products, notes_meta):
                 "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{base}/tools/{s}.html", "name": h} for i, (s, h, _, _) in enumerate(TOOLS)]}
     idx = f"""<div class="wrap phero"><p class="eyebrow mono"><span class="dot"></span>Free MCAT tools</p><h1 class="split">Free tools</h1>
 <p class="lead">Interactive MCAT practice and planning tools. Free, no signup, runs in your browser, and nothing you enter leaves your device.</p></div>
-<section><div class="wrap"><div class="toolgrid">{cards}</div></div></section>"""
+<section><div class="wrap"><div class="toolgrid">{cards}</div></div></section>
+<section><div class="wrap narrow">{{{{waitlist}}}}</div></section>"""
     emit("tools/index.html", "Free MCAT Tools: Amino Acid Quiz, pKa Trainer, Study Planner | StudyStore",
          "Free interactive MCAT tools: amino acid quiz, pKa and charge at pH trainer, 2027 study schedule generator and AAMC percentile lookup. No signup.",
          idx, og_image=f"{base}/assets/tools/og-index.png", head_extra='<link rel="stylesheet" href="{{root}}assets/tools.css">' + ld(itemlist), lastmod=today)

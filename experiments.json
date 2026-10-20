@@ -229,7 +229,7 @@
           "angle": "control: sampler coming",
           "fields": {
             "title": "Free sampler",
-            "body": "A free set of one-page MCAT sheets is on the way. Email signup opens soon. There is no form here yet, and we are not collecting addresses.",
+            "body": "A free set of one-page MCAT sheets is on the way. The free notes are open now, and the launch list below sends one email when checkout opens.",
             "link": "Read the free notes now"
           }
         },
@@ -241,7 +241,7 @@
           "angle": "one-page sheets",
           "fields": {
             "title": "Free one-page MCAT sheets, coming soon",
-            "body": "We are making a free set of one-page sheets. There is no signup form yet and we are not collecting addresses. Until then, the free notes are open to everyone.",
+            "body": "We are making a free set of one-page sheets. Until then, the free notes are open to everyone, no signup needed.",
             "link": "Start with a free note"
           }
         },
@@ -253,7 +253,7 @@
           "angle": "try free today",
           "fields": {
             "title": "Try StudyStore free",
-            "body": "Our free notes are open now, each with an original diagram and a 5-question quiz. One-page sampler sheets are coming soon; there is no signup yet.",
+            "body": "Our free notes are open now, each with an original diagram and a 5-question quiz. One-page sampler sheets are coming soon.",
             "link": "Browse free notes"
           }
         },
@@ -266,7 +266,7 @@
           "theme": "free_sampler_push",
           "fields": {
             "title": "Start free, then pick your pack",
-            "body": "Every free note has an original diagram and a 5-question mini-quiz, and links to the pack that covers its topic. One-page sampler sheets are coming soon; there is no signup yet.",
+            "body": "Every free note has an original diagram and a 5-question mini-quiz, and links to the pack that covers its topic. One-page sampler sheets are coming soon.",
             "link": "Read a free note"
           }
         }
