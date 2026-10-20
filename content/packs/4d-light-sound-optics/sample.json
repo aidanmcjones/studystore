@@ -1,0 +1,151 @@
+{
+ "slug": "4d-light-sound-optics",
+ "cards": [
+  {
+   "src": "assets/packs/4d-light-sound-optics/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 497
+  },
+  {
+   "src": "assets/packs/4d-light-sound-optics/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 704
+  },
+  {
+   "src": "assets/packs/4d-light-sound-optics/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 791
+  },
+  {
+   "src": "assets/packs/4d-light-sound-optics/card-4.webp",
+   "alt": "Sample multiple choice card: A 440 Hz tone passes from air (343 m/s) into water (1500 m/s). What happens to its wavelength?",
+   "w": 680,
+   "h": 384
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/4d-light-sound-optics/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/4d-light-sound-optics/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/4d-light-sound-optics/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/4d-light-sound-optics/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A wave on a string has f = 20 Hz and λ = 0.50 m. The tension is quadrupled while the source still vibrates at 20 Hz. The new wavelength is:",
+   "options": [
+    "0.25 m",
+    "1.0 m",
+    "0.50 m",
+    "2.0 m"
+   ],
+   "answer": "B",
+   "explanation": "Speed is √(T/μ), so quadrupling T doubles v from 10 to 20 m/s. Frequency is fixed by the source at 20 Hz, so λ = v/f = 1.0 m. 0.25 m would result from a halved speed. 0.50 m ignores the speed change, and 2.0 m would need v to quadruple.",
+   "subtopic": "Wave properties: frequency, wavelength, speed"
+  },
+  {
+   "stem": "A sonar pulse in seawater (v = 1500 m/s) returns from the bottom 0.20 s after it is sent. The depth is:",
+   "options": [
+    "300 m",
+    "150 m",
+    "75 m",
+    "7500 m"
+   ],
+   "answer": "B",
+   "explanation": "The pulse goes down and back, so d = vt/2 = 1500 × 0.20/2 = 150 m. 300 m forgets the factor of two. 75 m halves it twice, and 7500 m divides speed by time instead of multiplying.",
+   "subtopic": "Sound production and speed"
+  },
+  {
+   "stem": "An ultrasound echo returns 130 μs after the pulse is sent. In tissue (v = 1540 m/s) the reflector is at a depth of:",
+   "options": [
+    "20 cm",
+    "5.0 cm",
+    "10 cm",
+    "1.0 cm"
+   ],
+   "answer": "C",
+   "explanation": "d = vt/2 = 1540 × 130 × 10<sup>-6</sup>/2 = 0.10 m. 20 cm omits the half. 5.0 cm is the 65 μs result, and 1.0 cm would be an order of magnitude off.",
+   "subtopic": "Ultrasound and medical imaging"
+  },
+  {
+   "stem": "White light enters a glass prism. Compared with red light, violet light in the glass has:",
+   "options": [
+    "A lower speed and a larger deviation",
+    "A higher speed and a larger deviation",
+    "A lower speed and a smaller deviation",
+    "The same speed and a larger deviation"
+   ],
+   "answer": "A",
+   "explanation": "n is larger for violet, so v = c/n is lower, and the greater index also bends it more. A higher speed would go with the red light. A lower speed cannot come with a smaller deviation, and the speeds differ, which is why dispersion occurs.",
+   "subtopic": "Dispersion"
+  },
+  {
+   "stem": "A swimmer opening their eyes underwater sees a blurry image mainly because:",
+   "options": [
+    "The lens of the eye stops accommodating",
+    "Water absorbs visible light strongly",
+    "The retina becomes insensitive in water",
+    "The cornea loses most of its refractive power against water"
+   ],
+   "answer": "D",
+   "explanation": "The cornea (n about 1.38) normally refracts light strongly at the air interface. Against water (n = 1.33) there is almost no index change, so most of the power is lost and the image falls far behind the retina. The lens still works. Water does not absorb enough light over a short path to cause blur, and the retina is unaffected.",
+   "subtopic": "Multiple lens systems and the eye"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "How are wave speed, frequency, and wavelength related?",
+   "back": "v = fλ. In a given medium the speed is fixed, so a higher frequency means a shorter wavelength."
+  },
+  {
+   "type": "cz",
+   "text": "Frequency is measured in {{c1::hertz (Hz)}}, which equals {{c2::cycles per second (s<sup>-1</sup>)}}.",
+   "extra": ""
+  },
+  {
+   "type": "mc",
+   "stem": "A wave has f = 50 Hz and λ = 4.0 m. What is its speed?",
+   "options": [
+    "200 m/s",
+    "12.5 m/s",
+    "54 m/s",
+    "0.08 m/s"
+   ],
+   "answer": "A",
+   "why": "v = fλ = 50 × 4.0 = 200 m/s. Dividing instead of multiplying gives 12.5, the common slip."
+  },
+  {
+   "type": "tf",
+   "statement": "Increasing a wave's amplitude increases its speed in the medium.",
+   "truth": false,
+   "why": "Speed depends on the medium. Amplitude changes the energy carried, not how fast the wave moves."
+  }
+ ]
+}
