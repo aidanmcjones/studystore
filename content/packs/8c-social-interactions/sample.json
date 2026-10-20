@@ -1,0 +1,151 @@
+{
+ "slug": "8c-social-interactions",
+ "cards": [
+  {
+   "src": "assets/packs/8c-social-interactions/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 368
+  },
+  {
+   "src": "assets/packs/8c-social-interactions/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 781
+  },
+  {
+   "src": "assets/packs/8c-social-interactions/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 426
+  },
+  {
+   "src": "assets/packs/8c-social-interactions/card-4.webp",
+   "alt": "Sample multiple choice card: Which is the best example of an ascribed status?",
+   "w": 680,
+   "h": 356
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/8c-social-interactions/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/8c-social-interactions/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/8c-social-interactions/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/8c-social-interactions/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A woman is the youngest child in her family, a pianist, and a first-generation college graduate. Which pair correctly labels two of these statuses?",
+   "options": [
+    "Youngest child: ascribed; pianist: achieved",
+    "Youngest child: achieved; pianist: ascribed",
+    "Pianist: master; graduate: ascribed",
+    "Youngest child: master; graduate: ascribed"
+   ],
+   "answer": "A",
+   "explanation": "Birth order is assigned, while becoming a pianist or graduate takes effort. Master status depends on dominance in others' eyes, not on being listed first.",
+   "subtopic": "Status types: ascribed, achieved, master"
+  },
+  {
+   "stem": "How many pairwise ties exist among 7 people?",
+   "options": [
+    "14",
+    "28",
+    "21",
+    "42"
+   ],
+   "answer": "C",
+   "explanation": "n(n-1)/2 = 7 x 6 / 2 = 21. Fourteen is only n x 2, 28 is the count for 8 people, and 42 forgets to divide n(n-1) by two. Each wrong number comes from a counting slip, not a different formula.",
+   "subtopic": "Groups: primary and secondary"
+  },
+  {
+   "stem": "A clerk refuses a form because a box was written in blue ink instead of black, even though the information is complete. This is best described as:",
+   "options": [
+    "bureaucratic ritualism",
+    "charismatic authority",
+    "role exit",
+    "homophily"
+   ],
+   "answer": "A",
+   "explanation": "Rigid rule following that defeats the purpose is Merton's ritualism. The scenario does not involve a charismatic leader, role change, or tie formation.",
+   "subtopic": "Bureaucracy and the iron law of oligarchy"
+  },
+  {
+   "stem": "A person grows fonder of an unfamiliar song after hearing it several times. This is the:",
+   "options": [
+    "halo effect",
+    "matching hypothesis",
+    "mere exposure effect",
+    "reciprocity principle"
+   ],
+   "answer": "C",
+   "explanation": "Repeated exposure increasing liking is the mere exposure effect. The halo effect is about attractiveness, matching is about pairing by looks, and reciprocity is liking those who like us.",
+   "subtopic": "Attraction factors"
+  },
+  {
+   "stem": "A person does not help at an accident scene because many others are watching and each assumes someone else will act. This is:",
+   "options": [
+    "pluralistic ignorance",
+    "empathy-altruism",
+    "negative-state relief",
+    "diffusion of responsibility"
+   ],
+   "answer": "D",
+   "explanation": "The belief that others will act spreads out personal responsibility. Pluralistic ignorance is misreading calm as no emergency.",
+   "subtopic": "Altruism and prosocial behavior"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Define an achieved status.",
+   "back": "A status gained through personal effort, choice, or merit, such as surgeon, graduate, or parent."
+  },
+  {
+   "type": "cz",
+   "text": "{{c1::Social status}}: A position a person occupies in society, which comes with expected behaviors and a place in a social hierarchy.",
+   "extra": ""
+  },
+  {
+   "type": "mc",
+   "stem": "Which is the best example of an ascribed status?",
+   "options": [
+    "Being the child of a royal family",
+    "Being a licensed pilot",
+    "Being a team captain",
+    "Being a college graduate"
+   ],
+   "answer": "A",
+   "why": "Family of origin is assigned, not chosen. The other three are earned through effort or selection."
+  },
+  {
+   "type": "tf",
+   "statement": "A master status must always be ascribed.",
+   "truth": false,
+   "why": "A master status can be achieved (physician, convicted felon) or ascribed (race, disability). What defines it is dominance over other statuses, not how it was gained."
+  }
+ ]
+}

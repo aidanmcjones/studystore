@@ -1465,8 +1465,23 @@
         "Ethnic and national identity",
         "Identity development across the lifespan"
       ],
-      "status": "coming_soon",
-      "contents": null,
+      "status": "available",
+      "contents": {
+        "cards": 397,
+        "card_types": {
+          "sa": 185,
+          "cz": 67,
+          "mc": 77,
+          "tf": 51,
+          "io": 17
+        },
+        "questions": 52,
+        "passage_sets": 3,
+        "diagrams": 22,
+        "guide_pages": 9,
+        "cheatsheet_pages": 3,
+        "validation": "CLEAN"
+      },
       "ls_name": "StudyStore MCAT 8A: Self-Concept, Identity and Personality Formation",
       "variant_id": null,
       "checkout_url": null
@@ -1498,8 +1513,23 @@
         "Individual and institutional discrimination",
         "Animal signals and communication"
       ],
-      "status": "coming_soon",
-      "contents": null,
+      "status": "available",
+      "contents": {
+        "cards": 476,
+        "card_types": {
+          "cz": 139,
+          "sa": 225,
+          "io": 15,
+          "mc": 60,
+          "tf": 37
+        },
+        "questions": 60,
+        "passage_sets": 3,
+        "diagrams": 22,
+        "guide_pages": 10,
+        "cheatsheet_pages": 4,
+        "validation": "CLEAN"
+      },
       "ls_name": "StudyStore MCAT 8C: Social Interactions and Relationships",
       "variant_id": null,
       "checkout_url": null
@@ -1677,7 +1707,7 @@
         "6c-emotion-stress",
         "9b-demographics"
       ],
-      "ready_count": 4,
+      "ready_count": 6,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Psych/Soc Complete Section",
       "variant_id": null,
@@ -1724,7 +1754,7 @@
         "9b-demographics",
         "cars-strategy"
       ],
-      "ready_count": 22,
+      "ready_count": 24,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Complete MCAT (all sections plus CARS)",
       "variant_id": null,

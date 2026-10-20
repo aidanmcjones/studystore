@@ -1,0 +1,151 @@
+{
+ "slug": "8a-self-identity",
+ "cards": [
+  {
+   "src": "assets/packs/8a-self-identity/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 467
+  },
+  {
+   "src": "assets/packs/8a-self-identity/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 753
+  },
+  {
+   "src": "assets/packs/8a-self-identity/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 849
+  },
+  {
+   "src": "assets/packs/8a-self-identity/card-4.webp",
+   "alt": "Sample multiple choice card: According to Higgins, a gap between the actual self and the ideal self most directly produces which emotion?",
+   "w": 680,
+   "h": 707
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/8a-self-identity/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/8a-self-identity/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/8a-self-identity/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/8a-self-identity/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A man remembers more of the adjectives he judged to describe himself than adjectives he judged for a stranger. This best illustrates",
+   "options": [
+    "the spotlight effect",
+    "self-serving bias",
+    "the looking-glass self",
+    "the self-reference effect"
+   ],
+   "answer": "D",
+   "explanation": "Processing words in relation to a rich self-schema gives better encoding and retrieval, which is the self-reference effect. The spotlight effect concerns beliefs about being noticed, self-serving bias concerns attributions, and the looking-glass self concerns imagined judgments by others.",
+   "subtopic": "Self-concept and self-schema"
+  },
+  {
+   "stem": "A college junior chose engineering after trying several fields and now says, 'I am sure of it.' Marcia status:",
+   "options": [
+    "Identity achievement",
+    "Foreclosure",
+    "Moratorium",
+    "Identity diffusion"
+   ],
+   "answer": "A",
+   "explanation": "Commitment after exploration is achievement. Foreclosure lacks exploration, moratorium lacks commitment, and diffusion lacks both.",
+   "subtopic": "Identity types"
+  },
+  {
+   "stem": "Gilligan criticized Kohlberg primarily because",
+   "options": [
+    "his original sample was male and his scheme favored justice over care",
+    "he omitted adolescents",
+    "he ignored moral reasoning",
+    "he used only animal data"
+   ],
+   "answer": "A",
+   "explanation": "Gilligan argued Kohlberg's all-male sample and justice focus undervalued a care orientation. Adolescents were included, moral reasoning was the target of his study, and the work used humans.",
+   "subtopic": "Kohlberg's moral development"
+  },
+  {
+   "stem": "A waiter is formal with customers but jokes freely in the kitchen. In Goffman's dramaturgical terms the kitchen is",
+   "options": [
+    "the front stage",
+    "a total institution",
+    "the generalized other",
+    "the back stage"
+   ],
+   "answer": "D",
+   "explanation": "Back stage is where the performance is dropped. The dining floor is front stage, a total institution is an enclosed setting like a prison, and the generalized other is Mead's concept.",
+   "subtopic": "Influence of others on identity"
+  },
+  {
+   "stem": "A child insists that she would turn into a boy if she cut her hair short. According to Kohlberg's account of gender understanding she lacks gender",
+   "options": [
+    "identity",
+    "constancy",
+    "expression",
+    "orientation"
+   ],
+   "answer": "B",
+   "explanation": "Gender constancy is the understanding that gender persists despite changes in appearance and comes after identity and stability. Expression and orientation are not stages of gender understanding.",
+   "subtopic": "Gender identity and sexual orientation"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Define self-concept.",
+   "back": "The set of beliefs, knowledge, and feelings a person holds about who they are, built from experience and feedback."
+  },
+  {
+   "type": "cz",
+   "text": "A self-schema makes a person {{c1::quick}} to notice and {{c1::better}} at remembering information that fits it, and {{c2::resistant}} to information that does not.",
+   "extra": "Markus studied people schematic for independence or dependence."
+  },
+  {
+   "type": "mc",
+   "stem": "Which term describes the self as the object that is known, in James's framework?",
+   "options": [
+    "The 'I'",
+    "The 'me'",
+    "The ideal self",
+    "The generalized other"
+   ],
+   "answer": "B",
+   "why": "James's 'me' is the empirical self (material, social, spiritual). The 'I' is the knowing, acting subject."
+  },
+  {
+   "type": "tf",
+   "statement": "Self-concept is fixed by early childhood and does not change afterward.",
+   "truth": false,
+   "why": "Self-concept keeps developing; roles, feedback, and life events revise it, although a strong self-schema resists change."
+  }
+ ]
+}
