@@ -1,0 +1,151 @@
+{
+ "slug": "4e-atoms-nuclear-periodic",
+ "cards": [
+  {
+   "src": "assets/packs/4e-atoms-nuclear-periodic/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 521
+  },
+  {
+   "src": "assets/packs/4e-atoms-nuclear-periodic/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 484
+  },
+  {
+   "src": "assets/packs/4e-atoms-nuclear-periodic/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 858
+  },
+  {
+   "src": "assets/packs/4e-atoms-nuclear-periodic/card-4.webp",
+   "alt": "Sample multiple choice card: Which pair are isotopes of the same element?",
+   "w": 680,
+   "h": 399
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/4e-atoms-nuclear-periodic/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/4e-atoms-nuclear-periodic/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/4e-atoms-nuclear-periodic/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/4e-atoms-nuclear-periodic/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "Magnesium has isotopes <sup>24</sup>Mg (78.99%, 23.985 u), <sup>25</sup>Mg (10.00%, 24.986 u), and <sup>26</sup>Mg (11.01%, 25.983 u). What is the average atomic mass?",
+   "options": [
+    "24.99 u",
+    "24.31 u",
+    "25.00 u",
+    "23.99 u"
+   ],
+   "answer": "B",
+   "explanation": "The weighted average is 0.7899(23.985) + 0.1000(24.986) + 0.1101(25.983) = 24.31 u. The simple mean of the three masses (24.99) ignores abundance, and 23.99 is just the most abundant isotope.",
+   "subtopic": "Atomic structure, isotopes and atomic mass"
+  },
+  {
+   "stem": "A 160 mg sample of an isotope with a half-life of 6.0 days is stored for 18 days. How much remains?",
+   "options": [
+    "53 mg",
+    "20 mg",
+    "80 mg",
+    "10 mg"
+   ],
+   "answer": "B",
+   "explanation": "18 days is 3 half-lives, so 160 x (1/2)^3 = 20 mg. 53 mg would come from linear decay, 80 mg is only one half-life, and 10 mg is four half-lives.",
+   "subtopic": "Half-life and decay kinetics"
+  },
+  {
+   "stem": "Which set of quantum numbers (n, l, m<sub>l</sub>, m<sub>s</sub>) describes an allowed electron?",
+   "options": [
+    "3, 3, 0, +1/2",
+    "4, 2, 3, +1/2",
+    "2, 1, 0, 0",
+    "4, 3, -3, -1/2"
+   ],
+   "answer": "D",
+   "explanation": "For n = 4, l can be 3 and m<sub>l</sub> can be -3, so the last set is allowed. In (3,3,...) l equals n, in (4,2,3,...) m<sub>l</sub> exceeds l, and a spin of 0 is not allowed.",
+   "subtopic": "Quantum numbers"
+  },
+  {
+   "stem": "Which atom has the smallest radius?",
+   "options": [
+    "Si",
+    "Na",
+    "Mg",
+    "Al"
+   ],
+   "answer": "A",
+   "explanation": "Across period 3, Z<sub>eff</sub> rises while electrons enter the same shell, so radius shrinks and Si is the smallest of Na, Mg, Al, and Si. Na is the largest because it has the lowest nuclear charge.",
+   "subtopic": "Periodic trends: radius, ionization energy, electron affinity, electronegativity"
+  },
+  {
+   "stem": "How many grams of CO<sub>2</sub> form when 22.0 g of propane (C<sub>3</sub>H<sub>8</sub>, 44.1 g/mol) burns completely?",
+   "options": [
+    "22.0 g",
+    "87.8 g",
+    "65.9 g",
+    "132 g"
+   ],
+   "answer": "C",
+   "explanation": "22.0 g is 0.499 mol propane, and each gives 3 CO2, so 1.497 mol x 44.01 = 65.9 g. 22.0 g forgets the factor of 3, 87.8 g uses the water coefficient (4) instead of the CO2 coefficient (3), and 132 g doubles the answer.",
+   "subtopic": "Stoichiometry and moles"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Which particle count fixes the identity of an element?",
+   "back": "The number of protons, which is the atomic number Z."
+  },
+  {
+   "type": "cz",
+   "text": "Mass number A = {{c1::protons}} + {{c1::neutrons}}. Atomic number Z = number of {{c2::protons}}.",
+   "extra": "In notation <sup>A</sup><sub>Z</sub>X, neutrons = A - Z."
+  },
+  {
+   "type": "mc",
+   "stem": "Which process releases energy on the binding energy curve?",
+   "options": [
+    "Splitting Fe-56 into two lighter nuclei",
+    "Splitting U-235 into two medium nuclei",
+    "Fusing two Fe-56 nuclei",
+    "Fusing He-4 with U-235"
+   ],
+   "answer": "B",
+   "why": "Energy is released when products move toward Fe-56. Fission of very heavy nuclei and fusion of light nuclei both do this. Fe-56 changes absorb energy."
+  },
+  {
+   "type": "tf",
+   "statement": "Isotopes of an element have very different chemical properties.",
+   "truth": false,
+   "why": "Chemistry is set by electrons, and isotopes have identical electron counts. Nuclear properties such as stability can differ greatly."
+  }
+ ]
+}

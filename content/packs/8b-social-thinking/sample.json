@@ -1,0 +1,151 @@
+{
+ "slug": "8b-social-thinking",
+ "cards": [
+  {
+   "src": "assets/packs/8b-social-thinking/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 522
+  },
+  {
+   "src": "assets/packs/8b-social-thinking/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 485
+  },
+  {
+   "src": "assets/packs/8b-social-thinking/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 732
+  },
+  {
+   "src": "assets/packs/8b-social-thinking/card-4.webp",
+   "alt": "Sample multiple choice card: Only Dana cries at the film, she cries at nearly every film, and she cried at it last year too. Kelley's model",
+   "w": 680,
+   "h": 738
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/8b-social-thinking/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/8b-social-thinking/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/8b-social-thinking/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/8b-social-thinking/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A student fails an exam. Which attribution is internal and unstable under Weiner's scheme?",
+   "options": [
+    "She lacks mathematical ability",
+    "The exam was unusually difficult",
+    "She had bad luck with the questions",
+    "She did not study enough this week"
+   ],
+   "answer": "D",
+   "explanation": "Effort is a feature of the person (internal) that can change from week to week (unstable). Lack of ability is internal but stable, exam difficulty is external and stable, and bad luck is external and unstable.",
+   "subtopic": "Attribution theory"
+  },
+  {
+   "stem": "A student does not study the night before an exam so that a poor grade can be blamed on lack of preparation instead of ability. This is:",
+   "options": [
+    "Self-monitoring",
+    "Self-handicapping",
+    "Effort justification",
+    "Group-serving bias"
+   ],
+   "answer": "B",
+   "explanation": "Creating an obstacle in advance protects the perceived ability from a failure. Self-monitoring is adjusting behavior to the situation, effort justification is rationalizing the cost of a goal, and group-serving bias concerns in-group attributions.",
+   "subtopic": "Self-serving bias"
+  },
+  {
+   "stem": "In Fiske's stereotype content model, which group is stereotyped as low in warmth and high in competence?",
+   "options": [
+    "Groups eliciting pity",
+    "Groups eliciting admiration",
+    "Groups eliciting contempt",
+    "Groups eliciting envy"
+   ],
+   "answer": "D",
+   "explanation": "Low warmth with high competence produces envy. Pity goes with high warmth and low competence, admiration with high on both, and contempt with low on both.",
+   "subtopic": "Stereotypes"
+  },
+  {
+   "stem": "Teachers are told that certain students are about to make large gains, but the students were chosen at random. At year's end, those students gained more. This is the:",
+   "options": [
+    "Stereotype lift",
+    "Pygmalion effect",
+    "Halo effect",
+    "Mere exposure effect"
+   ],
+   "answer": "B",
+   "explanation": "Teacher expectations changed teacher behavior, which improved performance, a self-fulfilling prophecy (Rosenthal and Jacobson, 1968). Stereotype lift, halo effect, and mere exposure do not describe expectation-driven performance gains.",
+   "subtopic": "Stereotype threat and self-fulfilling prophecy"
+  },
+  {
+   "stem": "A worker who believes that class inequality is fair and that anyone can succeed by working hard and who ignores structural barriers illustrates:",
+   "options": [
+    "Class consciousness",
+    "Relative deprivation",
+    "Social facilitation",
+    "System justification"
+   ],
+   "answer": "D",
+   "explanation": "System justification is the motivation to view existing arrangements as fair. Class consciousness is awareness of shared class interests, and relative deprivation is feeling worse off than a reference group.",
+   "subtopic": "Power, prestige and class in prejudice"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "What is attribution theory?",
+   "back": "It describes how people explain the causes of behavior, their own and others', as due to the person or to the situation."
+  },
+  {
+   "type": "cz",
+   "text": "Kelley's covariation model uses three kinds of information: {{c1::consensus}}, {{c2::distinctiveness}}, and {{c3::consistency}}.",
+   "extra": "Kelley (1967) treated people as intuitive scientists who compare behavior across people, targets, and time."
+  },
+  {
+   "type": "mc",
+   "stem": "A student fails and thinks, 'I am simply not smart enough.' Which pattern is this?",
+   "options": [
+    "Internal and unstable",
+    "Internal and stable",
+    "External and stable",
+    "External and unstable"
+   ],
+   "answer": "B",
+   "why": "Ability is internal and stable. This pattern after failure predicts low expectancy of future success."
+  },
+  {
+   "type": "tf",
+   "statement": "Under attribution theory, people's causal explanations are always accurate because they weigh the evidence logically.",
+   "truth": false,
+   "why": "Attributions are often biased shortcuts (for example the fundamental attribution error and self-serving bias)."
+  }
+ ]
+}
