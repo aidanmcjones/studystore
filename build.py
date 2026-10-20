@@ -11,6 +11,7 @@ import json, re, html, math
 from pathlib import Path
 from mdlite import convert, parse_frontmatter, extract_quiz
 import products_build as PB  # catalog product/bundle/thanks pages (G01)
+import practice_build
 
 ROOT = Path(__file__).parent
 site = json.loads((ROOT / "site.json").read_text())
@@ -160,6 +161,7 @@ def build_note(n, all_notes):
 <div class="quiz">{quiz_html}</div>
 <h2>Keep studying</h2>
 <ul>{rel}<li><a href="index.html">All free notes</a></li></ul>
+{practice_build.note_links(slug, PRACTICE_LIVE, None)}
 {cta}
 <p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
 </article>"""
@@ -174,6 +176,8 @@ def strip_tags(t):
     return html.unescape(re.sub(r"<[^>]+>", "", t)).strip()
 
 notes = load_notes()
+PRACTICE, PRACTICE_CATS = practice_build.load(ROOT, products, {n["slug"] for n in notes})
+PRACTICE_LIVE = [p for p in PRACTICE if not p["noindex"]]
 LATEST_NOTES = "".join(note_card(n, "notes/", "assets/notes/") for n in notes[:6])
 for n in notes:
     build_note(n, notes)
@@ -181,6 +185,7 @@ idx = f"""<div class="wrap hero" style="padding-bottom:24px">
 <div class="eyebrow">Free MCAT study notes</div>
 <h1>Notes</h1>
 <p class="lead">Plain-language MCAT biochemistry explainers, each with an original diagram and a 5-question mini-quiz. Free, no signup.</p>
+<p class="meta"><a href="../practice/index.html">Looking for practice questions? Browse the free MCAT practice questions by topic.</a></p>
 </div>
 <section><div class="wrap"><div class="notegrid">{"".join(note_card(n, "", "../assets/notes/") for n in notes)}</div></div></section>"""
 emit("notes/index.html", "Free MCAT Study Notes | StudyStore",
@@ -190,6 +195,8 @@ emit("notes/index.html", "Free MCAT Study Notes | StudyStore",
 # ---------- catalog product pages ----------
 PB.build_all(site, products, emit)
 PB.write_redirects(site)
+
+practice_build.build_all(emit, ROOT, PRACTICE, PRACTICE_CATS, {n["slug"]: n for n in notes}, BASE)
 
 # ---------- regular pages ----------
 for tpl, out, title, desc, noindex in PAGES:

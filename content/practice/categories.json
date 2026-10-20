@@ -1,0 +1,9 @@
+{
+  "1A": {"slug": "1a", "title": "Amino Acids, Proteins and Enzymes", "blurb": "Amino acid chemistry, protein structure, enzyme kinetics and regulation."},
+  "1B": {"slug": "1b", "title": "DNA, Genetic Information and Gene Expression", "blurb": "Replication, transcription, translation, gene regulation and lab techniques."},
+  "1D": {"slug": "1d", "title": "Metabolism and Bioenergetics", "blurb": "Glycolysis, the citric acid cycle, oxidative phosphorylation, lipid and nitrogen metabolism."},
+  "2A": {"slug": "2a", "title": "Cells, Membranes and Tissues", "blurb": "Membrane transport, osmosis, and membrane potentials."},
+  "3A": {"slug": "3a", "title": "Nervous and Endocrine Systems", "blurb": "Action potentials, synapses, hormones and feedback axes."},
+  "3B": {"slug": "3b", "title": "Organ Systems", "blurb": "Kidney, cardiovascular and respiratory physiology."},
+  "5D": {"slug": "5d", "title": "Biologically Relevant Molecules and Organic Reactivity", "blurb": "Carbohydrates, lipids, carbonyl chemistry and acid derivatives."}
+}
