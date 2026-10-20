@@ -12,7 +12,21 @@
   var lerp = function (a, b, t) { return a + (b - a) * t; };
   var smooth = function (a, b, x) { var t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
   var vh = W.innerHeight, vw = W.innerWidth;
-  var scenes = [];  // section scroll scenes (Fig. 2 to 4), driven by update() like the kinetics plot
+  var scenes = [];  // section scroll scenes, driven by update() like the kinetics plot
+
+  /* ---------- one section scene per visit ----------
+   * The page carries a scene for each MCAT section (data-pickscene). Show ONE at random and never
+   * the same one as the previous visit; the others leave the DOM before any scene initialises. */
+  (function pickScene() {
+    var all = $$("[data-pickscene]"); if (all.length < 2) return;
+    var last = ""; try { last = W.localStorage.getItem("ss_scene") || ""; } catch (e) {}
+    var pool = all.filter(function (s) { return s.id !== last; });
+    if (!pool.length) pool = all;
+    var pick = pool[Math.floor(Math.random() * pool.length)];
+    all.forEach(function (s) { if (s !== pick) s.parentNode.removeChild(s); });
+    try { W.localStorage.setItem("ss_scene", pick.id); } catch (e) {}
+    var cue = $(".scrollcue"); if (cue) cue.setAttribute("href", "#" + pick.id);
+  })();
   // continuous step position for a pinned scene: which step block crosses the reference line, and how far
   function stepPos(steps, narrow) {
     var L = vh * (narrow ? 0.78 : 0.55), s = 0;
@@ -437,7 +451,7 @@
     var rays = [q(".r1"), q(".r2"), q(".r3")], vx = q(".vext"), ob = q(".arrow.obj"), im = q(".arrow.img");
     var obT = q(".obj-t"), imT = q(".img-t"), rd = q(".lread"), kd = q(".lkind");
     var F = 70, X0 = 300, Y0 = 210, H = 56, XR = 590;  // px per f, lens x, axis y, object height
-    var caps = ["Fig. 2. Object beyond 2F.", "Fig. 2. Object at 2F.", "Fig. 2. Object between F and 2F.", "Fig. 2. Object at F.", "Fig. 2. Object inside F."];
+    var caps = ["Fig. 1. Object beyond 2F.", "Fig. 1. Object at 2F.", "Fig. 1. Object between F and 2F.", "Fig. 1. Object at F.", "Fig. 1. Object inside F."];
     var keys = [[0, 3], [0.7, 3], [1.3, 2], [1.7, 2], [2.3, 1.5], [2.7, 1.5], [3.3, 1], [3.7, 1], [4.3, 0.5], [5, 0.5]];
     rays.forEach(function (r) { r.setAttribute("pathLength", "1"); r.style.strokeDasharray = "1 1"; });
     function arrow(x, ytip) {
@@ -481,7 +495,7 @@
       }
       kd.textContent = kind; kd.style.opacity = imgO;
       var idx = still ? 4 : clamp(Math.floor(s), 0, 4);
-      api.step(idx, still ? "Fig. 2. Object inside F: virtual, upright, enlarged image." : caps[idx]);
+      api.step(idx, still ? "Fig. 1. Object inside F: virtual, upright, enlarged image." : caps[idx]);
     };
   });
 
@@ -509,7 +523,7 @@
       return d + "L" + f1(X(Z1)) + " " + f1(Y(pdf(Z1 - mu))) + "L" + f1(X(Z1)) + " 340Z";
     }
     var pct = function (p) { return (p * 100).toFixed(1) + "%"; };
-    var caps = ["Fig. 3. Heavy overlap, d' = 0.5.", "Fig. 3. The curves separate as d' grows.", "Fig. 3. Hits and false alarms, neutral criterion.", "Fig. 3. Liberal criterion.", "Fig. 3. Conservative criterion."];
+    var caps = ["Fig. 1. Heavy overlap, d' = 0.5.", "Fig. 1. The curves separate as d' grows.", "Fig. 1. Hits and false alarms, neutral criterion.", "Fig. 1. Liberal criterion.", "Fig. 1. Conservative criterion."];
     // [s, d', criterion c on the noise scale]
     var keys = [[0, 0.5, 0.25], [1.1, 0.5, 0.25], [1.7, 2, 1], [3.1, 2, 1], [3.6, 2, 0.3], [4.1, 2, 0.3], [4.6, 2, 1.7], [5, 2, 1.7]];
     noise.setAttribute("d", curve(0));
@@ -535,14 +549,14 @@
       var H = 1 - Phi(c - d), FA = 1 - Phi(c);
       rd.textContent = sh > 0.5 ? "d' = " + d.toFixed(2) + " \u00b7 hit " + pct(H) + " \u00b7 false alarm " + pct(FA) : "d' = " + d.toFixed(2);
       var idx = still ? 4 : clamp(Math.floor(s), 0, 4);
-      api.step(idx, still ? "Fig. 3. Conservative criterion, d' = 2." : caps[idx]);
+      api.step(idx, still ? "Fig. 1. Conservative criterion, d' = 2." : caps[idx]);
     };
   });
 
   /* Fig. 4, CARS: claim, pivot, tone and evidence highlighted in turn while the passage map builds. */
   scene(".carsscene", function (api) {
     var marks = $$("mark.hl", api.sec), lis = $$(".pmap li", api.sec);
-    var caps = ["Fig. 4. Main claim.", "Fig. 4. Pivot word: But.", "Fig. 4. Tone word: shortsighted.", "Fig. 4. Evidence, noted in a few words.", "Fig. 4. Passage map complete."];
+    var caps = ["Fig. 1. Main claim.", "Fig. 1. Pivot word: But.", "Fig. 1. Tone word: shortsighted.", "Fig. 1. Evidence, noted in a few words.", "Fig. 1. Passage map complete."];
     return function (s, still) {
       marks.forEach(function (el) {
         var k = +el.getAttribute("data-k");
@@ -550,7 +564,7 @@
       });
       lis.forEach(function (li) { li.classList.toggle("on", still || s >= +li.getAttribute("data-k") + 0.45); });
       var idx = still ? 4 : clamp(Math.floor(s), 0, 4);
-      api.step(idx, still ? "Fig. 4. Original passage, fully mapped." : caps[idx]);
+      api.step(idx, still ? "Fig. 1. Original passage, fully mapped." : caps[idx]);
     };
   });
 
