@@ -1,0 +1,151 @@
+{
+ "slug": "2a-cells-membranes",
+ "cards": [
+  {
+   "src": "assets/packs/2a-cells-membranes/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 536
+  },
+  {
+   "src": "assets/packs/2a-cells-membranes/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 811
+  },
+  {
+   "src": "assets/packs/2a-cells-membranes/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 490
+  },
+  {
+   "src": "assets/packs/2a-cells-membranes/card-4.webp",
+   "alt": "Sample multiple choice card: Which is most often cited as an exception to strict cell theory?",
+   "w": 680,
+   "h": 352
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/2a-cells-membranes/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/2a-cells-membranes/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/2a-cells-membranes/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/2a-cells-membranes/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A new antibiotic selectively blocks the 30S ribosomal subunit. Why is it relatively safe for human cells?",
+   "options": [
+    "Human cells lack ribosomes",
+    "Human ribosomes lie in the nucleus",
+    "Human cytosolic ribosomes are 80S with 40S small subunits",
+    "The antibiotic cannot cross the plasma membrane"
+   ],
+   "answer": "C",
+   "explanation": "Prokaryotes have 70S ribosomes (50S + 30S). Eukaryotic cytosolic ribosomes are 80S (60S + 40S) and are not blocked. Human cells do have ribosomes, they are in the cytoplasm and on the ER, and drug entry is not the selectivity mechanism.",
+   "subtopic": "Cell theory"
+  },
+  {
+   "stem": "A membrane permeable only to water separates 0.2 M glucose on the left from 0.1 M NaCl on the right. What happens?",
+   "options": [
+    "No net water movement",
+    "Water moves to the right",
+    "Water moves to the left",
+    "NaCl moves to the left"
+   ],
+   "answer": "A",
+   "explanation": "NaCl gives two particles, so 0.1 M NaCl is 0.2 Osm, equal to 0.2 M glucose (0.2 Osm). With equal osmolarity there is no net water flow, so neither direction is favored. Solutes cannot cross, so NaCl does not move either.",
+   "subtopic": "Osmosis and tonicity"
+  },
+  {
+   "stem": "A mutation prevents the LDL receptor from binding clathrin adaptors. LDL will",
+   "options": [
+    "not bind at all",
+    "be taken in normally",
+    "bind the cell surface but not be internalized",
+    "be degraded outside the cell"
+   ],
+   "answer": "C",
+   "explanation": "The receptor still recognizes LDL, but clathrin-coated pit formation needs the adaptor interaction, so uptake fails. Binding is intact, so it does bind, internalization is not normal, and extracellular degradation is not a feature.",
+   "subtopic": "Endocytosis and exocytosis"
+  },
+  {
+   "stem": "Severe diarrhea occurs from a mutation that makes intestinal tight junctions leaky. The most likely explanation is",
+   "options": [
+    "paracellular passage of solutes and water",
+    "loss of gap junction coupling",
+    "detachment from the basement membrane",
+    "failure of endocytosis"
+   ],
+   "answer": "A",
+   "explanation": "Tight junctions limit paracellular movement. When leaky, solutes and water pass between cells. Gap junctions do not seal the epithelium, hemidesmosomes anchor to the matrix, and endocytosis is unrelated.",
+   "subtopic": "Cell junctions: tight, gap, desmosomes"
+  },
+  {
+   "stem": "Which finding best supports the bacterial origin of mitochondria?",
+   "options": [
+    "Mitochondria make ATP",
+    "Mitochondria are found in nearly all eukaryotes",
+    "Mitochondria have a circular genome and divide by fission",
+    "Mitochondria contain proteins encoded in the nucleus"
+   ],
+   "answer": "C",
+   "explanation": "A circular genome and binary-fission-like division resemble bacteria. ATP production and widespread distribution do not show origin. Nuclear-encoded mitochondrial proteins reflect gene transfer, not an origin as such.",
+   "subtopic": "Mitochondria and endosymbiosis"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "State the three tenets of classical cell theory.",
+   "back": "All living things are made of one or more cells; the cell is the basic unit of structure and function; all cells arise from pre-existing cells."
+  },
+  {
+   "type": "cz",
+   "text": "Prokaryotic ribosomes are {{c1::70S}} (50S + 30S); eukaryotic cytosolic ribosomes are {{c2::80S}} (60S + 40S).",
+   "extra": "S is the Svedberg sedimentation unit, so subunit values do not add up to the whole."
+  },
+  {
+   "type": "mc",
+   "stem": "Which molecule crosses a lipid bilayer fastest by simple diffusion?",
+   "options": [
+    "Glucose",
+    "Na+",
+    "O2",
+    "Ca2+"
+   ],
+   "answer": "C",
+   "why": "Small nonpolar gases pass freely. Glucose is large and polar and ions are charged, so both need proteins."
+  },
+  {
+   "type": "tf",
+   "statement": "Viruses count as living cells because they carry out their own metabolism.",
+   "truth": false,
+   "why": "Viruses are acellular and have no metabolism of their own. They replicate only by hijacking a host cell, which is why they are the classic challenge to cell theory."
+  }
+ ]
+}

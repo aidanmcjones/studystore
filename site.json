@@ -435,8 +435,23 @@
         "Apoptosis",
         "Extracellular matrix"
       ],
-      "status": "coming_soon",
-      "contents": null,
+      "status": "available",
+      "contents": {
+        "cards": 386,
+        "card_types": {
+          "sa": 215,
+          "cz": 49,
+          "tf": 52,
+          "mc": 52,
+          "io": 18
+        },
+        "questions": 52,
+        "passage_sets": 3,
+        "diagrams": 19,
+        "guide_pages": 10,
+        "cheatsheet_pages": 4,
+        "validation": "CLEAN"
+      },
       "ls_name": "StudyStore MCAT 2A: Cells, Membranes and Tissues",
       "variant_id": null,
       "checkout_url": null
@@ -1430,7 +1445,7 @@
         "2c-cell-division-development",
         "2b-prokaryotes-viruses"
       ],
-      "ready_count": 6,
+      "ready_count": 7,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Bio/Biochem Complete Section",
       "variant_id": null,
@@ -1529,7 +1544,7 @@
         "9b-demographics",
         "cars-strategy"
       ],
-      "ready_count": 9,
+      "ready_count": 10,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Complete MCAT (all sections plus CARS)",
       "variant_id": null,
