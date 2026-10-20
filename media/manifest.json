@@ -1,0 +1,1431 @@
+{
+ "counters": {
+  "diagram-tiktok": 30,
+  "pins-notes": 25,
+  "pins-questions": 15,
+  "qotd-shorts": 20,
+  "qotd-tiktok": 40
+ },
+ "d": {
+  "acid-base-titration-curves-equivalence-point": {
+   "beats": [
+    "Equivalence pH is 7 for strong with strong, above 7 for a weak acid with strong base, and below 7 for a weak base with strong acid.",
+    "Pick an indicator whose range sits on the steep part near the equivalence pH. Volume to equivalence depends on moles, not acid strength.",
+    "Polyprotic acids show one equivalence point per proton."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-001"
+   },
+   "seconds": 18.2,
+   "size": 1198824,
+   "tag": "#chemistry",
+   "title": "Acid-Base Titration Curves: Equivalence and Half-Equivalence Points"
+  },
+  "action-potential-phases-ion-channels": {
+   "beats": [
+    "Rest near -70 mV (close to EK, set by K^+ leak). Threshold near -55 mV starts a positive feedback loop of Na^+ channel opening.",
+    "Na^+ rushes in, the voltage heads toward ENa (+61 mV) but peaks lower.",
+    "Na^+ channels inactivate and slow K^+ channels open, so K^+ leaves and the cell repolarizes, then undershoots toward EK.",
+    "Inactivated Na^+ channels cause the absolute refractory period; lingering K^+ current causes the relative one. Myelin and wide axons speed conduction."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-002"
+   },
+   "seconds": 22.6,
+   "size": 1535006,
+   "tag": "#physiology",
+   "title": "Action Potential Phases and Ion Channels, Step by Step"
+  },
+  "amino-acid-pka-charge-ph-7-4": {
+   "beats": [
+    "Backbone groups are about pKa 2 and 9 to 10.",
+    "Acidic side chains are around 4, histidine around 6, cysteine near 8, tyrosine near 10, lysine near 10.5, arginine near 12.5.",
+    "Pass a pKa going up in pH and the charge drops by one. The pI is the average of the two pKa values around the neutral species.",
+    "At pH 7.4, Asp and Glu are negative, Lys and Arg are positive, and almost everything else is neutral or a zwitterion with no net charge."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-003"
+   },
+   "seconds": 22.6,
+   "size": 1330570,
+   "tag": "#biochemistry",
+   "title": "Amino Acid pKa Values and Charge at pH 7.4"
+  },
+  "anomers-vs-epimers-carbohydrates": {
+   "beats": [
+    "Epimers differ at exactly one stereocenter; anomers differ only at the anomeric carbon formed on ring closure (C1 of aldoses, C2 of ketoses).",
+    "D-mannose is the C2 epimer and D-galactose the C4 epimer of D-glucose; mannose and galactose are plain diastereomers.",
+    "D-glucose and L-glucose are enantiomers; glucose and fructose are constitutional isomers.",
+    "In a D-sugar Haworth ring, alpha puts the anomeric OH opposite the CH2OH and beta on the same side."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-004"
+   },
+   "seconds": 22.6,
+   "size": 1903135,
+   "tag": "#chemistry",
+   "title": "Anomers vs Epimers: Carbohydrate Stereoisomers for the MCAT"
+  },
+  "bacteria-vs-viruses-differences": {
+   "beats": [
+    "Watch the exceptions: intracellular bacteria, wall-less *Mycoplasma*, giant viruses, prions and viroids.",
+    "A bacterium has everything a cell needs.",
+    "Bacterial genomes all follow the same rule as ours: double-stranded DNA is copied by DNA polymerase, transcribed into RNA and translated on ribosomes.",
+    "Bacteria reproduce by binary fission."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-005"
+   },
+   "seconds": 22.6,
+   "size": 1220080,
+   "tag": "#biology",
+   "title": "Bacteria vs Viruses: Structure, Replication and Treatment"
+  },
+  "bernoulli-equation-continuity-venturi": {
+   "beats": [
+    "Continuity: Q = Av is constant, so narrowing a pipe speeds the flow, and speed scales with 1/r\u00b2.",
+    "Bernoulli: P + \u00bd\u03c1v\u00b2 + \u03c1gh is constant along a streamline for an ideal fluid, each term an energy per volume in pascals.",
+    "At constant height, faster flow means lower static pressure (Venturi effect). At constant speed, higher means lower pressure by \u03c1g\u0394h.",
+    "With the fluid at rest it becomes the hydrostatic equation, and for a hole in an open tank it gives Torricelli's v = \u221a(2gh)."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-006"
+   },
+   "seconds": 22.6,
+   "size": 1393159,
+   "tag": "#physics",
+   "title": "Bernoulli's Equation and the Venturi Effect for the MCAT"
+  },
+  "classical-vs-operant-conditioning": {
+   "beats": [
+    "Classical: stimulus-stimulus link, involuntary response, cue before US. Terms: US, UR, NS, CS, CR.",
+    "Operant: behavior-consequence link, voluntary behavior, consequence after behavior.",
+    "Positive means add, negative means remove. Reinforcement increases, punishment decreases.",
+    "Escape and avoidance are negative reinforcement. Shaping rewards successive approximations."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-007"
+   },
+   "seconds": 22.6,
+   "size": 1794970,
+   "tag": "#psychology",
+   "title": "Classical vs Operant Conditioning: Differences, Terms and Examples"
+  },
+  "conformity-vs-obedience-asch-milgram": {
+   "beats": [
+    "Conformity: matching peers, no explicit demand. Obedience: following an authority's command.",
+    "Asch: about one third of critical answers conformed. roughly 75 percent of people gave in at least once. plateau near three or four confederates.",
+    "one ally sharply cuts it.",
+    "Normative influence: wanting acceptance, public only. Informational: believing others know better, can change private belief (Sherif)."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-008"
+   },
+   "seconds": 22.6,
+   "size": 1288141,
+   "tag": "#psychology",
+   "title": "Conformity vs Obedience: Asch and Milgram Explained"
+  },
+  "demographic-transition-model-stages": {
+   "beats": [
+    "Stage 1: high births, high deaths, slow growth.",
+    "Stage 2: deaths fall first, births stay high, rapid growth, expansive pyramid.",
+    "Stage 3: births fall, growth slows.",
+    "Stage 4: low births and deaths, near-zero growth, column-shaped pyramid."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-009"
+   },
+   "seconds": 22.6,
+   "size": 1230022,
+   "tag": "#sociology",
+   "title": "Demographic Transition Model: The 5 Stages Explained for the MCAT"
+  },
+  "dsm-5-psychological-disorders-categories": {
+   "beats": [
+    "Four Ds: deviance, distress, dysfunction, danger. Diagnosis needs the criteria plus distress or impairment.",
+    "DSM-5 dropped the multiaxial system, split bipolar from depressive disorders, and moved OCD and trauma out of anxiety.",
+    "DSM-5-TR's newest diagnosis: prolonged grief disorder.",
+    "Psychosis by duration: under 1 month brief psychotic, 1 to 6 months schizophreniform, 6 months or more schizophrenia."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-010"
+   },
+   "seconds": 22.6,
+   "size": 1432951,
+   "tag": "#psychology",
+   "title": "DSM-5 Categories of Psychological Disorders for the MCAT"
+  },
+  "enzyme-classes-ec-1-to-7": {
+   "beats": [
+    "Learn the reaction pattern first and the name clues second, and double-check the odd ones: phosphorylase, synthase vs. synthetase, and dehydratase.",
+    "Each enzyme gets a four-part number: EC a.b.c.d.",
+    "Reaction: transfer of electrons (or hydrogen atoms) from one molecule to another.",
+    "Reaction: transfer of a functional group (phosphate, amino, methyl, acyl, glycosyl) from a donor to an acceptor."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-011"
+   },
+   "seconds": 22.6,
+   "size": 2046685,
+   "tag": "#biochemistry",
+   "title": "The Seven Enzyme Classes (EC 1 to 7) With Examples and Traps"
+  },
+  "eriksons-stages-of-psychosocial-development": {
+   "beats": [
+    "Eight stages, birth to old age, each a crisis between two poles with a virtue as the healthy outcome.",
+    "Infancy trust (hope), toddler autonomy (will), preschool initiative (purpose), school-age industry (competence).",
+    "Adolescence identity (fidelity), young adulthood intimacy (love), middle age generativity (care), late life integrity (wisdom).",
+    "Identity must precede intimacy. Marcia's four identity statuses expand stage 5."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-012"
+   },
+   "seconds": 22.6,
+   "size": 1744416,
+   "tag": "#psychology",
+   "title": "Erikson's 8 Stages of Psychosocial Development Explained"
+  },
+  "functionalism-vs-conflict-theory-vs-symbolic-interactionism": {
+   "beats": [
+    "Functionalism: macro, society as interdependent parts, stability. Durkheim, Parsons, Merton. Manifest vs latent functions, dysfunctions.",
+    "Conflict theory: macro, groups compete for scarce resources, inequality and change. Marx, Weber (class, status, party), Dahrendorf, Mills.",
+    "Symbolic interactionism: micro, meanings built in interaction. Mead, Blumer, Cooley, Goffman.",
+    "Looking-glass self, dramaturgy, Thomas theorem, labeling."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-013"
+   },
+   "seconds": 22.6,
+   "size": 1661724,
+   "tag": "#sociology",
+   "title": "Functionalism vs Conflict Theory vs Symbolic Interactionism"
+  },
+  "fundamental-attribution-error-vs-actor-observer-bias": {
+   "beats": [
+    "Dispositional = person. Situational = circumstances.",
+    "Fundamental attribution error: others' behavior gets too much dispositional explanation.",
+    "Actor-observer bias: self explained by situation, others by disposition. Driven by perspective.",
+    "Self-serving bias: my success is me, my failure is the situation. Driven by self-esteem."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-014"
+   },
+   "seconds": 22.6,
+   "size": 1964512,
+   "tag": "#psychology",
+   "title": "Fundamental Attribution Error vs Actor-Observer vs Self-Serving Bias"
+  },
+  "galvanic-vs-electrolytic-cells": {
+   "beats": [
+    "Galvanic: spontaneous, E positive, \u0394G negative, anode negative, cathode positive.",
+    "Electrolytic: driven by a supply, E negative, \u0394G positive, anode positive, cathode negative.",
+    "In both, oxidation at the anode, reduction at the cathode, electrons through the wire from anode to cathode, cations toward the cathode.",
+    "Use E\u00b0cell = E\u00b0cathode - E\u00b0anode, \u0394G = -nFE, and E = E\u00b0 - (0.0592/n) log Q at 25 C."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-015"
+   },
+   "seconds": 22.6,
+   "size": 1310512,
+   "tag": "#physics",
+   "title": "Galvanic vs Electrolytic Cells: Signs, Electron Flow and Examples"
+  },
+  "gibbs-free-energy-delta-g-spontaneity": {
+   "beats": [
+    "\u0394G = \u0394H - T\u0394S. Negative means spontaneous, positive means the reverse is favored, zero means equilibrium.",
+    "With \u0394H negative and \u0394S positive the process is always spontaneous; with the opposite signs, never. Convert J to kJ and use kelvin.",
+    "The second law says a process is spontaneous when the total entropy of the universe rises: \u0394Suniverse = \u0394Ssystem + \u0394Ssurroundings > 0.",
+    "\u0394H and \u0394S are each either positive or negative, so there are four cases."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-016"
+   },
+   "seconds": 22.6,
+   "size": 1775835,
+   "tag": "#chemistry",
+   "title": "Gibbs Free Energy: Delta G, Spontaneity and Temperature"
+  },
+  "glycolysis-steps-enzymes-net-atp": {
+   "beats": [
+    "Ten cytosolic steps convert glucose to 2 pyruvate.",
+    "Investment phase: hexokinase and PFK-1 each spend 1 ATP, and aldolase plus triose phosphate isomerase give 2 G3P.",
+    "Payoff phase, twice per glucose: GAPDH makes NADH, phosphoglycerate kinase and pyruvate kinase each make ATP. Net 2 ATP, 2 NADH, 2 pyruvate.",
+    "Without oxygen, lactate dehydrogenase regenerates NAD^+."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-017"
+   },
+   "seconds": 22.6,
+   "size": 1605563,
+   "tag": "#biochemistry",
+   "title": "Glycolysis Steps, Enzymes and Net ATP Yield for the MCAT"
+  },
+  "hardy-weinberg-equation-practice-problems": {
+   "beats": [
+    "p + q = 1 and p\u00b2 + 2pq + q\u00b2 = 1.",
+    "Equilibrium assumes no mutation, no migration, no selection, random mating and a large population, and serves as a null model for evolution.",
+    "Start from q\u00b2 (the recessive phenotype, or 1 minus the dominant phenotype), take the square root, then find p and 2pq.",
+    "With genotype counts, count alleles. For X-linked recessive traits, affected males = q and affected females = q\u00b2."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-018"
+   },
+   "seconds": 22.6,
+   "size": 1585406,
+   "tag": "#biochemistry",
+   "title": "Hardy-Weinberg Equation: How to Solve Every MCAT Problem Type"
+  },
+  "henderson-hasselbalch-for-the-mcat": {
+   "beats": [
+    "pH = pKa + log([A^-]/[HA]). At pH = pKa the two forms are equal. Each pH unit changes the ratio tenfold. Buffers work best within one unit of the pKa.",
+    "For added strong acid or base, do the mole bookkeeping first. In blood, pH = 6.1 + log([HCO3^-]/(0.03 \u00d7 PCO2)).",
+    "A weak acid HA partly dissociates in water:",
+    "Each ionizable group on an amino acid obeys the same equation with its own pKa."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-019"
+   },
+   "seconds": 22.6,
+   "size": 1264774,
+   "tag": "#biochemistry",
+   "title": "The Henderson-Hasselbalch Equation for the MCAT"
+  },
+  "how-to-approach-a-cars-passage": {
+   "beats": [
+    "Read for structure: one 3 to 6 word job label per paragraph.",
+    "Watch pivot words for the author's voice and evaluative words for tone.",
+    "State the main idea, with attitude, before the questions.",
+    "Identify the question family from the stem, predict, then compare."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-020"
+   },
+   "seconds": 22.6,
+   "size": 1354528,
+   "tag": "#mcatcars",
+   "title": "How to Approach a CARS Passage: A Step-by-Step Method"
+  },
+  "how-to-read-ir-and-nmr-spectra": {
+   "beats": [
+    "IR detects bond vibrations that change the dipole.",
+    "Bonds to H sit high (above 2700), triple bonds near 2100 to 2260, C=O near 1650 to 1800, and C-O near 1000 to 1300.",
+    "A broad trough above 3200 is O-H; an acid's O-H is broader and lower.",
+    "Combine both with degrees of unsaturation and check that the pieces add up to the formula."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-021"
+   },
+   "seconds": 22.6,
+   "size": 1356809,
+   "tag": "#chemistry",
+   "title": "How to Read IR and NMR Spectra for the MCAT"
+  },
+  "lac-operon-regulation-lactose-glucose": {
+   "beats": [
+    "The lac operon (CAP site, promoter, operator, lacZ, lacY, lacA) makes one mRNA for the lactose genes.",
+    "The repressor, made constantly from lacI, blocks the operator until allolactose binds it.",
+    "CAP-cAMP, present when glucose is low, activates the weak promoter.",
+    "High output needs lactose present and glucose low. lacI^- and lacO^c give constitutive expression; lacI^s makes it uninducible."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-022"
+   },
+   "seconds": 22.6,
+   "size": 1746187,
+   "tag": "#biochemistry",
+   "title": "The Lac Operon Explained: Lactose, Glucose, cAMP and CAP"
+  },
+  "michaelis-menten-and-lineweaver-burk": {
+   "beats": [
+    "v = Vmax[S]/(Km + [S]). Km is the substrate concentration giving half of Vmax. Low Km usually means high affinity. Vmax = kcat[E]total.",
+    "On a Lineweaver-Burk plot the y-intercept is 1/Vmax, the x-intercept is -1/Km, and the slope is Km/Vmax.",
+    "Imagine a fixed amount of enzyme and a growing amount of substrate.",
+    "A low Km means the enzyme reaches half of its top speed at a low substrate concentration."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-023"
+   },
+   "seconds": 22.6,
+   "size": 1391337,
+   "tag": "#biochemistry",
+   "title": "Michaelis-Menten Kinetics and Lineweaver-Burk Plots Explained"
+  },
+  "mitosis-vs-meiosis-differences": {
+   "beats": [
+    "Mitosis: one division, two identical daughters, same ploidy, sisters separate at anaphase.",
+    "Meiosis: one replication, two divisions, four different haploid cells.",
+    "Meiosis I separates homologs (reductional) after synapsis, crossing over and independent assortment.",
+    "Meiosis II separates sister chromatids (equational) and looks like mitosis."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-024"
+   },
+   "seconds": 22.6,
+   "size": 1417336,
+   "tag": "#biology",
+   "title": "Mitosis vs Meiosis: Differences, Chromosome Counts and Errors"
+  },
+  "nephron-function-segments-reabsorption": {
+   "beats": [
+    "Filtration: net pressure about 10 mmHg, GFR about 125 mL/min (180 L/day), proteins and cells stay in the blood.",
+    "Proximal tubule: about 65% of Na^+ and water, all glucose and amino acids, isosmotic. Descending limb: water out.",
+    "Thick ascending limb: NaCl out, watertight, filtrate dilutes, medulla concentrates to about 1200 mOsm/L.",
+    "Distal tubule: NaCl (thiazides) and Ca^2+ (PTH)."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-025"
+   },
+   "seconds": 22.6,
+   "size": 1320595,
+   "tag": "#physiology",
+   "title": "Nephron Function: What Each Segment Reabsorbs and Secretes"
+  },
+  "passive-vs-active-transport": {
+   "beats": [
+    "Passive: down the gradient, no energy. Simple diffusion for small nonpolar molecules, linear and unsaturable.",
+    "Facilitated diffusion through channels or carriers, saturable but still downhill. Active: up the gradient.",
+    "Primary pumps hydrolyze ATP directly (Na^+/K^+ ATPase: 3 Na^+ out, 2 K^+ in).",
+    "Secondary transporters spend the Na^+ gradient (symport such as SGLT1, antiport such as the Na^+/Ca^2+ exchanger)."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-026"
+   },
+   "seconds": 22.6,
+   "size": 1562920,
+   "tag": "#biology",
+   "title": "Passive vs Active Transport: Types, Examples and Energy Math"
+  },
+  "protein-structure-levels-and-denaturation": {
+   "beats": [
+    "Primary: sequence, peptide bonds. Secondary: helices and sheets, backbone hydrogen bonds.",
+    "Tertiary: whole-chain fold, driven by the hydrophobic effect plus side chain interactions and disulfides. Quaternary: multiple chains.",
+    "Denaturation destroys levels 2 to 4 and leaves level 1 alone, and sequence alone can sometimes direct refolding."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-027"
+   },
+   "seconds": 18.2,
+   "size": 1090948,
+   "tag": "#biochemistry",
+   "title": "Protein Structure: Primary to Quaternary, and What Denaturation Destroys"
+  },
+  "r-and-s-configuration-cip-priority-rules": {
+   "beats": [
+    "Check the carbon has four different groups. Rank by atomic number of the attached atoms.",
+    "on a tie, compare the sets of attached atoms in order and stop at the first difference. double bonds duplicate atoms.",
+    "Point group 4 away and trace 1 to 2 to 3: clockwise R, counterclockwise S.",
+    "If group 4 points at you (wedge, or horizontal in a Fischer projection), reverse. Swapping two groups inverts the label."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-028"
+   },
+   "seconds": 22.6,
+   "size": 1198355,
+   "tag": "#chemistry",
+   "title": "How to Assign R and S Configuration: CIP Priority Rules"
+  },
+  "radioactive-decay-half-life-calculations": {
+   "beats": [
+    "Balance every nuclear equation by conserving A and Z separately. Alpha: A drops 4, Z drops 2. Beta-minus: Z up 1.",
+    "Beta-plus and electron capture: Z down 1. Gamma: no change. Decay is first order, so N = N0(1/2)t/t1/2 and t1/2 = 0.693/k.",
+    "Count half-lives first, then halve that many times. For non-integer cases, bracket between whole half-lives or use logs.",
+    "Activity A = kN falls with the same half-life, and at equal N a shorter half-life means higher activity."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-029"
+   },
+   "seconds": 22.6,
+   "size": 1438162,
+   "tag": "#physics",
+   "title": "Radioactive Decay and Half-Life Calculations for the MCAT"
+  },
+  "role-strain-vs-role-conflict-status-and-groups": {
+   "beats": [
+    "A status is where you stand; a role is what that position asks of you.",
+    "Ascribed is assigned, achieved is earned, master status dominates others' view and can be either.",
+    "Role strain: one role, competing demands. Role conflict: two or more roles colliding.",
+    "Role exit: disengaging from a core role and rebuilding the self around an ex-role."
+   ],
+   "outbox_ids": {
+    "diagram-tiktok": "diagram-tiktok-030"
+   },
+   "seconds": 22.6,
+   "size": 1380661,
+   "tag": "#psychology",
+   "title": "Role Strain vs Role Conflict, Status Types and Social Groups"
+  }
+ },
+ "pins": {
+  "note-acid-base-titration-curves-equivalence-point": {
+   "desc": "Read any acid-base titration curve: the pH at the start, half-equivalence and equivalence points, indicator choice, and a full weak acid worked example.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-001"
+   },
+   "size": 153371,
+   "slug": "acid-base-titration-curves-equivalence-point",
+   "tag": "#chemistry",
+   "title": "Acid-Base Titration Curves: Equivalence and Half-Equivalence Points"
+  },
+  "note-action-potential-phases-ion-channels": {
+   "desc": "Walk through each action potential phase, which voltage-gated channel opens or closes, why refractory periods exist, and how Nernst potentials set the limits.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-002"
+   },
+   "size": 153341,
+   "slug": "action-potential-phases-ion-channels",
+   "tag": "#physiology",
+   "title": "Action Potential Phases and Ion Channels, Step by Step"
+  },
+  "note-amino-acid-pka-charge-ph-7-4": {
+   "desc": "How to predict the charge, pI, and titration behavior of any amino acid for the MCAT, with the side chain pKa values worth memorizing.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-003"
+   },
+   "size": 132437,
+   "slug": "amino-acid-pka-charge-ph-7-4",
+   "tag": "#biochemistry",
+   "title": "Amino Acid pKa Values and Charge at pH 7.4"
+  },
+  "note-anomers-vs-epimers-carbohydrates": {
+   "desc": "Tell epimers, anomers, enantiomers and other sugar isomers apart using Fischer and Haworth drawings, with a pair-sorting drill and a mutarotation calculation.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-004"
+   },
+   "size": 134746,
+   "slug": "anomers-vs-epimers-carbohydrates",
+   "tag": "#chemistry",
+   "title": "Anomers vs Epimers: Carbohydrate Stereoisomers for the MCAT"
+  },
+  "note-bacteria-vs-viruses-differences": {
+   "desc": "Learn how bacteria and viruses differ in size, structure, genome, replication and drug targets, why antibiotics fail on viruses, and the exceptions that test you.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-005"
+   },
+   "size": 117711,
+   "slug": "bacteria-vs-viruses-differences",
+   "tag": "#biology",
+   "title": "Bacteria vs Viruses: Structure, Replication and Treatment"
+  },
+  "note-bernoulli-equation-continuity-venturi": {
+   "desc": "Use the continuity equation and Bernoulli's equation to find flow speed and pressure in a pipe, with worked Venturi, height and Torricelli examples.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-006"
+   },
+   "size": 142798,
+   "slug": "bernoulli-equation-continuity-venturi",
+   "tag": "#physics",
+   "title": "Bernoulli's Equation and the Venturi Effect for the MCAT"
+  },
+  "note-classical-vs-operant-conditioning": {
+   "desc": "The core difference between classical and operant conditioning, the four reinforcement and punishment cells, and the four reinforcement schedules.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-007"
+   },
+   "size": 151739,
+   "slug": "classical-vs-operant-conditioning",
+   "tag": "#psychology",
+   "title": "Classical vs Operant Conditioning: Differences, Terms and Examples"
+  },
+  "note-conformity-vs-obedience-asch-milgram": {
+   "desc": "The difference between conformity and obedience, what the Asch and Milgram studies found, and which factors push each rate up or down.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-008"
+   },
+   "size": 116470,
+   "slug": "conformity-vs-obedience-asch-milgram",
+   "tag": "#psychology",
+   "title": "Conformity vs Obedience: Asch and Milgram Explained"
+  },
+  "note-demographic-transition-model-stages": {
+   "desc": "What happens to birth rates, death rates and population growth in each stage of the demographic transition model, with growth-rate and doubling-time math.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-009"
+   },
+   "size": 150165,
+   "slug": "demographic-transition-model-stages",
+   "tag": "#sociology",
+   "title": "Demographic Transition Model: The 5 Stages Explained for the MCAT"
+  },
+  "note-dsm-5-psychological-disorders-categories": {
+   "desc": "How the DSM-5 groups psychological disorders, what separates look-alike diagnoses, and the duration rules that decide most diagnosis questions.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-010"
+   },
+   "size": 125723,
+   "slug": "dsm-5-psychological-disorders-categories",
+   "tag": "#psychology",
+   "title": "DSM-5 Categories of Psychological Disorders for the MCAT"
+  },
+  "note-enzyme-classes-ec-1-to-7": {
+   "desc": "Learn the seven EC enzyme classes, what reaction each catalyzes, the naming clues that give them away, and the exceptions that fool test takers.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-011"
+   },
+   "size": 157902,
+   "slug": "enzyme-classes-ec-1-to-7",
+   "tag": "#biochemistry",
+   "title": "The Seven Enzyme Classes (EC 1 to 7) With Examples and Traps"
+  },
+  "note-enzyme-inhibition-types-compared": {
+   "desc": "A side-by-side guide to the four reversible inhibition types, how each changes Km and Vmax, and how to recognize them on a Lineweaver-Burk plot.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-012"
+   },
+   "size": 146401,
+   "slug": "enzyme-inhibition-types-compared",
+   "tag": "#biochemistry",
+   "title": "Enzyme Inhibition Types Compared: Competitive, Noncompetitive, Uncompetitive, Mixed"
+  },
+  "note-eriksons-stages-of-psychosocial-development": {
+   "desc": "All eight of Erikson's psychosocial stages with ages, crises and virtues, how to match a vignette to a stage, and how Erikson differs from Freud.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-013"
+   },
+   "size": 154337,
+   "slug": "eriksons-stages-of-psychosocial-development",
+   "tag": "#psychology",
+   "title": "Erikson's 8 Stages of Psychosocial Development Explained"
+  },
+  "note-functionalism-vs-conflict-theory-vs-symbolic-interactionism": {
+   "desc": "How to tell functionalism, conflict theory and symbolic interactionism apart by level of analysis and core question, with one scenario seen through all three.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-014"
+   },
+   "size": 141416,
+   "slug": "functionalism-vs-conflict-theory-vs-symbolic-interactionism",
+   "tag": "#sociology",
+   "title": "Functionalism vs Conflict Theory vs Symbolic Interactionism"
+  },
+  "note-fundamental-attribution-error-vs-actor-observer-bias": {
+   "desc": "How to tell the fundamental attribution error, actor-observer bias and self-serving bias apart, with Kelley's covariation model and worked examples.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-015"
+   },
+   "size": 157788,
+   "slug": "fundamental-attribution-error-vs-actor-observer-bias",
+   "tag": "#psychology",
+   "title": "Fundamental Attribution Error vs Actor-Observer vs Self-Serving Bias"
+  },
+  "note-galvanic-vs-electrolytic-cells": {
+   "desc": "Compare galvanic and electrolytic cells by spontaneity, electrode signs, electron flow, and sign of E and delta G, with worked Nernst and Faraday examples.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-016"
+   },
+   "size": 131639,
+   "slug": "galvanic-vs-electrolytic-cells",
+   "tag": "#physics",
+   "title": "Galvanic vs Electrolytic Cells: Signs, Electron Flow and Examples"
+  },
+  "note-gibbs-free-energy-delta-g-spontaneity": {
+   "desc": "Use delta G = delta H - T delta S to predict spontaneity, find the crossover temperature, and link delta G to K and Q, with worked numbers.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-017"
+   },
+   "size": 160794,
+   "slug": "gibbs-free-energy-delta-g-spontaneity",
+   "tag": "#chemistry",
+   "title": "Gibbs Free Energy: Delta G, Spontaneity and Temperature"
+  },
+  "note-glycolysis-steps-enzymes-net-atp": {
+   "desc": "The ten steps of glycolysis grouped into investment and payoff, the three regulated enzymes, a step-by-step ATP and NADH ledger, and trap questions.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-018"
+   },
+   "size": 147158,
+   "slug": "glycolysis-steps-enzymes-net-atp",
+   "tag": "#biochemistry",
+   "title": "Glycolysis Steps, Enzymes and Net ATP Yield for the MCAT"
+  },
+  "note-hardy-weinberg-equation-practice-problems": {
+   "desc": "Solve Hardy-Weinberg problems from any starting point: recessive or dominant phenotypes, genotype counts, carriers, X-linked traits, and equilibrium tests.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-019"
+   },
+   "size": 144871,
+   "slug": "hardy-weinberg-equation-practice-problems",
+   "tag": "#biochemistry",
+   "title": "Hardy-Weinberg Equation: How to Solve Every MCAT Problem Type"
+  },
+  "note-henderson-hasselbalch-for-the-mcat": {
+   "desc": "Derive the Henderson-Hasselbalch equation, then use it for buffers, the bicarbonate system in blood, amino acids, and drug ionization, with worked examples.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-020"
+   },
+   "size": 137065,
+   "slug": "henderson-hasselbalch-for-the-mcat",
+   "tag": "#biochemistry",
+   "title": "The Henderson-Hasselbalch Equation for the MCAT"
+  },
+  "note-how-to-approach-a-cars-passage": {
+   "desc": "A repeatable way to read a CARS passage: map each paragraph's job, name the main idea, predict before reading choices, and eliminate wrong answers by trap.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-021"
+   },
+   "size": 122712,
+   "slug": "how-to-approach-a-cars-passage",
+   "tag": "#mcatcars",
+   "title": "How to Approach a CARS Passage: A Step-by-Step Method"
+  },
+  "note-how-to-read-ir-and-nmr-spectra": {
+   "desc": "Read IR peaks and 1H NMR shift, integration and splitting step by step, then combine them with degrees of unsaturation to solve a structure.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-022"
+   },
+   "size": 123868,
+   "slug": "how-to-read-ir-and-nmr-spectra",
+   "tag": "#chemistry",
+   "title": "How to Read IR and NMR Spectra for the MCAT"
+  },
+  "note-lac-operon-regulation-lactose-glucose": {
+   "desc": "How the lac repressor and CAP-cAMP combine to set lac operon output, a four-condition table, mutant and partial diploid logic, and the traps that cost points.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-023"
+   },
+   "size": 147128,
+   "slug": "lac-operon-regulation-lactose-glucose",
+   "tag": "#biochemistry",
+   "title": "The Lac Operon Explained: Lactose, Glucose, cAMP and CAP"
+  },
+  "note-michaelis-menten-and-lineweaver-burk": {
+   "desc": "What Km, Vmax, and kcat mean, how to read a Michaelis-Menten curve, and how to pull the numbers out of a Lineweaver-Burk plot, with a worked example.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-024"
+   },
+   "size": 128669,
+   "slug": "michaelis-menten-and-lineweaver-burk",
+   "tag": "#biochemistry",
+   "title": "Michaelis-Menten Kinetics and Lineweaver-Burk Plots Explained"
+  },
+  "note-mitosis-vs-meiosis-differences": {
+   "desc": "Compare mitosis and meiosis stage by stage, track chromosome, chromatid and DNA counts through each division, and see how nondisjunction causes aneuploidy.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-025"
+   },
+   "size": 123960,
+   "slug": "mitosis-vs-meiosis-differences",
+   "tag": "#biology",
+   "title": "Mitosis vs Meiosis: Differences, Chromosome Counts and Errors"
+  },
+  "q-10a-social-inequality-1": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-009"
+   },
+   "pack_slug": "10a-social-inequality",
+   "practice": "practice/10a/index.html",
+   "section": "Psych/Soc",
+   "size": 93773,
+   "tag": "#sociology",
+   "topic": "Global inequality"
+  },
+  "q-1d-metabolism-bioenergetics-1": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-002"
+   },
+   "pack_slug": "1d-metabolism-bioenergetics",
+   "practice": "practice/1d-glycolysis-gluconeogenesis-fermentation.html",
+   "section": "Bio/Biochem",
+   "size": 91537,
+   "tag": "#biochemistry",
+   "topic": "Gluconeogenesis and bypass reactions"
+  },
+  "q-1d-metabolism-bioenergetics-4": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-010"
+   },
+   "pack_slug": "1d-metabolism-bioenergetics",
+   "practice": "practice/1d-hormonal-regulation-fed-fasting-nitrogen.html",
+   "section": "Bio/Biochem",
+   "size": 112022,
+   "tag": "#biochemistry",
+   "topic": "Fed, fasting and starvation states"
+  },
+  "q-2a-cells-membranes-1": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-013"
+   },
+   "pack_slug": "2a-cells-membranes",
+   "practice": "practice/2a-membrane-transport-osmosis-tonicity.html",
+   "section": "Bio/Biochem",
+   "size": 122030,
+   "tag": "#biology",
+   "topic": "Osmosis and tonicity"
+  },
+  "q-2a-cells-membranes-3": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-003"
+   },
+   "pack_slug": "2a-cells-membranes",
+   "practice": "practice/2a/index.html",
+   "section": "Bio/Biochem",
+   "size": 128618,
+   "tag": "#biology",
+   "topic": "Cell junctions: tight, gap, desmosomes"
+  },
+  "q-2c-cell-division-development-3": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-007"
+   },
+   "pack_slug": "2c-cell-division-development",
+   "practice": "practice/2c-fertilization-embryogenesis-germ-layers.html",
+   "section": "Bio/Biochem",
+   "size": 94461,
+   "tag": "#biology",
+   "topic": "Germ layer derivatives"
+  },
+  "q-3a-nervous-endocrine-2": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-004"
+   },
+   "pack_slug": "3a-nervous-endocrine",
+   "practice": "practice/3a-sensory-systems-vision-hearing-vestibular.html",
+   "section": "Bio/Biochem",
+   "size": 111766,
+   "tag": "#physiology",
+   "topic": "Sensory receptor types and transduction"
+  },
+  "q-4c-electricity-electrochem-2": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-011"
+   },
+   "pack_slug": "4c-electricity-electrochem",
+   "practice": "practice/4c/index.html",
+   "section": "Chem/Phys",
+   "size": 110796,
+   "tag": "#physics",
+   "topic": "RC circuits"
+  },
+  "q-4e-atoms-nuclear-periodic-3": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-014"
+   },
+   "pack_slug": "4e-atoms-nuclear-periodic",
+   "practice": "practice/4e-nuclear-decay-half-life-binding-energy.html",
+   "section": "Chem/Phys",
+   "size": 65375,
+   "tag": "#physics",
+   "topic": "Periodic trends: radius, ionization energy, electron affinity, electronegativity"
+  },
+  "q-5a-solutions-acids-bases-3": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-008"
+   },
+   "pack_slug": "5a-solutions-acids-bases",
+   "practice": "practice/5a/index.html",
+   "section": "Chem/Phys",
+   "size": 85901,
+   "tag": "#chemistry",
+   "topic": "Ksp and molar solubility"
+  },
+  "q-5e-thermo-kinetics-3": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-005"
+   },
+   "pack_slug": "5e-thermo-kinetics",
+   "practice": "practice/5e-rate-laws-reaction-order-arrhenius-catalysts.html",
+   "section": "Chem/Phys",
+   "size": 74742,
+   "tag": "#chemistry",
+   "topic": "Reaction rates and rate laws"
+  },
+  "q-6a-sensation-perception-0": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-006"
+   },
+   "pack_slug": "6a-sensation-perception",
+   "practice": "practice/6a-thresholds-weber-law-signal-detection-adaptation.html",
+   "section": "Psych/Soc",
+   "size": 94063,
+   "tag": "#psychology",
+   "topic": "Psychophysics"
+  },
+  "q-8a-self-identity-3": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-012"
+   },
+   "pack_slug": "8a-self-identity",
+   "practice": "practice/8a/index.html",
+   "section": "Psych/Soc",
+   "size": 110233,
+   "tag": "#psychology",
+   "topic": "Influence of others on identity"
+  },
+  "q-9a-social-structure-1": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-015"
+   },
+   "pack_slug": "9a-social-structure",
+   "practice": "practice/9a-sociological-theories-functionalism-conflict-interactionism.html",
+   "section": "Psych/Soc",
+   "size": 127747,
+   "tag": "#sociology",
+   "topic": "Symbolic interactionism"
+  },
+  "q-cars-strategy-2": {
+   "outbox_ids": {
+    "pins-questions": "pins-questions-001"
+   },
+   "pack_slug": "cars-strategy",
+   "practice": "practice/cars-humanities-passage-marginalia.html",
+   "section": "CARS",
+   "size": 118456,
+   "tag": "#mcatcars",
+   "topic": "Argument structure: claims and evidence"
+  }
+ },
+ "q": {
+  "10a-social-inequality-3": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-012",
+    "qotd-tiktok": "qotd-tiktok-012"
+   },
+   "pack_slug": "10a-social-inequality",
+   "practice": "practice/10a-social-class-mobility-poverty-social-capital.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": true,
+   "size": 513048,
+   "tag": "#sociology",
+   "topic": "Social capital"
+  },
+  "1a-amino-acids-proteins-2": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-026"
+   },
+   "pack_slug": "1a-amino-acids-proteins",
+   "practice": "practice/1a/index.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": false,
+   "size": 503651,
+   "tag": "#biochemistry",
+   "topic": "Enzyme classification (EC classes)"
+  },
+  "1a-amino-acids-proteins-4": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-001",
+    "qotd-tiktok": "qotd-tiktok-001"
+   },
+   "pack_slug": "1a-amino-acids-proteins",
+   "practice": "practice/1a/index.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": true,
+   "size": 453163,
+   "tag": "#biochemistry",
+   "topic": "Conjugated proteins, prosthetic groups and glycoproteins"
+  },
+  "1b-dna-gene-expression-2": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-013",
+    "qotd-tiktok": "qotd-tiktok-013"
+   },
+   "pack_slug": "1b-dna-gene-expression",
+   "practice": "practice/1b-transcription-rna-processing-splicing.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": true,
+   "size": 540891,
+   "tag": "#biochemistry",
+   "topic": "Transcription: RNA polymerases, promoters, termination"
+  },
+  "1b-dna-gene-expression-4": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-037"
+   },
+   "pack_slug": "1b-dna-gene-expression",
+   "practice": "practice/1b/index.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": false,
+   "size": 595247,
+   "tag": "#biochemistry",
+   "topic": "DNA sequencing"
+  },
+  "1c-heredity-evolution-1": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-029"
+   },
+   "pack_slug": "1c-heredity-evolution",
+   "practice": "practice/1c-mendelian-genetics-pedigrees-linkage.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": false,
+   "size": 506360,
+   "tag": "#biochemistry",
+   "topic": "Punnett squares and probability rules"
+  },
+  "1c-heredity-evolution-2": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-004",
+    "qotd-tiktok": "qotd-tiktok-004"
+   },
+   "pack_slug": "1c-heredity-evolution",
+   "practice": "practice/1c-mendelian-genetics-pedigrees-linkage.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": true,
+   "size": 540105,
+   "tag": "#biochemistry",
+   "topic": "Linkage and recombination frequency mapping"
+  },
+  "2b-prokaryotes-viruses-0": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-016",
+    "qotd-tiktok": "qotd-tiktok-016"
+   },
+   "pack_slug": "2b-prokaryotes-viruses",
+   "practice": "practice/2b-bacteria-gene-transfer-viral-life-cycles.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": true,
+   "size": 606105,
+   "tag": "#biology",
+   "topic": "Bacterial growth curve"
+  },
+  "2b-prokaryotes-viruses-1": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-040"
+   },
+   "pack_slug": "2b-prokaryotes-viruses",
+   "practice": "practice/2b-bacteria-gene-transfer-viral-life-cycles.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": false,
+   "size": 630280,
+   "tag": "#biology",
+   "topic": "Bacterial shapes and cell wall types (Gram stain)"
+  },
+  "2c-cell-division-development-4": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-019",
+    "qotd-tiktok": "qotd-tiktok-019"
+   },
+   "pack_slug": "2c-cell-division-development",
+   "practice": "practice/2c/index.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": true,
+   "size": 579221,
+   "tag": "#biology",
+   "topic": "Gene regulation in development"
+  },
+  "3a-nervous-endocrine-1": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-007",
+    "qotd-tiktok": "qotd-tiktok-007"
+   },
+   "pack_slug": "3a-nervous-endocrine",
+   "practice": "practice/3a-sensory-systems-vision-hearing-vestibular.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": true,
+   "size": 489071,
+   "tag": "#physiology",
+   "topic": "Organization of the nervous system (CNS, PNS)"
+  },
+  "3b-organ-systems-1": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-034"
+   },
+   "pack_slug": "3b-organ-systems",
+   "practice": "practice/3b/index.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": false,
+   "size": 548974,
+   "tag": "#physiology",
+   "topic": "Blood composition and hemostasis"
+  },
+  "3b-organ-systems-3": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-010",
+    "qotd-tiktok": "qotd-tiktok-010"
+   },
+   "pack_slug": "3b-organ-systems",
+   "practice": "practice/3b-kidney-nephron-filtration-acid-base.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": true,
+   "size": 541863,
+   "tag": "#physiology",
+   "topic": "Kidney anatomy and nephron"
+  },
+  "4a-motion-forces-energy-0": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-002",
+    "qotd-tiktok": "qotd-tiktok-002"
+   },
+   "pack_slug": "4a-motion-forces-energy",
+   "practice": "practice/4a/index.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": true,
+   "size": 439814,
+   "tag": "#physics",
+   "topic": "Units, dimensional analysis and significant figures"
+  },
+  "4a-motion-forces-energy-3": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-030"
+   },
+   "pack_slug": "4a-motion-forces-energy",
+   "practice": "practice/4a-work-energy-power-conservation.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 481212,
+   "tag": "#physics",
+   "topic": "Potential energy (gravitational and elastic)"
+  },
+  "4b-fluids-gases-1": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-038"
+   },
+   "pack_slug": "4b-fluids-gases",
+   "practice": "practice/4b-fluids-buoyancy-bernoulli-poiseuille.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 515497,
+   "tag": "#physics",
+   "topic": "Buoyancy and Archimedes' principle"
+  },
+  "4b-fluids-gases-4": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-011",
+    "qotd-tiktok": "qotd-tiktok-011"
+   },
+   "pack_slug": "4b-fluids-gases",
+   "practice": "practice/4b-fluids-buoyancy-bernoulli-poiseuille.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": true,
+   "size": 449163,
+   "tag": "#physics",
+   "topic": "Ideal gas law"
+  },
+  "4c-electricity-electrochem-3": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-020",
+    "qotd-tiktok": "qotd-tiktok-020"
+   },
+   "pack_slug": "4c-electricity-electrochem",
+   "practice": "practice/4c/index.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": true,
+   "size": 549276,
+   "tag": "#physics",
+   "topic": "Magnetic force on charges and currents (right-hand rule)"
+  },
+  "4d-light-sound-optics-2": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-024"
+   },
+   "pack_slug": "4d-light-sound-optics",
+   "practice": "practice/4d/index.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 543402,
+   "tag": "#physics",
+   "topic": "Ultrasound and medical imaging"
+  },
+  "4e-atoms-nuclear-periodic-1": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-022"
+   },
+   "pack_slug": "4e-atoms-nuclear-periodic",
+   "practice": "practice/4e-nuclear-decay-half-life-binding-energy.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 554919,
+   "tag": "#physics",
+   "topic": "Half-life and decay kinetics"
+  },
+  "5a-solutions-acids-bases-2": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-017",
+    "qotd-tiktok": "qotd-tiktok-017"
+   },
+   "pack_slug": "5a-solutions-acids-bases",
+   "practice": "practice/5a-ph-buffers-titrations-indicators.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": true,
+   "size": 461687,
+   "tag": "#chemistry",
+   "topic": "Titration curves and equivalence points"
+  },
+  "5b-molecules-bonding-stereo-1": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-035"
+   },
+   "pack_slug": "5b-molecules-bonding-stereo",
+   "practice": "practice/5b/index.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 490808,
+   "tag": "#chemistry",
+   "topic": "Hybridization"
+  },
+  "5b-molecules-bonding-stereo-4": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-008",
+    "qotd-tiktok": "qotd-tiktok-008"
+   },
+   "pack_slug": "5b-molecules-bonding-stereo",
+   "practice": "practice/5b-chirality-r-s-enantiomers-diastereomers.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": true,
+   "size": 437138,
+   "tag": "#chemistry",
+   "topic": "Meso compounds"
+  },
+  "5c-separations-spectroscopy-0": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-027"
+   },
+   "pack_slug": "5c-separations-spectroscopy",
+   "practice": "practice/5c/index.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 657243,
+   "tag": "#chemistry",
+   "topic": "Liquid-liquid extraction"
+  },
+  "5d-biological-molecules-orgo-0": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-032"
+   },
+   "pack_slug": "5d-biological-molecules-orgo",
+   "practice": "practice/5d/index.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 503270,
+   "tag": "#chemistry",
+   "topic": "Functional group recognition and nomenclature"
+  },
+  "5d-biological-molecules-orgo-3": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-005",
+    "qotd-tiktok": "qotd-tiktok-005"
+   },
+   "pack_slug": "5d-biological-molecules-orgo",
+   "practice": "practice/5d/index.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": true,
+   "size": 442584,
+   "tag": "#chemistry",
+   "topic": "Steroids, terpenes and fat-soluble vitamins"
+  },
+  "5e-thermo-kinetics-0": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-014",
+    "qotd-tiktok": "qotd-tiktok-014"
+   },
+   "pack_slug": "5e-thermo-kinetics",
+   "practice": "practice/5e/index.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": true,
+   "size": 501422,
+   "tag": "#chemistry",
+   "topic": "Systems, state functions and process types"
+  },
+  "6a-sensation-perception-3": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-009",
+    "qotd-tiktok": "qotd-tiktok-009"
+   },
+   "pack_slug": "6a-sensation-perception",
+   "practice": "practice/6a/index.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": true,
+   "size": 490158,
+   "tag": "#psychology",
+   "topic": "Somatosensation and pain"
+  },
+  "6b-cognition-memory-consciousness-3": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-021"
+   },
+   "pack_slug": "6b-cognition-memory-consciousness",
+   "practice": "practice/6b/index.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 633239,
+   "tag": "#psychology",
+   "topic": "Psychoactive drug classes"
+  },
+  "6c-emotion-stress-2": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-031"
+   },
+   "pack_slug": "6c-emotion-stress",
+   "practice": "practice/6c-theories-of-emotion-limbic-system-arousal.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 630540,
+   "tag": "#psychology",
+   "topic": "Limbic system and emotion"
+  },
+  "7a-individual-behavior-3": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-006",
+    "qotd-tiktok": "qotd-tiktok-006"
+   },
+   "pack_slug": "7a-individual-behavior",
+   "practice": "practice/7a/index.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": true,
+   "size": 466823,
+   "tag": "#psychology",
+   "topic": "Personality theories: trait"
+  },
+  "7a-individual-behavior-4": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-039"
+   },
+   "pack_slug": "7a-individual-behavior",
+   "practice": "practice/7a-psychological-disorders-diagnosis-biological-bases.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 638068,
+   "tag": "#psychology",
+   "topic": "Schizophrenia spectrum"
+  },
+  "7b-social-processes-2": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-033"
+   },
+   "pack_slug": "7b-social-processes",
+   "practice": "practice/7b-conformity-obedience-group-behavior.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 673040,
+   "tag": "#psychology",
+   "topic": "Groupthink"
+  },
+  "7c-learning-behavior-change-2": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-028"
+   },
+   "pack_slug": "7c-learning-behavior-change",
+   "practice": "practice/7c-classical-operant-conditioning-reinforcement-schedules.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 615864,
+   "tag": "#psychology",
+   "topic": "Operant conditioning: reinforcement and punishment"
+  },
+  "8a-self-identity-1": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-015",
+    "qotd-tiktok": "qotd-tiktok-015"
+   },
+   "pack_slug": "8a-self-identity",
+   "practice": "practice/8a/index.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": true,
+   "size": 564061,
+   "tag": "#psychology",
+   "topic": "Identity types"
+  },
+  "8b-social-thinking-2": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-025"
+   },
+   "pack_slug": "8b-social-thinking",
+   "practice": "practice/8b/index.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 635756,
+   "tag": "#psychology",
+   "topic": "Stereotypes"
+  },
+  "8c-social-interactions-1": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-003",
+    "qotd-tiktok": "qotd-tiktok-003"
+   },
+   "pack_slug": "8c-social-interactions",
+   "practice": "practice/8c-status-roles-groups-bureaucracy-dramaturgy.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": true,
+   "size": 425992,
+   "tag": "#psychology",
+   "topic": "Groups: primary and secondary"
+  },
+  "8c-social-interactions-3": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-036"
+   },
+   "pack_slug": "8c-social-interactions",
+   "practice": "practice/8c/index.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 541113,
+   "tag": "#psychology",
+   "topic": "Attraction factors"
+  },
+  "9a-social-structure-3": {
+   "outbox_ids": {
+    "qotd-shorts": "qotd-shorts-018",
+    "qotd-tiktok": "qotd-tiktok-018"
+   },
+   "pack_slug": "9a-social-structure",
+   "practice": "practice/9a/index.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": true,
+   "size": 517658,
+   "tag": "#sociology",
+   "topic": "Religion as an institution"
+  },
+  "9b-demographics-4": {
+   "outbox_ids": {
+    "qotd-tiktok": "qotd-tiktok-023"
+   },
+   "pack_slug": "9b-demographics",
+   "practice": "practice/9b-demographic-transition-population-growth-migration.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 625382,
+   "tag": "#sociology",
+   "topic": "Push and pull factors in migration"
+  }
+ },
+ "skipped": {
+  "d": [
+   "enzyme-inhibition-types-compared"
+  ],
+  "q": [
+   "cars-strategy-2",
+   "cars-strategy-3",
+   "cars-strategy-0",
+   "1d-metabolism-bioenergetics-1",
+   "2a-cells-membranes-3",
+   "3a-nervous-endocrine-2"
+  ]
+ }
+}
