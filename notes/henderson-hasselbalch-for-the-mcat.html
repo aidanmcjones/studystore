@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Henderson-Hasselbalch Equation for the MCAT | StudyStore Notes</title>
+<meta name="description" content="Derive the Henderson-Hasselbalch equation, then use it for buffers, the bicarbonate system in blood, amino acids, and drug ionization, with worked examples.">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The Henderson-Hasselbalch Equation for the MCAT", "description": "Derive the Henderson-Hasselbalch equation, then use it for buffers, the bicarbonate system in blood, amino acids, and drug ionization, with worked examples.", "image": "https://www.studystore.co/assets/notes/og-henderson-hasselbalch-for-the-mcat.png", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "wordCount": 1519, "inLanguage": "en", "mainEntityOfPage": "https://www.studystore.co/notes/henderson-hasselbalch-for-the-mcat.html", "author": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}, "publisher": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A buffer contains acetate and acetic acid (pKa 4.76) in a 10:1 ratio of acetate to acid. What is the pH?", "acceptedAnswer": {"@type": "Answer", "text": "pH = 4.76 + log(10) = 5.76."}}, {"@type": "Question", "name": "What is the ratio of HPO4(2-) to H2PO4(-) at pH 7.2 if the relevant pKa is 7.2?", "acceptedAnswer": {"@type": "Answer", "text": "The ratio is 1. When pH equals pKa, the log term is zero, so the base and acid forms are present in equal amounts."}}, {"@type": "Question", "name": "A 1 L buffer has 0.20 mol of weak acid HA and 0.20 mol of A- (pKa 5.0). You add 0.05 mol of NaOH. What is the new pH?", "acceptedAnswer": {"@type": "Answer", "text": "The base converts HA to A-. HA becomes 0.15 mol and A- becomes 0.25 mol. pH = 5.0 + log(0.25/0.15) = 5.0 + log(1.67) = 5.0 + 0.22, so about 5.22."}}, {"@type": "Question", "name": "Using pH = 6.1 + log([HCO3-]/(0.03 x PCO2)), what happens to blood pH if PCO2 rises from 40 to 80 mmHg with bicarbonate held at 24 mM?", "acceptedAnswer": {"@type": "Answer", "text": "The CO2 term doubles from 1.2 to 2.4 mM, so the ratio drops from 20 to 10. log 10 = 1, and pH = 6.1 + 1 = 7.1. This is respiratory acidosis."}}, {"@type": "Question", "name": "Why is a buffer most effective when pH is near its pKa?", "acceptedAnswer": {"@type": "Answer", "text": "At pH = pKa the acid and base forms are equal, so the solution has the maximum capacity to neutralize added acid (using the base form) or added base (using the acid form) without a large change in the ratio."}}]}</script>
+
+<link rel="canonical" href="https://www.studystore.co/notes/henderson-hasselbalch-for-the-mcat.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="The Henderson-Hasselbalch Equation for the MCAT | StudyStore Notes">
+<meta property="og:description" content="Derive the Henderson-Hasselbalch equation, then use it for buffers, the bicarbonate system in blood, amino acids, and drug ionization, with worked examples.">
+<meta property="og:url" content="https://www.studystore.co/notes/henderson-hasselbalch-for-the-mcat.html">
+<meta property="og:image" content="https://www.studystore.co/assets/notes/og-henderson-hasselbalch-for-the-mcat.png">
+<meta name="twitter:image" content="https://www.studystore.co/assets/notes/og-henderson-hasselbalch-for-the-mcat.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c2410c'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Georgia' font-weight='700' text-anchor='middle' fill='white'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html">Study<span>Store</span></a>
+<nav><a href="../index.html#packs">Packs</a><a href="../notes/index.html">Notes</a><a href="../index.html#faq">FAQ</a><a href="../refund.html">Refunds</a></nav>
+</div></header>
+<main>
+<article class="note wrap narrow">
+<p class="eyebrow">Free MCAT study note</p>
+<h1>The Henderson-Hasselbalch Equation for the MCAT</h1>
+<p class="meta">By StudyStore &middot; Published 2026-10-20 &middot; 7 min read &middot; 1519 words</p>
+<div class="prose">
+<p>The Henderson-Hasselbalch equation links the pH of a solution to the ratio of a weak acid and its conjugate base. It looks like a formula to memorize, but it is really a shortcut for one idea, and once you see the idea you can use the equation fast and without a calculator.</p>
+<h2 id="where-it-comes-from">Where it comes from</h2>
+<p>A weak acid HA partly dissociates in water:</p>
+<p>HA &#8652; H<sup>+</sup> + A<sup>-</sup></p>
+<p>Its acid dissociation constant is K<sub>a</sub> = [H<sup>+</sup>][A<sup>-</sup>] / [HA]. Solve for [H<sup>+</sup>] to get [H<sup>+</sup>] = K<sub>a</sub> [HA]/[A<sup>-</sup>]. Take the negative logarithm of both sides. Since pH = -log[H<sup>+</sup>] and pK<sub>a</sub> = -log K<sub>a</sub>, you get:</p>
+<p><strong>pH = pK<sub>a</sub> + log([A<sup>-</sup>] / [HA])</strong></p>
+<p>In words: the pH equals the pK<sub>a</sub> plus the log of the ratio of base form to acid form. The equation is just the dissociation constant rearranged, so it holds for any weak acid, including the ionizable groups on amino acids.</p>
+<h2 id="three-facts-that-carry-most-of-the-exam">Three facts that carry most of the exam</h2>
+<ol><li><strong>When [A<sup>-</sup>] = [HA], the log term is log 1 = 0, so pH = pK<sub>a</sub>.</strong> The pK<sub>a</sub> is the pH at which a group is half protonated. This is also the half-equivalence point of a titration.</li><li><strong>Every pH unit shifts the ratio by a factor of 10.</strong> At pH = pK<sub>a</sub> + 1 the base form outnumbers the acid form 10 to 1. At pH = pK<sub>a</sub> - 1 the acid form outnumbers the base form 10 to 1. At plus or minus 2 units the ratio is 100 to 1.</li><li><strong>A buffer works best at pH = pK<sub>a</sub>, and is useful within about one pH unit of it.</strong> In that window, both the acid and base forms are present in meaningful amounts, so the solution can neutralize added acid or base.</li></ol>
+<figure><img src="../assets/notes/henderson-hasselbalch-for-the-mcat.png" alt="Fraction of acetic acid and acetate versus pH, with the buffer region shaded" loading="lazy"><figcaption>Acetic acid (pKa 4.76). The curves cross at the pKa, where the buffer is strongest. The shaded band is the useful range, pKa plus or minus 1.</figcaption></figure>
+<p>Log values worth knowing: log 1 = 0, log 2 is about 0.3, log 3 is about 0.48, log 5 is about 0.7, log 10 = 1. They let you estimate answers by hand. For example, a 2-to-1 ratio shifts the pH by about 0.3 units from the pK<sub>a</sub>.</p>
+<h2 id="worked-example-1-making-a-buffer">Worked example 1: making a buffer</h2>
+<p>You mix 0.10 mol of acetic acid (pK<sub>a</sub> 4.76) and 0.10 mol of sodium acetate in 1 L of water. The ratio is 1, so pH = 4.76.</p>
+<p>Now add 0.02 mol of HCl, a strong acid. The added H<sup>+</sup> reacts completely with the acetate base: A<sup>-</sup> + H<sup>+</sup> gives HA. So acetate drops from 0.10 to 0.08 mol and acetic acid rises from 0.10 to 0.12 mol. Then:</p>
+<p>pH = 4.76 + log(0.08 / 0.12) = 4.76 + log(0.667) = 4.76 - 0.18 = 4.58</p>
+<p>The pH fell by only 0.18 units. The same amount of HCl added to 1 L of pure water would take the pH from 7 to 1.7. That contrast is what a buffer does. The procedure to remember is: <strong>do the stoichiometry first</strong> (strong acid converts base to acid, strong base converts acid to base), then plug the new amounts into the equation.</p>
+<p>Diluting a buffer with water leaves the ratio unchanged, so the calculated pH barely changes, though the buffer capacity drops.</p>
+<h2 id="worked-example-2-the-blood-bicarbonate-buffer">Worked example 2: the blood bicarbonate buffer</h2>
+<p>Blood's main buffer is the carbonic acid-bicarbonate system. Carbon dioxide dissolves in water and equilibrates with carbonic acid, so the acid component is effectively dissolved CO<sub>2</sub>, which is 0.03 mM per mmHg of P<sub>CO2</sub>. The apparent pK<sub>a</sub> for this combined system is 6.1:</p>
+<p>pH = 6.1 + log([HCO<sub>3</sub><sup>-</sup>] / (0.03 &times; P<sub>CO2</sub>))</p>
+<p>With a normal bicarbonate of 24 mM and P<sub>CO2</sub> of 40 mmHg, the dissolved CO<sub>2</sub> is 0.03 &times; 40 = 1.2 mM. The ratio is 24/1.2 = 20, and log 20 = 1.3, so the pH is 6.1 + 1.3 = <strong>7.4</strong>.</p>
+<p>This equation explains acid-base physiology directly. If someone hyperventilates and P<sub>CO2</sub> drops to 20 mmHg, the CO<sub>2</sub> term halves to 0.6 mM. The ratio doubles to 40, log 40 = 1.6, and the pH rises to about 7.7. That is respiratory alkalosis. If bicarbonate falls instead (as in metabolic acidosis), the ratio and the pH both fall. The lungs control the denominator and the kidneys control the numerator.</p>
+<p>Note that 7.4 is a full 1.3 units above the pK<sub>a</sub> of 6.1. By the "within one unit" rule, this buffer is not at its optimum. It works well in blood because it is an open system: the lungs remove CO<sub>2</sub> and the kidneys adjust bicarbonate, so the system is constantly restored.</p>
+<h2 id="worked-example-3-drug-ionization">Worked example 3: drug ionization</h2>
+<p>Weak acid drugs and weak base drugs cross membranes mainly in their uncharged form, so ionization affects absorption. Aspirin is a weak acid with pK<sub>a</sub> about 3.5.</p>
+<ul><li>In the stomach at pH 2: log(A<sup>-</sup>/HA) = 2 - 3.5 = -1.5, so the ratio A<sup>-</sup>/HA is 10<sup>-1.5</sup>, about 0.03. Roughly 3 percent is ionized and nearly all is in the uncharged HA form that crosses membranes easily.</li><li>In blood at pH 7.4: log ratio = 7.4 - 3.5 = 3.9, a ratio near 8000 to 1. Over 99.9 percent is ionized.</li></ul>
+<p>The same math applies to a weak base, using the pK<sub>a</sub> of its conjugate acid: pH = pK<sub>a</sub> + log([B] / [BH<sup>+</sup>]). Ammonia's conjugate acid NH<sub>4</sub><sup>+</sup> has pK<sub>a</sub> about 9.25, so at pH 7.4 most ammonia is in the ammonium form.</p>
+<h2 id="using-it-on-amino-acids">Using it on amino acids</h2>
+<p>Each ionizable group on an amino acid obeys the same equation with its own pK<sub>a</sub>. A group is more than 90 percent in its base form once pH exceeds the pK<sub>a</sub> by one unit, and more than 90 percent in its acid form when pH is a unit below. That is the logic behind the charge-at-pH method in the <a href="amino-acid-pka-charge-ph-7-4.html">amino acid note</a>.</p>
+<h2 id="titration-curves-and-the-equation">Titration curves and the equation</h2>
+<p>On a titration curve of a weak acid with strong base, the Henderson-Hasselbalch equation describes the region in the middle. At the half-equivalence point, half the acid has been converted to its base, the ratio is 1, and pH = pK<sub>a</sub>. At the equivalence point all the acid has become conjugate base. The pH there is above 7 for a weak acid titrated with a strong base, because the conjugate base reacts with water to make hydroxide. The equation does not apply at the equivalence point itself because the HA term is nearly zero.</p>
+<h2 id="limits-of-the-equation">Limits of the equation</h2>
+<ul><li>It assumes concentrations approximate activities, which holds for dilute solutions.</li><li>It breaks down when the acid is very dilute or very strong, or at the extreme ends of a titration, where the water term and the [H<sup>+</sup>] you are solving for are not negligible.</li><li>It assumes you used the correct pK<sub>a</sub> for the correct group. A polyprotic acid has several, and you pick the one nearest the pH of interest.</li></ul>
+<h2 id="common-traps">Common traps</h2>
+<ul><li><strong>Flipping the ratio.</strong> It is [base]/[acid], not the reverse. A quick check: if pH is above pK<sub>a</sub>, the base form should dominate.</li><li><strong>Skipping stoichiometry.</strong> When strong acid or base is added, first convert moles, then use the equation.</li><li><strong>Using concentrations after dilution inconsistently.</strong> Because both terms are in the same total volume, you can use moles directly in the ratio.</li><li><strong>Using the weak base's own pK<sub>b</sub> in the pH form.</strong> Convert to the conjugate acid's pK<sub>a</sub> (pK<sub>a</sub> + pK<sub>b</sub> = 14 at 25 C).</li></ul>
+<h2 id="one-minute-recap">One-minute recap</h2>
+<p>pH = pK<sub>a</sub> + log([A<sup>-</sup>]/[HA]). At pH = pK<sub>a</sub> the two forms are equal. Each pH unit changes the ratio tenfold. Buffers work best within one unit of the pK<sub>a</sub>. For added strong acid or base, do the mole bookkeeping first. In blood, pH = 6.1 + log([HCO<sub>3</sub><sup>-</sup>]/(0.03 &times; P<sub>CO2</sub>)).</p>
+</div>
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Amino Acids, Proteins &amp; Enzyme Kinetics is a $9 pack with original Anki cards and a printable cheat sheet. <a href="../products/aa-enzymes.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
+<p class="meta">Try each question first, then click it to reveal the answer.</p>
+<div class="quiz"><details class="q"><summary>1. A buffer contains acetate and acetic acid (pKa 4.76) in a 10:1 ratio of acetate to acid. What is the pH?</summary><div><p>pH = 4.76 + log(10) = 5.76.</p></div></details><details class="q"><summary>2. What is the ratio of HPO4(2-) to H2PO4(-) at pH 7.2 if the relevant pKa is 7.2?</summary><div><p>The ratio is 1. When pH equals pKa, the log term is zero, so the base and acid forms are present in equal amounts.</p></div></details><details class="q"><summary>3. A 1 L buffer has 0.20 mol of weak acid HA and 0.20 mol of A- (pKa 5.0). You add 0.05 mol of NaOH. What is the new pH?</summary><div><p>The base converts HA to A-. HA becomes 0.15 mol and A- becomes 0.25 mol. pH = 5.0 + log(0.25/0.15) = 5.0 + log(1.67) = 5.0 + 0.22, so about 5.22.</p></div></details><details class="q"><summary>4. Using pH = 6.1 + log([HCO3-]/(0.03 x PCO2)), what happens to blood pH if PCO2 rises from 40 to 80 mmHg with bicarbonate held at 24 mM?</summary><div><p>The CO2 term doubles from 1.2 to 2.4 mM, so the ratio drops from 20 to 10. log 10 = 1, and pH = 6.1 + 1 = 7.1. This is respiratory acidosis.</p></div></details><details class="q"><summary>5. Why is a buffer most effective when pH is near its pKa?</summary><div><p>At pH = pKa the acid and base forms are equal, so the solution has the maximum capacity to neutralize added acid (using the base form) or added base (using the acid form) without a large change in the ratio.</p></div></details></div>
+<h2>Keep studying</h2>
+<ul><li><a href="amino-acid-pka-charge-ph-7-4.html">Amino Acid pKa Values and Charge at pH 7.4</a></li><li><a href="michaelis-menten-and-lineweaver-burk.html">Michaelis-Menten Kinetics and Lineweaver-Burk Plots Explained</a></li><li><a href="protein-structure-levels-and-denaturation.html">Protein Structure: Primary to Quaternary, and What Denaturation Destroys</a></li><li><a href="index.html">All free notes</a></li></ul>
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Amino Acids, Proteins &amp; Enzyme Kinetics is a $9 pack with original Anki cards and a printable cheat sheet. <a href="../products/aa-enzymes.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<p class="links"><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><a href="../refund.html">Refund policy</a></p>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+</div></footer>
+</body>
+</html>

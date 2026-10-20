@@ -18,3 +18,21 @@ Then run:
 `build.py` (Python 3 stdlib only) renders `templates/*.html` through `templates/base.html` into `index.html`, `products/aa-enzymes.html`, `refund.html`, `terms.html`, `privacy.html`, `404.html`, and regenerates `sitemap.xml` and `robots.txt`. The built HTML is committed; commit and push to deploy.
 
 Never put paid files (deck.apkg, pack.zip, full PDF) in this public repo. Only preview images belong in `assets/img/`.
+
+## Notes (free SEO study articles)
+
+`content/notes/<slug>.md` (frontmatter: title, description, product, published, related; optional updated) renders to
+`notes/<slug>.html` plus `notes/index.html`. `mdlite.py` is the tiny Markdown converter. Each note needs a `:::quiz` block with
+exactly 5 `Q:`/`A:` pairs. `build.py` adds Article and FAQPage JSON-LD, the pack call to action, and sitemap entries.
+
+Assets: `/Users/aidanjones/dev/studystore/.venv/bin/python tools/gen_note_assets.py [slug]` draws each note's diagram
+(`assets/notes/<slug>.png`, functions registered in `DIAGRAMS`) and Open Graph card (`assets/notes/og-<slug>.png`, 1200x630).
+
+The autonomous writing prompt is `/Users/aidanjones/dev/studystore/engine/NOTES_PROMPT.md`.
+
+## IndexNow (automatic indexing)
+
+The root file `61cfad664bbb52328ce1c2a15b876a63.txt` is the public IndexNow key (its content is the key). After a push and
+deploy, run `tools/ping_sitemap.sh` (all URLs) or `tools/ping_sitemap.sh --new` (URLs added in the last commit). It POSTs to
+api.indexnow.org; HTTP 200 or 202 means accepted. IndexNow reaches Bing and partner engines. Google does not use IndexNow; it
+finds pages through `sitemap.xml` (declared in `robots.txt`) and ordinary crawling.
