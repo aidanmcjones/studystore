@@ -515,5 +515,148 @@ DIAGRAMS.update({
 })
 # ---- end notes-a diagrams ----
 
+# ---- notes-e diagrams (4A, 4B, 4D, 5B) ----
+def ne_work_energy():
+    m, g, H, Wnc = 2.0, 9.8, 5.0, -17.0
+    h = np.linspace(H, 0, 201)
+    drop = H - h
+    pe = m * g * h
+    ke = m * g * drop
+    frac = drop / H
+    tot_f = m * g * H + Wnc * frac  # friction work grows evenly with distance down an even ramp
+    ke_f = tot_f - pe
+    fig, ax = plt.subplots(figsize=(8.2, 5.0))
+    ax.plot(drop, pe, color=TEAL, lw=3, label="potential energy mgh")
+    ax.plot(drop, ke, color=ACC, lw=3, label="kinetic energy, frictionless")
+    ax.plot(drop, ke_f, color=ACC, lw=2.2, ls="--", label="kinetic energy, with friction")
+    ax.plot(drop, np.full_like(drop, m * g * H), color=INK, lw=2, label="total, frictionless (98 J)")
+    ax.plot(drop, tot_f, color=GREY, lw=2, ls="--", label="total, with friction")
+    ax.annotate("", xy=(H + 0.12, m * g * H + Wnc), xytext=(H + 0.12, m * g * H), arrowprops=dict(arrowstyle="<->", color=ACCD, lw=1.6))
+    ax.text(H + 0.22, m * g * H + Wnc / 2, "17 J to heat", ha="left", va="center", fontsize=10, color=ACCD, fontweight="bold")
+    ax.plot([H], [m * g * H + Wnc], "o", color=ACC, ms=8)
+    ax.text(H + 0.22, m * g * H + Wnc - 3, "81 J of KE\nv = 9.0 m/s", ha="left", va="top", fontsize=9.5, color=ACCD)
+    ax.plot([H], [m * g * H], "o", color=INK, ms=8)
+    ax.text(H + 0.22, m * g * H + 3, "98 J of KE\nv = 9.9 m/s", ha="left", va="bottom", fontsize=9.5)
+    ax.set_xticks([0, 1, 2, 3, 4, 5]); ax.spines["bottom"].set_bounds(0, 5)
+    ax.set_xlim(0, 6.5); ax.set_ylim(0, 118)
+    ax.set_xlabel("height dropped (m)"); ax.set_ylabel("energy (J)")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.45, -0.13), ncol=2, frameon=False, fontsize=9.3)
+    ax.set_title("2.0 kg cart released from rest 5.0 m up a ramp", fontsize=12.5, loc="left", fontweight="bold")
+    save(fig, "work-energy-theorem-conservation-of-energy")
+
+def ne_venturi():
+    rho, r1, r2, v1 = 1000.0, 3.0, 1.5, 0.80
+    x = np.linspace(0, 10, 600)
+    s = np.clip((x - 3) / 1.5, 0, 1); s2 = np.clip((x - 6) / 1.5, 0, 1)
+    ease = lambda u: 0.5 - 0.5 * np.cos(np.pi * u)
+    r = r1 - (r1 - r2) * ease(s) + (r1 - r2) * ease(s2)
+    v = v1 * (r1 / r) ** 2
+    dP = 0.5 * rho * (v ** 2 - v1 ** 2) / 1000.0  # pressure drop in kPa
+    fig, (a, b) = plt.subplots(2, 1, figsize=(8.2, 6.4), sharex=True, gridspec_kw=dict(height_ratios=[1, 1.35]))
+    a.fill_between(x, -r, r, color="#e8f1f2")
+    a.plot(x, r, color=INK, lw=2); a.plot(x, -r, color=INK, lw=2)
+    for xx in (1.2, 5.0, 8.8):
+        i = int(np.argmin(abs(x - xx))); L = 0.55 * v[i] / v.max() * 2.6
+        a.annotate("", xy=(xx + L / 2, 0), xytext=(xx - L / 2, 0), arrowprops=dict(arrowstyle="-|>", color=TEAL, lw=2.2))
+    a.text(1.2, 1.6, "r = 3.0 cm\nv = 0.80 m/s", ha="center", fontsize=9.5)
+    a.text(5.0, 1.75, "r = 1.5 cm\nv = 3.2 m/s", ha="center", fontsize=9.5, fontweight="bold", color=ACCD)
+    a.text(8.8, 1.6, "r = 3.0 cm\nv = 0.80 m/s", ha="center", fontsize=9.5)
+    a.set_ylim(-3.6, 3.6); a.axis("off")
+    a.set_title("Horizontal Venturi tube carrying water", fontsize=12.5, loc="left", fontweight="bold")
+    b.plot(x, v, color=TEAL, lw=3)
+    b.set_ylabel("flow speed (m/s)", color=TEAL); b.set_ylim(0, 3.6)
+    b2 = b.twinx(); b2.spines["right"].set_visible(True); b2.spines["top"].set_visible(False)
+    b2.plot(x, -dP, color=ACC, lw=3)
+    b2.set_ylabel("pressure change from inlet (kPa)", color=ACC); b2.set_ylim(-5.4, 0.6)
+    b2.text(5.25, -4.55, "-4.8 kPa", ha="center", va="bottom", fontsize=10, color=ACCD, fontweight="bold")
+    b.text(5.0, 3.25, "3.2 m/s", ha="center", fontsize=10, color=TEAL, fontweight="bold")
+    b.text(0.2, 1.25, "speed (teal)", fontsize=9.5, color=TEAL)
+    b.text(0.2, 0.45, "pressure (orange)", fontsize=9.5, color=ACC)
+    b.set_xlabel("position along the tube (arbitrary units)"); b.set_xlim(0, 10)
+    save(fig, "bernoulli-equation-continuity-venturi")
+
+def ne_lens():
+    f = 20.0
+    fig, axes = plt.subplots(2, 1, figsize=(8.6, 7.6))
+    for ax, do, title in [(axes[0], 50.0, "Object outside f: real, inverted image"),
+                          (axes[1], 12.0, "Object inside f: virtual, upright image (magnifier)")]:
+        di = 1 / (1 / f - 1 / do); m = -di / do; ho = 4.0; hi = m * ho
+        xo = -do; xi = di
+        ax.axhline(0, color=GREY, lw=1)
+        ax.annotate("", xy=(0, 9.5), xytext=(0, -9.5), arrowprops=dict(arrowstyle="<->", color=INK, lw=2))
+        for xf, lab in [(-f, "F"), (f, "F")]:
+            ax.plot([xf], [0], "o", color=INK, ms=5); ax.text(xf - 1.2, -1.0, lab, ha="right", va="top", fontsize=10) if xf < 0 else ax.text(xf + 1.2, 0.5, lab, ha="left", va="bottom", fontsize=10)
+        ax.annotate("", xy=(xo, ho), xytext=(xo, 0), arrowprops=dict(arrowstyle="-|>", color=TEAL, lw=2.6))
+        ax.text(xo - 1.2, ho / 2, "object", ha="right", va="center", fontsize=9.5, color=TEAL)
+        sty = "-|>" if di > 0 else "-|>"
+        ax.annotate("", xy=(xi, hi), xytext=(xi, 0), arrowprops=dict(arrowstyle=sty, color=ACC, lw=2.6, ls="-" if di > 0 else "--"))
+        kind = "real, inverted, reduced" if di > 0 else "virtual, upright, enlarged"
+        lab = f"image (orange): di = {di:+.0f} cm, m = {m:+.2f}\n{kind}"
+        ax.text(76, 11.5, lab, ha="right", va="top", fontsize=9.8, color=ACCD, fontweight="bold")
+        xr = 62.0 if di > 0 else 40.0
+        # ray 1: parallel, then through far focus
+        ax.plot([xo, 0], [ho, ho], color=INK, lw=1.3)
+        slope1 = -ho / f
+        ax.plot([0, xr], [ho, ho + slope1 * xr], color=INK, lw=1.3)
+        # ray 2: through center
+        slope2 = -ho / do
+        ax.plot([xo, xr], [ho, ho + slope2 * (xr - xo)], color=INK, lw=1.3)
+        if di < 0:
+            ax.plot([xi, 0], [hi, ho], color=INK, lw=1.1, ls=":")
+            ax.plot([xi, xo], [hi, ho], color=INK, lw=1.1, ls=":")
+            ax.text(-45, -6.5, "dotted: outgoing rays traced back", fontsize=9, color=MUTED)
+        ax.set_xlim(-62, 78); ax.set_ylim(-10.5, 12.5); ax.axis("off")
+        ax.set_title(f"{title}   (f = +20 cm, do = {do:.0f} cm)", fontsize=11.5, loc="left", fontweight="bold")
+    fig.tight_layout()
+    save(fig, "thin-lens-mirror-equation-sign-conventions")
+
+def ne_rs():
+    import math
+    fig, axes = plt.subplots(1, 2, figsize=(10, 5.4))
+    L, R, W, D = (-0.87, -0.5), (0.87, -0.5), (-0.42, 0.9), (0.42, 0.9)
+    def bond(ax, p, kind):
+        x, y = p[0] * 0.62, p[1] * 0.62
+        if kind == "plain":
+            ax.plot([0, x], [0, y], color=INK, lw=2.4)
+        elif kind == "wedge":
+            nx, ny = -y, x; n = math.hypot(nx, ny); nx, ny = nx / n * 0.07, ny / n * 0.07
+            ax.add_patch(plt.Polygon([(0, 0), (x + nx, y + ny), (x - nx, y - ny)], fc=INK, ec=INK))
+        else:
+            for t in np.linspace(0.15, 1.0, 7):
+                nx, ny = -y, x; n = math.hypot(nx, ny); w = 0.075 * t
+                ax.plot([x * t - nx / n * w, x * t + nx / n * w], [y * t - ny / n * w, y * t + ny / n * w], color=INK, lw=1.6)
+    def label(ax, p, txt, pr):
+        ax.text(p[0] * 0.9, p[1] * 0.9, txt, ha="center", va="center", fontsize=13, fontweight="bold")
+        dy = 0.3 if p[1] > 0 else -0.3
+        ax.text(p[0] * 0.9, p[1] * 0.9 + dy, f"({pr})", ha="center", va="center", fontsize=11, color=ACCD, fontweight="bold")
+    def arc(ax, a0, a1, col):
+        th = np.linspace(a0, a1, 80); rr = 1.62
+        ax.plot(rr * np.cos(np.radians(th)), rr * np.sin(np.radians(th)), color=col, lw=2.2)
+        ax.annotate("", xy=(rr * np.cos(np.radians(th[-1])), rr * np.sin(np.radians(th[-1]))),
+                    xytext=(rr * np.cos(np.radians(th[-4])), rr * np.sin(np.radians(th[-4]))),
+                    arrowprops=dict(arrowstyle="-|>", color=col, lw=2.2))
+    ang = lambda p: math.degrees(math.atan2(p[1], p[0]))
+    specs = [("(R)-2-butanol", [(L, "CH$_3$", 3, "plain"), (R, "CH$_2$CH$_3$", 2, "plain"), (W, "OH", 1, "wedge"), (D, "H", 4, "dash")],
+              "H on dash (away): read as drawn.\n1 to 2 to 3 is clockwise, so R.", TEAL, ang(W)),
+             ("L-alanine", [(L, "CH$_3$", 3, "plain"), (R, "COOH", 2, "plain"), (D, "NH$_2$", 1, "dash"), (W, "H", 4, "wedge")],
+              "H on wedge (toward you): looks clockwise,\nso reverse it: S.", ACC, ang(D))]
+    for ax, (title, groups, note, col, a0) in zip(axes, specs):
+        ax.set_xlim(-2.0, 2.0); ax.set_ylim(-2.45, 1.95); ax.set_aspect("equal"); ax.axis("off")
+        for p, txt, pr, kind in groups:
+            bond(ax, p, kind); label(ax, p, txt, pr)
+        ax.plot([0], [0], "o", color=INK, ms=4)
+        arc(ax, a0 - 8, ang(L) + 14, col)
+        ax.set_title(title, fontsize=13, fontweight="bold", color=col, loc="left")
+        ax.text(0, -2.15, note, ha="center", va="center", fontsize=10.2)
+    save(fig, "r-and-s-configuration-cip-priority-rules")
+
+DIAGRAMS.update({
+    "work-energy-theorem-conservation-of-energy": ne_work_energy,
+    "bernoulli-equation-continuity-venturi": ne_venturi,
+    "thin-lens-mirror-equation-sign-conventions": ne_lens,
+    "r-and-s-configuration-cip-priority-rules": ne_rs,
+})
+# ---- end notes-e diagrams ----
+
 if __name__ == "__main__":
     main()
