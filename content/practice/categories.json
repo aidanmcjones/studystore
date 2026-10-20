@@ -1,12 +1,77 @@
 {
-  "1A": {"slug": "1a", "title": "Amino Acids, Proteins and Enzymes", "blurb": "Amino acid chemistry, protein structure, enzyme kinetics and regulation."},
-  "1B": {"slug": "1b", "title": "DNA, Genetic Information and Gene Expression", "blurb": "Replication, transcription, translation, gene regulation and lab techniques."},
-  "1C": {"slug": "1c", "title": "Heredity, Population Genetics and Evolution", "blurb": "Mendelian crosses, probability, pedigrees, linkage mapping and evolution."},
-  "1D": {"slug": "1d", "title": "Metabolism and Bioenergetics", "blurb": "Glycolysis, the citric acid cycle, oxidative phosphorylation, lipid and nitrogen metabolism."},
-  "2A": {"slug": "2a", "title": "Cells, Membranes and Tissues", "blurb": "Membrane transport, osmosis, membrane potentials, organelles and the cytoskeleton."},
-  "2B": {"slug": "2b", "title": "Prokaryotes, Viruses and Microbial Genetics", "blurb": "Bacterial structure and growth, gene transfer, and viral life cycles."},
-  "2C": {"slug": "2c", "title": "Cell Division, Development and Reproduction", "blurb": "Fertilization, early development, germ layers, induction and stem cell potency."},
-  "3A": {"slug": "3a", "title": "Nervous and Endocrine Systems", "blurb": "Action potentials, synapses, the senses, hormones and feedback axes."},
-  "3B": {"slug": "3b", "title": "Organ Systems", "blurb": "Kidney, cardiovascular, respiratory and immune physiology."},
-  "5D": {"slug": "5d", "title": "Biologically Relevant Molecules and Organic Reactivity", "blurb": "Carbohydrates, lipids, carbonyl chemistry and acid derivatives."}
+  "1A": {
+    "slug": "1a",
+    "title": "Amino Acids, Proteins and Enzymes",
+    "blurb": "Amino acid chemistry, protein structure, enzyme kinetics and regulation."
+  },
+  "1B": {
+    "slug": "1b",
+    "title": "DNA, Genetic Information and Gene Expression",
+    "blurb": "Replication, transcription, translation, gene regulation and lab techniques."
+  },
+  "1C": {
+    "slug": "1c",
+    "title": "Heredity, Population Genetics and Evolution",
+    "blurb": "Mendelian crosses, probability, pedigrees, linkage mapping and evolution."
+  },
+  "1D": {
+    "slug": "1d",
+    "title": "Metabolism and Bioenergetics",
+    "blurb": "Glycolysis, the citric acid cycle, oxidative phosphorylation, lipid and nitrogen metabolism."
+  },
+  "2A": {
+    "slug": "2a",
+    "title": "Cells, Membranes and Tissues",
+    "blurb": "Membrane transport, osmosis, membrane potentials, organelles and the cytoskeleton."
+  },
+  "2B": {
+    "slug": "2b",
+    "title": "Prokaryotes, Viruses and Microbial Genetics",
+    "blurb": "Bacterial structure and growth, gene transfer, and viral life cycles."
+  },
+  "2C": {
+    "slug": "2c",
+    "title": "Cell Division, Development and Reproduction",
+    "blurb": "Fertilization, early development, germ layers, induction and stem cell potency."
+  },
+  "3A": {
+    "slug": "3a",
+    "title": "Nervous and Endocrine Systems",
+    "blurb": "Action potentials, synapses, the senses, hormones and feedback axes."
+  },
+  "3B": {
+    "slug": "3b",
+    "title": "Organ Systems",
+    "blurb": "Kidney, cardiovascular, respiratory and immune physiology."
+  },
+  "4A": {
+    "slug": "4a",
+    "title": "Motion, Forces, Work and Energy",
+    "blurb": "Work, energy conservation, power and simple machines."
+  },
+  "4B": {
+    "slug": "4b",
+    "title": "Fluids and Gas Behavior",
+    "blurb": "Hydrostatic pressure, buoyancy, continuity, Bernoulli and Poiseuille flow."
+  },
+  "4C": {
+    "slug": "4c",
+    "title": "Electrostatics, Circuits, Magnetism and Electrochemistry",
+    "blurb": "Ohm's law, series and parallel resistors, Kirchhoff's rules and circuit power."
+  },
+  "4D": {
+    "slug": "4d",
+    "title": "Waves, Sound, Light and Optics",
+    "blurb": "Mirrors, thin lenses, lens power, the eye and vision correction."
+  },
+  "4E": {
+    "slug": "4e",
+    "title": "Atoms, Nuclear Chemistry and the Periodic Table",
+    "blurb": "Isotopes, radioactive decay, half-life, binding energy, fission and fusion."
+  },
+  "5D": {
+    "slug": "5d",
+    "title": "Biologically Relevant Molecules and Organic Reactivity",
+    "blurb": "Carbohydrates, lipids, carbonyl chemistry and acid derivatives."
+  }
 }
