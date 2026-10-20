@@ -61,9 +61,9 @@
    "stem": "A flow cytometry histogram of a growing culture shows two peaks, at 2C and 4C. Cells in the 4C peak are in:",
    "options": [
     "Early S phase",
-    "G1",
-    "G0",
-    "G2 or mitosis before cytokinesis"
+    "G1 before replication",
+    "G0 quiescence",
+    "G2 or mitosis"
    ],
    "answer": "D",
    "explanation": "Cells at 4C have replicated their DNA but not yet divided, so they are in G2 or M. G1 and G0 cells have 2C, and cells in early S phase lie between the two peaks.",
@@ -87,7 +87,7 @@
     "The egg destroys its own mitochondria",
     "Mitochondria cannot replicate in sperm",
     "Sperm contain no mitochondria",
-    "Sperm mitochondria are destroyed after entry into the egg"
+    "Sperm mitochondria are degraded in the zygote"
    ],
    "answer": "D",
    "explanation": "Sperm have mitochondria in the midpiece, but they are degraded in the zygote. The egg keeps its own. Sperm mitochondria do exist and function.",

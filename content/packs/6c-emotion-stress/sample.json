@@ -96,10 +96,10 @@
   {
    "stem": "Why is a polygraph considered unreliable for detecting lies?",
    "options": [
-    "It measures only parasympathetic activity",
-    "It cannot detect heart rate",
-    "It depends on the cerebellum",
-    "It measures general arousal, which also occurs for many other reasons"
+    "It measures only parasympathetic nervous activity",
+    "It cannot detect changes in heart rate",
+    "It depends on cerebellar motor signals",
+    "It records arousal that has many causes besides lying"
    ],
    "answer": "D",
    "explanation": "Skin conductance and heart rate reflect arousal, which can result from anxiety, fear of being accused, or excitement. They are sympathetic measures, the device does record heart rate, and the cerebellum is not involved.",

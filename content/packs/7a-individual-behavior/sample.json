@@ -23,7 +23,7 @@
    "src": "assets/packs/7a-individual-behavior/card-4.webp",
    "alt": "Sample multiple choice card: Which drug action explains why SSRIs raise mood?",
    "w": 680,
-   "h": 385
+   "h": 356
   }
  ],
  "sheets": [
@@ -73,12 +73,12 @@
    "stem": "Prolonged elevated cortisol is most associated with",
    "options": [
     "Hippocampal atrophy and impaired memory",
-    "Increased immune function",
-    "Enlarged amygdala only",
-    "Lower blood glucose"
+    "Enhanced immune function and healing",
+    "Reduced anxiety and fear responses",
+    "Lower blood glucose levels"
    ],
    "answer": "A",
-   "explanation": "Hippocampal neurons are sensitive to chronic glucocorticoids. Cortisol suppresses immunity and raises blood glucose. Cortisol does not boost immunity, a smaller amygdala is not the finding, and it raises rather than lowers glucose.",
+   "explanation": "Hippocampal neurons are sensitive to chronic glucocorticoids, so the hippocampus shrinks and memory suffers. Cortisol suppresses rather than boosts immunity, raises rather than lowers blood glucose, and chronic stress heightens rather than reduces anxiety.",
    "subtopic": "Endocrine influences on behavior"
   },
   {
@@ -131,15 +131,15 @@
   },
   {
    "type": "mc",
-   "stem": "Which toxin prevents acetylcholine release at the neuromuscular junction?",
+   "stem": "Which drug action explains why SSRIs raise mood?",
    "options": [
-    "Curare",
-    "Botulinum toxin",
-    "Nicotine",
-    "Physostigmine"
+    "Blocking serotonin reuptake",
+    "Blocking serotonin receptors",
+    "Inhibiting dopamine synthesis",
+    "Increasing GABA release"
    ],
-   "answer": "B",
-   "why": "Botulinum toxin cleaves proteins needed for vesicle fusion. Curare blocks the receptor, nicotine activates it, and physostigmine blocks AChE."
+   "answer": "A",
+   "why": "SSRIs inhibit the serotonin transporter, so serotonin stays in the synapse longer."
   },
   {
    "type": "tf",

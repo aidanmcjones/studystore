@@ -96,10 +96,10 @@
   {
    "stem": "A mutant activator keeps its DNA-binding domain but lacks its activation domain. In the cell it would most likely",
    "options": [
-    "activate transcription more strongly",
-    "cleave the DNA",
-    "be exported from the nucleus",
-    "bind the enhancer but fail to stimulate transcription"
+    "Activate transcription more strongly than normal",
+    "Cleave the DNA at the enhancer site",
+    "Be exported from the nucleus and degraded",
+    "Bind the enhancer without activating transcription"
    ],
    "answer": "D",
    "explanation": "The DNA-binding domain still docks on the enhancer, but without the activation domain it cannot recruit coactivators. It can even compete with the normal activator.",

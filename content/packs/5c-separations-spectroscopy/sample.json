@@ -1,0 +1,151 @@
+{
+ "slug": "5c-separations-spectroscopy",
+ "cards": [
+  {
+   "src": "assets/packs/5c-separations-spectroscopy/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 561
+  },
+  {
+   "src": "assets/packs/5c-separations-spectroscopy/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 794
+  },
+  {
+   "src": "assets/packs/5c-separations-spectroscopy/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 541
+  },
+  {
+   "src": "assets/packs/5c-separations-spectroscopy/card-4.webp",
+   "alt": "Sample multiple choice card: In a funnel, an aqueous layer is shaken with dichloromethane (d 1.33). Which layer is drained first?",
+   "w": 680,
+   "h": 384
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/5c-separations-spectroscopy/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/5c-separations-spectroscopy/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/5c-separations-spectroscopy/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/5c-separations-spectroscopy/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A compound dissolved in water is extracted with dichloromethane (density 1.33 g/mL). In the separatory funnel, where is the organic layer?",
+   "options": [
+    "The top layer",
+    "Both layers mix",
+    "The bottom layer",
+    "It depends on the solute"
+   ],
+   "answer": "C",
+   "explanation": "Layer position depends on density. Dichloromethane is denser than water, so the organic layer is on the bottom. The top would be right for ether. The solvents are immiscible, so layers form, and the solute does not change which solvent is denser.",
+   "subtopic": "Liquid-liquid extraction"
+  },
+  {
+   "stem": "Where should the thermometer bulb be placed during a distillation?",
+   "options": [
+    "In the boiling liquid",
+    "At the top of the condenser",
+    "Just below the side-arm opening",
+    "Touching the heating mantle"
+   ],
+   "answer": "C",
+   "explanation": "The bulb must sit in the vapor that is about to enter the condenser so it reads the boiling temperature of the distilling vapor. In the liquid it reads the pot temperature, and the condenser top or mantle would read neither the vapor temperature nor the boiling point.",
+   "subtopic": "Simple and fractional distillation"
+  },
+  {
+   "stem": "Pentane, hexane, and heptane are injected into a GC with a nonpolar column. Which elutes first?",
+   "options": [
+    "Pentane, the lowest boiling point",
+    "Heptane, the largest",
+    "All elute together",
+    "Hexane, because it is in the middle"
+   ],
+   "answer": "A",
+   "explanation": "In GC, order follows volatility, so the lowest-boiling alkane exits first. Larger molecules with higher boiling points are retained longer, and the three have different boiling points so they separate.",
+   "subtopic": "Gas chromatography"
+  },
+  {
+   "stem": "In IEF, a protein with pI 6.0 is placed in a region of the gel at pH 9.0. In which direction does it first move?",
+   "options": [
+    "Toward the cathode",
+    "It does not move",
+    "Toward the wells",
+    "Toward the anode"
+   ],
+   "answer": "D",
+   "explanation": "At pH 9 (above its pI) the protein is net negative, so it migrates toward the anode, where the acidic end lies, until it reaches pH 6. It moves because it is charged, and it would only head toward the cathode if it were net positive.",
+   "subtopic": "Electrophoresis (SDS-PAGE, isoelectric focusing)"
+  },
+  {
+   "stem": "2-Bromopropane gives which 1H NMR pattern?",
+   "options": [
+    "A 3H triplet and a 2H quartet",
+    "A 9H singlet",
+    "Two triplets of equal area",
+    "A 6H doublet and a 1H septet"
+   ],
+   "answer": "D",
+   "explanation": "The two equivalent CH3 groups each have one neighboring H, so a 6H doublet results, and the CH has six neighbors, so a septet results. A triplet and quartet describes ethyl, and a 9H singlet is tert-butyl.",
+   "subtopic": "1H NMR: shift, integration, splitting"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "What two properties must the solvent pair in a liquid-liquid extraction have?",
+   "back": "The two solvents must be immiscible (form two layers), and the target solute must be much more soluble in the extracting solvent than in the original one."
+  },
+  {
+   "type": "cz",
+   "text": "Density rule: in a separatory funnel the {{c1::denser}} layer sits on the bottom, and water (d = {{c2::1.00}} g/mL) is the usual reference.",
+   "extra": "If the layers are unclear, add a few drops of water and see which layer grows."
+  },
+  {
+   "type": "mc",
+   "stem": "Which solvent is a poor choice for extracting an aqueous solution because it mixes freely with water?",
+   "options": [
+    "Diethyl ether",
+    "Dichloromethane",
+    "Ethanol",
+    "Hexane"
+   ],
+   "answer": "C",
+   "why": "Ethanol is miscible with water, so no second layer forms. Ether, dichloromethane and hexane are all immiscible with water."
+  },
+  {
+   "type": "tf",
+   "statement": "Polar organic compounds dissolve best in the nonpolar solvent layer of an extraction.",
+   "truth": false,
+   "why": "Like dissolves like: polar compounds favor water, nonpolar compounds favor the organic layer."
+  }
+ ]
+}

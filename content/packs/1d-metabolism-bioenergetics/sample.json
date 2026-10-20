@@ -108,10 +108,10 @@
   {
    "stem": "A person has fasted for 5 days. Compared with day 1, which change is expected?",
    "options": [
-    "Higher liver glycogen",
-    "Lower plasma ketones",
-    "Higher insulin",
-    "Greater brain use of ketone bodies and reduced protein breakdown"
+    "Higher liver glycogen content",
+    "Lower plasma ketone levels",
+    "Higher plasma insulin levels",
+    "Greater brain use of ketone bodies"
    ],
    "answer": "D",
    "explanation": "By day 5 ketones are the major brain fuel, and nitrogen loss is reduced. Liver glycogen is gone, ketones are high, and insulin is low.",
