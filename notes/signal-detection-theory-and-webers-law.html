@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Signal Detection Theory and Weber&#x27;s Law: d&#x27;, Bias and the JND</title>
+<meta name="description" content="Learn absolute and difference thresholds, apply Weber&#x27;s law, and separate sensitivity (d&#x27;) from response bias in signal detection theory, with worked numbers.">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Signal Detection Theory and Weber's Law: d', Bias and the JND", "description": "Learn absolute and difference thresholds, apply Weber's law, and separate sensitivity (d') from response bias in signal detection theory, with worked numbers.", "image": "https://www.studystore.co/assets/notes/og-signal-detection-theory-and-webers-law.png?v=2c5a2567c3", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "wordCount": 1645, "inLanguage": "en", "mainEntityOfPage": "https://www.studystore.co/notes/signal-detection-theory-and-webers-law.html", "author": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}, "publisher": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "If the Weber fraction for brightness is about 0.08, how much must a light of 300 units increase before the change is just noticeable?", "acceptedAnswer": {"@type": "Answer", "text": "About 0.08 × 300 = 24 units. The required change is a fixed fraction of the baseline, so a brighter starting light needs a larger absolute increase."}}, {"@type": "Question", "name": "An observer's hit rate and false alarm rate both rise after they are paid for each correct detection, and d' is unchanged. What changed?", "acceptedAnswer": {"@type": "Answer", "text": "Only the response criterion, which became more liberal. The gap between the two distributions, which is what d' measures, stayed the same."}}, {"@type": "Question", "name": "An observer has a hit rate of 0.70 and a false alarm rate of 0.70. What is d'?", "acceptedAnswer": {"@type": "Answer", "text": "d' = z(0.70) - z(0.70) = 0. The observer is saying yes equally often whether or not the signal is present, so performance is at chance."}}, {"@type": "Question", "name": "How does the absolute threshold differ from the difference threshold?", "acceptedAnswer": {"@type": "Answer", "text": "The absolute threshold is the weakest stimulus detected 50 percent of the time. The difference threshold, or JND, is the smallest change between two stimuli detected 50 percent of the time."}}, {"@type": "Question", "name": "A taster loses points for every false claim that a sample is spoiled, so they adopt a conservative criterion. Which two outcomes become more common?", "acceptedAnswer": {"@type": "Answer", "text": "Misses and correct rejections. A high cutoff means fewer yes responses, so fewer hits and false alarms and more misses and correct rejections."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "StudyStore", "item": "https://www.studystore.co/"}, {"@type": "ListItem", "position": 2, "name": "Free MCAT study notes", "item": "https://www.studystore.co/notes/index.html"}, {"@type": "ListItem", "position": 3, "name": "Signal Detection Theory and Weber's Law: d', Bias and the JND", "item": "https://www.studystore.co/notes/signal-detection-theory-and-webers-law.html"}]}</script>
+
+<link rel="canonical" href="https://www.studystore.co/notes/signal-detection-theory-and-webers-law.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="Signal Detection Theory and Weber&#x27;s Law: d&#x27;, Bias and the JND">
+<meta property="og:description" content="Learn absolute and difference thresholds, apply Weber&#x27;s law, and separate sensitivity (d&#x27;) from response bias in signal detection theory, with worked numbers.">
+<meta property="og:url" content="https://www.studystore.co/notes/signal-detection-theory-and-webers-law.html">
+<meta property="og:image" content="https://www.studystore.co/assets/notes/og-signal-detection-theory-and-webers-law.png?v=2c5a2567c3">
+<meta name="twitter:image" content="https://www.studystore.co/assets/notes/og-signal-detection-theory-and-webers-law.png?v=2c5a2567c3">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Signal Detection Theory and Weber&#x27;s Law: d&#x27;, Bias and the JND">
+<meta name="twitter:description" content="Learn absolute and difference thresholds, apply Weber&#x27;s law, and separate sensitivity (d&#x27;) from response bias in signal detection theory, with worked numbers.">
+<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1512'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23f2b705'/%3E%3Ccircle cx='21' cy='16' r='4' fill='%233ddc84'/%3E%3Ccircle cx='11' cy='21' r='4' fill='%236aa2ff'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("ss-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css?v=2a5ac25cc0">
+<link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="../assets/js/exp.js?v=f84a42976d" defer></script>
+<script src="../assets/js/site.js?v=6a476378b3" defer></script>
+<script src="../assets/js/buy.js?v=54b73e6567" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="gridbg" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html" aria-label="StudyStore home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Study<b>Store</b></span></a>
+<nav aria-label="Main"><a href="../index.html#packs">Packs</a><a href="../notes/index.html">Notes</a><a href="../tools/index.html">Tools</a><a href="../index.html#faq">FAQ</a><a href="../refund.html">Refunds</a></nav>
+<div class="tools">
+<span class="phread" aria-hidden="true">pH <b>1.0</b></span>
+<button class="themetoggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+</div>
+</div><div class="phbar" aria-hidden="true"><i></i></div></header>
+<main id="main">
+<article class="note wrap narrow">
+<p class="eyebrow">Free MCAT study note</p>
+<h1>Signal Detection Theory and Weber&#x27;s Law: d&#x27;, Bias and the JND</h1>
+<p class="meta">By StudyStore &middot; Published 2026-10-20 &middot; 7 min read &middot; 1645 words</p>
+<div class="prose">
+<p>Weber's law and signal detection theory both come from psychophysics, the study of how physical stimulus intensity relates to what people report sensing. <strong>Weber's law</strong> says the smallest change you can notice, the just noticeable difference (JND), is a constant fraction of the starting intensity: &Delta;I / I = k. <strong>Signal detection theory</strong> (SDT) says that whether you report a faint stimulus depends on two separate things: how well your sensory system separates signal from noise (sensitivity, d') and how willing you are to say "yes" (your response criterion, or bias). Weber's law is about telling two stimuli apart. SDT is about deciding whether a stimulus was there at all.</p>
+<h2 id="two-kinds-of-threshold">Two kinds of threshold</h2>
+<div class="tablewrap"><table><thead><tr><th>Threshold</th><th>Question it answers</th><th>Defined as</th></tr></thead><tbody><tr><td>Absolute threshold</td><td>Is anything there?</td><td>The weakest intensity detected on 50 percent of trials</td></tr><tr><td>Difference threshold (JND)</td><td>Are these two different?</td><td>The smallest change detected on 50 percent of trials</td></tr></tbody></table></div>
+<p>Both are defined at 50 percent because detection does not flip from never to always at one exact intensity. As intensity rises, the proportion of "yes" responses climbs gradually along an S-shaped psychometric function. Fatigue, attention, expectation and motivation all move that curve, so a threshold is a statistical average, not a fixed wall. A stimulus below the absolute threshold is called subthreshold (or subliminal).</p>
+<h2 id="weber-s-law">Weber's law</h2>
+<p>The JND grows in proportion to the baseline:</p>
+<p><strong>&Delta;I = k &times; I</strong></p>
+<p>Here I is the starting intensity, &Delta;I is the JND, and k is the Weber fraction. A small k means a sharp sense, because a tiny proportional change is enough. Values vary by study and condition, but commonly quoted approximations are about 0.02 for lifted weight, about 0.08 for brightness, and about 0.10 for loudness. Weber's law fits best in the middle of a sense's range and breaks down near very weak or very intense stimuli.</p>
+<h3 id="worked-example-1-weight">Worked example 1: weight</h3>
+<p>Use k = 0.02 for lifted weight.</p>
+<ol><li>You hold a 50 g envelope. JND = 0.02 &times; 50 = <strong>1 g</strong>. Add a 1 g sheet of paper and you can just tell.</li><li>You hold a 5 kg grocery bag (5000 g). JND = 0.02 &times; 5000 = <strong>100 g</strong>. The same 1 g sheet is now far below threshold.</li><li>To feel a change in the bag, someone must add about 100 g, a hundred times more than the envelope needed, because the baseline is a hundred times heavier.</li></ol>
+<h3 id="worked-example-2-working-backward">Worked example 2: working backward</h3>
+<p>A listener first notices a tone getting louder when its intensity goes from 40 units to 44 units. What is k, and what change is needed at 150 units?</p>
+<ol><li>k = &Delta;I / I = 4 / 40 = <strong>0.10</strong>.</li><li>At 150 units, &Delta;I = 0.10 &times; 150 = <strong>15 units</strong>.</li></ol>
+<p>The tell in Weber problems: the ratio stays fixed, so the absolute change scales with the baseline.</p>
+<h3 id="fechner-and-stevens-briefly">Fechner and Stevens, briefly</h3>
+<p>Gustav Fechner assumed every JND is an equal step in felt sensation and derived <strong>S = k log I</strong>: felt magnitude tracks the log of physical intensity, so each doubling of intensity adds the same amount of sensation. S. S. Stevens later proposed a power law, <strong>S = k I<sup>n</sup></strong>, which fits magnitude estimates better across senses. An exponent below 1 compresses (brightness), and an exponent above 1 expands (electric shock). The decibel scale for sound is logarithmic for a related reason: a 10 dB increase is a tenfold increase in intensity.</p>
+<figure><img src="../assets/notes/signal-detection-theory-and-webers-law.png?v=61dcdb95f1" alt="Three panels: noise and signal-plus-noise distributions with a criterion line, ROC curves for d&#x27; of 0, 1 and 2.5 with three listeners plotted, and JND rising in proportion to baseline for three Weber fractions" loading="lazy"><figcaption>Sensitivity is the gap between the two curves. The criterion is where you draw the line. The JND grows with the baseline.</figcaption></figure>
+<h2 id="signal-detection-theory">Signal detection theory</h2>
+<p>Older threshold models picture detection as an on-off switch. SDT replaces the switch with a decision made under uncertainty. Your nervous system is never perfectly quiet: random neural activity and background stimulation create a fluctuating internal response even when nothing is presented. On each trial the observer has an internal response and must decide whether it came from noise alone or from signal plus noise.</p>
+<p>Picture two overlapping bell curves. The noise-alone curve sits lower on the internal-response axis, and the signal-plus-noise curve sits higher. The observer picks a cutoff, the <strong>criterion</strong>, and says "yes" whenever the internal response falls above it.</p>
+<h3 id="the-four-outcomes">The four outcomes</h3>
+<div class="tablewrap"><table><thead><tr><th></th><th>Says "yes"</th><th>Says "no"</th></tr></thead><tbody><tr><td><strong>Signal present</strong></td><td>Hit</td><td>Miss</td></tr><tr><td><strong>Signal absent</strong></td><td>False alarm</td><td>Correct rejection</td></tr></tbody></table></div>
+<p>Because every signal trial is either a hit or a miss, the hit rate and miss rate add to 1. The false alarm rate and correct rejection rate also add to 1. So two numbers, the hit rate and the false alarm rate, describe performance completely.</p>
+<h3 id="sensitivity-d">Sensitivity: d'</h3>
+<p>Sensitivity is how far apart the two curves are, measured in standard deviations:</p>
+<p><strong>d' = z(hit rate) - z(false alarm rate)</strong></p>
+<p>z converts a proportion to a standard normal score (z of 0.50 is 0, z of 0.84 is about +1, z of 0.16 is about -1). A d' of 0 means the curves sit on top of each other, so the observer is guessing. Larger d' means the signal stands out more. Sensitivity rises with a stronger stimulus, less noise, or more training. It does not change because an observer becomes more cautious or more eager.</p>
+<h3 id="bias-the-criterion">Bias: the criterion</h3>
+<p>Bias is where the observer places the cutoff.</p>
+<ul><li>A <strong>liberal</strong> criterion (low cutoff) produces more hits and more false alarms. It is sensible when a miss is costly, such as a smoke detector or a screening test for a serious disease.</li><li>A <strong>conservative</strong> criterion (high cutoff) produces fewer false alarms and fewer hits. It is sensible when false alarms are costly or the signal is rare.</li></ul>
+<p>Rewards, penalties, instructions and expectations shift where the cutoff sits. None of them changes how far apart the two curves are. One common way to quantify bias is c = -(z(hit) + z(false alarm))/2: c near 0 is neutral, a positive c is conservative, and a negative c is liberal.</p>
+<h3 id="the-roc-curve">The ROC curve</h3>
+<p>A receiver operating characteristic (ROC) curve traces how the hit rate and false alarm rate change together as the cutoff slides from strict to lenient. The diagonal is chance (d' = 0). A curve bowed toward the upper left reflects higher sensitivity. Sliding along one curve is a change in bias; jumping to a more bowed curve is a change in sensitivity.</p>
+<h2 id="worked-example-3-who-has-the-best-hearing">Worked example 3: who has the best hearing?</h2>
+<p>Three people take a hearing test with faint tones on half the trials. Their results:</p>
+<div class="tablewrap"><table><thead><tr><th>Listener</th><th>Hit rate</th><th>False alarm rate</th><th>z(hit)</th><th>z(FA)</th><th>d'</th><th>c</th></tr></thead><tbody><tr><td>A</td><td>0.90</td><td>0.10</td><td>+1.28</td><td>-1.28</td><td><strong>2.56</strong></td><td>0.00 (neutral)</td></tr><tr><td>B</td><td>0.60</td><td>0.05</td><td>+0.25</td><td>-1.64</td><td><strong>1.90</strong></td><td>+0.70 (conservative)</td></tr><tr><td>C</td><td>0.95</td><td>0.50</td><td>+1.64</td><td>0.00</td><td><strong>1.64</strong></td><td>-0.82 (liberal)</td></tr></tbody></table></div>
+<p>Listener C has the highest hit rate, but also says "yes" on half of the silent trials. Once false alarms are counted, C has the lowest sensitivity of the three. Listener B misses many tones but almost never claims to hear one that is not there, a cautious observer with moderate sensitivity. Listener A has the best sensitivity. This is the core lesson of SDT: a hit rate means nothing without the false alarm rate beside it.</p>
+<p>Now suppose Listener A is offered a reward for every tone detected and no penalty for false alarms. Their hit rate climbs and their false alarm rate climbs with it. If d' stays about 2.56, their hearing has not changed. Only their criterion moved.</p>
+<h2 id="how-the-two-ideas-fit-together">How the two ideas fit together</h2>
+<p>Weber's law and SDT describe different tasks, but they share one theme: perception is relative and probabilistic, not a fixed readout of physical intensity. Weber's law shows that what counts as a noticeable change depends on context, the baseline. SDT shows that what counts as a detected stimulus depends on context too, the observer's goals and expectations. Both sit at the boundary between sensation, the receptor and neural response covered in the <a href="action-potential-phases-ion-channels.html">action potential note</a>, and perception, the brain's interpretation. Information that clears these thresholds then enters the brief sensory store described in the <a href="types-of-memory-sensory-short-term-long-term.html">memory note</a>.</p>
+<h2 id="common-traps">Common traps</h2>
+<ul><li><strong>Treating the JND as a fixed amount.</strong> The ratio is fixed, not the amount. A 1 g difference is noticeable on 50 g and invisible on 5 kg.</li><li><strong>Confusing absolute and difference thresholds.</strong> The absolute threshold asks whether one stimulus is detected. The JND compares two stimuli.</li><li><strong>Judging an observer by hit rate alone.</strong> Always pair it with the false alarm rate. Saying "yes" to everything gives a perfect hit rate and zero sensitivity.</li><li><strong>Calling a criterion shift a sensitivity change.</strong> If hits and false alarms rise together, suspect bias. Sensitivity changes when the gap between the curves changes.</li><li><strong>Thinking a low threshold always means a better sense.</strong> In SDT terms, a low reported threshold may only reflect a liberal criterion.</li><li><strong>Assuming Weber's law holds everywhere.</strong> It weakens at the extremes of intensity.</li></ul>
+<h2 id="one-minute-recap">One-minute recap</h2>
+<p>Absolute threshold: weakest stimulus detected 50 percent of the time. JND: smallest detectable change, 50 percent of the time. Weber's law: &Delta;I/I = k, so the needed change scales with the baseline. Fechner: felt magnitude tracks log intensity; Stevens: S = kI<sup>n</sup>. SDT: four outcomes (hit, miss, false alarm, correct rejection); d' = z(hit) - z(false alarm) measures sensitivity; the criterion measures bias, liberal or conservative. Rewards and expectations shift the cutoff and leave d' alone.</p>
+</div>
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Sensation and Perception is a $12 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/6a-sensation-perception.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
+<p class="meta">Try each question first, then click it to reveal the answer.</p>
+<div class="quiz"><details class="q"><summary>1. If the Weber fraction for brightness is about 0.08, how much must a light of 300 units increase before the change is just noticeable?</summary><div><p>About 0.08 × 300 = 24 units. The required change is a fixed fraction of the baseline, so a brighter starting light needs a larger absolute increase.</p></div></details><details class="q"><summary>2. An observer's hit rate and false alarm rate both rise after they are paid for each correct detection, and d' is unchanged. What changed?</summary><div><p>Only the response criterion, which became more liberal. The gap between the two distributions, which is what d' measures, stayed the same.</p></div></details><details class="q"><summary>3. An observer has a hit rate of 0.70 and a false alarm rate of 0.70. What is d'?</summary><div><p>d' = z(0.70) - z(0.70) = 0. The observer is saying yes equally often whether or not the signal is present, so performance is at chance.</p></div></details><details class="q"><summary>4. How does the absolute threshold differ from the difference threshold?</summary><div><p>The absolute threshold is the weakest stimulus detected 50 percent of the time. The difference threshold, or JND, is the smallest change between two stimuli detected 50 percent of the time.</p></div></details><details class="q"><summary>5. A taster loses points for every false claim that a sample is spoiled, so they adopt a conservative criterion. Which two outcomes become more common?</summary><div><p>Misses and correct rejections. A high cutoff means fewer yes responses, so fewer hits and false alarms and more misses and correct rejections.</p></div></details></div>
+<h2>Keep studying</h2>
+<ul><li><a href="types-of-memory-sensory-short-term-long-term.html">Types of Memory for the MCAT: Sensory, Short-Term, Working, Long-Term</a></li><li><a href="action-potential-phases-ion-channels.html">Action Potential Phases and Ion Channels, Step by Step</a></li><li><a href="index.html">All free notes</a></li></ul>
+
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Sensation and Perception is a $12 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/6a-sensation-perception.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div>
+<p class="flabel">StudyStore</p>
+<p>Original, high-yield MCAT study packs. Written from scratch, checked card by card.</p>
+</div>
+<div>
+<p class="flabel">Shop</p>
+<p class="links"><a href="../index.html#packs">Packs</a><a href="../products/index.html">All packs</a><a href="../notes/index.html">Free notes</a></p>
+</div>
+<div>
+<p class="flabel">Policies</p>
+<p class="links"><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><a href="../refund.html">Refund policy</a></p>
+</div>
+</div>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+<p class="wordmark" aria-hidden="true">Study<b>Store</b></p>
+</div></footer>
+</body>
+</html>

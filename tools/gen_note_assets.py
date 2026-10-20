@@ -515,5 +515,160 @@ DIAGRAMS.update({
 })
 # ---- end notes-a diagrams ----
 
+# ---- notes-f diagrams (5C, 5E, 6A, 6C) ----
+def nf_ir_nmr():
+    fig, (a, b) = plt.subplots(1, 2, figsize=(12.5, 5.2), gridspec_kw={"width_ratios": [1.05, 1]})
+    bands = [("alcohol O-H (broad)", 3200, 3650, TEAL), ("acid O-H (very broad)", 2500, 3300, TEAL),
+             ("N-H", 3300, 3500, TEAL), ("sp3 C-H", 2850, 3000, GREY), ("sp2 C-H", 3000, 3100, GREY),
+             ("aldehyde C-H (2 weak)", 2700, 2850, GREY), ("C triple N, C triple C", 2100, 2260, "#6b3f7a"),
+             ("C=O (strong)", 1650, 1800, ACC), ("C=C", 1620, 1680, "#6b3f7a"), ("C-O", 1000, 1300, ACCD)]
+    for i, (lab, lo, hi, c) in enumerate(bands):
+        y = len(bands) - i
+        a.add_patch(plt.Rectangle((lo, y - 0.32), hi - lo, 0.64, fc=c, ec="none", alpha=0.85))
+        tx = lo - 60
+        a.text(tx, y, lab, ha="left", va="center", fontsize=9.3, color=INK)
+    a.axvspan(500, 1500, color=LINE, alpha=0.45, lw=0)
+    a.text(1000, 0.25, "fingerprint region", ha="center", fontsize=9.5, color=MUTED, style="italic")
+    a.set_xlim(4000, 500); a.set_ylim(-0.2, len(bands) + 0.8)
+    a.set_yticks([]); a.spines["left"].set_visible(False)
+    a.set_xlabel("wavenumber (cm-1), high energy on the left")
+    a.set_title("IR: where common bonds absorb", fontsize=12.5, loc="left", fontweight="bold")
+    # simulated 1H NMR of 2-butanone at 100 MHz, J = 7.3 Hz
+    mhz, J, w = 100.0, 7.3, 0.006
+    sigs = [(1.05, 2, 3, "t, 3H\nCH3 of ethyl"), (2.15, 0, 3, "s, 3H\nCH3 on C=O"), (2.45, 3, 2, "q, 2H\nCH2 on C=O")]
+    x = np.linspace(0.5, 3.0, 6000); y = np.zeros_like(x)
+    from math import comb
+    for d, n, H, lab in sigs:
+        coefs = [comb(n, k) for k in range(n + 1)]
+        tot = sum(coefs)
+        for k, cf in enumerate(coefs):
+            pos = d + (k - n / 2) * J / mhz
+            y += H * cf / tot * (w ** 2) / ((x - pos) ** 2 + w ** 2)
+    b.plot(x, y, color=INK, lw=1.4)
+    for d, n, H, lab in sigs:
+        top = y[np.argmin(abs(x - d))] if n != 3 else y[(x > d - 0.06) & (x < d + 0.06)].max()
+        top = max(top, y[(x > d - 0.12) & (x < d + 0.12)].max())
+        b.text(d, top + 0.08, lab, ha="center", va="bottom", fontsize=10, fontweight="bold", color=ACCD)
+    b.set_xlim(3.0, 0.5); b.set_ylim(-0.1, y.max() + 0.9)
+    b.axhline(0, color=INK, lw=0.8)
+    b.set_yticks([]); b.spines["left"].set_visible(False)
+    b.set_xlabel("chemical shift (ppm), downfield on the left")
+    b.set_title("1H NMR of CH3COCH2CH3 (simulated, 100 MHz)", fontsize=12.5, loc="left", fontweight="bold")
+    save(fig, "how-to-read-ir-and-nmr-spectra")
+
+def nf_gibbs():
+    T = np.linspace(0, 800, 400)
+    cases = [(-50, 0.10, "dH < 0, dS > 0: always spontaneous", TEAL, "-"),
+             (60, 0.20, "dH > 0, dS > 0: spontaneous above 300 K", ACC, "-"),
+             (-60, -0.12, "dH < 0, dS < 0: spontaneous below 500 K", "#6b3f7a", "--"),
+             (50, -0.10, "dH > 0, dS < 0: never spontaneous", GREY, "--")]
+    fig, ax = plt.subplots(figsize=(8.8, 5.4))
+    ax.axhspan(-140, 0, color="#e3f0ee", lw=0)
+    ax.axhline(0, color=INK, lw=1)
+    for dH, dS, lab, c, ls in cases:
+        ax.plot(T, dH - T * dS, color=c, lw=2.8, ls=ls, label=lab)
+        if dH * dS > 0:
+            Tc = dH / dS
+            ax.plot([Tc], [0], "o", color=c, ms=9, zorder=5)
+            ax.annotate(f"T = dH/dS = {Tc:.0f} K", (Tc, 0), (Tc + 20, 22 if dH > 0 else -22), fontsize=9.5,
+                        color=c, fontweight="bold", va="center")
+    ax.text(10, -128, "delta G < 0: spontaneous", ha="left", fontsize=10, color=TEAL, fontweight="bold")
+    ax.text(790, 55, "delta G > 0: nonspontaneous", ha="right", fontsize=10, color=MUTED, fontweight="bold")
+    ax.set_xlim(0, 800); ax.set_ylim(-140, 140)
+    ax.set_xlabel("temperature (K)"); ax.set_ylabel("delta G (kJ/mol)")
+    ax.legend(loc="upper left", frameon=False, fontsize=9.2)
+    ax.set_title("delta G = delta H - T delta S: intercept delta H, slope -delta S", fontsize=12.5, loc="left", fontweight="bold")
+    save(fig, "gibbs-free-energy-delta-g-spontaneity")
+
+def nf_sdt_weber():
+    from statistics import NormalDist
+    nd = NormalDist()
+    fig, (a, b, c) = plt.subplots(1, 3, figsize=(15, 4.8), gridspec_kw={"width_ratios": [1.35, 1, 1]})
+    x = np.linspace(-4, 6, 800)
+    pdf = lambda m: np.exp(-(x - m) ** 2 / 2) / np.sqrt(2 * np.pi)
+    dp, crit = 2.0, 1.0
+    a.plot(x, pdf(0), color=GREY, lw=2.6); a.plot(x, pdf(dp), color=TEAL, lw=2.6)
+    a.fill_between(x, pdf(dp), where=x >= crit, color=TEAL, alpha=0.25, lw=0)
+    a.fill_between(x, pdf(0), where=x >= crit, color=ACC, alpha=0.35, lw=0)
+    a.axvline(crit, color=INK, lw=1.8)
+    a.text(crit + 0.08, 0.585, "criterion\nsay yes to the right", fontsize=9.3, va="top")
+    a.text(-1.9, 0.30, "noise\nalone", ha="center", fontsize=10, color=MUTED, fontweight="bold")
+    a.text(3.9, 0.30, "signal\n+ noise", ha="center", fontsize=10, color=TEAL, fontweight="bold")
+    a.annotate("", (dp, 0.43), (0, 0.43), arrowprops=dict(arrowstyle="<->", color=INK, lw=1.4))
+    a.text(dp / 4, 0.445, "d'", ha="center", fontsize=11, fontweight="bold")
+    a.text(2.6, 0.05, "hits", fontsize=9.5, color=TEAL, fontweight="bold")
+    a.annotate("false alarms", (1.35, 0.05), (2.4, 0.16), fontsize=9.5, color=ACCD, fontweight="bold",
+               arrowprops=dict(arrowstyle="-", color=GREY))
+    a.set_ylim(0, 0.6); a.set_xlim(-4, 6); a.set_yticks([])
+    a.set_xlabel("internal response strength")
+    a.set_title(f"SDT: d' = {dp:.0f}, criterion at 1.0", fontsize=12, loc="left", fontweight="bold")
+    fa = np.linspace(0.0005, 0.9995, 400)
+    for d, col in [(0, GREY), (1, "#6b3f7a"), (2.5, TEAL)]:
+        hr = np.array([nd.cdf(nd.inv_cdf(f) + d) for f in fa])
+        b.plot(fa, hr, color=col, lw=2.4, label=f"d' = {d:g}")
+    pts = [("A", 0.90, 0.10), ("B", 0.60, 0.05), ("C", 0.95, 0.50)]
+    for lab, h, f in pts:
+        b.plot([f], [h], "o", color=ACC, ms=8, zorder=5)
+        b.text(f + 0.03, h - 0.06, lab, fontsize=10, fontweight="bold", color=ACCD)
+    b.set_xlim(0, 1); b.set_ylim(0, 1.02); b.set_aspect("equal")
+    b.set_xlabel("false alarm rate"); b.set_ylabel("hit rate")
+    b.legend(loc="lower right", frameon=False, fontsize=9)
+    b.set_title("ROC curves, listeners A to C", fontsize=12, loc="left", fontweight="bold")
+    I = np.linspace(0, 500, 200)
+    for k, lab, col in [(0.02, "weight, k = 0.02", TEAL), (0.08, "brightness, k = 0.08", "#6b3f7a"), (0.10, "loudness, k = 0.10", ACC)]:
+        c.plot(I, k * I, color=col, lw=2.6, label=lab)
+    c.set_xlim(0, 500); c.set_ylim(0, 52)
+    c.set_xlabel("baseline intensity I (arbitrary units)"); c.set_ylabel("JND = k x I")
+    c.legend(loc="upper left", frameon=False, fontsize=9)
+    c.set_title("Weber's law: JND grows with baseline", fontsize=12, loc="left", fontweight="bold")
+    fig.tight_layout(w_pad=2.5)
+    save(fig, "signal-detection-theory-and-webers-law")
+
+def nf_emotion():
+    fig, ax = plt.subplots(figsize=(12, 7.4))
+    ax.set_xlim(0, 100); ax.set_ylim(0, 72); ax.axis("off")
+    ax.text(1, 70, "Theories of emotion: what comes first?", fontsize=13.5, fontweight="bold", va="center")
+    def box(x, y, w, t, c, h=6):
+        _nb_box(ax, x, y - h / 2, w, h, c)
+        ax.text(x + w / 2, y, t, ha="center", va="center", color="white", fontsize=9.8, fontweight="bold")
+    def arr(x0, y0, x1, y1):
+        ax.annotate("", (x1, y1), (x0, y0), arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.6))
+    EV, AR, CG, FE, BR = GREY, ACC, "#6b3f7a", TEAL, INK
+    rows = [(58, "James-Lange", "body first"), (41, "Cannon-Bard", "parallel"),
+            (24, "Schachter-Singer", "arousal + label"), (7, "Lazarus", "appraisal first")]
+    for y, name, tag in rows:
+        ax.text(1, y + 1.3, name, fontsize=11.5, fontweight="bold", va="center")
+        ax.text(1, y - 2.2, tag, fontsize=9.5, color=MUTED, va="center", style="italic")
+        box(22, y, 13, "event", EV)
+    y = 58
+    arr(35.5, y, 41.5, y); box(42, y, 17, "bodily arousal", AR)
+    arr(59.5, y, 65.5, y); box(66, y, 17, "perceive arousal", CG)
+    arr(83.5, y, 85.5, y); box(86, y, 13, "emotion", FE)
+    y = 41
+    arr(35.5, y, 41.5, y); box(42, y, 15, "thalamus", BR)
+    arr(57.5, y + 1, 70.5, y + 5.2); box(71, y + 5.5, 20, "feeling (cortex)", FE, h=5)
+    arr(57.5, y - 1, 70.5, y - 5.2); box(71, y - 5.5, 20, "arousal (ANS)", AR, h=5)
+    ax.text(93, y, "at the\nsame time", ha="center", va="center", fontsize=9.3, color=ACCD, fontweight="bold")
+    y = 24
+    arr(35.5, y, 41.5, y); box(42, y, 17, "general arousal", AR)
+    arr(59.5, y, 65.5, y); box(66, y, 17, "cognitive label", CG)
+    arr(83.5, y, 85.5, y); box(86, y, 13, "emotion", FE)
+    ax.text(74.5, y + 4.6, "cues from the setting", ha="center", fontsize=8.8, color=MUTED)
+    y = 7
+    arr(35.5, y, 41.5, y); box(42, y, 17, "appraisal", CG)
+    arr(59.5, y + 1, 65.5, y + 3.6); box(66, y + 3.8, 20, "feeling", FE, h=4.6)
+    arr(59.5, y - 1, 65.5, y - 3.6); box(66, y - 3.8, 20, "arousal", AR, h=4.6)
+    for yy in (49.5, 32.5, 15.5):
+        ax.plot([1, 99], [yy, yy], color=LINE, lw=1)
+    save(fig, "theories-of-emotion-james-lange-cannon-bard")
+
+DIAGRAMS.update({
+    "how-to-read-ir-and-nmr-spectra": nf_ir_nmr,
+    "gibbs-free-energy-delta-g-spontaneity": nf_gibbs,
+    "signal-detection-theory-and-webers-law": nf_sdt_weber,
+    "theories-of-emotion-james-lange-cannon-bard": nf_emotion,
+})
+# ---- end notes-f diagrams ----
+
 if __name__ == "__main__":
     main()
