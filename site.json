@@ -1734,8 +1734,23 @@
         "Common wrong answer types",
         "Review and error log method"
       ],
-      "status": "coming_soon",
-      "contents": null,
+      "status": "available",
+      "contents": {
+        "cards": 386,
+        "card_types": {
+          "sa": 165,
+          "cz": 57,
+          "mc": 71,
+          "tf": 68,
+          "io": 25
+        },
+        "questions": 46,
+        "passage_sets": 6,
+        "diagrams": 20,
+        "guide_pages": 11,
+        "cheatsheet_pages": 4,
+        "validation": "CLEAN"
+      },
       "ls_name": "StudyStore MCAT CARS: CARS Strategy and Reasoning Skills",
       "variant_id": null,
       "checkout_url": null
@@ -1859,8 +1874,8 @@
         "9b-demographics",
         "cars-strategy"
       ],
-      "ready_count": 31,
-      "status": "coming_soon",
+      "ready_count": 32,
+      "status": "available",
       "ls_name": "StudyStore MCAT Bundle: Complete MCAT (all sections plus CARS)",
       "variant_id": null,
       "checkout_url": null

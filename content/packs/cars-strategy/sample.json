@@ -1,0 +1,151 @@
+{
+ "slug": "cars-strategy",
+ "cards": [
+  {
+   "src": "assets/packs/cars-strategy/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 524
+  },
+  {
+   "src": "assets/packs/cars-strategy/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 461
+  },
+  {
+   "src": "assets/packs/cars-strategy/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 850
+  },
+  {
+   "src": "assets/packs/cars-strategy/card-4.webp",
+   "alt": "Sample multiple choice card: Which paragraph note is best for a passage map?",
+   "w": 680,
+   "h": 381
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/cars-strategy/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/cars-strategy/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/cars-strategy/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/cars-strategy/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A stem reads: \"Which of the following findings, if true, would most weaken the author's claim that tutoring raises exam scores?\" What kind of question is this?",
+   "options": [
+    "A main idea question in Foundations of Comprehension",
+    "A new information (weaken) question in Reasoning Beyond the Text",
+    "A function question in Reasoning Within the Text",
+    "A tone question in Foundations of Comprehension"
+   ],
+   "answer": "B",
+   "explanation": "B is correct. The stem brings in a hypothetical finding to test the argument, which is the signature of new information questions. A (Misclassified question type): Main idea stems ask what the passage is about as a whole, with no hypothetical finding. C (Misclassified question type): Function stems ask why the author mentions something already in the passage. D (Misclassified question type): Tone stems ask about the author's attitude, not about outside evidence.",
+   "subtopic": "Reasoning beyond the text questions"
+  },
+  {
+   "stem": "After 30 minutes you have finished only two of nine passages. The best adjustment is:",
+   "options": [
+    "Speed up slightly and guess and flag hard questions sooner",
+    "Stop mapping entirely so that you can read faster",
+    "Restart passage three from the top to settle in",
+    "Skip passages seven through nine to catch up"
+   ],
+   "answer": "A",
+   "explanation": "A is correct. A small pace increase plus earlier triage recovers time without sacrificing the remaining passages. B (Overcorrection): Dropping mapping entirely may cost accuracy; a small adjustment is enough. C (True but irrelevant): Rereading spends time on work already done. D (Overcorrection): Giving up three passages is a larger sacrifice than the situation needs.",
+   "subtopic": "Timing and triage"
+  },
+  {
+   "stem": "In the sentence \"Since wages rose, spending must have risen,\" the clause \"wages rose\" is:",
+   "options": [
+    "The main conclusion of the sentence",
+    "A concession granted to an opponent",
+    "Evidence offered for the conclusion",
+    "A counterargument to the main claim"
+   ],
+   "answer": "C",
+   "explanation": "C is correct. Since marks the following clause as support for the claim that spending rose. A (Reversal): The conclusion is that spending rose, which follows the comma. B (Distortion): Nothing is granted to an opponent. D (Distortion): No opposing view is presented.",
+   "subtopic": "Argument structure: claims and evidence"
+  },
+  {
+   "stem": "Evidence: every employee who attended the seminar later received a promotion. Conclusion: the seminar helps careers. Which is a required assumption?",
+   "options": [
+    "Seminars are always useful.",
+    "Promotions are the best measure of career success.",
+    "Employees enjoyed the seminar.",
+    "The promotions were not caused by something other than the seminar."
+   ],
+   "answer": "D",
+   "explanation": "D is correct. If another factor produced the promotions, the seminar's effect is not shown. Denying this assumption breaks the argument. A (Extreme language): The argument does not need such a broad claim. B (Extreme language): The argument needs only that promotions count as career success, not that they are the best measure. C (True but irrelevant): Enjoyment is not the link between attendance and promotion.",
+   "subtopic": "Assumption questions"
+  },
+  {
+   "stem": "Two choices remain on a detail question. One uses the passage's exact words but reverses cause and effect. The other paraphrases correctly. You should choose:",
+   "options": [
+    "The paraphrase, because the reversal is a trap",
+    "The exact-word choice, because it matches the text",
+    "Neither, and skip the question",
+    "Whichever is longer"
+   ],
+   "answer": "A",
+   "explanation": "A is correct. Matching meaning matters more than matching words. B (Surface match): Repeated wording is a lure; its meaning is reversed. C (Overcorrection): One of the two is supported, so you can answer. D (True but irrelevant): Length is not evidence.",
+   "subtopic": "Answer choice elimination patterns"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "What is a passage map?",
+   "back": "A short margin note per paragraph (3 to 6 words) that records what the paragraph does, not what it says in detail."
+  },
+  {
+   "type": "cz",
+   "text": "A passage map has four parts: the {{c1::topic}}, a {{c2::purpose note per paragraph}}, the author's {{c3::tone}}, and the {{c4::main idea}}.",
+   "extra": "These are the four things a finished map records."
+  },
+  {
+   "type": "mc",
+   "stem": "An author writes that a policy is \"well meant but poorly built.\" The tone is best described as:",
+   "options": [
+    "Scathing condemnation",
+    "Qualified disapproval",
+    "Laudatory endorsement",
+    "Detached indifference"
+   ],
+   "answer": "B",
+   "why": "The phrase gives credit (well meant) and criticism (poorly built). Scathing overshoots; laudatory ignores the criticism; indifferent ignores the opinion words."
+  },
+  {
+   "type": "tf",
+   "statement": "A passage map should record every statistic so you can answer detail questions.",
+   "truth": false,
+   "why": "The map records purpose. Details are looked up in the text when a question asks, which is faster than recording them."
+  }
+ ]
+}
