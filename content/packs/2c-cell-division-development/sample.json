@@ -1,0 +1,151 @@
+{
+ "slug": "2c-cell-division-development",
+ "cards": [
+  {
+   "src": "assets/packs/2c-cell-division-development/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 469
+  },
+  {
+   "src": "assets/packs/2c-cell-division-development/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 872
+  },
+  {
+   "src": "assets/packs/2c-cell-division-development/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 827
+  },
+  {
+   "src": "assets/packs/2c-cell-division-development/card-4.webp",
+   "alt": "Sample multiple choice card: Which cell type most likely stays in G0 for life?",
+   "w": 680,
+   "h": 356
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/2c-cell-division-development/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/2c-cell-division-development/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/2c-cell-division-development/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/2c-cell-division-development/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A flow cytometry histogram of a growing culture shows two peaks, at 2C and 4C. Cells in the 4C peak are in:",
+   "options": [
+    "Early S phase",
+    "G1",
+    "G0",
+    "G2 or mitosis before cytokinesis"
+   ],
+   "answer": "D",
+   "explanation": "Cells at 4C have replicated their DNA but not yet divided, so they are in G2 or M. G1 and G0 cells have 2C, and cells in early S phase lie between the two peaks.",
+   "subtopic": "Cell cycle phases"
+  },
+  {
+   "stem": "A tumor has a mutation that prevents Rb from binding E2F. The most likely effect is:",
+   "options": [
+    "Permanent G1 arrest",
+    "Continuous expression of S phase genes",
+    "Increased apoptosis through p53",
+    "Loss of telomerase"
+   ],
+   "answer": "B",
+   "explanation": "Without Rb-E2F binding, E2F is free and S phase genes are active regardless of growth signals. This removes a brake, so arrest is not expected, and the mutation does not directly involve p53 or telomerase.",
+   "subtopic": "Cancer and loss of cell cycle control"
+  },
+  {
+   "stem": "Mitochondrial DNA is maternally inherited mainly because:",
+   "options": [
+    "The egg destroys its own mitochondria",
+    "Mitochondria cannot replicate in sperm",
+    "Sperm contain no mitochondria",
+    "Sperm mitochondria are destroyed after entry into the egg"
+   ],
+   "answer": "D",
+   "explanation": "Sperm have mitochondria in the midpiece, but they are degraded in the zygote. The egg keeps its own. Sperm mitochondria do exist and function.",
+   "subtopic": "Fertilization"
+  },
+  {
+   "stem": "Which pair of tissues derives from neural crest?",
+   "options": [
+    "Skeletal muscle and bone",
+    "Melanocytes and adrenal medulla",
+    "Lens and retina",
+    "Hepatocytes and pancreatic cells"
+   ],
+   "answer": "B",
+   "explanation": "Neural crest forms melanocytes, adrenal medulla, Schwann cells and sensory and autonomic neurons. Hepatocytes and pancreatic cells are endoderm, muscle and bone are mesoderm, and the lens and retina arise from surface ectoderm and neuroectoderm.",
+   "subtopic": "Germ layer derivatives"
+  },
+  {
+   "stem": "Embryos lacking maternal bicoid mRNA will most likely lack:",
+   "options": [
+    "Posterior abdominal structures",
+    "Neural crest",
+    "Hox gene expression in all segments",
+    "Head and thoracic structures"
+   ],
+   "answer": "D",
+   "explanation": "Bicoid is an anterior morphogen, so loss gives embryos missing head and thorax. Posterior structures depend on other maternal factors. Neural crest is not tested, and Hox genes in the abdomen are still expressed.",
+   "subtopic": "Gene regulation in development"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "What happens in G2?",
+   "back": "The cell finishes growing, checks the replicated DNA, and makes proteins needed for mitosis such as tubulin and cyclin B."
+  },
+  {
+   "type": "cz",
+   "text": "Order of the cell cycle: {{c1::G1}}, then {{c2::S}}, then {{c3::G2}}, then {{c4::M}}.",
+   "extra": "G1, S and G2 together are interphase."
+  },
+  {
+   "type": "mc",
+   "stem": "Which cell type most likely stays in G0 for life?",
+   "options": [
+    "A mature neuron",
+    "A bone marrow stem cell",
+    "An intestinal crypt cell",
+    "A basal skin cell"
+   ],
+   "answer": "A",
+   "why": "Mature neurons are terminally differentiated and do not divide. The other three populations keep cycling to replace lost cells."
+  },
+  {
+   "type": "tf",
+   "statement": "DNA content doubles during mitosis.",
+   "truth": false,
+   "why": "DNA doubles in S phase. Mitosis only divides the already doubled DNA between two daughter cells."
+  }
+ ]
+}
