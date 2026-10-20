@@ -69,6 +69,7 @@ def load(root, products, note_slugs):
             raise SystemExit(f"{f.name}: file name must start with the aamc code")
         if meta["product"] != "none" and meta["product"] not in products:
             raise SystemExit(f"{f.name}: unknown product {meta['product']}")
+        meta["product_status"] = (products.get(meta["product"]) or {}).get("status", "available") if meta["product"] != "none" else ""
         notes = [x.strip() for x in meta.get("notes", "").split(",") if x.strip()]
         for n in notes:
             if n not in note_slugs:
@@ -165,8 +166,9 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
                 f'<a href="{{{{root}}}}tools/{x}.html">{TOOLS[x]}</a>' for x in p["tools"]))
         if m["product"] != "none":
             pr = m["product"]
+            lead = ("is a {{price:%s}} pack" % pr) if m.get("product_status") == "available" else ("is coming soon, a planned {{price:%s}} pack" % pr)
             cta = (f'<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong>'
-                   f'<p>{{{{title:{pr}}}}} is a {{{{price:{pr}}}}} pack with original Anki cards and a printable cheat sheet. '
+                   f'<p>{{{{title:{pr}}}}} {lead} with original Anki cards, a study guide and a printable cheat sheet. '
                    f'<a href="{{{{root}}}}products/{pr}.html">See what is inside</a>.</p></div>{{{{buy:{pr}}}}}</aside>')
         else:
             cta = (f'<aside class="cta"><div><strong>Study this topic with spaced repetition</strong>'
