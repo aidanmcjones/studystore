@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to Find a Rate Law from Initial Rates (Method of Initial Rates)</title>
+<meta name="description" content="Find reaction orders, the rate law, and k from an initial rates table, with ratio and log shortcuts, k units by order, and worked MCAT-style examples.">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Find a Rate Law from Initial Rates (Method of Initial Rates)", "description": "Find reaction orders, the rate law, and k from an initial rates table, with ratio and log shortcuts, k units by order, and worked MCAT-style examples.", "image": "https://www.studystore.co/assets/notes/og-rate-law-method-of-initial-rates.png?v=20a2898def", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "wordCount": 1740, "inLanguage": "en", "mainEntityOfPage": "https://www.studystore.co/notes/rate-law-method-of-initial-rates.html", "author": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}, "publisher": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Tripling [A] with every other concentration fixed multiplies the initial rate by 9. What is the order in A?", "acceptedAnswer": {"@type": "Answer", "text": "Second order, because 3 raised to the power 2 equals 9."}}, {"@type": "Question", "name": "Doubling [B] while all else is fixed leaves the initial rate unchanged. Does B still get consumed by the reaction?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Zero order only means B is not in the rate-determining step, so its concentration does not affect the rate, but it is still a reactant."}}, {"@type": "Question", "name": "A rate law is rate = k[A][B]^2. What are the units of k if concentrations are in M and time in seconds?", "acceptedAnswer": {"@type": "Answer", "text": "The reaction is third order overall, so k has units of M^-2 s^-1, which makes k times M^3 come out as M/s."}}, {"@type": "Question", "name": "Runs 1 and 3 differ by doubling [A] and doubling [B], and the rate rises by a factor of 8. The reaction is known to be first order in A. What is the order in B?", "acceptedAnswer": {"@type": "Answer", "text": "Second order. Dividing out the factor of 2 from A leaves a factor of 4 from B, and 2 squared is 4."}}, {"@type": "Question", "name": "For the elementary step 2NO2 → NO3 + NO, what is the rate law?", "acceptedAnswer": {"@type": "Answer", "text": "Rate = k[NO2]^2. For an elementary step, the order of each reactant equals its coefficient, which is not true for an overall multistep reaction."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "StudyStore", "item": "https://www.studystore.co/"}, {"@type": "ListItem", "position": 2, "name": "Free MCAT study notes", "item": "https://www.studystore.co/notes/index.html"}, {"@type": "ListItem", "position": 3, "name": "How to Find a Rate Law from Initial Rates (Method of Initial Rates)", "item": "https://www.studystore.co/notes/rate-law-method-of-initial-rates.html"}]}</script>
+
+<link rel="canonical" href="https://www.studystore.co/notes/rate-law-method-of-initial-rates.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="How to Find a Rate Law from Initial Rates (Method of Initial Rates)">
+<meta property="og:description" content="Find reaction orders, the rate law, and k from an initial rates table, with ratio and log shortcuts, k units by order, and worked MCAT-style examples.">
+<meta property="og:url" content="https://www.studystore.co/notes/rate-law-method-of-initial-rates.html">
+<meta property="og:image" content="https://www.studystore.co/assets/notes/og-rate-law-method-of-initial-rates.png?v=20a2898def">
+<meta name="twitter:image" content="https://www.studystore.co/assets/notes/og-rate-law-method-of-initial-rates.png?v=20a2898def">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Find a Rate Law from Initial Rates (Method of Initial Rates)">
+<meta name="twitter:description" content="Find reaction orders, the rate law, and k from an initial rates table, with ratio and log shortcuts, k units by order, and worked MCAT-style examples.">
+<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1512'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23f2b705'/%3E%3Ccircle cx='21' cy='16' r='4' fill='%233ddc84'/%3E%3Ccircle cx='11' cy='21' r='4' fill='%236aa2ff'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("ss-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css?v=9b1ef481a2">
+<link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="../assets/js/exp.js?v=f84a42976d" defer></script>
+<script src="../assets/js/site.js?v=1b40ce4c4e" defer></script>
+<script src="../assets/js/buy.js?v=54b73e6567" defer></script>
+<script src="../assets/js/report.js?v=1e5d24d48f" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="gridbg" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html" aria-label="StudyStore home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Study<b>Store</b></span></a>
+<nav aria-label="Main"><a href="../index.html#packs">Packs</a><a href="../notes/index.html">Notes</a><a href="../tools/index.html">Tools</a><a href="../index.html#faq">FAQ</a><a href="../refund.html">Refunds</a></nav>
+<div class="tools">
+<span class="phread" aria-hidden="true">pH <b>1.0</b></span>
+<button class="themetoggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+</div>
+</div><div class="phbar" aria-hidden="true"><i></i></div></header>
+<main id="main">
+<article class="note wrap narrow">
+<p class="eyebrow">Free MCAT study note</p>
+<h1>How to Find a Rate Law from Initial Rates (Method of Initial Rates)</h1>
+<p class="meta">By StudyStore &middot; Published 2026-10-20 &middot; 8 min read &middot; 1740 words</p>
+<div class="prose">
+<p>To find a rate law from initial rates, pick two experiments in which only one reactant concentration changes, divide the two rates, and ask what power of the concentration ratio gives that rate ratio. That power is the order in that reactant. Repeat for each reactant, write rate = k[A]<sup>m</sup>[B]<sup>n</sup>, then plug any single experiment back in to solve for k. The orders come from the data, never from the coefficients in the balanced equation.</p>
+<h2 id="what-a-rate-law-says">What a rate law says</h2>
+<p>A rate law links the rate of a reaction to the concentrations of its reactants at a fixed temperature:</p>
+<p><strong>rate = k[A]<sup>m</sup>[B]<sup>n</sup></strong></p>
+<ul><li><strong>k</strong> is the rate constant. It depends on temperature (and on a catalyst, if one is present) but not on concentration.</li><li><strong>m</strong> and <strong>n</strong> are the orders with respect to A and B. They are usually 0, 1, or 2 in problems, though fractional and negative orders exist for multistep mechanisms.</li><li>The <strong>overall order</strong> is m + n.</li></ul>
+<p>The orders describe how sensitive the rate is to each reactant. A zero-order reactant can be doubled with no effect on the rate. A first-order reactant doubles the rate when it doubles. A second-order reactant quadruples the rate when it doubles.</p>
+<h2 id="why-initial-rates">Why "initial" rates</h2>
+<p>The rate of a reaction changes as it runs, because reactants are used up. Measuring the rate right at the start, while concentrations are still essentially the values you mixed, solves three problems at once:</p>
+<ol><li>You know the concentrations exactly, since they are the starting ones.</li><li>Almost no product exists yet, so the reverse reaction contributes nothing.</li><li>Products or side reactions have not had time to interfere.</li></ol>
+<p>Graphically, the initial rate is the slope of the tangent to the concentration versus time curve at t = 0. A higher starting concentration gives a steeper starting slope for any reactant with order above zero.</p>
+<figure><img src="../assets/notes/rate-law-method-of-initial-rates.png?v=64421f9b45" alt="Left: concentration of a second-order reactant over time from two starting concentrations, with dashed tangent lines at time zero. Right: log of rate against log of concentration for zero, first and second order, where the slope equals the order." loading="lazy"><figcaption>Left: the initial rate is the slope at t = 0, and doubling [A] makes it four times steeper for a second-order reactant. Right: on log axes, the slope of rate versus concentration is the order.</figcaption></figure>
+<h2 id="the-ratio-method-step-by-step">The ratio method, step by step</h2>
+<ol><li><strong>Find a pair of runs where only reactant A changes.</strong> Every other concentration (and the temperature) must be the same.</li><li><strong>Compute two ratios:</strong> the concentration ratio [A]<sub>2</sub>/[A]<sub>1</sub> and the rate ratio rate<sub>2</sub>/rate<sub>1</sub>.</li><li><strong>Solve (concentration ratio)<sup>m</sup> = rate ratio for m.</strong> Common patterns:</li></ol>
+<div class="tablewrap"><table><thead><tr><th>Concentration multiplied by</th><th>Rate multiplied by</th><th>Order</th></tr></thead><tbody><tr><td>2</td><td>1</td><td>0</td></tr><tr><td>2</td><td>2</td><td>1</td></tr><tr><td>2</td><td>4</td><td>2</td></tr><tr><td>3</td><td>3</td><td>1</td></tr><tr><td>3</td><td>9</td><td>2</td></tr><tr><td>4</td><td>2</td><td>1/2</td></tr></tbody></table></div>
+<ol><li><strong>Repeat for every other reactant</strong> with a different pair of runs.</li><li><strong>Solve for k</strong> by substituting one run's rate and concentrations into the rate law.</li><li><strong>Check</strong> by predicting the rate of a run you did not use.</li></ol>
+<p>When the ratio is not a clean number, use logs: m = log(rate ratio) / log(concentration ratio). For example, if raising [A] by a factor of 1.5 raises the rate by a factor of 2.25, then m = log 2.25 / log 1.5 = 2.</p>
+<h2 id="worked-example-1-a-clean-table">Worked example 1: a clean table</h2>
+<p>Consider a reaction 2X + Y &rarr; products at constant temperature.</p>
+<div class="tablewrap"><table><thead><tr><th>Run</th><th>[X] (M)</th><th>[Y] (M)</th><th>Initial rate (M/s)</th></tr></thead><tbody><tr><td>1</td><td>0.020</td><td>0.050</td><td>3.6 &times; 10<sup>-5</sup></td></tr><tr><td>2</td><td>0.060</td><td>0.050</td><td>3.24 &times; 10<sup>-4</sup></td></tr><tr><td>3</td><td>0.020</td><td>0.100</td><td>3.6 &times; 10<sup>-5</sup></td></tr></tbody></table></div>
+<p><strong>Order in X.</strong> Runs 1 and 2 hold [Y] fixed. [X] triples (0.060 / 0.020 = 3), and the rate rises by 3.24 &times; 10<sup>-4</sup> / 3.6 &times; 10<sup>-5</sup> = 9. Since 3<sup>2</sup> = 9, the reaction is <strong>second order in X</strong>.</p>
+<p><strong>Order in Y.</strong> Runs 1 and 3 hold [X] fixed. [Y] doubles, and the rate does not change. Since 2<sup>0</sup> = 1, the reaction is <strong>zero order in Y</strong>.</p>
+<p><strong>Rate law:</strong> rate = k[X]<sup>2</sup>. Overall order 2. Y is still consumed by the reaction, but it does not take part in the slow step, so its concentration does not control the rate.</p>
+<p><strong>Rate constant.</strong> From run 1: k = 3.6 &times; 10<sup>-5</sup> / (0.020)<sup>2</sup> = 3.6 &times; 10<sup>-5</sup> / 4.0 &times; 10<sup>-4</sup> = <strong>0.090 M<sup>-1</sup> s<sup>-1</sup></strong>.</p>
+<p><strong>Prediction check.</strong> For [X] = 0.040 M and [Y] = 0.200 M, rate = 0.090 &times; (0.040)<sup>2</sup> = 1.44 &times; 10<sup>-4</sup> M/s. The fourfold change in [Y] is irrelevant.</p>
+<p>Notice that the coefficient 2 in front of X happens to match its order here, while the coefficient 1 in front of Y does not match its order of zero. Coincidences like the first are why students wrongly trust the balanced equation.</p>
+<h2 id="worked-example-2-no-clean-pair-for-one-reactant">Worked example 2: no clean pair for one reactant</h2>
+<p>Sometimes the table never changes a reactant alone. Then cancel what you already know.</p>
+<div class="tablewrap"><table><thead><tr><th>Run</th><th>[A] (M)</th><th>[B] (M)</th><th>Initial rate (M/s)</th></tr></thead><tbody><tr><td>1</td><td>0.10</td><td>0.10</td><td>4.0 &times; 10<sup>-3</sup></td></tr><tr><td>2</td><td>0.20</td><td>0.10</td><td>8.0 &times; 10<sup>-3</sup></td></tr><tr><td>3</td><td>0.30</td><td>0.20</td><td>4.8 &times; 10<sup>-2</sup></td></tr></tbody></table></div>
+<ol><li>Runs 1 and 2: [A] doubles with [B] fixed, and the rate doubles, so the order in A is 1.</li><li>Runs 1 and 3: both concentrations change. Write the full ratio: rate<sub>3</sub>/rate<sub>1</sub> = (0.30/0.10)<sup>1</sup> &times; (0.20/0.10)<sup>n</sup>.</li><li>The rate ratio is 4.8 &times; 10<sup>-2</sup> / 4.0 &times; 10<sup>-3</sup> = 12. So 12 = 3 &times; 2<sup>n</sup>, which gives 2<sup>n</sup> = 4 and <strong>n = 2</strong>.</li><li>Rate law: rate = k[A][B]<sup>2</sup>, third order overall.</li><li>From run 1: k = 4.0 &times; 10<sup>-3</sup> / (0.10 &times; 0.010) = <strong>4.0 M<sup>-2</sup> s<sup>-1</sup></strong>.</li></ol>
+<p>The trick is to divide out the part of the rate change you can already explain, then read the leftover factor.</p>
+<h2 id="units-of-k-by-overall-order">Units of k by overall order</h2>
+<p>Rate always has units of M/s. The units of k adjust so the rate law comes out in M/s. A shortcut: k has units of M<sup>1 - (overall order)</sup> s<sup>-1</sup>.</p>
+<div class="tablewrap"><table><thead><tr><th>Overall order</th><th>Rate law example</th><th>Units of k</th></tr></thead><tbody><tr><td>0</td><td>rate = k</td><td>M s<sup>-1</sup></td></tr><tr><td>1</td><td>rate = k[A]</td><td>s<sup>-1</sup></td></tr><tr><td>2</td><td>rate = k[A]<sup>2</sup> or k[A][B]</td><td>M<sup>-1</sup> s<sup>-1</sup></td></tr><tr><td>3</td><td>rate = k[A][B]<sup>2</sup></td><td>M<sup>-2</sup> s<sup>-1</sup></td></tr></tbody></table></div>
+<p>This works backward too. If a problem gives k in M<sup>-1</sup> s<sup>-1</sup>, the reaction is second order overall even before you see any data.</p>
+<h2 id="where-the-orders-come-from">Where the orders come from</h2>
+<p>Orders are experimental because most reactions happen in several elementary steps, and the slowest step (the rate-determining step) sets the rate. For a single elementary step, and only then, the order of each reactant equals its coefficient in that step, because the step's rate depends on how often those exact particles collide. For an overall reaction, the coefficients summarize all the steps, so they say nothing reliable about the rate law. A reactant that enters only after the slow step, like Y in the first example, can end up zero order.</p>
+<p>If a rate law you measured matches the one a proposed mechanism predicts, the mechanism is consistent with the data. It is not proven, since other mechanisms might predict the same rate law.</p>
+<h2 id="flooding-making-one-reactant-look-first-order">Flooding: making one reactant look first order</h2>
+<p>When a reaction has several reactants, chemists sometimes add one reactant in a large excess. Its concentration barely changes during the run, so it folds into a constant, and the reaction behaves as if it depends only on the other reactant. This is called a <strong>pseudo-first-order</strong> (or pseudo-order) condition. The observed constant then equals k times the excess concentration raised to its order. Reactions in water often look this way because water, the solvent, is present in huge excess.</p>
+<h2 id="common-traps">Common traps</h2>
+<ul><li><strong>Reading orders from the balanced equation.</strong> Only elementary steps allow that. Use the data.</li><li><strong>Comparing two runs where two things changed</strong> without dividing out the known effect. Either find a cleaner pair or cancel the known factor first.</li><li><strong>Flipping the ratio.</strong> Put the same run on top in both ratios. If run 2 is on top for concentration, run 2 is on top for rate.</li><li><strong>Forgetting that order zero still means the reactant is used up.</strong> It just does not appear in the rate law.</li><li><strong>Using a run at a different temperature.</strong> k changes with temperature, so the comparison breaks. Only concentrations may differ between the runs you compare.</li><li><strong>Giving k units of M/s for every order.</strong> Rate is M/s. k changes with the overall order.</li><li><strong>Thinking a bigger k means a more favorable reaction.</strong> k measures speed. Whether a reaction is favorable is a thermodynamic question, covered in the <a href="gibbs-free-energy-delta-g-spontaneity.html">Gibbs free energy note</a>.</li></ul>
+<h2 id="one-minute-recap">One-minute recap</h2>
+<p>Hold every concentration but one constant, compare two runs, and solve (concentration ratio)<sup>order</sup> = rate ratio. Doubling with no change means zero order, doubling means first, quadrupling means second, and logs handle awkward numbers. If no clean pair exists, divide out the reactant you already solved. Write rate = k[A]<sup>m</sup>[B]<sup>n</sup>, solve k from one run, and give k units of M<sup>1 - overall order</sup> s<sup>-1</sup>. Coefficients equal orders only for elementary steps. First-order kinetics also give a constant half-life, which links this topic to <a href="radioactive-decay-half-life-calculations.html">radioactive decay</a>.</p>
+</div>
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Chemical Thermodynamics and Kinetics is a $14 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/5e-thermo-kinetics.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
+<p class="meta">Try each question first, then click it to reveal the answer.</p>
+<div class="quiz"><details class="q"><summary>1. Tripling [A] with every other concentration fixed multiplies the initial rate by 9. What is the order in A?</summary><div><p>Second order, because 3 raised to the power 2 equals 9.</p></div></details><details class="q"><summary>2. Doubling [B] while all else is fixed leaves the initial rate unchanged. Does B still get consumed by the reaction?</summary><div><p>Yes. Zero order only means B is not in the rate-determining step, so its concentration does not affect the rate, but it is still a reactant.</p></div></details><details class="q"><summary>3. A rate law is rate = k[A][B]^2. What are the units of k if concentrations are in M and time in seconds?</summary><div><p>The reaction is third order overall, so k has units of M^-2 s^-1, which makes k times M^3 come out as M/s.</p></div></details><details class="q"><summary>4. Runs 1 and 3 differ by doubling [A] and doubling [B], and the rate rises by a factor of 8. The reaction is known to be first order in A. What is the order in B?</summary><div><p>Second order. Dividing out the factor of 2 from A leaves a factor of 4 from B, and 2 squared is 4.</p></div></details><details class="q"><summary>5. For the elementary step 2NO2 → NO3 + NO, what is the rate law?</summary><div><p>Rate = k[NO2]^2. For an elementary step, the order of each reactant equals its coefficient, which is not true for an overall multistep reaction.</p></div></details></div>
+<h2>Keep studying</h2>
+<ul><li><a href="gibbs-free-energy-delta-g-spontaneity.html">Gibbs Free Energy: Delta G, Spontaneity and Temperature</a></li><li><a href="radioactive-decay-half-life-calculations.html">Radioactive Decay and Half-Life Calculations for the MCAT</a></li><li><a href="michaelis-menten-and-lineweaver-burk.html">Michaelis-Menten Kinetics and Lineweaver-Burk Plots Explained</a></li><li><a href="index.html">All free notes</a></li></ul>
+
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Chemical Thermodynamics and Kinetics is a $14 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/5e-thermo-kinetics.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+<p class="meta"><a class="reportlink" href="../report.html" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div>
+<p class="flabel">StudyStore</p>
+<p>Original, high-yield MCAT study packs. Written from scratch, checked card by card.</p>
+</div>
+<div>
+<p class="flabel">Shop</p>
+<p class="links"><a href="../index.html#packs">Packs</a><a href="../products/index.html">All packs</a><a href="../notes/index.html">Free notes</a></p>
+</div>
+<div>
+<p class="flabel">Policies</p>
+<p class="links"><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><a href="../refund.html">Refund policy</a></p>
+</div>
+</div>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p><a class="reportlink" href="../report.html" data-report>Report a problem or suggest something</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+<p class="wordmark" aria-hidden="true">Study<b>Store</b></p>
+</div></footer>
+</body>
+</html>
