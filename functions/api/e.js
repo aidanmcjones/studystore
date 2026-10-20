@@ -35,9 +35,24 @@ async function experiments(env, url) {
 const clean = (s, re, max) => (typeof s === "string" && s.length <= max && re.test(s) ? s : "");
 const ok = (status = 204) => new Response(null, { status, headers: { "Cache-Control": "no-store" } });
 
+// Cross-isolate limit: a counter in this data center's edge cache, keyed by a one-way
+// hash of IP + minute. It expires after about a minute and is never written to D1.
+async function edgeLimited(ip) {
+  try {
+    const win = Math.floor(Date.now() / 60000);
+    const h = await crypto.subtle.digest("SHA-256", new TextEncoder().encode("ss-rl|" + ip + "|" + win));
+    const key = "https://rl.studystore.internal/" + [...new Uint8Array(h)].slice(0, 16).map((b) => b.toString(16).padStart(2, "0")).join("");
+    const cache = caches.default;
+    const hit = await cache.match(key);
+    const n = (hit ? Number(await hit.text()) : 0) + 1;
+    await cache.put(key, new Response(String(n), { headers: { "Cache-Control": "max-age=90" } }));
+    return n > IP_LIMIT;
+  } catch (e) { return false; }
+}
+
 export async function onRequestPost({ request, env }) {
   const ip = request.headers.get("CF-Connecting-IP") || "";
-  if (rateLimited(ip)) return ok(429);
+  if (rateLimited(ip) || (await edgeLimited(ip))) return ok(429);
   if (BOT.test(request.headers.get("User-Agent") || "")) return ok(204);
   const len = Number(request.headers.get("Content-Length") || 0);
   if (len > MAX_BODY) return ok(413);
