@@ -1365,8 +1365,23 @@
         "Social cognitive theory and self-efficacy",
         "Behavior change and health behavior models"
       ],
-      "status": "coming_soon",
-      "contents": null,
+      "status": "available",
+      "contents": {
+        "cards": 388,
+        "card_types": {
+          "cz": 59,
+          "sa": 225,
+          "mc": 46,
+          "tf": 44,
+          "io": 14
+        },
+        "questions": 54,
+        "passage_sets": 4,
+        "diagrams": 19,
+        "guide_pages": 10,
+        "cheatsheet_pages": 3,
+        "validation": "CLEAN"
+      },
       "ls_name": "StudyStore MCAT 7C: Learning and Attitude Change",
       "variant_id": null,
       "checkout_url": null
@@ -1576,8 +1591,23 @@
         "Coping and stress management",
         "Yerkes-Dodson law"
       ],
-      "status": "coming_soon",
-      "contents": null,
+      "status": "available",
+      "contents": {
+        "cards": 418,
+        "card_types": {
+          "sa": 202,
+          "cz": 51,
+          "mc": 85,
+          "tf": 61,
+          "io": 19
+        },
+        "questions": 51,
+        "passage_sets": 4,
+        "diagrams": 22,
+        "guide_pages": 11,
+        "cheatsheet_pages": 3,
+        "validation": "CLEAN"
+      },
       "ls_name": "StudyStore MCAT 6C: Emotion and Stress",
       "variant_id": null,
       "checkout_url": null
@@ -1722,7 +1752,7 @@
         "6c-emotion-stress",
         "9b-demographics"
       ],
-      "ready_count": 7,
+      "ready_count": 9,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Psych/Soc Complete Section",
       "variant_id": null,
@@ -1769,7 +1799,7 @@
         "9b-demographics",
         "cars-strategy"
       ],
-      "ready_count": 25,
+      "ready_count": 27,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Complete MCAT (all sections plus CARS)",
       "variant_id": null,

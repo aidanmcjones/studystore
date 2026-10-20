@@ -1,0 +1,151 @@
+{
+ "slug": "7c-learning-behavior-change",
+ "cards": [
+  {
+   "src": "assets/packs/7c-learning-behavior-change/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 463
+  },
+  {
+   "src": "assets/packs/7c-learning-behavior-change/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 534
+  },
+  {
+   "src": "assets/packs/7c-learning-behavior-change/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 781
+  },
+  {
+   "src": "assets/packs/7c-learning-behavior-change/card-4.webp",
+   "alt": "Sample multiple choice card: A newborn stops looking at a repeated picture, then looks longer when a new picture appears. The renewed looki",
+   "w": 680,
+   "h": 440
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/7c-learning-behavior-change/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/7c-learning-behavior-change/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/7c-learning-behavior-change/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/7c-learning-behavior-change/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "In Aplysia, repeated gentle touches to the siphon reduce the gill-withdrawal reflex. The best cellular explanation is",
+   "options": [
+    "reduced neurotransmitter release from the sensory neuron",
+    "increased serotonin release from a facilitating interneuron",
+    "desensitization of motor neuron receptors to transmitter",
+    "growth of new synapses through CREB-mediated transcription"
+   ],
+   "answer": "A",
+   "explanation": "Short-term habituation reflects presynaptic depression, with less transmitter released by the sensory neuron. Serotonin from a facilitating interneuron underlies sensitization, motor receptors remain responsive, and CREB-dependent growth underlies long-term sensitization.",
+   "subtopic": "Habituation and sensitization"
+  },
+  {
+   "stem": "A patient's fear of dogs is extinguished in therapy but returns when the patient visits the original place of the dog bite. This is",
+   "options": [
+    "renewal",
+    "reinstatement",
+    "generalization",
+    "negative reinforcement"
+   ],
+   "answer": "A",
+   "explanation": "The CR returned when the CS was encountered in the acquisition context after extinction elsewhere, which is renewal. Reinstatement needs an unsignaled UCS, generalization needs a similar stimulus, and negative reinforcement is an operant concept.",
+   "subtopic": "Extinction and spontaneous recovery"
+  },
+  {
+   "stem": "A parent says, \"Finish your homework, then you may play video games.\" This applies",
+   "options": [
+    "the sleeper effect",
+    "the matching law",
+    "classical conditioning",
+    "the Premack principle"
+   ],
+   "answer": "D",
+   "explanation": "A more probable activity (games) is used to reinforce a less probable one (homework). The sleeper effect concerns persuasion, the matching law concerns choice among schedules, and no stimulus pairing is described.",
+   "subtopic": "Operant conditioning: reinforcement and punishment"
+  },
+  {
+   "stem": "To teach a pigeon to peck a disk that it never pecks spontaneously, a trainer should first reinforce",
+   "options": [
+    "only full pecks at the disk",
+    "every response with a mild shock",
+    "only responses during extinction",
+    "any movement toward the disk"
+   ],
+   "answer": "D",
+   "explanation": "Shaping rewards successive approximations of the target. Waiting for a full peck gives nothing to reinforce, punishment would not build the response, and extinction removes reinforcement.",
+   "subtopic": "Shaping and escape and avoidance"
+  },
+  {
+   "stem": "A student watches a demonstration of a surgical knot but cannot repeat it later because the steps are not remembered. Which of Bandura's processes failed?",
+   "options": [
+    "Attention",
+    "Retention",
+    "Motivation",
+    "Reproduction"
+   ],
+   "answer": "B",
+   "explanation": "The learner noticed the demonstration but did not store the steps, so retention failed. Attention was adequate, motivation concerns incentive to perform, and reproduction concerns physical ability, which was not the problem described.",
+   "subtopic": "Observational learning"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Why are habituation and sensitization called nonassociative learning?",
+   "back": "The organism changes its response to a single stimulus without linking two stimuli or linking a response to a consequence."
+  },
+  {
+   "type": "cz",
+   "text": "A decline in response to a repeated, harmless stimulus is called {{c1::habituation}}, the simplest form of nonassociative learning.",
+   "extra": "A decline in response to a repeated, harmless stimulus. It is the simplest form of nonassociative learning."
+  },
+  {
+   "type": "mc",
+   "stem": "After a loud crash, a person jumps at a quiet footstep. This is",
+   "options": [
+    "habituation",
+    "classical conditioning",
+    "negative reinforcement",
+    "sensitization"
+   ],
+   "answer": "D",
+   "why": "A strong stimulus raised responsiveness to a different, weak stimulus. No stimulus pairing or consequence is involved, so it is nonassociative sensitization."
+  },
+  {
+   "type": "tf",
+   "statement": "Habituation requires pairing the repeated stimulus with a second stimulus.",
+   "truth": false,
+   "why": "Habituation involves a single repeated stimulus. Pairing two stimuli is classical conditioning."
+  }
+ ]
+}

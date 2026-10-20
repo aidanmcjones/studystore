@@ -1,0 +1,151 @@
+{
+ "slug": "6c-emotion-stress",
+ "cards": [
+  {
+   "src": "assets/packs/6c-emotion-stress/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 522
+  },
+  {
+   "src": "assets/packs/6c-emotion-stress/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 864
+  },
+  {
+   "src": "assets/packs/6c-emotion-stress/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 502
+  },
+  {
+   "src": "assets/packs/6c-emotion-stress/card-4.webp",
+   "alt": "Sample multiple choice card: Which dimension separates 'calm' from 'excited' when both are pleasant?",
+   "w": 680,
+   "h": 862
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/6c-emotion-stress/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/6c-emotion-stress/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/6c-emotion-stress/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/6c-emotion-stress/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A patient reports intense sadness during an interview but shows a blank face and monotone voice. Which statement is accurate?",
+   "options": [
+    "The patient has no cognitive component of emotion",
+    "Mood and emotion are the same here",
+    "The cognitive and behavioral components are mismatched",
+    "The physiological component must also be absent"
+   ],
+   "answer": "C",
+   "explanation": "Feeling sadness (cognitive) without expression (behavioral) means components can dissociate. The patient clearly has a cognitive component. Mood and emotion are different, and nothing shows that physiology is absent.",
+   "subtopic": "Components of emotion"
+  },
+  {
+   "stem": "A runner says she feels excited because she notices her heart pounding at the starting line. Which theory does this most directly illustrate?",
+   "options": [
+    "Cannon-Bard",
+    "Lazarus's appraisal theory",
+    "Yerkes-Dodson law",
+    "James-Lange"
+   ],
+   "answer": "D",
+   "explanation": "Perceiving bodily change as the source of the feeling is James-Lange. Cannon-Bard has parallel output, Lazarus has appraisal first, and Yerkes-Dodson concerns arousal and performance.",
+   "subtopic": "James-Lange theory"
+  },
+  {
+   "stem": "A patient with bilateral amygdala damage would most likely show",
+   "options": [
+    "inability to form new declarative memories",
+    "loss of circadian rhythms",
+    "paralysis of the face",
+    "reduced fear and poor recognition of fearful faces"
+   ],
+   "answer": "D",
+   "explanation": "The amygdala is central to threat detection and fear. Declarative memory formation relies on the hippocampus, circadian rhythm on the hypothalamic suprachiasmatic nucleus, and facial movement on motor pathways.",
+   "subtopic": "Limbic system and emotion"
+  },
+  {
+   "stem": "Why is a polygraph considered unreliable for detecting lies?",
+   "options": [
+    "It measures only parasympathetic activity",
+    "It cannot detect heart rate",
+    "It depends on the cerebellum",
+    "It measures general arousal, which also occurs for many other reasons"
+   ],
+   "answer": "D",
+   "explanation": "Skin conductance and heart rate reflect arousal, which can result from anxiety, fear of being accused, or excitement. They are sympathetic measures, the device does record heart rate, and the cerebellum is not involved.",
+   "subtopic": "Autonomic nervous system in emotion"
+  },
+  {
+   "stem": "A patient has low cortisol and elevated ACTH. Where is the most likely problem?",
+   "options": [
+    "Anterior pituitary",
+    "Hypothalamus",
+    "Adrenal medulla",
+    "Adrenal cortex"
+   ],
+   "answer": "D",
+   "explanation": "Low cortisol with high ACTH means the pituitary is responding appropriately and the adrenal cortex fails to respond (primary adrenal insufficiency). A pituitary or hypothalamic failure would give low ACTH, and the medulla does not make cortisol.",
+   "subtopic": "Physiological stress response (HPA axis)"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "What are the three components of an emotion?",
+   "back": "Physiological (bodily arousal), cognitive (appraisal and subjective feeling), and behavioral (expression and action)."
+  },
+  {
+   "type": "cz",
+   "text": "Emotion has {{c1::physiological}}, {{c2::cognitive}}, and {{c3::behavioral}} components.",
+   "extra": "Remember that each can be measured separately, and they do not always agree."
+  },
+  {
+   "type": "mc",
+   "stem": "Which dimension separates 'calm' from 'excited' when both are pleasant?",
+   "options": [
+    "Arousal",
+    "Valence",
+    "Dominance of speech",
+    "Duration of the emotion"
+   ],
+   "answer": "A",
+   "why": "Both are positive in valence. They differ in how activated the body and mind are."
+  },
+  {
+   "type": "tf",
+   "statement": "The three components of emotion always rise and fall together.",
+   "truth": false,
+   "why": "They can dissociate, for example when someone feels afraid but hides it."
+  }
+ ]
+}
