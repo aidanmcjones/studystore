@@ -84,10 +84,10 @@
   {
    "stem": "A mutation prevents the LDL receptor from binding clathrin adaptors. LDL will",
    "options": [
-    "not bind at all",
-    "be taken in normally",
-    "bind the cell surface but not be internalized",
-    "be degraded outside the cell"
+    "Fail to bind the receptor at all",
+    "Be taken in at the normal rate",
+    "Bind but not be internalized",
+    "Be degraded outside the cell"
    ],
    "answer": "C",
    "explanation": "The receptor still recognizes LDL, but clathrin-coated pit formation needs the adaptor interaction, so uptake fails. Binding is intact, so it does bind, internalization is not normal, and extracellular degradation is not a feature.",
@@ -96,10 +96,10 @@
   {
    "stem": "Severe diarrhea occurs from a mutation that makes intestinal tight junctions leaky. The most likely explanation is",
    "options": [
-    "paracellular passage of solutes and water",
-    "loss of gap junction coupling",
-    "detachment from the basement membrane",
-    "failure of endocytosis"
+    "Paracellular passage of solutes and water",
+    "Loss of gap junction coupling",
+    "Detachment from the basement membrane",
+    "Failure of endocytosis"
    ],
    "answer": "A",
    "explanation": "Tight junctions limit paracellular movement. When leaky, solutes and water pass between cells. Gap junctions do not seal the epithelium, hemidesmosomes anchor to the matrix, and endocytosis is unrelated.",

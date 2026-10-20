@@ -72,13 +72,13 @@
   {
    "stem": "A company hires only through referrals from current employees, who are mostly of one race, and the workforce stays uniform though no manager says anything biased. This is best described as",
    "options": [
-    "institutional discrimination",
-    "individual racism",
-    "symbolic ethnicity",
-    "amalgamation"
+    "Institutional discrimination",
+    "Interpersonal racism by managers",
+    "Symbolic ethnic identification",
+    "Cultural amalgamation"
    ],
    "answer": "A",
-   "explanation": "A neutral-looking policy that yields unequal results is institutional discrimination. Individual racism needs a person's bias or acts. Symbolic ethnicity is occasional identification with an ancestral culture. Amalgamation is the blending of groups into a new culture.",
+   "explanation": "A neutral-looking policy that yields unequal results is institutional discrimination. Interpersonal racism by managers would need a person's bias or acts, and none is shown. Symbolic ethnicity is occasional identification with an ancestral culture. Amalgamation is the blending of groups into a new culture.",
    "subtopic": "Race and ethnicity as social constructs"
   },
   {
@@ -96,10 +96,10 @@
   {
    "stem": "In a country's pyramid, a deep notch appears at ages 80 to 84. What is the most likely cause?",
    "options": [
-    "A current baby boom",
+    "A baby boom in the current decade",
     "Recent immigration of young workers",
     "A rise in women's life expectancy",
-    "A small birth cohort long ago, perhaps from war or famine"
+    "Low births during a war 80 years ago"
    ],
    "answer": "D",
    "explanation": "A notch is a small cohort, often from a past event that cut births. A baby boom would show a bulge. Young immigrants would affect the middle. Women's longevity widens the female side but does not carve a notch.",

@@ -72,10 +72,10 @@
   {
    "stem": "Why does the peptide bond not rotate freely?",
    "options": [
-    "It is a hydrogen bond",
-    "It is an ionic bond",
-    "It is a disulfide",
-    "Resonance gives the C-N bond partial double bond character"
+    "It is a hydrogen bond between backbone groups",
+    "It is an ionic bond between charged ends",
+    "It is a disulfide bond between two cysteines",
+    "It has partial double bond character from resonance"
    ],
    "answer": "D",
    "explanation": "Delocalization of the nitrogen lone pair onto oxygen makes the amide plane rigid. A hydrogen bond, ionic bond, or disulfide would be a different type of interaction and would not describe the amide linkage.",

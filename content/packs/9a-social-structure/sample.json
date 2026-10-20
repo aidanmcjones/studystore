@@ -84,10 +84,10 @@
   {
    "stem": "Which scenario best illustrates intersectionality?",
    "options": [
-    "All workers face equal barriers",
-    "Only gender affects pay",
-    "Class determines all outcomes",
-    "A low-income Latina worker faces wage and hiring barriers different from either her male coworkers or white women"
+    "All workers face equal barriers regardless of their identities",
+    "Only gender affects pay, whatever a worker's race or class",
+    "Class alone determines every worker's wage and hiring outcomes",
+    "A low-income Latina faces barriers unlike those of male coworkers or white women"
    ],
    "answer": "D",
    "explanation": "Overlapping identities combine into distinct disadvantage. Equal barriers and single-factor explanations contradict the concept.",
@@ -108,10 +108,10 @@
   {
    "stem": "Which person best fits the sick role as Parsons defined it?",
    "options": [
-    "A worker who malingers",
-    "A person who ignores treatment",
-    "A worker with flu who stays home, rests, and follows a doctor's advice",
-    "A person blamed for illness"
+    "A worker who fakes symptoms to avoid going to work",
+    "A person with diabetes who ignores prescribed treatment",
+    "A worker with flu who stays home and follows a doctor's advice",
+    "A person who is blamed by others for causing the illness"
    ],
    "answer": "C",
    "explanation": "Parsons required exemption plus effort to recover and help-seeking. Malingering and ignoring treatment violate the obligations, and blame violates a right.",

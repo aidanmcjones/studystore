@@ -60,10 +60,10 @@
   {
    "stem": "A patient with pulmonary fibrosis has a normal alveolar PO2 but a low arterial PO2. What is the best explanation?",
    "options": [
-    "Loss of surfactant raises compliance",
+    "Loss of surfactant raises the lung's compliance",
     "A thickened alveolar-capillary membrane slows O2 diffusion",
-    "Dead space has increased",
-    "Carbonic anhydrase is deficient"
+    "Increased anatomic dead space limits ventilation",
+    "Carbonic anhydrase deficiency slows O2 loading"
    ],
    "answer": "B",
    "explanation": "Fick's law says diffusion falls as membrane thickness increases, so equilibration is incomplete and PaO2 lags behind alveolar PO2. Surfactant loss lowers compliance, dead space affects ventilation not diffusion, and carbonic anhydrase handles CO2.",
@@ -108,10 +108,10 @@
   {
    "stem": "An organophosphate pesticide inhibits acetylcholinesterase. What happens at the neuromuscular junction?",
    "options": [
-    "ACh persists and the end plate stays depolarized, causing fasciculations then paralysis",
+    "ACh persists, causing fasciculations and then paralysis",
     "ACh release is blocked, causing flaccid paralysis",
-    "Nicotinic receptors are blocked",
-    "Ca2+ release from the SR is blocked"
+    "Nicotinic receptors are blocked, so ACh cannot bind",
+    "Ca2+ release from the SR is blocked in the muscle"
    ],
    "answer": "A",
    "explanation": "Persistent ACh keeps the end plate depolarized and desensitized. Botulinum toxin blocks release, curare blocks receptors, and dantrolene-type drugs affect SR Ca2+ release.",

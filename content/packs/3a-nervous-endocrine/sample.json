@@ -96,10 +96,10 @@
   {
    "stem": "After a head injury, a patient loses the sense of smell. What is the most likely damage?",
    "options": [
-    "The optic chiasm",
-    "Olfactory axons passing through the cribriform plate",
+    "The optic chiasm above the pituitary",
+    "Olfactory axons at the cribriform plate",
     "The vagus nerve in the neck",
-    "The cochlear nerve"
+    "The cochlear nerve in the inner ear"
    ],
    "answer": "B",
    "explanation": "Fine olfactory axons cross the cribriform plate to the olfactory bulb and can be sheared by trauma. The optic chiasm, vagus and cochlear nerve serve other senses.",
@@ -108,8 +108,8 @@
   {
    "stem": "A patient stops long-term prednisone abruptly and becomes weak and hypotensive. Why?",
    "options": [
-    "Exogenous steroid suppressed ACTH, so the adrenal cortex had atrophied",
-    "Excess aldosterone caused volume overload",
+    "Suppressed ACTH had let the adrenal cortex atrophy",
+    "Excess aldosterone caused fluid volume overload",
     "TSH rose and caused thyrotoxicosis",
     "The adrenal medulla began producing cortisol"
    ],

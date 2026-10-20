@@ -72,10 +72,10 @@
   {
    "stem": "During the boiling of water at 1 atm, the heat supplied",
    "options": [
-    "raises the temperature of the liquid",
-    "increases the potential energy of the molecules while T stays constant",
-    "raises the average kinetic energy",
-    "lowers the vapor pressure"
+    "Raises the temperature of the liquid",
+    "Increases potential energy while T stays constant",
+    "Raises the average kinetic energy of the molecules",
+    "Lowers the vapor pressure of the liquid"
    ],
    "answer": "B",
    "explanation": "At the plateau, energy overcomes intermolecular attractions. T and average KE stay constant, and vapor pressure equals the external pressure.",

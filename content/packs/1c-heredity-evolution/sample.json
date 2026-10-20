@@ -96,10 +96,10 @@
   {
    "stem": "Which assumption of Hardy-Weinberg is broken when a population of 40 individuals is cut off from others?",
    "options": [
-    "Random mating",
-    "No mutation",
+    "Random mating among individuals",
+    "No new mutations arising",
     "Large population size",
-    "No selection"
+    "No natural selection acting"
    ],
    "answer": "C",
    "explanation": "A tiny population allows strong drift, which is the violation of a large size assumption. The scenario does not describe nonrandom mating, mutation, or selection.",
