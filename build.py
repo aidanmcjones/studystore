@@ -114,8 +114,10 @@ def esc_braces(t):
 
 def note_card(n, prefix, imgprefix):
     m = n["meta"]
-    return (f'<article class="notecard"><a href="{prefix}{n["slug"]}.html">'
-            f'<img src="{imgprefix}og-{n["slug"]}.png" alt="" loading="lazy" width="1200" height="630"></a>'
+    thumb = f'thumb-{n["slug"]}.webp'
+    src = thumb if (ROOT / "assets" / "notes" / thumb).exists() else f'og-{n["slug"]}.png'
+    return (f'<article class="notecard"><a href="{prefix}{n["slug"]}.html" tabindex="-1" aria-hidden="true">'
+            f'<img src="{imgprefix}{src}" alt="" loading="lazy" width="1200" height="630"></a>'
             f'<div><h3><a href="{prefix}{n["slug"]}.html">{html.escape(m["title"])}</a></h3>'
             f'<p class="meta">{html.escape(m["description"])}</p></div></article>')
 
