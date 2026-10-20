@@ -3,7 +3,7 @@ title: Passive vs Active Transport: Types, Examples and Energy Math
 description: Sort simple diffusion, facilitated diffusion, primary and secondary active transport by energy source, direction and kinetics, with a worked sodium-glucose example.
 product: 2a-cells-membranes
 published: 2026-10-20
-related: action-potential-phases-ion-channels, michaelis-menten-and-lineweaver-burk
+related: action-potential-phases-ion-channels, michaelis-menten-and-lineweaver-burk, glycolysis-steps-enzymes-net-atp
 ---
 
 Passive transport moves a substance down its electrochemical gradient and needs no energy input from the cell. Active transport moves a substance up (against) its gradient and must be paid for, either directly by ATP hydrolysis (primary active transport) or by letting another ion, usually Na<sup>+</sup>, run down its own gradient (secondary active transport). The question that sorts every case is the same: which way is the substance going relative to its gradient, and what pays for it?

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Lac Operon Explained: Lactose, Glucose, cAMP and CAP</title>
+<meta name="description" content="How the lac repressor and CAP-cAMP combine to set lac operon output, a four-condition table, mutant and partial diploid logic, and the traps that cost points.">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The Lac Operon Explained: Lactose, Glucose, cAMP and CAP", "description": "How the lac repressor and CAP-cAMP combine to set lac operon output, a four-condition table, mutant and partial diploid logic, and the traps that cost points.", "image": "https://www.studystore.co/assets/notes/og-lac-operon-regulation-lactose-glucose.png?v=080e95756f", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "wordCount": 1625, "inLanguage": "en", "mainEntityOfPage": "https://www.studystore.co/notes/lac-operon-regulation-lactose-glucose.html", "author": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}, "publisher": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "E. coli is grown with both glucose and lactose. Is the repressor on the operator, is CAP-cAMP bound, and what is the lac output?", "acceptedAnswer": {"@type": "Answer", "text": "The repressor is off (allolactose binds it) but cAMP is low, so CAP-cAMP is not bound. Output is low until the glucose runs out."}}, {"@type": "Question", "name": "A strain cannot make cAMP. What happens to lac expression when lactose is present and glucose is absent?", "acceptedAnswer": {"@type": "Answer", "text": "Expression stays low, because CAP needs cAMP to bind the CAP site and activate the weak lac promoter, even though the repressor has been removed."}}, {"@type": "Question", "name": "A strain carries a repressor that binds the operator normally but cannot bind allolactose. What is its phenotype?", "acceptedAnswer": {"@type": "Answer", "text": "Uninducible: the repressor never leaves the operator, so the operon stays off even with lactose present. This is the lacI-s super-repressor."}}, {"@type": "Question", "name": "In the partial diploid lacI- lacZ+ / F' lacI+ lacZ-, is beta-galactosidase constitutive or inducible, and why?", "acceptedAnswer": {"@type": "Answer", "text": "Inducible. The repressor made from the plasmid diffuses and acts in trans on the chromosome's normal operator, so the working lacZ+ copy is repressed until lactose arrives."}}, {"@type": "Question", "name": "Why is the trp operon called repressible while the lac operon is called inducible?", "acceptedAnswer": {"@type": "Answer", "text": "The trp operon is on by default and is switched off when tryptophan, acting as a corepressor, activates its repressor. The lac operon is off by default and is switched on when the inducer allolactose removes its repressor."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "StudyStore", "item": "https://www.studystore.co/"}, {"@type": "ListItem", "position": 2, "name": "Free MCAT study notes", "item": "https://www.studystore.co/notes/index.html"}, {"@type": "ListItem", "position": 3, "name": "The Lac Operon Explained: Lactose, Glucose, cAMP and CAP", "item": "https://www.studystore.co/notes/lac-operon-regulation-lactose-glucose.html"}]}</script>
+
+<link rel="canonical" href="https://www.studystore.co/notes/lac-operon-regulation-lactose-glucose.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="The Lac Operon Explained: Lactose, Glucose, cAMP and CAP">
+<meta property="og:description" content="How the lac repressor and CAP-cAMP combine to set lac operon output, a four-condition table, mutant and partial diploid logic, and the traps that cost points.">
+<meta property="og:url" content="https://www.studystore.co/notes/lac-operon-regulation-lactose-glucose.html">
+<meta property="og:image" content="https://www.studystore.co/assets/notes/og-lac-operon-regulation-lactose-glucose.png?v=080e95756f">
+<meta name="twitter:image" content="https://www.studystore.co/assets/notes/og-lac-operon-regulation-lactose-glucose.png?v=080e95756f">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Lac Operon Explained: Lactose, Glucose, cAMP and CAP">
+<meta name="twitter:description" content="How the lac repressor and CAP-cAMP combine to set lac operon output, a four-condition table, mutant and partial diploid logic, and the traps that cost points.">
+<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1512'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23f2b705'/%3E%3Ccircle cx='21' cy='16' r='4' fill='%233ddc84'/%3E%3Ccircle cx='11' cy='21' r='4' fill='%236aa2ff'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("ss-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css?v=2a5ac25cc0">
+<link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="../assets/js/exp.js?v=f84a42976d" defer></script>
+<script src="../assets/js/site.js?v=6a476378b3" defer></script>
+<script src="../assets/js/buy.js?v=54b73e6567" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="gridbg" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html" aria-label="StudyStore home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Study<b>Store</b></span></a>
+<nav aria-label="Main"><a href="../index.html#packs">Packs</a><a href="../notes/index.html">Notes</a><a href="../tools/index.html">Tools</a><a href="../index.html#faq">FAQ</a><a href="../refund.html">Refunds</a></nav>
+<div class="tools">
+<span class="phread" aria-hidden="true">pH <b>1.0</b></span>
+<button class="themetoggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+</div>
+</div><div class="phbar" aria-hidden="true"><i></i></div></header>
+<main id="main">
+<article class="note wrap narrow">
+<p class="eyebrow">Free MCAT study note</p>
+<h1>The Lac Operon Explained: Lactose, Glucose, cAMP and CAP</h1>
+<p class="meta">By StudyStore &middot; Published 2026-10-20 &middot; 7 min read &middot; 1625 words</p>
+<div class="prose">
+<p>The lac operon is turned on strongly only when two conditions hold at once: <strong>lactose is present</strong> (so the repressor lets go of the operator) and <strong>glucose is scarce</strong> (so cAMP is high and the activator CAP helps RNA polymerase bind). Lactose alone removes the brake; low glucose presses the accelerator. Every lac question, including the mutant and partial diploid ones, is a matter of checking those two switches.</p>
+<h2 id="why-e-coli-bothers-to-regulate-lactose-genes">Why E. coli bothers to regulate lactose genes</h2>
+<p>E. coli prefers glucose. Lactose is a disaccharide (galactose joined by a beta 1-4 bond to glucose) that the cell can use only after importing it and splitting it. Making the import and splitting proteins costs energy, so the cell builds them only when lactose is available and glucose, the better fuel, is not. The lac operon is the textbook case of a <strong>catabolic, inducible</strong> system: off by default, switched on by the arrival of the nutrient it breaks down.</p>
+<h2 id="the-parts-in-order">The parts, in order</h2>
+<p>An operon is a set of bacterial genes transcribed from one promoter into one <strong>polycistronic mRNA</strong>, so the genes are switched on and off together. Reading along the DNA:</p>
+<div class="tablewrap"><table><thead><tr><th>Element</th><th>What it is</th><th>Job</th></tr></thead><tbody><tr><td>lacI</td><td>Separate gene with its own promoter</td><td>Makes the lac repressor protein, all the time</td></tr><tr><td>CAP site</td><td>DNA sequence just upstream of the promoter</td><td>Binding spot for the CAP-cAMP activator</td></tr><tr><td>Promoter (P)</td><td>Where RNA polymerase binds</td><td>Start of transcription</td></tr><tr><td>Operator (O)</td><td>Short sequence overlapping the start of transcription</td><td>Binding spot for the repressor</td></tr><tr><td>lacZ</td><td>Structural gene</td><td>Beta-galactosidase: splits lactose into glucose and galactose</td></tr><tr><td>lacY</td><td>Structural gene</td><td>Lactose permease: brings lactose into the cell</td></tr><tr><td>lacA</td><td>Structural gene</td><td>Thiogalactoside transacetylase (its role is minor)</td></tr></tbody></table></div>
+<p>Two kinds of element appear in the table. <strong>Genes</strong> (lacI, lacZ, lacY, lacA) code for proteins that can float around the cell. <strong>Sites</strong> (CAP site, promoter, operator) are stretches of DNA that only control the genes physically attached to them. That difference becomes the whole game in mutant questions.</p>
+<figure><img src="../assets/notes/lac-operon-regulation-lactose-glucose.png?v=9e89e87fea" alt="Lac operon map with the repressor and CAP-cAMP state under four conditions" loading="lazy"><figcaption>The repressor blocks transcription unless inducer is present; CAP-cAMP boosts it only when glucose is low. High output needs both.</figcaption></figure>
+<h2 id="switch-1-the-repressor-and-the-inducer-is-lactose-here">Switch 1: the repressor and the inducer (is lactose here?)</h2>
+<p>The lacI gene is expressed constitutively, so the cell always holds a small pool of <strong>lac repressor</strong>. With no lactose around, the repressor sits on the operator and physically gets in the way of RNA polymerase. Transcription is close to off.</p>
+<p>When lactose enters, some of it is rearranged by beta-galactosidase into <strong>allolactose</strong>, an isomer with a beta 1-6 bond. Allolactose is the true <strong>inducer</strong>. It binds the repressor, changes its shape (an allosteric change), and lowers its grip on the operator. The repressor falls off and the polymerase can proceed.</p>
+<p>This raises a fair question: if lactose is needed to make the inducer, and the enzymes are off, how does lactose get in at all? Repression is leaky. A few copies of permease and beta-galactosidase exist even in the off state, enough to bring in some lactose and start the process.</p>
+<p>Researchers often use IPTG, a synthetic molecule that binds the repressor like allolactose but is not broken down by beta-galactosidase, so it keeps the operon induced at a steady level.</p>
+<h2 id="switch-2-cap-and-camp-is-glucose-scarce">Switch 2: CAP and cAMP (is glucose scarce?)</h2>
+<p>Even with the repressor gone, the lac promoter is weak on its own, and RNA polymerase binds it poorly. It needs an activator. That activator is the <strong>catabolite activator protein (CAP)</strong>, also called CRP.</p>
+<ul><li>When glucose is <strong>low</strong>, the cell's adenylyl cyclase is more active, <strong>cAMP rises</strong>, cAMP binds CAP, and the CAP-cAMP complex binds the CAP site just upstream of the promoter. It bends the DNA and contacts RNA polymerase, which raises transcription substantially.</li><li>When glucose is <strong>high</strong>, cAMP stays low, CAP is mostly empty, and it does not bind well. Expression stays low even if lactose is present.</li></ul>
+<p>The glucose effect is called <strong>catabolite repression</strong>. A further part of it in real cells is inducer exclusion: active glucose uptake inhibits the lactose permease, so less lactose gets in to make allolactose. For exam purposes, the cAMP and CAP logic is the core you need.</p>
+<p>Notice the opposite logic of the two proteins. The repressor is <strong>negative control</strong> (a protein that stops transcription when bound). CAP is <strong>positive control</strong> (a protein that boosts transcription when bound).</p>
+<h2 id="the-four-condition-table">The four-condition table</h2>
+<div class="tablewrap"><table><thead><tr><th>Lactose</th><th>Glucose</th><th>Repressor on operator?</th><th>CAP-cAMP bound?</th><th>lac output</th></tr></thead><tbody><tr><td>Absent</td><td>Present</td><td>Yes</td><td>No</td><td>Off (basal trace)</td></tr><tr><td>Absent</td><td>Absent</td><td>Yes</td><td>Yes</td><td>Off (basal trace): the repressor still blocks</td></tr><tr><td>Present</td><td>Present</td><td>No</td><td>No</td><td>Low</td></tr><tr><td>Present</td><td>Absent</td><td>No</td><td>Yes</td><td><strong>High</strong></td></tr></tbody></table></div>
+<p>The second row is the one students miss. Low glucose and high cAMP do nothing if the repressor is still parked on the operator. The activator cannot override a blocked operator.</p>
+<h2 id="mutants-cis-versus-trans">Mutants: cis versus trans</h2>
+<p>A mutation in a <strong>gene</strong> changes a diffusible protein, so its effect can reach any copy of the operon in the cell (it acts <strong>in trans</strong>). A mutation in a <strong>site</strong> changes only the DNA it is part of, so it affects only the genes on the same piece of DNA (it acts <strong>in cis</strong>).</p>
+<ul><li><strong>lacI<sup>-</sup></strong> (no working repressor): the operon is on whether or not lactose is present. This is <strong>constitutive</strong> expression.</li><li><strong>lacO<sup>c</sup></strong> (operator that the repressor cannot bind): also constitutive, but only for the genes attached to that operator.</li><li><strong>lacI<sup>s</sup></strong> (super-repressor that cannot bind inducer): the repressor never lets go, so the operon stays off even with lactose. Expression is <strong>uninducible</strong>.</li><li><strong>Promoter mutation</strong> that RNA polymerase cannot use: no expression of the attached genes under any condition.</li><li><strong>CAP or adenylyl cyclase defect:</strong> output stays low even with lactose and no glucose, because the activator never helps.</li></ul>
+<h3 id="worked-example-partial-diploids">Worked example: partial diploids</h3>
+<p>Geneticists put a second copy of the lac region into the cell on a small plasmid (written after "F'") and ask whether beta-galactosidase is made without lactose (uninduced) and with lactose (induced). Treat each copy of the operon separately, then ask which proteins can reach it.</p>
+<p><strong>Strain 1: lacI<sup>-</sup> lacZ<sup>+</sup> / F' lacI<sup>+</sup> lacZ<sup>-</sup></strong></p>
+<ol><li>The plasmid's lacI<sup>+</sup> makes working repressor. It diffuses, so it can bind the chromosome's normal operator too.</li><li>The chromosome's lacZ<sup>+</sup> is therefore repressed without lactose and released with lactose.</li><li>The plasmid's lacZ<sup>-</sup> makes no working enzyme either way.</li><li>Result: beta-galactosidase is <strong>inducible</strong>. A working repressor gene is dominant over a broken one, because its product acts in trans.</li></ol>
+<p><strong>Strain 2: lacO<sup>c</sup> lacZ<sup>-</sup> / F' lacO<sup>+</sup> lacZ<sup>+</sup></strong> (both copies have normal lacI)</p>
+<ol><li>The chromosome copy is always transcribed because its operator cannot be blocked, but its lacZ is broken, so the constant transcription yields no working enzyme.</li><li>The plasmid copy has a normal operator and a working lacZ, so it behaves normally.</li><li>Result: beta-galactosidase is <strong>inducible</strong>, not constitutive. An operator mutation helps only the genes on its own DNA, which is what "cis-acting" means.</li></ol>
+<p>Swap the plasmid in strain 2 to lacO<sup>c</sup> lacZ<sup>+</sup> and the answer flips to constitutive, because the broken operator now sits next to the working gene.</p>
+<h2 id="lac-versus-trp-inducible-versus-repressible">Lac versus trp: inducible versus repressible</h2>
+<p>The trp operon encodes the enzymes that <strong>build</strong> tryptophan, so the logic runs the other way. It is <strong>repressible</strong>: on by default, and shut off when the product piles up. Tryptophan acts as a <strong>corepressor</strong>. It binds the trp repressor, which only then attaches to the trp operator. A second layer, <strong>attenuation</strong>, uses the speed of ribosomes on a short leader sequence to decide whether a terminator hairpin forms in the mRNA, which ends transcription early when tryptophan is plentiful.</p>
+<div class="tablewrap"><table><thead><tr><th>Feature</th><th>lac</th><th>trp</th></tr></thead><tbody><tr><td>Pathway type</td><td>Breaks a nutrient down (catabolic)</td><td>Builds a product (anabolic)</td></tr><tr><td>Default state</td><td>Off</td><td>On</td></tr><tr><td>Small molecule</td><td>Allolactose, an inducer, removes the repressor</td><td>Tryptophan, a corepressor, activates the repressor</td></tr><tr><td>Extra control</td><td>CAP-cAMP activation</td><td>Attenuation</td></tr></tbody></table></div>
+<p>A useful way to remember it: a pathway that <strong>uses up</strong> a molecule is switched on by that molecule, and a pathway that <strong>makes</strong> a molecule is switched off by it. Both choices stop the cell from wasting effort.</p>
+<h2 id="common-traps">Common traps</h2>
+<ul><li><strong>Lactose present does not mean high expression.</strong> If glucose is also present, cAMP is low and output stays low.</li><li><strong>Low glucose alone does nothing.</strong> Without inducer, the repressor still blocks the operator.</li><li><strong>The inducer is allolactose,</strong> not lactose itself, in the standard model.</li><li><strong>The repressor binds the operator, not the promoter,</strong> and CAP binds the CAP site, not the operator.</li><li><strong>lacI is not part of the polycistronic lac mRNA.</strong> It has its own promoter and is always on.</li><li><strong>Operons are a bacterial feature.</strong> Eukaryotic genes are usually transcribed one per mRNA and controlled by enhancers, transcription factors, and chromatin.</li><li><strong>Cis versus trans:</strong> gene mutations (lacI) can be rescued by a second working copy; operator mutations cannot be rescued by a second copy, because they only affect their own DNA.</li></ul>
+<h2 id="one-minute-recap">One-minute recap</h2>
+<p>The lac operon (CAP site, promoter, operator, lacZ, lacY, lacA) makes one mRNA for the lactose genes. The repressor, made constantly from lacI, blocks the operator until allolactose binds it. CAP-cAMP, present when glucose is low, activates the weak promoter. High output needs lactose present and glucose low. lacI<sup>-</sup> and lacO<sup>c</sup> give constitutive expression; lacI<sup>s</sup> makes it uninducible. Repressor genes act in trans, operators act in cis. The trp operon is the repressible mirror image, with tryptophan as corepressor and attenuation on top.</p>
+</div>
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>DNA, Genetic Information and Gene Expression is a $17 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/1b-dna-gene-expression.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
+<p class="meta">Try each question first, then click it to reveal the answer.</p>
+<div class="quiz"><details class="q"><summary>1. E. coli is grown with both glucose and lactose. Is the repressor on the operator, is CAP-cAMP bound, and what is the lac output?</summary><div><p>The repressor is off (allolactose binds it) but cAMP is low, so CAP-cAMP is not bound. Output is low until the glucose runs out.</p></div></details><details class="q"><summary>2. A strain cannot make cAMP. What happens to lac expression when lactose is present and glucose is absent?</summary><div><p>Expression stays low, because CAP needs cAMP to bind the CAP site and activate the weak lac promoter, even though the repressor has been removed.</p></div></details><details class="q"><summary>3. A strain carries a repressor that binds the operator normally but cannot bind allolactose. What is its phenotype?</summary><div><p>Uninducible: the repressor never leaves the operator, so the operon stays off even with lactose present. This is the lacI-s super-repressor.</p></div></details><details class="q"><summary>4. In the partial diploid lacI- lacZ+ / F' lacI+ lacZ-, is beta-galactosidase constitutive or inducible, and why?</summary><div><p>Inducible. The repressor made from the plasmid diffuses and acts in trans on the chromosome's normal operator, so the working lacZ+ copy is repressed until lactose arrives.</p></div></details><details class="q"><summary>5. Why is the trp operon called repressible while the lac operon is called inducible?</summary><div><p>The trp operon is on by default and is switched off when tryptophan, acting as a corepressor, activates its repressor. The lac operon is off by default and is switched on when the inducer allolactose removes its repressor.</p></div></details></div>
+<h2>Keep studying</h2>
+<ul><li><a href="glycolysis-steps-enzymes-net-atp.html">Glycolysis Steps, Enzymes and Net ATP Yield for the MCAT</a></li><li><a href="anomers-vs-epimers-carbohydrates.html">Anomers vs Epimers: Carbohydrate Stereoisomers for the MCAT</a></li><li><a href="passive-vs-active-transport.html">Passive vs Active Transport: Types, Examples and Energy Math</a></li><li><a href="index.html">All free notes</a></li></ul>
+
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>DNA, Genetic Information and Gene Expression is a $17 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/1b-dna-gene-expression.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div>
+<p class="flabel">StudyStore</p>
+<p>Original, high-yield MCAT study packs. Written from scratch, checked card by card.</p>
+</div>
+<div>
+<p class="flabel">Shop</p>
+<p class="links"><a href="../index.html#packs">Packs</a><a href="../products/index.html">All packs</a><a href="../notes/index.html">Free notes</a></p>
+</div>
+<div>
+<p class="flabel">Policies</p>
+<p class="links"><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><a href="../refund.html">Refund policy</a></p>
+</div>
+</div>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+<p class="wordmark" aria-hidden="true">Study<b>Store</b></p>
+</div></footer>
+</body>
+</html>
