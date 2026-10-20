@@ -1,0 +1,26 @@
+/* owner marketing outbox (/admin/marketing.html, assets/js/marketing.js), mobile first */
+.mk h2{font-size:1.2rem;margin:0 0 6px}
+.mk-today{border:1px solid var(--line-2);border-radius:var(--r);padding:14px;margin:16px 0;background:var(--surface)}
+.mk-todaylist{margin:8px 0 0;padding-left:1.3em}
+.mk-todaylist li{margin:4px 0}
+.mk-todaylist a{overflow-wrap:anywhere}
+.mk-tabs{display:flex;gap:6px;overflow-x:auto;margin:18px 0 10px;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.mk-tabs button,.mk-chips button{flex:0 0 auto;min-height:44px;padding:8px 14px;border:1px solid var(--line-2);border-radius:999px;background:transparent;color:var(--ink);font:500 .9rem/1 var(--f-body);cursor:pointer}
+.mk-tabs button[aria-selected=true],.mk-chips button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.mk-tabs button span,.mk-chips button span{font-family:var(--f-mono);opacity:.75;margin-left:4px}
+.mk-chips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.mk-chips button{min-height:36px;padding:6px 12px;font-size:.82rem}
+.mk-card .mk-head{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 6px}
+.mk-badge{display:inline-block;font:600 .72rem/1 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;padding:5px 8px;border-radius:6px;background:var(--ink);color:var(--bg)}
+.mk-target{font-weight:600;overflow-wrap:anywhere}
+.mk-title{font-weight:600;margin:6px 0}
+.mk-card .rmsg{max-height:50vh;overflow:auto;margin:6px 0}
+.mk-card .ractions .btn{min-height:44px}
+.mk-asset{margin:8px 0}
+.mk-asset video,.mk-asset img{display:block;max-width:100%;max-height:60vh;border-radius:8px;background:var(--surface-2)}
+.mk-posted{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0}
+.mk-posted input{flex:1 1 200px;min-height:44px;font:400 .95rem/1.4 var(--f-body);padding:8px 10px;border:1px solid var(--line-2);border-radius:8px;background:var(--bg);color:var(--ink)}
+.mk-card.mk-hl{outline:2px solid var(--ink);outline-offset:2px}
+.mk,.mk p{overflow-wrap:anywhere;min-width:0}
+.mk .rlist li{max-width:100%}
+.mk-head .mk-target{flex:1 1 auto;min-width:0}
