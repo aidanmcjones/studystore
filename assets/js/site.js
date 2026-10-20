@@ -158,11 +158,23 @@
   /* ---------- Anki card demo ---------- */
   (function anki() {
     var box = $("[data-anki]"); if (!box) return;
-    var cards = $$(".ankicard", box), i = 0, flipBtn = $("[data-flip]", box), nextBtn = $("[data-next]", box), count = $(".ankicount", box);
+    var cards = $$(".ankicard", box), tag = $(".ankitag", box);
+    if (box.hasAttribute("data-pick")) {
+      // one random card per MCAT section, in random order; the rest leave the DOM
+      var bySec = {}, secs = [];
+      cards.forEach(function (c) { var s = c.getAttribute("data-sec"); if (!bySec[s]) { bySec[s] = []; secs.push(s); } bySec[s].push(c); });
+      var picked = secs.map(function (s) { var a = bySec[s]; return a[Math.floor(Math.random() * a.length)]; });
+      for (var k = picked.length - 1; k > 0; k--) { var j = Math.floor(Math.random() * (k + 1)), t = picked[k]; picked[k] = picked[j]; picked[j] = t; }
+      cards.forEach(function (c) { if (picked.indexOf(c) < 0) c.remove(); });
+      picked.forEach(function (c) { c.parentNode.appendChild(c); });
+      cards = picked;
+    }
+    var i = 0, flipBtn = $("[data-flip]", box), nextBtn = $("[data-next]", box), count = $(".ankicount", box);
     var auto = !RM, timer = null, hover = false, visible = true;
     function show(n) {
       cards.forEach(function (c, k) { c.classList.toggle("cur", k === n); c.classList.remove("flipped"); c.setAttribute("aria-hidden", k === n ? "false" : "true"); });
       i = n; count.textContent = (n + 1) + " / " + cards.length; flipBtn.textContent = "Show answer";
+      if (tag && cards[n].getAttribute("data-tag")) tag.textContent = cards[n].getAttribute("data-tag");
     }
     function flip() {
       var c = cards[i], f = !c.classList.contains("flipped");

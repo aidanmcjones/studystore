@@ -233,32 +233,44 @@ def sample_quiz(p, n=5, final=""):
 
 def anki_html(p):
     s = sample(p["slug"]) or {}
-    arts = []
-    for c in s.get("demo_cards", [])[:4]:
-        t = c["type"]
-        if t == "sa":
-            kind, q, a, extra = "Short answer", esc(c["front"]), f'<p class="a">{esc(c["back"])}</p>', ""
-            front = f'<p class="q">{q}</p>'
-            back = f'<p class="q">{q}</p><hr>{a}'
-        elif t == "cz":
-            kind = "Cloze"
-            raw = esc(c["text"])
-            front = '<p class="q">' + re.sub(r"\{\{c\d+::(.*?)(::.*?)?\}\}", '<span class="cloze">[...]</span>', c["text"].replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")) + "</p>"
-            back = ('<p class="q">' + re.sub(r"\{\{c\d+::(.*?)(::.*?)?\}\}", r'<span class="cloze on">\1</span>', c["text"].replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")) + "</p>"
-                    + (f'<hr><p class="a">{esc(c["extra"])}</p>' if c.get("extra") else ""))
-        elif t == "mc":
-            kind = "Multiple choice"
-            opts = "".join(f"<li><b>{chr(65 + j)}.</b> {esc(o)}</li>" for j, o in enumerate(c["options"]))
-            front = f'<p class="q">{esc(c["stem"])}</p><ol class="opts">{opts}</ol>'
-            ans = c["options"][ord(c["answer"]) - 65] if len(c["answer"]) == 1 else ""
-            back = f'<p class="q">{esc(c["stem"])}</p><hr><p class="a"><b>{esc(c["answer"])}. {esc(ans)}</b> {esc(c["why"])}</p>'
-        else:
-            kind = "True or false"
-            front = f'<p class="q">{esc(c["statement"])}</p>'
-            back = f'<p class="q">{esc(c["statement"])}</p><hr><p class="a"><b>{"True" if c["truth"] else "False"}.</b> {esc(c["why"])}</p>'
-        arts.append(f'<article class="ankicard"><div class="face front"><p class="kind mono">{kind}</p>{front}</div>'
-                    f'<div class="face back"><p class="kind mono">{kind}</p>{back}</div></article>')
+    arts = [anki_card(c) for c in s.get("demo_cards", [])[:4]]
     return "\n".join(arts), len(arts)
+
+
+def home_anki(site):
+    """Every available pack's demo cards, tagged by MCAT section; site.js shows one random card per section."""
+    arts, secs = [], []
+    for p in available(site):
+        for c in ((sample(p["slug"]) or {}).get("demo_cards") or [])[:4]:
+            arts.append(anki_card(c, f' data-sec="{E(p["section_name"])}" data-tag="StudyStore::MCAT::{E(p["aamc"])}"'))
+            if p["section_name"] not in secs:
+                secs.append(p["section_name"])
+    return "\n".join(arts), len(secs)
+
+
+def anki_card(c, attrs=""):
+    t = c["type"]
+    if t == "sa":
+        kind, q, a = "Short answer", esc(c["front"]), f'<p class="a">{esc(c["back"])}</p>'
+        front = f'<p class="q">{q}</p>'
+        back = f'<p class="q">{q}</p><hr>{a}'
+    elif t == "cz":
+        kind = "Cloze"
+        front = '<p class="q">' + re.sub(r"\{\{c\d+::(.*?)(::.*?)?\}\}", '<span class="cloze">[...]</span>', c["text"].replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")) + "</p>"
+        back = ('<p class="q">' + re.sub(r"\{\{c\d+::(.*?)(::.*?)?\}\}", r'<span class="cloze on">\1</span>', c["text"].replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")) + "</p>"
+                + (f'<hr><p class="a">{esc(c["extra"])}</p>' if c.get("extra") else ""))
+    elif t == "mc":
+        kind = "Multiple choice"
+        opts = "".join(f"<li><b>{chr(65 + j)}.</b> {esc(o)}</li>" for j, o in enumerate(c["options"]))
+        front = f'<p class="q">{esc(c["stem"])}</p><ol class="opts">{opts}</ol>'
+        ans = c["options"][ord(c["answer"]) - 65] if len(c["answer"]) == 1 else ""
+        back = f'<p class="q">{esc(c["stem"])}</p><hr><p class="a"><b>{esc(c["answer"])}. {esc(ans)}</b> {esc(c["why"])}</p>'
+    else:
+        kind = "True or false"
+        front = f'<p class="q">{esc(c["statement"])}</p>'
+        back = f'<p class="q">{esc(c["statement"])}</p><hr><p class="a"><b>{"True" if c["truth"] else "False"}.</b> {esc(c["why"])}</p>'
+    return (f'<article class="ankicard"{attrs}><div class="face front"><p class="kind mono">{kind}</p>{front}</div>'
+            f'<div class="face back"><p class="kind mono">{kind}</p>{back}</div></article>')
 
 
 # ---------- home / catalog blocks ----------
@@ -331,6 +343,8 @@ def placeholder(site, items, k, root):
     """Answer catalog placeholders for build.render(); None if k is not ours."""
     if k == "pack_grid":
         return pack_grid(site, root)
+    if k == "home_anki": return home_anki(site)[0]
+    if k == "home_anki_n": return str(home_anki(site)[1])
     if k.startswith("stat:"):
         f = k[5:]
         return {"available": str(len(available(site))), "total": str(len(site.get("products", []))),
