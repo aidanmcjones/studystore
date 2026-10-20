@@ -1,0 +1,151 @@
+{
+ "slug": "2b-prokaryotes-viruses",
+ "cards": [
+  {
+   "src": "assets/packs/2b-prokaryotes-viruses/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 841
+  },
+  {
+   "src": "assets/packs/2b-prokaryotes-viruses/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 479
+  },
+  {
+   "src": "assets/packs/2b-prokaryotes-viruses/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 501
+  },
+  {
+   "src": "assets/packs/2b-prokaryotes-viruses/card-4.webp",
+   "alt": "Sample multiple choice card: Which feature is present in a bacterial cell?",
+   "w": 680,
+   "h": 355
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/2b-prokaryotes-viruses/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/2b-prokaryotes-viruses/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/2b-prokaryotes-viruses/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/2b-prokaryotes-viruses/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A culture begins log growth with 3.0 x 10^3 cells/mL and a generation time of 40 minutes. How many cells/mL after 4 hours?",
+   "options": [
+    "1.2 x 10^4",
+    "1.92 x 10^5",
+    "9.6 x 10^4",
+    "3.84 x 10^5"
+   ],
+   "answer": "B",
+   "explanation": "4 hours is 240 minutes, so n = 240/40 = 6. N = 3.0 x 10^3 x 2^6 = 192,000 = 1.92 x 10^5. Using 5 generations gives 9.6 x 10^4, using 7 gives 3.84 x 10^5, and 1.2 x 10^4 is only 2 generations.",
+   "subtopic": "Bacterial growth curve"
+  },
+  {
+   "stem": "Which statement correctly pairs a structure with its function?",
+   "options": [
+    "Capsule: synthesizes peptidoglycan",
+    "Porin: encodes antibiotic resistance",
+    "Teichoic acid: forms the outer membrane",
+    "Lipid A: activates TLR4 and causes fever"
+   ],
+   "answer": "D",
+   "explanation": "Lipid A is the endotoxin portion of LPS. Teichoic acids are in Gram-positive walls, capsules resist phagocytosis, and porins are channels, not resistance genes.",
+   "subtopic": "Bacterial shapes and cell wall types (Gram stain)"
+  },
+  {
+   "stem": "In Griffith's experiment, which injection killed mice and yielded live S bacteria?",
+   "options": [
+    "Heat-killed R cells alone",
+    "Live R cells alone",
+    "Live R and heat-killed S cells",
+    "Live S cells that were heat killed"
+   ],
+   "answer": "C",
+   "explanation": "R cells absorbed DNA from dead S cells and gained the capsule. Heat-killed S alone cannot grow, live R alone is harmless, and heat-killed R is harmless.",
+   "subtopic": "Transformation"
+  },
+  {
+   "stem": "Which is a heat-stable component of Gram-negative bacteria that causes fever and septic shock?",
+   "options": [
+    "Peptidoglycan",
+    "Lipopolysaccharide",
+    "Botulinum toxin",
+    "Exotoxin A"
+   ],
+   "answer": "B",
+   "explanation": "LPS (lipid A) is heat stable and triggers TLR4. Botulinum toxin and exotoxins are secreted proteins and heat labile, and peptidoglycan does not drive classical endotoxic shock.",
+   "subtopic": "Bacterial symbiosis and pathogenesis"
+  },
+  {
+   "stem": "Two influenza strains infect the same cell and produce a virus with a novel hemagglutinin that is not recognized by existing antibodies. This process is:",
+   "options": [
+    "Reverse transcription",
+    "Antigenic drift",
+    "Lysogenic conversion",
+    "Antigenic shift"
+   ],
+   "answer": "D",
+   "explanation": "Exchange of RNA segments is reassortment, called shift. Drift is gradual point mutation, lysogenic conversion is a phage process, and influenza does not use reverse transcription.",
+   "subtopic": "Viral host range and replication"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Where is the DNA of a bacterial cell located?",
+   "back": "In the nucleoid, an irregular region of the cytoplasm with no surrounding membrane."
+  },
+  {
+   "type": "cz",
+   "text": "Prokaryotic ribosomes are {{c1::70S}}, made of a {{c2::50S}} and a {{c2::30S}} subunit. Eukaryotic ribosomes are {{c3::80S}}.",
+   "extra": "Svedberg units are not additive: 50 + 30 does not equal 70 in S."
+  },
+  {
+   "type": "mc",
+   "stem": "Which feature is present in a bacterial cell?",
+   "options": [
+    "Mitochondria",
+    "A nuclear envelope",
+    "Ribosomes in the cytoplasm",
+    "Membrane-bound Golgi stacks"
+   ],
+   "answer": "C",
+   "why": "Bacteria have 70S ribosomes but no membrane-bound organelles. Their ETC sits in the plasma membrane."
+  },
+  {
+   "type": "tf",
+   "statement": "Bacterial DNA is wrapped around histone proteins to form nucleosomes.",
+   "truth": false,
+   "why": "Bacterial DNA is supercoiled and organized by nucleoid-associated proteins. Histones are an archaeal and eukaryotic feature."
+  }
+ ]
+}

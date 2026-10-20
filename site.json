@@ -885,8 +885,23 @@
         "Fungi basics",
         "Antibiotic mechanisms"
       ],
-      "status": "coming_soon",
-      "contents": null,
+      "status": "available",
+      "contents": {
+        "cards": 523,
+        "card_types": {
+          "io": 9,
+          "sa": 290,
+          "cz": 59,
+          "mc": 98,
+          "tf": 67
+        },
+        "questions": 54,
+        "passage_sets": 4,
+        "diagrams": 22,
+        "guide_pages": 11,
+        "cheatsheet_pages": 4,
+        "validation": "CLEAN"
+      },
       "ls_name": "StudyStore MCAT 2B: Prokaryotes, Viruses and Microbial Genetics",
       "variant_id": null,
       "checkout_url": null
@@ -1475,7 +1490,7 @@
         "2c-cell-division-development",
         "2b-prokaryotes-viruses"
       ],
-      "ready_count": 7,
+      "ready_count": 8,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Bio/Biochem Complete Section",
       "variant_id": null,
@@ -1574,7 +1589,7 @@
         "9b-demographics",
         "cars-strategy"
       ],
-      "ready_count": 12,
+      "ready_count": 13,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Complete MCAT (all sections plus CARS)",
       "variant_id": null,
