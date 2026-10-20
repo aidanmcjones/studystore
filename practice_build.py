@@ -227,7 +227,7 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
                               lead=f"{total} original practice questions across {len(live)} topic pages, each with a concept primer and a full explanation for every answer. Free, no signup.",
                               body=secs))
     emit("practice/index.html", "Free MCAT Practice Questions by Topic | StudyStore",
-         f"{total} free, original MCAT-style practice questions by topic with full explanations: biochemistry, molecular biology, metabolism, physiology and organic chemistry.",
+         f"{total} free, original MCAT-style practice questions by topic with full explanations: biology, biochemistry, general and organic chemistry, physics, psychology and sociology.",
          body, head_extra=STYLE + _crumbs_ld(base_url, ("Practice questions", f"{base_url}/practice/index.html")), lastmod=max((x["meta"]["published"] for x in live), default=None))
     return live
 

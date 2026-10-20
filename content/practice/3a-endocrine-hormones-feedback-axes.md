@@ -36,7 +36,7 @@ ANSWER: B
 WHY: Gs stimulates adenylyl cyclase to make cAMP. Locked in the active state, Gs keeps cAMP elevated, PKA phosphorylates the CFTR chloride channel, and chloride secretion draws sodium and water into the lumen. The result is massive fluid loss. Gq, not Gs, activates phospholipase C.
 
 ### Q3
-Which pair of hormones is synthesized by neurons in the hypothalamus and released from the posterior pituitary?
+Which two hormones are made in hypothalamic cell bodies but secreted into the blood from axon terminals in the neurohypophysis?
 A) FSH and LH
 B) ADH (vasopressin) and oxytocin
 C) TSH and ACTH

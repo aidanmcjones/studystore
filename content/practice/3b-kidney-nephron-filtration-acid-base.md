@@ -36,11 +36,11 @@ ANSWER: D
 WHY: Glucose is freely filtered and is normally reabsorbed completely in the proximal tubule by SGLT2 and SGLT1 transporters. When the filtered load exceeds the transport maximum, the excess is excreted, and the unreabsorbed glucose raises tubular osmolarity, retaining water and causing an osmotic diuresis (polyuria).
 
 ### Q3
-A patient is given furosemide, a loop diuretic that inhibits the Na+/K+/2Cl- cotransporter in the thick ascending limb. What is the effect on urine?
-A) Larger volume of less concentrated urine, because salt reabsorption in the thick ascending limb is blocked and the medullary gradient is lost
-B) No change in urine volume
+A patient starts furosemide, which blocks NKCC2-mediated salt uptake in the loop of Henle. What happens to the urine?
+A) Larger volume of more dilute urine
+B) Unchanged volume and concentration
 C) Smaller volume of more concentrated urine
-D) Increased water reabsorption in the collecting duct
+D) More water reabsorbed by the collecting duct
 ANSWER: A
 WHY: The thick ascending limb normally pumps NaCl into the medullary interstitium, helping create the osmotic gradient that allows water reabsorption from the collecting duct. Blocking this transporter delivers more NaCl to distal segments and reduces the gradient, so less water can be reabsorbed. The result is a large volume of dilute urine.
 
@@ -79,7 +79,7 @@ ANSWER: B
 WHY: Aldosterone promotes Na+ and water retention, raising blood volume and pressure. Its stimulation of Na+/K+ ATPase and ENaC in the collecting duct also drives K+ secretion and H+ secretion by intercalated cells, causing hypokalemia and a metabolic alkalosis.
 
 ### Q7
-A patient has a plasma bicarbonate of 12 mM and a PCO2 of 40 mmHg. Using pH = 6.1 + log([HCO3-] / (0.03 x PCO2)), what is the approximate pH, and what compensation is expected?
+Arterial blood shows [HCO3-] = 12 mM and PCO2 = 40 mmHg. The dissolved CO2 concentration equals 0.03 mM per mmHg of PCO2, and the bicarbonate buffer pKa is 6.1. What is the approximate pH, and what compensation is expected?
 A) pH 7.10; hyperventilation to lower PCO2
 B) pH 7.10; hypoventilation to raise PCO2
 C) pH 7.40; no compensation

@@ -72,13 +72,13 @@ ANSWER: D
 WHY: Peptidyl transferase transfers the growing chain to puromycin as if it were an aminoacyl-tRNA, but puromycin cannot be translocated or extended, so the peptide dissociates. This causes premature termination of translation, which is why puromycin is toxic to both bacteria and eukaryotes.
 
 ### Q7
-Lysosomal enzymes are normally tagged with mannose-6-phosphate in the Golgi and delivered to lysosomes. In a cell lacking the enzyme that adds this tag, what is the most likely finding?
-A) Lysosomal enzymes accumulate in the nucleus
-B) Lysosomal enzymes are degraded in the ER
-C) Lysosomal enzymes are secreted from the cell instead of reaching lysosomes, and lysosomes accumulate undigested material
-D) Lysosomal enzymes are delivered normally
+A fibroblast line carries a loss-of-function mutation in the Golgi phosphotransferase that marks acid hydrolases with a mannose-6-phosphate signal. What is the most likely finding?
+A) Hydrolases are imported into the nucleus instead
+B) Hydrolases are retained and degraded in the ER
+C) Hydrolases are secreted, leaving lysosomes full of undigested material
+D) Hydrolases still reach lysosomes at normal levels
 ANSWER: C
-WHY: Mannose-6-phosphate is the signal recognized by receptors in the trans-Golgi network that package enzymes into vesicles bound for lysosomes. Without the tag, the enzymes are sent by default to the cell surface and secreted, and the lysosomes lack hydrolases. This is the basis of I-cell disease.
+WHY: Receptors in the trans-Golgi network bind the phosphorylated mannose signal and sort tagged hydrolases into vesicles headed for lysosomes. Without the tag, the enzymes are sent by default to the cell surface and secreted, and the lysosomes lack hydrolases. This is the basis of I-cell disease.
 
 ### Q8
 Which pairing of ribosomal subunits and complete ribosome is correct?
