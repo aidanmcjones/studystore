@@ -5,5 +5,9 @@
   "2A": {"slug": "2a", "title": "Cells, Membranes and Tissues", "blurb": "Membrane transport, osmosis, and membrane potentials."},
   "3A": {"slug": "3a", "title": "Nervous and Endocrine Systems", "blurb": "Action potentials, synapses, hormones and feedback axes."},
   "3B": {"slug": "3b", "title": "Organ Systems", "blurb": "Kidney, cardiovascular and respiratory physiology."},
-  "5D": {"slug": "5d", "title": "Biologically Relevant Molecules and Organic Reactivity", "blurb": "Carbohydrates, lipids, carbonyl chemistry and acid derivatives."}
+  "5A": {"slug": "5a", "title": "Water, Solutions, Acids and Bases", "blurb": "pH, weak acids, buffers, titrations and indicators."},
+  "5B": {"slug": "5b", "title": "Bonding, Molecular Structure and Stereochemistry", "blurb": "Chirality, R and S configuration, enantiomers, diastereomers and optical activity."},
+  "5C": {"slug": "5c", "title": "Separations, Purification and Spectroscopy", "blurb": "IR, NMR, mass spectrometry and UV-Vis spectroscopy."},
+  "5D": {"slug": "5d", "title": "Biologically Relevant Molecules and Organic Reactivity", "blurb": "Carbohydrates, lipids, carbonyl chemistry, acid derivatives, peptides and nucleotides."},
+  "5E": {"slug": "5e", "title": "Chemical Thermodynamics and Kinetics", "blurb": "Rate laws, reaction order, Arrhenius behavior, mechanisms and catalysts."}
 }
