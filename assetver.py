@@ -1,10 +1,10 @@
-"""Shared cache-busting helper: append ?v=<sha256[:10]> to every local CSS/JS URL in built HTML."""
+"""Shared cache-busting helper: append ?v=<sha256[:10]> to every local asset URL (css, js, images) in built HTML."""
 import re, hashlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 _cache = {}
-_PAT = re.compile(r'''((?:href|src)=["'])([^"':?#]*?assets/[^"'?#]+\.(?:css|js))(["'])''')
+_PAT = re.compile(r"(?<![\w-])assets/[\w./%-]+?\.(?:css|js|png|jpe?g|webp|svg|gif|ico)(?![\w?.-])(?!</code>)")
 
 def _hash(rel):
     if rel not in _cache:
@@ -13,9 +13,8 @@ def _hash(rel):
     return _cache[rel]
 
 def version_assets(page):
+    """Version every local assets/ path (attrs, srcset, meta og/twitter, inline JSON, data-*)."""
     def sub(m):
-        path = m.group(2)
-        rel = path[path.index("assets/"):]
-        h = _hash(rel)
-        return m.group(0) if h is None else f"{m.group(1)}{path}?v={h}{m.group(3)}"
+        h = _hash(m.group(0))
+        return m.group(0) if h is None else f"{m.group(0)}?v={h}"
     return _PAT.sub(sub, page)
