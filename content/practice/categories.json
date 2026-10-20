@@ -5,5 +5,10 @@
   "2A": {"slug": "2a", "title": "Cells, Membranes and Tissues", "blurb": "Membrane transport, osmosis, and membrane potentials."},
   "3A": {"slug": "3a", "title": "Nervous and Endocrine Systems", "blurb": "Action potentials, synapses, hormones and feedback axes."},
   "3B": {"slug": "3b", "title": "Organ Systems", "blurb": "Kidney, cardiovascular and respiratory physiology."},
+  "4A": {"slug": "4a", "title": "Motion, Forces, Work and Energy", "blurb": "Work, energy conservation, power and simple machines."},
+  "4B": {"slug": "4b", "title": "Fluids and Gas Behavior", "blurb": "Hydrostatic pressure, buoyancy, continuity, Bernoulli and Poiseuille flow."},
+  "4C": {"slug": "4c", "title": "Electrostatics, Circuits, Magnetism and Electrochemistry", "blurb": "Ohm's law, series and parallel resistors, Kirchhoff's rules and circuit power."},
+  "4D": {"slug": "4d", "title": "Waves, Sound, Light and Optics", "blurb": "Mirrors, thin lenses, lens power, the eye and vision correction."},
+  "4E": {"slug": "4e", "title": "Atoms, Nuclear Chemistry and the Periodic Table", "blurb": "Isotopes, radioactive decay, half-life, binding energy, fission and fusion."},
   "5D": {"slug": "5d", "title": "Biologically Relevant Molecules and Organic Reactivity", "blurb": "Carbohydrates, lipids, carbonyl chemistry and acid derivatives."}
 }
