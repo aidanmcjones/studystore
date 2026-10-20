@@ -1477,8 +1477,23 @@
         "Gentrification and urban decline",
         "Educational inequality"
       ],
-      "status": "coming_soon",
-      "contents": null,
+      "status": "available",
+      "contents": {
+        "cards": 475,
+        "card_types": {
+          "sa": 256,
+          "cz": 75,
+          "tf": 65,
+          "mc": 65,
+          "io": 14
+        },
+        "questions": 47,
+        "passage_sets": 3,
+        "diagrams": 20,
+        "guide_pages": 10,
+        "cheatsheet_pages": 4,
+        "validation": "CLEAN"
+      },
       "ls_name": "StudyStore MCAT 10A: Social Inequality and Health Disparities",
       "variant_id": null,
       "checkout_url": null
@@ -1767,7 +1782,7 @@
         "6c-emotion-stress",
         "9b-demographics"
       ],
-      "ready_count": 10,
+      "ready_count": 11,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Psych/Soc Complete Section",
       "variant_id": null,
@@ -1814,7 +1829,7 @@
         "9b-demographics",
         "cars-strategy"
       ],
-      "ready_count": 28,
+      "ready_count": 29,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Complete MCAT (all sections plus CARS)",
       "variant_id": null,

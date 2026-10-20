@@ -1,0 +1,151 @@
+{
+ "slug": "10a-social-inequality",
+ "cards": [
+  {
+   "src": "assets/packs/10a-social-inequality/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 540
+  },
+  {
+   "src": "assets/packs/10a-social-inequality/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 846
+  },
+  {
+   "src": "assets/packs/10a-social-inequality/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 550
+  },
+  {
+   "src": "assets/packs/10a-social-inequality/card-4.webp",
+   "alt": "Sample multiple choice card: A city's neighborhoods are racially separated with no current law requiring it. This is best called:",
+   "w": 680,
+   "h": 356
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/10a-social-inequality/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/10a-social-inequality/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/10a-social-inequality/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/10a-social-inequality/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A neighborhood is racially separated, though no law requires it. This is best called:",
+   "options": [
+    "De jure segregation",
+    "De facto segregation",
+    "Hypersegregation by definition",
+    "Social reproduction"
+   ],
+   "answer": "B",
+   "explanation": "Without a legal mandate the pattern is de facto. De jure requires a law. Hypersegregation requires high scores on several dimensions, and reproduction concerns passing class across generations.",
+   "subtopic": "Spatial inequality and residential segregation"
+  },
+  {
+   "stem": "A Lorenz curve that lies close to the line of equality indicates a Gini coefficient that is:",
+   "options": [
+    "Close to 0",
+    "Close to 1",
+    "Exactly 0.5",
+    "Negative"
+   ],
+   "answer": "A",
+   "explanation": "Small area between curve and line yields a low Gini, near 0. A high Gini needs a large gap, 0.5 is arbitrary, and the coefficient cannot be negative.",
+   "subtopic": "Global inequality"
+  },
+  {
+   "stem": "Comparing a daughter's occupation with her mother's measures:",
+   "options": [
+    "Intragenerational mobility",
+    "Horizontal mobility",
+    "Intergenerational mobility",
+    "Structural mobility"
+   ],
+   "answer": "C",
+   "explanation": "Comparisons across generations are intergenerational. Intragenerational compares one person over time, horizontal means no change in class rank, and structural concerns economy-wide change.",
+   "subtopic": "Social mobility"
+  },
+  {
+   "stem": "Credentials such as degrees are which form of Bourdieu's cultural capital?",
+   "options": [
+    "Embodied",
+    "Objectified",
+    "Symbolic only",
+    "Institutionalized"
+   ],
+   "answer": "D",
+   "explanation": "Formal qualifications are institutionalized cultural capital. Embodied means ingrained manners and dispositions, objectified means cultural goods such as art or books, and symbolic capital is prestige, so a diploma is none of these.",
+   "subtopic": "Social capital"
+  },
+  {
+   "stem": "Recent immigrants with better health than native-born peers illustrates:",
+   "options": [
+    "Weathering",
+    "The healthy immigrant effect",
+    "Allostatic load",
+    "Social causation"
+   ],
+   "answer": "B",
+   "explanation": "Selective migration often yields healthier arrivals. Weathering and allostatic load describe stress wear, and social causation describes SES effects.",
+   "subtopic": "Health disparities"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "What is spatial inequality?",
+   "back": "The unequal distribution of resources, opportunities, and hazards across places, so where a person lives shapes life chances."
+  },
+  {
+   "type": "cz",
+   "text": "Massey and Denton's segregation dimensions: {{c1::evenness}}, {{c1::exposure}}, {{c1::concentration}}, {{c1::centralization}}, and clustering.",
+   "extra": "Hypersegregation means high scores on most of them at once."
+  },
+  {
+   "type": "mc",
+   "stem": "A city's neighborhoods are racially separated with no current law requiring it. This is best called:",
+   "options": [
+    "De facto segregation",
+    "De jure segregation",
+    "Redlining only",
+    "Social mobility"
+   ],
+   "answer": "A",
+   "why": "No law mandates it, so it is de facto. De jure requires a legal rule."
+  },
+  {
+   "type": "tf",
+   "statement": "Redlining was a purely private practice with no government involvement.",
+   "truth": false,
+   "why": "Federal agencies and lenders used government-linked risk maps, so policy helped create the pattern."
+  }
+ ]
+}
