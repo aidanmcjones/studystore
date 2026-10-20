@@ -1035,6 +1035,185 @@ DIAGRAMS.update({
     "role-strain-vs-role-conflict-status-and-groups": ng_roles,
 })
 # ---- end notes-g diagrams ----
+# ---- notes-c diagrams (1B, 1D, 1C, 5D; prefixed nc_) ----
+def _nc_box(ax, x, y, w, h, fc, ec=None, lw=1.5):
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.02,rounding_size=0.3", fc=fc, ec=ec or fc, lw=lw))
+
+def nc_lac():
+    fig, ax = plt.subplots(figsize=(11.5, 7.4))
+    ax.set_xlim(0, 115); ax.set_ylim(0, 74); ax.axis("off")
+    ax.text(1, 72, "The lac operon needs two switches", fontsize=13.5, fontweight="bold", va="center")
+    # gene map
+    y0 = 60
+    ax.plot([1, 113], [y0, y0], color=INK, lw=2, zorder=0)
+    parts = [(1, 12, "lacI", GREY, "white"), (18, 9, "CAP\nsite", "#e9d7b8", INK), (27, 9, "P", "#cfe3e6", INK),
+             (36, 8, "O", "#fbe3d3", INK), (44, 23, "lacZ", TEAL, "white"), (67, 23, "lacY", TEAL, "white"), (90, 23, "lacA", TEAL, "white")]
+    for x, w, lab, fc, tc in parts:
+        _nc_box(ax, x, y0 - 3, w, 6, fc, INK if fc not in (TEAL, GREY) else fc, 1.0)
+        ax.text(x + w / 2, y0, lab, ha="center", va="center", fontsize=9.5 if "\n" in lab else 11, fontweight="bold", color=tc)
+    ax.text(7, y0 - 6, "own promoter,\nalways on", ha="center", va="top", fontsize=8.5, color=MUTED)
+    ax.annotate("", (113, y0 + 6), (44, y0 + 6), arrowprops=dict(arrowstyle="-|>", color=ACC, lw=1.8))
+    ax.text(78.5, y0 + 7.4, "one polycistronic mRNA", ha="center", fontsize=9.5, color=ACCD)
+    ax.text(18, y0 + 6.5, "control sites (act in cis)", fontsize=9, color=MUTED, ha="left", va="center")
+    # condition rows
+    ax.text(1, 46, "lactose", fontsize=10, fontweight="bold", color=MUTED)
+    ax.text(15, 46, "glucose", fontsize=10, fontweight="bold", color=MUTED)
+    ax.text(29, 46, "repressor on O?", fontsize=10, fontweight="bold", color=MUTED)
+    ax.text(55, 46, "CAP-cAMP bound?", fontsize=10, fontweight="bold", color=MUTED)
+    ax.text(83, 46, "lac output", fontsize=10, fontweight="bold", color=MUTED)
+    rows = [("absent", "present", True, False, "OFF (basal)", GREY),
+            ("absent", "absent", True, True, "OFF (basal)", GREY),
+            ("present", "present", False, False, "LOW", "#d08a52"),
+            ("present", "absent", False, True, "HIGH", ACC)]
+    for i, (lac, glc, rep, cap, out, c) in enumerate(rows):
+        y = 38 - i * 9.5
+        _nc_box(ax, 0.5, y - 3.6, 113, 7.2, CARD, LINE, 1.0)
+        ax.text(2, y, lac, va="center", fontsize=10.5)
+        ax.text(16, y, glc, va="center", fontsize=10.5)
+        ax.text(31, y, "yes: blocks" if rep else "no: allolactose\nremoved it", va="center", fontsize=10 if rep else 9.2,
+                color=ACCD if rep else TEAL, fontweight="bold")
+        ax.text(57, y, "yes (cAMP high)" if cap else "no (cAMP low)", va="center", fontsize=10,
+                color=TEAL if cap else MUTED, fontweight="bold")
+        _nc_box(ax, 83, y - 2.6, 29, 5.2, c)
+        ax.text(97.5, y, out, ha="center", va="center", fontsize=11, color="white", fontweight="bold")
+    ax.text(1, 1.5, "The repressor (negative control) wins over CAP: low glucose cannot turn on an operon that is still repressed.",
+            fontsize=9.5, color=INK, style="italic")
+    save(fig, "lac-operon-regulation-lactose-glucose")
+
+def nc_glycolysis():
+    steps = ["hexokinase", "phosphoglucose\nisomerase", "PFK-1", "aldolase", "triose phosphate\nisomerase", "GAPDH",
+             "phosphoglycerate\nkinase", "phosphoglycerate\nmutase", "enolase", "pyruvate\nkinase"]
+    # per-glucose ledger computed from stoichiometry: steps 6-10 run twice per glucose
+    atp_per = [-1, 0, -1, 0, 0, 0, +1, 0, 0, +1]
+    nadh_per = [0, 0, 0, 0, 0, +1, 0, 0, 0, 0]
+    mult = [1, 1, 1, 1, 1, 2, 2, 2, 2, 2]
+    atp = np.cumsum([a * m for a, m in zip(atp_per, mult)])
+    nadh = np.cumsum([n * m for n, m in zip(nadh_per, mult)])
+    x = np.arange(1, 11)
+    fig, ax = plt.subplots(figsize=(11, 5.6))
+    ax.axvspan(0.5, 5.5, color="#fbe3d3", alpha=0.55, lw=0)
+    ax.axvspan(5.5, 10.5, color="#d7ebee", alpha=0.55, lw=0)
+    ax.text(3, 3.55, "investment phase (x1 per glucose)", ha="center", fontsize=10, color=ACCD, fontweight="bold")
+    ax.text(8, 3.55, "payoff phase (x2 per glucose)", ha="center", fontsize=10, color=TEAL, fontweight="bold")
+    ax.axhline(0, color=INK, lw=1)
+    ax.step(np.r_[0.5, x + 0.5], np.r_[0, atp], where="pre", color=ACC, lw=3, label="net ATP (running total)")
+    ax.step(np.r_[0.5, x + 0.5], np.r_[0, nadh], where="pre", color=TEAL, lw=3, ls="--", label="NADH (running total)")
+    for xi, lab in [(1, f"{atp[0]:+d}"), (3, f"{atp[2]:+d}"), (7, f"{atp[6]:+d}".replace("+0", "0")), (10, f"{atp[9]:+d}")]:
+        ax.text(xi, atp[xi - 1] + (0.22 if atp[xi - 1] >= 0 else -0.42), f"ATP {lab}", ha="center", fontsize=9.5,
+                color=ACCD, fontweight="bold")
+    ax.text(6, nadh[5] + 0.22, "NADH +2", ha="center", fontsize=9.5, color=TEAL, fontweight="bold")
+    ax.set_xticks(x)
+    labels = [f"{i}. {s}" for i, s in zip(x, steps)]
+    ax.set_xticklabels([l.replace("\n", " ") for l in labels], rotation=32, ha="right", fontsize=9)
+    for i in (0, 2, 9):
+        ax.get_xticklabels()[i].set_color(ACC); ax.get_xticklabels()[i].set_fontweight("bold")
+    ax.set_xlim(0.5, 10.5); ax.set_ylim(-2.9, 4.0)
+    ax.set_ylabel("molecules per glucose")
+    ax.legend(loc="upper left", frameon=False, bbox_to_anchor=(0.0, 0.92))
+    ax.text(10.4, -2.65, "bold orange labels: the three one-way, regulated steps", ha="right", fontsize=9, color=ACCD, style="italic")
+    ax.set_title("Glycolysis ledger: spend 2 ATP, make 4, net +2 ATP and 2 NADH", fontsize=12.5, loc="left", fontweight="bold")
+    save(fig, "glycolysis-steps-enzymes-net-atp")
+
+def nc_hardy_weinberg():
+    q = np.linspace(0, 1, 401); p = 1 - q
+    fig, (a, b) = plt.subplots(1, 2, figsize=(11.5, 4.9))
+    a.plot(q, p ** 2, color=TEAL, lw=2.8, label="AA = p²")
+    a.plot(q, 2 * p * q, color=ACC, lw=2.8, label="Aa = 2pq")
+    a.plot(q, q ** 2, color=INK, lw=2.8, label="aa = q²")
+    a.plot([0.5], [0.5], "o", color=ACC, ms=8)
+    a.annotate("heterozygotes peak at 0.5\nwhen p = q = 0.5", (0.5, 0.5), (0.40, 0.86), fontsize=9.5,
+               arrowprops=dict(arrowstyle="-", color=GREY))
+    a.set_xlim(0, 1); a.set_ylim(0, 1.02)
+    a.set_xlabel("q (frequency of allele a)"); a.set_ylabel("genotype frequency")
+    a.legend(frameon=False, loc="center left", bbox_to_anchor=(0.0, 0.42))
+    a.set_title("Genotypes at equilibrium", fontsize=12, loc="left", fontweight="bold")
+    qr = np.logspace(-3, -0.7, 300)
+    b.loglog(qr, 2 * qr * (1 - qr), color=ACC, lw=2.8, label="carriers (2pq)")
+    b.loglog(qr, qr ** 2, color=INK, lw=2.8, label="affected (q²)")
+    q0 = 0.01
+    b.plot([q0, q0], [q0 ** 2, 2 * q0 * (1 - q0)], color=GREY, ls="--", lw=1.3)
+    b.plot([q0], [q0 ** 2], "o", color=INK, ms=7); b.plot([q0], [2 * q0 * (1 - q0)], "o", color=ACC, ms=7)
+    b.text(1.1e-3, 3.0e-4, f"q = 0.01:\n1 in {1 / q0 ** 2:,.0f} affected,\nabout 1 in {1 / (2 * q0 * (1 - q0)):.0f} carriers\n(ratio {2 * (1 - q0) / q0:.0f} : 1)",
+           fontsize=9.3, va="center")
+    b.set_xlabel("q (log scale)"); b.set_ylabel("frequency in population (log scale)")
+    b.legend(frameon=False, loc="lower right")
+    b.set_title("Rare recessive alleles hide in carriers", fontsize=12, loc="left", fontweight="bold")
+    fig.tight_layout(w_pad=3)
+    save(fig, "hardy-weinberg-equation-practice-problems")
+
+def _nc_fischer(ax, x0, name, sides, changed):
+    top, dy = 9.0, 1.25
+    ys = [top - i * dy for i in range(6)]
+    ax.plot([x0, x0], [ys[1], ys[5] + 0.35], color=INK, lw=2)
+    ax.text(x0, ys[0], "CHO", ha="center", va="center", fontsize=10.5, fontweight="bold")
+    for i, side in enumerate(sides):
+        y = ys[i + 1]
+        hl = (i + 2) == changed
+        c = ACC if hl else INK
+        ax.plot([x0 - 0.9, x0 + 0.9], [y, y], color=INK, lw=2)
+        oh_x, h_x = (x0 + 1.0, x0 - 1.0) if side == "R" else (x0 - 1.0, x0 + 1.0)
+        ax.text(oh_x, y, "OH" if side == "R" else "HO", ha="left" if side == "R" else "right", va="center", fontsize=10,
+                color=c, fontweight="bold" if hl else "normal")
+        ax.text(h_x, y, "H", ha="right" if side == "R" else "left", va="center", fontsize=10, color=c)
+        ax.text(x0 + 0.08, y + 0.33, f"C{i + 2}", fontsize=7.2, color=MUTED)
+        if hl:
+            ax.add_patch(plt.Rectangle((x0 - 1.95, y - 0.45), 3.9, 0.9, fc="#fbe3d3", ec=ACC, lw=1.2, zorder=0))
+    ax.text(x0, ys[5] - 0.3, "CH₂OH", ha="center", va="top", fontsize=10.5, fontweight="bold")
+    ax.text(x0, 10.25, name, ha="center", va="center", fontsize=11.5, fontweight="bold", color=TEAL)
+
+def _nc_haworth(ax, cx, cy, beta, label):
+    # simple perspective hexagon: ring O at back right, C1 at right
+    pts = {"O": (cx + 1.3, cy + 0.55), "C1": (cx + 2.0, cy - 0.15), "C2": (cx + 1.15, cy - 0.85),
+           "C3": (cx - 1.15, cy - 0.85), "C4": (cx - 2.0, cy - 0.15), "C5": (cx - 1.3, cy + 0.55)}
+    order = ["C5", "O", "C1", "C2", "C3", "C4", "C5"]
+    for a_, b_ in zip(order, order[1:]):
+        (x1, y1), (x2, y2) = pts[a_], pts[b_]
+        front = a_ in ("C1", "C2", "C3") and b_ in ("C2", "C3", "C4")
+        ax.plot([x1, x2], [y1, y2], color=INK, lw=4.5 if front else 1.8, solid_capstyle="round")
+    ax.text(pts["O"][0], pts["O"][1] + 0.05, "O", ha="center", va="center", fontsize=10.5, fontweight="bold",
+            bbox=dict(fc="white", ec="none", pad=0.6))
+    x5, y5 = pts["C5"]
+    ax.plot([x5, x5], [y5, y5 + 0.9], color=INK, lw=1.6)
+    ax.text(x5, y5 + 1.0, "CH₂OH", ha="center", va="bottom", fontsize=9.5, color=TEAL, fontweight="bold")
+    x1, y1 = pts["C1"]
+    dy = 0.9 if beta else -0.9
+    ax.plot([x1, x1], [y1, y1 + dy], color=ACC, lw=2)
+    ax.text(x1, y1 + dy + (0.1 if beta else -0.1), "OH", ha="center", va="bottom" if beta else "top", fontsize=10,
+            color=ACC, fontweight="bold")
+    ax.text(x1 + 0.25, y1 - 0.05, "C1", fontsize=7.5, color=MUTED, va="center")
+    ax.text(cx, cy - 2.3, label, ha="center", va="center", fontsize=10.5, fontweight="bold")
+    ax.text(cx, cy - 2.95, "OH opposite CH₂OH" if not beta else "OH same side as CH₂OH", ha="center", va="center",
+            fontsize=9, color=MUTED)
+
+def nc_anomers():
+    fig = plt.figure(figsize=(11, 8.6))
+    ax = fig.add_axes([0, 0.44, 1, 0.56]); ax.set_xlim(0, 22); ax.set_ylim(1.2, 11.2); ax.axis("off")
+    ax.text(0.4, 11.0, "Epimers: one stereocenter changes (Fischer projections)", fontsize=12.5, fontweight="bold", va="center")
+    _nc_fischer(ax, 4.0, "D-glucose", "RLRR", 0)
+    _nc_fischer(ax, 11.0, "D-mannose", "LLRR", 2)
+    _nc_fischer(ax, 18.0, "D-galactose", "RLLR", 4)
+    ax.text(7.5, 2.0, "C2 epimers", ha="center", fontsize=10, color=ACCD, fontweight="bold")
+    ax.annotate("", (9.4, 2.6), (5.6, 2.6), arrowprops=dict(arrowstyle="<->", color=ACC, lw=1.5))
+    ax.text(11.0, 1.45, "glucose and galactose: C4 epimers.  mannose and galactose: differ at 2 centers, so not epimers",
+            ha="center", fontsize=9.2, color=MUTED, style="italic")
+    b = fig.add_axes([0, 0, 1, 0.43]); b.set_xlim(0, 22); b.set_ylim(-4, 4.2); b.axis("off")
+    b.text(0.4, 3.9, "Anomers: only the anomeric carbon (C1) changes (Haworth rings of D-glucopyranose)", fontsize=12.5,
+           fontweight="bold", va="center")
+    _nc_haworth(b, 5.0, 0.6, False, "alpha anomer")
+    _nc_haworth(b, 17.0, 0.6, True, "beta anomer")
+    b.annotate("", (13.6, 0.4), (8.4, 0.4), arrowprops=dict(arrowstyle="<|-|>", color=INK, lw=1.6))
+    b.text(11.0, 1.0, "mutarotation", ha="center", fontsize=10.5, fontweight="bold", color=INK)
+    b.text(11.0, -0.35, "via the open-chain\naldehyde", ha="center", va="top", fontsize=9, color=MUTED)
+    b.text(11.0, -2.9, "ring OH groups on C2 to C4 omitted for clarity", ha="center", fontsize=8.5, color=MUTED, style="italic")
+    save(fig, "anomers-vs-epimers-carbohydrates")
+
+DIAGRAMS.update({
+    "lac-operon-regulation-lactose-glucose": nc_lac,
+    "glycolysis-steps-enzymes-net-atp": nc_glycolysis,
+    "hardy-weinberg-equation-practice-problems": nc_hardy_weinberg,
+    "anomers-vs-epimers-carbohydrates": nc_anomers,
+})
+# ---- end notes-c diagrams ----
 
 if __name__ == "__main__":
     main()
