@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-10-20T00:00:00Z",
-  "theme": "launch",
+  "updated": "2026-10-20T16:26:58Z",
+  "theme": "free_sampler_push",
   "note": "Edited by ops/experiments.py and the marketing job. Variant ids are never reused. Text must be true of the product. {orig} is replaced with the element's original text (used to keep prices in sync with site.json).",
   "experiments": [
     {
@@ -15,7 +15,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.3334,
+          "weight": 0.3333,
           "created": "2026-10-20",
           "angle": "control: recall over re-reading",
           "fields": {
@@ -58,7 +58,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.3334,
+          "weight": 0.3333,
           "created": "2026-10-20",
           "angle": "control",
           "fields": {
@@ -98,7 +98,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.3334,
+          "weight": 0.3333,
           "created": "2026-10-20",
           "angle": "control: bare price",
           "fields": {
@@ -138,7 +138,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.3334,
+          "weight": 0.3333,
           "created": "2026-10-20",
           "angle": "control: sampler coming",
           "fields": {
@@ -184,7 +184,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.3334,
+          "weight": 0.3333,
           "created": "2026-10-20",
           "angle": "control: box after article and at end",
           "layout": "both"
