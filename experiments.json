@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-20T20:00:00Z",
+  "updated": "2026-10-20T19:20:12Z",
   "theme": "free_sampler_push",
   "note": "Edited by ops/experiments.py and the marketing job. Variant ids are never reused. Text must be true of the product. {orig} is replaced with the element's original text (used to keep prices in sync with site.json).",
   "experiments": [
@@ -15,7 +15,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.22,
+          "weight": 0.25,
           "created": "2026-10-20",
           "angle": "control: recall over re-reading",
           "fields": {
@@ -26,7 +26,7 @@
         {
           "id": "b",
           "status": "retired",
-          "weight": 0,
+          "weight": 0.0,
           "created": "2026-10-20",
           "angle": "concrete contents",
           "fields": {
@@ -39,7 +39,7 @@
         {
           "id": "c",
           "status": "retired",
-          "weight": 0,
+          "weight": 0.0,
           "created": "2026-10-20",
           "angle": "terse format + low risk",
           "fields": {
@@ -52,7 +52,7 @@
         {
           "id": "d",
           "status": "active",
-          "weight": 0.22,
+          "weight": 0.25,
           "created": "2026-10-20",
           "angle": "pack format, catalog",
           "fields": {
@@ -63,7 +63,7 @@
         {
           "id": "e",
           "status": "active",
-          "weight": 0.22,
+          "weight": 0.25,
           "created": "2026-10-20",
           "angle": "accuracy review",
           "fields": {
@@ -74,7 +74,7 @@
         {
           "id": "f",
           "status": "active",
-          "weight": 0.34,
+          "weight": 0.25,
           "created": "2026-10-20",
           "angle": "whole catalog: every content category plus CARS, pick one pack or a bundle",
           "theme": "free_sampler_push",
@@ -96,7 +96,7 @@
         {
           "id": "a",
           "status": "retired",
-          "weight": 0,
+          "weight": 0.0,
           "created": "2026-10-20",
           "angle": "control",
           "fields": {
@@ -108,7 +108,7 @@
         {
           "id": "b",
           "status": "retired",
-          "weight": 0,
+          "weight": 0.0,
           "created": "2026-10-20",
           "angle": "curiosity about contents",
           "fields": {
@@ -120,7 +120,7 @@
         {
           "id": "c",
           "status": "active",
-          "weight": 0.22,
+          "weight": 0.25,
           "created": "2026-10-20",
           "angle": "preview first",
           "fields": {
@@ -130,7 +130,7 @@
         {
           "id": "d",
           "status": "active",
-          "weight": 0.22,
+          "weight": 0.25,
           "created": "2026-10-20",
           "angle": "catalog",
           "fields": {
@@ -140,7 +140,7 @@
         {
           "id": "e",
           "status": "active",
-          "weight": 0.22,
+          "weight": 0.25,
           "created": "2026-10-20",
           "angle": "contents",
           "fields": {
@@ -150,7 +150,7 @@
         {
           "id": "f",
           "status": "active",
-          "weight": 0.34,
+          "weight": 0.25,
           "created": "2026-10-20",
           "angle": "catalog size in the button",
           "theme": "free_sampler_push",
@@ -171,7 +171,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.33,
+          "weight": 0.3333,
           "created": "2026-10-20",
           "angle": "control: bare price",
           "fields": {
@@ -181,7 +181,7 @@
         {
           "id": "b",
           "status": "active",
-          "weight": 0.33,
+          "weight": 0.3333,
           "created": "2026-10-20",
           "angle": "one-time, no subscription",
           "fields": {
@@ -191,7 +191,7 @@
         {
           "id": "c",
           "status": "retired",
-          "weight": 0,
+          "weight": 0.0,
           "created": "2026-10-20",
           "angle": "what you get for it",
           "fields": {
@@ -203,7 +203,7 @@
         {
           "id": "d",
           "status": "active",
-          "weight": 0.34,
+          "weight": 0.3333,
           "created": "2026-10-20",
           "angle": "one-time plus refund, catalog-neutral",
           "theme": "free_sampler_push",
@@ -224,7 +224,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.22,
+          "weight": 0.25,
           "created": "2026-10-20",
           "angle": "control: sampler coming",
           "fields": {
@@ -236,7 +236,7 @@
         {
           "id": "b",
           "status": "active",
-          "weight": 0.22,
+          "weight": 0.25,
           "created": "2026-10-20",
           "angle": "one-page sheets",
           "fields": {
@@ -248,7 +248,7 @@
         {
           "id": "c",
           "status": "active",
-          "weight": 0.22,
+          "weight": 0.25,
           "created": "2026-10-20",
           "angle": "try free today",
           "fields": {
@@ -260,7 +260,7 @@
         {
           "id": "d",
           "status": "active",
-          "weight": 0.34,
+          "weight": 0.25,
           "created": "2026-10-20",
           "angle": "free notes as the bridge to the matching pack (theme free_sampler_push)",
           "theme": "free_sampler_push",
