@@ -775,23 +775,55 @@ def render_q_pin(b, out):
 
 # ---------------------------------------------------------------- manifest and outbox
 
-CAMPAIGNS = [
-    dict(id="qotd-tiktok", name="Question of the day on TikTok", channel="tiktok",
-         goal="Reach premeds with 15 second MCAT questions that send them to free practice pages"),
-    dict(id="qotd-shorts", name="Question of the day on YouTube Shorts", channel="shorts",
-         goal="Same question videos on Shorts for search and subscriber reach"),
-    dict(id="diagram-tiktok", name="Diagram explainers on TikTok", channel="tiktok",
-         goal="Slow-pan explainers of note diagrams that send viewers to the free notes"),
+# Every rendered video goes to all seven short-form platforms. Order = the row order on /admin/marketing.
+VIDEO_PLATFORMS = ["tiktok", "shorts", "reels", "snapchat", "facebook", "x", "threads"]
+PLATFORM = {
+    "tiktok": dict(name="TikTok", target="TikTok", url="https://www.tiktok.com/upload",
+                   tip="Upload the MP4 as a TikTok video. Captions cannot carry links; the bio link has the utm."),
+    "shorts": dict(name="YouTube Shorts", target="YouTube Shorts", url="https://studio.youtube.com/",
+                   tip="Upload as a Short (vertical, under 60 s) and keep #Shorts in the title. Put the page link in the description or a pinned comment."),
+    "reels": dict(name="Instagram Reels", target="Instagram Reels", url="https://www.instagram.com/",
+                  tip="Post as a Reel, not a Story or a feed photo. Caption links are not clickable; point to the bio link."),
+    "snapchat": dict(name="Snapchat Spotlight", target="Snapchat Spotlight", url="https://www.snapchat.com/",
+                     tip="Spotlight: post as Spotlight, not a Story. Needs the public profile; no links in Spotlight captions."),
+    "facebook": dict(name="Facebook Reels", target="Facebook Reels (StudyStore Page)", url="https://www.facebook.com/",
+                     tip="Post as a Reel from the StudyStore Page, not a personal profile. Put the page link in the first comment if wanted."),
+    "x": dict(name="X", target="X (native video post)", url="https://x.com/compose/post",
+              tip="Attach the MP4 natively (do not post a link to the file). The utm link in the text is fine on X."),
+    "threads": dict(name="Threads", target="Threads (video post)", url="https://www.threads.net/",
+                    tip="Attach the MP4 as a video post. The link in the text is clickable on Threads."),
+}
+SAME_DAY = "Post the same video on all platforms the same day."
+BIO = "https://www.studystore.co/?utm_source={ch}&utm_campaign=qotd-{ch}"
+PROFILE_STEP = {
+    "tiktok": "Create the TikTok account once with bio link " + BIO,
+    "shorts": "Create the YouTube channel once and add the channel link " + BIO,
+    "reels": "Create an Instagram professional (creator or business) account once with bio link " + BIO,
+    "snapchat": "Create a Snapchat account once and turn on a public profile (Spotlight needs it), website link " + BIO,
+    "facebook": "Create a StudyStore Facebook Page once (Reels post from the Page, not a personal profile), website link " + BIO,
+    "x": "Create the X account once with bio link " + BIO,
+    "threads": "Set up Threads once from the Instagram account, bio link " + BIO,
+}
+CAMPAIGNS = []
+for _ch in VIDEO_PLATFORMS:
+    CAMPAIGNS.append(dict(id=f"qotd-{_ch}", name=f"Question of the day on {PLATFORM[_ch]['name']}", channel=_ch,
+                          goal="10 second MCAT questions that send premeds to the free practice pages"))
+for _ch in VIDEO_PLATFORMS:
+    CAMPAIGNS.append(dict(id=f"diagram-{_ch}", name=f"Diagram explainers on {PLATFORM[_ch]['name']}", channel=_ch,
+                          goal="Slow-pan explainers of note diagrams that send viewers to the free notes"))
+CAMPAIGNS += [
     dict(id="pins-notes", name="Pinterest pins for free notes", channel="pinterest",
          goal="Evergreen Pinterest traffic to the free notes, one pin per note diagram"),
     dict(id="pins-questions", name="Pinterest question pins", channel="pinterest",
          goal="Question pins that link to the pack page where the answer and explanation are shown"),
 ]
-OWNER_STEP = {
-    "tiktok": "Create the TikTok account once (bio link https://www.studystore.co/?utm_source=tiktok&utm_campaign={cid}), then upload each video from /admin/marketing",
-    "shorts": "Create the YouTube channel once, then upload each video as a Short from /admin/marketing",
-    "pinterest": "Create a free Pinterest Business account once and claim studystore.co, then create each pin from /admin/marketing",
-}
+
+
+def owner_step(c):
+    ch = c["channel"]
+    if ch == "pinterest":
+        return "Create a free Pinterest Business account once and claim studystore.co, then create each pin from /admin/marketing"
+    return PROFILE_STEP[ch].format(ch=ch) + ", then post each video from /admin/marketing (one card per video, one row per platform)"
 
 
 def utm(path, channel, cid):
@@ -836,27 +868,9 @@ def outbox_for(kind, key, rec, m):
         items.append({"id": ids[cid], "campaign": cid, "channel": channel, "target": target, "target_url": target_url,
                       "title": title, "body": body, "link": link, "asset_url": asset, "gate": "now", "notes": notes})
 
-    if kind == "q":
-        asset = f"/media/q/{key}.mp4"
-        tags = hashtags(rec["tag"], "#mcatquestion")
-        hook = f"MCAT {rec['section']} question: can you get it in 10 seconds? Answer at the end."
-        chans = [("qotd-tiktok", "tiktok", "TikTok", "https://www.tiktok.com/upload")]
-        if rec.get("shorts"):
-            chans.append(("qotd-shorts", "shorts", "YouTube Shorts", "https://studio.youtube.com/"))
-        for cid, ch, target, turl in chans:
-            link = utm(rec["practice"], ch, cid)
-            body = f"{hook}\n\nMore free MCAT practice questions and notes: link in bio.\n\n{tags}"
-            title = f"MCAT question in 10 seconds: {rec['topic']}"[:100]
-            item(cid, ch, target, turl, title, body, link, asset,
-                 f"Upload {asset} (poster {asset[:-4]}.jpg). No link in caption; bio link carries the utm. Related free page: {link}")
-    elif kind == "d":
-        asset = f"/media/d/{key}.mp4"
-        cid = "diagram-tiktok"
-        link = utm(f"notes/{key}.html", "tiktok", cid)
-        tags = hashtags(rec["tag"], "#studytok")
-        body = f"{rec['title']}, explained from one diagram.\n\nThe full note is free: link in bio.\n\n{tags}"
-        item(cid, "tiktok", "TikTok", "https://www.tiktok.com/upload", rec["title"][:100], body, link, asset,
-             f"Upload {asset}. No link in caption; point people to the bio link. Note link for the bio or a pinned comment: {link}")
+    if kind in ("q", "d"):
+        for it in video_items(kind, key, rec):
+            item(**it)
     else:
         asset = f"/media/pins/{key}.png"
         if key.startswith("note-"):
@@ -877,6 +891,51 @@ def outbox_for(kind, key, rec, m):
     return items
 
 
+def video_items(kind, key, rec):
+    """One item per short-form platform for one video, captions per platform norms."""
+    out = []
+    if kind == "q":
+        asset, path = f"/media/q/{key}.mp4", rec["practice"]
+        topic = rec["topic"]
+        tags = [rec["tag"], "#mcatquestion"]
+        hook = f"MCAT {rec['section']} question: can you get it in 10 seconds? Answer at the end."
+        short_hook = f"MCAT {rec['section']} question. 10 seconds, go."
+        title_base = f"MCAT question in 10 seconds: {topic}"
+        dest = "More free MCAT practice questions and notes"
+    else:
+        asset, path = f"/media/d/{key}.mp4", f"notes/{key}.html"
+        topic = rec["title"]
+        tags = [rec["tag"], "#studytok"]
+        hook = f"{topic}, explained from one diagram."
+        short_hook = f"{topic} in one diagram."
+        title_base = topic
+        dest = "The full note is free"
+    camp = "qotd" if kind == "q" else "diagram"
+    for ch in VIDEO_PLATFORMS:
+        P, cid = PLATFORM[ch], f"{camp}-{ch}"
+        link = utm(path, ch, cid)
+        if ch == "shorts":
+            title = (title_base if len(title_base) <= 90 else title_base[:87].rsplit(" ", 1)[0]) + " #Shorts"
+            body = f"{hook}\n\n{dest}: link on the channel page.\n\n{hashtags(*tags)}"
+        elif ch in ("tiktok", "reels", "facebook"):
+            title = ""  # these apps have no title field; the caption is the whole post
+            body = f"{hook}\n\n{dest}: link in bio.\n\n{hashtags(*tags)}"
+        elif ch == "snapchat":
+            title = ""
+            body = f"{short_hook} #mcat #premed {tags[0]}"
+        elif ch == "x":
+            title = ""
+            body = f"{hook}\n\n{dest}: {link}\n\n#MCAT #premed"
+            if len(body) > 280:
+                body = f"{short_hook}\n\n{link}\n\n#MCAT"
+        else:  # threads: one topic tag, link inline
+            title = ""
+            body = f"{hook}\n\n{dest}: {link}\n\n#MCAT"
+        out.append(dict(cid=cid, channel=ch, target=P["target"], target_url=P["url"], title=title, body=body, link=link,
+                        asset=asset, notes=f"{SAME_DAY} {P['tip']} Related page: {link}"))
+    return out
+
+
 def write_outbox(ops, items, date):
     if not items:
         return None
@@ -895,7 +954,7 @@ def write_campaigns(ops, date):
     f = Path(ops) / "growth" / "campaigns" / "media.json"
     f.parent.mkdir(parents=True, exist_ok=True)
     arr = [dict(id=c["id"], name=c["name"], channel=c["channel"], gate="now", goal=c["goal"], created=date,
-                owner_step=OWNER_STEP[c["channel"]].format(cid=c["id"])) for c in CAMPAIGNS]
+                owner_step=owner_step(c)) for c in CAMPAIGNS]
     f.write_text(json.dumps(arr, indent=1) + "\n")
     return f
 

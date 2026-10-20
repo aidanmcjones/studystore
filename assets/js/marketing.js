@@ -14,6 +14,14 @@
   var cur = "ready", chan = "", data = null, focusId = "";
   try { cur = sessionStorage.getItem("mk-tab") || "ready"; } catch (e) {}
 
+  // Friendly channel names for chips and per-platform rows; order = row order inside a video card.
+  var CH = { tiktok: "TikTok", shorts: "YouTube Shorts", reels: "Instagram Reels", snapchat: "Snapchat Spotlight",
+    facebook: "Facebook Reels", x: "X", threads: "Threads", pinterest: "Pinterest", reddit: "Reddit", discord: "Discord",
+    lemon8: "Lemon8", email: "Email", club: "Clubs", advisor: "Advisors", ankiweb: "AnkiWeb", ih: "Indie Hackers",
+    ph: "Product Hunt", waitlist: "Waitlist" };
+  var ORDER = ["tiktok", "shorts", "reels", "snapchat", "facebook", "x", "threads"];
+  function chName(c) { return CH[c] || c; }
+
   function el(tag, cls, text) { var n = D.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = String(text); return n; }
   function clear(n) { while (n.firstChild) n.removeChild(n.firstChild); }
   function when(ts) { return ts ? new Date(ts * 1000).toISOString().slice(0, 16).replace("T", " ") : ""; }
@@ -64,7 +72,7 @@
   function card(it) {
     var li = el("li", "mk-card"); li.id = "mk-" + it.id;
     var head = el("p", "mk-head");
-    head.appendChild(el("span", "mk-badge", it.channel));
+    head.appendChild(el("span", "mk-badge", chName(it.channel)));
     head.appendChild(el("span", "mk-target", it.target || ""));
     li.appendChild(head);
     li.appendChild(el("p", "meta mono", it.id + "  " + (it.campaign || "") + "  gate " + it.gate + "  " + when(it.created)));
@@ -107,11 +115,95 @@
     return li;
   }
 
+  // Items that share one asset_url (one video, many platforms) render as one card with a row per platform,
+  // so the owner downloads the file once and posts it to every app. Each row still PATCHes its own item.
+  function postedControls(it) {
+    var f = el("div", "mk-posted");
+    if (it.status === "ready" || it.status === "held") {
+      var inp = el("input"); inp.type = "url"; inp.inputMode = "url"; inp.placeholder = "Post URL (optional)"; inp.maxLength = 1000;
+      inp.setAttribute("aria-label", "Post URL for " + it.id);
+      f.appendChild(inp);
+      f.appendChild(btn("Mark posted", "btn small", function (b) {
+        var u = inp.value.trim();
+        if (u && !safeHttps(u)) { status.textContent = "The post URL must start with https://"; return; }
+        setStatus(it, "posted", u, b);
+      }));
+      f.appendChild(btn("Skip", "btn small ghost", function (b) { setStatus(it, "skipped", "", b); }));
+      if (it.status === "held") f.appendChild(btn("Release now", "btn small ghost", function (b) { setStatus(it, "ready", "", b); }));
+    } else {
+      var pu = safeHttps(it.posted_url);
+      if (pu) { var pa = el("a", null, "View post"); pa.href = pu; pa.target = "_blank"; pa.rel = "noopener noreferrer"; f.appendChild(pa); }
+      f.appendChild(el("span", "meta", it.status + " " + when(it.updated)));
+      f.appendChild(btn("Back to ready", "btn small ghost", function (b) { setStatus(it, "ready", "", b); }));
+    }
+    return f;
+  }
+
+  function groupCard(asset, its) {
+    var li = el("li", "mk-card mk-group");
+    var head = el("p", "mk-head");
+    head.appendChild(el("span", "mk-badge", its.length + " platforms"));
+    head.appendChild(el("span", "mk-target", asset.split("/").pop()));
+    li.appendChild(head);
+    li.appendChild(el("p", "meta", "Download once, then post the same video on every platform below the same day."));
+    li.appendChild(assetBlock(asset));
+    var top = el("div", "ractions");
+    var dl = el("a", "btn small", "Download video"); dl.href = asset; dl.setAttribute("download", ""); top.appendChild(dl);
+    li.appendChild(top);
+    var rows = el("ol", "mk-rows");
+    its.forEach(function (it) {
+      var r = el("li", "mk-row"); r.id = "mk-" + it.id;
+      var h = el("p", "mk-head");
+      h.appendChild(el("span", "mk-badge", chName(it.channel)));
+      h.appendChild(el("span", "meta mono", it.id));
+      r.appendChild(h);
+      if (it.title) r.appendChild(el("p", "mk-title", it.title));
+      var d = el("details"); d.appendChild(el("summary", null, "Caption and tips"));
+      d.appendChild(el("div", "rmsg", it.body || ""));
+      if (it.link) d.appendChild(el("p", "meta mono", "Link: " + it.link));
+      if (it.notes) d.appendChild(el("p", "meta", "Before posting: " + it.notes));
+      r.appendChild(d);
+      var a = el("div", "ractions");
+      a.appendChild(btn("Copy caption", "btn small", function (b) { copy(it.body || "", b); }));
+      if (it.title) a.appendChild(btn("Copy title", "btn small ghost", function (b) { copy(it.title, b); }));
+      if (it.link) a.appendChild(btn("Copy link", "btn small ghost", function (b) { copy(it.link, b); }));
+      var tu = safeHttps(it.target_url);
+      if (tu) { var o = el("a", "btn small ghost", "Open app"); o.href = tu; o.target = "_blank"; o.rel = "noopener noreferrer"; a.appendChild(o); }
+      r.appendChild(a);
+      r.appendChild(postedControls(it));
+      rows.appendChild(r);
+    });
+    li.appendChild(rows);
+    return li;
+  }
+
+  function grouped(items) {
+    var byAsset = {}, out = [];
+    items.forEach(function (i) {
+      var a = safeAsset(i.asset_url);
+      if (a) (byAsset[a] = byAsset[a] || []).push(i);
+    });
+    var seen = {};
+    items.forEach(function (i) {
+      var a = safeAsset(i.asset_url);
+      if (a && byAsset[a].length > 1) {
+        if (seen[a]) return;
+        seen[a] = 1;
+        var its = byAsset[a].slice().sort(function (x, y) {
+          var ix = ORDER.indexOf(x.channel), iy = ORDER.indexOf(y.channel);
+          return (ix < 0 ? 99 : ix) - (iy < 0 ? 99 : iy) || (x.id < y.id ? -1 : 1);
+        });
+        out.push(groupCard(a, its));
+      } else out.push(card(i));
+    });
+    return out;
+  }
+
   function renderToday(list) {
     clear(todayList);
     todayBox.hidden = !list || !list.length;
     (list || []).forEach(function (t) {
-      var li = el("li"); var a = el("a", null, t.channel + ": " + (t.title || t.target || t.id)); a.href = "#mk-" + t.id;
+      var li = el("li"); var a = el("a", null, chName(t.channel) + ": " + (t.title || t.target || t.id)); a.href = "#mk-" + t.id;
       a.addEventListener("click", function (ev) {
         ev.preventDefault(); focusId = t.id;
         if (cur !== "ready" || chan) { cur = "ready"; chan = ""; load(); } else jump();
@@ -135,7 +227,7 @@
     if (chan && names.indexOf(chan) < 0) chan = "";
     [""].concat(names).forEach(function (c) {
       var b = el("button"); b.type = "button"; b.setAttribute("aria-pressed", String(c === chan));
-      b.appendChild(D.createTextNode(c || "All")); b.appendChild(el("span", null, c ? data.channels[c] : total));
+      b.appendChild(D.createTextNode(c ? chName(c) : "All")); b.appendChild(el("span", null, c ? data.channels[c] : total));
       b.addEventListener("click", function () { chan = c; render(); });
       chips.appendChild(b);
     });
@@ -152,7 +244,7 @@
     clear(root);
     var items = (data.items || []).filter(function (i) { return !chan || i.channel === chan; });
     if (!items.length) { root.appendChild(el("p", "meta", cur === "ready" ? "Nothing ready to post." : "Nothing here.")); return; }
-    var ul = el("ul", "rlist"); items.forEach(function (i) { ul.appendChild(card(i)); }); root.appendChild(ul);
+    var ul = el("ul", "rlist"); grouped(items).forEach(function (n) { ul.appendChild(n); }); root.appendChild(ul);
     jump();
   }
 

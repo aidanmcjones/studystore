@@ -1,10 +1,21 @@
 {
  "counters": {
+  "diagram-facebook": 30,
+  "diagram-reels": 30,
+  "diagram-shorts": 30,
+  "diagram-snapchat": 30,
+  "diagram-threads": 30,
   "diagram-tiktok": 30,
+  "diagram-x": 30,
   "pins-notes": 25,
   "pins-questions": 15,
-  "qotd-shorts": 20,
-  "qotd-tiktok": 40
+  "qotd-facebook": 40,
+  "qotd-reels": 40,
+  "qotd-shorts": 40,
+  "qotd-snapchat": 40,
+  "qotd-threads": 40,
+  "qotd-tiktok": 40,
+  "qotd-x": 40
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -14,7 +25,13 @@
     "Polyprotic acids show one equivalence point per proton."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-001"
+    "diagram-facebook": "diagram-facebook-001",
+    "diagram-reels": "diagram-reels-001",
+    "diagram-shorts": "diagram-shorts-001",
+    "diagram-snapchat": "diagram-snapchat-001",
+    "diagram-threads": "diagram-threads-001",
+    "diagram-tiktok": "diagram-tiktok-001",
+    "diagram-x": "diagram-x-001"
    },
    "seconds": 18.2,
    "size": 1198824,
@@ -29,7 +46,13 @@
     "Inactivated Na^+ channels cause the absolute refractory period; lingering K^+ current causes the relative one. Myelin and wide axons speed conduction."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-002"
+    "diagram-facebook": "diagram-facebook-002",
+    "diagram-reels": "diagram-reels-002",
+    "diagram-shorts": "diagram-shorts-002",
+    "diagram-snapchat": "diagram-snapchat-002",
+    "diagram-threads": "diagram-threads-002",
+    "diagram-tiktok": "diagram-tiktok-002",
+    "diagram-x": "diagram-x-002"
    },
    "seconds": 22.6,
    "size": 1535006,
@@ -44,7 +67,13 @@
     "At pH 7.4, Asp and Glu are negative, Lys and Arg are positive, and almost everything else is neutral or a zwitterion with no net charge."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-003"
+    "diagram-facebook": "diagram-facebook-003",
+    "diagram-reels": "diagram-reels-003",
+    "diagram-shorts": "diagram-shorts-003",
+    "diagram-snapchat": "diagram-snapchat-003",
+    "diagram-threads": "diagram-threads-003",
+    "diagram-tiktok": "diagram-tiktok-003",
+    "diagram-x": "diagram-x-003"
    },
    "seconds": 22.6,
    "size": 1330570,
@@ -59,7 +88,13 @@
     "In a D-sugar Haworth ring, alpha puts the anomeric OH opposite the CH2OH and beta on the same side."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-004"
+    "diagram-facebook": "diagram-facebook-004",
+    "diagram-reels": "diagram-reels-004",
+    "diagram-shorts": "diagram-shorts-004",
+    "diagram-snapchat": "diagram-snapchat-004",
+    "diagram-threads": "diagram-threads-004",
+    "diagram-tiktok": "diagram-tiktok-004",
+    "diagram-x": "diagram-x-004"
    },
    "seconds": 22.6,
    "size": 1903135,
@@ -74,7 +109,13 @@
     "Bacteria reproduce by binary fission."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-005"
+    "diagram-facebook": "diagram-facebook-005",
+    "diagram-reels": "diagram-reels-005",
+    "diagram-shorts": "diagram-shorts-005",
+    "diagram-snapchat": "diagram-snapchat-005",
+    "diagram-threads": "diagram-threads-005",
+    "diagram-tiktok": "diagram-tiktok-005",
+    "diagram-x": "diagram-x-005"
    },
    "seconds": 22.6,
    "size": 1220080,
@@ -89,7 +130,13 @@
     "With the fluid at rest it becomes the hydrostatic equation, and for a hole in an open tank it gives Torricelli's v = \u221a(2gh)."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-006"
+    "diagram-facebook": "diagram-facebook-006",
+    "diagram-reels": "diagram-reels-006",
+    "diagram-shorts": "diagram-shorts-006",
+    "diagram-snapchat": "diagram-snapchat-006",
+    "diagram-threads": "diagram-threads-006",
+    "diagram-tiktok": "diagram-tiktok-006",
+    "diagram-x": "diagram-x-006"
    },
    "seconds": 22.6,
    "size": 1393159,
@@ -104,7 +151,13 @@
     "Escape and avoidance are negative reinforcement. Shaping rewards successive approximations."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-007"
+    "diagram-facebook": "diagram-facebook-007",
+    "diagram-reels": "diagram-reels-007",
+    "diagram-shorts": "diagram-shorts-007",
+    "diagram-snapchat": "diagram-snapchat-007",
+    "diagram-threads": "diagram-threads-007",
+    "diagram-tiktok": "diagram-tiktok-007",
+    "diagram-x": "diagram-x-007"
    },
    "seconds": 22.6,
    "size": 1794970,
@@ -119,7 +172,13 @@
     "Normative influence: wanting acceptance, public only. Informational: believing others know better, can change private belief (Sherif)."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-008"
+    "diagram-facebook": "diagram-facebook-008",
+    "diagram-reels": "diagram-reels-008",
+    "diagram-shorts": "diagram-shorts-008",
+    "diagram-snapchat": "diagram-snapchat-008",
+    "diagram-threads": "diagram-threads-008",
+    "diagram-tiktok": "diagram-tiktok-008",
+    "diagram-x": "diagram-x-008"
    },
    "seconds": 22.6,
    "size": 1288141,
@@ -134,7 +193,13 @@
     "Stage 4: low births and deaths, near-zero growth, column-shaped pyramid."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-009"
+    "diagram-facebook": "diagram-facebook-009",
+    "diagram-reels": "diagram-reels-009",
+    "diagram-shorts": "diagram-shorts-009",
+    "diagram-snapchat": "diagram-snapchat-009",
+    "diagram-threads": "diagram-threads-009",
+    "diagram-tiktok": "diagram-tiktok-009",
+    "diagram-x": "diagram-x-009"
    },
    "seconds": 22.6,
    "size": 1230022,
@@ -149,7 +214,13 @@
     "Psychosis by duration: under 1 month brief psychotic, 1 to 6 months schizophreniform, 6 months or more schizophrenia."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-010"
+    "diagram-facebook": "diagram-facebook-010",
+    "diagram-reels": "diagram-reels-010",
+    "diagram-shorts": "diagram-shorts-010",
+    "diagram-snapchat": "diagram-snapchat-010",
+    "diagram-threads": "diagram-threads-010",
+    "diagram-tiktok": "diagram-tiktok-010",
+    "diagram-x": "diagram-x-010"
    },
    "seconds": 22.6,
    "size": 1432951,
@@ -164,7 +235,13 @@
     "Reaction: transfer of a functional group (phosphate, amino, methyl, acyl, glycosyl) from a donor to an acceptor."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-011"
+    "diagram-facebook": "diagram-facebook-011",
+    "diagram-reels": "diagram-reels-011",
+    "diagram-shorts": "diagram-shorts-011",
+    "diagram-snapchat": "diagram-snapchat-011",
+    "diagram-threads": "diagram-threads-011",
+    "diagram-tiktok": "diagram-tiktok-011",
+    "diagram-x": "diagram-x-011"
    },
    "seconds": 22.6,
    "size": 2046685,
@@ -179,7 +256,13 @@
     "Identity must precede intimacy. Marcia's four identity statuses expand stage 5."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-012"
+    "diagram-facebook": "diagram-facebook-012",
+    "diagram-reels": "diagram-reels-012",
+    "diagram-shorts": "diagram-shorts-012",
+    "diagram-snapchat": "diagram-snapchat-012",
+    "diagram-threads": "diagram-threads-012",
+    "diagram-tiktok": "diagram-tiktok-012",
+    "diagram-x": "diagram-x-012"
    },
    "seconds": 22.6,
    "size": 1744416,
@@ -194,7 +277,13 @@
     "Looking-glass self, dramaturgy, Thomas theorem, labeling."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-013"
+    "diagram-facebook": "diagram-facebook-013",
+    "diagram-reels": "diagram-reels-013",
+    "diagram-shorts": "diagram-shorts-013",
+    "diagram-snapchat": "diagram-snapchat-013",
+    "diagram-threads": "diagram-threads-013",
+    "diagram-tiktok": "diagram-tiktok-013",
+    "diagram-x": "diagram-x-013"
    },
    "seconds": 22.6,
    "size": 1661724,
@@ -209,7 +298,13 @@
     "Self-serving bias: my success is me, my failure is the situation. Driven by self-esteem."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-014"
+    "diagram-facebook": "diagram-facebook-014",
+    "diagram-reels": "diagram-reels-014",
+    "diagram-shorts": "diagram-shorts-014",
+    "diagram-snapchat": "diagram-snapchat-014",
+    "diagram-threads": "diagram-threads-014",
+    "diagram-tiktok": "diagram-tiktok-014",
+    "diagram-x": "diagram-x-014"
    },
    "seconds": 22.6,
    "size": 1964512,
@@ -224,7 +319,13 @@
     "Use E\u00b0cell = E\u00b0cathode - E\u00b0anode, \u0394G = -nFE, and E = E\u00b0 - (0.0592/n) log Q at 25 C."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-015"
+    "diagram-facebook": "diagram-facebook-015",
+    "diagram-reels": "diagram-reels-015",
+    "diagram-shorts": "diagram-shorts-015",
+    "diagram-snapchat": "diagram-snapchat-015",
+    "diagram-threads": "diagram-threads-015",
+    "diagram-tiktok": "diagram-tiktok-015",
+    "diagram-x": "diagram-x-015"
    },
    "seconds": 22.6,
    "size": 1310512,
@@ -239,7 +340,13 @@
     "\u0394H and \u0394S are each either positive or negative, so there are four cases."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-016"
+    "diagram-facebook": "diagram-facebook-016",
+    "diagram-reels": "diagram-reels-016",
+    "diagram-shorts": "diagram-shorts-016",
+    "diagram-snapchat": "diagram-snapchat-016",
+    "diagram-threads": "diagram-threads-016",
+    "diagram-tiktok": "diagram-tiktok-016",
+    "diagram-x": "diagram-x-016"
    },
    "seconds": 22.6,
    "size": 1775835,
@@ -254,7 +361,13 @@
     "Without oxygen, lactate dehydrogenase regenerates NAD^+."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-017"
+    "diagram-facebook": "diagram-facebook-017",
+    "diagram-reels": "diagram-reels-017",
+    "diagram-shorts": "diagram-shorts-017",
+    "diagram-snapchat": "diagram-snapchat-017",
+    "diagram-threads": "diagram-threads-017",
+    "diagram-tiktok": "diagram-tiktok-017",
+    "diagram-x": "diagram-x-017"
    },
    "seconds": 22.6,
    "size": 1605563,
@@ -269,7 +382,13 @@
     "With genotype counts, count alleles. For X-linked recessive traits, affected males = q and affected females = q\u00b2."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-018"
+    "diagram-facebook": "diagram-facebook-018",
+    "diagram-reels": "diagram-reels-018",
+    "diagram-shorts": "diagram-shorts-018",
+    "diagram-snapchat": "diagram-snapchat-018",
+    "diagram-threads": "diagram-threads-018",
+    "diagram-tiktok": "diagram-tiktok-018",
+    "diagram-x": "diagram-x-018"
    },
    "seconds": 22.6,
    "size": 1585406,
@@ -284,7 +403,13 @@
     "Each ionizable group on an amino acid obeys the same equation with its own pKa."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-019"
+    "diagram-facebook": "diagram-facebook-019",
+    "diagram-reels": "diagram-reels-019",
+    "diagram-shorts": "diagram-shorts-019",
+    "diagram-snapchat": "diagram-snapchat-019",
+    "diagram-threads": "diagram-threads-019",
+    "diagram-tiktok": "diagram-tiktok-019",
+    "diagram-x": "diagram-x-019"
    },
    "seconds": 22.6,
    "size": 1264774,
@@ -299,7 +424,13 @@
     "Identify the question family from the stem, predict, then compare."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-020"
+    "diagram-facebook": "diagram-facebook-020",
+    "diagram-reels": "diagram-reels-020",
+    "diagram-shorts": "diagram-shorts-020",
+    "diagram-snapchat": "diagram-snapchat-020",
+    "diagram-threads": "diagram-threads-020",
+    "diagram-tiktok": "diagram-tiktok-020",
+    "diagram-x": "diagram-x-020"
    },
    "seconds": 22.6,
    "size": 1354528,
@@ -314,7 +445,13 @@
     "Combine both with degrees of unsaturation and check that the pieces add up to the formula."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-021"
+    "diagram-facebook": "diagram-facebook-021",
+    "diagram-reels": "diagram-reels-021",
+    "diagram-shorts": "diagram-shorts-021",
+    "diagram-snapchat": "diagram-snapchat-021",
+    "diagram-threads": "diagram-threads-021",
+    "diagram-tiktok": "diagram-tiktok-021",
+    "diagram-x": "diagram-x-021"
    },
    "seconds": 22.6,
    "size": 1356809,
@@ -329,7 +466,13 @@
     "High output needs lactose present and glucose low. lacI^- and lacO^c give constitutive expression; lacI^s makes it uninducible."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-022"
+    "diagram-facebook": "diagram-facebook-022",
+    "diagram-reels": "diagram-reels-022",
+    "diagram-shorts": "diagram-shorts-022",
+    "diagram-snapchat": "diagram-snapchat-022",
+    "diagram-threads": "diagram-threads-022",
+    "diagram-tiktok": "diagram-tiktok-022",
+    "diagram-x": "diagram-x-022"
    },
    "seconds": 22.6,
    "size": 1746187,
@@ -344,7 +487,13 @@
     "A low Km means the enzyme reaches half of its top speed at a low substrate concentration."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-023"
+    "diagram-facebook": "diagram-facebook-023",
+    "diagram-reels": "diagram-reels-023",
+    "diagram-shorts": "diagram-shorts-023",
+    "diagram-snapchat": "diagram-snapchat-023",
+    "diagram-threads": "diagram-threads-023",
+    "diagram-tiktok": "diagram-tiktok-023",
+    "diagram-x": "diagram-x-023"
    },
    "seconds": 22.6,
    "size": 1391337,
@@ -359,7 +508,13 @@
     "Meiosis II separates sister chromatids (equational) and looks like mitosis."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-024"
+    "diagram-facebook": "diagram-facebook-024",
+    "diagram-reels": "diagram-reels-024",
+    "diagram-shorts": "diagram-shorts-024",
+    "diagram-snapchat": "diagram-snapchat-024",
+    "diagram-threads": "diagram-threads-024",
+    "diagram-tiktok": "diagram-tiktok-024",
+    "diagram-x": "diagram-x-024"
    },
    "seconds": 22.6,
    "size": 1417336,
@@ -374,7 +529,13 @@
     "Distal tubule: NaCl (thiazides) and Ca^2+ (PTH)."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-025"
+    "diagram-facebook": "diagram-facebook-025",
+    "diagram-reels": "diagram-reels-025",
+    "diagram-shorts": "diagram-shorts-025",
+    "diagram-snapchat": "diagram-snapchat-025",
+    "diagram-threads": "diagram-threads-025",
+    "diagram-tiktok": "diagram-tiktok-025",
+    "diagram-x": "diagram-x-025"
    },
    "seconds": 22.6,
    "size": 1320595,
@@ -389,7 +550,13 @@
     "Secondary transporters spend the Na^+ gradient (symport such as SGLT1, antiport such as the Na^+/Ca^2+ exchanger)."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-026"
+    "diagram-facebook": "diagram-facebook-026",
+    "diagram-reels": "diagram-reels-026",
+    "diagram-shorts": "diagram-shorts-026",
+    "diagram-snapchat": "diagram-snapchat-026",
+    "diagram-threads": "diagram-threads-026",
+    "diagram-tiktok": "diagram-tiktok-026",
+    "diagram-x": "diagram-x-026"
    },
    "seconds": 22.6,
    "size": 1562920,
@@ -403,7 +570,13 @@
     "Denaturation destroys levels 2 to 4 and leaves level 1 alone, and sequence alone can sometimes direct refolding."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-027"
+    "diagram-facebook": "diagram-facebook-027",
+    "diagram-reels": "diagram-reels-027",
+    "diagram-shorts": "diagram-shorts-027",
+    "diagram-snapchat": "diagram-snapchat-027",
+    "diagram-threads": "diagram-threads-027",
+    "diagram-tiktok": "diagram-tiktok-027",
+    "diagram-x": "diagram-x-027"
    },
    "seconds": 18.2,
    "size": 1090948,
@@ -418,7 +591,13 @@
     "If group 4 points at you (wedge, or horizontal in a Fischer projection), reverse. Swapping two groups inverts the label."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-028"
+    "diagram-facebook": "diagram-facebook-028",
+    "diagram-reels": "diagram-reels-028",
+    "diagram-shorts": "diagram-shorts-028",
+    "diagram-snapchat": "diagram-snapchat-028",
+    "diagram-threads": "diagram-threads-028",
+    "diagram-tiktok": "diagram-tiktok-028",
+    "diagram-x": "diagram-x-028"
    },
    "seconds": 22.6,
    "size": 1198355,
@@ -433,7 +612,13 @@
     "Activity A = kN falls with the same half-life, and at equal N a shorter half-life means higher activity."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-029"
+    "diagram-facebook": "diagram-facebook-029",
+    "diagram-reels": "diagram-reels-029",
+    "diagram-shorts": "diagram-shorts-029",
+    "diagram-snapchat": "diagram-snapchat-029",
+    "diagram-threads": "diagram-threads-029",
+    "diagram-tiktok": "diagram-tiktok-029",
+    "diagram-x": "diagram-x-029"
    },
    "seconds": 22.6,
    "size": 1438162,
@@ -448,7 +633,13 @@
     "Role exit: disengaging from a core role and rebuilding the self around an ex-role."
    ],
    "outbox_ids": {
-    "diagram-tiktok": "diagram-tiktok-030"
+    "diagram-facebook": "diagram-facebook-030",
+    "diagram-reels": "diagram-reels-030",
+    "diagram-shorts": "diagram-shorts-030",
+    "diagram-snapchat": "diagram-snapchat-030",
+    "diagram-threads": "diagram-threads-030",
+    "diagram-tiktok": "diagram-tiktok-030",
+    "diagram-x": "diagram-x-030"
    },
    "seconds": 22.6,
    "size": 1380661,
@@ -876,8 +1067,13 @@
  "q": {
   "10a-social-inequality-3": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-001",
+    "qotd-reels": "qotd-reels-001",
     "qotd-shorts": "qotd-shorts-012",
-    "qotd-tiktok": "qotd-tiktok-012"
+    "qotd-snapchat": "qotd-snapchat-001",
+    "qotd-threads": "qotd-threads-001",
+    "qotd-tiktok": "qotd-tiktok-012",
+    "qotd-x": "qotd-x-001"
    },
    "pack_slug": "10a-social-inequality",
    "practice": "practice/10a-social-class-mobility-poverty-social-capital.html",
@@ -890,7 +1086,13 @@
   },
   "1a-amino-acids-proteins-2": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-026"
+    "qotd-facebook": "qotd-facebook-002",
+    "qotd-reels": "qotd-reels-002",
+    "qotd-shorts": "qotd-shorts-021",
+    "qotd-snapchat": "qotd-snapchat-002",
+    "qotd-threads": "qotd-threads-002",
+    "qotd-tiktok": "qotd-tiktok-026",
+    "qotd-x": "qotd-x-002"
    },
    "pack_slug": "1a-amino-acids-proteins",
    "practice": "practice/1a/index.html",
@@ -903,8 +1105,13 @@
   },
   "1a-amino-acids-proteins-4": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-003",
+    "qotd-reels": "qotd-reels-003",
     "qotd-shorts": "qotd-shorts-001",
-    "qotd-tiktok": "qotd-tiktok-001"
+    "qotd-snapchat": "qotd-snapchat-003",
+    "qotd-threads": "qotd-threads-003",
+    "qotd-tiktok": "qotd-tiktok-001",
+    "qotd-x": "qotd-x-003"
    },
    "pack_slug": "1a-amino-acids-proteins",
    "practice": "practice/1a/index.html",
@@ -917,8 +1124,13 @@
   },
   "1b-dna-gene-expression-2": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-004",
+    "qotd-reels": "qotd-reels-004",
     "qotd-shorts": "qotd-shorts-013",
-    "qotd-tiktok": "qotd-tiktok-013"
+    "qotd-snapchat": "qotd-snapchat-004",
+    "qotd-threads": "qotd-threads-004",
+    "qotd-tiktok": "qotd-tiktok-013",
+    "qotd-x": "qotd-x-004"
    },
    "pack_slug": "1b-dna-gene-expression",
    "practice": "practice/1b-transcription-rna-processing-splicing.html",
@@ -931,7 +1143,13 @@
   },
   "1b-dna-gene-expression-4": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-037"
+    "qotd-facebook": "qotd-facebook-005",
+    "qotd-reels": "qotd-reels-005",
+    "qotd-shorts": "qotd-shorts-022",
+    "qotd-snapchat": "qotd-snapchat-005",
+    "qotd-threads": "qotd-threads-005",
+    "qotd-tiktok": "qotd-tiktok-037",
+    "qotd-x": "qotd-x-005"
    },
    "pack_slug": "1b-dna-gene-expression",
    "practice": "practice/1b/index.html",
@@ -944,7 +1162,13 @@
   },
   "1c-heredity-evolution-1": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-029"
+    "qotd-facebook": "qotd-facebook-006",
+    "qotd-reels": "qotd-reels-006",
+    "qotd-shorts": "qotd-shorts-023",
+    "qotd-snapchat": "qotd-snapchat-006",
+    "qotd-threads": "qotd-threads-006",
+    "qotd-tiktok": "qotd-tiktok-029",
+    "qotd-x": "qotd-x-006"
    },
    "pack_slug": "1c-heredity-evolution",
    "practice": "practice/1c-mendelian-genetics-pedigrees-linkage.html",
@@ -957,8 +1181,13 @@
   },
   "1c-heredity-evolution-2": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-007",
+    "qotd-reels": "qotd-reels-007",
     "qotd-shorts": "qotd-shorts-004",
-    "qotd-tiktok": "qotd-tiktok-004"
+    "qotd-snapchat": "qotd-snapchat-007",
+    "qotd-threads": "qotd-threads-007",
+    "qotd-tiktok": "qotd-tiktok-004",
+    "qotd-x": "qotd-x-007"
    },
    "pack_slug": "1c-heredity-evolution",
    "practice": "practice/1c-mendelian-genetics-pedigrees-linkage.html",
@@ -971,8 +1200,13 @@
   },
   "2b-prokaryotes-viruses-0": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-008",
+    "qotd-reels": "qotd-reels-008",
     "qotd-shorts": "qotd-shorts-016",
-    "qotd-tiktok": "qotd-tiktok-016"
+    "qotd-snapchat": "qotd-snapchat-008",
+    "qotd-threads": "qotd-threads-008",
+    "qotd-tiktok": "qotd-tiktok-016",
+    "qotd-x": "qotd-x-008"
    },
    "pack_slug": "2b-prokaryotes-viruses",
    "practice": "practice/2b-bacteria-gene-transfer-viral-life-cycles.html",
@@ -985,7 +1219,13 @@
   },
   "2b-prokaryotes-viruses-1": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-040"
+    "qotd-facebook": "qotd-facebook-009",
+    "qotd-reels": "qotd-reels-009",
+    "qotd-shorts": "qotd-shorts-024",
+    "qotd-snapchat": "qotd-snapchat-009",
+    "qotd-threads": "qotd-threads-009",
+    "qotd-tiktok": "qotd-tiktok-040",
+    "qotd-x": "qotd-x-009"
    },
    "pack_slug": "2b-prokaryotes-viruses",
    "practice": "practice/2b-bacteria-gene-transfer-viral-life-cycles.html",
@@ -998,8 +1238,13 @@
   },
   "2c-cell-division-development-4": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-010",
+    "qotd-reels": "qotd-reels-010",
     "qotd-shorts": "qotd-shorts-019",
-    "qotd-tiktok": "qotd-tiktok-019"
+    "qotd-snapchat": "qotd-snapchat-010",
+    "qotd-threads": "qotd-threads-010",
+    "qotd-tiktok": "qotd-tiktok-019",
+    "qotd-x": "qotd-x-010"
    },
    "pack_slug": "2c-cell-division-development",
    "practice": "practice/2c/index.html",
@@ -1012,8 +1257,13 @@
   },
   "3a-nervous-endocrine-1": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-011",
+    "qotd-reels": "qotd-reels-011",
     "qotd-shorts": "qotd-shorts-007",
-    "qotd-tiktok": "qotd-tiktok-007"
+    "qotd-snapchat": "qotd-snapchat-011",
+    "qotd-threads": "qotd-threads-011",
+    "qotd-tiktok": "qotd-tiktok-007",
+    "qotd-x": "qotd-x-011"
    },
    "pack_slug": "3a-nervous-endocrine",
    "practice": "practice/3a-sensory-systems-vision-hearing-vestibular.html",
@@ -1026,7 +1276,13 @@
   },
   "3b-organ-systems-1": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-034"
+    "qotd-facebook": "qotd-facebook-012",
+    "qotd-reels": "qotd-reels-012",
+    "qotd-shorts": "qotd-shorts-025",
+    "qotd-snapchat": "qotd-snapchat-012",
+    "qotd-threads": "qotd-threads-012",
+    "qotd-tiktok": "qotd-tiktok-034",
+    "qotd-x": "qotd-x-012"
    },
    "pack_slug": "3b-organ-systems",
    "practice": "practice/3b/index.html",
@@ -1039,8 +1295,13 @@
   },
   "3b-organ-systems-3": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-013",
+    "qotd-reels": "qotd-reels-013",
     "qotd-shorts": "qotd-shorts-010",
-    "qotd-tiktok": "qotd-tiktok-010"
+    "qotd-snapchat": "qotd-snapchat-013",
+    "qotd-threads": "qotd-threads-013",
+    "qotd-tiktok": "qotd-tiktok-010",
+    "qotd-x": "qotd-x-013"
    },
    "pack_slug": "3b-organ-systems",
    "practice": "practice/3b-kidney-nephron-filtration-acid-base.html",
@@ -1053,8 +1314,13 @@
   },
   "4a-motion-forces-energy-0": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-014",
+    "qotd-reels": "qotd-reels-014",
     "qotd-shorts": "qotd-shorts-002",
-    "qotd-tiktok": "qotd-tiktok-002"
+    "qotd-snapchat": "qotd-snapchat-014",
+    "qotd-threads": "qotd-threads-014",
+    "qotd-tiktok": "qotd-tiktok-002",
+    "qotd-x": "qotd-x-014"
    },
    "pack_slug": "4a-motion-forces-energy",
    "practice": "practice/4a/index.html",
@@ -1067,7 +1333,13 @@
   },
   "4a-motion-forces-energy-3": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-030"
+    "qotd-facebook": "qotd-facebook-015",
+    "qotd-reels": "qotd-reels-015",
+    "qotd-shorts": "qotd-shorts-026",
+    "qotd-snapchat": "qotd-snapchat-015",
+    "qotd-threads": "qotd-threads-015",
+    "qotd-tiktok": "qotd-tiktok-030",
+    "qotd-x": "qotd-x-015"
    },
    "pack_slug": "4a-motion-forces-energy",
    "practice": "practice/4a-work-energy-power-conservation.html",
@@ -1080,7 +1352,13 @@
   },
   "4b-fluids-gases-1": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-038"
+    "qotd-facebook": "qotd-facebook-016",
+    "qotd-reels": "qotd-reels-016",
+    "qotd-shorts": "qotd-shorts-027",
+    "qotd-snapchat": "qotd-snapchat-016",
+    "qotd-threads": "qotd-threads-016",
+    "qotd-tiktok": "qotd-tiktok-038",
+    "qotd-x": "qotd-x-016"
    },
    "pack_slug": "4b-fluids-gases",
    "practice": "practice/4b-fluids-buoyancy-bernoulli-poiseuille.html",
@@ -1093,8 +1371,13 @@
   },
   "4b-fluids-gases-4": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-017",
+    "qotd-reels": "qotd-reels-017",
     "qotd-shorts": "qotd-shorts-011",
-    "qotd-tiktok": "qotd-tiktok-011"
+    "qotd-snapchat": "qotd-snapchat-017",
+    "qotd-threads": "qotd-threads-017",
+    "qotd-tiktok": "qotd-tiktok-011",
+    "qotd-x": "qotd-x-017"
    },
    "pack_slug": "4b-fluids-gases",
    "practice": "practice/4b-fluids-buoyancy-bernoulli-poiseuille.html",
@@ -1107,8 +1390,13 @@
   },
   "4c-electricity-electrochem-3": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-018",
+    "qotd-reels": "qotd-reels-018",
     "qotd-shorts": "qotd-shorts-020",
-    "qotd-tiktok": "qotd-tiktok-020"
+    "qotd-snapchat": "qotd-snapchat-018",
+    "qotd-threads": "qotd-threads-018",
+    "qotd-tiktok": "qotd-tiktok-020",
+    "qotd-x": "qotd-x-018"
    },
    "pack_slug": "4c-electricity-electrochem",
    "practice": "practice/4c/index.html",
@@ -1121,7 +1409,13 @@
   },
   "4d-light-sound-optics-2": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-024"
+    "qotd-facebook": "qotd-facebook-019",
+    "qotd-reels": "qotd-reels-019",
+    "qotd-shorts": "qotd-shorts-028",
+    "qotd-snapchat": "qotd-snapchat-019",
+    "qotd-threads": "qotd-threads-019",
+    "qotd-tiktok": "qotd-tiktok-024",
+    "qotd-x": "qotd-x-019"
    },
    "pack_slug": "4d-light-sound-optics",
    "practice": "practice/4d/index.html",
@@ -1134,7 +1428,13 @@
   },
   "4e-atoms-nuclear-periodic-1": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-022"
+    "qotd-facebook": "qotd-facebook-020",
+    "qotd-reels": "qotd-reels-020",
+    "qotd-shorts": "qotd-shorts-029",
+    "qotd-snapchat": "qotd-snapchat-020",
+    "qotd-threads": "qotd-threads-020",
+    "qotd-tiktok": "qotd-tiktok-022",
+    "qotd-x": "qotd-x-020"
    },
    "pack_slug": "4e-atoms-nuclear-periodic",
    "practice": "practice/4e-nuclear-decay-half-life-binding-energy.html",
@@ -1147,8 +1447,13 @@
   },
   "5a-solutions-acids-bases-2": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-021",
+    "qotd-reels": "qotd-reels-021",
     "qotd-shorts": "qotd-shorts-017",
-    "qotd-tiktok": "qotd-tiktok-017"
+    "qotd-snapchat": "qotd-snapchat-021",
+    "qotd-threads": "qotd-threads-021",
+    "qotd-tiktok": "qotd-tiktok-017",
+    "qotd-x": "qotd-x-021"
    },
    "pack_slug": "5a-solutions-acids-bases",
    "practice": "practice/5a-ph-buffers-titrations-indicators.html",
@@ -1161,7 +1466,13 @@
   },
   "5b-molecules-bonding-stereo-1": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-035"
+    "qotd-facebook": "qotd-facebook-022",
+    "qotd-reels": "qotd-reels-022",
+    "qotd-shorts": "qotd-shorts-030",
+    "qotd-snapchat": "qotd-snapchat-022",
+    "qotd-threads": "qotd-threads-022",
+    "qotd-tiktok": "qotd-tiktok-035",
+    "qotd-x": "qotd-x-022"
    },
    "pack_slug": "5b-molecules-bonding-stereo",
    "practice": "practice/5b/index.html",
@@ -1174,8 +1485,13 @@
   },
   "5b-molecules-bonding-stereo-4": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-023",
+    "qotd-reels": "qotd-reels-023",
     "qotd-shorts": "qotd-shorts-008",
-    "qotd-tiktok": "qotd-tiktok-008"
+    "qotd-snapchat": "qotd-snapchat-023",
+    "qotd-threads": "qotd-threads-023",
+    "qotd-tiktok": "qotd-tiktok-008",
+    "qotd-x": "qotd-x-023"
    },
    "pack_slug": "5b-molecules-bonding-stereo",
    "practice": "practice/5b-chirality-r-s-enantiomers-diastereomers.html",
@@ -1188,7 +1504,13 @@
   },
   "5c-separations-spectroscopy-0": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-027"
+    "qotd-facebook": "qotd-facebook-024",
+    "qotd-reels": "qotd-reels-024",
+    "qotd-shorts": "qotd-shorts-031",
+    "qotd-snapchat": "qotd-snapchat-024",
+    "qotd-threads": "qotd-threads-024",
+    "qotd-tiktok": "qotd-tiktok-027",
+    "qotd-x": "qotd-x-024"
    },
    "pack_slug": "5c-separations-spectroscopy",
    "practice": "practice/5c/index.html",
@@ -1201,7 +1523,13 @@
   },
   "5d-biological-molecules-orgo-0": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-032"
+    "qotd-facebook": "qotd-facebook-025",
+    "qotd-reels": "qotd-reels-025",
+    "qotd-shorts": "qotd-shorts-032",
+    "qotd-snapchat": "qotd-snapchat-025",
+    "qotd-threads": "qotd-threads-025",
+    "qotd-tiktok": "qotd-tiktok-032",
+    "qotd-x": "qotd-x-025"
    },
    "pack_slug": "5d-biological-molecules-orgo",
    "practice": "practice/5d/index.html",
@@ -1214,8 +1542,13 @@
   },
   "5d-biological-molecules-orgo-3": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-026",
+    "qotd-reels": "qotd-reels-026",
     "qotd-shorts": "qotd-shorts-005",
-    "qotd-tiktok": "qotd-tiktok-005"
+    "qotd-snapchat": "qotd-snapchat-026",
+    "qotd-threads": "qotd-threads-026",
+    "qotd-tiktok": "qotd-tiktok-005",
+    "qotd-x": "qotd-x-026"
    },
    "pack_slug": "5d-biological-molecules-orgo",
    "practice": "practice/5d/index.html",
@@ -1228,8 +1561,13 @@
   },
   "5e-thermo-kinetics-0": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-027",
+    "qotd-reels": "qotd-reels-027",
     "qotd-shorts": "qotd-shorts-014",
-    "qotd-tiktok": "qotd-tiktok-014"
+    "qotd-snapchat": "qotd-snapchat-027",
+    "qotd-threads": "qotd-threads-027",
+    "qotd-tiktok": "qotd-tiktok-014",
+    "qotd-x": "qotd-x-027"
    },
    "pack_slug": "5e-thermo-kinetics",
    "practice": "practice/5e/index.html",
@@ -1242,8 +1580,13 @@
   },
   "6a-sensation-perception-3": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-028",
+    "qotd-reels": "qotd-reels-028",
     "qotd-shorts": "qotd-shorts-009",
-    "qotd-tiktok": "qotd-tiktok-009"
+    "qotd-snapchat": "qotd-snapchat-028",
+    "qotd-threads": "qotd-threads-028",
+    "qotd-tiktok": "qotd-tiktok-009",
+    "qotd-x": "qotd-x-028"
    },
    "pack_slug": "6a-sensation-perception",
    "practice": "practice/6a/index.html",
@@ -1256,7 +1599,13 @@
   },
   "6b-cognition-memory-consciousness-3": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-021"
+    "qotd-facebook": "qotd-facebook-029",
+    "qotd-reels": "qotd-reels-029",
+    "qotd-shorts": "qotd-shorts-033",
+    "qotd-snapchat": "qotd-snapchat-029",
+    "qotd-threads": "qotd-threads-029",
+    "qotd-tiktok": "qotd-tiktok-021",
+    "qotd-x": "qotd-x-029"
    },
    "pack_slug": "6b-cognition-memory-consciousness",
    "practice": "practice/6b/index.html",
@@ -1269,7 +1618,13 @@
   },
   "6c-emotion-stress-2": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-031"
+    "qotd-facebook": "qotd-facebook-030",
+    "qotd-reels": "qotd-reels-030",
+    "qotd-shorts": "qotd-shorts-034",
+    "qotd-snapchat": "qotd-snapchat-030",
+    "qotd-threads": "qotd-threads-030",
+    "qotd-tiktok": "qotd-tiktok-031",
+    "qotd-x": "qotd-x-030"
    },
    "pack_slug": "6c-emotion-stress",
    "practice": "practice/6c-theories-of-emotion-limbic-system-arousal.html",
@@ -1282,8 +1637,13 @@
   },
   "7a-individual-behavior-3": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-031",
+    "qotd-reels": "qotd-reels-031",
     "qotd-shorts": "qotd-shorts-006",
-    "qotd-tiktok": "qotd-tiktok-006"
+    "qotd-snapchat": "qotd-snapchat-031",
+    "qotd-threads": "qotd-threads-031",
+    "qotd-tiktok": "qotd-tiktok-006",
+    "qotd-x": "qotd-x-031"
    },
    "pack_slug": "7a-individual-behavior",
    "practice": "practice/7a/index.html",
@@ -1296,7 +1656,13 @@
   },
   "7a-individual-behavior-4": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-039"
+    "qotd-facebook": "qotd-facebook-032",
+    "qotd-reels": "qotd-reels-032",
+    "qotd-shorts": "qotd-shorts-035",
+    "qotd-snapchat": "qotd-snapchat-032",
+    "qotd-threads": "qotd-threads-032",
+    "qotd-tiktok": "qotd-tiktok-039",
+    "qotd-x": "qotd-x-032"
    },
    "pack_slug": "7a-individual-behavior",
    "practice": "practice/7a-psychological-disorders-diagnosis-biological-bases.html",
@@ -1309,7 +1675,13 @@
   },
   "7b-social-processes-2": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-033"
+    "qotd-facebook": "qotd-facebook-033",
+    "qotd-reels": "qotd-reels-033",
+    "qotd-shorts": "qotd-shorts-036",
+    "qotd-snapchat": "qotd-snapchat-033",
+    "qotd-threads": "qotd-threads-033",
+    "qotd-tiktok": "qotd-tiktok-033",
+    "qotd-x": "qotd-x-033"
    },
    "pack_slug": "7b-social-processes",
    "practice": "practice/7b-conformity-obedience-group-behavior.html",
@@ -1322,7 +1694,13 @@
   },
   "7c-learning-behavior-change-2": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-028"
+    "qotd-facebook": "qotd-facebook-034",
+    "qotd-reels": "qotd-reels-034",
+    "qotd-shorts": "qotd-shorts-037",
+    "qotd-snapchat": "qotd-snapchat-034",
+    "qotd-threads": "qotd-threads-034",
+    "qotd-tiktok": "qotd-tiktok-028",
+    "qotd-x": "qotd-x-034"
    },
    "pack_slug": "7c-learning-behavior-change",
    "practice": "practice/7c-classical-operant-conditioning-reinforcement-schedules.html",
@@ -1335,8 +1713,13 @@
   },
   "8a-self-identity-1": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-035",
+    "qotd-reels": "qotd-reels-035",
     "qotd-shorts": "qotd-shorts-015",
-    "qotd-tiktok": "qotd-tiktok-015"
+    "qotd-snapchat": "qotd-snapchat-035",
+    "qotd-threads": "qotd-threads-035",
+    "qotd-tiktok": "qotd-tiktok-015",
+    "qotd-x": "qotd-x-035"
    },
    "pack_slug": "8a-self-identity",
    "practice": "practice/8a/index.html",
@@ -1349,7 +1732,13 @@
   },
   "8b-social-thinking-2": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-025"
+    "qotd-facebook": "qotd-facebook-036",
+    "qotd-reels": "qotd-reels-036",
+    "qotd-shorts": "qotd-shorts-038",
+    "qotd-snapchat": "qotd-snapchat-036",
+    "qotd-threads": "qotd-threads-036",
+    "qotd-tiktok": "qotd-tiktok-025",
+    "qotd-x": "qotd-x-036"
    },
    "pack_slug": "8b-social-thinking",
    "practice": "practice/8b/index.html",
@@ -1362,8 +1751,13 @@
   },
   "8c-social-interactions-1": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-037",
+    "qotd-reels": "qotd-reels-037",
     "qotd-shorts": "qotd-shorts-003",
-    "qotd-tiktok": "qotd-tiktok-003"
+    "qotd-snapchat": "qotd-snapchat-037",
+    "qotd-threads": "qotd-threads-037",
+    "qotd-tiktok": "qotd-tiktok-003",
+    "qotd-x": "qotd-x-037"
    },
    "pack_slug": "8c-social-interactions",
    "practice": "practice/8c-status-roles-groups-bureaucracy-dramaturgy.html",
@@ -1376,7 +1770,13 @@
   },
   "8c-social-interactions-3": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-036"
+    "qotd-facebook": "qotd-facebook-038",
+    "qotd-reels": "qotd-reels-038",
+    "qotd-shorts": "qotd-shorts-039",
+    "qotd-snapchat": "qotd-snapchat-038",
+    "qotd-threads": "qotd-threads-038",
+    "qotd-tiktok": "qotd-tiktok-036",
+    "qotd-x": "qotd-x-038"
    },
    "pack_slug": "8c-social-interactions",
    "practice": "practice/8c/index.html",
@@ -1389,8 +1789,13 @@
   },
   "9a-social-structure-3": {
    "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-039",
+    "qotd-reels": "qotd-reels-039",
     "qotd-shorts": "qotd-shorts-018",
-    "qotd-tiktok": "qotd-tiktok-018"
+    "qotd-snapchat": "qotd-snapchat-039",
+    "qotd-threads": "qotd-threads-039",
+    "qotd-tiktok": "qotd-tiktok-018",
+    "qotd-x": "qotd-x-039"
    },
    "pack_slug": "9a-social-structure",
    "practice": "practice/9a/index.html",
@@ -1403,7 +1808,13 @@
   },
   "9b-demographics-4": {
    "outbox_ids": {
-    "qotd-tiktok": "qotd-tiktok-023"
+    "qotd-facebook": "qotd-facebook-040",
+    "qotd-reels": "qotd-reels-040",
+    "qotd-shorts": "qotd-shorts-040",
+    "qotd-snapchat": "qotd-snapchat-040",
+    "qotd-threads": "qotd-threads-040",
+    "qotd-tiktok": "qotd-tiktok-023",
+    "qotd-x": "qotd-x-040"
    },
    "pack_slug": "9b-demographics",
    "practice": "practice/9b-demographic-transition-population-growth-migration.html",

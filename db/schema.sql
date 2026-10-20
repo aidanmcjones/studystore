@@ -64,7 +64,7 @@ CREATE UNIQUE INDEX IF NOT EXISTS subscribers_unsub ON subscribers(unsub_token);
 CREATE TABLE IF NOT EXISTS outbox (
   id TEXT PRIMARY KEY,                 -- <campaign_id>-<nnn>
   campaign TEXT NOT NULL DEFAULT '',
-  channel TEXT NOT NULL DEFAULT '',    -- reddit | discord | tiktok | shorts | reels | pinterest | x | threads | email | club | advisor | ankiweb | ih | ph | waitlist
+  channel TEXT NOT NULL DEFAULT '',    -- reddit | discord | tiktok | shorts | reels | pinterest | x | threads | snapchat | facebook | lemon8 | email | club | advisor | ankiweb | ih | ph | waitlist
   target TEXT NOT NULL DEFAULT '',
   target_url TEXT,
   title TEXT NOT NULL DEFAULT '',

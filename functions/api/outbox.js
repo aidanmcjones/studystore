@@ -10,7 +10,7 @@
 // Item text is returned as plain data; the admin page renders it with textContent only.
 import { requireOwner, json, empty, stripControl } from "../_lib/owner.js";
 
-export const CHANNELS = ["reddit", "discord", "tiktok", "shorts", "reels", "pinterest", "x", "threads", "email",
+export const CHANNELS = ["reddit", "discord", "tiktok", "shorts", "reels", "pinterest", "x", "threads", "snapchat", "facebook", "lemon8", "email",
   "club", "advisor", "ankiweb", "ih", "ph", "waitlist"];
 const STATUSES = ["ready", "held", "posted", "skipped"];
 const COLS = "id, campaign, channel, target, target_url, title, body, link, asset_url, gate, notes, status, posted_url, created, updated";

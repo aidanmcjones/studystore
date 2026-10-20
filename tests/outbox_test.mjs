@@ -60,6 +60,8 @@ ok(row("camp-a-001").status === "ready" && row("camp-a-004").status === "held", 
 r = await post({ items: [item(5, "myspace")] });
 j = await r.json();
 ok(r.status === 400 && j.errors[0].error === "bad_channel", "unknown channel rejected");
+for (const c of ["snapchat", "facebook", "lemon8", "threads", "x", "reels"]) ok(outbox.CHANNELS.includes(c), "channel " + c + " allowed");
+ok(!outbox.CHANNELS.includes("linkedin"), "linkedin is not a channel");
 r = await post({ items: [item(5, "x", "now", { target_url: "javascript:alert(1)" })] });
 ok(r.status === 400, "non-https target_url rejected");
 r = await post({ items: [item(5, "x", "now", { id: "Bad ID" })] });

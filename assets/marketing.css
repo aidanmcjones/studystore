@@ -24,3 +24,10 @@
 .mk,.mk p{overflow-wrap:anywhere;min-width:0}
 .mk .rlist li{max-width:100%}
 .mk-head .mk-target{flex:1 1 auto;min-width:0}
+.mk-rows{list-style:none;margin:10px 0 0;padding:0;border-top:1px solid var(--line)}
+.mk-row{padding:10px 0;border-bottom:1px solid var(--line)}
+.mk-row .mk-head{margin:0 0 4px}
+.mk-row details{margin:4px 0}
+.mk-row summary{cursor:pointer;min-height:36px;display:flex;align-items:center;font-size:.9rem;color:var(--muted)}
+.mk-row .ractions .btn{min-height:44px}
+.mk-row.mk-hl{outline:2px solid var(--ink);outline-offset:2px}
