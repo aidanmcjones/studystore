@@ -515,5 +515,134 @@ DIAGRAMS.update({
 })
 # ---- end notes-a diagrams ----
 
+# ---- notes-d diagrams (4E, 2C, 2B, 3B; prefixed nd_) ----
+def nd_decay():
+    n = np.linspace(0, 5.2, 400)
+    frac = 0.5 ** n
+    k = np.log(2)  # per half-life
+    fig, (a, b) = plt.subplots(1, 2, figsize=(11, 4.6))
+    a.plot(n, 100 * frac, color=TEAL, lw=3)
+    for i in range(1, 5):
+        y = 100 * 0.5 ** i
+        a.plot([i, i], [0, y], ls="--", color=GREY, lw=1)
+        a.plot([0, i], [y, y], ls="--", color=GREY, lw=1)
+        a.plot([i], [y], "o", color=ACC, ms=8)
+        a.text(i + 0.08, y + 2.5, f"{y:g}%", fontsize=10, color=ACCD, fontweight="bold")
+    a.set_xlim(0, 5.2); a.set_ylim(0, 105)
+    a.set_xticks(range(0, 6))
+    a.set_xlabel("time (number of half-lives)"); a.set_ylabel("parent nuclei remaining (%)")
+    a.set_title("Each half-life halves what is left", fontsize=12, loc="left", fontweight="bold")
+    b.plot(n, np.log(frac), color=TEAL, lw=3)
+    b.axhline(0, color=INK, lw=1)
+    x0, x1 = 1.0, 3.0
+    y0, y1 = -k * x0, -k * x1
+    b.plot([x0, x1, x1], [y0, y0, y1], color=ACC, lw=1.5, ls="--")
+    b.text((x0 + x1) / 2, y0 + 0.12, "2 half-lives", ha="center", fontsize=9.5, color=ACCD)
+    b.text(x1 + 0.1, (y0 + y1) / 2, f"drop of\n2 ln 2 = {2 * k:.2f}", va="center", fontsize=9.5, color=ACCD)
+    b.text(0.25, -3.25, "slope = -k\nk = 0.693 / half-life", fontsize=10.5, color=INK, fontweight="bold")
+    b.set_xlim(0, 5.2); b.set_ylim(-3.8, 0.3)
+    b.set_xticks(range(0, 6))
+    b.set_xlabel("time (number of half-lives)"); b.set_ylabel("ln(N / N0)")
+    b.set_title("First order: ln N falls in a straight line", fontsize=12, loc="left", fontweight="bold")
+    fig.tight_layout()
+    save(fig, "radioactive-decay-half-life-calculations")
+
+def nd_division():
+    two_n = 8
+    # (label, chromosomes, DNA content in C units); counts derived from the rules
+    mit = [("G1", two_n, 2), ("S", two_n, 4), ("G2", two_n, 4), ("Pro/Meta", two_n, 4),
+           ("Anaphase", 2 * two_n, 4), ("Daughter", two_n, 2)]
+    mei = [("G1", two_n, 2), ("S", two_n, 4), ("G2", two_n, 4), ("Meta I", two_n, 4),
+           ("After I", two_n // 2, 2), ("Meta II", two_n // 2, 2), ("Anaph. II", two_n, 2), ("Gamete", two_n // 2, 1)]
+    fig, axes = plt.subplots(1, 2, figsize=(12, 4.8), gridspec_kw={"width_ratios": [6, 8]})
+    for ax, seq, title in [(axes[0], mit, "Mitosis (one cell's view)"), (axes[1], mei, "Meiosis (one cell's view)")]:
+        x = np.arange(len(seq) + 1)
+        chrom = [c for _, c, _ in seq]; dna = [d for _, _, d in seq]
+        ax.step(x, chrom + [chrom[-1]], where="post", color=TEAL, lw=3, label="chromosomes")
+        ax2 = ax.twinx()
+        ax2.step(x, dna + [dna[-1]], where="post", color=ACC, lw=2.6, ls="--", label="DNA content (C)")
+        ax.set_xticks(x[:-1] + 0.5); ax.set_xticklabels([s for s, _, _ in seq], fontsize=9, rotation=30, ha="right")
+        ax.set_xlim(0, len(seq)); ax.set_ylim(0, 18.5); ax2.set_ylim(0, 4.62)
+        ax.set_yticks([0, 4, 8, 16]); ax2.set_yticks([1, 2, 4])
+        ax.set_ylabel("chromosomes", color=TEAL); ax2.set_ylabel("DNA content (C)", color=ACCD)
+        ax2.spines["right"].set_visible(True); ax2.spines["top"].set_visible(False)
+        ax.set_title(title, fontsize=12, loc="left", fontweight="bold")
+        for i, (s, c, d) in enumerate(seq):
+            ax.text(i + 0.5, c + 0.5, str(c), ha="center", fontsize=9, color=TEAL, fontweight="bold")
+    h1, l1 = axes[0].get_legend_handles_labels()
+    fig.legend([h1[0], plt.Line2D([], [], color=ACC, lw=2.6, ls="--")], ["chromosomes (count centromeres)", "DNA content (C)"],
+               loc="lower center", ncol=2, frameon=False, bbox_to_anchor=(0.5, -0.04))
+    fig.suptitle("Cell with 2n = 8: chromosome number vs DNA content", x=0.01, ha="left", fontsize=13, fontweight="bold")
+    fig.tight_layout(rect=(0, 0.05, 1, 1))
+    save(fig, "mitosis-vs-meiosis-differences")
+
+def nd_bact_virus():
+    fig, (a, b) = plt.subplots(1, 2, figsize=(12, 4.8), gridspec_kw={"width_ratios": [1.25, 1]})
+    groups = [("Viruses", 20, 300, ACC), ("Bacteria", 1000, 5000, TEAL), ("Eukaryotic cells", 10000, 100000, GREY)]
+    for i, (name, lo, hi, c) in enumerate(groups):
+        y = 2 - i
+        a.plot([lo, hi], [y, y], color=c, lw=14, solid_capstyle="butt")
+        a.text(lo, y + 0.32, name, fontsize=11, fontweight="bold", color=c)
+        lab = (f"{lo:g} to {hi:g} nm" if hi < 1000 else f"{lo / 1000:g} to {hi / 1000:g} um")
+        a.text(hi * 1.15, y, lab, va="center", fontsize=9.5, color=MUTED)
+    a.axvline(200, color=INK, ls=":", lw=1.4)
+    a.text(215, -0.62, "light microscope limit\n(about 200 nm)", fontsize=9, color=INK)
+    a.set_xscale("log"); a.set_xlim(10, 1e6); a.set_ylim(-0.8, 2.7)
+    a.set_yticks([]); a.spines["left"].set_visible(False)
+    a.set_xticks([10, 100, 1000, 10000, 100000, 1000000])
+    a.set_xticklabels(["10 nm", "100 nm", "1 um", "10 um", "100 um", "1 mm"])
+    a.set_xlabel("size (log scale)")
+    a.set_title("Typical sizes", fontsize=12, loc="left", fontweight="bold")
+    feats = ["Is a cell", "Ribosomes", "Own metabolism", "Peptidoglycan wall", "Divides by fission", "Grows on lab media", "DNA or RNA genome"]
+    bact = ["yes", "yes", "yes", "most", "yes", "most", "DNA"]
+    vir = ["no", "no", "no", "no", "no", "no", "either"]
+    b.set_xlim(0, 10); b.set_ylim(0, len(feats) + 1.2); b.axis("off")
+    b.set_title("Feature check", fontsize=12, loc="left", fontweight="bold")
+    b.text(6.0, len(feats) + 0.55, "Bacteria", ha="center", fontsize=11, fontweight="bold", color=TEAL)
+    b.text(8.6, len(feats) + 0.55, "Viruses", ha="center", fontsize=11, fontweight="bold", color=ACC)
+    for i, (f, x1, x2) in enumerate(zip(feats, bact, vir)):
+        y = len(feats) - i - 0.2
+        if i % 2 == 0:
+            b.add_patch(plt.Rectangle((0, y - 0.45), 10, 0.9, fc=CARD, ec="none"))
+        b.text(0.2, y, f, va="center", fontsize=10.5)
+        b.text(6.0, y, x1, ha="center", va="center", fontsize=10.5, color=TEAL, fontweight="bold")
+        b.text(8.6, y, x2, ha="center", va="center", fontsize=10.5, color=ACCD if x2 == "no" else INK, fontweight="bold")
+    fig.tight_layout()
+    save(fig, "bacteria-vs-viruses-differences")
+
+def nd_nephron():
+    # approximate tubular fluid osmolarity (mOsm/L) at segment boundaries, long-looped nephron
+    xs = [0, 1, 2, 3, 4, 5]
+    names = ["Bowman's\nspace", "end of\nproximal", "bend of\nloop", "end of thick\nascending", "end of\ndistal", "final\nurine"]
+    shared = [300, 300, 1200, 100, 100]
+    with_adh = shared + [1200]
+    no_adh = shared + [50]
+    xf = np.linspace(0, 5, 501)
+    fig, ax = plt.subplots(figsize=(9.6, 5))
+    ax.axhspan(250, 350, color="#e8f1f2", lw=0)
+    ax.text(0.05, 330, "plasma, about 300", fontsize=9, color=TEAL)
+    ax.plot(xf, np.interp(xf, xs, with_adh), color=TEAL, lw=3, label="high ADH (water conserved)")
+    ax.plot(xf, np.interp(xf, xs, no_adh), color=ACC, lw=3, ls="--", label="no ADH (water excreted)")
+    for x, y in zip(xs[:5], shared):
+        ax.plot([x], [y], "o", color=INK, ms=6)
+    ax.plot([5], [1200], "o", color=TEAL, ms=8); ax.plot([5], [50], "o", color=ACC, ms=8)
+    ax.text(4.93, 1235, "with ADH: about 1200", ha="right", fontsize=9.5, color=TEAL, fontweight="bold")
+    ax.text(4.9, 8, "no ADH: about 50", ha="right", fontsize=9.5, color=ACCD, fontweight="bold")
+    ax.annotate("descending limb:\nwater leaves", (1.5, 750), (0.25, 900), fontsize=9.5, arrowprops=dict(arrowstyle="-", color=GREY))
+    ax.annotate("thick ascending limb:\nNaCl pumped out,\nwatertight", (2.6, 560), (2.85, 830), fontsize=9.5, arrowprops=dict(arrowstyle="-", color=GREY))
+    ax.set_xticks(xs); ax.set_xticklabels(names, fontsize=9)
+    ax.set_xlim(-0.1, 5.15); ax.set_ylim(0, 1350)
+    ax.set_ylabel("tubular fluid osmolarity (mOsm/L)")
+    ax.set_title("Osmolarity along the nephron (approximate values)", fontsize=12.5, loc="left", fontweight="bold")
+    save(fig, "nephron-function-segments-reabsorption")
+
+DIAGRAMS.update({
+    "radioactive-decay-half-life-calculations": nd_decay,
+    "mitosis-vs-meiosis-differences": nd_division,
+    "bacteria-vs-viruses-differences": nd_bact_virus,
+    "nephron-function-segments-reabsorption": nd_nephron,
+})
+# ---- end notes-d diagrams ----
+
 if __name__ == "__main__":
     main()
