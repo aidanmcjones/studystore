@@ -227,6 +227,32 @@ def quiz_html(qs, final_html):
             + f'<div class="qdone">{final_html}</div></div>')
 
 
+CONTEXT_RE = re.compile(r"passage|table|figure|graph|experiment [0-9]|study described|shown|above|below", re.I)
+
+
+def home_quiz(site, root):
+    """Every available pack's standalone sample questions (no passage or figure needed), tagged by section.
+    site.js shows 3 per visit from 3 different sections, skipping ones this browser saw recently."""
+    items = []
+    for p in available(site):
+        for k, q in enumerate(((sample(p["slug"]) or {}).get("questions") or [])):
+            if CONTEXT_RE.search(q["stem"]):
+                continue
+            opts = "".join(f'<button type="button" data-o="{chr(65 + j)}"><b>{chr(65 + j)}</b>{esc(o)}</button>'
+                           for j, o in enumerate(q["options"]))
+            src = (f' <a class="qsrc mono" href="{root}products/{E(p["slug"])}.html">From the {E(p["aamc"])} pack: '
+                   f'{esc(p["title"])}</a>')
+            hide = "" if len(items) < 3 else " qx"
+            items.append(f'<div class="qitem{hide}" data-answer="{esc(q["answer"])}" data-sec="{E(p["section_name"])}" '
+                         f'data-qid="{E(p["slug"])}-{k}"><p class="qtext"><span class="mono qn">Q{len(items) + 1}</span>{esc(q["stem"])}</p>'
+                         f'<div class="qopts">{opts}</div><p class="qexp"><b>{esc(q["answer"])}.</b> {esc(q["explanation"])}{src}</p></div>')
+    fin = (f'<p class="qfinal">Those are real questions from our packs, word for word. Reload for a new set.</p>'
+           f'<a class="btn magnetic" href="#packs"><span>See the packs</span></a>')
+    return (f'<div class="quizbox reveal" data-quiz data-pickq="3"><div class="qhead mono"><span class="qprog" aria-hidden="true">'
+            f'{"<i></i>" * 3}</span><span class="qscore" aria-live="polite">0 of 3 answered</span></div>' + "".join(items)
+            + f'<div class="qdone">{fin}</div></div>'), len(items)
+
+
 def sample_quiz(p, n=5, final=""):
     s = sample(p["slug"]) if p["status"] == "available" else None
     qs = (s or {}).get("questions", [])[:n]
@@ -364,6 +390,8 @@ def placeholder(site, items, k, root):
         return pack_grid(site, root)
     if k == "home_anki": return home_anki(site)[0]
     if k == "home_anki_n": return str(home_anki(site)[1])
+    if k == "home_quiz": return home_quiz(site, root)[0]
+    if k == "home_quiz_bank": return str(home_quiz(site, root)[1])
     if k.startswith("stat:"):
         return stat(site, k[5:])
     if not k.startswith("feat"):

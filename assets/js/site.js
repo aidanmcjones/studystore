@@ -225,6 +225,29 @@
     if (auto) timer = setInterval(tick, 3200);
   })();
 
+  /* ---------- quiz bank: 3 questions per visit ----------
+   * The home quiz carries every standalone sample question (data-pickq). Keep 3 from 3 different
+   * sections, skipping ones this browser saw recently; the rest leave the DOM before quiz() runs. */
+  (function pickQuiz() {
+    var box = $("[data-pickq]"); if (!box) return;
+    var want = +box.getAttribute("data-pickq") || 3, all = $$(".qitem", box);
+    if (all.length <= want) return;
+    var seen = []; try { seen = JSON.parse(W.localStorage.getItem("ss_qseen") || "[]"); } catch (e) {}
+    var fresh = all.filter(function (q) { return seen.indexOf(q.getAttribute("data-qid")) < 0; });
+    if (fresh.length < want) { seen = []; fresh = all; }
+    var bySec = {}, secs = [];
+    fresh.forEach(function (q) { var s = q.getAttribute("data-sec"); if (!bySec[s]) { bySec[s] = []; secs.push(s); } bySec[s].push(q); });
+    var rnd = function (a) { return a[Math.floor(Math.random() * a.length)]; };
+    for (var i = secs.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = secs[i]; secs[i] = secs[j]; secs[j] = t; }
+    var picked = secs.slice(0, want).map(function (s) { return rnd(bySec[s]); });
+    while (picked.length < want) { var q = rnd(fresh); if (picked.indexOf(q) < 0) picked.push(q); }
+    all.forEach(function (q) { if (picked.indexOf(q) < 0) q.parentNode.removeChild(q); });
+    var done = $(".qdone", box);
+    picked.forEach(function (q, k) { q.classList.remove("qx"); var n = $(".qn", q); if (n) n.textContent = "Q" + (k + 1); box.insertBefore(q, done); });
+    seen = seen.concat(picked.map(function (q) { return q.getAttribute("data-qid"); })).slice(-150);
+    try { W.localStorage.setItem("ss_qseen", JSON.stringify(seen)); } catch (e) {}
+  })();
+
   /* ---------- quiz ---------- */
   (function quiz() {
     var box = $("[data-quiz]"); if (!box) return;

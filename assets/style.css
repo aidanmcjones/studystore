@@ -602,3 +602,7 @@ dialog.rdialog h2{font-size:1.5rem;letter-spacing:-.015em;line-height:1.2}
 
 /* one random section scene per visit (site.js pickScene); without JS show only the kinetics scene */
 html:not(.js) [data-pickscene]:not(#kinetics){display:none}
+
+/* home quiz bank: without JS show only the first 3 questions; source link under each explanation */
+html:not(.js) .qitem.qx{display:none}
+.qexp .qsrc{display:block;margin-top:8px;font-size:.78rem;opacity:.75}
