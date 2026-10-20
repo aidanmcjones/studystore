@@ -35,6 +35,7 @@ PAGES = [
      "Tell StudyStore about a broken link, a wrong answer, a typo or a display problem, or suggest a topic.", True),
     ("owner.html", "owner.html", "Owner sign-in | StudyStore", "Owner sign-in.", True),
     ("admin_reports.html", "admin/reports.html", "Reports | StudyStore", "Owner report review.", True),
+    ("admin_launch.html", "admin/launch.html", "Launch | StudyStore", "Owner launch switch.", True),
 ]
 
 def contact():
