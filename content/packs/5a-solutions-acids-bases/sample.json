@@ -1,0 +1,151 @@
+{
+ "slug": "5a-solutions-acids-bases",
+ "cards": [
+  {
+   "src": "assets/packs/5a-solutions-acids-bases/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 519
+  },
+  {
+   "src": "assets/packs/5a-solutions-acids-bases/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 729
+  },
+  {
+   "src": "assets/packs/5a-solutions-acids-bases/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 454
+  },
+  {
+   "src": "assets/packs/5a-solutions-acids-bases/card-4.webp",
+   "alt": "Sample multiple choice card: Which species is the conjugate acid of HPO4 2-?",
+   "w": 680,
+   "h": 356
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/5a-solutions-acids-bases/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/5a-solutions-acids-bases/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/5a-solutions-acids-bases/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/5a-solutions-acids-bases/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "Which species acts as a Lewis acid in AlCl3 + Cl- -> AlCl4-?",
+   "options": [
+    "AlCl3",
+    "Cl-",
+    "AlCl4-",
+    "None, since no proton is transferred"
+   ],
+   "answer": "A",
+   "explanation": "AlCl3 has an empty orbital on aluminum and accepts an electron pair from Cl-. Chloride is the donor (Lewis base). AlCl4- is the product. The Lewis definition does not require protons, so the last option is wrong.",
+   "subtopic": "Acid and base definitions: Arrhenius, Bronsted-Lowry, Lewis"
+  },
+  {
+   "stem": "At pH 7.4, which phosphate species pair dominates (pKa2 = 7.20)?",
+   "options": [
+    "HPO4 2- and H2PO4-, with HPO4 2- about 1.6 times higher",
+    "H3PO4 and H2PO4-",
+    "PO4 3- and HPO4 2-",
+    "H2PO4- only"
+   ],
+   "answer": "A",
+   "explanation": "pH is 0.2 above pKa2, so the ratio is 10^0.2 = 1.6 HPO4 2- per H2PO4-. H3PO4 is minor above pH 4. PO4 3- appears only near pKa3 (12.35), and both species are present, not just H2PO4-.",
+   "subtopic": "Polyprotic acids"
+  },
+  {
+   "stem": "A weak base B (0.10 M, pKb 4.75) is half-neutralized by HCl. The pH is:",
+   "options": [
+    "9.25",
+    "4.75",
+    "7.00",
+    "5.28"
+   ],
+   "answer": "A",
+   "explanation": "At half-equivalence [B] = [BH+], so pH = pKa of BH+ = 14 - 4.75 = 9.25. The value 4.75 is the pKb (a pOH here), 7.00 is for a strong acid and strong base, and 5.28 is the pH at full equivalence.",
+   "subtopic": "Titration curves and equivalence points"
+  },
+  {
+   "stem": "Ksp of PbI2 is 7.1 x 10^-9. Its molar solubility is closest to:",
+   "options": [
+    "1.2 x 10^-3 M",
+    "8.4 x 10^-5 M",
+    "7.1 x 10^-9 M",
+    "1.8 x 10^-3 M"
+   ],
+   "answer": "A",
+   "explanation": "Ksp = 4s^3, so s = (7.1e-9/4)^(1/3) = 1.2e-3 M. 8.4e-5 uses s^2 (the AB formula), 7.1e-9 is the Ksp itself, and 1.8e-3 uses the wrong power.",
+   "subtopic": "Ksp and molar solubility"
+  },
+  {
+   "stem": "The osmotic pressure of 0.050 M CaCl2 at 300 K (R = 0.0821 L atm/mol K, i = 3) is closest to:",
+   "options": [
+    "3.7 atm",
+    "1.2 atm",
+    "0.12 atm",
+    "11 atm"
+   ],
+   "answer": "A",
+   "explanation": "pi = iMRT = 3 x 0.050 x 0.0821 x 300 = 3.7 atm. 1.2 atm omits i, 0.12 atm uses the wrong power of ten, and 11 atm is three times too large.",
+   "subtopic": "Colligative properties"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Arrhenius definition of an acid and a base?",
+   "back": "An acid raises [H+] in water. A base raises [OH-] in water."
+  },
+  {
+   "type": "cz",
+   "text": "Bronsted-Lowry: an acid {{c1::donates}} a proton and a base {{c1::accepts}} a proton. Lewis: an acid {{c2::accepts}} an electron pair.",
+   "extra": ""
+  },
+  {
+   "type": "mc",
+   "stem": "Which species is the conjugate acid of HPO4 2-?",
+   "options": [
+    "H2PO4-",
+    "PO4 3-",
+    "H3PO4",
+    "H3O+"
+   ],
+   "answer": "A",
+   "why": "Add one proton to HPO4 2- to get H2PO4-. PO4 3- is its conjugate base. H3PO4 is two protons away."
+  },
+  {
+   "type": "tf",
+   "statement": "Every Bronsted-Lowry acid is also an Arrhenius acid.",
+   "truth": false,
+   "why": "Arrhenius acids must release H+ in water. Bronsted-Lowry also covers non-aqueous proton donors and acid-base reactions without water."
+  }
+ ]
+}
