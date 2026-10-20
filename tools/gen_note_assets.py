@@ -188,6 +188,136 @@ def ec():
     ax.text(0.5, 7.1, "The seven enzyme classes", fontsize=13.5, fontweight="bold", va="center")
     save(fig, "enzyme-classes-ec-1-to-7")
 
+# ---- notes-b diagrams (prefixed nb_) ----
+def _nb_box(ax, x, y, w, h, fc, ec=None):
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.02,rounding_size=0.25", fc=fc, ec=ec or fc, lw=1.5))
+
+def nb_memory():
+    fig, ax = plt.subplots(figsize=(11, 7.2))
+    ax.set_xlim(0, 100); ax.set_ylim(0, 66); ax.axis("off")
+    ax.text(1, 64, "Memory by stage", fontsize=13.5, fontweight="bold", va="center")
+    stores = [(1, "Sensory memory", "capacity: large\nduration: < 1 s (iconic)\nto a few s (echoic)\nlost by: decay", GREY),
+              (36, "Short-term / working", "capacity: a few chunks\nduration: ~15 to 30 s\nwithout rehearsal\nlost by: decay, displacement", TEAL),
+              (71, "Long-term memory", "capacity: no known limit\nduration: up to a lifetime\n\nlost by: retrieval failure,\ninterference", ACC)]
+    for x, name, sub, c in stores:
+        _nb_box(ax, x, 49, 28, 6.5, c)
+        ax.text(x + 14, 52.25, name, ha="center", va="center", color="white", fontsize=12, fontweight="bold")
+        _nb_box(ax, x, 35.5, 28, 12, CARD, LINE)
+        ax.text(x + 14, 41.5, sub, ha="center", va="center", fontsize=9.5, color=INK, linespacing=1.35)
+    for x0, x1, lab in [(29.5, 35.5, "attention"), (64.5, 70.5, "encoding")]:
+        ax.annotate("", (x1, 53.6), (x0, 53.6), arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.8))
+        ax.text((x0 + x1) / 2, 57.6, lab, ha="center", fontsize=9.5, color=ACCD, fontweight="bold")
+    ax.annotate("", (64.5, 50.6), (70.5, 50.6), arrowprops=dict(arrowstyle="-|>", color=GREY, lw=1.8))
+    ax.text(67.5, 46.6, "retrieval", ha="center", fontsize=9.5, color=MUTED, fontweight="bold")
+    ax.text(1, 31, "Long-term memory family tree", fontsize=13.5, fontweight="bold", va="center")
+    _nb_box(ax, 36, 22.5, 28, 5.5, ACC)
+    ax.text(50, 25.25, "Long-term memory", ha="center", va="center", color="white", fontsize=11.5, fontweight="bold")
+    fams = [(2, "Explicit (declarative)", "you can explain it", TEAL,
+             [("Episodic", "events: time and place"), ("Semantic", "facts and knowledge")],
+             "forming new ones: hippocampus"),
+            (52, "Implicit (nondeclarative)", "it is in your actions", "#6b3f7a",
+             [("Procedural", "skills"), ("Priming", "faster\nreprocessing"), ("Conditioning", "learned\nlinks")],
+             "basal ganglia, cerebellum; amygdala (fear)")]
+    for x, name, tag, c, kids, brain in fams:
+        ax.plot([50, x + 23], [22.5, 19.5], color=GREY, lw=1.4)
+        _nb_box(ax, x, 13.5, 46, 6, c)
+        ax.text(x + 23, 16.5, f"{name}\n{tag}", ha="center", va="center", color="white", fontsize=10.2, fontweight="bold")
+        w = 46 / len(kids)
+        for i, (k, d) in enumerate(kids):
+            kx = x + i * w
+            _nb_box(ax, kx + 0.5, 4.5, w - 1, 8, CARD, LINE)
+            ax.text(kx + w / 2, 10, k, ha="center", va="center", fontsize=10, fontweight="bold", color=c)
+            ax.text(kx + w / 2, 6.6, d, ha="center", va="center", fontsize=8.6, color=MUTED)
+        ax.text(x + 23, 1.8, brain, ha="center", va="center", fontsize=9, color=INK, style="italic")
+    save(fig, "types-of-memory-sensory-short-term-long-term")
+
+def nb_conditioning():
+    fig, (a, b) = plt.subplots(1, 2, figsize=(12, 5.2), gridspec_kw={"width_ratios": [1, 1.15]})
+    a.set_xlim(0, 10); a.set_ylim(0, 10); a.axis("off")
+    a.set_title("Operant conditioning: two questions", fontsize=12.5, loc="left", fontweight="bold")
+    cells = [(2, 5, "Positive\nreinforcement", "add, behavior UP", TEAL), (6, 5, "Positive\npunishment", "add, behavior DOWN", ACC),
+             (2, 1, "Negative\nreinforcement", "remove, behavior UP", TEAL), (6, 1, "Negative\npunishment", "remove, behavior DOWN", ACC)]
+    for x, y, t, s, c in cells:
+        _nb_box(a, x, y, 3.8, 3.6, c)
+        a.text(x + 1.9, y + 2.3, t, ha="center", va="center", color="white", fontsize=11, fontweight="bold")
+        a.text(x + 1.9, y + 0.7, s, ha="center", va="center", color="white", fontsize=8.8)
+    a.text(3.9, 9.2, "behavior increases", ha="center", fontsize=9.8, fontweight="bold", color=TEAL)
+    a.text(7.9, 9.2, "behavior decreases", ha="center", fontsize=9.8, fontweight="bold", color=ACCD)
+    a.text(1.6, 6.8, "stimulus\nadded (+)", ha="right", va="center", fontsize=9.8, fontweight="bold")
+    a.text(1.6, 2.8, "stimulus\nremoved (-)", ha="right", va="center", fontsize=9.8, fontweight="bold")
+    # idealized cumulative-response model, 0 to 300 s
+    t = np.linspace(0, 300, 3001)
+    vr = 1.0 * t                                   # steady high rate
+    fr_n, fr_rate, fr_pause = 25, 1.0, 8.0         # run of 25 responses then a pause
+    cyc = fr_n / fr_rate + fr_pause
+    k, r = np.floor(t / cyc), t % cyc
+    fr = k * fr_n + np.minimum(r, fr_n / fr_rate) * fr_rate
+    T, per = 60.0, 30.0                            # FI-60 s: responding accelerates through each interval
+    fi = np.floor(t / T) * per + per * ((t % T) / T) ** 3
+    vi = 0.4 * t                                   # slow steady rate
+    for y, lab, c, ls in [(vr, "variable ratio", ACC, "-"), (fr, "fixed ratio", ACCD, "--"),
+                          (vi, "variable interval", TEAL, "-"), (fi, "fixed interval", "#2f4f7a", "--")]:
+        b.plot(t, y, color=c, lw=2.6, ls=ls)
+        b.text(303, y[-1], lab, va="center", fontsize=9.8, color=c, fontweight="bold")
+    b.set_xlim(0, 380); b.set_ylim(0, 320)
+    b.set_xticks([0, 60, 120, 180, 240, 300])
+    b.set_xlabel("time (s)"); b.set_ylabel("cumulative responses")
+    b.set_title("Schedules (idealized model)", fontsize=12.5, loc="left", fontweight="bold")
+    b.text(8, 300, "ratio: steep (fixed ratio pauses after rewards)\ninterval: flatter (fixed interval scallops)",
+           fontsize=9, color=MUTED, va="top")
+    fig.tight_layout()
+    save(fig, "classical-vs-operant-conditioning")
+
+def nb_attribution():
+    fig, ax = plt.subplots(figsize=(10, 6.4))
+    ax.set_xlim(0, 100); ax.set_ylim(0, 64); ax.axis("off")
+    ax.text(1, 62, "Which way does the explanation lean?", fontsize=13.5, fontweight="bold", va="center")
+    ax.text(45, 55, "Good outcome", ha="center", fontsize=11.5, fontweight="bold")
+    ax.text(80, 55, "Bad outcome", ha="center", fontsize=11.5, fontweight="bold")
+    ax.text(25, 40, "My own\nbehavior", ha="right", va="center", fontsize=11.5, fontweight="bold")
+    ax.text(25, 16, "Someone\nelse's\nbehavior", ha="right", va="center", fontsize=11.5, fontweight="bold")
+    cells = [(28, 29, ACC, "DISPOSITIONAL", "\"I studied hard.\"", "self-serving bias\n(beats actor-observer here)"),
+             (63, 29, TEAL, "SITUATIONAL", "\"The test was unfair.\"", "self-serving bias\nand actor-observer bias"),
+             (28, 5, ACC, "DISPOSITIONAL", "\"She is gifted.\"", "fundamental attribution error\n(observer side)"),
+             (63, 5, ACC, "DISPOSITIONAL", "\"He is careless.\"", "fundamental attribution error\nand actor-observer bias")]
+    for x, y, c, lean, quote, why in cells:
+        _nb_box(ax, x, y, 34, 22, c)
+        ax.text(x + 17, y + 18, lean, ha="center", va="center", color="white", fontsize=12.5, fontweight="bold")
+        ax.text(x + 17, y + 12.2, quote, ha="center", va="center", color="white", fontsize=11, style="italic")
+        ax.text(x + 17, y + 5, why, ha="center", va="center", color="white", fontsize=9.3)
+    save(fig, "fundamental-attribution-error-vs-actor-observer-bias")
+
+def nb_demographic():
+    t = np.linspace(0, 100, 1001)
+    sig = lambda x, c, s: 1 / (1 + np.exp(-(x - c) / s))
+    cdr = 40 - 30 * sig(t, 30, 4.5) + 3.5 * sig(t, 88, 3)      # deaths fall first, tick up with aging
+    cbr = 42 - 32 * sig(t, 55, 5.5) - 3 * sig(t, 88, 3)        # births fall later, then below deaths
+    fluct = 3 * np.sin(t * 1.3) * (1 - sig(t, 16, 1.5))
+    cdr = cdr + fluct
+    pop = np.cumsum((cbr - cdr) / 1000) * (t[1] - t[0])        # log-population from natural increase
+    pop = np.exp(pop * 3.0)
+    fig, ax = plt.subplots(figsize=(10.5, 5.4))
+    bounds = [0, 20, 42, 70, 86, 100]
+    names = ["Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5"]
+    for i in range(5):
+        if i % 2 == 0: ax.axvspan(bounds[i], bounds[i + 1], color=PAPER, lw=0)
+        ax.text((bounds[i] + bounds[i + 1]) / 2, 47.5, names[i], ha="center", fontsize=10.5, fontweight="bold")
+    ax.fill_between(t, cdr, cbr, where=cbr >= cdr, color="#fbe3d3", lw=0, label="natural increase")
+    ax.fill_between(t, cdr, cbr, where=cbr < cdr, color="#d6e6e8", lw=0, label="natural decrease")
+    ax.plot(t, cbr, color=ACC, lw=3, label="birth rate")
+    ax.plot(t, cdr, color=TEAL, lw=3, label="death rate")
+    ax.set_xlim(0, 100); ax.set_ylim(0, 50)
+    ax.set_xticks([]); ax.set_xlabel("time, as a society industrializes")
+    ax.set_ylabel("rate per 1,000 per year")
+    ax2 = ax.twinx()
+    ax2.plot(t, pop, color=INK, lw=2, ls="--", label="total population")
+    ax2.set_ylim(0, pop.max() * 1.25); ax2.set_yticks([]); ax2.set_ylabel("total population (relative)")
+    ax2.spines["right"].set_visible(True)
+    h1, l1 = ax.get_legend_handles_labels(); h2, l2 = ax2.get_legend_handles_labels()
+    ax.legend(h1 + h2, l1 + l2, loc="lower left", fontsize=9, frameon=True, facecolor="white", edgecolor=LINE, ncol=1)
+    ax.set_title("The demographic transition: deaths drop first, births follow", fontsize=12.5, loc="left", fontweight="bold")
+    save(fig, "demographic-transition-model-stages")
+
 DIAGRAMS = {
     "amino-acid-pka-charge-ph-7-4": titration,
     "michaelis-menten-and-lineweaver-burk": mm_lb,
@@ -195,6 +325,11 @@ DIAGRAMS = {
     "protein-structure-levels-and-denaturation": protein,
     "henderson-hasselbalch-for-the-mcat": hh,
     "enzyme-classes-ec-1-to-7": ec,
+    # notes-b
+    "types-of-memory-sensory-short-term-long-term": nb_memory,
+    "classical-vs-operant-conditioning": nb_conditioning,
+    "fundamental-attribution-error-vs-actor-observer-bias": nb_attribution,
+    "demographic-transition-model-stages": nb_demographic,
 }
 
 def og_card(slug, title):
