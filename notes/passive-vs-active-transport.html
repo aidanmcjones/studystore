@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Passive vs Active Transport: Types, Examples and Energy Math | StudyStore Notes</title>
+<meta name="description" content="Sort simple diffusion, facilitated diffusion, primary and secondary active transport by energy source, direction and kinetics, with a worked sodium-glucose example.">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Passive vs Active Transport: Types, Examples and Energy Math", "description": "Sort simple diffusion, facilitated diffusion, primary and secondary active transport by energy source, direction and kinetics, with a worked sodium-glucose example.", "image": "https://www.studystore.co/assets/notes/og-passive-vs-active-transport.png?v=a04b31fae8", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "wordCount": 1485, "inLanguage": "en", "mainEntityOfPage": "https://www.studystore.co/notes/passive-vs-active-transport.html", "author": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}, "publisher": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A drug blocks the Na+/K+ ATPase. Why does glucose uptake by SGLT1 eventually fall?", "acceptedAnswer": {"@type": "Answer", "text": "SGLT1 is powered by the Na+ gradient. Without the pump, Na+ leaks in, the gradient runs down, and there is no longer enough energy to drive glucose uphill."}}, {"@type": "Question", "name": "Transport of a solute levels off at high concentrations and is blocked by a structural analog. Simple diffusion or carrier-mediated transport?", "acceptedAnswer": {"@type": "Answer", "text": "Carrier-mediated. Saturation and competition both show that a limited number of binding sites are involved, which simple diffusion lacks."}}, {"@type": "Question", "name": "GLUT2 releases glucose from intestinal cells into the blood. What type of transport is this?", "acceptedAnswer": {"@type": "Answer", "text": "Facilitated diffusion. Glucose moves down its concentration gradient through a carrier protein, with no energy spent."}}, {"@type": "Question", "name": "For each ATP hydrolyzed, how many Na+ and K+ ions does the Na+/K+ ATPase move, and in which directions?", "acceptedAnswer": {"@type": "Answer", "text": "3 Na+ out of the cell and 2 K+ into the cell, for a net loss of one positive charge per cycle."}}, {"@type": "Question", "name": "Why do both terms of the electrochemical gradient favor Na+ entering a typical cell?", "acceptedAnswer": {"@type": "Answer", "text": "Na+ is more concentrated outside than inside, and the cell interior is negative, so both the concentration gradient and the electrical force push the positive ion inward."}}]}</script>
+
+<link rel="canonical" href="https://www.studystore.co/notes/passive-vs-active-transport.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="Passive vs Active Transport: Types, Examples and Energy Math | StudyStore Notes">
+<meta property="og:description" content="Sort simple diffusion, facilitated diffusion, primary and secondary active transport by energy source, direction and kinetics, with a worked sodium-glucose example.">
+<meta property="og:url" content="https://www.studystore.co/notes/passive-vs-active-transport.html">
+<meta property="og:image" content="https://www.studystore.co/assets/notes/og-passive-vs-active-transport.png?v=a04b31fae8">
+<meta name="twitter:image" content="https://www.studystore.co/assets/notes/og-passive-vs-active-transport.png?v=a04b31fae8">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1512'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23f2b705'/%3E%3Ccircle cx='21' cy='16' r='4' fill='%233ddc84'/%3E%3Ccircle cx='11' cy='21' r='4' fill='%236aa2ff'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("ss-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css?v=2a5ac25cc0">
+<link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="../assets/js/exp.js?v=f84a42976d" defer></script>
+<script src="../assets/js/site.js?v=6a476378b3" defer></script>
+<script src="../assets/js/buy.js?v=54b73e6567" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="gridbg" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html" aria-label="StudyStore home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Study<b>Store</b></span></a>
+<nav aria-label="Main"><a href="../index.html#packs">Packs</a><a href="../notes/index.html">Notes</a><a href="../tools/index.html">Tools</a><a href="../index.html#faq">FAQ</a><a href="../refund.html">Refunds</a></nav>
+<div class="tools">
+<span class="phread" aria-hidden="true">pH <b>1.0</b></span>
+<button class="themetoggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+</div>
+</div><div class="phbar" aria-hidden="true"><i></i></div></header>
+<main id="main">
+<article class="note wrap narrow">
+<p class="eyebrow">Free MCAT study note</p>
+<h1>Passive vs Active Transport: Types, Examples and Energy Math</h1>
+<p class="meta">By StudyStore &middot; Published 2026-10-20 &middot; 7 min read &middot; 1485 words</p>
+<div class="prose">
+<p>Passive transport moves a substance down its electrochemical gradient and needs no energy input from the cell. Active transport moves a substance up (against) its gradient and must be paid for, either directly by ATP hydrolysis (primary active transport) or by letting another ion, usually Na<sup>+</sup>, run down its own gradient (secondary active transport). The question that sorts every case is the same: which way is the substance going relative to its gradient, and what pays for it?</p>
+<h2 id="the-four-categories-at-a-glance">The four categories at a glance</h2>
+<div class="tablewrap"><table><thead><tr><th>Type</th><th>Direction</th><th>Energy source</th><th>Protein needed?</th><th>Saturable?</th><th>Examples</th></tr></thead><tbody><tr><td>Simple diffusion</td><td>Down the gradient</td><td>None (the gradient itself)</td><td>No</td><td>No</td><td>O<sub>2</sub>, CO<sub>2</sub>, steroid hormones crossing the bilayer</td></tr><tr><td>Facilitated diffusion</td><td>Down the gradient</td><td>None</td><td>Yes, a channel or a carrier</td><td>Yes</td><td>GLUT transporters for glucose, K<sup>+</sup> leak channels, aquaporins for water</td></tr><tr><td>Primary active transport</td><td>Up the gradient</td><td>ATP hydrolysis by the transporter itself</td><td>Yes, an ATPase pump</td><td>Yes</td><td>Na<sup>+</sup>/K<sup>+</sup> ATPase, Ca<sup>2+</sup> ATPases, H<sup>+</sup>/K<sup>+</sup> ATPase of stomach parietal cells</td></tr><tr><td>Secondary active transport</td><td>One solute up, its partner down</td><td>A pre-existing ion gradient (built by a primary pump)</td><td>Yes, a cotransporter</td><td>Yes</td><td>SGLT1 (Na<sup>+</sup> with glucose), Na<sup>+</sup>/Ca<sup>2+</sup> exchanger, Na<sup>+</sup>/H<sup>+</sup> exchanger</td></tr></tbody></table></div>
+<p>Osmosis, the movement of water across a membrane toward the side with more solute particles, is a special case of passive transport. Water diffuses through the bilayer slowly and through aquaporins quickly, but either way no energy is spent.</p>
+<h2 id="passive-transport-simple-versus-facilitated">Passive transport: simple versus facilitated</h2>
+<p><strong>Simple diffusion</strong> works for molecules that can dissolve in the hydrophobic core of the membrane: small, nonpolar, uncharged ones such as oxygen, carbon dioxide, and lipid-soluble hormones. The rate is proportional to the concentration difference across the membrane, so doubling the gradient doubles the flux, with no ceiling.</p>
+<p><strong>Facilitated diffusion</strong> helps polar molecules and ions that the bilayer blocks. The protein lowers the barrier, but the direction is still set by the gradient, and the protein never pushes anything uphill.</p>
+<ul><li><strong>Channels</strong> form a pore. Ion channels are often selective and gated (opened by voltage, a ligand, or mechanical force). They pass ions very fast.</li><li><strong>Carriers</strong> bind the solute, change shape, and release it on the other side. GLUT1 on red blood cells and GLUT4 in muscle and fat (moved to the surface in response to insulin) are carriers for glucose.</li></ul>
+<p>Because carriers have a limited number of binding sites, facilitated diffusion saturates. At high solute concentration, every carrier is busy, and the rate levels off at a maximum. The curve looks just like enzyme kinetics, and you can read it the same way as in the <a href="michaelis-menten-and-lineweaver-burk.html">Michaelis-Menten note</a>: a maximum rate, and a concentration that gives half of it.</p>
+<figure><img src="../assets/notes/passive-vs-active-transport.png?v=a5fd71f77c" alt="Transport rate versus solute concentration for simple diffusion and carrier-mediated transport" loading="lazy"><figcaption>Simple diffusion rises in a straight line. Carrier transport saturates at Jmax, and reaches half of it at the carrier's K value. Values are illustrative.</figcaption></figure>
+<h2 id="primary-active-transport">Primary active transport</h2>
+<p>A primary active transporter hydrolyzes ATP itself and uses that energy to move ions against their gradients. The most important one is the <strong>Na<sup>+</sup>/K<sup>+</sup> ATPase</strong>:</p>
+<ul><li>Each cycle moves 3 Na<sup>+</sup> out of the cell and 2 K<sup>+</sup> into it, for one ATP.</li><li>It is electrogenic: one net positive charge leaves per cycle, which makes a small direct contribution to the negative resting potential.</li><li>Its main job is building and keeping the gradients: high Na<sup>+</sup> outside, high K<sup>+</sup> inside. Those gradients power secondary transport, set the resting potential through K<sup>+</sup> leak, and help control cell volume.</li><li>Inhibiting it (the cardiac glycoside digoxin does this) lets the gradients run down over time.</li></ul>
+<p>Other primary pumps include the Ca<sup>2+</sup> ATPases that keep cytosolic calcium very low (in the plasma membrane and in the sarcoplasmic reticulum of muscle) and the H<sup>+</sup>/K<sup>+</sup> ATPase that acidifies the stomach.</p>
+<h2 id="secondary-active-transport">Secondary active transport</h2>
+<p>A secondary active transporter uses no ATP directly. It couples the downhill movement of one ion to the uphill movement of another solute. The energy was stored earlier, when a primary pump built the ion gradient.</p>
+<ul><li><strong>Symport (cotransport):</strong> both move the same direction. SGLT1 in the small intestine carries 2 Na<sup>+</sup> and 1 glucose into the cell together, pulling glucose in even when the cell already holds more glucose than the gut lumen.</li><li><strong>Antiport (exchange):</strong> they move in opposite directions. The Na<sup>+</sup>/Ca<sup>2+</sup> exchanger lets 3 Na<sup>+</sup> in while pushing 1 Ca<sup>2+</sup> out.</li></ul>
+<p>If the Na<sup>+</sup>/K<sup>+</sup> ATPase stops, secondary transport fails too, because its power source drains away. That link is a favorite reasoning question.</p>
+<h3 id="how-intestinal-cells-absorb-glucose">How intestinal cells absorb glucose</h3>
+<p>Glucose absorption uses three transport types in one cell. SGLT1 on the gut-facing membrane brings glucose in by secondary active transport. GLUT2 on the blood-facing membrane lets glucose leave by facilitated diffusion, down the gradient SGLT1 created. The Na<sup>+</sup>/K<sup>+</sup> ATPase on the blood-facing side pumps the incoming Na<sup>+</sup> back out by primary active transport, keeping the Na<sup>+</sup> gradient that drives the whole system.</p>
+<h2 id="worked-example-how-far-can-sodium-push-glucose">Worked example: how far can sodium push glucose?</h2>
+<p>The free energy change for moving one mole of a solute into a cell is:</p>
+<p>&Delta;G = RT ln([inside]/[outside]) + zF&Delta;V</p>
+<p>where &Delta;V is the membrane potential (inside relative to outside). At body temperature, RT is about 2.58 kJ/mol, and RT ln 10 is about 5.9 kJ/mol.</p>
+<p><strong>Step 1: the cost of concentrating glucose.</strong> Glucose is uncharged, so only the concentration term counts. Moving it into a cell that already has 10 times more inside than outside costs about +5.9 kJ/mol. Each further tenfold costs another 5.9 kJ/mol.</p>
+<p><strong>Step 2: the energy released by Na<sup>+</sup> entry.</strong> Take 145 mM Na<sup>+</sup> outside, 15 mM inside, and a membrane potential of -70 mV.</p>
+<ul><li>Concentration term: RT ln(15/145) = 2.58 &times; (-2.27), about -5.8 kJ/mol.</li><li>Electrical term: zF&Delta;V = (+1)(96,485)(-0.070), about -6.8 kJ/mol.</li><li>Total: about <strong>-12.6 kJ per mole of Na<sup>+</sup></strong> entering. Both terms favor entry: Na<sup>+</sup> is pushed in by its concentration gradient and pulled in by the negative interior.</li></ul>
+<p><strong>Step 3: couple them.</strong> SGLT1 moves 2 Na<sup>+</sup> per glucose, releasing about 25 kJ/mol. That could, in principle, support a glucose gradient as large as the one where its cost equals 25 kJ/mol: e<sup>25,200/2,580</sup>, about 18,000 to one. Real cells never get near this ceiling, but the arithmetic shows why a 2:1 stoichiometry is powerful. With only one Na<sup>+</sup> per glucose, the maximum would be about 130 to one.</p>
+<p>The same sum also explains why charge matters. For an ion, a gradient can be uphill in concentration but downhill overall if the voltage pulls hard enough. Always add both terms before deciding whether a movement is passive or active.</p>
+<h2 id="bulk-transport">Bulk transport</h2>
+<p>Large particles and fluid cross by vesicles: endocytosis (phagocytosis of particles, pinocytosis of fluid, and receptor-mediated uptake such as LDL particles through clathrin-coated pits) and exocytosis (for example, neurotransmitter or hormone release). Both require energy, but they are usually grouped separately from the carrier-based active transport above.</p>
+<h2 id="common-traps">Common traps</h2>
+<ul><li><strong>Calling facilitated diffusion active because it uses a protein.</strong> A protein does not make transport active. Direction and energy source do.</li><li><strong>Saying secondary active transport uses ATP.</strong> Not directly. It spends an ion gradient that a primary pump built with ATP.</li><li><strong>Ignoring the voltage term for ions.</strong> Judge the electrochemical gradient, not the concentration gradient alone.</li><li><strong>Getting the pump stoichiometry backward.</strong> 3 Na<sup>+</sup> out, 2 K<sup>+</sup> in.</li><li><strong>Assuming simple diffusion saturates.</strong> It does not. Saturation points to a carrier.</li><li><strong>Thinking water moves toward lower solute.</strong> Water moves toward the side with more solute particles (higher osmolarity).</li></ul>
+<h2 id="one-minute-recap">One-minute recap</h2>
+<p>Passive: down the gradient, no energy. Simple diffusion for small nonpolar molecules, linear and unsaturable. Facilitated diffusion through channels or carriers, saturable but still downhill. Active: up the gradient. Primary pumps hydrolyze ATP directly (Na<sup>+</sup>/K<sup>+</sup> ATPase: 3 Na<sup>+</sup> out, 2 K<sup>+</sup> in). Secondary transporters spend the Na<sup>+</sup> gradient (symport such as SGLT1, antiport such as the Na<sup>+</sup>/Ca<sup>2+</sup> exchanger). Use &Delta;G = RT ln(C<sub>in</sub>/C<sub>out</sub>) + zF&Delta;V to decide which way a solute wants to go.</p>
+</div>
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Cells, Membranes and Tissues is a $15 pack with original Anki cards and a printable cheat sheet. <a href="../products/2a-cells-membranes.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
+<p class="meta">Try each question first, then click it to reveal the answer.</p>
+<div class="quiz"><details class="q"><summary>1. A drug blocks the Na+/K+ ATPase. Why does glucose uptake by SGLT1 eventually fall?</summary><div><p>SGLT1 is powered by the Na+ gradient. Without the pump, Na+ leaks in, the gradient runs down, and there is no longer enough energy to drive glucose uphill.</p></div></details><details class="q"><summary>2. Transport of a solute levels off at high concentrations and is blocked by a structural analog. Simple diffusion or carrier-mediated transport?</summary><div><p>Carrier-mediated. Saturation and competition both show that a limited number of binding sites are involved, which simple diffusion lacks.</p></div></details><details class="q"><summary>3. GLUT2 releases glucose from intestinal cells into the blood. What type of transport is this?</summary><div><p>Facilitated diffusion. Glucose moves down its concentration gradient through a carrier protein, with no energy spent.</p></div></details><details class="q"><summary>4. For each ATP hydrolyzed, how many Na+ and K+ ions does the Na+/K+ ATPase move, and in which directions?</summary><div><p>3 Na+ out of the cell and 2 K+ into the cell, for a net loss of one positive charge per cycle.</p></div></details><details class="q"><summary>5. Why do both terms of the electrochemical gradient favor Na+ entering a typical cell?</summary><div><p>Na+ is more concentrated outside than inside, and the cell interior is negative, so both the concentration gradient and the electrical force push the positive ion inward.</p></div></details></div>
+<h2>Keep studying</h2>
+<ul><li><a href="action-potential-phases-ion-channels.html">Action Potential Phases and Ion Channels, Step by Step</a></li><li><a href="michaelis-menten-and-lineweaver-burk.html">Michaelis-Menten Kinetics and Lineweaver-Burk Plots Explained</a></li><li><a href="index.html">All free notes</a></li></ul>
+
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Cells, Membranes and Tissues is a $15 pack with original Anki cards and a printable cheat sheet. <a href="../products/2a-cells-membranes.html">See what is inside</a>.</p></div><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a></aside>
+<p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div>
+<p class="flabel">StudyStore</p>
+<p>Original, high-yield MCAT study packs. Written from scratch, checked card by card.</p>
+</div>
+<div>
+<p class="flabel">Shop</p>
+<p class="links"><a href="../index.html#packs">Packs</a><a href="../products/index.html">All packs</a><a href="../notes/index.html">Free notes</a></p>
+</div>
+<div>
+<p class="flabel">Policies</p>
+<p class="links"><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><a href="../refund.html">Refund policy</a></p>
+</div>
+</div>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+<p class="wordmark" aria-hidden="true">Study<b>Store</b></p>
+</div></footer>
+</body>
+</html>

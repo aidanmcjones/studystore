@@ -228,5 +228,157 @@ def main():
             print(f"WARNING: no diagram for {slug}; add a function to DIAGRAMS")
         print("assets:", slug)
 
+# ---- notes-a diagrams (4C, 5A, 3A, 2A) ----
+def na_galvanic():
+    fig, axes = plt.subplots(1, 2, figsize=(11, 5.2))
+    specs = [("Galvanic (spontaneous)", "Zn", "Cu", "-", "+", "load (bulb)", TEAL,
+              "E > 0,  delta G < 0", "chemical -> electrical"),
+             ("Electrolytic (driven)", "C", "C", "+", "-", "power supply", ACC,
+              "E < 0,  delta G > 0", "electrical -> chemical")]
+    for ax, (title, la, lc, sa, sc, dev, col, eg, conv) in zip(axes, specs):
+        ax.set_xlim(0, 10); ax.set_ylim(0, 10); ax.axis("off")
+        ax.text(0.2, 9.6, title, fontsize=13, fontweight="bold", color=col, va="center")
+        # beaker(s)
+        if dev.startswith("load"):
+            for x0 in (0.6, 5.6):
+                ax.add_patch(FancyBboxPatch((x0, 0.8), 3.8, 3.6, boxstyle="round,pad=0.02,rounding_size=0.2", fc="#e8f1f2", ec=INK, lw=1.4))
+            ax.plot([3.4, 3.4, 6.6, 6.6], [3.2, 4.9, 4.9, 3.2], color=GREY, lw=7, solid_capstyle="butt", alpha=0.55)
+            ax.text(5.0, 5.25, "salt bridge", ha="center", fontsize=9.5, color=MUTED)
+            xa, xc = 2.5, 7.5
+        else:
+            ax.add_patch(FancyBboxPatch((0.8, 0.8), 8.4, 3.6, boxstyle="round,pad=0.02,rounding_size=0.2", fc="#fbe8dc", ec=INK, lw=1.4))
+            ax.text(5.0, 1.35, "molten NaCl", ha="center", fontsize=10, color=MUTED)
+            xa, xc = 2.5, 7.5
+        for x, lab, sign, role in [(xa, la, sa, "ANODE\noxidation"), (xc, lc, sc, "CATHODE\nreduction")]:
+            ax.add_patch(plt.Rectangle((x - 0.35, 1.6), 0.7, 4.6, fc="#b9bec4", ec=INK, lw=1.2))
+            ax.text(x, 2.3, lab, ha="center", fontsize=10, fontweight="bold")
+            ax.add_patch(Circle((x, 6.75), 0.42, fc="white", ec=col, lw=2))
+            ax.text(x, 6.75, sign, ha="center", va="center", fontsize=15, fontweight="bold", color=col)
+            ax.text(x, 0.3, role, ha="center", va="center", fontsize=9.5, fontweight="bold", color=INK)
+        ax.plot([xa, xa, xc, xc], [7.17, 8.3, 8.3, 7.17], color=INK, lw=1.6)
+        ax.add_patch(FancyBboxPatch((3.7, 7.9), 2.6, 0.8, boxstyle="round,pad=0.02,rounding_size=0.15", fc=CARD, ec=INK, lw=1.2, zorder=3))
+        ax.text(5.0, 8.3, dev, ha="center", va="center", fontsize=9.5, zorder=4)
+        ax.annotate("", xy=(3.55, 8.75), xytext=(2.3, 8.75), arrowprops=dict(arrowstyle="-|>", color=col, lw=2))
+        ax.annotate("", xy=(7.7, 8.75), xytext=(6.45, 8.75), arrowprops=dict(arrowstyle="-|>", color=col, lw=2))
+        ax.text(2.0, 9.05, "e-", fontsize=10, color=col, fontweight="bold")
+        ax.text(7.75, 9.05, "e-", fontsize=10, color=col, fontweight="bold")
+        ax.text(5.0, 6.75, eg, ha="center", va="center", fontsize=9.3, fontweight="bold", color=ACCD)
+        ax.text(5.0, 6.15, conv, ha="center", va="center", fontsize=9.5, color=MUTED)
+    save(fig, "galvanic-vs-electrolytic-cells")
+
+def na_titration():
+    Kw, Ca, Cb, Va = 1e-14, 0.100, 0.100, 25.0
+    Ka = 10 ** -4.76
+    vb = np.linspace(0, 40, 2001)
+    def ph_weak(v):
+        # exact charge balance: [Na+] + [H+] = [A-] + [OH-]
+        ct, na = Ca * Va / (Va + v), Cb * v / (Va + v)
+        lo, hi = 0.0, 14.0
+        for _ in range(80):
+            mid = (lo + hi) / 2; h = 10 ** -mid
+            f = na + h - ct * Ka / (Ka + h) - Kw / h
+            lo, hi = (mid, hi) if f > 0 else (lo, mid)
+        return (lo + hi) / 2
+    def ph_strong(v):
+        ex = (Ca * Va - Cb * v) / (Va + v)
+        h = ex / 2 + np.sqrt(ex * ex / 4 + Kw)
+        return -np.log10(h)
+    w = np.array([ph_weak(v) for v in vb]); s = np.array([ph_strong(v) for v in vb])
+    fig, ax = plt.subplots(figsize=(8.2, 5.2))
+    ax.plot(vb, s, color=GREY, lw=2.6, label="0.100 M HCl (strong)")
+    ax.plot(vb, w, color=TEAL, lw=3, label="0.100 M acetic acid (weak)")
+    ax.axvline(25, color=LINE, lw=1.2, ls="--")
+    pe = ph_weak(25.0)
+    ax.plot([12.5], [ph_weak(12.5)], "o", color=ACC, ms=9)
+    ax.annotate("half-equivalence\n12.5 mL, pH = pKa = 4.76", (12.5, ph_weak(12.5)), (3.0, 7.4), fontsize=9.8,
+                arrowprops=dict(arrowstyle="-", color=GREY))
+    ax.plot([25], [pe], "o", color=INK, ms=9)
+    ax.annotate(f"weak acid equivalence\npH = {pe:.2f}", (25, pe), (27.5, 6.2), fontsize=9.8, fontweight="bold",
+                arrowprops=dict(arrowstyle="-", color=GREY))
+    ax.plot([25], [7.0], "s", color=GREY, ms=8)
+    ax.annotate("strong acid equivalence\npH = 7.00", (25, 7.0), (27.5, 3.4), fontsize=9.8,
+                arrowprops=dict(arrowstyle="-", color=GREY))
+    ax.axhspan(4.76 - 1, 4.76 + 1, xmin=0.06, xmax=0.55, color="#fbe3d3", alpha=0.7, lw=0)
+    ax.text(14.5, 3.95, "buffer region", fontsize=9.5, color=ACCD, ha="center")
+    ax.set_xlim(0, 40); ax.set_ylim(0, 14)
+    ax.set_xlabel("volume of 0.100 M NaOH added (mL)"); ax.set_ylabel("pH")
+    ax.legend(loc="lower right", frameon=False)
+    ax.set_title("Weak vs strong acid titration (25.0 mL of acid)", fontsize=12.5, loc="left", fontweight="bold")
+    save(fig, "acid-base-titration-curves-equivalence-point")
+
+def na_action_potential():
+    # Hodgkin-Huxley model, squid axon parameters (modern sign convention, rest near -65 mV)
+    gNa, gK, gL, ENa, EK, EL = 120.0, 36.0, 0.3, 50.0, -77.0, -54.387
+    am = lambda V: 0.1 * (V + 40) / (1 - np.exp(-(V + 40) / 10))
+    bm = lambda V: 4 * np.exp(-(V + 65) / 18)
+    ah = lambda V: 0.07 * np.exp(-(V + 65) / 20)
+    bh = lambda V: 1 / (1 + np.exp(-(V + 35) / 10))
+    an = lambda V: 0.01 * (V + 55) / (1 - np.exp(-(V + 55) / 10))
+    bn = lambda V: 0.125 * np.exp(-(V + 65) / 80)
+    dt, T = 0.005, 14.0
+    t = np.arange(0, T, dt)
+    V = -65.0
+    m, h, n = am(V) / (am(V) + bm(V)), ah(V) / (ah(V) + bh(V)), an(V) / (an(V) + bn(V))
+    Vs, gna, gk = [], [], []
+    for ti in t:
+        I = 10.0 if 1.0 <= ti < 2.0 else 0.0
+        INa, IK, IL = gNa * m ** 3 * h * (V - ENa), gK * n ** 4 * (V - EK), gL * (V - EL)
+        V += dt * (I - INa - IK - IL)
+        m += dt * (am(V) * (1 - m) - bm(V) * m)
+        h += dt * (ah(V) * (1 - h) - bh(V) * h)
+        n += dt * (an(V) * (1 - n) - bn(V) * n)
+        Vs.append(V); gna.append(gNa * m ** 3 * h); gk.append(gK * n ** 4)
+    Vs, gna, gk = map(np.array, (Vs, gna, gk))
+    fig, (a, b) = plt.subplots(2, 1, figsize=(8.4, 6.6), sharex=True, gridspec_kw=dict(height_ratios=[1.6, 1]))
+    a.plot(t, Vs, color=INK, lw=2.8)
+    a.axhline(ENa, color=ACC, ls=":", lw=1.3); a.text(T - 0.1, ENa + 2.5, "E_Na (model) +50 mV", ha="right", fontsize=9, color=ACCD)
+    a.axhline(EK, color=TEAL, ls=":", lw=1.3); a.text(T - 0.1, EK - 8.5, "E_K (model) -77 mV", ha="right", fontsize=9, color=TEAL)
+    ip = int(np.argmax(Vs)); imin = ip + int(np.argmin(Vs[ip:]))
+    a.annotate("rising phase:\nNa+ rushes in", (t[ip] - 0.33, 0), (0.25, 8), fontsize=9.5, arrowprops=dict(arrowstyle="-", color=GREY))
+    a.annotate(f"peak {Vs[ip]:.0f} mV", (t[ip], Vs[ip]), (t[ip] + 0.9, Vs[ip] + 4), fontsize=9.5, fontweight="bold",
+               arrowprops=dict(arrowstyle="-", color=GREY))
+    a.annotate("falling phase:\nK+ flows out", (t[ip] + 1.0, 0), (6.3, 8), fontsize=9.5, arrowprops=dict(arrowstyle="-", color=GREY))
+    a.annotate("undershoot", (t[imin], Vs[imin]), (t[imin] + 0.9, Vs[imin] + 14), fontsize=9.5,
+               arrowprops=dict(arrowstyle="-", color=GREY))
+    a.text(0.15, -60, "rest", fontsize=9.5, color=MUTED)
+    a.axvspan(1.0, 2.0, color="#fbe3d3", alpha=0.8, lw=0); a.text(1.5, -86, "stimulus", ha="center", fontsize=9, color=ACCD)
+    a.set_ylim(-90, 62); a.set_ylabel("membrane potential (mV)")
+    a.set_title("Action potential and the conductances behind it", fontsize=12.5, loc="left", fontweight="bold")
+    b.plot(t, gna, color=ACC, lw=2.6, label="Na+ conductance")
+    b.plot(t, gk, color=TEAL, lw=2.6, label="K+ conductance")
+    b.set_ylabel("conductance (mS/cm2)"); b.set_xlabel("time (ms)")
+    b.legend(frameon=False, loc="upper right")
+    b.set_xlim(0, T)
+    save(fig, "action-potential-phases-ion-channels")
+
+def na_transport():
+    C = np.linspace(0, 20, 400)
+    Jmax, K, P = 10.0, 2.0, 0.6
+    simple = P * C
+    carrier = Jmax * C / (K + C)
+    fig, ax = plt.subplots(figsize=(8, 4.8))
+    ax.plot(C, simple, color=GREY, lw=2.8, label="simple diffusion (no protein)")
+    ax.plot(C, carrier, color=TEAL, lw=3, label="carrier-mediated (facilitated or active)")
+    ax.axhline(Jmax, color=ACC, ls=":", lw=1.3)
+    ax.text(4.5, Jmax + 0.3, "Jmax: all carriers busy", ha="left", fontsize=10, color=ACCD, fontweight="bold")
+    ax.plot([0, K, K], [Jmax / 2, Jmax / 2, 0], ls="--", color=ACC, lw=1.3)
+    ax.plot([K], [Jmax / 2], "o", color=ACC, ms=8)
+    ax.text(K + 0.4, 1.0, "K (half-max)", fontsize=10, color=ACCD)
+    ax.annotate("rate keeps rising\nwith the gradient", (18.5, P * 18.5), (12.0, 12.8), fontsize=9.8,
+                arrowprops=dict(arrowstyle="-", color=GREY))
+    ax.set_xlim(0, 20); ax.set_ylim(0, 14)
+    ax.set_xlabel("solute concentration difference (arbitrary units)"); ax.set_ylabel("transport rate (arbitrary units)")
+    ax.legend(loc="lower right", frameon=False)
+    ax.set_title("Saturation is the fingerprint of a carrier", fontsize=12.5, loc="left", fontweight="bold")
+    save(fig, "passive-vs-active-transport")
+
+DIAGRAMS.update({
+    "galvanic-vs-electrolytic-cells": na_galvanic,
+    "acid-base-titration-curves-equivalence-point": na_titration,
+    "action-potential-phases-ion-channels": na_action_potential,
+    "passive-vs-active-transport": na_transport,
+})
+# ---- end notes-a diagrams ----
+
 if __name__ == "__main__":
     main()
