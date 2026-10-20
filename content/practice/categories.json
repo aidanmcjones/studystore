@@ -153,5 +153,10 @@
     "slug": "10a",
     "title": "Social Inequality and Health Disparities",
     "blurb": "Social class, mobility, poverty, meritocracy and social capital."
+  },
+  "CARS": {
+    "slug": "cars",
+    "title": "Critical Analysis and Reasoning Skills",
+    "blurb": "Original humanities and social science passages with main idea, function, tone, inference, application and strengthen or weaken questions."
   }
 }
