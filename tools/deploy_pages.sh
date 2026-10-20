@@ -12,7 +12,7 @@ rsync -a --prune-empty-dirs \
   --exclude '.*' --exclude '__pycache__/' --exclude '/tools/*.sh' --exclude '/tools/*.py' --exclude 'templates/' --exclude 'content/' \
   --exclude 'db/' --exclude 'functions/' --exclude 'node_modules/' \
   --include '*/' --include '*.html' --include 'sitemap.xml' --include 'robots.txt' \
-  --include '[0-9a-f]*[0-9a-f].txt' --include 'experiments.json' --include '/_redirects' \
+  --include '[0-9a-f]*[0-9a-f].txt' --include 'experiments.json' --include '/_redirects' --include '/_headers' \
   --include 'assets/**.css' --include 'assets/**.js' --include 'assets/**.png' --include 'assets/**.jpg' \
   --include 'assets/**.webp' --include 'assets/**.svg' --exclude '*' ./ .deploy/
 BAD="$(find .deploy -type f \( -iname '*.apkg' -o -iname '*.zip' -o -iname '*.pdf' -o -iname '*.colpkg' \

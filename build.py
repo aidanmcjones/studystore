@@ -12,6 +12,7 @@ from pathlib import Path
 from mdlite import convert, parse_frontmatter, extract_quiz
 import products_build as PB  # catalog product/bundle/thanks pages (G01)
 import practice_build
+from assetver import version_assets
 
 ROOT = Path(__file__).parent
 site = json.loads((ROOT / "site.json").read_text())
@@ -75,7 +76,7 @@ def emit(out, title, desc, body, noindex=False, og_image=DEFAULT_OG, og_type="we
     page = page.replace("{{head_extra}}", head_extra)
     if noindex:
         root = "/studystore/" if BASE.endswith("/studystore") else "/"
-    page = render(page, root)
+    page = version_assets(render(page, root))
     dest = ROOT / out
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(page)
