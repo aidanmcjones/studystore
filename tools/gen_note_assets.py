@@ -515,5 +515,120 @@ DIAGRAMS.update({
 })
 # ---- end notes-a diagrams ----
 
+# ---- notes-h diagrams (9A, 10A, CARS) ----
+def _nh_box(ax, x, y, w, h, fc, ec=None, lw=1.5, r=1.2):
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle=f"round,pad=0,rounding_size={r}", fc=fc, ec=ec or fc, lw=lw))
+
+def nh_paradigms():
+    fig, ax = plt.subplots(figsize=(10.5, 5.6))
+    ax.set_xlim(0, 100); ax.set_ylim(0, 56); ax.axis("off")
+    # nested levels: society > institution > encounter
+    _nh_box(ax, 2, 3, 56, 46, PAPER, LINE, lw=2)
+    ax.text(5, 45.5, "SOCIETY", fontsize=11, fontweight="bold", color=MUTED)
+    _nh_box(ax, 9, 7, 42, 33, "#fbe3d3", ACC, lw=1.5)
+    ax.text(12, 36.5, "INSTITUTION (e.g. a hospital)", fontsize=10, fontweight="bold", color=ACCD)
+    _nh_box(ax, 16, 11, 28, 19, CARD, TEAL, lw=2)
+    ax.text(30, 27, "ENCOUNTER", fontsize=10, fontweight="bold", color=TEAL, ha="center")
+    for cx, lab in [(24, "nurse"), (36, "patient")]:
+        ax.add_patch(Circle((cx, 19.5), 2.6, fc=TEAL, ec="none"))
+        ax.text(cx, 14.2, lab, ha="center", fontsize=9.5)
+    ax.annotate("", (33.2, 19.5), (26.8, 19.5), arrowprops=dict(arrowstyle="<->", color=INK, lw=1.4))
+    ax.text(30, 22.6, "shared meanings", ha="center", fontsize=8.8, color=MUTED, style="italic")
+    lenses = [(47.5, "FUNCTIONALISM", "macro", "What does this part do\nto keep society stable?", INK, (57.5, 44)),
+              (31, "CONFLICT THEORY", "macro", "Who gains, who loses,\nand who holds power?", ACC, (50.5, 33)),
+              (14, "SYMBOLIC INTERACTIONISM", "micro", "What does this mean to\nthe people involved?", TEAL, (44, 22))]
+    for y, name, lvl, q, c, tip in lenses:
+        _nh_box(ax, 64, y - 5.5, 35, 11.5, c)
+        ax.text(66, y + 3, name, color="white", fontsize=10.5, fontweight="bold", va="center")
+        ax.text(97.5, y - 4, lvl + " level", color="white", fontsize=9, ha="right", va="center", style="italic")
+        ax.text(66, y - 1.6, q, color="white", fontsize=9.6, va="center")
+        ax.annotate("", tip, (64, y), arrowprops=dict(arrowstyle="-|>", color=c, lw=2))
+    ax.set_title("Three lenses, three zoom levels", fontsize=12.5, loc="left", fontweight="bold")
+    save(fig, "functionalism-vs-conflict-theory-vs-symbolic-interactionism")
+
+def nh_mobility():
+    fig, (a, b) = plt.subplots(1, 2, figsize=(11.5, 5.2), gridspec_kw={"width_ratios": [1.15, 1]})
+    a.set_xlim(0, 100); a.set_ylim(0, 60); a.axis("off")
+    rungs = ["lower", "working", "middle", "upper middle", "upper"]
+    ys = [6 + 11 * i for i in range(5)]
+    for y, r in zip(ys, rungs):
+        a.plot([8, 92], [y, y], color=LINE, lw=6, solid_capstyle="round", zorder=1)
+        a.text(7, y, r, ha="right", va="center", fontsize=9.5, color=MUTED)
+    def dot(x, y, c, lab, dx=0, dy=-4.6, ha="center"):
+        a.add_patch(Circle((x, y), 2.4, fc=c, ec="white", lw=1.5, zorder=3))
+        a.text(x + dx, y + dy, lab, ha=ha, va="center", fontsize=8.6, zorder=3)
+    # intergenerational: parent (working) -> child (upper middle)
+    dot(20, ys[1], GREY, "parent"); dot(20, ys[3], ACC, "child", dx=-3.5, dy=0, ha="right")
+    a.annotate("", (20, ys[3] - 2.6), (20, ys[1] + 2.6), arrowprops=dict(arrowstyle="-|>", color=ACC, lw=2.2))
+    a.text(22.5, (ys[1] + ys[3]) / 2, "intergenerational\n(parent vs child)", fontsize=9, color=ACCD, va="center")
+    # intragenerational: same person, two career points, downward
+    dot(55, ys[2], TEAL, "age 30", dx=3.5, dy=1.8, ha="left"); dot(66, ys[0], TEAL, "age 50")
+    a.annotate("", (65, ys[0] + 2.6), (56, ys[2] - 2.6), arrowprops=dict(arrowstyle="-|>", color=TEAL, lw=2.2))
+    a.text(62.5, ys[1] + 2, "intragenerational,\ndownward", fontsize=9, color=TEAL, va="center")
+    # horizontal: same rung
+    dot(70, ys[4], INK, "job A"); dot(88, ys[4], INK, "job B")
+    a.annotate("", (85.4, ys[4]), (72.6, ys[4]), arrowprops=dict(arrowstyle="-|>", color=INK, lw=2.2))
+    a.text(79, ys[4] + 3.4, "horizontal", fontsize=9, ha="center")
+    a.set_title("Who is compared, and did rank change?", fontsize=12, loc="left", fontweight="bold")
+    T = np.array([[22, 15, 3], [8, 24, 8], [2, 7, 11]])
+    b.imshow(T, cmap="Oranges", vmin=0, vmax=30)
+    labs = ["lower", "middle", "upper"]
+    for i in range(3):
+        for j in range(3):
+            kind = "stay" if i == j else ("up" if j > i else "down")
+            b.text(j, i - 0.1, str(T[i, j]), ha="center", va="center", fontsize=15, fontweight="bold",
+                   color="white" if T[i, j] > 18 else INK)
+            b.text(j, i + 0.27, kind, ha="center", va="center", fontsize=8.5, color="white" if T[i, j] > 18 else MUTED)
+    b.set_xticks(range(3)); b.set_xticklabels(labs); b.set_yticks(range(3)); b.set_yticklabels(labs)
+    b.set_xlabel("child's class"); b.set_ylabel("parents' class")
+    b.xaxis.set_label_position("top"); b.xaxis.tick_top()
+    for sp in b.spines.values(): sp.set_visible(False)
+    up = int(np.triu(T, 1).sum()); down = int(np.tril(T, -1).sum()); stay = int(np.trace(T))
+    b.text(1, 2.95, f"stay {stay}   up {up}   down {down}   (of {T.sum()})", ha="center", va="center", fontsize=10)
+    b.set_title("Illustrative mobility table, 100 families", fontsize=12, loc="left", fontweight="bold", pad=34)
+    fig.tight_layout()
+    save(fig, "types-of-social-mobility-and-stratification")
+
+def nh_cars():
+    read, idea, nq = 3.5, 0.5, 6
+    qlen = (10 - read - idea) / nq
+    fig, (a, b) = plt.subplots(2, 1, figsize=(10.5, 4.9), gridspec_kw={"height_ratios": [1.25, 1]})
+    for ax in (a, b):
+        ax.set_yticks([]); ax.spines["left"].set_visible(False)
+    a.barh(0, read, left=0, color=TEAL, height=0.6)
+    a.text(read / 2, 0, "read + map\n3.5 min", ha="center", va="center", color="white", fontsize=10, fontweight="bold")
+    a.barh(0, idea, left=read, color=INK, height=0.6)
+    a.annotate("main idea\n0.5 min", (read + idea / 2, 0.3), (read + idea / 2, 0.75), ha="center", fontsize=9,
+               arrowprops=dict(arrowstyle="-", color=GREY))
+    for k in range(nq):
+        x0 = read + idea + k * qlen
+        a.barh(0, qlen, left=x0, color=ACC if k % 2 == 0 else ACCD, height=0.6, edgecolor="white")
+        a.text(x0 + qlen / 2, 0, f"Q{k + 1}", ha="center", va="center", color="white", fontsize=10, fontweight="bold")
+    a.text(10, -0.62, f"about {qlen * 60:.0f} s per question; flag and move on after about 90 s", ha="right", fontsize=9.3, color=MUTED)
+    a.set_xlim(0, 10); a.set_ylim(-0.85, 1.15); a.set_xticks(range(0, 11))
+    a.set_xlabel("minutes into one passage", fontsize=9.5)
+    a.set_title("One passage: about 10 minutes", fontsize=12, loc="left", fontweight="bold")
+    total, npass = 90, 9
+    per = total / npass
+    for k in range(npass):
+        b.barh(0, per, left=k * per, color=PAPER if k % 2 else "#efe6d6", edgecolor=LINE, height=0.55)
+        b.text(k * per + per / 2, 0, f"P{k + 1}", ha="center", va="center", fontsize=9.5)
+    for cp in (3, 6, 9):
+        x = cp * per
+        b.axvline(x, color=ACC, lw=2.2, ymin=0.1, ymax=0.9)
+        b.text(x - 0.8, 0.5, f"{x:.0f} min", ha="right", fontsize=9.5, color=ACCD, fontweight="bold")
+    b.set_xlim(0, total); b.set_ylim(-0.5, 0.75); b.set_xticks(range(0, 91, 10))
+    b.set_xlabel("minutes into the section (9 passages, 53 questions)", fontsize=9.5)
+    b.set_title("The section: checkpoints after passages 3, 6 and 9", fontsize=12, loc="left", fontweight="bold")
+    fig.tight_layout()
+    save(fig, "how-to-approach-a-cars-passage")
+
+DIAGRAMS.update({
+    "functionalism-vs-conflict-theory-vs-symbolic-interactionism": nh_paradigms,
+    "types-of-social-mobility-and-stratification": nh_mobility,
+    "how-to-approach-a-cars-passage": nh_cars,
+})
+# ---- end notes-h diagrams ----
+
 if __name__ == "__main__":
     main()
