@@ -1357,5 +1357,105 @@ DIAGRAMS.update({
 })
 # ---- end notes-e diagrams ----
 
+# ---- burst-b diagrams (5E, 6B, 5A) ----
+def bb_initial_rates():
+    k = 0.090
+    fig, (a, b) = plt.subplots(1, 2, figsize=(11.2, 4.7))
+    t = np.linspace(0, 600, 400)
+    for A0, c, lab in [(0.040, ACC, "[A]0 = 0.040 M"), (0.020, TEAL, "[A]0 = 0.020 M")]:
+        a.plot(t, A0 / (1 + k * A0 * t), color=c, lw=3, label=lab)
+        r0 = k * A0 ** 2
+        tt = np.linspace(0, min(A0 / r0, 600) * 0.55, 50)
+        a.plot(tt, A0 - r0 * tt, color=c, lw=1.6, ls="--")
+        if A0 > 0.03:
+            a.text(165, 0.0278, f"initial slope = -{r0 * 1e4:.2f} x 10^-4 M/s", color=c, fontsize=9.3, va="bottom")
+        else:
+            a.text(305, 0.0068, f"initial slope = -{r0 * 1e5:.1f} x 10^-5 M/s", color=c, fontsize=9.3, va="top")
+    a.set_xlim(0, 600); a.set_ylim(0, 0.047)
+    a.set_xlabel("time (s)"); a.set_ylabel("[A] (M)")
+    a.legend(loc="upper right", frameon=False, fontsize=9.3)
+    a.set_title("Initial rate = tangent slope at t = 0", fontsize=12, loc="left", fontweight="bold")
+    a.text(590, 0.0355, "rate = k[A]^2, k = 0.090 M^-1 s^-1\ndouble [A]0, initial rate x4", ha="right", fontsize=9.3, color=MUTED)
+    conc = np.logspace(-2, -0.5, 50)
+    for order, c, ls in [(0, GREY, "-"), (1, TEAL, "-"), (2, ACC, "-")]:
+        rate = 1e-3 * (conc / 0.01) ** order
+        b.loglog(conc, rate, color=c, lw=3, ls=ls)
+        b.text(conc[-1] * 1.08, rate[-1], f"order {order}\nslope {order}", color=c, fontsize=9.6, fontweight="bold", va="center")
+    b.set_xlim(0.01, 0.6); b.set_ylim(5e-4, 2.0)
+    from matplotlib.ticker import NullFormatter, FixedLocator, FixedFormatter
+    b.xaxis.set_minor_formatter(NullFormatter())
+    b.xaxis.set_major_locator(FixedLocator([0.01, 0.03, 0.1, 0.3]))
+    b.xaxis.set_major_formatter(FixedFormatter(["0.01", "0.03", "0.1", "0.3"]))
+    b.set_xlabel("[A] (M), log scale"); b.set_ylabel("initial rate (M/s), log scale")
+    b.set_title("On log axes, slope = order", fontsize=12, loc="left", fontweight="bold")
+    fig.tight_layout()
+    save(fig, "rate-law-method-of-initial-rates")
+
+def bb_piaget():
+    stages = [("Sensorimotor", "birth to ~2 years", "object permanence\nlearning by acting"),
+              ("Preoperational", "~2 to 7 years", "symbols, pretend play\nno conservation yet"),
+              ("Concrete\noperational", "~7 to 11 years", "conservation, reversibility\nlogic about real things"),
+              ("Formal\noperational", "~11 years onward", "abstract, hypothetical\nsystematic testing")]
+    cols = [TEAL, "#2f7f6f", ACC, ACCD]
+    fig, ax = plt.subplots(figsize=(11, 5.4))
+    ax.set_xlim(0, 12); ax.set_ylim(-1.0, 7.6); ax.axis("off")
+    w, h = 2.9, 1.5
+    for i, ((name, age, ach), c) in enumerate(zip(stages, cols)):
+        x0, y0 = 0.15 + i * 2.95, 0.3 + i * 1.45
+        ax.add_patch(FancyBboxPatch((x0, -0.9), w, y0 + h + 0.9, boxstyle="round,pad=0,rounding_size=0.12",
+                                    fc=CARD, ec=LINE, lw=1.2))
+        ax.add_patch(FancyBboxPatch((x0, y0), w, h, boxstyle="round,pad=0,rounding_size=0.12", fc=c, ec="white", lw=1.5))
+        ax.text(x0 + 0.15, y0 + h - 0.12, f"{i + 1}. {name}", color="white", fontsize=11, fontweight="bold", va="top",
+                linespacing=1.15)
+        ax.text(x0 + 0.15, y0 + 0.12, age, color="white", fontsize=10, va="bottom")
+        ax.text(x0 + 0.15, y0 - 0.2, ach, color=INK, fontsize=9.6, va="top", linespacing=1.3)
+    ax.annotate("", xy=(11.6, 7.25), xytext=(0.4, 7.25), arrowprops=dict(arrowstyle="-|>", color=GREY, lw=1.4))
+    ax.text(0.4, 7.4, "same order for every child (Piaget's claim); ages are approximate", fontsize=9.6, color=MUTED, va="bottom")
+    ax.text(0.2, 6.7, "Engine of change: assimilation (fit it in)\nand accommodation (change the schema)",
+            fontsize=10, color=INK, va="top", fontweight="bold", linespacing=1.3)
+    save(fig, "piaget-stages-of-cognitive-development")
+
+def bb_colligative():
+    A, B, C = 8.07131, 1730.63, 233.426  # Antoine constants for water, mmHg and deg C
+    T = np.linspace(90, 104, 300)
+    P = 10 ** (A - B / (C + T))
+    X = 0.95
+    fig, (a, b) = plt.subplots(1, 2, figsize=(11.2, 4.8), gridspec_kw={"width_ratios": [1.15, 1]})
+    a.plot(T, P, color=TEAL, lw=3, label="pure water")
+    a.plot(T, X * P, color=ACC, lw=3, label="solution, X(water) = 0.95")
+    a.axhline(760, color=GREY, ls="--", lw=1.2)
+    a.text(90.3, 768, "1 atm = 760 mmHg", fontsize=9.5, color=MUTED)
+    Tb_pure = B / (A - np.log10(760)) - C
+    Tb_sol = B / (A - np.log10(760 / X)) - C
+    for tb, c in [(Tb_pure, TEAL), (Tb_sol, ACC)]:
+        a.plot([tb, tb], [520, 760], color=c, ls=":", lw=1.4); a.plot([tb], [760], "o", color=c, ms=7)
+    a.annotate("", xy=(Tb_sol, 600), xytext=(Tb_pure, 600), arrowprops=dict(arrowstyle="-|>", color=ACCD, lw=1.6))
+    a.text(Tb_sol + 0.25, 600, f"boils {Tb_sol - Tb_pure:.1f} °C higher", ha="left", va="center", fontsize=9.6,
+           color=ACCD, fontweight="bold")
+    a.set_xlim(90, 104); a.set_ylim(520, 900)
+    a.set_xlabel("temperature (C)"); a.set_ylabel("vapor pressure (mmHg)")
+    a.legend(loc="upper left", frameon=False, fontsize=9.3, bbox_to_anchor=(0, 0.93))
+    a.set_title("Lower vapor pressure, higher boiling point", fontsize=12, loc="left", fontweight="bold")
+    sols = [("0.40 m\nglucose", 1, 0.40), ("0.25 m\nNaCl", 2, 0.25), ("0.18 m\nK2SO4", 3, 0.18), ("0.20 m\nCaCl2", 3, 0.20)]
+    xs = np.arange(len(sols))
+    fp = [-1.86 * i * m for _, i, m in sols]
+    b.bar(xs, fp, color=[GREY, TEAL, ACC, ACCD], width=0.62)
+    for x, (lab, i, m), f in zip(xs, sols, fp):
+        b.text(x, f - 0.04, f"{f:.2f} C\ni x m = {i * m:.2f}", ha="center", va="top", fontsize=9.2)
+    b.axhline(0, color=INK, lw=1)
+    b.set_xticks(xs); b.set_xticklabels([s[0] for s in sols], fontsize=9.5)
+    b.tick_params(axis="x", length=0, pad=6); b.xaxis.set_ticks_position("top"); b.spines["bottom"].set_visible(False)
+    b.set_ylim(-1.45, 0.0); b.set_ylabel("predicted freezing point (C)")
+    b.set_title("Freezing point tracks i x m (Kf = 1.86)", fontsize=12, loc="left", fontweight="bold", pad=34)
+    fig.tight_layout()
+    save(fig, "colligative-properties-freezing-point-depression")
+
+DIAGRAMS.update({
+    "rate-law-method-of-initial-rates": bb_initial_rates,
+    "piaget-stages-of-cognitive-development": bb_piaget,
+    "colligative-properties-freezing-point-depression": bb_colligative,
+})
+# ---- end burst-b diagrams ----
+
 if __name__ == "__main__":
     main()
