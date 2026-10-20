@@ -93,5 +93,35 @@
     "slug": "5e",
     "title": "Chemical Thermodynamics and Kinetics",
     "blurb": "Rate laws, reaction order, Arrhenius behavior, mechanisms and catalysts."
+  },
+  "6A": {
+    "slug": "6a",
+    "title": "Sensation and Perception",
+    "blurb": "Thresholds, Weber's law, signal detection, sensory adaptation and perception."
+  },
+  "6B": {
+    "slug": "6b",
+    "title": "Attention, Cognition, Consciousness, Memory and Language",
+    "blurb": "Memory systems, encoding, retrieval and forgetting, and the biology of memory."
+  },
+  "6C": {
+    "slug": "6c",
+    "title": "Emotion and Stress",
+    "blurb": "Theories of emotion, the limbic system, autonomic arousal and stress."
+  },
+  "7A": {
+    "slug": "7a",
+    "title": "Biological and Individual Influences on Behavior",
+    "blurb": "Psychological disorders, their diagnosis and their biological bases."
+  },
+  "7B": {
+    "slug": "7b",
+    "title": "Social Processes and Group Behavior",
+    "blurb": "Conformity, obedience, group performance and group decision making."
+  },
+  "7C": {
+    "slug": "7c",
+    "title": "Learning and Attitude Change",
+    "blurb": "Classical and operant conditioning, reinforcement schedules and cognitive learning."
   }
 }
