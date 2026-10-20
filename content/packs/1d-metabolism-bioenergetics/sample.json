@@ -1,0 +1,151 @@
+{
+ "slug": "1d-metabolism-bioenergetics",
+ "cards": [
+  {
+   "src": "assets/packs/1d-metabolism-bioenergetics/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 478
+  },
+  {
+   "src": "assets/packs/1d-metabolism-bioenergetics/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 458
+  },
+  {
+   "src": "assets/packs/1d-metabolism-bioenergetics/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 519
+  },
+  {
+   "src": "assets/packs/1d-metabolism-bioenergetics/card-4.webp",
+   "alt": "Sample multiple choice card: Glucose + Pi gives glucose 6-phosphate with delta G naught prime of +3.3 kcal/mol. ATP hydrolysis is -7.3 kcal",
+   "w": 680,
+   "h": 746
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/1d-metabolism-bioenergetics/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/1d-metabolism-bioenergetics/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/1d-metabolism-bioenergetics/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/1d-metabolism-bioenergetics/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A reaction has a standard delta G of +4.2 kcal/mol. It is coupled to ATP hydrolysis (-7.3 kcal/mol). What is the delta G of the coupled reaction?",
+   "options": [
+    "+11.5 kcal/mol",
+    "-11.5 kcal/mol",
+    "+3.1 kcal/mol",
+    "-3.1 kcal/mol"
+   ],
+   "answer": "D",
+   "explanation": "Coupled reactions add: +4.2 + (-7.3) = -3.1 kcal/mol, so it is favorable. +11.5 and -11.5 result from adding magnitudes with the wrong signs, and +3.1 flips the sign of the sum.",
+   "subtopic": "Bioenergetics: free energy, coupling, ATP as energy currency"
+  },
+  {
+   "stem": "How many high-energy phosphate bonds are consumed to make one glucose from two pyruvate?",
+   "options": [
+    "2",
+    "4",
+    "6",
+    "8"
+   ],
+   "answer": "C",
+   "explanation": "Two pyruvate carboxylase steps use 2 ATP, two PEPCK steps use 2 GTP, and two phosphoglycerate kinase steps in reverse use 2 ATP, totaling 6 (4 ATP and 2 GTP).",
+   "subtopic": "Gluconeogenesis and bypass reactions"
+  },
+  {
+   "stem": "A child has hepatomegaly and fasting hypoglycemia, and glycogen has a normal structure. Which enzyme is the most likely defect?",
+   "options": [
+    "Branching enzyme",
+    "Lysosomal alpha-glucosidase",
+    "Muscle glycogen phosphorylase",
+    "Glucose 6-phosphatase"
+   ],
+   "answer": "D",
+   "explanation": "G6Pase deficiency (von Gierke) causes hypoglycemia with massive hepatomegaly and normal glycogen structure. Branching enzyme gives abnormal structure, Pompe affects lysosomes and the heart, and muscle phosphorylase affects muscle only.",
+   "subtopic": "Glycogenesis and glycogenolysis"
+  },
+  {
+   "stem": "A patient on a statin has a markedly lower hepatic cholesterol synthesis rate. Which compensatory change is expected?",
+   "options": [
+    "Lower HMG-CoA reductase transcription",
+    "Higher plasma LDL",
+    "More LDL receptors on hepatocytes",
+    "Less SREBP-2 processing"
+   ],
+   "answer": "C",
+   "explanation": "Low sterol activates SREBP-2 processing, which raises LDL receptor expression and clears more LDL from plasma, lowering LDL. Reductase transcription rises, not falls, and SREBP-2 processing increases rather than decreases.",
+   "subtopic": "Cholesterol synthesis and regulation"
+  },
+  {
+   "stem": "A person has fasted for 5 days. Compared with day 1, which change is expected?",
+   "options": [
+    "Higher liver glycogen",
+    "Lower plasma ketones",
+    "Higher insulin",
+    "Greater brain use of ketone bodies and reduced protein breakdown"
+   ],
+   "answer": "D",
+   "explanation": "By day 5 ketones are the major brain fuel, and nitrogen loss is reduced. Liver glycogen is gone, ketones are high, and insulin is low.",
+   "subtopic": "Fed, fasting and starvation states"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "What does the sign of delta G tell you about a reaction?",
+   "back": "Negative delta G means exergonic and spontaneous as written. Positive means endergonic and needs energy input. Zero means equilibrium."
+  },
+  {
+   "type": "cz",
+   "text": "Actual free energy change: delta G = delta G naught prime + {{c1::RT ln Q}}. At equilibrium, delta G equals {{c2::zero}} and Q equals {{c2::Keq}}.",
+   "extra": "Q is the reaction quotient, products over reactants at current concentrations."
+  },
+  {
+   "type": "mc",
+   "stem": "Which compound has a more negative hydrolysis delta G than ATP and rapidly regenerates ATP in resting muscle?",
+   "options": [
+    "Glucose 6-phosphate",
+    "AMP",
+    "Glycerol 3-phosphate",
+    "Phosphocreatine"
+   ],
+   "answer": "D",
+   "why": "Phosphocreatine (about -10.3 kcal/mol) donates its phosphate to ADP via creatine kinase. Glucose 6-phosphate and glycerol 3-phosphate are low-energy phosphate esters."
+  },
+  {
+   "type": "tf",
+   "statement": "An enzyme makes a reaction more spontaneous by lowering its delta G.",
+   "truth": false,
+   "why": "Enzymes lower activation energy only. delta G and Keq are unchanged, so the enzyme speeds both directions equally."
+  }
+ ]
+}
