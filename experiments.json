@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-20T17:30:00Z",
+  "updated": "2026-10-20T20:00:00Z",
   "theme": "free_sampler_push",
   "note": "Edited by ops/experiments.py and the marketing job. Variant ids are never reused. Text must be true of the product. {orig} is replaced with the element's original text (used to keep prices in sync with site.json).",
   "experiments": [
@@ -15,7 +15,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.3333,
+          "weight": 0.22,
           "created": "2026-10-20",
           "angle": "control: recall over re-reading",
           "fields": {
@@ -52,7 +52,7 @@
         {
           "id": "d",
           "status": "active",
-          "weight": 0.3333,
+          "weight": 0.22,
           "created": "2026-10-20",
           "angle": "pack format, catalog",
           "fields": {
@@ -63,12 +63,24 @@
         {
           "id": "e",
           "status": "active",
-          "weight": 0.3334,
+          "weight": 0.22,
           "created": "2026-10-20",
           "angle": "accuracy review",
           "fields": {
             "headline": "One MCAT category per pack. Checked before it ships.",
             "subhead": "Every StudyStore pack passes an accuracy check before we sell it. Terse one or two sentence answers, original diagrams, and practice questions with explanations."
+          }
+        },
+        {
+          "id": "f",
+          "status": "active",
+          "weight": 0.34,
+          "created": "2026-10-20",
+          "angle": "whole catalog: every content category plus CARS, pick one pack or a bundle",
+          "theme": "free_sampler_push",
+          "fields": {
+            "headline": "Every MCAT content category. One pack each.",
+            "subhead": "32 original packs cover all 31 MCAT content categories plus CARS. Each has an Anki deck, an illustrated study guide, a printable cheat sheet and practice questions. Pick one pack, a section bundle, or the Complete MCAT bundle."
           }
         }
       ]
@@ -108,7 +120,7 @@
         {
           "id": "c",
           "status": "active",
-          "weight": 0.3333,
+          "weight": 0.22,
           "created": "2026-10-20",
           "angle": "preview first",
           "fields": {
@@ -118,7 +130,7 @@
         {
           "id": "d",
           "status": "active",
-          "weight": 0.3333,
+          "weight": 0.22,
           "created": "2026-10-20",
           "angle": "catalog",
           "fields": {
@@ -128,11 +140,22 @@
         {
           "id": "e",
           "status": "active",
-          "weight": 0.3334,
+          "weight": 0.22,
           "created": "2026-10-20",
           "angle": "contents",
           "fields": {
             "label": "See what is inside a pack"
+          }
+        },
+        {
+          "id": "f",
+          "status": "active",
+          "weight": 0.34,
+          "created": "2026-10-20",
+          "angle": "catalog size in the button",
+          "theme": "free_sampler_push",
+          "fields": {
+            "label": "Browse all 32 packs"
           }
         }
       ]
@@ -148,7 +171,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.5,
+          "weight": 0.33,
           "created": "2026-10-20",
           "angle": "control: bare price",
           "fields": {
@@ -158,7 +181,7 @@
         {
           "id": "b",
           "status": "active",
-          "weight": 0.5,
+          "weight": 0.33,
           "created": "2026-10-20",
           "angle": "one-time, no subscription",
           "fields": {
@@ -176,6 +199,17 @@
           },
           "retired": "2026-10-20",
           "retired_reason": "cited the retired aa-enzymes pack (120 cards, 10 diagrams, Pack 1); catalog-driven site"
+        },
+        {
+          "id": "d",
+          "status": "active",
+          "weight": 0.34,
+          "created": "2026-10-20",
+          "angle": "one-time plus refund, catalog-neutral",
+          "theme": "free_sampler_push",
+          "fields": {
+            "price": "{orig} one-time, 14-day refund"
+          }
         }
       ]
     },
@@ -190,7 +224,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.3333,
+          "weight": 0.22,
           "created": "2026-10-20",
           "angle": "control: sampler coming",
           "fields": {
@@ -202,7 +236,7 @@
         {
           "id": "b",
           "status": "active",
-          "weight": 0.3333,
+          "weight": 0.22,
           "created": "2026-10-20",
           "angle": "one-page sheets",
           "fields": {
@@ -214,13 +248,26 @@
         {
           "id": "c",
           "status": "active",
-          "weight": 0.3333,
+          "weight": 0.22,
           "created": "2026-10-20",
           "angle": "try free today",
           "fields": {
             "title": "Try StudyStore free",
             "body": "Our free notes are open now, each with an original diagram and a 5-question quiz. One-page sampler sheets are coming soon; there is no signup yet.",
             "link": "Browse free notes"
+          }
+        },
+        {
+          "id": "d",
+          "status": "active",
+          "weight": 0.34,
+          "created": "2026-10-20",
+          "angle": "free notes as the bridge to the matching pack (theme free_sampler_push)",
+          "theme": "free_sampler_push",
+          "fields": {
+            "title": "Start free, then pick your pack",
+            "body": "Every free note has an original diagram and a 5-question mini-quiz, and links to the pack that covers its topic. One-page sampler sheets are coming soon; there is no signup yet.",
+            "link": "Read a free note"
           }
         }
       ]
