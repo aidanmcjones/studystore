@@ -47,3 +47,14 @@ finds pages through `sitemap.xml` (declared in `robots.txt`) and ordinary crawli
   `LS_WEBHOOK_SECRET` Pages secret is set.
 - `experiments.json` + `assets/js/exp.js`: A/B/C tests. Mark elements with `data-exp="<id>" data-exp-field="<field>"`.
   Weights are rewritten by the private ops learner; see `ops/EXPERIMENTS.md` in the private studystore repo.
+
+## Catalog, product pages and checkout
+
+- `python3 /Users/aidanjones/dev/studystore/ops/sync_catalog.py` writes `site.json` products and bundles from
+  engine/CATALOG.json (a pack is available only when its accuracy_report.md ends `VERDICT: PASS`), refreshes
+  `ls_variants.json` from Lemon Squeezy (read-only), and regenerates preview crops with `tools/gen_previews.py`
+  (max 4 cards, 5 questions, partial faded page crops). Set `STUDYSTORE_SITE` to build into another checkout.
+- `products_build.py` renders every pack and bundle page (templates/product.html, bundle.html), the catalog page,
+  thanks.html and `_redirects` (retired slugs). Home numbers come from `{{feat:*}}` placeholders, never hardcoded.
+- Buy buttons call `/api/checkout` (functions/api/checkout.js). Without the `LS_API_KEY` and `LS_STORE_ID` Pages
+  secrets it returns 503 and buttons read "Available soon".

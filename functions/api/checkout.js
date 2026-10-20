@@ -48,7 +48,7 @@ export async function onRequestPost({ request, env }) {
   const slug = typeof body.slug === "string" ? body.slug : "";
   const v = (VARIANTS.variants || {})[slug];
   if (!sellable().has(slug) || !v || !v.variant_id) return json({ error: "not_for_sale" }, 404);
-  const thanks = `${siteOrigin(request)}/thanks.html?p=${encodeURIComponent(slug)}`;
+  const thanks = `${siteOrigin(request)}/thanks?p=${encodeURIComponent(slug)}`;
   const payload = { data: { type: "checkouts",
     attributes: {
       product_options: { redirect_url: thanks, enabled_variants: [Number(v.variant_id)] },
