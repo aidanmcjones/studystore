@@ -1357,5 +1357,130 @@ DIAGRAMS.update({
 })
 # ---- end notes-e diagrams ----
 
+# ---- burst-a diagrams (3B, 1D, 1C) ----
+def ba_hb_curve():
+    hill = lambda P, p50, n: P ** n / (p50 ** n + P ** n)
+    P = np.linspace(0, 110, 600)
+    curves = [("myoglobin (n = 1, P50 2.8)", 2.8, 1.0, GREY, "-"),
+              ("fetal Hb (P50 19)", 19.0, 2.7, TEAL, "-"),
+              ("adult Hb (P50 26.8)", 26.8, 2.7, INK, "-"),
+              ("adult Hb, right-shifted (P50 36)", 36.0, 2.7, ACC, "--")]
+    fig, ax = plt.subplots(figsize=(10.5, 5.8))
+    ax.axvspan(15, 42, color="#fbe3d3", alpha=0.45, lw=0)
+    ax.text(28.5, 104, "tissue PO2 range", ha="center", fontsize=9.5, color=ACCD)
+    for lab, p50, n, col, ls in curves:
+        ax.plot(P, 100 * hill(P, p50, n), color=col, lw=2.8, ls=ls, label=lab)
+        if p50 > 5:
+            ax.plot([p50, p50], [0, 50], color=col, lw=1.0, ls=":")
+            ax.plot([p50], [50], "o", color=col, ms=6)
+    ax.axhline(50, color=LINE, lw=1.2, zorder=0)
+    ax.text(108, 46, "50 percent saturation", fontsize=9, color=MUTED, ha="right")
+    for Pv, lab in [(100, "arterial\n~100 mmHg"), (40, "venous\n~40 mmHg")]:
+        ax.axvline(Pv, color=LINE, lw=1.2, zorder=0)
+    s100 = 100 * hill(100, 26.8, 2.7); s40 = 100 * hill(40, 26.8, 2.7)
+    ax.annotate(f"arterial: {s100:.0f}%", (100, s100), (78, 70), fontsize=9.5, arrowprops=dict(arrowstyle="-", color=GREY))
+    ax.annotate(f"mixed venous: {s40:.0f}%", (40, s40), (52, 55), fontsize=9.5, arrowprops=dict(arrowstyle="-", color=GREY))
+    s20n = 100 * hill(20, 26.8, 2.7); s20r = 100 * hill(20, 36, 2.7)
+    ax.annotate("", (20, s20r), (20, s20n), arrowprops=dict(arrowstyle="-|>", color=ACC, lw=2))
+    ax.annotate(f"right shift at 20 mmHg:\nsaturation {s20n:.0f}% to {s20r:.0f}%", (20.6, (s20n + s20r) / 2), (46, 12), fontsize=9.5,
+                color=ACCD, va="center", arrowprops=dict(arrowstyle="-", color=ACC, lw=1))
+    ax.set_xlim(0, 110); ax.set_ylim(0, 108)
+    ax.set_xlabel("PO2 (mmHg)"); ax.set_ylabel("hemoglobin saturation (%)")
+    ax.legend(frameon=False, loc="lower right", fontsize=9.5)
+    ax.set_title("Oxygen dissociation curves (Hill equation): higher P50 = right shift = easier unloading",
+                 fontsize=12, loc="left", fontweight="bold")
+    save(fig, "oxygen-hemoglobin-dissociation-curve-shifts")
+
+def ba_tca():
+    names = ["citrate", "isocitrate", "alpha-\nketoglutarate", "succinyl-CoA", "succinate", "fumarate", "malate", "oxaloacetate"]
+    carbons = [6, 6, 5, 4, 4, 4, 4, 4]
+    # outputs of the step leaving each intermediate (step i: names[i] -> names[i+1])
+    outs = [[], [("NADH", TEAL), ("CO2", GREY)], [("NADH", TEAL), ("CO2", GREY)], [("GTP", ACC)],
+            [("FADH2", ACCD)], [], [("NADH", TEAL)], []]
+    enz = ["aconitase", "isocitrate DH", "alpha-KG DH", "succinyl-CoA\nsynthetase", "succinate DH\n(Complex II)",
+           "fumarase", "malate DH", "citrate\nsynthase"]
+    fig, ax = plt.subplots(figsize=(10.5, 7.6))
+    ax.set_xlim(-6.2, 6.2); ax.set_ylim(-4.9, 5.0); ax.set_aspect("equal"); ax.axis("off")
+    R = 2.9
+    ang = [90 - 45 * i for i in range(8)]
+    pos = [(R * np.cos(np.radians(a)), R * np.sin(np.radians(a))) for a in ang]
+    th = np.linspace(0, 2 * np.pi, 300)
+    ax.plot(R * np.cos(th), R * np.sin(th), color=LINE, lw=3, zorder=0)
+    for i in range(8):
+        a1 = ang[i] - 24
+        am = np.radians(a1)
+        ax.annotate("", (R * np.cos(am), R * np.sin(am)),
+                    (R * np.cos(np.radians(a1 + 4)), R * np.sin(np.radians(a1 + 4))),
+                    arrowprops=dict(arrowstyle="-|>", color=GREY, lw=1.5))
+    for i, ((x, y), nm, c) in enumerate(zip(pos, names, carbons)):
+        ax.add_patch(FancyBboxPatch((x - 0.95, y - 0.42), 1.9, 0.84, boxstyle="round,pad=0.02,rounding_size=0.15",
+                                    fc=CARD, ec=INK, lw=1.4, zorder=3))
+        ax.text(x, y + 0.07, nm, ha="center", va="center", fontsize=9.2, fontweight="bold", zorder=4)
+        ax.text(x + 0.82, y + 0.3, f"{c}C", ha="right", va="center", fontsize=7.8, color=ACCD, zorder=4)
+    for i in range(8):
+        am = np.radians(ang[i] - 22.5)
+        ex, ey = 1.75 * np.cos(am), 1.75 * np.sin(am)
+        if i in (3, 4):
+            ex, ey = (0.95 if i == 3 else -0.95), -1.3
+        ax.text(ex, ey, enz[i], ha="center", va="center", fontsize=8.0, color=MUTED, style="italic")
+        if outs[i]:
+            ox, oy = 4.55 * np.cos(am), 4.35 * np.sin(am)
+            txt = " + ".join(o[0] for o in outs[i])
+            col = outs[i][0][1]
+            ax.annotate("", (ox * 0.86, oy * 0.86), (R * 1.03 * np.cos(am), R * 1.03 * np.sin(am)),
+                        arrowprops=dict(arrowstyle="-|>", color=col, lw=1.6))
+            ax.text(ox, oy, txt, ha="center", va="center", fontsize=10, color=col, fontweight="bold")
+    ax.annotate("acetyl-CoA (2C)", (R * np.cos(np.radians(105)), R * np.sin(np.radians(105)) + 0.1), (-4.6, 4.5), fontsize=10.5, fontweight="bold",
+                color=INK, arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.8))
+    tot = {"NADH": 0, "FADH2": 0, "GTP": 0, "CO2": 0}
+    for o in outs:
+        for k, _ in o: tot[k] += 1
+    ax.text(0, 0.35, "per turn", ha="center", fontsize=10, color=MUTED)
+    ax.text(0, -0.25, f"{tot['NADH']} NADH  {tot['FADH2']} FADH2\n{tot['GTP']} GTP (or ATP)  {tot['CO2']} CO2", ha="center", va="center",
+            fontsize=11, fontweight="bold")
+    ax.text(-6.1, -4.75, "Carbon count shown on each box. Two CO2 leave per turn; oxaloacetate is regenerated.",
+            fontsize=9, color=MUTED)
+    ax.set_title("Citric acid cycle: eight steps, one turn per acetyl-CoA", fontsize=13, loc="left", fontweight="bold")
+    save(fig, "citric-acid-cycle-steps-products-atp")
+
+def ba_mapping():
+    fig, (a, b) = plt.subplots(1, 2, figsize=(11.5, 4.8), gridspec_kw={"width_ratios": [1, 1.15]})
+    # left: map from the worked three-point cross
+    n = 1000; sco1, sco2, dco = 62 + 58, 78 + 82, 11 + 9
+    d1 = 100 * (sco1 + dco) / n; d2 = 100 * (sco2 + dco) / n; dpq = 100 * (sco1 + sco2) / n
+    a.set_xlim(-4, d1 + d2 + 4); a.set_ylim(-3, 3.2); a.axis("off")
+    a.add_patch(FancyBboxPatch((-2, -0.35), d1 + d2 + 4, 0.7, boxstyle="round,pad=0,rounding_size=0.35",
+                               fc="#d7ebee", ec=TEAL, lw=1.5))
+    for x, g in [(0, "P"), (d1, "R"), (d1 + d2, "Q")]:
+        a.plot([x, x], [-0.35, 0.35], color=INK, lw=3)
+        a.text(x, 0.75, g, ha="center", fontsize=15, fontweight="bold")
+    for x0, x1, lab in [(0, d1, f"{d1:.0f} cM"), (d1, d1 + d2, f"{d2:.0f} cM")]:
+        a.annotate("", (x1, -0.85), (x0, -0.85), arrowprops=dict(arrowstyle="<->", color=ACC, lw=1.6))
+        a.text((x0 + x1) / 2, -1.3, lab, ha="center", fontsize=11, color=ACCD, fontweight="bold")
+    a.annotate("", (d1 + d2, -2.0), (0, -2.0), arrowprops=dict(arrowstyle="<->", color=INK, lw=1.4))
+    a.text((d1 + d2) / 2, -2.5, f"sum of intervals {d1 + d2:.0f} cM  (two-point P-Q gives only {dpq:.0f}%)",
+           ha="center", fontsize=9.5)
+    a.text(-3.5, 2.6, "Map from worked example 2", fontsize=12, fontweight="bold")
+    # right: Haldane mapping function, observed RF vs true distance
+    d = np.linspace(0, 200, 400)
+    rf = 100 * 0.5 * (1 - np.exp(-2 * d / 100))
+    b.plot(d, d, color=GREY, ls="--", lw=1.6, label="if every crossover were seen (RF = distance)")
+    b.plot(d, rf, color=ACC, lw=2.8, label="observed RF (no-interference model)")
+    b.axhline(50, color=INK, lw=1, ls=":")
+    b.text(198, 52, "50% ceiling", ha="right", fontsize=9.5)
+    b.set_xlim(0, 200); b.set_ylim(0, 75)
+    b.set_xlabel("true map distance (cM)"); b.set_ylabel("observed recombination frequency (%)")
+    b.legend(frameon=False, loc="lower right", fontsize=9)
+    b.set_title("Hidden double crossovers flatten RF at 50%", fontsize=12, loc="left", fontweight="bold")
+    fig.tight_layout(w_pad=2.5)
+    save(fig, "recombination-frequency-gene-mapping-map-units")
+
+DIAGRAMS.update({
+    "oxygen-hemoglobin-dissociation-curve-shifts": ba_hb_curve,
+    "citric-acid-cycle-steps-products-atp": ba_tca,
+    "recombination-frequency-gene-mapping-map-units": ba_mapping,
+})
+# ---- end burst-a diagrams ----
+
 if __name__ == "__main__":
     main()
