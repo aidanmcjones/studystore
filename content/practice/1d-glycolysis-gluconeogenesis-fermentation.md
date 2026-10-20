@@ -9,7 +9,7 @@ published: 2026-10-20
 notes: henderson-hasselbalch-for-the-mcat
 ---
 
-Glycolysis turns one glucose into two pyruvate, with a net gain of 2 ATP and 2 NADH. Three steps are essentially irreversible and are the regulated ones: hexokinase or glucokinase, phosphofructo-kinase-1 (PFK-1, the main control point) and pyruvate kinase. Gluconeogenesis is not simply glycolysis in reverse. It uses the same reversible steps but bypasses those three irreversible reactions with four enzymes: pyruvate carboxylase, PEP carboxykinase, fructose-1,6-bisphosphatase and glucose-6-phosphatase. The two pathways are regulated reciprocally so they do not run at full speed together.
+Glycolysis turns one glucose into two pyruvate, with a net gain of 2 ATP and 2 NADH. Three steps are essentially irreversible and are the regulated ones: hexokinase or glucokinase, phosphofructokinase-1 (PFK-1, the main control point) and pyruvate kinase. Gluconeogenesis is not simply glycolysis in reverse. It uses the same reversible steps but bypasses those three irreversible reactions with four enzymes: pyruvate carboxylase, PEP carboxykinase, fructose-1,6-bisphosphatase and glucose-6-phosphatase. The two pathways are regulated reciprocally so they do not run at full speed together.
 
 Without oxygen (or without mitochondria), pyruvate is reduced to lactate or ethanol so that NAD+ is regenerated and glycolysis can continue. The pentose phosphate pathway is a side branch off glucose-6-phosphate that makes NADPH and ribose-5-phosphate without producing or consuming ATP.
 

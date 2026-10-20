@@ -51,15 +51,15 @@ B) +264 mV
 C) +66 mV
 D) -132 mV
 ANSWER: A
-WHY: The concentration ratio out/in is 2 / 0.0001 = 20,000, and log(20,000) = 4.30. With z = 2, E = (61.5 / 2) x 4.30 = 30.75 x 4.30 = +132 mV. Dividing by z = 2 halves the result compared with a monovalent ion. Ca2+ equilibrium is strongly positive, so the large inward gradient is why Ca2+ channels open to produce a large influx.
+WHY: The concentration ratio out/in is 2 / 0.0001 = 20,000, and log(20,000) = 4.30. With z = 2, E = (61.5 / 2) x 4.30 = 30.75 x 4.30 = +132 mV. Dividing by z = 2 halves the result compared with a monovalent ion. Because E(Ca) is strongly positive, opening Ca2+ channels at any physiological membrane potential produces a large Ca2+ influx.
 
 ### Q5
 In a neuron with a resting potential of about -70 mV, the extracellular K+ rises from 5 mM to 10 mM (intracellular K+ stays 140 mM). What is the most likely effect on the resting membrane potential?
-A) Depolarization, because E(K) rises from about -89 mV to about -70 mV
+A) Hyperpolarization, because more K+ outside drives more K+ into the cell
 B) Hyperpolarization to about -89 mV
 C) No change, because K+ does not affect the resting potential
-D) Hyperpolarization, because more K+ outside drives more K+ into the cell
-ANSWER: A
+D) Depolarization, because E(K) rises from about -89 mV to about -70 mV
+ANSWER: D
 WHY: E(K) = 61.5 log(10/140) = 61.5 x (-1.146) = -70 mV, less negative than the original -89 mV. Because the resting potential is largely determined by K+, the membrane potential moves toward the new E(K) and the cell depolarizes. This is why hyperkalemia affects excitable tissues such as the heart.
 
 ### Q6

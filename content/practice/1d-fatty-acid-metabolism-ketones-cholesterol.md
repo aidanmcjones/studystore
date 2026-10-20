@@ -29,10 +29,10 @@ WHY: An 18-carbon chain contains nine two-carbon units. The last round cleaves a
 ### Q2
 A well-fed person is making fatty acids in the liver. Which mechanism prevents the newly made fatty acids from being immediately oxidized?
 A) NADPH inhibits beta oxidation directly
-B) Glucagon activates acetyl-CoA carboxylase
-C) Malonyl-CoA inhibits carnitine palmitoyltransferase I, blocking entry of fatty acyl groups into the mitochondria
+B) Malonyl-CoA inhibits carnitine palmitoyltransferase I, blocking entry of fatty acyl groups into the mitochondria
+C) Glucagon activates acetyl-CoA carboxylase
 D) Citrate inhibits acetyl-CoA carboxylase
-ANSWER: C
+ANSWER: B
 WHY: Malonyl-CoA, the first committed intermediate of fatty acid synthesis, inhibits CPT-I, the rate-limiting step of mitochondrial fatty acid import. This keeps synthesis and oxidation from running simultaneously in a futile cycle. Citrate activates (not inhibits) acetyl-CoA carboxylase, and glucagon turns the enzyme off by phosphorylation.
 
 ### Q3
@@ -93,7 +93,7 @@ WHY: Protein is denser than lipid, so a higher protein fraction means a denser p
 Why can humans NOT convert the acetyl-CoA from even-chain fatty acid oxidation into a net amount of glucose?
 A) Acetyl-CoA cannot cross the mitochondrial membrane
 B) Beta oxidation produces no ATP
-C) The pyruvate dehydrogenase reaction, which converts pyruvate to acetyl-CoA, is irreversible, and the two carbons of acetyl-CoA are lost as CO2 in the citric acid cycle before oxaloacetate is regenerated
+C) The pyruvate dehydrogenase reaction, which converts pyruvate to acetyl-CoA, is irreversible, and the citric acid cycle releases two carbons as CO2 for every two-carbon acetyl group that enters, so no net oxaloacetate is gained
 D) Fatty acids are too hydrophobic to be metabolized
 ANSWER: C
 WHY: Entry of acetyl-CoA into the citric acid cycle adds two carbons, but two carbons leave as CO2 in the cycle, so there is no net gain of oxaloacetate to feed gluconeogenesis. Because PDH is irreversible, acetyl-CoA cannot go back to pyruvate. Plants and bacteria have the glyoxylate cycle, which bypasses the decarboxylation steps, but animals do not.

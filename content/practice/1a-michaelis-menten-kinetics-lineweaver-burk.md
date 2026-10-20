@@ -51,7 +51,7 @@ B) Vmax = 50 micromol/min, Km = 2 mM
 C) Vmax = 100 micromol/min, Km = 1 mM
 D) Vmax = 0.02 micromol/min, Km = 0.5 mM
 ANSWER: A
-WHY: The y-intercept (1/[S] = 0) is 1/Vmax = 0.020, so Vmax = 50 micromol/min. The slope is (0.060 - 0.020) / 4 = 0.010, and slope = Km/Vmax, so Km = 0.010 x 50 = 0.5 mM. As a check, the x-intercept occurs where 1/v = 0, at 1/[S] = -2 mM^-1, and -1/Km = -2 gives Km = 0.5 mM. Choice B misreads the x-intercept as +2 and inverts incorrectly.
+WHY: The y-intercept (1/[S] = 0) is 1/Vmax = 0.020, so Vmax = 50 micromol/min. The slope is (0.060 - 0.020) / 4 = 0.010, and slope = Km/Vmax, so Km = 0.010 x 50 = 0.5 mM. As a check, the x-intercept occurs where 1/v = 0, at 1/[S] = -2 mM^-1, and -1/Km = -2 gives Km = 0.5 mM. Choice B takes the magnitude of the x-intercept (2) as Km instead of inverting it.
 
 ### Q4
 A reaction contains 2.0 nM enzyme (2.0 x 10^-9 M) and reaches a maximal velocity of 4.0 x 10^-6 M/s at saturating substrate. What is kcat?

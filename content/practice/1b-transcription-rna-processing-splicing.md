@@ -87,4 +87,4 @@ B) MicroRNA
 C) Ribosomal RNA
 D) Transfer RNA
 ANSWER: C
-WHY: Ribosomes are abundant, and rRNA is about 80 percent of the total RNA in a typical cell. Transfer RNA is a distant second, while mRNA, though diverse and functionally central, is only a small percentage by mass because each mRNA is translated many times and is relatively short-lived.
+WHY: Ribosomes are abundant, and rRNA is about 80 percent of the total RNA in a typical cell. Transfer RNA is a distant second, while mRNA, though diverse and functionally central, is only a few percent by mass because individual mRNAs are relatively short-lived and far fewer copies are present than of rRNA.

@@ -33,7 +33,7 @@ B) 0.1 M CaCl2
 C) 0.2 M glucose
 D) 0.2 M NaCl
 ANSWER: D
-WHY: Count particles. 0.1 M CaCl2 gives 0.3 Osm (isotonic). 0.2 M glucose is 0.2 Osm (hypotonic). 0.2 M NaCl gives 0.4 Osm (hypertonic), so water leaves the cell. 0.3 M urea has an osmolarity equal to the cell, but because urea crosses the membrane it equilibrates and exerts no sustained effect on cell volume, so it is not hypertonic.
+WHY: Count particles. 0.1 M CaCl2 gives 0.3 Osm (isotonic). 0.2 M glucose is 0.2 Osm (hypotonic). 0.2 M NaCl gives 0.4 Osm (hypertonic), so water leaves the cell. 0.3 M urea has an osmolarity equal to the cell, but because urea crosses the membrane it equilibrates and exerts no sustained osmotic pull, so the solution is effectively hypotonic and cells placed in it swell.
 
 ### Q3
 Uptake of a labeled solute into cells was measured at different external concentrations, with and without a metabolic poison that depletes ATP.
@@ -76,9 +76,9 @@ WHY: SGLT1 is a symporter that couples glucose entry to the downhill movement of
 Fish moved from warm water to cold water adapt by changing the composition of their membranes to maintain fluidity. Which change is most likely?
 A) Loss of all membrane proteins
 B) Increased proportion of saturated fatty acid chains
-C) Complete replacement of phospholipids with cholesterol
-D) Increased proportion of unsaturated fatty acid chains
-ANSWER: D
+C) Increased proportion of unsaturated fatty acid chains
+D) Complete replacement of phospholipids with cholesterol
+ANSWER: C
 WHY: At low temperature membranes tend to pack tightly and become rigid. Unsaturated fatty acids contain cis double bonds that introduce kinks, preventing tight packing and keeping the membrane fluid. Saturated chains pack tightly and would make the membrane more rigid. Cholesterol also buffers fluidity, but cannot replace phospholipids.
 
 ### Q7

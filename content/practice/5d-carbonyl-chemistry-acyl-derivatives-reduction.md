@@ -9,7 +9,7 @@ published: 2026-10-20
 notes:
 ---
 
-The carbonyl carbon is electrophilic. Aldehydes and ketones undergo nucleophilic addition, and the tetrahedral intermediate is protonated to give an alcohol, a hemiacetal or an acetal depending on the nucleophile. Carboxylic acid derivatives instead undergo nucleophilic acyl substitution: addition gives a tetrahedral intermediate, then the leaving group is expelled. The reaction goes in the direction of the better leaving group, so reactivity follows acyl chloride > anhydride > ester (similar to a thioester) > amide > carboxylate.
+The carbonyl carbon is electrophilic. Aldehydes and ketones undergo nucleophilic addition, and the tetrahedral intermediate is protonated to give an alcohol, a hemiacetal or an acetal depending on the nucleophile. Carboxylic acid derivatives instead undergo nucleophilic acyl substitution: addition gives a tetrahedral intermediate, then the leaving group is expelled. The reaction goes in the direction of the better leaving group, so reactivity follows acyl chloride > anhydride > thioester > ester > amide > carboxylate.
 
 Reagent choice matters. Sodium borohydride reduces aldehydes and ketones but not esters; lithium aluminum hydride reduces nearly all carbonyls, including esters, acids and amides. Acetals are stable to base and nucleophiles, which makes them standard protecting groups for carbonyls. The aldol reaction requires an alpha hydrogen to form an enolate; dehydration of the aldol product gives an alpha,beta-unsaturated carbonyl. Electron-withdrawing groups near a carboxylic acid increase its acidity by stabilizing the carboxylate.
 
@@ -38,11 +38,11 @@ WHY: Ethanol attacks one carbonyl of the anhydride to give a tetrahedral interme
 ### Q3
 A chemist wants to make a Grignard reagent from 4-bromobutan-1-ol so it can be added to a ketone. What must be done first?
 A) Oxidize the alcohol to a carboxylic acid
-B) Convert the alcohol to an acetal
+B) Convert the hydroxyl group into a tosylate
 C) Protect the hydroxyl group, for example as a silyl ether
 D) Add aqueous acid to the alkyl bromide
 ANSWER: C
-WHY: A Grignard reagent is a very strong base and is destroyed by any acidic O-H bond, so a free alcohol in the same molecule would protonate the carbon-magnesium bond as soon as it formed. Converting the hydroxyl to a silyl ether (stable to strong bases, removed later with fluoride or acid) allows magnesium insertion to proceed. A carboxylic acid is even more acidic, acetals protect carbonyl groups rather than alcohols, and aqueous acid would simply destroy the organometallic reagent.
+WHY: A Grignard reagent is a very strong base and is destroyed by any acidic O-H bond, so a free alcohol in the same molecule would protonate the carbon-magnesium bond as soon as it formed. Converting the hydroxyl to a silyl ether (stable to strong bases, removed later with fluoride or acid) allows magnesium insertion to proceed. A carboxylic acid is even more acidic, a tosylate is a leaving group that the Grignard reagent would attack rather than a protecting group, and aqueous acid would simply destroy the organometallic reagent.
 
 ### Q4
 Reduction of N-methylacetamide (CH3CONHCH3) with LiAlH4, followed by aqueous workup, gives mainly which product?

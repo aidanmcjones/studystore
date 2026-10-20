@@ -77,7 +77,7 @@ B) 10
 C) 7.5
 D) 15
 ANSWER: B
-WHY: One turn of the cycle yields 3 NADH, 1 FADH2 and 1 GTP. Then 3 x 2.5 = 7.5, 1 x 1.5 = 1.5 and 1 x 1 = 1, for a total of 10. The older textbook value of 12 comes from assuming 3 ATP per NADH and 2 per FADH2. Choice C counts only the NADH, and choice D would double the output.
+WHY: One turn of the cycle yields 3 NADH, 1 FADH2 and 1 GTP. Then 3 x 2.5 = 7.5, 1 x 1.5 = 1.5 and 1 x 1 = 1, for a total of 10. The older textbook value of 12 comes from assuming 3 ATP per NADH and 2 per FADH2. Choice C counts only the NADH, and choice D (15) is the older value for a whole pyruvate (including the PDH NADH, at 3 ATP per NADH and 2 per FADH2).
 
 ### Q7
 Which condition would most likely slow the citric acid cycle in a resting cell?
@@ -90,9 +90,9 @@ WHY: NADH and ATP inhibit key dehydrogenases (isocitrate dehydrogenase, alpha-ke
 
 ### Q8
 Brown adipose tissue contains uncoupling protein 1 (UCP1). When it is active in an infant exposed to cold, which outcome is expected?
-A) ATP synthesis rises and heat production falls
-B) Protons return to the matrix through UCP1, bypassing ATP synthase, so more of the energy of electron transport is released as heat
+A) Protons return to the matrix through UCP1, bypassing ATP synthase, so more of the energy of electron transport is released as heat
+B) ATP synthesis rises and heat production falls
 C) Oxygen consumption falls
 D) The electron transport chain stops
-ANSWER: B
+ANSWER: A
 WHY: UCP1 is a proton channel in the inner mitochondrial membrane. Dissipating the gradient lowers the back-pressure on the chain, so substrate oxidation and oxygen consumption speed up, and the energy that would have gone into ATP appears as heat, a process called nonshivering thermogenesis. ATP production does not rise, and the chain does not stop.
