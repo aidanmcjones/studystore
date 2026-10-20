@@ -123,5 +123,35 @@
     "slug": "7c",
     "title": "Learning and Attitude Change",
     "blurb": "Classical and operant conditioning, reinforcement schedules and cognitive learning."
+  },
+  "8A": {
+    "slug": "8a",
+    "title": "Self-Concept, Identity and Personality Formation",
+    "blurb": "Erikson, Freud, Kohlberg, Vygotsky, Mead and identity development."
+  },
+  "8B": {
+    "slug": "8b",
+    "title": "Social Thinking: Attribution, Prejudice and Stereotypes",
+    "blurb": "Attribution theory, attribution biases, halo effect and impression formation."
+  },
+  "8C": {
+    "slug": "8c",
+    "title": "Social Interactions and Relationships",
+    "blurb": "Statuses, roles, groups, networks, bureaucracy and dramaturgy."
+  },
+  "9A": {
+    "slug": "9a",
+    "title": "Social Structure, Theories and Institutions",
+    "blurb": "Functionalism, conflict theory, symbolic interactionism and other sociological paradigms."
+  },
+  "9B": {
+    "slug": "9b",
+    "title": "Demographics and Demographic Change",
+    "blurb": "Population growth, demographic transition, pyramids, dependency ratios and migration."
+  },
+  "10A": {
+    "slug": "10a",
+    "title": "Social Inequality and Health Disparities",
+    "blurb": "Social class, mobility, poverty, meritocracy and social capital."
   }
 }
