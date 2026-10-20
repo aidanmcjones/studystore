@@ -139,7 +139,8 @@ section.hero{padding:clamp(40px,7vw,96px) 0 clamp(64px,8vw,120px);min-height:min
 .helix-label .hl-b{position:absolute;right:0;bottom:0;opacity:0}
 .hero.denat .hl-a{opacity:0}.hero.denat .hl-b{opacity:1}
 .herogrid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,72px);align-items:center;width:100%}
-.herocopy h1{margin-bottom:.32em}
+.herocopy h1{margin-bottom:.32em;min-height:3.06em}
+.herocopy .lead{min-height:6.2em}
 .herocopy .lead{margin-bottom:32px}
 .ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .facts{list-style:none;padding:0;margin:44px 0 0;display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:0;border-top:1px solid var(--line);max-width:620px}
@@ -193,6 +194,7 @@ html:not(.js) .ankictl{display:none}
 .kinetics{padding-top:clamp(56px,8vw,110px)}
 .kgrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px)}
 .ksteps h2{margin-bottom:8vh}
+.ksteps{padding-bottom:22vh}
 .kstep{min-height:62vh;padding:28px 0;border-top:1px solid var(--line);color:var(--muted);transition:color var(--t-med)}
 .kstep h3{transition:color var(--t-med),transform var(--t-med) var(--ease-out);color:var(--muted)}
 .kstep.on{color:var(--ink)}
@@ -479,6 +481,7 @@ dialog.lightbox button{position:absolute;top:8px;right:8px;width:40px;height:40p
   .kgrid{grid-template-columns:1fr}
   .kstage{position:sticky;top:64px;height:auto;z-index:3;order:-1;margin:0 calc(var(--gut) * -1);padding:0 var(--gut) 8px;background:linear-gradient(var(--bg) 85%,transparent)}
   .ksteps h2{margin-bottom:4vh}
+  .ksteps{padding-bottom:0}
   .kstep{min-height:48vh}
   .igrid,.sgrid,.fgrid2,.pgrid,.qgrid{grid-template-columns:1fr}
   .qgrid .sechead{position:static}
@@ -494,6 +497,7 @@ dialog.lightbox button{position:absolute;top:8px;right:8px;width:40px;height:40p
   body{font-size:1rem}
   .gallery .sheets{grid-template-columns:1fr}
   section.hero{min-height:0;padding-top:28px}
+  .herocopy .lead{min-height:7.75em}
   .facts{grid-template-columns:repeat(2,1fr);row-gap:14px}
   .facts li{border-right:0}
   .facts li:nth-child(odd){border-right:1px solid var(--line)}

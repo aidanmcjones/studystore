@@ -442,10 +442,10 @@
       ctx.clearRect(0, 0, W2, H2);
       den = lerp(den, denT, 0.08);
       var d = den, twist = lerp(100, 178, d) * Math.PI / 180, rise = lerp(1.5, 2.7, d), rs = lerp(1, 0.32, d);
-      var mob = vw < 980, len = (N - 1) * rise, scale = mob ? Math.min(W2 / 13, H2 / 30) : H2 / 25;
-      var tilt = -0.42 + py * 0.3, yaw = px * 0.45, roll = (mob ? 40 : 14) * Math.PI / 180;
+      var mob = vw < 980, len = (N - 1) * rise, scale = mob ? W2 / 16 : H2 / 25;
+      var tilt = -0.42 + py * 0.3, yaw = px * 0.45, roll = (mob ? 10 : 14) * Math.PI / 180;
       var ct = Math.cos(tilt), st = Math.sin(tilt), cy = Math.cos(yaw), sy = Math.sin(yaw), cr = Math.cos(roll), sr = Math.sin(roll);
-      var cx0 = mob ? W2 * 0.94 : anchorX, cy0 = H2 * (mob ? 0.3 : 0.5);
+      var cx0 = mob ? W2 * 1.02 : anchorX, cy0 = mob ? 330 : H2 * 0.5;
       var P = atoms.map(function (a, k) {
         var ang = a.ang * Math.PI / 180 + a.r * twist + rot, rad = a.rad * rs;
         var wob = d * 1.6;
