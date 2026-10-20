@@ -515,5 +515,130 @@ DIAGRAMS.update({
 })
 # ---- end notes-a diagrams ----
 
+# ---- notes-g diagrams (prefixed ng_; 7A, 7B, 8A, 8C) ----
+def ng_dsm():
+    # (label, min days, max days or None for open-ended, group color)
+    PURP = "#6b3f7a"
+    rows = [("Brief psychotic disorder", 1, 30, ACC), ("Schizophreniform disorder", 30, 182, ACC),
+            ("Schizophrenia", 182, None, ACC),
+            ("Acute stress disorder", 3, 30, TEAL), ("PTSD", 30, None, TEAL),
+            ("Hypomanic episode", 4, None, PURP), ("Manic episode", 7, None, PURP),
+            ("Major depressive episode", 14, None, PURP),
+            ("Persistent depressive / cyclothymic", 730, None, PURP),
+            ("Generalized anxiety disorder", 182, None, GREY)]
+    end = 2400
+    fig, ax = plt.subplots(figsize=(10.5, 5.6))
+    for i, (lab, lo, hi, c) in enumerate(rows):
+        y = len(rows) - 1 - i
+        right = hi if hi else end
+        ax.barh(y, right - lo, left=lo, height=0.62, color=c, alpha=0.9 if hi else 0.55, edgecolor=c)
+        if not hi:
+            ax.annotate("", (end * 1.12, y), (end * 0.98, y), arrowprops=dict(arrowstyle="-|>", color=c, lw=1.6))
+        ax.plot([lo], [y], "|", color=INK, ms=14, mew=2)
+        ax.text(0.8, y, lab, ha="right", va="center", fontsize=10, color=INK)
+    ax.set_xscale("log"); ax.set_xlim(0.8, end * 1.25); ax.set_ylim(-0.7, len(rows) - 0.3)
+    ticks = [1, 7, 14, 30, 182, 365, 730]
+    ax.set_xticks(ticks); ax.set_xticklabels(["1 day", "1 wk", "2 wk", "1 mo", "6 mo", "1 yr", "2 yr"])
+    ax.minorticks_off(); ax.set_yticks([])
+    ax.spines["left"].set_visible(False)
+    for t in ticks:
+        ax.axvline(t, color=LINE, lw=0.8, zorder=0)
+    ax.set_xlabel("minimum duration (log scale); solid bars have an upper limit, faded bars are open-ended")
+    ax.set_title("DSM-5 duration cutoffs that separate look-alike diagnoses", fontsize=12.5, loc="left",
+                 fontweight="bold", x=-0.36)
+    from matplotlib.patches import Patch
+    ax.legend(handles=[Patch(color=ACC, label="psychosis"), Patch(color=TEAL, label="trauma"),
+                       Patch(color=PURP, label="mood"), Patch(color=GREY, label="anxiety")],
+              loc="lower left", ncol=2, frameon=False, fontsize=9.5, bbox_to_anchor=(0.0, -0.02))
+    save(fig, "dsm-5-psychological-disorders-categories")
+
+def ng_milgram():
+    # approximate share reaching 450 V in Milgram's baseline and selected variations
+    data = [("Baseline: learner in another room", 65), ("Run-down office, not Yale", 48),
+            ("Learner in the same room", 40), ("Teacher must touch the learner", 30),
+            ("Orders given by telephone", 20), ("Two peer teachers refuse", 10)]
+    fig, ax = plt.subplots(figsize=(9.5, 4.6))
+    for i, (lab, v) in enumerate(data):
+        y = len(data) - 1 - i
+        ax.barh(y, v, height=0.62, color=ACC if i == 0 else TEAL)
+        ax.text(v + 1.2, y, f"about {v}%", va="center", fontsize=10, color=INK, fontweight="bold")
+    ax.set_yticks(range(len(data))); ax.set_yticklabels([d[0] for d in data][::-1], fontsize=10)
+    ax.set_xlim(0, 100); ax.set_xlabel("participants who reached the maximum 450 V (approximate %)")
+    ax.axvline(65, color=ACC, ls=":", lw=1.2)
+    ax.set_title("Obedience falls when the victim is closer or the authority is weaker", fontsize=12.5,
+                 loc="left", fontweight="bold", x=-0.42)
+    save(fig, "conformity-vs-obedience-asch-milgram")
+
+def ng_erikson():
+    stages = [(0, 1.5, "Trust vs mistrust", "hope"), (1.5, 3, "Autonomy vs shame and doubt", "will"),
+              (3, 6, "Initiative vs guilt", "purpose"), (6, 12, "Industry vs inferiority", "competence"),
+              (12, 18, "Identity vs role confusion", "fidelity"), (18, 40, "Intimacy vs isolation", "love"),
+              (40, 65, "Generativity vs stagnation", "care"), (65, 85, "Integrity vs despair", "wisdom")]
+    PURP = "#6b3f7a"
+    fig, ax = plt.subplots(figsize=(11, 6))
+    for i, (a0, a1, crisis, virtue) in enumerate(stages):
+        c = TEAL if a1 <= 12 else (ACC if a1 <= 18 else PURP)
+        ax.add_patch(FancyBboxPatch((a0, i - 0.02), a1 - a0, 0.84, boxstyle="round,pad=0,rounding_size=0.3",
+                                    fc=c, ec="white", lw=1.2))
+        end_lab = "85+" if a1 == 85 else f"{a1:g}"
+        lab = f"{i + 1}. {crisis}  ({virtue}), ages {a0:g} to {end_lab}"
+        if a1 - a0 >= 20:
+            lab2 = f"{i + 1}. {crisis}\n({virtue}), ages {a0:g} to {end_lab}"
+            ax.text(a0 + 0.8, i + 0.4, lab2, va="center", ha="left", fontsize=9.2, color="white", fontweight="bold",
+                    linespacing=1.25)
+        else:
+            ax.text(a1 + 0.8, i + 0.4, lab, va="center", ha="left", fontsize=9.6, color=INK, fontweight="bold")
+    ax.set_xlim(0, 86); ax.set_ylim(-0.2, 8.1)
+    ax.set_yticks([]); ax.spines["left"].set_visible(False)
+    ax.set_xticks([0, 3, 6, 12, 18, 40, 65, 85])
+    ax.set_xlabel("approximate age (years); ranges vary between sources")
+    from matplotlib.patches import Patch
+    ax.legend(handles=[Patch(color=TEAL, label="childhood"), Patch(color=ACC, label="adolescence"),
+                       Patch(color=PURP, label="adulthood")], loc="lower right", frameon=False, fontsize=9.5)
+    ax.set_title("Erikson's eight psychosocial stages: crisis (virtue) by age", fontsize=12.5, loc="left", fontweight="bold")
+    save(fig, "eriksons-stages-of-psychosocial-development")
+
+def ng_roles():
+    fig, (a, b) = plt.subplots(1, 2, figsize=(12, 5), gridspec_kw={"width_ratios": [1.1, 1]})
+    a.set_xlim(0, 10); a.set_ylim(0, 10); a.axis("off")
+    a.set_title("Count the roles", fontsize=12.5, loc="left", fontweight="bold")
+    # role strain: one role, two pulls
+    a.text(0.2, 9.0, "Role strain: one role", fontsize=11, fontweight="bold", color=ACCD)
+    a.add_patch(Circle((5, 7.1), 1.05, fc=ACC, ec="none"))
+    a.text(5, 7.1, "resident\nphysician", ha="center", va="center", color="white", fontsize=9.5, fontweight="bold")
+    for x0, x1, t, ha in [(3.9, 1.9, "see patients\nquickly", "center"), (6.1, 8.1, "give each patient\nunhurried time", "center")]:
+        a.annotate("", (x1, 7.1), (x0, 7.1), arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.8))
+        a.text(x1, 5.75, t, ha=ha, va="center", fontsize=9, color=MUTED)
+    # role conflict: two roles, one time slot
+    a.text(0.2, 4.2, "Role conflict: two roles", fontsize=11, fontweight="bold", color=TEAL)
+    for x, t in [(2.2, "resident"), (7.8, "parent")]:
+        a.add_patch(Circle((x, 2.2), 1.0, fc=TEAL, ec="none"))
+        a.text(x, 2.2, t, ha="center", va="center", color="white", fontsize=9.5, fontweight="bold")
+    a.annotate("", (4.2, 2.2), (3.25, 2.2), arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.8))
+    a.annotate("", (5.8, 2.2), (6.75, 2.2), arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.8))
+    a.add_patch(FancyBboxPatch((4.2, 1.6), 1.6, 1.2, boxstyle="round,pad=0.05,rounding_size=0.2", fc=CARD, ec=LINE, lw=1.5))
+    a.text(5, 2.2, "same\nhour", ha="center", va="center", fontsize=9, fontweight="bold")
+    a.text(5, 0.5, "shift at the hospital vs child's school play", ha="center", fontsize=9, color=MUTED)
+    n = np.arange(2, 11)
+    ties = n * (n - 1) // 2
+    b.bar(n, ties, color=TEAL, width=0.65, label="one-to-one ties, n(n-1)/2")
+    b.plot(n, n, color=ACC, lw=2.4, marker="o", ms=5, label="members, n")
+    for x, y in zip(n, ties):
+        b.text(x, max(y, x) + 0.9, str(y), ha="center", fontsize=9.5, fontweight="bold")
+    b.set_xticks(n); b.set_xlabel("group size n"); b.set_ylabel("count")
+    b.set_ylim(0, 50); b.legend(loc="upper left", frameon=False, fontsize=9.5)
+    b.text(2, 33, "dyad = 1 tie\ntriad = 3 ties", fontsize=9.5, color=MUTED, va="top")
+    b.set_title("Ties grow much faster than members", fontsize=12.5, loc="left", fontweight="bold")
+    fig.tight_layout()
+    save(fig, "role-strain-vs-role-conflict-status-and-groups")
+
+DIAGRAMS.update({
+    "dsm-5-psychological-disorders-categories": ng_dsm,
+    "conformity-vs-obedience-asch-milgram": ng_milgram,
+    "eriksons-stages-of-psychosocial-development": ng_erikson,
+    "role-strain-vs-role-conflict-status-and-groups": ng_roles,
+})
+# ---- end notes-g diagrams ----
+
 if __name__ == "__main__":
     main()
