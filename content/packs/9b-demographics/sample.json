@@ -1,0 +1,151 @@
+{
+ "slug": "9b-demographics",
+ "cards": [
+  {
+   "src": "assets/packs/9b-demographics/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 520
+  },
+  {
+   "src": "assets/packs/9b-demographics/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 413
+  },
+  {
+   "src": "assets/packs/9b-demographics/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 859
+  },
+  {
+   "src": "assets/packs/9b-demographics/card-4.webp",
+   "alt": "Sample multiple choice card: Researchers note that adults who came of age during a severe economic depression stay unusually thrifty at eve",
+   "w": 680,
+   "h": 412
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/9b-demographics/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/9b-demographics/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/9b-demographics/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/9b-demographics/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A town surveys all residents in a single year and finds that every age group reports lower trust in banks than in the previous survey, after a banking crisis. This is best explained as a",
+   "options": [
+    "cohort effect",
+    "age effect",
+    "period effect",
+    "selection effect"
+   ],
+   "answer": "C",
+   "explanation": "A change shared by all ages at one moment is a period effect. A cohort effect would differ by birth era. An age effect repeats at a stage of life in every cohort. A selection effect is a bias in who is sampled, which is not suggested.",
+   "subtopic": "Age and aging cohorts"
+  },
+  {
+   "stem": "A company hires only through referrals from current employees, who are mostly of one race, and the workforce stays uniform though no manager says anything biased. This is best described as",
+   "options": [
+    "institutional discrimination",
+    "individual racism",
+    "symbolic ethnicity",
+    "amalgamation"
+   ],
+   "answer": "A",
+   "explanation": "A neutral-looking policy that yields unequal results is institutional discrimination. Individual racism needs a person's bias or acts. Symbolic ethnicity is occasional identification with an ancestral culture. Amalgamation is the blending of groups into a new culture.",
+   "subtopic": "Race and ethnicity as social constructs"
+  },
+  {
+   "stem": "A man who identifies as straight sometimes has sex with men. Which concept best explains the mismatch?",
+   "options": [
+    "Orientation is chosen on a daily basis",
+    "Behavior determines orientation",
+    "Orientation, behavior, and identity can differ",
+    "Identity is a biological trait"
+   ],
+   "answer": "C",
+   "explanation": "Orientation, behavior, and identity are separate dimensions that need not agree. Orientation is not chosen day to day. Behavior alone does not set orientation. Identity is a label a person uses, not a biological trait.",
+   "subtopic": "Sexual orientation"
+  },
+  {
+   "stem": "In a country's pyramid, a deep notch appears at ages 80 to 84. What is the most likely cause?",
+   "options": [
+    "A current baby boom",
+    "Recent immigration of young workers",
+    "A rise in women's life expectancy",
+    "A small birth cohort long ago, perhaps from war or famine"
+   ],
+   "answer": "D",
+   "explanation": "A notch is a small cohort, often from a past event that cut births. A baby boom would show a bulge. Young immigrants would affect the middle. Women's longevity widens the female side but does not carve a notch.",
+   "subtopic": "Population pyramids"
+  },
+  {
+   "stem": "Which is the best example of an intervening obstacle in Lee's model?",
+   "options": [
+    "Visa fees and a heavily guarded border",
+    "A shortage of jobs at home",
+    "Higher wages abroad",
+    "Relatives already living abroad"
+   ],
+   "answer": "A",
+   "explanation": "Fees and border barriers lie between origin and destination. A shortage of jobs is a push factor. Higher wages and relatives abroad are pull factors.",
+   "subtopic": "Push and pull factors in migration"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Cohort effect: what does it explain?",
+   "back": "Differences between groups that come from the era in which they grew up, not from their current age."
+  },
+  {
+   "type": "cz",
+   "text": "An {{c1::age cohort}} is a group of people born in the same period who share the historical events of their formative years.",
+   "extra": ""
+  },
+  {
+   "type": "mc",
+   "stem": "A man in a nursing unit is promoted faster than his female coworkers. Which term applies?",
+   "options": [
+    "Glass ceiling",
+    "Glass escalator",
+    "Second shift",
+    "Gender dysphoria"
+   ],
+   "answer": "B",
+   "why": "Men in female-dominated fields often rise quickly, called the glass escalator. The glass ceiling blocks advancement instead."
+  },
+  {
+   "type": "tf",
+   "statement": "Disengagement theory holds that older adults should stay as active as possible.",
+   "truth": false,
+   "why": "That is activity theory. Disengagement says withdrawal from roles is mutual and normal in later life."
+  }
+ ]
+}
