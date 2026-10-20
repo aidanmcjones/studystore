@@ -1,0 +1,151 @@
+{
+ "slug": "1b-dna-gene-expression",
+ "cards": [
+  {
+   "src": "assets/packs/1b-dna-gene-expression/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 501
+  },
+  {
+   "src": "assets/packs/1b-dna-gene-expression/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 533
+  },
+  {
+   "src": "assets/packs/1b-dna-gene-expression/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 910
+  },
+  {
+   "src": "assets/packs/1b-dna-gene-expression/card-4.webp",
+   "alt": "Sample multiple choice card: In a nucleotide, the nitrogenous base is attached to which sugar carbon?",
+   "w": 680,
+   "h": 383
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/1b-dna-gene-expression/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/1b-dna-gene-expression/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/1b-dna-gene-expression/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/1b-dna-gene-expression/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "Two DNA duplexes of equal length have melting temperatures of 85 C and 72 C. The higher Tm sample most likely has",
+   "options": [
+    "a higher percentage of A-T base pairs",
+    "more single-strand breaks",
+    "a lower salt concentration",
+    "a higher percentage of G-C base pairs"
+   ],
+   "answer": "D",
+   "explanation": "G-C pairs have three hydrogen bonds and stack more strongly, so more G-C raises Tm. More A-T lowers Tm, nicks do not raise stability, and lower salt would lower Tm by increasing phosphate repulsion.",
+   "subtopic": "DNA denaturation and melting temperature"
+  },
+  {
+   "stem": "Why do human chromosomes need many replication origins?",
+   "options": [
+    "Eukaryotic polymerases lack processivity entirely",
+    "Human DNA is circular",
+    "Eukaryotic forks are slow relative to genome size",
+    "Origins must fire many times per S phase"
+   ],
+   "answer": "C",
+   "explanation": "At about 50 nt/s, a single origin could not copy hundreds of millions of base pairs in S phase, so many origins fire in parallel. Human chromosomes are linear, and origins fire once per cycle because of licensing.",
+   "subtopic": "Prokaryotic versus eukaryotic replication"
+  },
+  {
+   "stem": "The template strand of a gene is 3'-TACGTTAA-5'. What is the mRNA?",
+   "options": [
+    "5'-UACGUUAA-3'",
+    "5'-ATGCAATT-3'",
+    "5'-AUGCAAUU-3'",
+    "3'-AUGCAAUU-5'"
+   ],
+   "answer": "C",
+   "explanation": "RNA pairs antiparallel with the template and uses U for T: 5'-AUGCAAUU-3'. The first option copies the template, the second contains T, and the last is written in the wrong direction.",
+   "subtopic": "Transcription: RNA polymerases, promoters, termination"
+  },
+  {
+   "stem": "A mutant activator keeps its DNA-binding domain but lacks its activation domain. In the cell it would most likely",
+   "options": [
+    "activate transcription more strongly",
+    "cleave the DNA",
+    "be exported from the nucleus",
+    "bind the enhancer but fail to stimulate transcription"
+   ],
+   "answer": "D",
+   "explanation": "The DNA-binding domain still docks on the enhancer, but without the activation domain it cannot recruit coactivators. It can even compete with the normal activator.",
+   "subtopic": "Eukaryotic transcription factors, enhancers and silencers"
+  },
+  {
+   "stem": "In a Sanger reaction the ddNTP to dNTP ratio is increased tenfold. The fragments will",
+   "options": [
+    "be longer on average",
+    "all be the same length",
+    "be shorter on average",
+    "stop appearing"
+   ],
+   "answer": "C",
+   "explanation": "A higher ddNTP fraction terminates chains earlier, producing shorter fragments. Lower ddNTP would give longer fragments, and termination still occurs at multiple positions.",
+   "subtopic": "DNA sequencing"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Nucleoside versus nucleotide: what is the difference?",
+   "back": "A nucleoside is sugar plus base. Adding one or more phosphate groups makes it a nucleotide."
+  },
+  {
+   "type": "cz",
+   "text": "A nucleotide has a {{c1::phosphate group}}, a {{c1::pentose sugar}}, and a {{c1::nitrogenous base}}.",
+   "extra": ""
+  },
+  {
+   "type": "mc",
+   "stem": "In a nucleotide, the nitrogenous base is attached to which sugar carbon?",
+   "options": [
+    "The 2' carbon",
+    "The 1' carbon",
+    "The 3' carbon",
+    "The 5' carbon"
+   ],
+   "answer": "B",
+   "why": "The base sits on C1' through an N-glycosidic bond. C5' carries the phosphate and C3' carries the OH that accepts the next nucleotide."
+  },
+  {
+   "type": "tf",
+   "statement": "RNA is chemically less stable than DNA because of the 2' hydroxyl on ribose.",
+   "truth": true,
+   "why": "The 2' OH can attack the neighboring phosphodiester bond, so RNA hydrolyzes more easily, especially in base."
+  }
+ ]
+}

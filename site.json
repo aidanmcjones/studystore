@@ -188,8 +188,23 @@
         "Transgenics, knockouts and CRISPR",
         "Stem cells and biotechnology ethics"
       ],
-      "status": "coming_soon",
-      "contents": null,
+      "status": "available",
+      "contents": {
+        "cards": 488,
+        "card_types": {
+          "cz": 68,
+          "sa": 263,
+          "tf": 68,
+          "mc": 75,
+          "io": 14
+        },
+        "questions": 55,
+        "passage_sets": 3,
+        "diagrams": 29,
+        "guide_pages": 10,
+        "cheatsheet_pages": 3,
+        "validation": "CLEAN"
+      },
       "ls_name": "StudyStore MCAT 1B: DNA, Genetic Information and Gene Expression",
       "variant_id": null,
       "checkout_url": null
@@ -1370,7 +1385,7 @@
         "2c-cell-division-development",
         "2b-prokaryotes-viruses"
       ],
-      "ready_count": 4,
+      "ready_count": 5,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Bio/Biochem Complete Section",
       "variant_id": null,
@@ -1469,7 +1484,7 @@
         "9b-demographics",
         "cars-strategy"
       ],
-      "ready_count": 5,
+      "ready_count": 6,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Complete MCAT (all sections plus CARS)",
       "variant_id": null,
