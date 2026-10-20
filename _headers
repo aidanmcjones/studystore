@@ -3,3 +3,14 @@
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+/owner.html
+  X-Robots-Tag: noindex
+/owner
+  X-Robots-Tag: noindex
+/admin/*
+  X-Robots-Tag: noindex
+/report.html
+  X-Robots-Tag: noindex
+/report
+  X-Robots-Tag: noindex

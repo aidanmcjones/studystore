@@ -31,6 +31,10 @@ PAGES = [
     ("privacy.html", "privacy.html", "Privacy Policy | StudyStore",
      "StudyStore sets no cookies and collects no personal data. Anonymous first-party page and click counts only. Payments are handled by Lemon Squeezy.", False),
     ("404.html", "404.html", "Page not found | StudyStore", "Page not found.", True),
+    ("report.html", "report.html", "Report a problem or suggest something | StudyStore",
+     "Tell StudyStore about a broken link, a wrong answer, a typo or a display problem, or suggest a topic.", True),
+    ("owner.html", "owner.html", "Owner sign-in | StudyStore", "Owner sign-in.", True),
+    ("admin_reports.html", "admin/reports.html", "Reports | StudyStore", "Owner report review.", True),
 ]
 
 def contact():
@@ -206,6 +210,7 @@ def build_note(n, all_notes):
 {practice_build.note_links(slug, PRACTICE_LIVE, None)}
 {cta}
 <p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+<p class="meta"><a class="reportlink" href="{{{{root}}}}report.html" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
 </article>"""
     emit(out, f'{m["title"]} | StudyStore Notes', m["description"], body, og_image=img,
          og_type="article", head_extra=ld, lastmod=mod)

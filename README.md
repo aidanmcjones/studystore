@@ -58,3 +58,19 @@ finds pages through `sitemap.xml` (declared in `robots.txt`) and ordinary crawli
   thanks.html and `_redirects` (retired slugs). Home numbers come from `{{feat:*}}` placeholders, never hardcoded.
 - Buy buttons call `/api/checkout` (functions/api/checkout.js). Without the `LS_API_KEY` and `LS_STORE_ID` Pages
   secrets it returns 503 and buttons read "Available soon".
+
+## Problem reports, suggestions and owner approval
+
+- Every page footer, note, practice and product page has a "Report a problem or suggest something" link
+  (`assets/js/report.js`). With JS it opens a native `<dialog>`; without JS it goes to `/report.html`, a plain form post.
+- `functions/api/report.js` (POST `/api/report`) stores rows in D1 table `reports` (schema in `db/schema.sql`, migration
+  `db/migrations/002_reports.sql`): page path, kind, type (bug or feature), source, the typed text, an optional card or
+  question ref and a dedupe hash. No email, IP, user agent or cookies. Public reports start `pending`; limits 5/min and
+  20/day per IP (hashed, edge cache only), 4 KB body, bot filter, honeypot, duplicates within 7 days only bump `requests`.
+- Owner mode: `/owner.html` saves the owner key in that browser's localStorage after the server accepts it. Reports sent
+  with it (header `X-Owner-Key`) start `approved` (cap 60/hour). The server only knows the key's sha256, as the Pages
+  secret `OWNER_KEY_SHA256` (set by `ops/owner_key.sh` in the private repo).
+- `/admin/reports.html` (owner only, noindex): approve or reject pending public reports (`GET /api/reports`,
+  `POST /api/reports/<id>`), and see the queue and recent resolutions written back by the private `feedback` job.
+- Lifecycle: pending (public) -> approved -> in_progress -> fixed | needs_human | rejected.
+- Tests: `node tests/functions_test.mjs` (mocked D1).

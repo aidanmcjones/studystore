@@ -531,3 +531,23 @@ dialog.lightbox button{position:absolute;top:8px;right:8px;width:40px;height:40p
 
 /* print */
 @media print{header.site,footer.site .wordmark,.gridbg,.helix,.marquee,.scrollcue{display:none}body{background:#fff}}
+
+/* report a problem / suggest something (assets/js/report.js), owner and admin pages */
+dialog.rdialog{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink);padding:24px;width:min(560px,calc(100vw - 32px));max-height:92vh;box-shadow:var(--shadow)}
+dialog.rdialog::backdrop{background:rgba(6,10,8,.6)}
+dialog.rdialog h2{font-size:1.5rem;letter-spacing:-.015em;line-height:1.2}
+.rform{position:relative}
+.rform label{display:block;font-weight:600;margin:0 0 14px}
+.rform select,.rform textarea,.rform input{display:block;width:100%;margin-top:6px;font:400 1rem/1.4 var(--f-body);padding:10px;border:1px solid var(--line-2);border-radius:8px;background:var(--bg);color:var(--ink);min-height:44px}
+.rform textarea{min-height:120px;resize:vertical}
+.rhp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.ractions{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}
+.rstatus{margin:12px 0 0;min-height:1.4em}
+.rstatus.err{color:var(--alert)}
+.rowner{color:var(--neutral);font-size:.85rem}
+.rsent,.rerr{display:none;padding:10px 14px;border:1px solid var(--line-2);border-radius:8px;background:var(--surface)}
+.rsent:target,.rerr:target{display:block}
+.rerr{border-color:var(--alert)}
+.rlist{list-style:none;padding:0;margin:0}
+.rlist li{border:1px solid var(--line);border-radius:var(--r);padding:14px;margin:0 0 12px;background:var(--surface)}
+.rmsg{white-space:pre-wrap;overflow-wrap:anywhere;font:400 .9rem/1.5 var(--f-mono);background:var(--surface-2);padding:10px;border-radius:6px}

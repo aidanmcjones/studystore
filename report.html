@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Report a problem or suggest something | StudyStore</title>
+<meta name="description" content="Tell StudyStore about a broken link, a wrong answer, a typo or a display problem, or suggest a topic.">
+<meta name="robots" content="noindex">
+
+<link rel="canonical" href="https://www.studystore.co/report.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="Report a problem or suggest something | StudyStore">
+<meta property="og:description" content="Tell StudyStore about a broken link, a wrong answer, a typo or a display problem, or suggest a topic.">
+<meta property="og:url" content="https://www.studystore.co/report.html">
+<meta property="og:image" content="https://www.studystore.co/assets/img/cheatsheet-p1.png?v=e613683e99">
+<meta name="twitter:image" content="https://www.studystore.co/assets/img/cheatsheet-p1.png?v=e613683e99">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Report a problem or suggest something | StudyStore">
+<meta name="twitter:description" content="Tell StudyStore about a broken link, a wrong answer, a typo or a display problem, or suggest a topic.">
+<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1512'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23f2b705'/%3E%3Ccircle cx='21' cy='16' r='4' fill='%233ddc84'/%3E%3Ccircle cx='11' cy='21' r='4' fill='%236aa2ff'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("ss-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/style.css?v=38c8f6dc5a">
+<link rel="stylesheet" href="/assets/packs.css?v=7a31827607">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="/assets/js/exp.js?v=f84a42976d" defer></script>
+<script src="/assets/js/site.js?v=6a476378b3" defer></script>
+<script src="/assets/js/buy.js?v=54b73e6567" defer></script>
+<script src="/assets/js/report.js?v=1e5d24d48f" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="gridbg" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="/index.html" aria-label="StudyStore home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Study<b>Store</b></span></a>
+<nav aria-label="Main"><a href="/index.html#packs">Packs</a><a href="/notes/index.html">Notes</a><a href="/tools/index.html">Tools</a><a href="/index.html#faq">FAQ</a><a href="/refund.html">Refunds</a></nav>
+<div class="tools">
+<span class="phread" aria-hidden="true">pH <b>1.0</b></span>
+<button class="themetoggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+</div>
+</div><div class="phbar" aria-hidden="true"><i></i></div></header>
+<main id="main">
+<div class="wrap narrow legal" style="padding-top:56px;padding-bottom:56px">
+<h1>Report a problem or suggest something</h1>
+<p>Every report is read before anything on the site changes.</p>
+<p class="rowner mono" hidden></p>
+<p class="rsent" id="sent" role="status">Thanks, your report was sent. We review every one before anything changes.</p>
+<p class="rerr" id="rerror" role="alert">Sorry, that did not send. Check that the details are at least 10 characters and try again.</p>
+<form class="rform" id="report-form" method="post" action="/api/report">
+<label>Page address
+<input name="page" required maxlength="200" placeholder="/notes/... or the full link, or / for the whole site" autocomplete="off"></label>
+<label>What is it about?
+<select name="kind" required>
+<optgroup label="Problem">
+<option value="broken_link">A link or image is broken</option>
+<option value="wrong_content">Something is wrong (a fact, answer or number)</option>
+<option value="typo">Typo or unclear wording</option>
+<option value="display">The page displays badly</option>
+<option value="other">Other problem</option>
+</optgroup>
+<optgroup label="Suggestion">
+<option value="feature_content">Suggest a topic, note or practice page</option>
+<option value="feature_other">Another idea for the site</option>
+</optgroup>
+</select></label>
+<label>Details
+<textarea name="message" rows="6" minlength="10" maxlength="1500" required placeholder="What did you notice, or what would you like to see?"></textarea></label>
+<label>Card or question number (optional)
+<input name="ref" maxlength="40" pattern="[A-Za-z0-9 _.\-]{1,40}" autocomplete="off"></label>
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="hp" tabindex="-1" autocomplete="off"></label></div>
+<p class="meta">We store only the page address, the category and what you type. No email, IP address or cookies. See the <a href="/privacy.html">privacy policy</a>.</p>
+<div class="ractions"><button type="submit" class="btn small">Send</button></div>
+<p class="rstatus" role="status" aria-live="polite"></p>
+</form>
+</div>
+
+</main>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div>
+<p class="flabel">StudyStore</p>
+<p>Original, high-yield MCAT study packs. Written from scratch, checked card by card.</p>
+</div>
+<div>
+<p class="flabel">Shop</p>
+<p class="links"><a href="/index.html#packs">Packs</a><a href="/products/index.html">All packs</a><a href="/notes/index.html">Free notes</a></p>
+</div>
+<div>
+<p class="flabel">Policies</p>
+<p class="links"><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a><a href="/refund.html">Refund policy</a></p>
+</div>
+</div>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p><a class="reportlink" href="/report.html" data-report>Report a problem or suggest something</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+<p class="wordmark" aria-hidden="true">Study<b>Store</b></p>
+</div></footer>
+</body>
+</html>

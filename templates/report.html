@@ -1,0 +1,33 @@
+<div class="wrap narrow legal" style="padding-top:56px;padding-bottom:56px">
+<h1>Report a problem or suggest something</h1>
+<p>Every report is read before anything on the site changes.</p>
+<p class="rowner mono" hidden></p>
+<p class="rsent" id="sent" role="status">Thanks, your report was sent. We review every one before anything changes.</p>
+<p class="rerr" id="rerror" role="alert">Sorry, that did not send. Check that the details are at least 10 characters and try again.</p>
+<form class="rform" id="report-form" method="post" action="/api/report">
+<label>Page address
+<input name="page" required maxlength="200" placeholder="/notes/... or the full link, or / for the whole site" autocomplete="off"></label>
+<label>What is it about?
+<select name="kind" required>
+<optgroup label="Problem">
+<option value="broken_link">A link or image is broken</option>
+<option value="wrong_content">Something is wrong (a fact, answer or number)</option>
+<option value="typo">Typo or unclear wording</option>
+<option value="display">The page displays badly</option>
+<option value="other">Other problem</option>
+</optgroup>
+<optgroup label="Suggestion">
+<option value="feature_content">Suggest a topic, note or practice page</option>
+<option value="feature_other">Another idea for the site</option>
+</optgroup>
+</select></label>
+<label>Details
+<textarea name="message" rows="6" minlength="10" maxlength="1500" required placeholder="What did you notice, or what would you like to see?"></textarea></label>
+<label>Card or question number (optional)
+<input name="ref" maxlength="40" pattern="[A-Za-z0-9 _.\-]{1,40}" autocomplete="off"></label>
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="hp" tabindex="-1" autocomplete="off"></label></div>
+<p class="meta">We store only the page address, the category and what you type. No email, IP address or cookies. See the <a href="{{root}}privacy.html">privacy policy</a>.</p>
+<div class="ractions"><button type="submit" class="btn small">Send</button></div>
+<p class="rstatus" role="status" aria-live="polite"></p>
+</form>
+</div>

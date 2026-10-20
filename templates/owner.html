@@ -1,0 +1,13 @@
+<div class="wrap narrow legal" style="padding-top:56px;padding-bottom:56px">
+<h1>Owner sign-in</h1>
+<p>For the site owner only.</p>
+<p>Paste the owner key once. It is checked by the server and then kept only in this browser's local storage. While owner mode is on, your reports skip the approval step and are fixed automatically.</p>
+<p id="owner-status" class="mono" role="status" aria-live="polite">Owner mode needs JavaScript.</p>
+<form class="rform" id="owner-form" autocomplete="off">
+<label>Owner key
+<input name="key" type="password" required minlength="32" maxlength="256" autocomplete="off" spellcheck="false"></label>
+<div class="ractions"><button type="submit" class="btn small">Turn on owner mode</button></div>
+</form>
+<div class="ractions"><button type="button" class="btn small ghost" id="owner-signout" hidden>Sign out</button></div>
+<p class="meta"><a href="{{root}}admin/reports.html">Review reports</a></p>
+</div>
