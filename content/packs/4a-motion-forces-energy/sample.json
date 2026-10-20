@@ -1,0 +1,151 @@
+{
+ "slug": "4a-motion-forces-energy",
+ "cards": [
+  {
+   "src": "assets/packs/4a-motion-forces-energy/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 533
+  },
+  {
+   "src": "assets/packs/4a-motion-forces-energy/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 411
+  },
+  {
+   "src": "assets/packs/4a-motion-forces-energy/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 835
+  },
+  {
+   "src": "assets/packs/4a-motion-forces-energy/card-4.webp",
+   "alt": "Sample multiple choice card: Which is an SI base unit?",
+   "w": 680,
+   "h": 328
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/4a-motion-forces-energy/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/4a-motion-forces-energy/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/4a-motion-forces-energy/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/4a-motion-forces-energy/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A sprinter runs at 36 km/h. Her speed in m/s is",
+   "options": [
+    "10 m/s",
+    "1.0 m/s",
+    "36 m/s",
+    "129.6 m/s"
+   ],
+   "answer": "A",
+   "explanation": "Divide km/h by 3.6: 36/3.6 = 10 m/s. Multiplying by 3.6 gives 129.6, the common inversion error. The speed is not unchanged in m/s, and 1.0 is off by a factor of ten.",
+   "subtopic": "Units, dimensional analysis and significant figures"
+  },
+  {
+   "stem": "A projectile is launched at 40 m/s at 60 degrees above level ground. Its speed at the highest point is",
+   "options": [
+    "0 m/s",
+    "20 m/s",
+    "34.6 m/s",
+    "40 m/s"
+   ],
+   "answer": "B",
+   "explanation": "Only the horizontal component remains at the peak: 40 cos 60 = 20 m/s. Zero is the vertical component there, 34.6 is the initial vertical component, and 40 is the launch speed.",
+   "subtopic": "Free fall and projectile motion"
+  },
+  {
+   "stem": "A 0.40 kg ball on a 0.80 m string moves in a horizontal circle at 4.0 m/s. The tension is",
+   "options": [
+    "8.0 N",
+    "2.0 N",
+    "20 N",
+    "6.4 N"
+   ],
+   "answer": "A",
+   "explanation": "T = m v^2/r = 0.40 x 16/0.80 = 8.0 N. The value 2.0 N forgets to square the speed (mv/r), 6.4 N forgets to divide by the radius, and 20 N is the acceleration v^2/r with the mass left out.",
+   "subtopic": "Circular motion and centripetal force"
+  },
+  {
+   "stem": "A spring with k = 300 N/m is stretched 0.20 m from equilibrium. The stored energy is",
+   "options": [
+    "3.0 J",
+    "60 J",
+    "12 J",
+    "6.0 J"
+   ],
+   "answer": "D",
+   "explanation": "U = 1/2 k x^2 = 0.5 x 300 x 0.04 = 6.0 J. The value 12 J forgets the 1/2, 60 J mistakes the spring force kx = 60 N for an energy, and 3.0 J halves again.",
+   "subtopic": "Potential energy (gravitational and elastic)"
+  },
+  {
+   "stem": "A crowbar has an effort arm of 1.2 m and a load arm of 0.20 m. Ideally, an effort of 50 N lifts a load of",
+   "options": [
+    "250 N",
+    "60 N",
+    "8.3 N",
+    "300 N"
+   ],
+   "answer": "D",
+   "explanation": "Ideal MA = 1.2/0.20 = 6, so the load is 6 x 50 = 300 N. The value 8.3 N divides by the arm ratio instead of multiplying, 250 N uses a ratio of 5, and 60 N uses a ratio of 1.2.",
+   "subtopic": "Simple machines and mechanical advantage"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Which SI base unit of mass is used in all derived units?",
+   "back": "The kilogram (kg), not the gram. It is the only SI base unit that carries a prefix."
+  },
+  {
+   "type": "cz",
+   "text": "Prefixes: kilo = {{c1::10<sup>3</sup>}}, centi = {{c2::10<sup>-2</sup>}}, milli = {{c3::10<sup>-3</sup>}}, micro = {{c4::10<sup>-6</sup>}}.",
+   "extra": ""
+  },
+  {
+   "type": "mc",
+   "stem": "Which is an SI base unit?",
+   "options": [
+    "Newton",
+    "Kilogram",
+    "Joule",
+    "Pascal"
+   ],
+   "answer": "B",
+   "why": "Newton, joule and pascal are derived units built from kg, m and s."
+  },
+  {
+   "type": "tf",
+   "statement": "Dimensional analysis can prove an equation is correct.",
+   "truth": false,
+   "why": "It only rules out equations with mismatched units; constants and dimensionless factors are invisible to it."
+  }
+ ]
+}
