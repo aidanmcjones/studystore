@@ -1,0 +1,151 @@
+{
+ "slug": "6a-sensation-perception",
+ "cards": [
+  {
+   "src": "assets/packs/6a-sensation-perception/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 541
+  },
+  {
+   "src": "assets/packs/6a-sensation-perception/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 544
+  },
+  {
+   "src": "assets/packs/6a-sensation-perception/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 524
+  },
+  {
+   "src": "assets/packs/6a-sensation-perception/card-4.webp",
+   "alt": "Sample multiple choice card: Weight has k = 0.02. How much extra weight is needed to notice a change from a 250 g baseline?",
+   "w": 680,
+   "h": 380
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/6a-sensation-perception/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/6a-sensation-perception/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/6a-sensation-perception/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/6a-sensation-perception/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "Fechner's law states that sensation grows with the",
+   "options": [
+    "Square of stimulus intensity",
+    "Logarithm of stimulus intensity",
+    "Reciprocal of intensity",
+    "Exponent n of the stimulus"
+   ],
+   "answer": "B",
+   "explanation": "Fechner's law is S = k log I. A square or exponent describes Stevens' power law forms, and a reciprocal would decrease sensation as intensity rises.",
+   "subtopic": "Psychophysics"
+  },
+  {
+   "stem": "A person stops noticing a perfume after several minutes. Which process is most directly responsible?",
+   "options": [
+    "Increase in absolute threshold of the cortex",
+    "Lateral inhibition",
+    "Gate control",
+    "Sensory adaptation of olfactory receptors"
+   ],
+   "answer": "D",
+   "explanation": "Constant stimulation reduces olfactory receptor responding, which is adaptation. Lateral inhibition sharpens contrast, and gate control concerns pain.",
+   "subtopic": "Sensory adaptation"
+  },
+  {
+   "stem": "Finding a red letter among green letters is fast regardless of how many green letters there are. This indicates",
+   "options": [
+    "Serial search through each item",
+    "Parallel processing for a single feature",
+    "Top-down expectation only",
+    "Change blindness"
+   ],
+   "answer": "B",
+   "explanation": "A target defined by one feature pops out in parallel, so the time does not scale with the number of distractors. Serial search would slow with more items.",
+   "subtopic": "Feature detection and parallel processing"
+  },
+  {
+   "stem": "Which fiber type carries slow, dull, burning pain?",
+   "options": [
+    "A-delta fibers",
+    "A-beta fibers",
+    "Motor neurons",
+    "C fibers"
+   ],
+   "answer": "D",
+   "explanation": "C fibers are unmyelinated and conduct slowly, so they carry dull, burning pain. A-delta fibers are thin and myelinated and carry the fast, sharp component, A-beta fibers carry touch, and motor neurons are efferent.",
+   "subtopic": "Somatosensation and pain"
+  },
+  {
+   "stem": "Reading a smudged letter as an A in CAT but an H in THE is an example of",
+   "options": [
+    "Bottom-up feature detection",
+    "Top-down processing through context",
+    "Sensory adaptation",
+    "Retinal disparity"
+   ],
+   "answer": "B",
+   "explanation": "Context supplies expectations that resolve the ambiguity. Bottom-up detection would give the same reading in both cases.",
+   "subtopic": "Bottom-up versus top-down processing"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Define absolute threshold.",
+   "back": "The minimum stimulus intensity detected 50 percent of the time. Weaker stimuli are subthreshold."
+  },
+  {
+   "type": "cz",
+   "text": "Weber's law: {{c1::delta I}} / {{c1::I}} = {{c2::k}}, where k is the {{c2::Weber fraction}}.",
+   "extra": "A small k means high sensitivity."
+  },
+  {
+   "type": "mc",
+   "stem": "Weight has k = 0.02. How much extra weight is needed to notice a change from a 250 g baseline?",
+   "options": [
+    "5 g",
+    "2 g",
+    "0.5 g",
+    "50 g"
+   ],
+   "answer": "A",
+   "why": "JND = k x I = 0.02 x 250 = 5 g. A 2 g change is below threshold at this baseline."
+  },
+  {
+   "type": "tf",
+   "statement": "A smaller Weber fraction means finer discrimination.",
+   "truth": true,
+   "why": "A small k means a small proportional change is detectable, so the system is more sensitive."
+  }
+ ]
+}
