@@ -1,0 +1,226 @@
+[
+ {
+  "slug": "1a-amino-acids-proteins",
+  "aamc": "1A",
+  "title": "Amino Acids, Proteins and Enzymes",
+  "subtopic_count": 40,
+  "section": "bio_biochem"
+ },
+ {
+  "slug": "1d-metabolism-bioenergetics",
+  "aamc": "1D",
+  "title": "Metabolism and Bioenergetics",
+  "subtopic_count": 30,
+  "section": "bio_biochem"
+ },
+ {
+  "slug": "1b-dna-gene-expression",
+  "aamc": "1B",
+  "title": "DNA, Genetic Information and Gene Expression",
+  "subtopic_count": 34,
+  "section": "bio_biochem"
+ },
+ {
+  "slug": "5d-biological-molecules-orgo",
+  "aamc": "5D",
+  "title": "Biologically Relevant Molecules and Organic Reactivity",
+  "subtopic_count": 27,
+  "section": "chem_phys"
+ },
+ {
+  "slug": "3a-nervous-endocrine",
+  "aamc": "3A",
+  "title": "Nervous and Endocrine Systems",
+  "subtopic_count": 30,
+  "section": "bio_biochem"
+ },
+ {
+  "slug": "3b-organ-systems",
+  "aamc": "3B",
+  "title": "Organ Systems",
+  "subtopic_count": 32,
+  "section": "bio_biochem"
+ },
+ {
+  "slug": "2a-cells-membranes",
+  "aamc": "2A",
+  "title": "Cells, Membranes and Tissues",
+  "subtopic_count": 26,
+  "section": "bio_biochem"
+ },
+ {
+  "slug": "5e-thermo-kinetics",
+  "aamc": "5E",
+  "title": "Chemical Thermodynamics and Kinetics",
+  "subtopic_count": 24,
+  "section": "chem_phys"
+ },
+ {
+  "slug": "5a-solutions-acids-bases",
+  "aamc": "5A",
+  "title": "Water, Solutions, Acids and Bases",
+  "subtopic_count": 21,
+  "section": "chem_phys"
+ },
+ {
+  "slug": "4c-electricity-electrochem",
+  "aamc": "4C",
+  "title": "Electrostatics, Circuits, Magnetism and Electrochemistry",
+  "subtopic_count": 26,
+  "section": "chem_phys"
+ },
+ {
+  "slug": "4a-motion-forces-energy",
+  "aamc": "4A",
+  "title": "Motion, Forces, Work and Energy",
+  "subtopic_count": 21,
+  "section": "chem_phys"
+ },
+ {
+  "slug": "4b-fluids-gases",
+  "aamc": "4B",
+  "title": "Fluids and Gas Behavior",
+  "subtopic_count": 19,
+  "section": "chem_phys"
+ },
+ {
+  "slug": "4d-light-sound-optics",
+  "aamc": "4D",
+  "title": "Waves, Sound, Light and Optics",
+  "subtopic_count": 23,
+  "section": "chem_phys"
+ },
+ {
+  "slug": "1c-heredity-evolution",
+  "aamc": "1C",
+  "title": "Heredity, Population Genetics and Evolution",
+  "subtopic_count": 25,
+  "section": "bio_biochem"
+ },
+ {
+  "slug": "2c-cell-division-development",
+  "aamc": "2C",
+  "title": "Cell Division, Development and Reproduction",
+  "subtopic_count": 20,
+  "section": "bio_biochem"
+ },
+ {
+  "slug": "2b-prokaryotes-viruses",
+  "aamc": "2B",
+  "title": "Prokaryotes, Viruses and Microbial Genetics",
+  "subtopic_count": 19,
+  "section": "bio_biochem"
+ },
+ {
+  "slug": "5b-molecules-bonding-stereo",
+  "aamc": "5B",
+  "title": "Bonding, Molecular Structure and Stereochemistry",
+  "subtopic_count": 20,
+  "section": "chem_phys"
+ },
+ {
+  "slug": "4e-atoms-nuclear-periodic",
+  "aamc": "4E",
+  "title": "Atoms, Nuclear Chemistry and the Periodic Table",
+  "subtopic_count": 22,
+  "section": "chem_phys"
+ },
+ {
+  "slug": "5c-separations-spectroscopy",
+  "aamc": "5C",
+  "title": "Separations, Purification and Spectroscopy",
+  "subtopic_count": 19,
+  "section": "chem_phys"
+ },
+ {
+  "slug": "6b-cognition-memory-consciousness",
+  "aamc": "6B",
+  "title": "Attention, Cognition, Consciousness, Memory and Language",
+  "subtopic_count": 24,
+  "section": "psych_soc"
+ },
+ {
+  "slug": "7a-individual-behavior",
+  "aamc": "7A",
+  "title": "Biological and Individual Influences on Behavior",
+  "subtopic_count": 22,
+  "section": "psych_soc"
+ },
+ {
+  "slug": "6a-sensation-perception",
+  "aamc": "6A",
+  "title": "Sensation and Perception",
+  "subtopic_count": 16,
+  "section": "psych_soc"
+ },
+ {
+  "slug": "8b-social-thinking",
+  "aamc": "8B",
+  "title": "Social Thinking: Attribution, Prejudice and Stereotypes",
+  "subtopic_count": 15,
+  "section": "psych_soc"
+ },
+ {
+  "slug": "7b-social-processes",
+  "aamc": "7B",
+  "title": "Social Processes and Group Behavior",
+  "subtopic_count": 15,
+  "section": "psych_soc"
+ },
+ {
+  "slug": "7c-learning-behavior-change",
+  "aamc": "7C",
+  "title": "Learning and Attitude Change",
+  "subtopic_count": 15,
+  "section": "psych_soc"
+ },
+ {
+  "slug": "9a-social-structure",
+  "aamc": "9A",
+  "title": "Social Structure, Theories and Institutions",
+  "subtopic_count": 15,
+  "section": "psych_soc"
+ },
+ {
+  "slug": "10a-social-inequality",
+  "aamc": "10A",
+  "title": "Social Inequality and Health Disparities",
+  "subtopic_count": 16,
+  "section": "psych_soc"
+ },
+ {
+  "slug": "8a-self-identity",
+  "aamc": "8A",
+  "title": "Self-Concept, Identity and Personality Formation",
+  "subtopic_count": 15,
+  "section": "psych_soc"
+ },
+ {
+  "slug": "8c-social-interactions",
+  "aamc": "8C",
+  "title": "Social Interactions and Relationships",
+  "subtopic_count": 15,
+  "section": "psych_soc"
+ },
+ {
+  "slug": "6c-emotion-stress",
+  "aamc": "6C",
+  "title": "Emotion and Stress",
+  "subtopic_count": 15,
+  "section": "psych_soc"
+ },
+ {
+  "slug": "9b-demographics",
+  "aamc": "9B",
+  "title": "Demographics and Demographic Change",
+  "subtopic_count": 15,
+  "section": "psych_soc"
+ },
+ {
+  "slug": "cars-strategy",
+  "aamc": "CARS",
+  "title": "CARS Strategy and Reasoning Skills",
+  "subtopic_count": 17,
+  "section": "cars"
+ }
+]

@@ -193,6 +193,10 @@ for tpl, out, title, desc, noindex in PAGES:
     body = (ROOT / "templates" / tpl).read_text()
     emit(out, title, desc, body, noindex=noindex)
 
+# ---------- free tools (isolated in build_tools.py) ----------
+import build_tools
+build_tools.build(emit, site, products, {n["slug"]: n["meta"]["title"] for n in notes})
+
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for u, lm in urls:
     sm.append(f"  <url><loc>{u}</loc>" + (f"<lastmod>{lm}</lastmod>" if lm else "") + "</url>")
