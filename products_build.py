@@ -58,6 +58,42 @@ def buy(items, slug, cls="btn", root=""):
     return f'<a class="{cls} off" aria-disabled="true" role="link" tabindex="-1">Available soon</a>'
 
 
+# SEO hooks, set by build.py before build_all(): related-link HTML per product slug, and JSON-LD helpers.
+RELATED = {}          # slug -> HTML section linking free practice pages and notes (root-relative via {{root}})
+LD = None             # build.ld_json
+CRUMBS = None         # build.breadcrumbs
+
+
+def product_ld(site, p, url, image, kind="pack"):
+    """schema.org Product. Never aggregateRating or review. PreOrder until a checkout link exists."""
+    if kind == "pack":
+        c = p.get("contents") or {}
+        desc = (f'Original MCAT study pack for AAMC content category {p["aamc"]}'
+                + ("" if p["section_name"] == p["aamc"] else f' ({p["section_name"]})') + ": "
+                + (f'{c["cards"]} Anki flashcards, {c.get("guide_pages")}-page study guide, {c.get("cheatsheet_pages")}-page cheat sheet '
+                   f'and {c.get("questions")} practice questions.' if p["status"] == "available" and c.get("cards")
+                   else f'{p["subtopic_count"]} topics. Coming soon.'))
+        name = f'{p["title"]} MCAT {p["aamc"]} Pack'
+    else:
+        desc = f'{p["title"]}: {p["pack_count"]} StudyStore MCAT packs in one download.'
+        name = f'{p["title"]} MCAT Bundle'
+    avail = "https://schema.org/InStock" if p.get("checkout_url") else "https://schema.org/PreOrder"
+    return {"@context": "https://schema.org", "@type": "Product", "name": name, "description": desc,
+            "sku": p["slug"], "url": url, "image": image, "category": "MCAT study materials",
+            "brand": {"@type": "Brand", "name": "StudyStore"},
+            "offers": {"@type": "Offer", "url": url, "priceCurrency": "USD", "price": f'{p["price_usd"]:.2f}',
+                       "availability": avail, "itemCondition": "https://schema.org/NewCondition",
+                       "seller": {"@type": "Organization", "name": "StudyStore"}}}
+
+
+def seo_head(site, p, out, image, kind="pack"):
+    if not LD:
+        return ""
+    base = site["base_url"]
+    url = f"{base}/{out}"
+    return LD(product_ld(site, p, url, image, kind), CRUMBS(("MCAT packs", f"{base}/products/index.html"), (p["title"], url)))
+
+
 _samples = {}
 
 
@@ -390,12 +426,16 @@ def pack_page(site, items, p, emit, tpl):
                 elements=elements_html(p), price=E(p["price"]), price_note=note,
                 price_attr=' data-exp="price_frame" data-exp-field="price"' if avail else "",
                 buy=buy(items, p["slug"], root=root), facts=pack_facts(p), compare=compare_html(site, p, root),
-                bottom=bottom, kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon")
+                bottom=bottom, kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
+                related=RELATED.get(p["slug"], ""))
     s = sample(p["slug"]) if avail else None
     kw = {}
-    if s and s.get("sheets"):
-        kw["og_image"] = site["base_url"] + "/" + s["sheets"][0]["src"]
-    emit(f'products/{p["slug"]}.html', f'{p["title"]} MCAT {p["aamc"]} Pack | StudyStore', desc, body, **kw)
+    image = site["base_url"] + "/assets/img/cheatsheet-p1.png"
+    if s and s.get("sheets") and (ROOT / s["sheets"][0]["src"]).exists():
+        image = kw["og_image"] = site["base_url"] + "/" + s["sheets"][0]["src"]
+    out = f'products/{p["slug"]}.html'
+    kw["head_extra"] = seo_head(site, p, out, image)
+    emit(out, f'{p["title"]} MCAT {p["aamc"]} Pack | StudyStore', desc, body, **kw)
 
 
 def bundle_page(site, items, b, emit, tpl):
@@ -411,9 +451,11 @@ def bundle_page(site, items, b, emit, tpl):
     body = fill(tpl, title=esc(b["title"]), pack_count=b["pack_count"], price=E(b["price"]), list_value=b["list_value_usd"],
                 status=status, rows="".join(rows), buy=buy(items, b["slug"], root=root),
                 ready=b["ready_count"], kicker="Bundle &middot; one-time" if avail else "Bundle &middot; coming soon")
-    emit(f'products/{b["slug"]}.html', f'{b["title"]} MCAT Bundle | StudyStore',
+    out = f'products/{b["slug"]}.html'
+    emit(out, f'{b["title"]} MCAT Bundle | StudyStore',
          f'{b["title"]}: {b["pack_count"]} StudyStore MCAT packs for {b["price"]} (${b["list_value_usd"]} if bought separately).'
-         + ("" if avail else " Coming soon."), body)
+         + ("" if avail else " Coming soon."), body,
+         head_extra=seo_head(site, b, out, site["base_url"] + "/assets/img/cheatsheet-p1.png", kind="bundle"))
 
 
 def build_all(site, items, emit):

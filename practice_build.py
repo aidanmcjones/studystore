@@ -147,6 +147,12 @@ def _jsonld(p, BASE, notes_by_slug):
     return "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False).replace("</", "<\\/")}</script>\n'
                    for o in (quiz, crumbs))
 
+def _crumbs_ld(base, *pairs):
+    o = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": i, "name": n, "item": u}
+        for i, (n, u) in enumerate([("StudyStore", base + "/")] + list(pairs), 1)]}
+    return f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False)}</script>\n'
+
 def build_all(emit, root, pages, cats, notes_by_slug, base_url):
     tpl = (Path(root) / "templates" / "practice.html").read_text()
     hub_tpl = (Path(root) / "templates" / "practice_hub.html").read_text()
@@ -204,7 +210,9 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
                                   body=f'<ul class="catlist">{lis}</ul>{notes_html}<p><a href="{{{{root}}}}practice/index.html">All practice categories</a></p>'))
         emit(f"practice/{c['slug']}/index.html", f"MCAT {c['title']} Practice Questions | StudyStore",
              f"Free MCAT-style practice questions for {c['title']}: {len(items)} topic pages with full explanations.", body,
-             head_extra=STYLE, lastmod=max(x["meta"]["published"] for x in items))
+             head_extra=STYLE + _crumbs_ld(base_url, ("Practice questions", f"{base_url}/practice/index.html"),
+                                           (f"{code} {c['title']}", f"{base_url}/practice/{c['slug']}/index.html")),
+             lastmod=max(x["meta"]["published"] for x in items))
     # main hub
     secs = ""
     for code, c in cats.items():
@@ -220,7 +228,7 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
                               body=secs))
     emit("practice/index.html", "Free MCAT Practice Questions by Topic | StudyStore",
          f"{total} free, original MCAT-style practice questions by topic with full explanations: biochemistry, molecular biology, metabolism, physiology and organic chemistry.",
-         body, head_extra=STYLE, lastmod=max((x["meta"]["published"] for x in live), default=None))
+         body, head_extra=STYLE + _crumbs_ld(base_url, ("Practice questions", f"{base_url}/practice/index.html")), lastmod=max((x["meta"]["published"] for x in live), default=None))
     return live
 
 def note_links(slug, live, cats):

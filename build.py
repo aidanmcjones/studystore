@@ -65,9 +65,50 @@ urls = []  # (url, lastmod or None)
 BASE = site["base_url"]
 DEFAULT_OG = BASE + "/assets/img/cheatsheet-p1.png"
 
+def _iso(d):
+    import datetime
+    for fmt in ("%Y-%m-%d", "%B %d, %Y"):
+        try:
+            return datetime.datetime.strptime(str(d), fmt).date().isoformat()
+        except ValueError:
+            pass
+    return None
+
+DEFAULT_LASTMOD = _iso(site.get("updated"))  # sitemap lastmod for pages without their own date
+TITLE_MAX, DESC_MAX = 65, 160
+_seen_titles, _seen_descs = {}, {}
+
+def seo_title(t):
+    """Drop the ' | StudyStore...' suffix when the full title would be truncated in results."""
+    if len(t) > TITLE_MAX and " | StudyStore" in t:
+        t = t.rsplit(" | StudyStore", 1)[0]
+    return t
+
+def seo_desc(d):
+    """Cap meta descriptions at DESC_MAX characters on a word boundary."""
+    if len(d) <= DESC_MAX:
+        return d
+    return d[:DESC_MAX - 3].rsplit(" ", 1)[0].rstrip(",;:.") + "..."
+
+def ld_json(*objs):
+    return "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False).replace("</", "<\\/")}</script>\n'
+                   for o in objs)
+
+def breadcrumbs(*pairs):
+    """BreadcrumbList from (name, absolute url) pairs; Home is prepended."""
+    items = [("StudyStore", BASE + "/")] + list(pairs)
+    return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": i, "name": n, "item": u} for i, (n, u) in enumerate(items, 1)]}
+
 def emit(out, title, desc, body, noindex=False, og_image=DEFAULT_OG, og_type="website",
          head_extra="", lastmod=None):
     root = "../" * out.count("/")
+    title, desc = seo_title(title), seo_desc(desc)
+    if not noindex:
+        for seen, v, kind in ((_seen_titles, title, "title"), (_seen_descs, desc, "description")):
+            if v in seen:
+                print(f"SEO WARNING: duplicate {kind} on {out} and {seen[v]}: {v}")
+            seen[v] = out
     page = base.replace("{{content}}", body)
     page = page.replace("{{page_title}}", html.escape(title)).replace("{{page_desc}}", html.escape(desc))
     page = page.replace("{{page_url}}", f"{BASE}/{out}" if out != "index.html" else BASE + "/")
@@ -81,7 +122,7 @@ def emit(out, title, desc, body, noindex=False, og_image=DEFAULT_OG, og_type="we
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(page)
     if not noindex:
-        urls.append((BASE + "/" + ("" if out == "index.html" else out), lastmod))
+        urls.append((BASE + "/" + ("" if out == "index.html" else out), (_iso(lastmod) or lastmod) if lastmod else DEFAULT_LASTMOD))
 
 # ---------- notes ----------
 def load_notes():
@@ -144,8 +185,8 @@ def build_note(n, all_notes):
            "mainEntity": [{"@type": "Question", "name": strip_tags(convert_inline(q)),
                            "acceptedAnswer": {"@type": "Answer", "text": strip_tags(convert(a))}}
                           for q, a in n["quiz"]]}
-    ld = "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False).replace("</", "<\\/")}</script>\n'
-                 for o in (article, faq))
+    crumbs = breadcrumbs(("Free MCAT study notes", f"{BASE}/notes/index.html"), (m["title"], page_url))
+    ld = ld_json(article, faq, crumbs)
     cta = (f'<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong>'
            f'<p>{{{{title:{m["product"]}}}}} is a {{{{price:{m["product"]}}}}} pack with original Anki cards and a printable cheat sheet. '
            f'<a href="{{{{root}}}}products/{m["product"]}.html">See what is inside</a>.</p></div>{{{{buy:{m["product"]}}}}}</aside>')
@@ -194,6 +235,25 @@ emit("notes/index.html", "Free MCAT Study Notes | StudyStore",
      idx, lastmod=max((n["meta"]["published"] for n in notes), default=None))
 
 # ---------- catalog product pages ----------
+def product_related(slug, aamc):
+    """Free practice pages and notes for a pack, found from content frontmatter (product: / aamc: / notes:)."""
+    own = lambda ref: (products.get(ref) or {}).get("slug") == slug
+    prs = [x for x in PRACTICE_LIVE if own(x["meta"]["product"]) or x["meta"]["aamc"].upper() == aamc.upper()]
+    ns = {n["slug"] for n in notes if own(n["meta"]["product"])} | {s for x in prs for s in x["notes"]}
+    nts = [n for n in notes if n["slug"] in ns]
+    if not prs and not nts:
+        return ""
+    li = "".join(f'<li><a href="{{{{root}}}}practice/{x["slug"]}.html">{html.escape(x["meta"]["title"])}</a></li>' for x in prs)
+    cat = PRACTICE_CATS.get(aamc.upper())
+    if prs and cat:
+        li += f'<li><a href="{{{{root}}}}practice/{cat["slug"]}/index.html">All {html.escape(aamc.upper())} practice questions</a></li>'
+    li += "".join(f'<li><a href="{{{{root}}}}notes/{n["slug"]}.html">{html.escape(n["meta"]["title"])}</a></li>' for n in nts)
+    return ('<h2 class="split">Free practice and notes</h2>'
+            '<p class="reveal">Free pages on this content category, no signup.</p>'
+            f'<ul class="reveal">{li}</ul>')
+
+PB.RELATED = {p["slug"]: product_related(p["slug"], p["aamc"]) for p in site.get("products", [])}
+PB.LD, PB.CRUMBS = ld_json, breadcrumbs
 PB.build_all(site, products, emit)
 PB.write_redirects(site)
 
