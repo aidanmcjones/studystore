@@ -1,0 +1,151 @@
+{
+ "slug": "4c-electricity-electrochem",
+ "cards": [
+  {
+   "src": "assets/packs/4c-electricity-electrochem/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 344
+  },
+  {
+   "src": "assets/packs/4c-electricity-electrochem/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 846
+  },
+  {
+   "src": "assets/packs/4c-electricity-electrochem/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 870
+  },
+  {
+   "src": "assets/packs/4c-electricity-electrochem/card-4.webp",
+   "alt": "Sample multiple choice card: Two point charges repel with force F. Both charges are doubled and the separation is doubled. The new force is",
+   "w": 680,
+   "h": 384
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/4c-electricity-electrochem/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/4c-electricity-electrochem/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/4c-electricity-electrochem/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/4c-electricity-electrochem/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "Two point charges exert a force F on each other. One charge is tripled and the separation is halved. The new force is:",
+   "options": [
+    "6F",
+    "3F/4",
+    "3F/2",
+    "12F"
+   ],
+   "answer": "D",
+   "explanation": "Tripling one charge multiplies F by 3, and halving r multiplies it by 4 (inverse square), so F becomes 12F. 6F misses the square on r, 3F/4 puts the factor on the wrong side, and 3F/2 mixes the two errors.",
+   "subtopic": "Charge and Coulomb's law"
+  },
+  {
+   "stem": "A battery with an open-circuit voltage of 9.0 V delivers 2.0 A with a terminal voltage of 6.0 V. What is its internal resistance?",
+   "options": [
+    "3.0 ohm",
+    "1.5 ohm",
+    "4.5 ohm",
+    "0.67 ohm"
+   ],
+   "answer": "B",
+   "explanation": "The lost voltage is 9.0 - 6.0 = 3.0 V across r, so r = 3.0 V/2.0 A = 1.5 ohm. 3.0 ohm is the external resistance (6.0/2.0), 4.5 ohm would be 9.0/2.0 (the total resistance), and 0.67 ohm inverts the ratio.",
+   "subtopic": "Ohm's law"
+  },
+  {
+   "stem": "A 2.0 uF capacitor discharges through a 1.0 megohm resistor. About how long does it take for the voltage to fall to half its starting value?",
+   "options": [
+    "2.0 s",
+    "0.50 s",
+    "4.0 s",
+    "1.4 s"
+   ],
+   "answer": "D",
+   "explanation": "tau = RC = 2.0 s and the half-time is tau ln 2 = 0.693 x 2.0 = 1.4 s. 2.0 s is the time to reach 37 percent, 0.50 s inverts tau, and 4.0 s is 2 tau (13.5 percent left).",
+   "subtopic": "RC circuits"
+  },
+  {
+   "stem": "A 0.20 m wire carrying 4.0 A is perpendicular to a 0.30 T field. The magnetic force on the wire is:",
+   "options": [
+    "0.060 N",
+    "0.24 N",
+    "0.015 N",
+    "3.8 N"
+   ],
+   "answer": "B",
+   "explanation": "F = BIL sin 90 = (0.30)(4.0)(0.20) = 0.24 N. 0.060 N is B x L x 1 (forgetting the current), 0.015 N is a misplaced decimal, and 3.8 N inverts the arithmetic.",
+   "subtopic": "Magnetic force on charges and currents (right-hand rule)"
+  },
+  {
+   "stem": "Three metals have standard reduction potentials A+/A = +0.50 V, B2+/B = -0.20 V, and C+/C = -1.00 V. Which pair gives a galvanic cell with the largest E0 cell?",
+   "options": [
+    "B anode, A cathode (0.70 V)",
+    "C anode, B cathode (0.80 V)",
+    "A anode, C cathode (-1.50 V)",
+    "C anode, A cathode (1.50 V)"
+   ],
+   "answer": "D",
+   "explanation": "The largest E0 comes from the most negative anode and the most positive cathode: 0.50 - (-1.00) = 1.50 V with C as the anode and A as the cathode. The 0.70 V and 0.80 V pairs are galvanic but smaller, and the last pair reverses the roles, giving a negative (nonspontaneous) value.",
+   "subtopic": "Standard reduction potentials and cell EMF"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Magnitude of the electrostatic force between two point charges?",
+   "back": "F = k q<sub>1</sub>q<sub>2</sub>/r<sup>2</sup>, with k = 9.0 x 10<sup>9</sup> N m<sup>2</sup>/C<sup>2</sup>."
+  },
+  {
+   "type": "cz",
+   "text": "Coulomb's law: F = {{c1::k q<sub>1</sub>q<sub>2</sub>/r<sup>2</sup>}}, where k = {{c2::9.0 x 10<sup>9</sup> N m<sup>2</sup>/C<sup>2</sup>}}.",
+   "extra": "In terms of permittivity, k = 1/(4 pi e0)."
+  },
+  {
+   "type": "mc",
+   "stem": "A +2.0 uC charge and a -3.0 uC charge are 0.30 m apart. The force between them is:",
+   "options": [
+    "0.60 N, repulsive",
+    "0.60 N, attractive",
+    "6.0 N, attractive",
+    "0.18 N, attractive"
+   ],
+   "answer": "B",
+   "why": "F = (9.0 x 10<sup>9</sup>)(2.0 x 10<sup>-6</sup>)(3.0 x 10<sup>-6</sup>)/(0.30)<sup>2</sup> = 0.60 N. Opposite signs attract. Trap: using centimeters or dropping the micro prefix."
+  },
+  {
+   "type": "tf",
+   "statement": "Net charge in an isolated system stays constant, even when charge moves between objects.",
+   "truth": true,
+   "why": "Charge is conserved. It can be transferred but not created or destroyed."
+  }
+ ]
+}

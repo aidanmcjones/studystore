@@ -605,8 +605,23 @@
         "Electrolysis and Faraday's law",
         "Biological applications: nerve conduction, ECG"
       ],
-      "status": "coming_soon",
-      "contents": null,
+      "status": "available",
+      "contents": {
+        "cards": 396,
+        "card_types": {
+          "sa": 101,
+          "cz": 108,
+          "mc": 118,
+          "tf": 61,
+          "io": 8
+        },
+        "questions": 57,
+        "passage_sets": 4,
+        "diagrams": 28,
+        "guide_pages": 8,
+        "cheatsheet_pages": 3,
+        "validation": "CLEAN"
+      },
       "ls_name": "StudyStore MCAT 4C: Electrostatics, Circuits, Magnetism and Electrochemistry",
       "variant_id": null,
       "checkout_url": null
@@ -1470,7 +1485,7 @@
         "4e-atoms-nuclear-periodic",
         "5c-separations-spectroscopy"
       ],
-      "ready_count": 3,
+      "ready_count": 4,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Chem/Phys Complete Section",
       "variant_id": null,
@@ -1544,7 +1559,7 @@
         "9b-demographics",
         "cars-strategy"
       ],
-      "ready_count": 10,
+      "ready_count": 11,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Complete MCAT (all sections plus CARS)",
       "variant_id": null,
