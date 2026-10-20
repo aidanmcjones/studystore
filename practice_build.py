@@ -172,8 +172,8 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
                    f'<a href="{{{{root}}}}products/{pr}.html">See what is inside</a>.</p></div>{{{{buy:{pr}}}}}</aside>')
         else:
             cta = (f'<aside class="cta"><div><strong>Study this topic with spaced repetition</strong>'
-                   f'<p>StudyStore packs pair original Anki cards with a printable cheat sheet. A pack for {html.escape(p["cat"]["title"])} '
-                   f'is in the works. <a href="{{{{root}}}}index.html#packs">See the packs available now</a>.</p></div></aside>')
+                   f'<p>StudyStore makes one pack per MCAT content category: original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. '
+                   f'<a href="{{{{root}}}}products/index.html">See every pack</a>.</p></div></aside>')
         same = [x for x in live if x["meta"]["aamc"] == m["aamc"] and x["slug"] != p["slug"]]
         more = "".join(f'<li><a href="{{{{root}}}}practice/{x["slug"]}.html">{html.escape(x["meta"]["title"])}</a></li>' for x in same)
         more += f'<li><a href="{{{{root}}}}practice/{p["cat"]["slug"]}/index.html">All {m["aamc"]} practice pages</a></li>'

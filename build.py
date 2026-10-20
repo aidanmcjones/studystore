@@ -147,7 +147,7 @@ def build_note(n, all_notes):
     ld = "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False).replace("</", "<\\/")}</script>\n'
                  for o in (article, faq))
     cta = (f'<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong>'
-           f'<p>{{{{title:{m["product"]}}}}} is a {{{{price:{m["product"]}}}}} pack with original Anki cards and a printable cheat sheet. '
+           f'<p>{{{{title:{m["product"]}}}}} is a {{{{price:{m["product"]}}}}} pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. '
            f'<a href="{{{{root}}}}products/{m["product"]}.html">See what is inside</a>.</p></div>{{{{buy:{m["product"]}}}}}</aside>')
     body = f"""<article class="note wrap narrow">
 <p class="eyebrow">Free MCAT study note</p>
