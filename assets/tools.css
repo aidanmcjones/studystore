@@ -1,0 +1,57 @@
+/* Free tools. Loaded only on /tools/ pages. */
+.tool{padding-top:32px;padding-bottom:48px}
+.tool h1{font-size:clamp(1.7rem,4.5vw,2.4rem)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;margin:18px 0}
+.panel h2,.panel h3{margin-top:0}
+.modes{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.modes button,.opts button,.tbtn{font:inherit;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px 14px;border-radius:8px;cursor:pointer;min-height:44px}
+.modes button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+.opts button{text-align:left}
+.opts button:hover:not(:disabled){border-color:var(--base)}
+.opts button.right{background:#dcf2e1;border-color:#2e7d46}
+.opts button.wrong{background:#fbe0dc;border-color:#b3261e}
+.tbtn.primary{background:var(--base);color:#fff;border-color:var(--base);font-weight:700}
+.tbtn.primary:hover{background:var(--base)}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--neutral);outline-offset:2px}
+.qtext{font-size:1.25rem;font-family:Georgia,serif;margin:6px 0}
+.fb{min-height:1.5em;font-weight:600}
+.fb.ok{color:#1d6b35}.fb.no{color:#b3261e}
+.progress{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.92rem}
+.structure{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;max-width:360px}
+.structure svg{width:100%;height:auto;display:block}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.fields label{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:.95rem}
+.fields input,.fields select{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-height:44px;width:100%}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px}
+.checks label{font-weight:400;flex-direction:row;align-items:center;gap:8px}
+.checks input{width:auto;min-height:0}
+.work{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9rem}
+.work td,.work th{padding:6px 8px}
+.card-share{background:var(--ink);color:#fff;border-radius:12px;padding:22px;max-width:460px}
+.card-share h3{color:#fff;margin:0 0 6px}.card-share p{margin:4px 0;color:#e7e3d9}
+.weeks{display:grid;gap:12px;margin-top:14px}
+.week{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;break-inside:avoid}
+.week h3{margin:0 0 4px;font-size:1.1rem}
+.week .ph{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--base)}
+.week ul{margin:.4em 0;padding-left:1.2em}
+.pill{display:inline-block;background:#efe8d9;border-radius:99px;padding:1px 9px;font-size:.82rem;margin-left:4px}
+.toolgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.toolcard{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.toolcard img{width:100%;height:auto;background:#fff}
+.toolcard>div{padding:14px 18px 18px}.toolcard h3 a{color:var(--ink);text-decoration:none}
+.pct{font-family:Georgia,serif;font-size:2.4rem;font-weight:700;color:var(--base);line-height:1.1}
+.bar{height:14px;border-radius:7px;background:#e6dfcf;overflow:hidden}.bar>i{display:block;height:100%;background:var(--neutral)}
+.warn{background:var(--surface);border:1px solid var(--acid);border-radius:8px;padding:10px 14px}
+.embedbox textarea{width:100%;font:.85rem ui-monospace,Menlo,monospace;min-height:84px;padding:8px;border:1px solid var(--line);border-radius:8px}
+.embed-credit{display:none;text-align:center;font-size:.85rem;margin:8px 0}
+html.embed header.site,html.embed footer.site,html.embed .noembed,html.embed .cta{display:none}
+html.embed .embed-credit{display:block}
+html.embed body{background:transparent}
+html.embed .tool{padding-top:8px}
+.sr{position:absolute;left:-9999px}
+@media print{
+ header.site,footer.site,.noprint,.cta{display:none!important}
+ body{background:#fff;font-size:12pt}.panel{border:0;padding:0}.week{border:1px solid #999}
+}
+@media(max-width:560px){.panel{padding:14px}.opts{grid-template-columns:1fr}}

@@ -9,7 +9,7 @@ cd "$(dirname "$0")/.."
 python3 build.py
 rm -rf .deploy && mkdir .deploy
 rsync -a --prune-empty-dirs \
-  --exclude '.*' --exclude '__pycache__/' --exclude 'tools/' --exclude 'templates/' --exclude 'content/' \
+  --exclude '.*' --exclude '__pycache__/' --exclude '/tools/*.sh' --exclude '/tools/*.py' --exclude 'templates/' --exclude 'content/' \
   --exclude 'db/' --exclude 'functions/' --exclude 'node_modules/' \
   --include '*/' --include '*.html' --include 'sitemap.xml' --include 'robots.txt' \
   --include '[0-9a-f]*[0-9a-f].txt' --include 'experiments.json' --include '/_redirects' \
