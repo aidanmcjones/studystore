@@ -1,0 +1,23 @@
+<style>.launchgo{margin:24px 0 32px}.launchbtn{font:800 2.2rem/1 var(--f-display);padding:28px 64px;letter-spacing:.06em}.launchbtn.confirm{background:var(--alert);border-color:var(--alert)}.launchbtn[disabled]{opacity:.5;cursor:not-allowed}.launchlist li{display:flex;gap:10px;align-items:baseline;padding:10px 14px;margin:0 0 8px}.launchlist .lk{font:500 .8rem/1 var(--f-mono);text-transform:uppercase;min-width:5.5em}.launchlist .ok{color:var(--acid)}.launchlist .bad{color:var(--alert)}.launchlist .wait{color:var(--muted)}</style>
+<div class="wrap narrow legal" style="padding-top:56px;padding-bottom:56px">
+<h1>Launch</h1>
+<p>Owner only. Press GO once Lemon Squeezy confirms the store is verified. The launcher on the Mac picks it up within 5 minutes.</p>
+<p id="admin-status" class="mono" role="status" aria-live="polite">This page needs JavaScript.</p>
+<div class="launchgo">
+<button type="button" class="btn launchbtn" id="launch-go" disabled>GO</button>
+<p class="meta" id="launch-confirm-note" hidden>Launch everything now? Press again to confirm.</p>
+<div class="ractions"><button type="button" class="btn small ghost" id="launch-cancel" hidden>Cancel</button><button type="button" class="btn small ghost" id="launch-reset" hidden>Reset to idle</button><button type="button" class="btn small ghost" id="admin-reload">Reload</button><a class="btn small ghost" href="{{root}}owner.html">Owner sign-in</a></div>
+</div>
+<section><h2>Preflight</h2><p class="meta" id="launch-preflight-when">Written by the launcher (ops/launch.py preflight).</p><ul class="rlist launchlist" id="launch-preflight"></ul></section>
+<section><h2>Progress</h2><ul class="rlist launchlist" id="launch-steps"></ul><p class="rmsg" id="launch-log" hidden></p></section>
+<section><h2>What GO does</h2>
+<ul>
+<li>Checks the store is active, every pack and bundle has a live Lemon Squeezy product, and the checkout key is set. If any of that fails, nothing changes and the reason shows here.</li>
+<li>Writes the Lemon Squeezy variant ids into the site, rebuilds it, deploys it and pushes the site repo, so every Buy button opens a real checkout.</li>
+<li>Updates the marketing facts so packs read as for sale instead of available soon.</li>
+<li>Releases the held launch posts in the outbox so they show as ready on the marketing page. Nothing is posted for you.</li>
+<li>Emails the waitlist once (at most 100 per day, with an unsubscribe link and the postal address), only if the email sender and postal address are set up.</li>
+<li>Pings search engines with the sitemap and logs each step to the event log.</li>
+</ul></section>
+</div>
+<script src="{{root}}assets/js/admin_launch.js" defer></script>

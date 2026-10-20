@@ -39,6 +39,7 @@ PAGES = [
     ("admin_reports.html", "admin/reports.html", "Reports | StudyStore", "Owner report review.", True),
     ("admin_subscribers.html", "admin/subscribers.html", "Subscribers | StudyStore", "Owner launch list stats.", True),
     ("admin_marketing.html", "admin/marketing.html", "Marketing | StudyStore", "Owner marketing outbox.", True),
+    ("admin_launch.html", "admin/launch.html", "Launch | StudyStore", "Owner launch switch.", True),
 ]
 
 def contact():
