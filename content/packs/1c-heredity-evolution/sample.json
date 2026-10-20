@@ -1,0 +1,151 @@
+{
+ "slug": "1c-heredity-evolution",
+ "cards": [
+  {
+   "src": "assets/packs/1c-heredity-evolution/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 504
+  },
+  {
+   "src": "assets/packs/1c-heredity-evolution/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 458
+  },
+  {
+   "src": "assets/packs/1c-heredity-evolution/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 823
+  },
+  {
+   "src": "assets/packs/1c-heredity-evolution/card-4.webp",
+   "alt": "Sample multiple choice card: Which genotype is heterozygous?",
+   "w": 680,
+   "h": 356
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/1c-heredity-evolution/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/1c-heredity-evolution/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/1c-heredity-evolution/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/1c-heredity-evolution/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A gene has four alleles in a population. How many alleles can a single diploid person carry at that autosomal locus?",
+   "options": [
+    "Two",
+    "Four",
+    "One",
+    "Eight"
+   ],
+   "answer": "A",
+   "explanation": "Each person inherits one allele from each parent, so two at most, even if the population carries many. Four would be the population total here, one applies to hemizygous genes, and eight has no basis.",
+   "subtopic": "Genes, alleles and loci"
+  },
+  {
+   "stem": "AaBbCc x AaBbCc. What fraction of offspring is A_ B_ C_ (dominant for all)?",
+   "options": [
+    "9/16",
+    "1/64",
+    "27/64",
+    "3/4"
+   ],
+   "answer": "C",
+   "explanation": "Each gene gives a dominant phenotype with probability 3/4, so (3/4)^3 = 27/64. The value 9/16 applies to two genes, 3/4 to one gene, and 1/64 to aabbcc.",
+   "subtopic": "Punnett squares and probability rules"
+  },
+  {
+   "stem": "In a test cross, 60 of 400 offspring are recombinant for two genes. How many map units apart are they?",
+   "options": [
+    "15",
+    "60",
+    "6",
+    "40"
+   ],
+   "answer": "A",
+   "explanation": "RF = 60/400 x 100 = 15 percent, or 15 map units. Sixty is the raw count, six is a power-of-ten slip, and forty is the parental share in percent for another case.",
+   "subtopic": "Linkage and recombination frequency mapping"
+  },
+  {
+   "stem": "Which assumption of Hardy-Weinberg is broken when a population of 40 individuals is cut off from others?",
+   "options": [
+    "Random mating",
+    "No mutation",
+    "Large population size",
+    "No selection"
+   ],
+   "answer": "C",
+   "explanation": "A tiny population allows strong drift, which is the violation of a large size assumption. The scenario does not describe nonrandom mating, mutation, or selection.",
+   "subtopic": "Hardy-Weinberg equilibrium"
+  },
+  {
+   "stem": "The wings of bats and insects both allow flight, but the structures are unrelated in origin. These are:",
+   "options": [
+    "Analogous structures from convergent evolution",
+    "Homologous structures from divergent evolution",
+    "Vestigial structures",
+    "Homologous structures from parallel evolution"
+   ],
+   "answer": "A",
+   "explanation": "Different ancestry with similar function is analogy by convergence. Homologous structures share ancestry, and vestigial ones lost function.",
+   "subtopic": "Evolutionary patterns: convergent, divergent, parallel"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "What is a gene, at the molecular level?",
+   "back": "A stretch of DNA that encodes a functional product, usually a polypeptide or a functional RNA. It is the basic unit of heredity."
+  },
+  {
+   "type": "cz",
+   "text": "A diploid cell carries {{c1::two}} alleles for each autosomal gene, one from each {{c2::parent}}.",
+   "extra": ""
+  },
+  {
+   "type": "mc",
+   "stem": "Which genotype is heterozygous?",
+   "options": [
+    "Dd",
+    "RR",
+    "tt",
+    "XY"
+   ],
+   "answer": "A",
+   "why": "Heterozygous means two different alleles at one locus. RR and tt are homozygous; XY describes sex chromosomes, not alleles of one gene."
+  },
+  {
+   "type": "tf",
+   "statement": "The two alleles of a gene in one person sit at different loci on the homologs.",
+   "truth": false,
+   "why": "Alleles of one gene occupy the same locus on the two homologs. Different genes occupy different loci."
+  }
+ ]
+}

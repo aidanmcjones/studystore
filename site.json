@@ -735,8 +735,23 @@
         "Phylogeny and common descent",
         "Molecular clock"
       ],
-      "status": "coming_soon",
-      "contents": null,
+      "status": "available",
+      "contents": {
+        "cards": 392,
+        "card_types": {
+          "sa": 198,
+          "cz": 33,
+          "mc": 95,
+          "tf": 54,
+          "io": 12
+        },
+        "questions": 60,
+        "passage_sets": 3,
+        "diagrams": 25,
+        "guide_pages": 10,
+        "cheatsheet_pages": 3,
+        "validation": "CLEAN"
+      },
       "ls_name": "StudyStore MCAT 1C: Heredity, Population Genetics and Evolution",
       "variant_id": null,
       "checkout_url": null
@@ -1400,7 +1415,7 @@
         "2c-cell-division-development",
         "2b-prokaryotes-viruses"
       ],
-      "ready_count": 5,
+      "ready_count": 6,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Bio/Biochem Complete Section",
       "variant_id": null,
@@ -1499,7 +1514,7 @@
         "9b-demographics",
         "cars-strategy"
       ],
-      "ready_count": 7,
+      "ready_count": 8,
       "status": "coming_soon",
       "ls_name": "StudyStore MCAT Bundle: Complete MCAT (all sections plus CARS)",
       "variant_id": null,
