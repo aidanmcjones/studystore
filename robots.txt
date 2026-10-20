@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aidanmcjones.github.io/studystore/sitemap.xml
+Sitemap: https://www.studystore.co/sitemap.xml
