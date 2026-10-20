@@ -1,0 +1,151 @@
+{
+ "slug": "7a-individual-behavior",
+ "cards": [
+  {
+   "src": "assets/packs/7a-individual-behavior/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 802
+  },
+  {
+   "src": "assets/packs/7a-individual-behavior/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 487
+  },
+  {
+   "src": "assets/packs/7a-individual-behavior/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 578
+  },
+  {
+   "src": "assets/packs/7a-individual-behavior/card-4.webp",
+   "alt": "Sample multiple choice card: Which drug action explains why SSRIs raise mood?",
+   "w": 680,
+   "h": 385
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/7a-individual-behavior/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/7a-individual-behavior/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/7a-individual-behavior/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/7a-individual-behavior/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "Which event is directly responsible for the repolarization phase of an action potential?",
+   "options": [
+    "Opening of voltage-gated Na+ channels",
+    "Opening of voltage-gated K+ channels",
+    "Inactivation of the Na+/K+ ATPase",
+    "Influx of Ca2+ at the soma"
+   ],
+   "answer": "B",
+   "explanation": "K+ efflux returns the membrane toward rest. Na+ channel opening causes the rising phase, the pump is not what stops the spike, and Ca2+ entry matters at the terminal.",
+   "subtopic": "Neurons and neurotransmitters in behavior"
+  },
+  {
+   "stem": "Prolonged elevated cortisol is most associated with",
+   "options": [
+    "Hippocampal atrophy and impaired memory",
+    "Increased immune function",
+    "Enlarged amygdala only",
+    "Lower blood glucose"
+   ],
+   "answer": "A",
+   "explanation": "Hippocampal neurons are sensitive to chronic glucocorticoids. Cortisol suppresses immunity and raises blood glucose. Cortisol does not boost immunity, a smaller amygdala is not the finding, and it raises rather than lowers glucose.",
+   "subtopic": "Endocrine influences on behavior"
+  },
+  {
+   "stem": "Two children share a genotype that sets a high and a low IQ range. Their different scores in enriched versus deprived homes illustrate",
+   "options": [
+    "Genetic determinism",
+    "Passive correlation",
+    "Display rules",
+    "Reaction range"
+   ],
+   "answer": "D",
+   "explanation": "Genes set limits and environment determines the position within them. Genetic determinism ignores the environment effect, passive correlation involves parent-supplied environments, and display rules concern emotion expression.",
+   "subtopic": "Nature versus nurture"
+  },
+  {
+   "stem": "Which theorist used factor analysis to identify 16 source traits?",
+   "options": [
+    "Allport",
+    "Eysenck",
+    "Cattell",
+    "Mischel"
+   ],
+   "answer": "C",
+   "explanation": "Cattell's 16PF is built on factor analysis. Allport used trait levels, Eysenck three dimensions, Mischel stressed situations.",
+   "subtopic": "Personality theories: trait"
+  },
+  {
+   "stem": "A patient has 3 months of hallucinations and disorganized speech with declining work function. Diagnosis",
+   "options": [
+    "Schizophrenia",
+    "Schizophreniform disorder",
+    "Brief psychotic disorder",
+    "Schizoaffective disorder"
+   ],
+   "answer": "B",
+   "explanation": "1 to 6 months of symptoms fits schizophreniform. Schizophrenia needs 6 months and brief psychotic disorder is under a month. Schizoaffective disorder also needs a concurrent major mood episode, which is not described here.",
+   "subtopic": "Schizophrenia spectrum"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Why can a neuron not fire again during the absolute refractory period?",
+   "back": "Voltage-gated Na+ channels are inactivated, so no stimulus strength can start a new spike."
+  },
+  {
+   "type": "cz",
+   "text": "Resting membrane potential is about {{c1::-70 mV}}, kept by the Na+/K+ ATPase moving {{c2::3}} Na+ out and {{c2::2}} K+ in.",
+   "extra": "Plus K+ leak channels."
+  },
+  {
+   "type": "mc",
+   "stem": "Which toxin prevents acetylcholine release at the neuromuscular junction?",
+   "options": [
+    "Curare",
+    "Botulinum toxin",
+    "Nicotine",
+    "Physostigmine"
+   ],
+   "answer": "B",
+   "why": "Botulinum toxin cleaves proteins needed for vesicle fusion. Curare blocks the receptor, nicotine activates it, and physostigmine blocks AChE."
+  },
+  {
+   "type": "tf",
+   "statement": "A stronger stimulus makes a bigger action potential.",
+   "truth": false,
+   "why": "Spikes are all-or-none. A stronger stimulus raises the firing rate or recruits more neurons."
+  }
+ ]
+}
