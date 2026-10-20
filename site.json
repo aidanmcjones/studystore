@@ -1,0 +1,16 @@
+{
+  "site_name": "StudyStore",
+  "base_url": "https://aidanmcjones.github.io/studystore",
+  "tagline": "Original, high-yield MCAT study packs.",
+  "support_email": null,
+  "updated": "October 20, 2026",
+  "disclaimer": "MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.",
+  "products": [
+    {
+      "slug": "aa-enzymes",
+      "title": "Amino Acids, Proteins & Enzyme Kinetics",
+      "price": "$9",
+      "checkout_url": null
+    }
+  ]
+}
