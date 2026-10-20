@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="{{root}}assets/marketing.css">
+<div class="wrap narrow legal mk" style="padding-top:40px;padding-bottom:56px">
+<h1>Marketing outbox</h1>
+<p>Owner only. Copy a post, paste it on the target site, then tap Mark posted. Check the notes on each card before posting.</p>
+<p id="admin-status" class="mono" role="status" aria-live="polite">This page needs JavaScript.</p>
+<div class="ractions"><button type="button" class="btn small ghost" id="admin-reload">Reload</button><a class="btn small ghost" href="{{root}}owner.html">Owner sign-in</a></div>
+<section id="mk-today" class="mk-today" hidden><h2>Today's five</h2><p class="meta">Oldest ready posts, one per channel.</p><ol id="mk-today-list" class="mk-todaylist"></ol></section>
+<div class="mk-tabs" role="tablist" aria-label="Status">
+<button type="button" role="tab" data-status="ready" aria-selected="true">Ready <span></span></button>
+<button type="button" role="tab" data-status="held" aria-selected="false">Held for launch <span></span></button>
+<button type="button" role="tab" data-status="posted" aria-selected="false">Posted <span></span></button>
+<button type="button" role="tab" data-status="skipped" aria-selected="false">Skipped <span></span></button>
+</div>
+<div id="mk-chips" class="mk-chips" aria-label="Channel filter"></div>
+<div id="admin-root"></div>
+</div>
+<script src="{{root}}assets/js/marketing.js" defer></script>
