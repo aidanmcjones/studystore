@@ -65,7 +65,7 @@ CRUMBS = None         # build.breadcrumbs
 
 
 def product_ld(site, p, url, image, kind="pack"):
-    """schema.org Product. Never aggregateRating or review. PreOrder until a checkout link exists."""
+    """schema.org Product. Never aggregateRating or review. PreOrder until a checkout link or variant id exists."""
     if kind == "pack":
         c = p.get("contents") or {}
         desc = (f'Original MCAT study pack for AAMC content category {p["aamc"]}'
@@ -77,7 +77,7 @@ def product_ld(site, p, url, image, kind="pack"):
     else:
         desc = f'{p["title"]}: {p["pack_count"]} StudyStore MCAT packs in one download.'
         name = f'{p["title"]} MCAT Bundle'
-    avail = "https://schema.org/InStock" if p.get("checkout_url") else "https://schema.org/PreOrder"
+    avail = "https://schema.org/InStock" if p.get("checkout_url") or p.get("variant_id") else "https://schema.org/PreOrder"
     return {"@context": "https://schema.org", "@type": "Product", "name": name, "description": desc,
             "sku": p["slug"], "url": url, "image": image, "category": "MCAT study materials",
             "brand": {"@type": "Brand", "name": "StudyStore"},
