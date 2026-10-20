@@ -1,0 +1,151 @@
+{
+ "slug": "5e-thermo-kinetics",
+ "cards": [
+  {
+   "src": "assets/packs/5e-thermo-kinetics/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 476
+  },
+  {
+   "src": "assets/packs/5e-thermo-kinetics/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 700
+  },
+  {
+   "src": "assets/packs/5e-thermo-kinetics/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 583
+  },
+  {
+   "src": "assets/packs/5e-thermo-kinetics/card-4.webp",
+   "alt": "Sample multiple choice card: Which quantity is NOT a state function?",
+   "w": 680,
+   "h": 328
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/5e-thermo-kinetics/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/5e-thermo-kinetics/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/5e-thermo-kinetics/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/5e-thermo-kinetics/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "Which of the following is a state function?",
+   "options": [
+    "Heat absorbed",
+    "Entropy",
+    "Work done by the system",
+    "The path taken between two states"
+   ],
+   "answer": "B",
+   "explanation": "Entropy depends only on the state. Heat and work depend on the path, and the path itself is not a property of a state. The other choices fail because each describes a quantity tied to how the change happened.",
+   "subtopic": "Systems, state functions and process types"
+  },
+  {
+   "stem": "During the boiling of water at 1 atm, the heat supplied",
+   "options": [
+    "raises the temperature of the liquid",
+    "increases the potential energy of the molecules while T stays constant",
+    "raises the average kinetic energy",
+    "lowers the vapor pressure"
+   ],
+   "answer": "B",
+   "explanation": "At the plateau, energy overcomes intermolecular attractions. T and average KE stay constant, and vapor pressure equals the external pressure.",
+   "subtopic": "Phase changes and heating curves"
+  },
+  {
+   "stem": "For a spontaneous process, ΔS(system) = -40 J/K. This is possible if",
+   "options": [
+    "ΔS(surroundings) is exactly -40 J/K",
+    "ΔS(surroundings) is greater than +40 J/K",
+    "ΔS(universe) is negative",
+    "the process is isolated"
+   ],
+   "answer": "B",
+   "explanation": "The second law needs ΔS(universe) > 0. A system can lose entropy when the surroundings gain more. In an isolated system ΔS(sys) itself must be positive.",
+   "subtopic": "Entropy and the second law"
+  },
+  {
+   "stem": "A reaction has k = 4.0 x 10^-3 s^-1. The overall order is",
+   "options": [
+    "zero",
+    "first",
+    "second",
+    "third"
+   ],
+   "answer": "B",
+   "explanation": "A unit of s^-1 is the signature of first order, because rate (M/s) = k[A] requires k in s^-1. Zero order would need M/s, second order M^-1 s^-1, and third order M^-2 s^-1.",
+   "subtopic": "Reaction rates and rate laws"
+  },
+  {
+   "stem": "Which conditions favor the thermodynamic product?",
+   "options": [
+    "Low temperature and short time under irreversible conditions",
+    "Higher temperature and long reaction time under reversible conditions",
+    "Low temperature with a strong catalyst only",
+    "Short reaction time at any temperature"
+   ],
+   "answer": "B",
+   "explanation": "Equilibration lets material funnel to the most stable product. Low T, short time, and irreversibility lock in the kinetic product.",
+   "subtopic": "Kinetic versus thermodynamic control"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Define a system and its surroundings in thermodynamics.",
+   "back": "The system is the part of the universe under study. Everything else is the surroundings. System plus surroundings is the universe."
+  },
+  {
+   "type": "cz",
+   "text": "A {{c1::state function}} depends only on the initial and final states. Examples: {{c2::U, H, S, G, T, P, V}}.",
+   "extra": "Path-independent. A change in a state function is just final minus initial."
+  },
+  {
+   "type": "mc",
+   "stem": "Which quantity is NOT a state function?",
+   "options": [
+    "Internal energy",
+    "Entropy",
+    "Gibbs free energy",
+    "Work done by the system"
+   ],
+   "answer": "D",
+   "why": "Work depends on the path. U, S, and G depend only on the state."
+  },
+  {
+   "type": "tf",
+   "statement": "Heat is a state function because energy is conserved.",
+   "truth": false,
+   "why": "Heat is a path function. Conservation links q and w to the state function U, but q alone depends on the route."
+  }
+ ]
+}
