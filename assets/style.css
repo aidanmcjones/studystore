@@ -175,7 +175,7 @@ section.hero{padding:clamp(40px,7vw,96px) 0 clamp(64px,8vw,120px);min-height:min
 .ankicard .opts li{border:1px solid #d6dce4;border-radius:6px;padding:8px 12px;font-size:.95rem;background:#fff}
 .cloze{font-weight:700;color:#1c5bd0}
 .cloze.on{background:#fff2b8;padding:0 .2em;border-radius:3px;color:#0d1512}
-.ankictl{display:flex;gap:8px;justify-content:center;padding-top:14px}
+.ankictl{display:flex;gap:8px;justify-content:center;padding-top:14px;position:relative;transform:translateZ(2px)} /* lift controls off the 3D card plane so clicks reach the buttons */
 .js .anki .ankicard .face{cursor:pointer}
 html:not(.js) .ankicard{opacity:1;visibility:visible;position:relative}
 html:not(.js) .ankicard:not(:first-child){display:none}
