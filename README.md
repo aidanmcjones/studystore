@@ -36,3 +36,13 @@ The root file `61cfad664bbb52328ce1c2a15b876a63.txt` is the public IndexNow key 
 deploy, run `tools/ping_sitemap.sh` (all URLs) or `tools/ping_sitemap.sh --new` (URLs added in the last commit). It POSTs to
 api.indexnow.org; HTTP 200 or 202 means accepted. IndexNow reaches Bing and partner engines. Google does not use IndexNow; it
 finds pages through `sitemap.xml` (declared in `robots.txt`) and ordinary crawling.
+
+## Cloudflare Pages, experiments and analytics
+
+- Deploy: `tools/deploy_pages.sh` builds, copies an allowlist of public files into `.deploy/` (aborts on any paid or source
+  file), and runs `npx wrangler@3.114.0 pages deploy` to project `studystore` (https://studystore.pages.dev).
+- `functions/api/e.js`: anonymous event collector into D1 `studystore_analytics` (binding `DB` in `wrangler.toml`,
+  schema in `db/schema.sql`). `functions/api/ls-webhook.js`: Lemon Squeezy `order_created` webhook, inactive until the
+  `LS_WEBHOOK_SECRET` Pages secret is set.
+- `experiments.json` + `assets/js/exp.js`: A/B/C tests. Mark elements with `data-exp="<id>" data-exp-field="<field>"`.
+  Weights are rewritten by the private ops learner; see `ops/EXPERIMENTS.md` in the private studystore repo.

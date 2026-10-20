@@ -18,6 +18,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23c2410c'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Georgia' font-weight='700' text-anchor='middle' fill='white'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="assets/js/exp.js" defer></script>
 </head>
 <body>
 <header class="site"><div class="wrap">
@@ -27,9 +30,9 @@
 <main>
 <div class="wrap hero">
 <div class="eyebrow">Study packs for the MCAT exam</div>
-<h1>Study less text.<br>Recall more science.</h1>
-<p class="lead">StudyStore makes original, high-yield MCAT study packs. Each pack pairs a tight Anki deck with a printable cheat sheet, written from scratch and checked card by card.</p>
-<p><a class="btn" href="#packs">See Pack 1</a> &nbsp; <a class="btn ghost" href="#faq">How it works</a></p>
+<h1 data-exp="home_hero" data-exp-field="headline">Study less text. Recall more science.</h1>
+<p class="lead" data-exp="home_hero" data-exp-field="subhead">StudyStore makes original, high-yield MCAT study packs. Each pack pairs a tight Anki deck with a printable cheat sheet, written from scratch and checked card by card.</p>
+<p><a class="btn" href="#packs" data-track="cta" data-exp="primary_cta" data-exp-field="label">See Pack 1</a> &nbsp; <a class="btn ghost" href="#faq">How it works</a></p>
 </div>
 
 <section id="packs"><div class="wrap">
@@ -44,7 +47,7 @@
 <span class="badge">Pack 1</span>
 <h3>Amino Acids, Proteins &amp; Enzyme Kinetics</h3>
 <p class="meta">120 Anki cards, 10 original diagrams, and a 2-page printable cheat sheet.</p>
-<div class="row"><span class="price">$9</span><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a><a href="products/aa-enzymes.html">Details</a></div>
+<div class="row"><span class="price" data-exp="price_frame" data-exp-field="price">$9</span><a class="btn off" aria-disabled="true" role="link" tabindex="-1">Available soon</a><a href="products/aa-enzymes.html">Details</a></div>
 </div>
 </article>
 </div>
@@ -62,8 +65,9 @@
 </div>
 <div class="soon" id="sampler">
 <span class="badge">Coming soon</span>
-<h3>Free sampler</h3>
-<p>A free set of one-page MCAT sheets is on the way. Email signup opens soon. There is no form here yet, and we are not collecting addresses.</p>
+<h3 data-exp="sampler_offer" data-exp-field="title">Free sampler</h3>
+<p data-exp="sampler_offer" data-exp-field="body">A free set of one-page MCAT sheets is on the way. Email signup opens soon. There is no form here yet, and we are not collecting addresses.</p>
+<p><a href="notes/index.html" data-track="sampler" data-exp="sampler_offer" data-exp-field="link">Read the free notes now</a></p>
 </div>
 </div></section>
 

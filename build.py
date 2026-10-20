@@ -28,7 +28,7 @@ PAGES = [
     ("terms.html", "terms.html", "Terms of Sale | StudyStore",
      "Terms of sale for StudyStore digital study packs, sold through Lemon Squeezy as merchant of record.", False),
     ("privacy.html", "privacy.html", "Privacy Policy | StudyStore",
-     "StudyStore collects no data, sets no cookies, and runs no analytics. Payments are handled by Lemon Squeezy.", False),
+     "StudyStore sets no cookies and collects no personal data. Anonymous first-party page and click counts only. Payments are handled by Lemon Squeezy.", False),
     ("404.html", "404.html", "Page not found | StudyStore", "Page not found.", True),
 ]
 

@@ -1,0 +1,211 @@
+{
+  "version": 1,
+  "updated": "2026-10-20T00:00:00Z",
+  "theme": "launch",
+  "note": "Edited by ops/experiments.py and the marketing job. Variant ids are never reused. Text must be true of the product. {orig} is replaced with the element's original text (used to keep prices in sync with site.json).",
+  "experiments": [
+    {
+      "id": "home_hero",
+      "title": "Home hero headline + subhead",
+      "pages": "^/(index(\\.html)?)?$",
+      "metric": "checkout_click",
+      "proxy_metric": "cta_click",
+      "status": "running",
+      "variants": [
+        {
+          "id": "a",
+          "status": "active",
+          "weight": 0.3334,
+          "created": "2026-10-20",
+          "angle": "control: recall over re-reading",
+          "fields": {
+            "headline": "Study less text. Recall more science.",
+            "subhead": "StudyStore makes original, high-yield MCAT study packs. Each pack pairs a tight Anki deck with a printable cheat sheet, written from scratch and checked card by card."
+          }
+        },
+        {
+          "id": "b",
+          "status": "active",
+          "weight": 0.3333,
+          "created": "2026-10-20",
+          "angle": "concrete contents",
+          "fields": {
+            "headline": "MCAT biochem, distilled into 120 cards.",
+            "subhead": "Pack 1 pairs an original Anki deck with a 2-page printable cheat sheet covering amino acids, proteins, and enzyme kinetics. Terse answers, checked card by card."
+          }
+        },
+        {
+          "id": "c",
+          "status": "active",
+          "weight": 0.3333,
+          "created": "2026-10-20",
+          "angle": "terse format + low risk",
+          "fields": {
+            "headline": "Terse Anki cards for MCAT biochemistry.",
+            "subhead": "One or two sentence answers, 10 original diagrams, and a printable cheat sheet. Written from scratch, with a 14-day no-questions refund."
+          }
+        }
+      ]
+    },
+    {
+      "id": "primary_cta",
+      "title": "Primary CTA copy (home hero button)",
+      "pages": "^/(index(\\.html)?)?$",
+      "metric": "checkout_click",
+      "proxy_metric": "cta_click",
+      "status": "running",
+      "variants": [
+        {
+          "id": "a",
+          "status": "active",
+          "weight": 0.3334,
+          "created": "2026-10-20",
+          "angle": "control",
+          "fields": {
+            "label": "See Pack 1"
+          }
+        },
+        {
+          "id": "b",
+          "status": "active",
+          "weight": 0.3333,
+          "created": "2026-10-20",
+          "angle": "curiosity about contents",
+          "fields": {
+            "label": "See what is inside Pack 1"
+          }
+        },
+        {
+          "id": "c",
+          "status": "active",
+          "weight": 0.3333,
+          "created": "2026-10-20",
+          "angle": "preview first",
+          "fields": {
+            "label": "Preview the cards"
+          }
+        }
+      ]
+    },
+    {
+      "id": "price_frame",
+      "title": "Price framing (home card + product page)",
+      "pages": "^/((index(\\.html)?)?|products/.+)$",
+      "metric": "checkout_click",
+      "proxy_metric": "cta_click",
+      "status": "running",
+      "variants": [
+        {
+          "id": "a",
+          "status": "active",
+          "weight": 0.3334,
+          "created": "2026-10-20",
+          "angle": "control: bare price",
+          "fields": {
+            "price": "{orig}"
+          }
+        },
+        {
+          "id": "b",
+          "status": "active",
+          "weight": 0.3333,
+          "created": "2026-10-20",
+          "angle": "one-time, no subscription",
+          "fields": {
+            "price": "{orig} one-time"
+          }
+        },
+        {
+          "id": "c",
+          "status": "active",
+          "weight": 0.3333,
+          "created": "2026-10-20",
+          "angle": "what you get for it",
+          "fields": {
+            "price": "{orig} for 120 cards + cheat sheet"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sampler_offer",
+      "title": "Free sampler offer framing (home)",
+      "pages": "^/(index(\\.html)?)?$",
+      "metric": "sampler_click",
+      "proxy_metric": "sampler_click",
+      "status": "running",
+      "variants": [
+        {
+          "id": "a",
+          "status": "active",
+          "weight": 0.3334,
+          "created": "2026-10-20",
+          "angle": "control: sampler coming",
+          "fields": {
+            "title": "Free sampler",
+            "body": "A free set of one-page MCAT sheets is on the way. Email signup opens soon. There is no form here yet, and we are not collecting addresses.",
+            "link": "Read the free notes now"
+          }
+        },
+        {
+          "id": "b",
+          "status": "active",
+          "weight": 0.3333,
+          "created": "2026-10-20",
+          "angle": "one-page sheets",
+          "fields": {
+            "title": "Free one-page MCAT sheets, coming soon",
+            "body": "We are making a free set of one-page sheets. There is no signup form yet and we are not collecting addresses. Until then, the free notes are open to everyone.",
+            "link": "Start with a free note"
+          }
+        },
+        {
+          "id": "c",
+          "status": "active",
+          "weight": 0.3333,
+          "created": "2026-10-20",
+          "angle": "try free today",
+          "fields": {
+            "title": "Try StudyStore free",
+            "body": "Our free notes are open now, each with an original diagram and a 5-question quiz. One-page sampler sheets are coming soon; there is no signup yet.",
+            "link": "Browse free notes"
+          }
+        }
+      ]
+    },
+    {
+      "id": "note_cta",
+      "title": "Note-page CTA placement and style",
+      "pages": "^/notes/(?!index(\\.html)?$).+",
+      "metric": "checkout_click",
+      "proxy_metric": "cta_click",
+      "status": "running",
+      "variants": [
+        {
+          "id": "a",
+          "status": "active",
+          "weight": 0.3334,
+          "created": "2026-10-20",
+          "angle": "control: box after article and at end",
+          "layout": "both"
+        },
+        {
+          "id": "b",
+          "status": "active",
+          "weight": 0.3333,
+          "created": "2026-10-20",
+          "angle": "single box at end only",
+          "layout": "end_only"
+        },
+        {
+          "id": "c",
+          "status": "active",
+          "weight": 0.3333,
+          "created": "2026-10-20",
+          "angle": "early compact box inside the article",
+          "layout": "early"
+        }
+      ]
+    }
+  ]
+}
