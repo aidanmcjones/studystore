@@ -26,7 +26,8 @@ Never put paid files (deck.apkg, pack.zip, full PDF) in this public repo. Only p
 exactly 5 `Q:`/`A:` pairs. `build.py` adds Article and FAQPage JSON-LD, the pack call to action, and sitemap entries.
 
 Assets: `/Users/aidanjones/dev/studystore/.venv/bin/python tools/gen_note_assets.py [slug]` draws each note's diagram
-(`assets/notes/<slug>.png`, functions registered in `DIAGRAMS`) and Open Graph card (`assets/notes/og-<slug>.png`, 1200x630).
+(`assets/notes/<slug>.png`, functions registered in `DIAGRAMS`) and Open Graph card (`assets/notes/og-<slug>.png`, 1200x630). Note cards on the home and notes index show a WebP thumbnail of the diagram when present:
+`cwebp -q 82 -resize 800 0 assets/notes/<slug>.png -o assets/notes/thumb-<slug>.webp` (otherwise the OG card is used).
 
 The autonomous writing prompt is `/Users/aidanjones/dev/studystore/engine/NOTES_PROMPT.md`.
 
