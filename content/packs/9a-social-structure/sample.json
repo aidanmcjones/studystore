@@ -1,0 +1,151 @@
+{
+ "slug": "9a-social-structure",
+ "cards": [
+  {
+   "src": "assets/packs/9a-social-structure/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 798
+  },
+  {
+   "src": "assets/packs/9a-social-structure/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 843
+  },
+  {
+   "src": "assets/packs/9a-social-structure/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 486
+  },
+  {
+   "src": "assets/packs/9a-social-structure/card-4.webp",
+   "alt": "Sample multiple choice card: A town builds a stadium for sports. Residents also meet neighbors and feel civic pride. The pride is a:",
+   "w": 680,
+   "h": 380
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/9a-social-structure/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/9a-social-structure/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/9a-social-structure/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/9a-social-structure/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A city funds free public pools to improve fitness. Residents also form friendships and neighborhood groups. The friendships are best described as a:",
+   "options": [
+    "latent function",
+    "manifest function",
+    "manifest dysfunction",
+    "latent dysfunction"
+   ],
+   "answer": "A",
+   "explanation": "Friendships were not the stated goal and they benefit the community, so they are a latent function. A manifest function is intended, and a dysfunction is harmful.",
+   "subtopic": "Functionalism"
+  },
+  {
+   "stem": "A student believes teachers think she is weak at math, then performs poorly. Cooley's looking-glass self describes which step?",
+   "options": [
+    "Observing her own test scores",
+    "Reading a textbook",
+    "Feeling pride only",
+    "Imagining others' judgment of her"
+   ],
+   "answer": "D",
+   "explanation": "The looking-glass self starts with imagining how we appear and are judged. Test scores are objective, and pride is only one possible feeling.",
+   "subtopic": "Symbolic interactionism"
+  },
+  {
+   "stem": "Which scenario best illustrates intersectionality?",
+   "options": [
+    "All workers face equal barriers",
+    "Only gender affects pay",
+    "Class determines all outcomes",
+    "A low-income Latina worker faces wage and hiring barriers different from either her male coworkers or white women"
+   ],
+   "answer": "D",
+   "explanation": "Overlapping identities combine into distinct disadvantage. Equal barriers and single-factor explanations contradict the concept.",
+   "subtopic": "Feminist theory"
+  },
+  {
+   "stem": "Durkheim would most likely interpret communal worship as:",
+   "options": [
+    "a source of false consciousness only",
+    "a rational calculation",
+    "reinforcing group solidarity",
+    "a latent dysfunction"
+   ],
+   "answer": "C",
+   "explanation": "He saw ritual as creating and renewing collective bonds. False consciousness is Marx, and the other options do not match his argument.",
+   "subtopic": "Religion as an institution"
+  },
+  {
+   "stem": "Which person best fits the sick role as Parsons defined it?",
+   "options": [
+    "A worker who malingers",
+    "A person who ignores treatment",
+    "A worker with flu who stays home, rests, and follows a doctor's advice",
+    "A person blamed for illness"
+   ],
+   "answer": "C",
+   "explanation": "Parsons required exemption plus effort to recover and help-seeking. Malingering and ignoring treatment violate the obligations, and blame violates a right.",
+   "subtopic": "Medicalization and sick role"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Core claim of functionalism about society?",
+   "back": "Society is a system of interdependent parts, each serving a function that promotes stability and social order."
+  },
+  {
+   "type": "cz",
+   "text": "Parsons' AGIL: {{c1::Adaptation}}, {{c2::Goal attainment}}, {{c3::Integration}}, and {{c4::Latency}} (pattern maintenance).",
+   "extra": "Every social system must solve these four problems to survive."
+  },
+  {
+   "type": "mc",
+   "stem": "A town builds a stadium for sports. Residents also meet neighbors and feel civic pride. The pride is a:",
+   "options": [
+    "Latent function",
+    "Manifest function",
+    "Manifest dysfunction",
+    "Latent dysfunction"
+   ],
+   "answer": "A",
+   "why": "The pride was not the stated goal, and it benefits society, so it is a latent function."
+  },
+  {
+   "type": "tf",
+   "statement": "Functionalists see inequality as always harmful and unnecessary.",
+   "truth": false,
+   "why": "Davis and Moore argued stratification can be functional by rewarding the most important, hard-to-fill roles."
+  }
+ ]
+}
