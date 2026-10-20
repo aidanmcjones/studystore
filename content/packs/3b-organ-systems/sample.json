@@ -1,0 +1,151 @@
+{
+ "slug": "3b-organ-systems",
+ "cards": [
+  {
+   "src": "assets/packs/3b-organ-systems/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 846
+  },
+  {
+   "src": "assets/packs/3b-organ-systems/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 525
+  },
+  {
+   "src": "assets/packs/3b-organ-systems/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 619
+  },
+  {
+   "src": "assets/packs/3b-organ-systems/card-4.webp",
+   "alt": "Sample multiple choice card: Which change would increase the rate of O2 diffusion across the respiratory membrane?",
+   "w": 680,
+   "h": 412
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/3b-organ-systems/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/3b-organ-systems/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/3b-organ-systems/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/3b-organ-systems/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A patient with pulmonary fibrosis has a normal alveolar PO2 but a low arterial PO2. What is the best explanation?",
+   "options": [
+    "Loss of surfactant raises compliance",
+    "A thickened alveolar-capillary membrane slows O2 diffusion",
+    "Dead space has increased",
+    "Carbonic anhydrase is deficient"
+   ],
+   "answer": "B",
+   "explanation": "Fick's law says diffusion falls as membrane thickness increases, so equilibration is incomplete and PaO2 lags behind alveolar PO2. Surfactant loss lowers compliance, dead space affects ventilation not diffusion, and carbonic anhydrase handles CO2.",
+   "subtopic": "Respiratory anatomy and gas exchange"
+  },
+  {
+   "stem": "A patient on warfarin has a prolonged INR. Which clotting factor is NOT reduced?",
+   "options": [
+    "Factor II",
+    "Factor VIII",
+    "Factor VII",
+    "Factor X"
+   ],
+   "answer": "B",
+   "explanation": "Warfarin blocks vitamin K recycling, lowering the vitamin K-dependent factors II, VII, IX and X. Factor VIII is not vitamin K dependent.",
+   "subtopic": "Blood composition and hemostasis"
+  },
+  {
+   "stem": "A mouse lacks functional MHC II. Which defect is expected?",
+   "options": [
+    "Failure to present antigen to CD8 T cells",
+    "Absence of natural killer cells",
+    "Failure of complement activation",
+    "Poor help for B cells, with little class switching"
+   ],
+   "answer": "D",
+   "explanation": "MHC II presents peptide to CD4 helper cells, which drive B cell class switching and memory. CD8 cells use MHC I, NK cells and complement do not require MHC II.",
+   "subtopic": "Adaptive immunity: T cells and MHC"
+  },
+  {
+   "stem": "Which structure senses distal tubular NaCl and regulates the afferent arteriole?",
+   "options": [
+    "Podocyte",
+    "Vasa recta",
+    "Principal cell",
+    "Macula densa"
+   ],
+   "answer": "D",
+   "explanation": "The macula densa signals tubuloglomerular feedback and renin release. Podocytes form the filtration slits, vasa recta preserve the gradient, and principal cells respond to ADH and aldosterone.",
+   "subtopic": "Kidney anatomy and nephron"
+  },
+  {
+   "stem": "An organophosphate pesticide inhibits acetylcholinesterase. What happens at the neuromuscular junction?",
+   "options": [
+    "ACh persists and the end plate stays depolarized, causing fasciculations then paralysis",
+    "ACh release is blocked, causing flaccid paralysis",
+    "Nicotinic receptors are blocked",
+    "Ca2+ release from the SR is blocked"
+   ],
+   "answer": "A",
+   "explanation": "Persistent ACh keeps the end plate depolarized and desensitized. Botulinum toxin blocks release, curare blocks receptors, and dantrolene-type drugs affect SR Ca2+ release.",
+   "subtopic": "Excitation-contraction coupling"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Trace the path of air from the nose to the alveoli.",
+   "back": "Nasal cavity, pharynx, larynx, trachea, primary bronchi, smaller bronchi, bronchioles, alveolar ducts, alveoli."
+  },
+  {
+   "type": "cz",
+   "text": "The conducting zone runs from the nose to the {{c1::terminal bronchioles}} and has no gas exchange; the respiratory zone begins with the {{c2::respiratory bronchioles}}.",
+   "extra": "The conducting zone is the anatomic dead space, about 150 mL."
+  },
+  {
+   "type": "mc",
+   "stem": "About what partial pressure of O2 (mmHg) is found in alveolar air at sea level?",
+   "options": [
+    "40",
+    "100",
+    "160",
+    "760"
+   ],
+   "answer": "B",
+   "why": "Alveolar PO2 is about 100 mmHg. Inspired dry air is about 160 mmHg, 760 is total atmospheric pressure, and 40 is typical venous PO2."
+  },
+  {
+   "type": "tf",
+   "statement": "Goblet cell mucus and ciliary beating move trapped particles up toward the pharynx (the mucociliary escalator).",
+   "truth": true,
+   "why": "Cilia sweep the mucus layer upward; smoke paralyzes cilia and raises infection risk."
+  }
+ ]
+}
