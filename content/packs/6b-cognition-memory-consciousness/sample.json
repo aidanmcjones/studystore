@@ -1,0 +1,151 @@
+{
+ "slug": "6b-cognition-memory-consciousness",
+ "cards": [
+  {
+   "src": "assets/packs/6b-cognition-memory-consciousness/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 449
+  },
+  {
+   "src": "assets/packs/6b-cognition-memory-consciousness/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 478
+  },
+  {
+   "src": "assets/packs/6b-cognition-memory-consciousness/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 756
+  },
+  {
+   "src": "assets/packs/6b-cognition-memory-consciousness/card-4.webp",
+   "alt": "Sample multiple choice card: A driver tunes out the radio to concentrate on merging into fast traffic. Which process is she using?",
+   "w": 680,
+   "h": 384
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/6b-cognition-memory-consciousness/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/6b-cognition-memory-consciousness/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/6b-cognition-memory-consciousness/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/6b-cognition-memory-consciousness/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "A person at a party follows one conversation yet turns when her name is spoken across the room. This is best explained by:",
+   "options": [
+    "an all-or-none early filter based on physical features",
+    "attenuation, which lowers but does not block unattended input",
+    "controlled processing only",
+    "change blindness"
+   ],
+   "answer": "B",
+   "explanation": "Treisman's attenuation allows highly meaningful stimuli such as one's name to pass. An all-or-none filter would block it. The phenomenon is not controlled processing or a failure to notice a change.",
+   "subtopic": "Selective and divided attention"
+  },
+  {
+   "stem": "A disease affects 2 percent of a population and a test detects 90 percent of cases with a 10 percent false positive rate. Among 1000 people, about what fraction of those who test positive have the disease?",
+   "options": [
+    "About 15 percent",
+    "About 90 percent",
+    "About 50 percent",
+    "About 2 percent"
+   ],
+   "answer": "A",
+   "explanation": "Of 1000, 20 have the disease and 18 test positive. Of the 980 healthy, 98 test positive. So 18 / (18 + 98) = 18 / 116, about 15 percent. Ninety percent ignores the base rate.",
+   "subtopic": "Biases in reasoning"
+  },
+  {
+   "stem": "In Libet's experiment, the readiness potential began before participants reported awareness of the urge to move. This is often interpreted as raising questions about:",
+   "options": [
+    "selective attention",
+    "conscious free will",
+    "semantic encoding",
+    "circadian entrainment"
+   ],
+   "answer": "B",
+   "explanation": "Brain activity preceding reported intention suggests that the decision may begin unconsciously. The other options do not concern the timing of conscious intention.",
+   "subtopic": "States of consciousness"
+  },
+  {
+   "stem": "A patient with slow respiration and pinpoint pupils is given a drug that reverses the symptoms. The drug is most likely:",
+   "options": [
+    "naloxone",
+    "flumazenil",
+    "haloperidol",
+    "physostigmine"
+   ],
+   "answer": "A",
+   "explanation": "Opioid overdose is reversed by the mu antagonist naloxone. Flumazenil reverses benzodiazepines, haloperidol is an antipsychotic, and physostigmine is an anticholinesterase.",
+   "subtopic": "Psychoactive drug classes"
+  },
+  {
+   "stem": "After seeing a video, witnesses asked how fast the cars 'smashed' report higher speeds and glass that was not present. This demonstrates the:",
+   "options": [
+    "primacy effect",
+    "misinformation effect",
+    "encoding specificity principle",
+    "spacing effect"
+   ],
+   "answer": "B",
+   "explanation": "A leading verb changed reconstruction of the event. The other options concern list position, context match, and distributed practice.",
+   "subtopic": "Memory errors and reconstruction"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "Describe Broadbent's filter model of attention.",
+   "back": "Early selection: a filter passes one channel by physical features (such as location or pitch) and blocks the rest before meaning is analyzed."
+  },
+  {
+   "type": "cz",
+   "text": "Piaget's four stages in order: {{c1::sensorimotor}}, {{c2::preoperational}}, {{c3::concrete operational}}, {{c4::formal operational}}.",
+   "extra": "Ages: 0 to 2, 2 to 7, 7 to 11, 11 and up."
+  },
+  {
+   "type": "mc",
+   "stem": "A driver tunes out the radio to concentrate on merging into fast traffic. Which process is she using?",
+   "options": [
+    "Selective attention",
+    "Divided attention",
+    "Inattentional blindness",
+    "Automatic processing"
+   ],
+   "answer": "A",
+   "why": "Focusing on one input while filtering the rest is selective attention. Divided attention would mean following the radio and the road at once."
+  },
+  {
+   "type": "tf",
+   "statement": "The cocktail party effect shows that unattended speech receives no processing for meaning.",
+   "truth": false,
+   "why": "Hearing your own name in an ignored conversation shows some unattended input is analyzed for meaning, which Treisman's attenuation model explains."
+  }
+ ]
+}
