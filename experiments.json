@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-20T16:26:58Z",
+  "updated": "2026-10-20T17:30:00Z",
   "theme": "free_sampler_push",
   "note": "Edited by ops/experiments.py and the marketing job. Variant ids are never reused. Text must be true of the product. {orig} is replaced with the element's original text (used to keep prices in sync with site.json).",
   "experiments": [
@@ -25,24 +25,50 @@
         },
         {
           "id": "b",
-          "status": "active",
-          "weight": 0.3333,
+          "status": "retired",
+          "weight": 0,
           "created": "2026-10-20",
           "angle": "concrete contents",
           "fields": {
             "headline": "MCAT biochem, distilled into 120 cards.",
             "subhead": "Pack 1 pairs an original Anki deck with a 2-page printable cheat sheet covering amino acids, proteins, and enzyme kinetics. Terse answers, checked card by card."
-          }
+          },
+          "retired": "2026-10-20",
+          "retired_reason": "cited the retired aa-enzymes pack (120 cards, 10 diagrams, Pack 1); catalog-driven site"
         },
         {
           "id": "c",
-          "status": "active",
-          "weight": 0.3333,
+          "status": "retired",
+          "weight": 0,
           "created": "2026-10-20",
           "angle": "terse format + low risk",
           "fields": {
             "headline": "Terse Anki cards for MCAT biochemistry.",
             "subhead": "One or two sentence answers, 10 original diagrams, and a printable cheat sheet. Written from scratch, with a 14-day no-questions refund."
+          },
+          "retired": "2026-10-20",
+          "retired_reason": "cited the retired aa-enzymes pack (120 cards, 10 diagrams, Pack 1); catalog-driven site"
+        },
+        {
+          "id": "d",
+          "status": "active",
+          "weight": 0.3333,
+          "created": "2026-10-20",
+          "angle": "pack format, catalog",
+          "fields": {
+            "headline": "Terse Anki cards for MCAT content prep.",
+            "subhead": "Each pack covers one MCAT content category: an original Anki deck, an illustrated study guide, a printable cheat sheet and practice questions. Written from scratch, with a 14-day no-questions refund."
+          }
+        },
+        {
+          "id": "e",
+          "status": "active",
+          "weight": 0.3334,
+          "created": "2026-10-20",
+          "angle": "accuracy review",
+          "fields": {
+            "headline": "One MCAT category per pack. Checked before it ships.",
+            "subhead": "Every StudyStore pack passes an accuracy check before we sell it. Terse one or two sentence answers, original diagrams, and practice questions with explanations."
           }
         }
       ]
@@ -57,23 +83,27 @@
       "variants": [
         {
           "id": "a",
-          "status": "active",
-          "weight": 0.3333,
+          "status": "retired",
+          "weight": 0,
           "created": "2026-10-20",
           "angle": "control",
           "fields": {
             "label": "See Pack 1"
-          }
+          },
+          "retired": "2026-10-20",
+          "retired_reason": "cited the retired aa-enzymes pack (120 cards, 10 diagrams, Pack 1); catalog-driven site"
         },
         {
           "id": "b",
-          "status": "active",
-          "weight": 0.3333,
+          "status": "retired",
+          "weight": 0,
           "created": "2026-10-20",
           "angle": "curiosity about contents",
           "fields": {
             "label": "See what is inside Pack 1"
-          }
+          },
+          "retired": "2026-10-20",
+          "retired_reason": "cited the retired aa-enzymes pack (120 cards, 10 diagrams, Pack 1); catalog-driven site"
         },
         {
           "id": "c",
@@ -83,6 +113,26 @@
           "angle": "preview first",
           "fields": {
             "label": "Preview the cards"
+          }
+        },
+        {
+          "id": "d",
+          "status": "active",
+          "weight": 0.3333,
+          "created": "2026-10-20",
+          "angle": "catalog",
+          "fields": {
+            "label": "See the packs"
+          }
+        },
+        {
+          "id": "e",
+          "status": "active",
+          "weight": 0.3334,
+          "created": "2026-10-20",
+          "angle": "contents",
+          "fields": {
+            "label": "See what is inside a pack"
           }
         }
       ]
@@ -98,7 +148,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.3333,
+          "weight": 0.5,
           "created": "2026-10-20",
           "angle": "control: bare price",
           "fields": {
@@ -108,7 +158,7 @@
         {
           "id": "b",
           "status": "active",
-          "weight": 0.3333,
+          "weight": 0.5,
           "created": "2026-10-20",
           "angle": "one-time, no subscription",
           "fields": {
@@ -117,13 +167,15 @@
         },
         {
           "id": "c",
-          "status": "active",
-          "weight": 0.3333,
+          "status": "retired",
+          "weight": 0,
           "created": "2026-10-20",
           "angle": "what you get for it",
           "fields": {
             "price": "{orig} for 120 cards + cheat sheet"
-          }
+          },
+          "retired": "2026-10-20",
+          "retired_reason": "cited the retired aa-enzymes pack (120 cards, 10 diagrams, Pack 1); catalog-driven site"
         }
       ]
     },

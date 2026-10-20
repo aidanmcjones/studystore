@@ -90,6 +90,27 @@ def build(prod_dir, slug):
             sample["sheets"].append({"src": "assets/packs/%s/%s" % (slug, name), "alt": label % i,
                                      "kind": kind, "w": w, "h": h})
 
+    # four short real cards (text only) for the home page flashcard demo
+    sample["demo_cards"] = []
+    want = ["sa", "cz", "mc", "tf"]
+    for t in want:
+        for c in cards_json:
+            if c.get("type") != t:
+                continue
+            if t == "sa" and len(c.get("front", "")) < 90 and len(c.get("back", "")) < 160:
+                sample["demo_cards"].append({"type": t, "front": c["front"], "back": c["back"]})
+            elif t == "cz" and len(c.get("text", "")) < 170:
+                sample["demo_cards"].append({"type": t, "text": c["text"], "extra": c.get("extra", "")})
+            elif t == "mc" and len(c.get("stem", "")) < 110 and all(len(o) < 40 for o in c.get("options", [])):
+                sample["demo_cards"].append({"type": t, "stem": c["stem"], "options": c["options"],
+                                             "answer": c["answer"], "why": c.get("why", "")})
+            elif t == "tf" and len(c.get("statement", "")) < 120:
+                sample["demo_cards"].append({"type": t, "statement": c["statement"], "truth": bool(c.get("truth")),
+                                             "why": c.get("why", "")})
+            else:
+                continue
+            break
+
     qf = src / "content" / "questions.json"
     if qf.exists():
         sets = json.loads(qf.read_text()).get("sets", [])

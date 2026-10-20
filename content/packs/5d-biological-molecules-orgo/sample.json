@@ -1,0 +1,151 @@
+{
+ "slug": "5d-biological-molecules-orgo",
+ "cards": [
+  {
+   "src": "assets/packs/5d-biological-molecules-orgo/card-1.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 831
+  },
+  {
+   "src": "assets/packs/5d-biological-molecules-orgo/card-2.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 942
+  },
+  {
+   "src": "assets/packs/5d-biological-molecules-orgo/card-3.webp",
+   "alt": "Sample card",
+   "w": 680,
+   "h": 765
+  },
+  {
+   "src": "assets/packs/5d-biological-molecules-orgo/card-4.webp",
+   "alt": "Sample multiple choice card: Which compound is a secondary amine?",
+   "w": 680,
+   "h": 354
+  }
+ ],
+ "sheets": [
+  {
+   "src": "assets/packs/5d-biological-molecules-orgo/sheet-1.webp",
+   "alt": "Cheat sheet, page 1 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/5d-biological-molecules-orgo/sheet-2.webp",
+   "alt": "Cheat sheet, page 2 (partial preview)",
+   "kind": "sheet",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/5d-biological-molecules-orgo/book-1.webp",
+   "alt": "Study guide, page 1 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  },
+  {
+   "src": "assets/packs/5d-biological-molecules-orgo/book-2.webp",
+   "alt": "Study guide, page 2 (partial preview)",
+   "kind": "book",
+   "w": 760,
+   "h": 442
+  }
+ ],
+ "questions": [
+  {
+   "stem": "What is the IUPAC name of CH3CH2CONH2?",
+   "options": [
+    "Propanamine",
+    "Propanoic acid",
+    "N-methylethanamide",
+    "Propanamide"
+   ],
+   "answer": "D",
+   "explanation": "The three-carbon chain with a C(=O)NH2 group is a propanamide. Propanamine would be an amine, propanoic acid has COOH, and N-methylethanamide has a CH3 on nitrogen and only two chain carbons.",
+   "subtopic": "Functional group recognition and nomenclature"
+  },
+  {
+   "stem": "Cyclohexanone reacts with a secondary amine (pyrrolidine) and acid catalyst, with water removal. The major product is:",
+   "options": [
+    "An enamine",
+    "An imine",
+    "An amide",
+    "An acetal"
+   ],
+   "answer": "A",
+   "explanation": "A secondary amine has only one N-H, so after forming the carbinolamine it cannot make a neutral C=N and instead loses an alpha proton to give an enamine. Imines come from primary amines, an amide needs an acyl derivative, and an acetal needs two alcohols.",
+   "subtopic": "Imines, enamines and enols"
+  },
+  {
+   "stem": "Which species is aromatic?",
+   "options": [
+    "Cyclobutadiene",
+    "Cyclopentadienyl cation",
+    "Cyclooctatetraene",
+    "Pyrrole"
+   ],
+   "answer": "D",
+   "explanation": "Pyrrole is planar and cyclic with six pi electrons, four from the double bonds and two from nitrogen. Cyclobutadiene (4 pi electrons) and the cyclopentadienyl cation (4) are antiaromatic, and cyclooctatetraene is nonplanar and nonaromatic.",
+   "subtopic": "Polycyclic and heterocyclic aromatics"
+  },
+  {
+   "stem": "A diterpene contains how many isoprene units?",
+   "options": [
+    "Two",
+    "Three",
+    "Six",
+    "Four"
+   ],
+   "answer": "D",
+   "explanation": "Terpenes are named by units: mono 2, sesqui 3, di 4, tri 6. A diterpene has 20 carbons. Two is a monoterpene, three a sesquiterpene, and six a triterpene such as squalene.",
+   "subtopic": "Steroids, terpenes and fat-soluble vitamins"
+  },
+  {
+   "stem": "Which compound has the highest boiling point at similar molar mass?",
+   "options": [
+    "Pentanoic acid",
+    "Pentanal",
+    "Pentan-1-ol",
+    "Methyl butanoate"
+   ],
+   "answer": "A",
+   "explanation": "A carboxylic acid forms strong hydrogen-bonded dimers, giving a higher boiling point than even the alcohol. The aldehyde and ester cannot donate hydrogen bonds, so they boil lower.",
+   "subtopic": "Carboxylic acids: acidity and reactions"
+  }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "How is an ester named from its two parts?",
+   "back": "Alkyl group on oxygen first, then the acid name with -oate. Example: ethyl ethanoate (ethyl acetate)."
+  },
+  {
+   "type": "cz",
+   "text": "IUPAC suffixes: carboxylic acid {{c1::-oic acid}}, ester {{c2::-oate}}, amide {{c3::-amide}}, aldehyde {{c4::-al}}.",
+   "extra": "Ketone is -one, alcohol is -ol, amine is -amine, nitrile is -nitrile."
+  },
+  {
+   "type": "mc",
+   "stem": "Which compound is a secondary amine?",
+   "options": [
+    "CH₃NH₂",
+    "(CH₃)₂NH",
+    "(CH₃)₃N",
+    "CH₃CONH₂"
+   ],
+   "answer": "B",
+   "why": "Secondary means two carbons on nitrogen. A is primary, C is tertiary, and D is an amide, not an amine."
+  },
+  {
+   "type": "tf",
+   "statement": "An amide nitrogen is basic in the same way as an amine nitrogen.",
+   "truth": false,
+   "why": "The amide N lone pair delocalizes into the C=O, so amides are essentially neutral. Amines are basic."
+  }
+ ]
+}

@@ -117,5 +117,35 @@
    "explanation": "Fe2+ (ferrous) binds O2 reversibly. Fe3+ (methemoglobin) does not bind oxygen, and Fe0 and Fe4+ are not the physiological states in heme.",
    "subtopic": "Conjugated proteins, prosthetic groups and glycoproteins"
   }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "General structure of an alpha amino acid?",
+   "back": "Central alpha carbon bonded to an amino group, a carboxyl group, H, and a variable R group."
+  },
+  {
+   "type": "cz",
+   "text": "Nonpolar, aliphatic side chains: {{c1::Gly}}, {{c1::Ala}}, {{c1::Val}}, {{c1::Leu}}, {{c1::Ile}}, {{c1::Met}}, {{c1::Pro}}. They sit in the protein core.",
+   "extra": "Hydrophobic effect buries them away from water."
+  },
+  {
+   "type": "mc",
+   "stem": "Side-chain charge of Asp at pH 7.4?",
+   "options": [
+    "Positive",
+    "Negative",
+    "Neutral",
+    "Zwitterionic only"
+   ],
+   "answer": "B",
+   "why": "pKa about 3.9, so the carboxylate is deprotonated and negative."
+  },
+  {
+   "type": "tf",
+   "statement": "Nearly all amino acids in human proteins are the L (S) enantiomer.",
+   "truth": true,
+   "why": "Cysteine is the exception in CIP label only: it is L but R, because sulfur raises the CH2SH priority."
+  }
  ]
 }

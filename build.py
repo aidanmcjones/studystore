@@ -52,7 +52,8 @@ def render(text, root):
             if kind == "price": return products[slug]["price"]
             if kind == "title": return html.escape(products[slug]["title"])
         if k == "latest_notes": return LATEST_NOTES
-        if k == "pack_grid": return PB.pack_grid(site, root)
+        v = PB.placeholder(site, products, k, root)  # catalog data: pack_grid, feat:*, stat:*
+        if v is not None: return v
         if k in site and isinstance(site[k], str): return site[k]
         raise KeyError(f"unknown placeholder {k}")
     return re.sub(r"\{\{\s*([^}]+?)\s*\}\}", sub, text)

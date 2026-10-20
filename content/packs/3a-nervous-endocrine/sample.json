@@ -117,5 +117,35 @@
    "explanation": "Chronic glucocorticoid suppresses CRH and ACTH, leading to adrenal atrophy and cortisol deficiency when the drug stops. Aldosterone is usually preserved because it depends on RAAS, and the medulla does not make cortisol.",
    "subtopic": "Adrenal cortex and medulla hormones"
   }
+ ],
+ "demo_cards": [
+  {
+   "type": "sa",
+   "front": "What do dendrites do?",
+   "back": "Receive input from other neurons and carry graded potentials toward the soma."
+  },
+  {
+   "type": "cz",
+   "text": "Direction of signal flow in a neuron: {{c1::dendrites}}, then {{c2::soma}}, then {{c3::axon hillock}}, then axon and {{c4::axon terminals}}.",
+   "extra": "Input at one end, output at the other."
+  },
+  {
+   "type": "mc",
+   "stem": "Multiple sclerosis most directly damages which cell type?",
+   "options": [
+    "Oligodendrocytes",
+    "Schwann cells",
+    "Astrocytes",
+    "Microglia"
+   ],
+   "answer": "A",
+   "why": "MS is autoimmune demyelination of the CNS, so the myelin-forming oligodendrocytes are the target. Schwann cells are hit in Guillain-Barre syndrome, which affects the PNS."
+  },
+  {
+   "type": "tf",
+   "statement": "A single Schwann cell myelinates segments of many different axons.",
+   "truth": false,
+   "why": "One Schwann cell wraps a single internode of one axon. Oligodendrocytes are the cells that wrap several axons."
+  }
  ]
 }

@@ -1,0 +1,31 @@
+<div class="wrap phero">
+<p class="eyebrow mono"><span class="dot"></span>Order complete</p>
+<h1 class="split">Thank you. Your pack is ready.</h1>
+<p class="lead reveal">Lemon Squeezy, our merchant of record, has emailed your receipt with the download link.</p>
+</div>
+
+<div class="wrap pmain">
+<div class="pbody">
+<h2 class="split">Get your files</h2>
+<ol class="steps reveal">
+<li>Open the receipt email from Lemon Squeezy and click the download button. The same link is on the order confirmation page you just saw.</li>
+<li>Lost the email? Go to <a href="https://app.lemonsqueezy.com/my-orders" rel="noopener">app.lemonsqueezy.com/my-orders</a> and sign in with the email you used at checkout.</li>
+<li>Unzip the download. You will find <code>deck.apkg</code>, the PDFs and a <code>README.txt</code>.</li>
+</ol>
+<h2 class="split">Import the deck</h2>
+<ol class="steps reveal">
+<li>Install Anki (free) from apps.ankiweb.net.</li>
+<li>Double-click <code>deck.apkg</code>, or use File, Import.</li>
+<li>Re-importing a later version updates the same notes instead of duplicating them.</li>
+<li>Print the PDFs on US Letter at 100 percent, or read them on screen.</li>
+</ol>
+<!-- G02 hook: functions/api/upgrade.js (not built yet) answers GET /api/upgrade?p=<slug>
+     with {html} for an honest single-use upgrade offer. assets/js/buy.js fills #upgrade only on a 200. -->
+<div id="upgrade" hidden></div>
+</div>
+<aside class="buybox">
+<p class="eyebrow mono">Need help?</p>
+<p>{{contact}}</p>
+<p class="meta">Every pack has a 14-day, no-questions-asked refund. See the <a href="{{root}}refund.html">refund policy</a>.</p>
+</aside>
+</div>
