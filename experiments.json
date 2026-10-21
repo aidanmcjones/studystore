@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-10-20T19:20:12Z",
-  "theme": "free_sampler_push",
+  "updated": "2026-10-21T19:19:32Z",
+  "theme": "topic_of_the_week",
   "note": "Edited by ops/experiments.py and the marketing job. Variant ids are never reused. Text must be true of the product. {orig} is replaced with the element's original text (used to keep prices in sync with site.json).",
   "experiments": [
     {
@@ -222,7 +222,7 @@
       "status": "running",
       "variants": [
         {
-          "id": "a",
+          "id": "e",
           "status": "active",
           "weight": 0.25,
           "created": "2026-10-20",
@@ -231,10 +231,11 @@
             "title": "Free sampler",
             "body": "A free set of one-page MCAT sheets is on the way. The free notes are open now, and the launch list below sends one email when checkout opens.",
             "link": "Read the free notes now"
-          }
+          },
+          "replaces": "a"
         },
         {
-          "id": "b",
+          "id": "f",
           "status": "active",
           "weight": 0.25,
           "created": "2026-10-20",
@@ -243,10 +244,11 @@
             "title": "Free one-page MCAT sheets, coming soon",
             "body": "We are making a free set of one-page sheets. Until then, the free notes are open to everyone, no signup needed.",
             "link": "Start with a free note"
-          }
+          },
+          "replaces": "b"
         },
         {
-          "id": "c",
+          "id": "g",
           "status": "active",
           "weight": 0.25,
           "created": "2026-10-20",
@@ -255,10 +257,11 @@
             "title": "Try StudyStore free",
             "body": "Our free notes are open now, each with an original diagram and a 5-question quiz. One-page sampler sheets are coming soon.",
             "link": "Browse free notes"
-          }
+          },
+          "replaces": "c"
         },
         {
-          "id": "d",
+          "id": "h",
           "status": "active",
           "weight": 0.25,
           "created": "2026-10-20",
@@ -268,7 +271,8 @@
             "title": "Start free, then pick your pack",
             "body": "Every free note has an original diagram and a 5-question mini-quiz, and links to the pack that covers its topic. One-page sampler sheets are coming soon.",
             "link": "Read a free note"
-          }
+          },
+          "replaces": "d"
         }
       ]
     },
