@@ -19,7 +19,7 @@ for (const [name, h] of [["decks", decks], ["cost", cost]]) {
   ok(h.includes('data-waitlist'), name + ": opt-in box");
 }
 // every third-party or maker number row links its source with a check date
-const sourced = (r) => /<a href="https:\/\/[^"]+" rel="noopener">[^<]+<\/a> \((own page|third-party page)(, page dated \d{4}-\d\d-\d\d)?, checked \d{4}-\d\d-\d\d\)/.test(r);
+const sourced = (r) => /<a href="https:\/\/[^"]+" rel="noopener">[^<]+<\/a> \((own page|third-party page|AnkiWeb shared-deck listing, uploader not verified as the maker)(, page dated \d{4}-\d\d-\d\d)?, checked \d{4}-\d\d-\d\d\)/.test(r);
 const deckRows = rows(decks).filter((r) => !r.includes("StudyStore packs"));
 ok(deckRows.length === data.decks.length && deckRows.every(sourced), "every competitor deck row is sourced and dated");
 ok(deckRows.every((r) => r.includes("(approximate)")), "deck sizes marked approximate");
@@ -38,5 +38,8 @@ ok(cost.includes(`<td class=n>${fmt(A.reg_standard + A.pe1)}</td>`), "free route
 ok(cost.includes(`<td class=n>${fmt(A.reg_standard + A.bundle)}</td>`), "official prep route total");
 ok(cost.includes(`<td class=n>${fmt(A.reg_standard + A.bundle + uq)}</td>`), "qbank route total");
 ok(A.reg_standard === 360 && A.reg_fap === 145, "AAMC 2027 registration fees as checked");
+ok(data.courses.filter((c) => c.from).every((c) => cost.includes(`<td class=n>from $${c.price_usd.toLocaleString("en-US")}`)), "'From' prices keep the word from");
+ok(!decks.includes("AnkiWeb</a> (own page"), "AnkiWeb listings are not labeled as the maker's own page");
+ok([decks, cost].every((h) => (h.match(/<div class="tablewrap"/g) || []).length === (h.match(/<div class="tablewrap" role="region" aria-label="[^"]+" tabindex="0">/g) || []).length), "scrollable tables are focusable labeled regions");
 console.log(`${pass} passed, ${fail} failed`);
 if (fail) process.exit(1);

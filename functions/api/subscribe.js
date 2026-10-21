@@ -11,15 +11,22 @@
 // private repo, and they are never emailed by ops/launch.py (it reads status 'active' only).
 //
 // Legacy shape (email, exam_month, source_page, utm_source, utm_campaign, hp) from the pre-double-opt-in box
-// is still accepted from cached pages and stored as before (status 'active', single opt-in); the
-// re-confirmation pass covers those rows too.
+// is still accepted from cached pages, but stored 'pending' too: nothing reaches the emailed ('active') list
+// without a confirm click, and a stranger posting an address can never undo that address's unsubscribe
+// (unsubscribed rows only ever move to 'pending'). The re-confirmation pass covers pending rows.
+//
+// Rate limits: the brain limits per cf-connecting-ip, and a subrequest from this function arrives with
+// Cloudflare's egress IP (the brain ignores X-Forwarded-For), so a brain 429 here is not the visitor's fault:
+// the address is kept pending instead. This path has its own per-visitor limit (overLimit, real
+// CF-Connecting-IP, 5 a minute and 20 a day). The brain fetch times out after 5 s and then falls back too.
 //
 // Stores only what the visitor submits; never IPs, user agents or cookies; never reveals whether an address
 // is already known: every accepted request gets the same answer.
-import { empty, json } from "../_lib/owner.js";
+import { empty, json, overLimit } from "../_lib/owner.js";
 import { normalizePage } from "./report.js";
 
 export const MAX_BODY = 2048;
+export const PER_MIN = 5, PER_DAY = 20, FORWARD_TIMEOUT_MS = 5000;
 export const BRAIN_SUBSCRIBE_URL = "https://income-brain.premed-toolkit.workers.dev/api/subscribe";
 export const LIST_ID = "studystore-mcat";
 // Consent texts this site has shown. The first is the current box (waitlist.py CONSENT_TEXT, verbatim).
@@ -75,17 +82,23 @@ export function validate(b) {
   return { email, exam_month, source_page, utm_source: utm(b.utm_source), utm_campaign: utm(b.utm_campaign) };
 }
 
-// Forward one validated contract body to the brain. Returns "ok" | "bad_email" | "rate_limited" | "unavailable".
-export async function forward(v, env, ip, fetcher = fetch) {
+// Forward one validated contract body to the brain. Returns "ok" | "bad_email" | "unavailable".
+// Only a 400 whose error code is bad_email is the visitor's mistake; any other 400 (unknown list, consent,
+// turnstile), a 429 (shared egress IP), a 5xx, a 501 before the email kit ships, a timeout or a network error
+// means "keep it pending and confirm later".
+export async function forward(v, env, fetcher = fetch) {
   const url = (env && env.BRAIN_SUBSCRIBE_URL) || BRAIN_SUBSCRIBE_URL;
   const headers = { "Content-Type": "application/json", "Origin": SITE_ORIGIN, "User-Agent": "studystore-pages-subscribe/1" };
-  if (ip) headers["X-Forwarded-For"] = ip;
   try {
-    const r = await fetcher(url, { method: "POST", headers, body: JSON.stringify({ email: v.email, list_id: v.list_id,
+    const signal = typeof AbortSignal !== "undefined" && AbortSignal.timeout ? AbortSignal.timeout(FORWARD_TIMEOUT_MS) : undefined;
+    const r = await fetcher(url, { method: "POST", headers, signal, body: JSON.stringify({ email: v.email, list_id: v.list_id,
       consent_text: v.consent_text, source_url: v.source_url, utm: v.utm, website: "" }) });
     if (r.status === 202 || r.status === 200) return "ok";
-    if (r.status === 400) return "bad_email";
-    if (r.status === 429) return "rate_limited";
+    if (r.status === 400) {
+      let code = "";
+      try { const j = await r.json(); code = (j && j.error && (j.error.code || j.error)) || ""; } catch (e) {}
+      return code === "bad_email" ? "bad_email" : "unavailable";
+    }
     return "unavailable";
   } catch (e) { return "unavailable"; }
 }
@@ -99,7 +112,7 @@ const PAGE = (title, msg, status = 200) => new Response(
 const MSG = {
   ok: ["Check your email", "We sent a link to confirm your address. Nothing else is sent until you click it."],
   pending: ["You are on the list", "Before we send anything else, we will email you a link to confirm your address."],
-  legacy: ["You are on the list", "We will only email you about StudyStore packs and free notes. Unsubscribe anytime from the link in any email."],
+  legacy: ["You are on the list", "Before we send anything, we will email you a link to confirm your address."],
   rate_limited: ["Please try again later", "Too many tries from this connection. Wait a few minutes and try again."],
   bad: ["Please check your email address", "That address did not look right. Go back and try again."],
 };
@@ -111,7 +124,7 @@ export async function onRequestPost({ request, env }, fetcher) {
     if (isForm) return PAGE(...(MSG[kind] || MSG.bad), kind === "rate_limited" ? 429 : 200);
     if (kind === "ok") return json(202, { ok: true, status: "check_email" });
     if (kind === "pending") return json(202, { ok: true, status: "pending" });
-    if (kind === "legacy") return json(200, { ok: true });
+    if (kind === "legacy") return json(202, { ok: true, status: "pending" });
     if (kind === "rate_limited") return json(429, { ok: false, error: "rate_limited" });
     return json(400, { ok: false, error: kind });
   };
@@ -135,11 +148,13 @@ export async function onRequestPost({ request, env }, fetcher) {
   const v = validate(b);
   if (v.honeypot) return answer(contract ? "ok" : "legacy");   // pretend success, store and send nothing
   if (v.error) return answer(v.error);
+  const ip = request.headers.get("CF-Connecting-IP") || "";
+  if ((await overLimit(ip, "sub-m", 60, PER_MIN)) || (await overLimit(ip, "sub-d", 86400, PER_DAY))) return answer("rate_limited");
   const ts = Math.floor(Date.now() / 1000);
 
   if (v.contract) {
-    const res = await forward(v, env, request.headers.get("CF-Connecting-IP") || "", fetcher || fetch);
-    if (res === "ok" || res === "bad_email" || res === "rate_limited") return answer(res);
+    const res = await forward(v, env, fetcher || fetch);
+    if (res === "ok" || res === "bad_email") return answer(res);
     // Brain unavailable: keep the address pending (never emailed until the one confirm email).
     const page = new URL(v.source_url).pathname;
     const ins = await env.DB.prepare(
@@ -153,10 +168,10 @@ export async function onRequestPost({ request, env }, fetcher) {
   }
 
   const res = await env.DB.prepare(
-    "INSERT OR IGNORE INTO subscribers (ts, email, exam_month, source_page, utm_source, utm_campaign, status, unsub_token) VALUES (?,?,?,?,?,?,'active',?)")
+    "INSERT OR IGNORE INTO subscribers (ts, email, exam_month, source_page, utm_source, utm_campaign, status, unsub_token) VALUES (?,?,?,?,?,?,'pending',?)")
     .bind(ts, v.email, v.exam_month, v.source_page, v.utm_source, v.utm_campaign, crypto.randomUUID()).run();
   if (!(res && res.meta && res.meta.changes)) {
-    await env.DB.prepare("UPDATE subscribers SET status = 'active' WHERE email = ? AND status = 'unsubscribed'").bind(v.email).run();
+    await env.DB.prepare("UPDATE subscribers SET status = 'pending' WHERE email = ? AND status = 'unsubscribed'").bind(v.email).run();
   }
   return answer("legacy");
 }

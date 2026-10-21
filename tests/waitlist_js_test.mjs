@@ -83,9 +83,12 @@ t = make(); t.set((u) => (u === BRAIN ? "throw" : { status: 202, body: { ok: tru
 await t.submit("a@b.co");
 ok(t.calls.length === 2 && !t.done.hidden && t.h.textContent === "Check your email", "brain unreachable: same-origin forward, check-your-email");
 
-t = make(); t.set(() => ({ status: 400, body: { error: "bad_request" } }));
+t = make(); t.set(() => ({ status: 400, body: { error: { code: "bad_email" } } }));
 await t.submit("a@b.co");
-ok(t.calls.length === 1 && t.done.hidden && /does not look right/.test(t.status.textContent) && t.inputs.email.attrs["aria-invalid"] === "true", "brain 400: inline error, no fallback");
+ok(t.calls.length === 1 && t.done.hidden && /does not look right/.test(t.status.textContent) && t.inputs.email.attrs["aria-invalid"] === "true", "brain 400 bad_email: inline error, no fallback");
+t = make(); t.set((u) => (u === BRAIN ? { status: 400, body: { error: { code: "turnstile_required" } } } : { status: 202, body: { ok: true, status: "pending" } }));
+await t.submit("a@b.co");
+ok(t.calls.length === 2 && t.calls[1].url === "/api/subscribe" && !t.done.hidden, "brain 400 for another reason: same-origin fallback, not a bad-email error");
 
 t = make(); t.set(() => ({ status: 429, body: {} }));
 await t.submit("a@b.co");

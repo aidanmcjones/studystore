@@ -22,7 +22,7 @@
    "covers": "All sections",
    "host": "AnkiWeb",
    "url": "https://ankiweb.net/shared/info/178384887",
-   "source_type": "own",
+   "source_type": "listing",
    "as_of": "2026-10-21",
    "source_name": "AnkiWeb",
    "also": {
@@ -41,7 +41,7 @@
    "covers": "Psychology and Sociology only",
    "host": "AnkiWeb",
    "url": "https://ankiweb.net/shared/info/710572280",
-   "source_type": "own",
+   "source_type": "listing",
    "as_of": "2026-10-21",
    "source_name": "AnkiWeb",
    "also": {
@@ -215,7 +215,8 @@
    "as_of": "2026-10-21",
    "approximate": false,
    "full_course": true,
-   "source_name": "Blueprint MCAT courses"
+   "source_name": "Blueprint MCAT courses",
+   "from": true
   },
   {
    "id": "bp_live",
@@ -228,7 +229,8 @@
    "as_of": "2026-10-21",
    "approximate": false,
    "full_course": true,
-   "source_name": "Blueprint MCAT courses"
+   "source_name": "Blueprint MCAT courses",
+   "from": true
   },
   {
    "id": "bp_515",
@@ -241,7 +243,8 @@
    "as_of": "2026-10-21",
    "approximate": false,
    "full_course": true,
-   "source_name": "Blueprint MCAT courses"
+   "source_name": "Blueprint MCAT courses",
+   "from": true
   },
   {
    "id": "tpr_6",

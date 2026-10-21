@@ -37,7 +37,8 @@
   function classify(status, j) {
     j = j || {};
     if ((status === 202 || status === 200) && j.ok) return j.status === "pending" ? "pending" : "ok";
-    if (status === 400) return "bad_email";
+    // Only the brain's bad_email code is the visitor's mistake; any other 400 (list, consent, turnstile) falls back.
+    if (status === 400) return ((j.error && (j.error.code || j.error)) === "bad_email") ? "bad_email" : "fallback";
     if (status === 429) return "rate_limited";
     return "fallback";
   }

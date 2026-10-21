@@ -21,15 +21,15 @@ def money(x):
 
 
 def src(r):
-    kind = "own page" if r["source_type"] == "own" else "third-party page"
+    kind = {"own": "own page", "listing": "AnkiWeb shared-deck listing, uploader not verified as the maker"}.get(r["source_type"], "third-party page")
     dated = f", page dated {E(r['page_date'])}" if r.get("page_date") else ""
     return f'<a href="{E(r["url"])}" rel="noopener">{E(r["source_name"])}</a> ({kind}{dated}, checked {E(r["as_of"])})'
 
 
-def table(head, rows, num_cols=(), wide=False):
+def table(head, rows, num_cols=(), wide=False, label="Comparison table"):
     th = "".join(f'<th scope="col"{" class=n" if i in num_cols else ""}>{E(h)}</th>' for i, h in enumerate(head))
     body = "".join("<tr>" + "".join(f'<td{" class=n" if i in num_cols else ""}>{c}</td>' for i, c in enumerate(r)) + "</tr>" for r in rows)
-    return f'<div class="tablewrap"><table class="ctable{' wide' if wide else ''}"><thead><tr>{th}</tr></thead><tbody>{body}</tbody></table></div>'
+    return f'<div class="tablewrap" role="region" aria-label="{E(label)}" tabindex="0"><table class="ctable{' wide' if wide else ''}"><thead><tr>{th}</tr></thead><tbody>{body}</tbody></table></div>'
 
 
 def article_ld(base, url, title, desc, day):
@@ -77,7 +77,7 @@ def build(emit, site, ld_json, breadcrumbs):
 <li><strong>StudyStore packs are paid and split by AAMC content category.</strong> Each pack is a deck plus a study guide, a cheat sheet and practice questions for one category, so they suit someone patching a few weak categories rather than replacing a free deck.</li>
 </ul>
 <h2>Side by side</h2>
-{table(["Deck", "Size", "Price", "Covers", "Where it lives", "Source"], rows, wide=True)}
+{table(["Deck", "Size", "Price", "Covers", "Where it lives", "Source"], rows, wide=True, label="MCAT Anki decks compared")}
 <h2>Reading the numbers</h2>
 <p><strong>Notes are not cards.</strong> AnkiWeb counts notes. One cloze note with three blanks makes three cards, so a deck's card count is usually higher than its note count. That is why the AnkiWeb note counts and the third-party card counts above do not match, and why we list both where we have them.</p>
 <p><strong>Decks change.</strong> Shared decks get re-uploaded and merged. The MileDown deck exists on AnkiWeb in more than one upload with slightly different note counts, and the AnKing deck is maintained on AnkiHub, whose pages need a login, so we could not read a count from the maker directly. Check the source link before relying on any number.</p>
@@ -106,16 +106,19 @@ def build(emit, site, ld_json, breadcrumbs):
     fee_rows = [[E(A[k]["item"]), money(A[k]["price_usd"]), src(A[k])] for k in ("reg_standard", "reg_fap", "intl_fee")]
     chg = [[E(r["window"]), money(r["std_reschedule"]), money(r["std_refund"]), money(r["fap_reschedule"]), money(r["fap_refund"])] for r in d["aamc_changes"]]
     prep_rows = [[E(A[k]["item"]), money(A[k]["price_usd"]), src(A[k])] for k in ("pe1", "pe", "sb", "carsqb", "qp", "iqb", "bundle")]
-    course_rows = [[f'<strong>{E(r["company"])}</strong>', E(r["plan"]), money(r["price_usd"]) + (" (approximate)" if r.get("approximate") else ""), E(r["access"]), src(r)] for r in d["courses"]]
+    course_rows = [[f'<strong>{E(r["company"])}</strong>', E(r["plan"]), ("from " if r.get("from") else "") + money(r["price_usd"]) + (" (approximate)" if r.get("approximate") else ""), E(r["access"]), src(r)] for r in d["courses"]]
     reg, bundle_p, pe1 = A["reg_standard"]["price_usd"], A["bundle"]["price_usd"], A["pe1"]["price_usd"]
     uq = next(r for r in d["courses"] if r["id"] == "uworld_qbank_90")
     course_lo = min(r["price_usd"] for r in d["courses"] if r.get("full_course"))
+    lo_from = any(r.get("from") and r["price_usd"] == course_lo for r in d["courses"] if r.get("full_course"))
+    hi_from = any(r.get("from") for r in d["courses"] if r.get("full_course") and r["price_usd"] == max(x["price_usd"] for x in d["courses"] if x.get("full_course")))
+    pre = lambda f: "from " if f else ""
     course_hi = max(r["price_usd"] for r in d["courses"] if r.get("full_course"))
     scen = [
         ["Free-resources route", f"Registration {money(reg)} + free AAMC Practice Exam 1 and sample test ({money(pe1)})", money(reg + pe1)],
         ["DIY with all AAMC official prep", f"Registration {money(reg)} + Official Prep Online-Only Bundle {money(bundle_p)}", money(reg + bundle_p)],
         ["DIY plus a third-party question bank", f"The row above + UWorld MCAT QBank, 90 days, {money(uq['price_usd'])}", money(reg + bundle_p + uq["price_usd"])],
-        ["Full prep course", f"Registration {money(reg)} + a full course listed here at {money(course_lo)} to {money(course_hi)}", f"{money(reg + course_lo)} to {money(reg + course_hi)}"],
+        ["Full prep course", f"Registration {money(reg)} + a full course listed here: {pre(lo_from)}{money(course_lo)} to {pre(hi_from)}{money(course_hi)}", f"{pre(lo_from)}{money(reg + course_lo)} to {pre(hi_from)}{money(reg + course_hi)}"],
     ]
     body2 = f"""<article class="note wrap compare">
 <p class="eyebrow">Comparison guide &middot; Estimate, not advice</p>
@@ -124,20 +127,20 @@ def build(emit, site, ld_json, breadcrumbs):
 <div class="prose">
 <p><strong>Estimate, not advice.</strong> Prices change, sales come and go, and your total depends on choices only you can make. Every price below links to the page it came from, with the date we checked it. AAMC fees come from AAMC's own pages; course prices come from each company's own pricing page where it would load, otherwise from a dated third-party page, marked as such.</p>
 <h2>What AAMC charges</h2>
-{table(["Fee", "Price", "Source"], fee_rows, (1,))}
+{table(["Fee", "Price", "Source"], fee_rows, (1,), label="AAMC MCAT fees")}
 <p>AAMC's Fee Assistance Program lowers the registration fee to the amount above for people who qualify; apply before you register.</p>
 <h3>Rescheduling and cancelling (2027 test dates)</h3>
-{table(["When", "Reschedule", "Cancel: refund", "Fee Assistance: reschedule", "Fee Assistance: refund"], chg, (1, 2, 3, 4), wide=True)}
+{table(["When", "Reschedule", "Cancel: refund", "Fee Assistance: reschedule", "Fee Assistance: refund"], chg, (1, 2, 3, 4), wide=True, label="AAMC reschedule and cancellation fees")}
 <p class="meta">Source: {src(d["aamc_changes_source"])}. AAMC does not allow changes fewer than 10 days before the exam.</p>
 <h2>AAMC official prep</h2>
-{table(["Product (1 year access)", "Price", "Source"], prep_rows, (1,))}
+{table(["Product (1 year access)", "Price", "Source"], prep_rows, (1,), label="AAMC official prep prices")}
 <p class="meta">{E(d["bundle_note"])}</p>
 <h2>Prep course list prices</h2>
-{table(["Company", "Plan", "Price", "Access", "Source"], course_rows, (2,), wide=True)}
+{table(["Company", "Plan", "Price", "Access", "Source"], course_rows, (2,), wide=True, label="Prep course list prices")}
 <p class="meta">Course pages often show sale prices and change plans; treat these as list prices on the check date. We could not load some companies' own pages, so those rows use third-party pages and are marked approximate.</p>
 <h2>Four ways the total can add up</h2>
 <p>Illustrative totals, computed from the prices above. Estimate, not advice.</p>
-{table(["Route", "What is included", "Total"], scen, (2,))}
+{table(["Route", "What is included", "Total"], scen, (2,), label="Example totals")}
 <p>Free help that costs nothing extra: <a href="../notes/index.html">StudyStore's free notes</a>, <a href="../practice/index.html">free practice sets</a> and the <a href="../tools/mcat-study-schedule.html">2027 study schedule generator</a>. StudyStore also sells per-category study packs (${lo} to ${hi}); they are a supplement to any route above, not a course.</p>
 <p>MCAT is a registered trademark of the AAMC, which does not endorse StudyStore or any company listed here.</p>
 </div>

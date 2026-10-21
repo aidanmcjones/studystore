@@ -40,16 +40,16 @@ def _sampler_line(root):
 def box(root, launch=True):
     """launch=True: checkout is not open yet (product pages for packs that are not buyable)."""
     if launch:
-        lead = ("Packs are not on sale yet. Join for the free sampler now, and we email you when checkout opens.")
+        lead = ("We email you free MCAT notes, practice sets and new packs, including when checkout opens.")
     else:
-        lead = ("One email with the free sampler, then a few short free mini-lessons, and a note when a new pack or free note goes up.")
+        lead = ("We email you free MCAT notes, practice sets and new packs.")
     consent = html.escape(CONSENT_TEXT)
     return f"""<section class="waitlist" id="waitlist" aria-labelledby="waitlist-h">
 <div class="wlcopy">
 <p class="eyebrow mono"><span class="dot"></span>Free MCAT sampler</p>
-<h2 id="waitlist-h">Get the free MCAT sampler by email</h2>
+<h2 id="waitlist-h">Get the free MCAT sampler</h2>
 <p>{lead}</p>
-<p>The sampler: {_sampler_line(root)}. All of it is free on this site with no signup; the email just puts it in one place.</p>
+<p>Free sampler, no signup needed: {_sampler_line(root)}.</p>
 </div>
 <form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="{BRAIN_SUBSCRIBE_URL}">
 <label for="wl-email">Email</label>
@@ -57,7 +57,7 @@ def box(root, launch=True):
 <div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
 <input type="hidden" name="list_id" value="{LIST_ID}"><input type="hidden" name="consent_text" value="{consent}">
 <input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
-<button type="submit" class="btn">Send me the sampler</button>
+<button type="submit" class="btn">Join the email list</button>
 <p class="wlnote"><span class="wlconsent">{consent}</span> <a href="{root}privacy.html">Privacy</a></p>
 <p class="wlstatus" role="status" aria-live="polite"></p>
 </form>

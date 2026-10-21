@@ -102,7 +102,7 @@ finds pages through `sitemap.xml` (declared in `robots.txt`) and ordinary crawli
   contract to the brain; if the brain is unreachable or not live (501), it keeps the address in D1 `subscribers`
   with status `pending` (never emailed by ops/launch.py, which reads `active` only). The private repo's
   `ops/reconfirm_subscribers.py` later sends each pending or old single opt-in address exactly one confirm email
-  (owner-run, gated by outbox item reconfirm-email-001). Legacy single opt-in bodies from cached pages still work.
+  (owner-run, gated by outbox item reconfirm-email-001). Legacy single opt-in bodies from cached pages are stored pending too, and a brain 429 or non-email 400 on this server path keeps the address pending instead of losing it. Own per-visitor limit: 5 a minute, 20 a day.
 - D1 table `subscribers` (migration `db/migrations/004_subscribers.sql`), unsubscribe `/api/unsubscribe?t=<token>`,
   owner view `/admin/subscribers.html`.
 - Tests: `node tests/subscribe_test.mjs` (server), `node tests/waitlist_js_test.mjs` (browser script, after build).

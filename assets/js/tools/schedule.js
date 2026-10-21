@@ -124,7 +124,7 @@
       (live >= total ? "each category above also has a paid pack" : "some categories above also have a paid pack") +
       ' (<a href="../products/index.html" data-track="cta">see the packs</a>). The plan organizes your time and makes no promise about your score.</p>';
     h += '<p class="meta">Test dates: AAMC 2027 calendar (<a href="' + SS.esc(D.dates_source || "https://students-residents.aamc.org/") + '" rel="noopener">source</a>, checked ' + SS.esc(D.dates_checked || "") + '). Confirm your own date and registration with AAMC.</p>';
-    h += '<p class="noprint"><a class="textlink" href="#waitlist">Get the free sampler and mini-lessons by email</a>: double opt-in, nothing sent until you confirm.</p>';
+    h += '<p class="noprint"><a class="textlink" href="#waitlist">Get free MCAT notes, practice sets and new packs by email</a>: double opt-in, nothing sent until you confirm.</p>';
     o.innerHTML = h; o.scrollIntoView && o.scrollIntoView({ behavior: "smooth", block: "start" });
     $("ics").addEventListener("click", function () { download(p, inp); });
     $("print").addEventListener("click", function () { window.print(); });
