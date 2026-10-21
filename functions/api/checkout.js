@@ -1,4 +1,6 @@
 // /api/checkout : create a Lemon Squeezy checkout for one pack or bundle and return its URL.
+// DORMANT while site.json checkout_provider is "polar" (the default): buy buttons then link straight to
+// Polar checkout links and never call this endpoint. Kept so the site can switch back by flipping the flag.
 //   GET  -> {enabled, sellable}            (buy.js uses this to show "Available soon" before keys exist)
 //   POST {slug, custom:{exp_*, utm_source, utm_campaign}} -> {url} | 503 not_configured | 400/404/502
 // Inactive (503) until both Pages secrets exist:

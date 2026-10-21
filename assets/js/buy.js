@@ -1,4 +1,6 @@
-/* StudyStore buy buttons. Elements with data-buy="<slug>" create a Lemon Squeezy checkout through
+/* StudyStore buy buttons, Lemon Squeezy path (dormant while site.json checkout_provider is "polar": Polar
+ * buy buttons are plain links to buy.polar.sh, tagged by exp.js, and carry no data-buy).
+ * Elements with data-buy="<slug>" create a Lemon Squeezy checkout through
  * /api/checkout (with the visitor's shown experiment variants and first-touch utm tags as
  * checkout[custom]) and redirect to it. If the API is not configured yet (no LS keys), buttons
  * without a static fallback URL turn into a disabled "Available soon". No cookies, no PII.

@@ -3,7 +3,8 @@
 Data (never hand-edit numbers in templates; they come from here):
   site.json `products` and `bundles`  written by ops/sync_catalog.py from engine/CATALOG.json and
                                       products/<slug>/validation.json
-  ls_variants.json                    Lemon Squeezy variant ids (sync_catalog.py, read-only API)
+  ls_variants.json                    Lemon Squeezy variant ids (sync_catalog.py, read-only API; dormant
+                                      while checkout_provider is polar)
   content/packs/<slug>/sample.json    preview images, 5 sample questions, 4 demo cards (tools/gen_previews.py)
 Templates: templates/product.html, templates/bundle.html, templates/thanks.html use %%name%% tokens
 filled here; {{...}} placeholders are then filled by build.render().
@@ -17,12 +18,20 @@ Placeholders this module answers (see placeholder()):
   {{stat:cards}} {{stat:diagrams}} {{stat:questions}}  catalog-wide sums over available packs (home hero)
   {{stat:price_from}} {{stat:complete_price}}          lowest available pack price; Complete MCAT bundle price
 
+Checkout provider (site.json `checkout_provider`, default "polar"; see configure()):
+  polar         buy buttons are plain links to the pack's Polar checkout link (site.json
+                products[].checkout_url, https://buy.polar.sh/...). assets/js/exp.js appends the
+                visitor's first-touch utm_* tags and shown experiment variants (reference_id) to them.
+  lemonsqueezy  dormant path kept for a switch back: variant ids from ls_variants.json and
+                /api/checkout (functions/api/checkout.js); only lemonsqueezy.com checkout_urls are used.
+
 Buy buttons:
   coming_soon                       -> disabled "Coming soon"
-  available, no variant id/url      -> disabled "Available soon"
-  available + variant id            -> data-buy button; assets/js/buy.js POSTs /api/checkout and
+  available, no checkout for the active provider -> disabled "Available soon"
+  polar + Polar checkout_url        -> plain link to the Polar checkout
+  lemonsqueezy + variant id         -> data-buy button; assets/js/buy.js POSTs /api/checkout and
                                        redirects, or shows "Available soon" if the API is not configured
-  available + static checkout_url   -> used as the no-JS / API-down fallback
+  lemonsqueezy + static checkout_url -> used as the no-JS / API-down fallback
 """
 import html, json, re
 from pathlib import Path
@@ -46,11 +55,50 @@ def lookup(site):
     return items
 
 
+PROVIDERS = {
+    "polar": {"merchant": "Polar", "orders_url": "https://polar.sh/aidan-jones/portal",
+              "orders_label": "polar.sh/aidan-jones/portal", "url_re": r"^https://buy\.polar\.sh/polar_cl_[A-Za-z0-9]+$"},
+    "lemonsqueezy": {"merchant": "Lemon Squeezy", "orders_url": "https://app.lemonsqueezy.com/my-orders",
+                     "orders_label": "app.lemonsqueezy.com/my-orders", "url_re": r"^https://[a-z0-9.-]+\.lemonsqueezy\.com/"},
+}
+PROVIDER = "polar"
+
+
+def configure(site):
+    """Pick the checkout provider (site.json checkout_provider, default polar) and expose its copy
+    to templates as {{merchant}}, {{orders_url}} and {{orders_label}}."""
+    global PROVIDER
+    PROVIDER = site.get("checkout_provider") or "polar"
+    if PROVIDER not in PROVIDERS:
+        raise SystemExit(f"unknown checkout_provider {PROVIDER!r}")
+    for k in ("merchant", "orders_url", "orders_label"):
+        site[k] = PROVIDERS[PROVIDER][k]
+    return PROVIDER
+
+
+def checkout_url(p):
+    """The static checkout link for the active provider, or None."""
+    url = p.get("checkout_url")
+    return url if url and re.match(PROVIDERS[PROVIDER]["url_re"], url) else None
+
+
+def buyable(p):
+    """True when a buyer can check out this item with the active provider ("for sale")."""
+    if p.get("status") != "available":
+        return False
+    return bool(checkout_url(p) or (PROVIDER == "lemonsqueezy" and p.get("variant_id")))
+
+
 def buy(items, slug, cls="btn", root=""):
     p = items[slug]
     if p.get("status") != "available":
         return f'<a class="{cls} off" aria-disabled="true" role="link" tabindex="-1">Coming soon</a>'
-    url = p.get("checkout_url")
+    url = checkout_url(p)
+    if PROVIDER == "polar":
+        if url:
+            return (f'<a class="{cls}" href="{E(url)}" data-checkout="polar" data-slug="{E(p["slug"])}" '
+                    f'rel="noopener">Buy now, {E(p["price"])}</a>')
+        return f'<a class="{cls} off" aria-disabled="true" role="link" tabindex="-1">Available soon</a>'
     if p.get("variant_id"):
         href = E(url) if url else f'{root}products/{p["slug"]}.html#buy'
         return (f'<a class="{cls}" href="{href}" data-buy="{E(p["slug"])}" data-fallback="{E(url or "")}" '
@@ -67,7 +115,7 @@ CRUMBS = None         # build.breadcrumbs
 
 
 def product_ld(site, p, url, image, kind="pack"):
-    """schema.org Product. Never aggregateRating or review. PreOrder until a checkout link or variant id exists."""
+    """schema.org Product. Never aggregateRating or review. PreOrder until the active provider can sell it."""
     if kind == "pack":
         c = p.get("contents") or {}
         desc = (f'Original MCAT study pack for AAMC content category {p["aamc"]}'
@@ -79,7 +127,7 @@ def product_ld(site, p, url, image, kind="pack"):
     else:
         desc = f'{p["title"]}: {p["pack_count"]} StudyStore MCAT packs in one download.'
         name = f'{p["title"]} MCAT Bundle'
-    avail = "https://schema.org/InStock" if p.get("checkout_url") or p.get("variant_id") else "https://schema.org/PreOrder"
+    avail = "https://schema.org/InStock" if buyable(p) else "https://schema.org/PreOrder"
     return {"@context": "https://schema.org", "@type": "Product", "name": name, "description": desc,
             "sku": p["slug"], "url": url, "image": image, "category": "MCAT study materials",
             "brand": {"@type": "Brand", "name": "StudyStore"},

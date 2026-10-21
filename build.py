@@ -5,7 +5,7 @@ Usage: python3 build.py
 Placeholders in templates:
   {{root}} relative path to site root, {{site_name}}, {{disclaimer}}, {{contact}},
   {{updated}}, {{base_url}}, {{buy:SLUG}}, {{price:SLUG}}, {{title:SLUG}},
-  {{waitlist}} (launch list box, waitlist.py),
+  {{waitlist}} (launch list box, waitlist.py), {{merchant}} {{orders_url}} {{orders_label}} (checkout provider),
   any other top-level site.json string key.
 """
 import json, re, html, math
@@ -18,6 +18,7 @@ import waitlist
 
 ROOT = Path(__file__).parent
 site = json.loads((ROOT / "site.json").read_text())
+PB.configure(site)  # checkout provider (polar by default) and {{merchant}} / {{orders_url}} copy
 products = PB.lookup(site)  # products + bundles + retired-slug aliases
 
 # (template, output, title, description, noindex)
@@ -29,9 +30,9 @@ PAGES = [
     ("refund.html", "refund.html", "Refund Policy | StudyStore",
      "StudyStore offers a 14-day, no-questions-asked refund on every digital pack.", False),
     ("terms.html", "terms.html", "Terms of Sale | StudyStore",
-     "Terms of sale for StudyStore digital study packs, sold through Lemon Squeezy as merchant of record.", False),
+     f"Terms of sale for StudyStore digital study packs, sold through {site['merchant']} as merchant of record.", False),
     ("privacy.html", "privacy.html", "Privacy Policy | StudyStore",
-     "StudyStore sets no cookies. Anonymous first-party page and click counts, and your email only if you join the launch list. Payments by Lemon Squeezy.", False),
+     "StudyStore sets no cookies. Anonymous first-party page and click counts, and your email only if you join the launch list. Payments by " + site["merchant"] + ".", False),
     ("404.html", "404.html", "Page not found | StudyStore", "Page not found.", True),
     ("report.html", "report.html", "Report a problem or suggest something | StudyStore",
      "Tell StudyStore about a broken link, a wrong answer, a typo or a display problem, or suggest a topic.", True),
