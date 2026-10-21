@@ -306,6 +306,9 @@ html:not(.js) .qitem{display:block;margin-bottom:28px}
 
 /* pack assembly */
 .igrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,96px);align-items:start}
+/* The pack figure slides its parts in from off screen; clip them so the page never scrolls sideways.
+   clip (not hidden) keeps .istage position:sticky working. */
+.inside{overflow-x:clip}
 .inside .igrid{min-height:190vh}
 .icopy{position:sticky;top:110px}
 .istage{position:sticky;top:96px;height:calc(100vh - 140px);min-height:460px;display:grid;place-items:center}
