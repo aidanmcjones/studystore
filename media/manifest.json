@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 30,
-  "diagram-reels": 30,
-  "diagram-shorts": 30,
-  "diagram-snapchat": 30,
-  "diagram-threads": 30,
-  "diagram-tiktok": 30,
-  "diagram-x": 30,
-  "pins-notes": 25,
+  "diagram-facebook": 31,
+  "diagram-reels": 31,
+  "diagram-shorts": 31,
+  "diagram-snapchat": 31,
+  "diagram-threads": 31,
+  "diagram-tiktok": 31,
+  "diagram-x": 31,
+  "pins-notes": 26,
   "pins-questions": 15,
-  "qotd-facebook": 40,
-  "qotd-reels": 40,
-  "qotd-shorts": 40,
-  "qotd-snapchat": 40,
-  "qotd-threads": 40,
-  "qotd-tiktok": 40,
-  "qotd-x": 40
+  "qotd-facebook": 41,
+  "qotd-reels": 41,
+  "qotd-shorts": 41,
+  "qotd-snapchat": 41,
+  "qotd-threads": 41,
+  "qotd-tiktok": 41,
+  "qotd-x": 41
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -142,6 +142,27 @@
    "size": 1393159,
    "tag": "#physics",
    "title": "Bernoulli's Equation and the Venturi Effect for the MCAT"
+  },
+  "citric-acid-cycle-steps-products-atp": {
+   "beats": [
+    "Pyruvate dehydrogenase converts pyruvate to acetyl-CoA, CO2 and NADH in the matrix. Per turn: 3 NADH, 1 FADH2, 1 GTP, 2 CO2, worth about 10 ATP.",
+    "Per glucose, the whole pathway yields roughly 30 to 32 ATP. ATP and NADH inhibit; ADP and Ca^2+ activate.",
+    "Pyruvate from glycolysis is carried into the matrix and converted by the pyruvate dehydrogenase complex (PDH):",
+    "Track carbon counts as you go."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-031",
+    "diagram-reels": "diagram-reels-031",
+    "diagram-shorts": "diagram-shorts-031",
+    "diagram-snapchat": "diagram-snapchat-031",
+    "diagram-threads": "diagram-threads-031",
+    "diagram-tiktok": "diagram-tiktok-031",
+    "diagram-x": "diagram-x-031"
+   },
+   "seconds": 22.6,
+   "size": 1810246,
+   "tag": "#biochemistry",
+   "title": "Citric Acid (Krebs) Cycle Steps, Enzymes, and Products"
   },
   "classical-vs-operant-conditioning": {
    "beats": [
@@ -707,6 +728,16 @@
    "slug": "bernoulli-equation-continuity-venturi",
    "tag": "#physics",
    "title": "Bernoulli's Equation and the Venturi Effect for the MCAT"
+  },
+  "note-citric-acid-cycle-steps-products-atp": {
+   "desc": "Walk the eight citric acid cycle steps, the products of each turn, the three regulated enzymes, and how to count ATP from acetyl-CoA to glucose.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-026"
+   },
+   "size": 159529,
+   "slug": "citric-acid-cycle-steps-products-atp",
+   "tag": "#biochemistry",
+   "title": "Citric Acid (Krebs) Cycle Steps, Enzymes, and Products"
   },
   "note-classical-vs-operant-conditioning": {
    "desc": "The core difference between classical and operant conditioning, the four reinforcement and punishment cells, and the four reinforcement schedules.",
@@ -1577,6 +1608,25 @@
    "size": 501422,
    "tag": "#chemistry",
    "topic": "Systems, state functions and process types"
+  },
+  "5e-thermo-kinetics-3": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-041",
+    "qotd-reels": "qotd-reels-041",
+    "qotd-shorts": "qotd-shorts-041",
+    "qotd-snapchat": "qotd-snapchat-041",
+    "qotd-threads": "qotd-threads-041",
+    "qotd-tiktok": "qotd-tiktok-041",
+    "qotd-x": "qotd-x-041"
+   },
+   "pack_slug": "5e-thermo-kinetics",
+   "practice": "practice/5e-rate-laws-reaction-order-arrhenius-catalysts.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 440079,
+   "tag": "#chemistry",
+   "topic": "Reaction rates and rate laws"
   },
   "6a-sensation-perception-3": {
    "outbox_ids": {
