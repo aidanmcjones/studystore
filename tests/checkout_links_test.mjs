@@ -66,7 +66,15 @@ console.log(`scanned ${pagesScanned} pages, ${pagesWithBuy} with Polar Buy links
 const exps = JSON.parse(readFileSync(join(ROOT, "experiments.json"), "utf8"));
 for (const e of exps.experiments) for (const v of e.variants) {
   if (v.status === "active") ok(!NOT_OPEN.test(JSON.stringify(v.fields || {})), `experiment ${e.id}/${v.id}: no launch promise`);
+  // retired variants keep their original text (ops/experiments.py --validate forbids editing an id's text),
+  // so any with launch copy must be retired with weight 0, and exp.js must never serve a non-active variant
+  else if (NOT_OPEN.test(JSON.stringify(v.fields || {}))) ok(v.weight === 0, `experiment ${e.id}/${v.id}: retired launch copy has weight 0`);
 }
+const expJs = readFileSync(join(ROOT, "assets/js/exp.js"), "utf8");
+ok(/filter\(function \(v\) \{ return v\.status === "active" && v\.weight > 0; \}\)/.test(expJs)
+   && /x\.id === cur && x\.status === "active"/.test(expJs), "exp.js serves only active variants");
+// unsubscribe confirmation names the email list, not a launch list
+ok(!/launch list/i.test(readFileSync(join(ROOT, "functions/api/unsubscribe.js"), "utf8")), "unsubscribe copy has no launch list");
 
 // /api/checkout stays dormant unless checkout_provider is lemonsqueezy (review L1). The module's JSON imports
 // are swapped for inline values so plain Node can load it.
