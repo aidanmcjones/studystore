@@ -41,5 +41,8 @@ ok(A.reg_standard === 360 && A.reg_fap === 145, "AAMC 2027 registration fees as 
 ok(data.courses.filter((c) => c.from).every((c) => cost.includes(`<td class=n>from $${c.price_usd.toLocaleString("en-US")}`)), "'From' prices keep the word from");
 ok(!decks.includes("AnkiWeb</a> (own page"), "AnkiWeb listings are not labeled as the maker's own page");
 ok([decks, cost].every((h) => (h.match(/<div class="tablewrap"/g) || []).length === (h.match(/<div class="tablewrap" role="region" aria-label="[^"]+" tabindex="0">/g) || []).length), "scrollable tables are focusable labeled regions");
+const full = data.courses.filter((c) => c.full_course), maxc = full.reduce((a, c) => (c.price_usd > a.price_usd ? c : a));
+const scenRow = rows(cost).find((r) => r.includes("Full prep course")) || "";
+ok(!maxc.approximate || /to (from )?\$[\d,]+ \(approximate\)<\/td><\/tr>?$/.test(scenRow.trim()) || scenRow.endsWith("(approximate)</td>"), "course-route total keeps (approximate) on an approximate upper bound");
 console.log(`${pass} passed, ${fail} failed`);
 if (fail) process.exit(1);

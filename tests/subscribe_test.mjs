@@ -61,7 +61,7 @@ let all = rows();
 ok(all.length === 1 && all[0].email === "student@example.com", "row stored lower-cased");
 ok(all[0].exam_month === "2027-04" && all[0].source_page === "/notes/x.html", "month and source page stored");
 ok(all[0].utm_source === "reddit" && all[0].utm_campaign === "r-ankimcat-1", "utm stored");
-ok(all[0].status === "pending" && /^[0-9a-f-]{36}$/.test(all[0].unsub_token), "legacy row stored pending with uuid token");
+ok(all[0].status === "pending_legacy" && /^[0-9a-f-]{36}$/.test(all[0].unsub_token), "legacy row stored pending_legacy (saw the legacy consent text) with uuid token");
 
 // duplicate: same answer, no new row, token unchanged
 const tok = all[0].unsub_token;
@@ -108,7 +108,7 @@ r = await unsub.onRequestPost({ request: ureq(tok, "POST"), env });
 ok(r.status === 200, "one-click POST unsubscribe ok");
 // re-joining re-activates
 r = await post({ email: "student@example.com" });
-ok(rows()[0].status === "pending", "re-subscribe after unsubscribe goes to pending, never straight to active");
+ok(rows()[0].status === "pending_legacy", "legacy re-subscribe after unsubscribe goes to pending_legacy, never straight to active");
 // confirmed rows (what ops/reconfirm or the old list leaves as active) for the owner stats below
 DB.db.prepare("UPDATE subscribers SET status = 'active'").run();
 

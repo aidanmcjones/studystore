@@ -5,15 +5,17 @@
 //   (a) no-JS form posts (application/x-www-form-urlencoded), and
 //   (b) the JS fallback when the brain could not be reached or is not live yet.
 // It forwards the same contract to the brain server side. A 202 from the brain means a confirm email is on
-// its way. If the brain is unreachable or answers anything but 202/400/429 (for example 501 before the
-// email-kit ships), the address is kept in D1 `subscribers` with status 'pending' and the consent text the
-// visitor saw (no new column: 'pending' rows saw CONSENT_TEXTS[0], 'active' rows the legacy text). Pending rows get exactly one confirm email later through ops/reconfirm_subscribers.py in the
+// its way. If the brain is unreachable, times out, or answers anything but 202 or a bad_email 400 (for example
+// 501 before the email-kit ships, 429 or another 400), the address is kept in D1 `subscribers` as unconfirmed.
+// The status records which consent text the visitor saw (no new column): 'pending' rows saw CONSENT_TEXTS[0];
+// 'pending_legacy' rows saw LEGACY_CONSENT_TEXT (old box, cached pages); old 'active' rows saw the legacy text
+// and signed up single opt-in. Unconfirmed rows get exactly one confirm email later through ops/reconfirm_subscribers.py in the
 // private repo, and they are never emailed by ops/launch.py (it reads status 'active' only).
 //
 // Legacy shape (email, exam_month, source_page, utm_source, utm_campaign, hp) from the pre-double-opt-in box
-// is still accepted from cached pages, but stored 'pending' too: nothing reaches the emailed ('active') list
+// is still accepted from cached pages, but stored 'pending_legacy': nothing reaches the emailed ('active') list
 // without a confirm click, and a stranger posting an address can never undo that address's unsubscribe
-// (unsubscribed rows only ever move to 'pending'). The re-confirmation pass covers pending rows.
+// (unsubscribed rows only ever move to an unconfirmed status). The re-confirmation pass covers both.
 //
 // Rate limits: the brain limits per cf-connecting-ip, and a subrequest from this function arrives with
 // Cloudflare's egress IP (the brain ignores X-Forwarded-For), so a brain 429 here is not the visitor's fault:
@@ -168,10 +170,10 @@ export async function onRequestPost({ request, env }, fetcher) {
   }
 
   const res = await env.DB.prepare(
-    "INSERT OR IGNORE INTO subscribers (ts, email, exam_month, source_page, utm_source, utm_campaign, status, unsub_token) VALUES (?,?,?,?,?,?,'pending',?)")
+    "INSERT OR IGNORE INTO subscribers (ts, email, exam_month, source_page, utm_source, utm_campaign, status, unsub_token) VALUES (?,?,?,?,?,?,'pending_legacy',?)")
     .bind(ts, v.email, v.exam_month, v.source_page, v.utm_source, v.utm_campaign, crypto.randomUUID()).run();
   if (!(res && res.meta && res.meta.changes)) {
-    await env.DB.prepare("UPDATE subscribers SET status = 'pending' WHERE email = ? AND status = 'unsubscribed'").bind(v.email).run();
+    await env.DB.prepare("UPDATE subscribers SET status = 'pending_legacy' WHERE email = ? AND status = 'unsubscribed'").bind(v.email).run();
   }
   return answer("legacy");
 }

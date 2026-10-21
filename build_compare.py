@@ -113,12 +113,16 @@ def build(emit, site, ld_json, breadcrumbs):
     lo_from = any(r.get("from") and r["price_usd"] == course_lo for r in d["courses"] if r.get("full_course"))
     hi_from = any(r.get("from") for r in d["courses"] if r.get("full_course") and r["price_usd"] == max(x["price_usd"] for x in d["courses"] if x.get("full_course")))
     pre = lambda f: "from " if f else ""
+    full = [r for r in d["courses"] if r.get("full_course")]
+    lo_approx = any(r.get("approximate") and r["price_usd"] == course_lo for r in full)
+    hi_approx = any(r.get("approximate") and r["price_usd"] == max(x["price_usd"] for x in full) for r in full)
+    ap = lambda f: " (approximate)" if f else ""
     course_hi = max(r["price_usd"] for r in d["courses"] if r.get("full_course"))
     scen = [
         ["Free-resources route", f"Registration {money(reg)} + free AAMC Practice Exam 1 and sample test ({money(pe1)})", money(reg + pe1)],
         ["DIY with all AAMC official prep", f"Registration {money(reg)} + Official Prep Online-Only Bundle {money(bundle_p)}", money(reg + bundle_p)],
         ["DIY plus a third-party question bank", f"The row above + UWorld MCAT QBank, 90 days, {money(uq['price_usd'])}", money(reg + bundle_p + uq["price_usd"])],
-        ["Full prep course", f"Registration {money(reg)} + a full course listed here: {pre(lo_from)}{money(course_lo)} to {pre(hi_from)}{money(course_hi)}", f"{pre(lo_from)}{money(reg + course_lo)} to {pre(hi_from)}{money(reg + course_hi)}"],
+        ["Full prep course", f"Registration {money(reg)} + a full course listed here: {pre(lo_from)}{money(course_lo)}{ap(lo_approx)} to {pre(hi_from)}{money(course_hi)}{ap(hi_approx)}", f"{pre(lo_from)}{money(reg + course_lo)}{ap(lo_approx)} to {pre(hi_from)}{money(reg + course_hi)}{ap(hi_approx)}"],
     ]
     body2 = f"""<article class="note wrap compare">
 <p class="eyebrow">Comparison guide &middot; Estimate, not advice</p>
