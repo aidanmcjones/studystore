@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-10-21T19:19:32Z",
-  "theme": "topic_of_the_week",
+  "updated": "2026-10-21T22:20:12Z",
+  "theme": "bundle_push",
   "note": "Edited by ops/experiments.py and the marketing job. Variant ids are never reused. Text must be true of the product. {orig} is replaced with the element's original text (used to keep prices in sync with site.json).",
   "experiments": [
     {
@@ -224,7 +224,7 @@
         {
           "id": "e",
           "status": "retired",
-          "weight": 0,
+          "weight": 0.0,
           "created": "2026-10-20",
           "angle": "control: sampler coming",
           "fields": {
