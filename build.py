@@ -35,6 +35,10 @@ PAGES = [
      "StudyStore sets no cookies. Anonymous first-party page and click counts, and your email only if you join the email list. Payments by " + site["merchant"] + ".", False),
     ("rangecheck_privacy.html", "rangecheck-privacy.html", "RangeCheck Privacy Policy | StudyStore",
      "Privacy policy for the RangeCheck browser extension: what it reads on LinkedIn job pages, what it sends, and what it stores.", False),
+    ("rangecheck_support.html", "rangecheck-support.html", "RangeCheck Support | StudyStore",
+     "Help for the RangeCheck browser extension: how it works on LinkedIn job pages, why a job has no verdict, free checks, Pro license keys and refunds.", False),
+    ("support.html", "support.html", "Support | StudyStore",
+     "Help with StudyStore MCAT pack downloads, refunds and problem reports, and support for the RangeCheck browser extension.", False),
     ("404.html", "404.html", "Page not found | StudyStore", "Page not found.", True),
     ("report.html", "report.html", "Report a problem or suggest something | StudyStore",
      "Tell StudyStore about a broken link, a wrong answer, a typo or a display problem, or suggest a topic.", True),
@@ -278,7 +282,7 @@ practice_build.build_all(emit, ROOT, PRACTICE, PRACTICE_CATS, {n["slug"]: n for 
 
 # ---------- regular pages ----------
 # Pages whose own "last updated" date differs from site.json `updated` (sitemap lastmod must match the page).
-PAGE_LASTMOD = {"rangecheck-privacy.html": "2026-10-21"}
+PAGE_LASTMOD = {"rangecheck-privacy.html": "2026-10-21", "rangecheck-support.html": "2026-10-21", "support.html": "2026-10-21"}
 
 for tpl, out, title, desc, noindex in PAGES:
     body = (ROOT / "templates" / tpl).read_text()

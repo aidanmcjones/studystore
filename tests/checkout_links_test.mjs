@@ -38,6 +38,7 @@ for (const p of items) {
 
 // every built page (home, catalog, notes, practice, tools, products): each Polar Buy link matches its item
 // and price, and a page that sells never says checkout is not open (review H1)
+const RANGECHECK_PRO = "https://buy.polar.sh/polar_cl_sUpu5djOZXY5cYCkVrcttt5nnwWt3TriORkj84XGdq4";
 const bySlug = Object.fromEntries(items.map((p) => [p.slug, p]));
 const NOT_OPEN = /not open yet|when checkout opens|day it opens|launch day access/i;
 let pagesWithBuy = 0, pagesScanned = 0;
@@ -48,7 +49,10 @@ for (const f of allPages(".")) {
   const h = readFileSync(join(ROOT, f), "utf8");
   pagesScanned++;
   const links = [...h.matchAll(/<a [^>]*href="(https:\/\/buy\.polar\.sh\/[^"]+)"[^>]*data-slug="([^"]+)"[^>]*>Buy now, (\$\d+)<\/a>/g)];
-  const raw = (h.match(/buy\.polar\.sh/g) || []).length;
+  // The RangeCheck Pro link (not a StudyStore pack) is allowed only on the RangeCheck support page.
+  const rcPro = (h.match(new RegExp(RANGECHECK_PRO.replace(/[.]/g, "\\."), "g")) || []).length;
+  ok(rcPro === 0 || f.endsWith("rangecheck-support.html"), `${f}: RangeCheck Pro link only on rangecheck-support`);
+  const raw = (h.match(/buy\.polar\.sh/g) || []).length - rcPro;
   ok(links.length === raw, `${f}: every Polar link is a well-formed Buy link`);
   for (const [, href, slug, price] of links) {
     const p = bySlug[slug];
