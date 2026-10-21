@@ -33,6 +33,8 @@ PAGES = [
      f"Terms of sale for StudyStore digital study packs, sold through {site['merchant']} as merchant of record.", False),
     ("privacy.html", "privacy.html", "Privacy Policy | StudyStore",
      "StudyStore sets no cookies. Anonymous first-party page and click counts, and your email only if you join the email list. Payments by " + site["merchant"] + ".", False),
+    ("rangecheck_privacy.html", "rangecheck-privacy.html", "RangeCheck Privacy Policy | StudyStore",
+     "Privacy policy for the RangeCheck browser extension: what it reads on LinkedIn job pages, what it sends, and what it stores.", False),
     ("404.html", "404.html", "Page not found | StudyStore", "Page not found.", True),
     ("report.html", "report.html", "Report a problem or suggest something | StudyStore",
      "Tell StudyStore about a broken link, a wrong answer, a typo or a display problem, or suggest a topic.", True),
