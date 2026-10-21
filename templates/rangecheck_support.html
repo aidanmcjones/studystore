@@ -1,0 +1,54 @@
+<div class="wrap narrow legal" style="padding-top:56px;padding-bottom:56px">
+<h1>RangeCheck support</h1>
+<p>Last updated 2026-10-21.</p>
+<p>RangeCheck is a Chrome extension that shows whether the pay range on a LinkedIn job posting is below, within or above market, compared with U.S. government wage data. It is published by StudyStore. RangeCheck is not affiliated with or endorsed by LinkedIn.</p>
+
+<h2>How to use it</h2>
+<ol>
+<li>Install the extension in Chrome.</li>
+<li>Open a job on www.linkedin.com/jobs that shows a pay range, for example "$90,000 to $120,000 a year" or "$45 to $60 an hour".</li>
+<li>A small RangeCheck card appears in the bottom right corner of the page. It shows a verdict (below market, within market range, or above market), how far the posted midpoint is from the median, and the 25th percentile, median and 75th percentile for the matched occupation, in the job's metro area or state when that data exists, otherwise nationally. The data source is always shown.</li>
+<li>Click the &times; on the card to close it. Click the RangeCheck icon in the toolbar to see how many free checks you have used today, or to enter a Pro license key.</li>
+</ol>
+<p>If a job has no pay range, RangeCheck shows nothing. It only reads the job you have open; see the <a href="{{root}}rangecheck-privacy.html">RangeCheck privacy policy</a> for exactly what it reads and sends.</p>
+
+<h2>Questions</h2>
+<h3>Why is there no verdict?</h3>
+<ul>
+<li><b>No confident match:</b> no government occupation matches the job title with confidence. The card may show the closest occupation it found.</li>
+<li><b>Weak title match:</b> the closest occupation is not a confident match for the title, so RangeCheck shows the percentiles but does not grade the range.</li>
+<li><b>Several occupations:</b> the title is listed under several government occupations with different pay, so RangeCheck does not grade it.</li>
+<li><b>No benchmark:</b> the government data has no usable percentiles for that occupation and area.</li>
+<li><b>Could not read this LinkedIn job page:</b> LinkedIn probably changed its page layout. An extension update should fix it; nothing is reported anywhere.</li>
+</ul>
+<h3>Where does the data come from?</h3>
+<p>Occupation pay comes from the U.S. Bureau of Labor Statistics Occupational Employment and Wage Statistics (OEWS). Employer figures for Pro come from U.S. Department of Labor H-1B disclosure data. Job titles are matched to occupations with the O*NET 30.0 Database (USDOL/ETA, CC BY 4.0, modified). All figures are estimates for information, not pay guarantees or advice.</p>
+<h3>How many free checks do I get?</h3>
+<p>5 checks a day. A check is counted only when the wage data service returns data for the job, not when nothing is found or the service cannot be reached. The count resets at midnight UTC. When you reach the limit, the card says so.</p>
+<h3>Why does a city say "No metro data"?</h3>
+<p>The government data does not have a metro estimate for that city, so RangeCheck uses the state estimate (or the national one) and tells you on the card.</p>
+
+<h2>RangeCheck Pro</h2>
+<p>Pro is a one-time purchase of $19, sold through Polar, our merchant of record. Sales tax or VAT may be added at checkout where it applies. Pro adds:</p>
+<ul>
+<li>Unlimited checks.</li>
+<li>The employer's own H-1B wage filings for the same title (or for all its roles, when no filing matches the title).</li>
+<li>An offer check in the RangeCheck popup: enter a job title, a state and an annual amount to see roughly what percentile that offer lands at. The amount you type stays on your device.</li>
+</ul>
+<p><a class="btn" href="https://buy.polar.sh/polar_cl_sUpu5djOZXY5cYCkVrcttt5nnwWt3TriORkj84XGdq4" rel="noopener">Buy RangeCheck Pro, $19</a></p>
+<h3>Entering your license key</h3>
+<ol>
+<li>After you pay, Polar shows your RangeCheck Pro license key with your order. You can always find it again in the <a href="https://polar.sh/aidan-jones/portal" rel="noopener">Polar customer portal</a> by signing in with the email you used at checkout.</li>
+<li>Click the RangeCheck icon in the Chrome toolbar, paste the key into "Paste your license key" and click Activate.</li>
+<li>The popup then says "Pro active. Unlimited checks." The extension re-checks the key with Polar about once a week. If it cannot reach Polar, Pro keeps working for up to 30 days.</li>
+</ol>
+<p>If the key is not accepted, the popup shows why (for example, an unknown or revoked key). Copy it again from the Polar portal, without extra spaces, or contact us.</p>
+<h3>Refunds</h3>
+<p>Email support@studystore.co with the email you used at checkout (or your order number). Refunds are issued by StudyStore through Polar, and go back to your original payment method.</p>
+
+<h2>Privacy</h2>
+<p>No accounts, no tracking, no ads, and no data sold. RangeCheck sends only what it needs to look up wages. The <a href="{{root}}rangecheck-privacy.html">RangeCheck privacy policy</a> lists exactly what it reads, sends and stores.</p>
+
+<h2>Contact</h2>
+<p>Questions, problems or refund requests: <a href="mailto:support@studystore.co">support@studystore.co</a>. Please include your Chrome version and the LinkedIn job address if a card looks wrong.</p>
+</div>
