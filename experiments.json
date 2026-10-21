@@ -223,8 +223,8 @@
       "variants": [
         {
           "id": "e",
-          "status": "active",
-          "weight": 0.25,
+          "status": "retired",
+          "weight": 0,
           "created": "2026-10-20",
           "angle": "control: sampler coming",
           "fields": {
@@ -232,7 +232,8 @@
             "body": "A free set of one-page MCAT sheets is on the way. The free notes are open now, and the launch list below sends one email when checkout opens.",
             "link": "Read the free notes now"
           },
-          "replaces": "a"
+          "replaces": "a",
+          "retired_reason": "2026-10-21: body promised a launch email 'when checkout opens'; checkout is open on Polar. Replaced by i."
         },
         {
           "id": "f",
@@ -273,6 +274,19 @@
             "link": "Read a free note"
           },
           "replaces": "d"
+        },
+        {
+          "id": "i",
+          "status": "active",
+          "weight": 0.25,
+          "created": "2026-10-21",
+          "angle": "control: sampler coming (checkout open)",
+          "fields": {
+            "title": "Free sampler",
+            "body": "A free set of one-page MCAT sheets is on the way. The free notes are open now, no signup needed, and each links to the pack that covers its topic.",
+            "link": "Read the free notes now"
+          },
+          "replaces": "e"
         }
       ]
     },

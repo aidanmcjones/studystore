@@ -4,6 +4,7 @@ Everything is client-side. Data files (data/*.json) are inlined into each page a
 so nothing but HTML, CSS and JS needs to be deployed. Stdlib only.
 """
 import json, html, datetime
+import products_build as PB
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -97,7 +98,7 @@ def build(emit, site, products, notes_meta):
     for slug, code in PACK_AAMC.items():
         if slug in products:
             p = products[slug]
-            packs[code] = {"title": p["title"], "href": f"products/{slug}.html", "price": p["price"], "buyable": bool(p.get("checkout_url") or p.get("variant_id"))}
+            packs[code] = {"title": p["title"], "href": f"products/{slug}.html", "price": p["price"], "buyable": PB.buyable(p)}
     notes = {}
     for code, slugs in NOTES_BY_AAMC.items():
         for s in slugs:

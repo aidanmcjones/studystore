@@ -1,21 +1,21 @@
 <div class="wrap phero">
 <p class="eyebrow mono"><span class="dot"></span>Order complete</p>
 <h1 class="split">Thank you. Your download is ready.</h1>
-<p class="lead reveal">Lemon Squeezy, our merchant of record, has emailed your receipt with the download link.</p>
+<p class="lead reveal">{{merchant}}, our merchant of record, has emailed your receipt and a link to your downloads.</p>
 </div>
 
 <div class="wrap pmain">
 <div class="pbody">
 <h2 class="split">Get your files</h2>
 <ol class="steps reveal">
-<li>Open the receipt email from Lemon Squeezy and click the download button. The same link is on the order confirmation page you just saw.</li>
-<li>Lost the email? Go to <a href="https://app.lemonsqueezy.com/my-orders" rel="noopener">app.lemonsqueezy.com/my-orders</a> and sign in with the email you used at checkout.</li>
-<li>Unzip the download. Each pack has <code>deck.apkg</code>, the PDFs and a <code>README.txt</code>.</li>
+<li>Open the email from {{merchant}} and follow the link to your order. The files are listed under your purchase, ready to download.</li>
+<li>Lost the email? Go to <a href="{{orders_url}}" rel="noopener">{{orders_label}}</a> and sign in with the email you used at checkout.</li>
+<li>Download every file. Each pack has an Anki deck (<code>.apkg</code>), the PDFs and a <code>README.txt</code>; a bundle arrives as one zip that holds a zip per pack.</li>
 </ol>
 <h2 class="split">Import the deck</h2>
 <ol class="steps reveal">
 <li>Install Anki (free) from apps.ankiweb.net.</li>
-<li>Double-click <code>deck.apkg</code>, or use File, Import.</li>
+<li>Double-click the <code>.apkg</code> file, or use File, Import.</li>
 <li>Re-importing a later version updates the same notes instead of duplicating them.</li>
 <li>Print the PDFs on US Letter at 100 percent, or read them on screen.</li>
 </ol>

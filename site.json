@@ -3,6 +3,7 @@
   "base_url": "https://www.studystore.co",
   "tagline": "Original, high-yield MCAT study packs.",
   "support_email": "support@studystore.co",
+  "checkout_provider": "polar",
   "updated": "October 20, 2026",
   "disclaimer": "MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.",
   "products": [
@@ -77,7 +78,7 @@
       },
       "ls_name": "StudyStore MCAT 1A: Amino Acids, Proteins and Enzymes",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_2a9qLudjbQs7jrjXozTbPbv4NWM1TXgkixKh22R6wS8"
     },
     {
       "slug": "1d-metabolism-bioenergetics",
@@ -140,7 +141,7 @@
       },
       "ls_name": "StudyStore MCAT 1D: Metabolism and Bioenergetics",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_Lysyt9YsoYj7l4WTzZugYFMNankcNHS1oSylm1tUnbR"
     },
     {
       "slug": "1b-dna-gene-expression",
@@ -207,7 +208,7 @@
       },
       "ls_name": "StudyStore MCAT 1B: DNA, Genetic Information and Gene Expression",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_bY03dIKrCN7fDIlKOiq0Yae4RXLJVncfVpncL1iGbX9"
     },
     {
       "slug": "5d-biological-molecules-orgo",
@@ -267,7 +268,7 @@
       },
       "ls_name": "StudyStore MCAT 5D: Biologically Relevant Molecules and Organic Reactivity",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_luE5Ely2cj4294k8wvwT967l0SCUQIQoemcxS0InlpT"
     },
     {
       "slug": "3a-nervous-endocrine",
@@ -330,7 +331,7 @@
       },
       "ls_name": "StudyStore MCAT 3A: Nervous and Endocrine Systems",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_UR63VO8SXFsZvdQ9QyzmvIcKfDKP5q8esxOkh1FTKK5"
     },
     {
       "slug": "3b-organ-systems",
@@ -395,7 +396,7 @@
       },
       "ls_name": "StudyStore MCAT 3B: Organ Systems",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_ptS31PpSSEIQslCs3BVVOH1FnSyG4oU2mPPlP1Wi7Aq"
     },
     {
       "slug": "2a-cells-membranes",
@@ -454,7 +455,7 @@
       },
       "ls_name": "StudyStore MCAT 2A: Cells, Membranes and Tissues",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_uNDlEzNoFExYboa7c9L6El66YJZpEAhzkRGkZ3FIPq6"
     },
     {
       "slug": "5e-thermo-kinetics",
@@ -511,7 +512,7 @@
       },
       "ls_name": "StudyStore MCAT 5E: Chemical Thermodynamics and Kinetics",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_6iTxyc0e2daRvWVecizYleLgQh9zYhkWTFeVS2TpOeR"
     },
     {
       "slug": "5a-solutions-acids-bases",
@@ -565,7 +566,7 @@
       },
       "ls_name": "StudyStore MCAT 5A: Water, Solutions, Acids and Bases",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_VMxLvbJv7gjlabw5cWVtRMG1dHxj4ptpPecRD0uJEYU"
     },
     {
       "slug": "4c-electricity-electrochem",
@@ -624,7 +625,7 @@
       },
       "ls_name": "StudyStore MCAT 4C: Electrostatics, Circuits, Magnetism and Electrochemistry",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_X94RFtyX7YA49DoKlhKmG7JFV4tF6NimckFlQ3NZGoZ"
     },
     {
       "slug": "4a-motion-forces-energy",
@@ -678,7 +679,7 @@
       },
       "ls_name": "StudyStore MCAT 4A: Motion, Forces, Work and Energy",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_JNk012arYDPoX8YBL5ur1qM7noCVz8Y1NNLGw22zgLo"
     },
     {
       "slug": "4b-fluids-gases",
@@ -730,7 +731,7 @@
       },
       "ls_name": "StudyStore MCAT 4B: Fluids and Gas Behavior",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_mKOX6wNcUOe3YUhYTQHFTHJP0w48WysPJhds60OwlQb"
     },
     {
       "slug": "4d-light-sound-optics",
@@ -786,7 +787,7 @@
       },
       "ls_name": "StudyStore MCAT 4D: Waves, Sound, Light and Optics",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_6QWBqvz05xA8VSOsdS6x8OpfluaVakKii3tAL2WrAGV"
     },
     {
       "slug": "1c-heredity-evolution",
@@ -844,7 +845,7 @@
       },
       "ls_name": "StudyStore MCAT 1C: Heredity, Population Genetics and Evolution",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_NExYWAqVZGeFtJMhqZ1pB3qFrPwpQulBFlS6K1K4K1M"
     },
     {
       "slug": "2c-cell-division-development",
@@ -897,7 +898,7 @@
       },
       "ls_name": "StudyStore MCAT 2C: Cell Division, Development and Reproduction",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_jcxNjJiL3rk9rfqU5DqGh9XvN2HX2Bn9XUEzx2TBGr6"
     },
     {
       "slug": "2b-prokaryotes-viruses",
@@ -949,7 +950,7 @@
       },
       "ls_name": "StudyStore MCAT 2B: Prokaryotes, Viruses and Microbial Genetics",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_IARNm19EeApd4tfhkPt63AtU0yOe6ao3t9GyQ3jBufw"
     },
     {
       "slug": "5b-molecules-bonding-stereo",
@@ -1002,7 +1003,7 @@
       },
       "ls_name": "StudyStore MCAT 5B: Bonding, Molecular Structure and Stereochemistry",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_AZYwUU1kDIhp9q0Qcdi4sFnboIQGT81HH8Uyc41FLIR"
     },
     {
       "slug": "4e-atoms-nuclear-periodic",
@@ -1057,7 +1058,7 @@
       },
       "ls_name": "StudyStore MCAT 4E: Atoms, Nuclear Chemistry and the Periodic Table",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_7YPtnoWbyUpHDxT7LOr72q4OrLD2yJTv5l8th36xsEq"
     },
     {
       "slug": "5c-separations-spectroscopy",
@@ -1109,7 +1110,7 @@
       },
       "ls_name": "StudyStore MCAT 5C: Separations, Purification and Spectroscopy",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_XUam6EP6LcLN8Iojmo8ahNTBZv6XFA5gDzU8x43RO3N"
     },
     {
       "slug": "6b-cognition-memory-consciousness",
@@ -1166,7 +1167,7 @@
       },
       "ls_name": "StudyStore MCAT 6B: Attention, Cognition, Consciousness, Memory and Language",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_OPOH3bDp3sBMOdvEhzHiOtltx657z05kq29Hz1XGdDF"
     },
     {
       "slug": "7a-individual-behavior",
@@ -1221,7 +1222,7 @@
       },
       "ls_name": "StudyStore MCAT 7A: Biological and Individual Influences on Behavior",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_vY1DYJ5WzRkGLeBzebDSYuXnVSP0S4vWtE8992drEn2"
     },
     {
       "slug": "6a-sensation-perception",
@@ -1270,7 +1271,7 @@
       },
       "ls_name": "StudyStore MCAT 6A: Sensation and Perception",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_lO88JF8XHNPTgaFRg1r8KUmLoej3DtmpjNKiN4HtLV1"
     },
     {
       "slug": "8b-social-thinking",
@@ -1318,7 +1319,7 @@
       },
       "ls_name": "StudyStore MCAT 8B: Social Thinking: Attribution, Prejudice and Stereotypes",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_vY3n1dEbG8cMe0mo3MLHFGBb8iz8wRAhuKIIA1fiPdn"
     },
     {
       "slug": "7b-social-processes",
@@ -1366,7 +1367,7 @@
       },
       "ls_name": "StudyStore MCAT 7B: Social Processes and Group Behavior",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_N6HVQs332qCPWXV807lcSzUTxMNsaZm6auX8c1Y9RUT"
     },
     {
       "slug": "7c-learning-behavior-change",
@@ -1414,7 +1415,7 @@
       },
       "ls_name": "StudyStore MCAT 7C: Learning and Attitude Change",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_ux6oroJQ6RlBNk1GJ6OnxpSQxokiuvMn54qdW2FmsDB"
     },
     {
       "slug": "9a-social-structure",
@@ -1462,7 +1463,7 @@
       },
       "ls_name": "StudyStore MCAT 9A: Social Structure, Theories and Institutions",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_V2cd7EMmOAzrSc3IEIJXllOlxKsmftHZkAN0r2kOGoP"
     },
     {
       "slug": "10a-social-inequality",
@@ -1511,7 +1512,7 @@
       },
       "ls_name": "StudyStore MCAT 10A: Social Inequality and Health Disparities",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_ig2yGoZAKDC3AKvten6lqprZpgQ1Ht9fpaB933xRtU0"
     },
     {
       "slug": "8a-self-identity",
@@ -1559,7 +1560,7 @@
       },
       "ls_name": "StudyStore MCAT 8A: Self-Concept, Identity and Personality Formation",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_ezIbpsE5Z4Vj5w6hDDgsatzn1nCUZvIuiBT0k3I7Mkf"
     },
     {
       "slug": "8c-social-interactions",
@@ -1607,7 +1608,7 @@
       },
       "ls_name": "StudyStore MCAT 8C: Social Interactions and Relationships",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_uYKJx537tdUYnp7wDSpPkNvGgsNTibqUFnjsv3ek1Tq"
     },
     {
       "slug": "6c-emotion-stress",
@@ -1655,7 +1656,7 @@
       },
       "ls_name": "StudyStore MCAT 6C: Emotion and Stress",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_yABMd8YNONgbuxGLVDiJwl68kWAPNA12w3PMN0MH2Uf"
     },
     {
       "slug": "9b-demographics",
@@ -1703,7 +1704,7 @@
       },
       "ls_name": "StudyStore MCAT 9B: Demographics and Demographic Change",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_0EKhKMtiraaY63yaYXbK8Td2CRTUNrXWmHhUL4B3UZQ"
     },
     {
       "slug": "cars-strategy",
@@ -1753,7 +1754,7 @@
       },
       "ls_name": "StudyStore MCAT CARS: CARS Strategy and Reasoning Skills",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_d74RcbNa3v0y47tvwxNOOoCJlZZFL9t1pp67T2FY5XA"
     }
   ],
   "bundles": [
@@ -1779,7 +1780,7 @@
       "status": "available",
       "ls_name": "StudyStore MCAT Bundle: Bio/Biochem Complete Section",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_mY3slQSKPCedrsjdfkzJHUWpYQYbzFN8G6A874Cphp2"
     },
     {
       "slug": "bundle-chem-phys",
@@ -1804,7 +1805,7 @@
       "status": "available",
       "ls_name": "StudyStore MCAT Bundle: Chem/Phys Complete Section",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_FUbyO0ssPi0NkgtEzB2AaVhoLflFnt94EihyC2nsGyF"
     },
     {
       "slug": "bundle-psych-soc",
@@ -1831,7 +1832,7 @@
       "status": "available",
       "ls_name": "StudyStore MCAT Bundle: Psych/Soc Complete Section",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_vjFgp344gvu9eVN1UwDQlGExCXz1xarNQLdM31exYs4"
     },
     {
       "slug": "bundle-complete-mcat",
@@ -1878,7 +1879,7 @@
       "status": "available",
       "ls_name": "StudyStore MCAT Bundle: Complete MCAT (all sections plus CARS)",
       "variant_id": null,
-      "checkout_url": null
+      "checkout_url": "https://buy.polar.sh/polar_cl_7NO2sWNjJcAuAwuePtuCwgWdzd0hSFsLXfZ6g3bTMxg"
     }
   ],
   "retired_products": {

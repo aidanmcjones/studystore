@@ -8,7 +8,10 @@ Live: https://aidanmcjones.github.io/studystore/
 All values that change live in `site.json`:
 
 - `support_email`: set to an address and every page footer, refund, terms, and privacy page shows it. While `null`, pages read "Support email launching this week."
-- `products[].checkout_url`: the Lemon Squeezy checkout link. While `null`, Buy buttons read "Available soon" and are disabled.
+- `checkout_provider`: `"polar"` (default) or `"lemonsqueezy"` (dormant). Picks the Buy button path and the
+  merchant named in page copy (`{{merchant}}`, `{{orders_url}}`, `{{orders_label}}`).
+- `products[].checkout_url` (and `bundles[].checkout_url`): the Polar checkout link (`https://buy.polar.sh/polar_cl_...`).
+  Only links for the active provider count; without one, Buy buttons read "Available soon" and are disabled.
 - `products[].price`, `title`, `updated`, `base_url`, `disclaimer`.
 
 Then run:
@@ -58,8 +61,16 @@ finds pages through `sitemap.xml` (declared in `robots.txt`) and ordinary crawli
   thanks.html and `_redirects` (retired slugs). Home numbers come from `{{stat:*}}` (catalog-wide totals over available packs) and
   `{{feat:*}}` (featured pack) placeholders, never hardcoded. The home page's four scroll-drawn figures (one per MCAT
   section) are inline SVG/HTML in `templates/index.html`, drawn by `assets/js/site.js` from their formulas.
-- Buy buttons call `/api/checkout` (functions/api/checkout.js). Without the `LS_API_KEY` and `LS_STORE_ID` Pages
-  secrets it returns 503 and buttons read "Available soon".
+- Polar (default): Buy buttons are plain links to each item's Polar checkout link (site.json `checkout_url`). The
+  Polar products, downloadable files and links are created by `ops/polar/studystore_polar.py` in the income-brain
+  repo (ids in `ops/polar/studystore-catalog.json` there). `assets/js/exp.js` appends the visitor's first-touch
+  `utm_*` tags and shown experiment variants (`reference_id=ss~<exp>.<variant>~...`) so Polar stores them in the
+  checkout metadata. After payment Polar redirects to `/thanks?p=<slug>&checkout_id=...`.
+  Test: `python3 build.py && node tests/checkout_links_test.mjs`.
+- Lemon Squeezy (dormant, `checkout_provider: "lemonsqueezy"`): Buy buttons call `/api/checkout`
+  (functions/api/checkout.js). It returns 503 unless `checkout_provider` is `lemonsqueezy` and the `LS_API_KEY` /
+  `LS_STORE_ID` Pages secrets exist. Flipping the flag back is not an instant fallback: buttons read "Available soon"
+  until `ops/sync_catalog.py` fills `ls_variants.json` with live variant ids.
 
 ## Problem reports, suggestions and owner approval
 

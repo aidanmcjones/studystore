@@ -4,7 +4,9 @@
  *   elements marked data-exp="<id>" data-exp-field="<field>" (textContent only).
  * - Sends view, cta_click, checkout_click, sampler_click to /api/e via sendBeacon, plus
  *   subscribe (launch list signup) through window.ssTrack("subscribe") from waitlist.js.
- * - Appends checkout[custom][exp_<id>]=<variant> to Lemon Squeezy buy links.
+ * - Tags checkout links: Polar (buy.polar.sh) links get the first-touch utm_* tags and
+ *   reference_id=<id>.<variant>~... (shown experiments); Lemon Squeezy links (dormant provider)
+ *   get checkout[custom][exp_<id>]=<variant> and utm tags.
  * - Sends nothing when Do Not Track or Global Privacy Control is on.
  */
 (function () {
@@ -38,6 +40,7 @@
     return (v || "").slice(0, 60);
   }
   var utmSource = utm("utm_source"), utmCampaign = utm("utm_campaign");
+  var utmExtra = { utm_medium: utm("utm_medium"), utm_content: utm("utm_content"), utm_term: utm("utm_term") };
   var refDomain = "";
   try { if (D.referrer) { var r = new URL(D.referrer).hostname; if (r !== location.hostname) refDomain = r; } } catch (e) {}
 
@@ -107,15 +110,31 @@
     send("view", applied);
   }
 
-  function isCheckout(a) {
-    try { var h = new URL(a.href, location.href).hostname; return /(^|\.)lemonsqueezy\.com$/.test(h); } catch (e) { return false; }
+  function checkoutHost(a) {
+    try {
+      var h = new URL(a.href, location.href).hostname;
+      if (h === "buy.polar.sh") return "polar";
+      if (/(^|\.)lemonsqueezy\.com$/.test(h)) return "ls";
+    } catch (e) {}
+    return null;
+  }
+  function isCheckout(a) { return !!checkoutHost(a); }
+  // Polar checkout links copy utm_* and reference_id into the checkout session metadata.
+  function tagPolar(u, seen) {
+    var ref = Object.keys(seen).sort().map(function (k) { return k + "." + seen[k]; }).join("~");
+    if (ref) u.searchParams.set("reference_id", ("ss~" + ref).slice(0, 100)); else u.searchParams.delete("reference_id");
+    if (utmSource) u.searchParams.set("utm_source", utmSource);
+    if (utmCampaign) u.searchParams.set("utm_campaign", utmCampaign);
+    Object.keys(utmExtra).forEach(function (k) { if (utmExtra[k]) u.searchParams.set(k, utmExtra[k]); });
   }
   function tagCheckoutLinks(seen) {
+    if (noTrack) return; // Do Not Track / Global Privacy Control: no utm_* or reference_id on checkout links
     var links = D.querySelectorAll("a[href]");
     for (var i = 0; i < links.length; i++) {
-      var a = links[i]; if (!isCheckout(a)) continue;
+      var a = links[i], host = checkoutHost(a); if (!host) continue;
       try {
         var u = new URL(a.href);
+        if (host === "polar") { tagPolar(u, seen); a.href = u.toString(); continue; }
         Object.keys(seen).forEach(function (k) { u.searchParams.set("checkout[custom][exp_" + k + "]", seen[k]); });
         if (utmSource) u.searchParams.set("checkout[custom][utm_source]", utmSource);
         if (utmCampaign) u.searchParams.set("checkout[custom][utm_campaign]", utmCampaign);
@@ -138,7 +157,7 @@
 
   function start() {
     fetch(CONFIG, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : { experiments: [] }; })
-      .then(run).catch(function () { done(); send("view", {}); });
+      .then(run).catch(function () { try { tagCheckoutLinks({}); } catch (e) {} done(); send("view", {}); });
   }
   if (D.readyState === "loading") D.addEventListener("DOMContentLoaded", start); else start();
   setTimeout(done, 1200);
