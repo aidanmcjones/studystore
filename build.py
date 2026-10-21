@@ -277,9 +277,12 @@ PB.write_redirects(site)
 practice_build.build_all(emit, ROOT, PRACTICE, PRACTICE_CATS, {n["slug"]: n for n in notes}, BASE)
 
 # ---------- regular pages ----------
+# Pages whose own "last updated" date differs from site.json `updated` (sitemap lastmod must match the page).
+PAGE_LASTMOD = {"rangecheck-privacy.html": "2026-10-21"}
+
 for tpl, out, title, desc, noindex in PAGES:
     body = (ROOT / "templates" / tpl).read_text()
-    emit(out, title, desc, body, noindex=noindex)
+    emit(out, title, desc, body, noindex=noindex, lastmod=PAGE_LASTMOD.get(out))
 
 # ---------- free tools (isolated in build_tools.py) ----------
 import build_tools
