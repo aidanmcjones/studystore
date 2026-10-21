@@ -236,6 +236,8 @@ def strip_tags(t):
 notes = load_notes()
 PRACTICE, PRACTICE_CATS = practice_build.load(ROOT, products, {n["slug"] for n in notes})
 PRACTICE_LIVE = [p for p in PRACTICE if not p["noindex"]]
+# Live counts for the free sampler opt-in box (waitlist.py), so it never states a number the site lacks.
+waitlist.STATS.update(notes=len(notes), practice=len(PRACTICE_LIVE), questions=sum(len(p["qs"]) for p in PRACTICE_LIVE))
 LATEST_NOTES = "".join(note_card(n, "notes/", "assets/notes/") for n in notes[:6])
 for n in notes:
     build_note(n, notes)
@@ -278,7 +280,7 @@ practice_build.build_all(emit, ROOT, PRACTICE, PRACTICE_CATS, {n["slug"]: n for 
 
 # ---------- regular pages ----------
 # Pages whose own "last updated" date differs from site.json `updated` (sitemap lastmod must match the page).
-PAGE_LASTMOD = {"rangecheck-privacy.html": "2026-10-21"}
+PAGE_LASTMOD = {"rangecheck-privacy.html": "2026-10-21", "privacy.html": "2026-10-21"}
 
 for tpl, out, title, desc, noindex in PAGES:
     body = (ROOT / "templates" / tpl).read_text()
@@ -286,7 +288,18 @@ for tpl, out, title, desc, noindex in PAGES:
 
 # ---------- free tools (isolated in build_tools.py) ----------
 import build_tools
-build_tools.build(emit, site, products, {n["slug"]: n["meta"]["title"] for n in notes})
+_aamc_of = lambda ref: (products.get(ref) or {}).get("aamc", "")
+_notes_by, _prac_by = {}, {}
+for n in sorted(notes, key=lambda n: n["slug"]):
+    if _aamc_of(n["meta"]["product"]):
+        _notes_by.setdefault(_aamc_of(n["meta"]["product"]).upper(), []).append((n["slug"], n["meta"]["title"]))
+for x in PRACTICE_LIVE:
+    _prac_by.setdefault(x["meta"]["aamc"].upper(), []).append((x["slug"], x["meta"]["title"]))
+build_tools.build(emit, site, products, {n["slug"]: n["meta"]["title"] for n in notes}, _notes_by, _prac_by)
+
+# ---------- comparison guides (build_compare.py, data/compare.json) ----------
+import build_compare
+COMPARE = build_compare.build(emit, site, ld_json, breadcrumbs)
 
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for u, lm in urls:

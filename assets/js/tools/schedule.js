@@ -1,5 +1,6 @@
 /* MCAT study schedule generator. Client-side only. Data: inline JSON #sched-data
-   (catalog_public.json categories, live packs, free notes by category code, 2027 test dates). */
+   (catalog_public.json categories, live packs, free notes and free practice pages by category code,
+   2027 test dates with their AAMC source). window.__sched exposes plan() for tests/schedule_test.mjs. */
 (function () {
   "use strict";
   var SS = window.SS, D = SS.data("sched-data"), $ = function (id) { return document.getElementById(id); };
@@ -75,10 +76,16 @@
     return { weeks: weeks, days: days, n: n, contentBudget: contentBudget, avgPerCat: avg, total: H * n, seq: seq };
   }
 
-  function linksFor(c) {
-    var out = [], notes = D.notes[c.aamc] || [], pack = D.packs[c.aamc];
-    if (notes.length) out.push("Free notes: " + notes.map(function (x) { return '<a href="../notes/' + x.slug + '.html">' + SS.esc(x.title) + "</a>"; }).join("; "));
-    if (pack) out.push('StudyStore pack: <a href="../' + pack.href + '" data-track="cta">' + SS.esc(pack.title) + "</a> (" + SS.esc(pack.price) + (pack.buyable ? "" : ", available soon") + ")");
+  // Free pages first (notes, then practice sets), at most two of each per category so a week stays readable;
+  // "all" links lead to the rest. The paid pack is mentioned once per plan, not per week.
+  var MAX = 2;
+  function linksFor(c, kind) {
+    var out = [], notes = D.notes[c.aamc] || [], prac = (D.practice || {})[c.aamc] || [];
+    var a = function (dir, x) { return '<a href="../' + dir + "/" + x.slug + '.html">' + SS.esc(x.title) + "</a>"; };
+    if (kind !== "practice" && notes.length) out.push("Free notes: " + notes.slice(0, MAX).map(function (x) { return a("notes", x); }).join("; ") +
+      (notes.length > MAX ? '; <a href="../notes/index.html">' + (notes.length - MAX) + " more</a>" : ""));
+    if (prac.length) out.push("Free practice: " + prac.slice(0, MAX).map(function (x) { return a("practice", x); }).join("; ") +
+      (prac.length > MAX ? '; <a href="../practice/' + c.aamc.toLowerCase() + '/index.html">all ' + prac.length + " " + SS.esc(c.aamc) + " sets</a>" : ""));
     return out;
   }
 
@@ -106,15 +113,18 @@
         h += "<li>Practice: " + SS.fmt(w.practice, 1) + " h of timed passages on topics already covered. Review every miss and note why.</li>";
       } else {
         h += "<li>Targeted review: " + SS.fmt(w.content, 1) + " h re-drilling " + w.review.map(function (c) { return SS.esc(c.aamc) + " " + SS.esc(c.title); }).join("; ") + "</li>";
-        w.review.forEach(function (c) { var l = linksFor(c); if (l.length) h += '<li class="meta">' + SS.esc(c.aamc) + ": " + l.join(" | ") + "</li>"; });
+        w.review.forEach(function (c) { var l = linksFor(c, "practice"); if (l.length) h += '<li class="meta">' + SS.esc(c.aamc) + ": " + l.join(" | ") + "</li>"; });
         h += "<li>Practice: " + SS.fmt(w.practice, 1) + " h. " + (w.phase === "practice" ? (w.hours >= 12 ? "Include one full-length practice exam (about 7.5 hours with breaks) and review it the next day." : "Do section-length blocks; a full-length exam needs a long free day.") : "One last full-length early in the week if you have not done one in 10 days, then lighter sets. No new content in the final two days; sleep and logistics.") + "</li>";
       }
       h += "<li>CARS: " + SS.fmt(w.cars, 1) + " h, a few passages most days (steady beats cramming).</li></ul></article>";
     });
     h += "</div>";
-    var live = Object.keys(D.packs);
-    h += '<p class="meta">Honest note about packs: StudyStore currently offers a pack for ' + live.map(function (k) { return k + " (" + D.packs[k].title + ")"; }).join(", ") +
-      ". Other topic areas are still in development, so this plan does not recommend them yet. It makes no promise about your score.</p>";
+    var live = Object.keys(D.packs).length, total = D.categories.length;
+    h += '<p class="meta">Every link in this plan is a free StudyStore page. If you want one category as Anki cards, a study guide and a cheat sheet, ' +
+      (live >= total ? "each category above also has a paid pack" : "some categories above also have a paid pack") +
+      ' (<a href="../products/index.html" data-track="cta">see the packs</a>). The plan organizes your time and makes no promise about your score.</p>';
+    h += '<p class="meta">Test dates: AAMC 2027 calendar (<a href="' + SS.esc(D.dates_source || "https://students-residents.aamc.org/") + '" rel="noopener">source</a>, checked ' + SS.esc(D.dates_checked || "") + '). Confirm your own date and registration with AAMC.</p>';
+    h += '<p class="noprint"><a class="textlink" href="#waitlist">Get the free sampler and mini-lessons by email</a>: double opt-in, nothing sent until you confirm.</p>';
     o.innerHTML = h; o.scrollIntoView && o.scrollIntoView({ behavior: "smooth", block: "start" });
     $("ics").addEventListener("click", function () { download(p, inp); });
     $("print").addEventListener("click", function () { window.print(); });

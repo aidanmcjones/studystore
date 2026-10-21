@@ -136,5 +136,65 @@ ok(lines[0] === "email,exam_month,source_page,utm_source,utm_campaign,signed_up_
 ok(!h.includes("x@y.co"), "unsubscribed excluded from csv");
 ok(h.includes(`"'=SUM(1)"`), "csv formula neutralized");
 
+// --- double opt-in contract (marketing/SPEC-shared.md section 2): forward to the brain, pending fallback
+const CONSENT = "Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.";
+ok(sub.CONSENT_TEXTS[0] === CONSENT, "consent allowlist holds the verbatim box text");
+const wl = readFileSync(new URL("../waitlist.py", import.meta.url), "utf8");
+ok(wl.includes('"Email me free MCAT notes, practice sets and new packs from StudyStore. "') && wl.includes('"Double opt-in, unsubscribe in one click."'), "waitlist.py CONSENT_TEXT matches the allowlist");
+const sent = [];
+const fakeBrain = (status) => async (url, init) => { sent.push({ url, init, body: JSON.parse(init.body) }); return new Response("{}", { status }); };
+const cpost = (b, status, o = {}) => sub.onRequestPost({ request: req(b, o), env }, typeof status === "function" ? status : fakeBrain(status));
+const cbody = (e, extra = {}) => ({ email: e, list_id: "studystore-mcat", consent_text: CONSENT, source_url: "https://www.studystore.co/notes/x.html?utm_source=reddit#q1",
+  utm: { source: "reddit", medium: "", campaign: "c-1" }, website: "", ...extra });
+
+r = await cpost(cbody("Brain@Example.com"), 202); j = await r.json();
+ok(r.status === 202 && j.ok === true && j.status === "check_email", "brain 202 -> 202 check_email");
+let fw = sent.at(-1);
+ok(fw.url === sub.BRAIN_SUBSCRIBE_URL && fw.init.method === "POST", "forwarded to the brain endpoint");
+ok(fw.body.email === "brain@example.com" && fw.body.list_id === "studystore-mcat" && fw.body.consent_text === CONSENT, "forward body: email, list, verbatim consent");
+ok(fw.body.source_url === "https://www.studystore.co/notes/x.html" && fw.body.utm.source === "reddit" && fw.body.utm.campaign === "c-1" && fw.body.website === "", "forward body: clean source_url, utm, empty honeypot");
+ok(Object.keys(fw.body).sort().join() === "consent_text,email,list_id,source_url,utm,website", "forward body has exactly the contract fields");
+ok(!rows().some((q) => q.email === "brain@example.com"), "brain accepted: nothing stored in D1");
+
+r = await cpost(cbody("down@example.com"), 501); j = await r.json();
+ok(r.status === 202 && j.status === "pending", "brain 501 -> pending answer");
+let pr = rows().find((q) => q.email === "down@example.com");
+ok(pr && pr.status === "pending" && pr.source_page === "/notes/x.html" && pr.utm_campaign === "c-1", "brain 501 -> stored pending with page and utm");
+r = await cpost(cbody("down@example.com"), 501); j = await r.json();
+ok(r.status === 202 && j.status === "pending" && rows().filter((q) => q.email === "down@example.com").length === 1, "pending duplicate: same answer, one row");
+r = await cpost(cbody("throw@example.com"), async () => { throw new Error("network"); }); j = await r.json();
+ok(r.status === 202 && rows().find((q) => q.email === "throw@example.com").status === "pending", "brain unreachable -> pending");
+
+r = await cpost(cbody("bad@example.com"), 400); j = await r.json();
+ok(r.status === 400 && j.error === "bad_email" && !rows().some((q) => q.email === "bad@example.com"), "brain 400 -> 400, nothing stored");
+r = await cpost(cbody("slow@example.com"), 429); j = await r.json();
+ok(r.status === 429 && j.error === "rate_limited" && !rows().some((q) => q.email === "slow@example.com"), "brain 429 -> 429, nothing stored");
+
+let n0 = sent.length;
+r = await cpost(cbody("bot2@example.com", { website: "http://spam" }), 202); j = await r.json();
+ok(r.status === 202 && sent.length === n0 && !rows().some((q) => q.email === "bot2@example.com"), "website honeypot: silent 202, not forwarded, not stored");
+r = await cpost(cbody("x2@example.com", { consent_text: "Something else" }), 202); j = await r.json();
+ok(r.status === 400 && j.error === "bad_consent" && sent.length === n0, "unknown consent text rejected, not forwarded");
+r = await cpost(cbody("x3@example.com", { list_id: "wages-updates" }), 202); j = await r.json();
+ok(r.status === 400 && j.error === "bad_list" && sent.length === n0, "other list rejected");
+r = await cpost(cbody("x4@example.com", { source_url: "https://evil.example/x" }), 202);
+ok(sent.at(-1).body.source_url === "https://www.studystore.co/", "foreign source_url replaced by the site root");
+r = await cpost(cbody("not-an-email"), 202); j = await r.json();
+ok(r.status === 400 && j.error === "bad_email", "contract bad email 400");
+
+// no-JS form post in the contract shape (waitlist.py box without JS)
+const form = new URLSearchParams({ email: "nojs@example.com", list_id: "studystore-mcat", consent_text: CONSENT, source_url: "", utm_source: "pinterest", utm_medium: "", utm_campaign: "pins-1", website: "" }).toString();
+r = await cpost(form, 202, { ctype: "application/x-www-form-urlencoded", referer: "https://www.studystore.co/tools/mcat-study-schedule.html?x=1" });
+h = await r.text();
+ok(r.status === 200 && /Check your email/.test(h), "no-JS form, brain 202: check your email page");
+ok(sent.at(-1).body.source_url === "https://www.studystore.co/tools/mcat-study-schedule.html" && sent.at(-1).body.utm.source === "pinterest", "no-JS form: Referer source_url, flat utm fields");
+r = await cpost(form.replace("nojs%40", "nojs2%40"), 501, { ctype: "application/x-www-form-urlencoded" });
+h = await r.text();
+ok(r.status === 200 && /You are on the list/.test(h) && rows().find((q) => q.email === "nojs2@example.com").status === "pending", "no-JS form, brain down: pending page and row");
+// re-signup after unsubscribe through the contract stays pending (never active without a confirm)
+DB.db.prepare("UPDATE subscribers SET status='unsubscribed' WHERE email='down@example.com'").run();
+await cpost(cbody("down@example.com"), 503);
+ok(rows().find((q) => q.email === "down@example.com").status === "pending", "contract re-signup after unsubscribe -> pending, not active");
+
 console.log(`${pass} passed, ${fail} failed`);
 if (fail) process.exit(1);

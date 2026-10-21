@@ -17,12 +17,11 @@ TEST_DATES_2027 = [
     "2027-07-10", "2027-07-23", "2027-07-30", "2027-08-14", "2027-08-20", "2027-08-21", "2027-08-28", "2027-09-02",
     "2027-09-03", "2027-09-10", "2027-09-11"]
 assert len(TEST_DATES_2027) == 35
+TEST_DATES_SOURCE = "https://students-residents.aamc.org/register-mcat-exam/us-mcat-calendar-scheduling-deadlines-and-score-release-dates-0"
+TEST_DATES_CHECKED = "2026-10-21"
 
-NOTES_BY_AAMC = {
-    "1A": ["amino-acid-pka-charge-ph-7-4", "protein-structure-levels-and-denaturation", "enzyme-classes-ec-1-to-7",
-           "michaelis-menten-and-lineweaver-burk", "enzyme-inhibition-types-compared"],
-    "5A": ["henderson-hasselbalch-for-the-mcat"],
-}
+# Free notes and practice pages by AAMC code are derived at build time from content frontmatter (build.py passes
+# them in), so every category with a free page links to it and nothing is hand-maintained here.
 PACK_AAMC = {}  # product slug -> AAMC code; filled in build() from site.json available packs
 
 TOOLS = [
@@ -80,7 +79,8 @@ def jsn(obj):
 def faq_html(slug):
     return "".join(f'<details class="q"><summary>{html.escape(q)}</summary><div><p>{html.escape(a)}</p></div></details>' for q, a in FAQ[slug])
 
-def build(emit, site, products, notes_meta):
+def build(emit, site, products, notes_meta, notes_by_aamc=None, practice_by_aamc=None):
+    """notes_meta: {slug: title}. notes_by_aamc / practice_by_aamc: {AAMC code: [(slug, title), ...]} for the schedule."""
     base = site["base_url"]
     today = datetime.date.today().isoformat()
     # ---- public catalog data (slug, aamc, title, subtopic_count, section only) ----
@@ -99,13 +99,13 @@ def build(emit, site, products, notes_meta):
         if slug in products:
             p = products[slug]
             packs[code] = {"title": p["title"], "href": f"products/{slug}.html", "price": p["price"], "buyable": PB.buyable(p)}
-    notes = {}
-    for code, slugs in NOTES_BY_AAMC.items():
-        for s in slugs:
-            if s not in notes_meta:
-                raise SystemExit(f"tools: note {s} not found")
-        notes[code] = [{"slug": s, "title": notes_meta[s]} for s in slugs]
-    sched = {"categories": pub, "packs": packs, "notes": notes, "dates": TEST_DATES_2027}
+    notes = {code: [{"slug": sl, "title": t} for sl, t in items] for code, items in (notes_by_aamc or {}).items() if items}
+    practice = {code: [{"slug": sl, "title": t} for sl, t in items] for code, items in (practice_by_aamc or {}).items() if items}
+    for sl in (x["slug"] for v in notes.values() for x in v):
+        if sl not in notes_meta:
+            raise SystemExit(f"tools: note {sl} not found")
+    sched = {"categories": pub, "packs": packs, "notes": notes, "practice": practice, "dates": TEST_DATES_2027,
+             "dates_source": TEST_DATES_SOURCE, "dates_checked": TEST_DATES_CHECKED}
 
     def page(slug, h1, lead, tool_html, scripts, explainer, data_blocks="", embed=True, cta=True):
         title, desc = next((t[2], t[3]) for t in TOOLS if t[0] == slug)
@@ -189,7 +189,8 @@ def build(emit, site, products, notes_meta):
          form, '<script src="{{root}}assets/js/tools/schedule.js" defer></script>',
          """<h2>How the plan is built</h2>
 <p>The plan counts the weeks between your start date and your test date, then divides them into three stretches. Early weeks are <strong>content review</strong>. Middle weeks shift toward <strong>practice and targeted review</strong>. The last week is a <strong>final stretch</strong> with no new content in the last two days. CARS gets a steady slice of every week because it rewards daily repetition more than cramming.</p>
-<p>During content review, your hours are split across the AAMC content categories in proportion to how many subtopics each one covers, using StudyStore's own topic titles and the public category codes (such as 1A or 5D). Marking a section as weak raises the weight of every category in it by half. Where StudyStore has a free note or a pack for a category, the week links to it. Right now that is the amino acid and protein category (1A) and a related acid-base note; other categories are still being written, so the plan does not recommend them.</p>
+<p>During content review, your hours are split across the AAMC content categories in proportion to how many subtopics each one covers, using StudyStore's own topic titles and the public category codes (such as 1A or 5D). Marking a section as weak raises the weight of every category in it by half. Each week links the free StudyStore notes and free practice sets for its categories, so you can read first and then test yourself on the same topic. Practice weeks link the practice sets for the categories you are re-drilling.</p>
+<p>The 35 test dates come from the AAMC 2027 calendar (<a href="https://students-residents.aamc.org/register-mcat-exam/us-mcat-calendar-scheduling-deadlines-and-score-release-dates-0" rel="noopener">AAMC U.S. MCAT calendar</a>, checked October 21, 2026). AAMC notes that U.S. and Canada testing on January 30, May 14, July 9 and August 28 is limited to select locations. Dates less than a week away are not offered. To keep the plan, print it or save it as a PDF; the print view shows only the plan.</p>
 <p>The plan organizes your time and makes no claim about score outcomes. Adjust it to your own situation, and check dates and registration deadlines on the AAMC website. To see what a target score means in percentile terms, use the <a href="mcat-percentile.html">percentile lookup</a>.</p>""",
          f'<script type="application/json" id="sched-data">{jsn(sched)}</script>', embed=False)
 
@@ -226,6 +227,7 @@ def build(emit, site, products, notes_meta):
     idx = f"""<div class="wrap phero"><p class="eyebrow mono"><span class="dot"></span>Free MCAT tools</p><h1 class="split">Free tools</h1>
 <p class="lead">Interactive MCAT practice and planning tools. Free, no signup, runs in your browser, and nothing you enter leaves your device.</p></div>
 <section><div class="wrap"><div class="toolgrid">{cards}</div></div></section>
+<section><div class="wrap narrow"><h2>Comparison guides</h2><ul><li><a href="../compare/mcat-anki-decks-anking-miledown-pankow.html">AnKing vs MileDown vs Pankow vs StudyStore: MCAT Anki decks compared</a></li><li><a href="../compare/mcat-prep-cost-courses-vs-diy.html">MCAT prep cost in 2027: courses vs DIY, with official AAMC prices</a></li></ul></div></section>
 <section><div class="wrap narrow">{{{{waitlist}}}}</div></section>"""
     emit("tools/index.html", "Free MCAT Tools: Amino Acid Quiz, pKa Trainer, Study Planner | StudyStore",
          "Free interactive MCAT tools: amino acid quiz, pKa and charge at pH trainer, 2027 study schedule generator and AAMC percentile lookup. No signup.",

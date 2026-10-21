@@ -88,14 +88,35 @@ finds pages through `sitemap.xml` (declared in `robots.txt`) and ordinary crawli
 - Lifecycle: pending (public) -> approved -> in_progress -> fixed | needs_human | rejected.
 - Tests: `node tests/functions_test.mjs` (mocked D1).
 
-## Launch waitlist
+## Email list (free sampler opt-in, double opt-in)
 
-- `waitlist.py` renders the "Get launch day access" box for the `{{waitlist}}` placeholder (home, product, bundle and
-  catalog pages, notes and the notes index, practice pages and hubs, tools and the tools index). `assets/js/waitlist.js`
-  posts it to `POST /api/subscribe` (functions/api/subscribe.js) and fires the anonymous `subscribe` event through
-  `window.ssTrack` in exp.js; without JS it is a plain form post.
-- D1 table `subscribers` (migration `db/migrations/004_subscribers.sql`): email, optional 2027 test month, source page,
-  first-touch utm tags, status (active or unsubscribed) and a random `unsub_token`. Unsubscribe link:
-  `/api/unsubscribe?t=<unsub_token>` (GET or one-click POST).
-- `/admin/subscribers.html` (owner only, `GET /api/subscribers`, `?export=csv` for the active list).
-- Tests: `node tests/subscribe_test.mjs` (node:sqlite runs the real migration).
+- `waitlist.py` renders the "Free MCAT sampler" box for `{{waitlist}}` (home, product, bundle and catalog pages, notes,
+  practice pages, tools, comparison guides). The free sampler (live counts of free notes and practice sets plus the
+  schedule tool, set by build.py into `waitlist.STATS`) is the headline offer. The consent text
+  (`waitlist.CONSENT_TEXT`) is shown verbatim next to the button with the privacy link.
+- Double opt-in through the income-brain subscribe contract (income-brain `marketing/SPEC-shared.md` section 2,
+  list `studystore-mcat`): `assets/js/waitlist.js` POSTs `{email, list_id, consent_text, source_url, utm, website}`
+  to `https://income-brain.premed-toolkit.workers.dev/api/subscribe`; 202 shows "Check your email". `website` is the
+  honeypot.
+- `functions/api/subscribe.js` (same origin) serves no-JS form posts and the JS fallback: it forwards the same
+  contract to the brain; if the brain is unreachable or not live (501), it keeps the address in D1 `subscribers`
+  with status `pending` (never emailed by ops/launch.py, which reads `active` only). The private repo's
+  `ops/reconfirm_subscribers.py` later sends each pending or old single opt-in address exactly one confirm email
+  (owner-run, gated by outbox item reconfirm-email-001). Legacy single opt-in bodies from cached pages still work.
+- D1 table `subscribers` (migration `db/migrations/004_subscribers.sql`), unsubscribe `/api/unsubscribe?t=<token>`,
+  owner view `/admin/subscribers.html`.
+- Tests: `node tests/subscribe_test.mjs` (server), `node tests/waitlist_js_test.mjs` (browser script, after build).
+
+## Comparison guides
+
+`build_compare.py` renders `/compare/*.html` from `data/compare.json`: every competitor or AAMC number carries its
+URL, whether it is the maker's own page or a third-party page, the page date if any, the check date, and an
+approximate flag; StudyStore's own numbers come from `site.json`. The cost page is labeled "Estimate, not advice".
+Re-check the sources and update `checked` before changing any number. Test: `node tests/compare_test.mjs`.
+
+## Study schedule generator
+
+`/tools/mcat-study-schedule.html` (build_tools.py, assets/js/tools/schedule.js): the 35 2027 test dates
+(`TEST_DATES_2027`, verified against the AAMC U.S. calendar, `TEST_DATES_SOURCE`), free notes and practice sets per
+AAMC category derived from content frontmatter, a print view that shows only the plan, and the opt-in box.
+Test: `node tests/schedule_test.mjs` (after build).
