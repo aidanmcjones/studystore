@@ -35,7 +35,7 @@ export async function onRequestGet({ request, env }) {
   const grp = (col) => env.DB.prepare(
     `SELECT COALESCE(NULLIF(${col}, ''), '(none)') AS k, COUNT(*) AS n FROM subscribers WHERE status = 'active' GROUP BY k ORDER BY n DESC, k ASC LIMIT 100`).all();
   const [tot, days, pages, sources, months] = await Promise.all([
-    env.DB.prepare("SELECT COUNT(*) AS total, SUM(status = 'active') AS active, SUM(status = 'unsubscribed') AS unsubscribed FROM subscribers").first(),
+    env.DB.prepare("SELECT COUNT(*) AS total, SUM(status = 'active') AS active, SUM(status = 'unsubscribed') AS unsubscribed, SUM(status IN ('pending', 'pending_legacy')) AS pending FROM subscribers").first(),
     env.DB.prepare("SELECT date(ts, 'unixepoch') AS d, COUNT(*) AS n FROM subscribers WHERE ts >= ? GROUP BY d ORDER BY d ASC").bind(since).all(),
     grp("source_page"), grp("utm_source"), grp("exam_month"),
   ]);
@@ -48,7 +48,7 @@ export async function onRequestGet({ request, env }) {
   const rows = (r) => (r.results || []).map((x) => ({ k: x.k, n: x.n }));
   return json(200, {
     ok: true,
-    totals: { total: (tot && tot.total) || 0, active: (tot && tot.active) || 0, unsubscribed: (tot && tot.unsubscribed) || 0 },
+    totals: { total: (tot && tot.total) || 0, active: (tot && tot.active) || 0, unsubscribed: (tot && tot.unsubscribed) || 0, pending: (tot && tot.pending) || 0 },
     by_day, by_source_page: rows(pages), by_utm_source: rows(sources), by_exam_month: rows(months),
   });
 }

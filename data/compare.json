@@ -1,0 +1,381 @@
+{
+ "checked": "2026-10-21",
+ "decks": [
+  {
+   "name": "AnKing MCAT",
+   "size": "about 6,200 cards",
+   "approximate": true,
+   "price": "Free; optional AnkiHub sync subscription (about $5 a month or $50 a year per the source)",
+   "covers": "All sections; described as merged from MileDown, Abdullah and Pankow",
+   "host": "AnkiHub",
+   "url": "https://testpreppal.com/mcat/flashcards/anking",
+   "source_type": "third-party",
+   "as_of": "2026-10-21",
+   "source_name": "TestPrepPal",
+   "page_date": "2026-02-19"
+  },
+  {
+   "name": "MileDown",
+   "size": "2,884 notes (AnkiWeb upload, last updated 2020-05-06); a 2024 re-upload has 2,892 notes; a third-party guide says about 2,900 cards",
+   "approximate": true,
+   "price": "Free",
+   "covers": "All sections",
+   "host": "AnkiWeb",
+   "url": "https://ankiweb.net/shared/info/178384887",
+   "source_type": "listing",
+   "as_of": "2026-10-21",
+   "source_name": "AnkiWeb",
+   "also": {
+    "source_name": "Premier MCAT Prep blog",
+    "url": "https://premiermcatprep.com/blog/best-mcat-anki-decks",
+    "source_type": "third-party",
+    "page_date": "2026-07-27",
+    "as_of": "2026-10-21"
+   }
+  },
+  {
+   "name": "Pankow (Psych/Soc)",
+   "size": "1,761 notes (AnkiWeb, last updated 2025-08-15); a third-party guide says about 2,254 cards",
+   "approximate": true,
+   "price": "Free",
+   "covers": "Psychology and Sociology only",
+   "host": "AnkiWeb",
+   "url": "https://ankiweb.net/shared/info/710572280",
+   "source_type": "listing",
+   "as_of": "2026-10-21",
+   "source_name": "AnkiWeb",
+   "also": {
+    "source_name": "Premier MCAT Prep blog",
+    "url": "https://premiermcatprep.com/blog/best-mcat-anki-decks",
+    "source_type": "third-party",
+    "page_date": "2026-07-27",
+    "as_of": "2026-10-21"
+   }
+  }
+ ],
+ "aamc": [
+  {
+   "id": "reg_standard",
+   "item": "MCAT registration, standard",
+   "price_usd": 360,
+   "url": "https://students-residents.aamc.org/register-mcat-exam/mcat-scheduling-fees",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "source_name": "AAMC"
+  },
+  {
+   "id": "reg_fap",
+   "item": "MCAT registration with Fee Assistance",
+   "price_usd": 145,
+   "url": "https://students-residents.aamc.org/register-mcat-exam/mcat-scheduling-fees",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "source_name": "AAMC"
+  },
+  {
+   "id": "intl_fee",
+   "item": "International fee (testing outside the U.S., Canada and U.S. territories), nonrefundable",
+   "price_usd": 130,
+   "url": "https://students-residents.aamc.org/register-mcat-exam/publication-chapters/registration-fees-cancellations-and-refunds",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "source_name": "AAMC"
+  },
+  {
+   "id": "pe1",
+   "item": "Practice Exam 1 and the Unscored Sample Test",
+   "price_usd": 0,
+   "url": "https://store.aamc.org/mcat-prep/aamc-mcat-official-prep-product-comparison.html",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "source_name": "AAMC Official Prep store"
+  },
+  {
+   "id": "pe",
+   "item": "Practice Exams 2 to 6, each",
+   "price_usd": 35,
+   "url": "https://store.aamc.org/mcat-prep/aamc-mcat-official-prep-product-comparison.html",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "source_name": "AAMC Official Prep store"
+  },
+  {
+   "id": "sb",
+   "item": "Section Bank Vol. 1 or Vol. 2, each",
+   "price_usd": 45,
+   "url": "https://store.aamc.org/mcat-prep/aamc-mcat-official-prep-product-comparison.html",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "source_name": "AAMC Official Prep store"
+  },
+  {
+   "id": "carsqb",
+   "item": "CARS Question Bank",
+   "price_usd": 70,
+   "url": "https://store.aamc.org/mcat-prep/aamc-mcat-official-prep-product-comparison.html",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "source_name": "AAMC Official Prep store"
+  },
+  {
+   "id": "qp",
+   "item": "Question Packs (Biology 1, Biology 2, Chemistry, Physics), each",
+   "price_usd": 15,
+   "url": "https://store.aamc.org/mcat-prep/aamc-mcat-official-prep-product-comparison.html",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "source_name": "AAMC Official Prep store"
+  },
+  {
+   "id": "iqb",
+   "item": "Independent Question Bank",
+   "price_usd": 10,
+   "url": "https://store.aamc.org/mcat-prep/aamc-mcat-official-prep-product-comparison.html",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "source_name": "AAMC Official Prep store"
+  },
+  {
+   "id": "bundle",
+   "item": "Online-Only Bundle",
+   "price_usd": 336.7,
+   "url": "https://store.aamc.org/mcat-prep/aamc-mcat-official-prep-product-comparison.html",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "source_name": "AAMC Official Prep store"
+  }
+ ],
+ "aamc_changes": [
+  {
+   "window": "60 or more days before",
+   "std_reschedule": 55,
+   "std_refund": 180,
+   "fap_reschedule": 25,
+   "fap_refund": 75
+  },
+  {
+   "window": "30 to 59 days before",
+   "std_reschedule": 110,
+   "std_refund": 180,
+   "fap_reschedule": 45,
+   "fap_refund": 75
+  },
+  {
+   "window": "10 to 29 days before",
+   "std_reschedule": 210,
+   "std_refund": 0,
+   "fap_reschedule": 85,
+   "fap_refund": 0
+  }
+ ],
+ "aamc_changes_source": {
+  "url": "https://students-residents.aamc.org/register-mcat-exam/mcat-scheduling-fees",
+  "source_type": "own",
+  "as_of": "2026-10-21",
+  "source_name": "AAMC scheduling fees"
+ },
+ "bundle_note": "The AAMC store page lists the Online-Only Bundle at $336.70 in its comparison table and at $336.15 (regular price $405.00) in its product listing on the same page; we use $336.70. Confirm the price at checkout.",
+ "courses": [
+  {
+   "id": "kaplan_entry",
+   "company": "Kaplan",
+   "plan": "Entry-level course (lowest listed)",
+   "price_usd": 1599,
+   "access": "not stated on the page",
+   "url": "https://medlifemastery.com/mcat/preparation/online-prep-courses/",
+   "source_type": "third-party",
+   "as_of": "2026-10-21",
+   "approximate": true,
+   "full_course": true,
+   "source_name": "MedLife Mastery",
+   "page_date": "2026-08-20"
+  },
+  {
+   "id": "kaplan_boot",
+   "company": "Kaplan",
+   "plan": "Bootcamp",
+   "price_usd": 7299,
+   "access": "not stated on the page",
+   "url": "https://medlifemastery.com/mcat/preparation/online-prep-courses/",
+   "source_type": "third-party",
+   "as_of": "2026-10-21",
+   "approximate": true,
+   "full_course": true,
+   "source_name": "MedLife Mastery",
+   "page_date": "2026-08-20"
+  },
+  {
+   "id": "bp_self",
+   "company": "Blueprint",
+   "plan": "Self-Paced MCAT Course",
+   "price_usd": 1199,
+   "access": "not stated on the page",
+   "url": "https://blueprintprep.com/mcat/courses",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "approximate": false,
+   "full_course": true,
+   "source_name": "Blueprint MCAT courses",
+   "from": true
+  },
+  {
+   "id": "bp_live",
+   "company": "Blueprint",
+   "plan": "Live Online MCAT Course",
+   "price_usd": 1999,
+   "access": "not stated on the page",
+   "url": "https://blueprintprep.com/mcat/courses",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "approximate": false,
+   "full_course": true,
+   "source_name": "Blueprint MCAT courses",
+   "from": true
+  },
+  {
+   "id": "bp_515",
+   "company": "Blueprint",
+   "plan": "515+ MCAT Course",
+   "price_usd": 2999,
+   "access": "not stated on the page",
+   "url": "https://blueprintprep.com/mcat/courses",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "approximate": false,
+   "full_course": true,
+   "source_name": "Blueprint MCAT courses",
+   "from": true
+  },
+  {
+   "id": "tpr_6",
+   "company": "Princeton Review",
+   "plan": "MCAT Self-Paced, 6-Month Access",
+   "price_usd": 1599,
+   "access": "6 months",
+   "url": "https://www.princetonreview.com/medical/mcat-selfguided-course",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "approximate": false,
+   "full_course": true,
+   "source_name": "Princeton Review"
+  },
+  {
+   "id": "tpr_12",
+   "company": "Princeton Review",
+   "plan": "MCAT Self-Paced, 12-Month Access",
+   "price_usd": 1999,
+   "access": "12 months",
+   "url": "https://www.princetonreview.com/medical/mcat-selfguided-course",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "approximate": false,
+   "full_course": true,
+   "source_name": "Princeton Review"
+  },
+  {
+   "id": "uworld_qbank_90",
+   "company": "UWorld",
+   "plan": "MCAT QBank, 90-Day",
+   "price_usd": 339,
+   "access": "90 days",
+   "url": "https://gradschool.uworld.com/mcat",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "approximate": false,
+   "full_course": false,
+   "source_name": "UWorld MCAT"
+  },
+  {
+   "id": "uworld_qbank_360",
+   "company": "UWorld",
+   "plan": "MCAT QBank, 360-Day (Best Value)",
+   "price_usd": 439,
+   "access": "360 days",
+   "url": "https://gradschool.uworld.com/mcat",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "approximate": false,
+   "full_course": false,
+   "source_name": "UWorld MCAT"
+  },
+  {
+   "id": "uworld_core_90",
+   "company": "UWorld",
+   "plan": "MCAT Core Prep Course, 90-Day",
+   "price_usd": 599,
+   "access": "90 days (also 180 days for $649 and 360 days for $699)",
+   "url": "https://gradschool.uworld.com/mcat",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "approximate": false,
+   "full_course": false,
+   "source_name": "UWorld MCAT"
+  },
+  {
+   "id": "uworld_comp_90",
+   "company": "UWorld",
+   "plan": "MCAT Comprehensive Prep Course, 90-Day",
+   "price_usd": 1199,
+   "access": "90 days (also 180 days for $1,449)",
+   "url": "https://gradschool.uworld.com/mcat",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "approximate": false,
+   "full_course": true,
+   "source_name": "UWorld MCAT"
+  },
+  {
+   "id": "uworld_comp_360",
+   "company": "UWorld",
+   "plan": "MCAT Comprehensive Prep Course, 360-Day (Most Popular)",
+   "price_usd": 1549,
+   "access": "360 days",
+   "url": "https://gradschool.uworld.com/mcat",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "approximate": false,
+   "full_course": true,
+   "source_name": "UWorld MCAT"
+  },
+  {
+   "id": "magoosh_12",
+   "company": "Magoosh",
+   "plan": "12 Month Premium",
+   "price_usd": 399,
+   "access": "12 months",
+   "url": "https://mcat.magoosh.com/plans",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "approximate": false,
+   "full_course": false,
+   "source_name": "Magoosh plans"
+  },
+  {
+   "id": "magoosh_1",
+   "company": "Magoosh",
+   "plan": "1 Month Premium",
+   "price_usd": 379,
+   "access": "1 month",
+   "url": "https://mcat.magoosh.com/plans",
+   "source_type": "own",
+   "as_of": "2026-10-21",
+   "approximate": false,
+   "full_course": false,
+   "source_name": "Magoosh plans"
+  },
+  {
+   "id": "jw_complete",
+   "company": "Jack Westin",
+   "plan": "Complete MCAT course",
+   "price_usd": 1450,
+   "access": "varies by product",
+   "url": "https://testpreppal.com/mcat/prep-course/jack-westin",
+   "source_type": "third-party",
+   "as_of": "2026-10-21",
+   "approximate": true,
+   "full_course": true,
+   "source_name": "TestPrepPal",
+   "page_date": "2026-02-12"
+  }
+ ]
+}

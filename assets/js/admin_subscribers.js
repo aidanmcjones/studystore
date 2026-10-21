@@ -39,7 +39,7 @@
         while (root.firstChild) root.removeChild(root.firstChild);
         var tiles = el("div", "stile");
         var last14 = j.by_day.reduce(function (s, x) { return s + x.n; }, 0);
-        [["Active", j.totals.active], ["Last 14 days", last14], ["Unsubscribed", j.totals.unsubscribed], ["All time", j.totals.total]].forEach(function (t) {
+        [["Active", j.totals.active], ["Pending confirm", j.totals.pending || 0], ["Last 14 days", last14], ["Unsubscribed", j.totals.unsubscribed], ["All time", j.totals.total]].forEach(function (t) {
           var d = el("div"); d.appendChild(el("b", null, t[1])); d.appendChild(el("span", "meta", t[0])); tiles.appendChild(d);
         });
         root.appendChild(tiles);

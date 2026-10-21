@@ -45,7 +45,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
-<link rel="stylesheet" href="../assets/style.css?v=10383b307b">
+<link rel="stylesheet" href="../assets/style.css?v=4ce484be61">
 <link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
 <style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
 <script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
@@ -53,7 +53,7 @@
 <script src="../assets/js/site.js?v=1b40ce4c4e" defer></script>
 <script src="../assets/js/buy.js?v=50fe203f05" defer></script>
 <script src="../assets/js/report.js?v=1e5d24d48f" defer></script>
-<script src="../assets/js/waitlist.js?v=749a291649" defer></script>
+<script src="../assets/js/waitlist.js?v=969555bf76" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -88,25 +88,25 @@
 <aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Organ Systems is a $17 pack with original Anki cards, a study guide and a printable cheat sheet. <a href="../products/3b-organ-systems.html">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_ptS31PpSSEIQslCs3BVVOH1FnSyG4oU2mPPlP1Wi7Aq" data-checkout="polar" data-slug="3b-organ-systems" rel="noopener">Buy now, $17</a></aside>
 <section class="waitlist" id="waitlist" aria-labelledby="waitlist-h">
 <div class="wlcopy">
-<p class="eyebrow mono"><span class="dot"></span>Email list</p>
-<h2 id="waitlist-h">Get new packs and free notes</h2>
-<p>Packs are for sale now. Join the list and we email you when a new pack or free note goes up.</p>
-<p>Free right now: the <a href="../notes/index.html" data-track="sampler">free sampler of study notes</a> and <a href="../practice/index.html">practice questions</a>.</p>
+<p class="eyebrow mono"><span class="dot"></span>Free MCAT sampler</p>
+<h2 id="waitlist-h">Get the free MCAT sampler</h2>
+<p>We email you free MCAT notes, practice sets and new packs.</p>
+<p>Free sampler, no signup needed: <a href="../notes/index.html" data-track="sampler">43 study notes</a> with original diagrams and 5-question quizzes, <a href="../practice/index.html" data-track="sampler">53 practice sets</a> (482 questions with full explanations) and the <a href="../tools/mcat-study-schedule.html">2027 study schedule generator</a>.</p>
 </div>
-<form class="wlform" method="post" action="/api/subscribe" data-waitlist>
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
 <label for="wl-email">Email</label>
 <input id="wl-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
-<label for="wl-month">When do you test? <span class="wlopt">(optional)</span></label>
-<select id="wl-month" name="exam_month"><option value="">Not sure</option><option value="2027-01">January 2027</option><option value="2027-02">February 2027</option><option value="2027-03">March 2027</option><option value="2027-04">April 2027</option><option value="2027-05">May 2027</option><option value="2027-06">June 2027</option><option value="2027-07">July 2027</option><option value="2027-08">August 2027</option><option value="2027-09">September 2027</option></select>
-<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="hp" tabindex="-1" autocomplete="off"></label></div>
-<input type="hidden" name="source_page" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_campaign" value="">
-<button type="submit" class="btn">Join the list</button>
-<p class="wlnote">Only emails about new packs and free notes. Unsubscribe anytime. <a href="../privacy.html">Privacy</a></p>
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
+<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn">Join the email list</button>
+<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> <a href="../privacy.html">Privacy</a></p>
 <p class="wlstatus" role="status" aria-live="polite"></p>
 </form>
 <div class="wldone" hidden tabindex="-1">
-<p class="wldone-h">You are on the list.</p>
-<p>We will email you when a new pack or free note goes up. Meanwhile, <a href="../notes/index.html" data-track="sampler">start with the free sampler notes</a>.</p>
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p>Meanwhile, <a href="../notes/index.html" data-track="sampler">start with the free notes</a>.</p>
 </div>
 </section>
 <h2>Keep practicing</h2>

@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS subscribers (
   source_page TEXT,                    -- path only, no query string
   utm_source TEXT,
   utm_campaign TEXT,
-  status TEXT DEFAULT 'active',        -- active | unsubscribed
+  status TEXT DEFAULT 'active',        -- active | pending, pending_legacy (not yet confirmed, never emailed; which consent text was shown) | reconfirm_sent | reconfirm_ambiguous | unsubscribed
   unsub_token TEXT                     -- crypto.randomUUID(), used by /api/unsubscribe?t=
 );
 CREATE INDEX IF NOT EXISTS subscribers_ts ON subscribers(ts);

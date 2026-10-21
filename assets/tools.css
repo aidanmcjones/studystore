@@ -35,7 +35,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{ou
 .week h3{margin:0 0 4px;font-size:1.1rem}
 .week .ph{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--base)}
 .week ul{margin:.4em 0;padding-left:1.2em}
-.pill{display:inline-block;background:#efe8d9;border-radius:99px;padding:1px 9px;font-size:.82rem;margin-left:4px}
+.pill{display:inline-block;background:var(--surface-2);color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:1px 9px;font-size:.82rem;margin-left:4px;font-variant-numeric:tabular-nums}
 .toolgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .toolcard{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .toolcard img{width:100%;height:auto;background:#fff}
@@ -53,5 +53,11 @@ html.embed .tool{padding-top:8px}
 @media print{
  header.site,footer.site,.noprint,.cta{display:none!important}
  body{background:#fff;font-size:12pt}.panel{border:0;padding:0}.week{border:1px solid #999}
+ :root{--bg:#fff!important;--surface:#fff!important;--surface-2:#f2f2f2!important;--ink:#111!important;--muted:#333!important;--line:#999!important;--base:#1c5bd0!important}
+ .gridbg,.skip{display:none!important}
+ /* schedule generator: print the plan only (title, then the weeks) */
+ .tool:has(#sched-data)>:not(.panel):not(h1){display:none!important}
+ .tool:has(#sched-data) .week{break-inside:avoid;page-break-inside:avoid}
+ .tool:has(#sched-data) a{color:inherit;text-decoration:none}
 }
 @media(max-width:560px){.panel{padding:14px}.opts{grid-template-columns:1fr}}

@@ -643,3 +643,12 @@ html:not(.js) .qitem.qx{display:none}
 .stable th,.stable td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
 .stable td.n,.stable th.n{text-align:right;font-family:var(--f-mono);white-space:nowrap}
 .sbar{display:inline-block;height:8px;border-radius:4px;background:var(--neutral);vertical-align:middle;margin-right:8px}
+/* comparison guides (build_compare.py): wide tables scroll inside .tablewrap instead of breaking words */
+.ctable.wide{min-width:880px}
+.tablewrap:focus-visible{outline:2px solid var(--base);outline-offset:3px}
+.ctable th,.ctable td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line);font-size:.9rem;line-height:1.45;overflow-wrap:normal}
+.ctable th{font:500 .72rem/1.3 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap;background:var(--surface-2)}
+.ctable td.n,.ctable th.n{text-align:right;font-family:var(--f-mono);white-space:nowrap;font-variant-numeric:tabular-nums}
+.ctable tr:last-child td{border-bottom:0}
+.wrap.compare{max-width:1080px}
+.compare .prose>:not(.tablewrap),.compare>:not(.prose){max-width:70ch}
