@@ -1,4 +1,4 @@
-// GET /api/unsubscribe?t=<token> : one-click unsubscribe from the launch list (link in every email).
+// GET /api/unsubscribe?t=<token> : one-click unsubscribe from the email list (link in every email).
 // Sets status 'unsubscribed' for the row with that random token and answers a small HTML page.
 // POST is accepted too (RFC 8058 List-Unsubscribe-Post one-click). Reveals nothing about the address.
 const TOKEN_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
@@ -16,7 +16,7 @@ async function unsubscribe(request, env) {
   if (!(res && res.meta && res.meta.changes)) {
     return page("Link not recognized", "We could not find this link. If you still get emails from us, reply to one or email support and we will remove you by hand.", 404);
   }
-  return page("You are unsubscribed", "You will not get any more StudyStore emails. If you change your mind, you can join the launch list again on any page.");
+  return page("You are unsubscribed", "You will not get any more StudyStore emails. If you change your mind, you can join the email list again on any page.");
 }
 
 export const onRequestGet = ({ request, env }) => unsubscribe(request, env);
