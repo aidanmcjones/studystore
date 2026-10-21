@@ -100,7 +100,7 @@ ok(links.filter((l) => l.startsWith("notes/") || l.startsWith("practice/")).ever
 ok(links.filter((l) => l.startsWith("products/")).length === 1, "exactly one product link in the whole plan");
 ok(!/checkout|buy\.polar/.test(out), "no checkout links in the plan");
 ok(out.includes(data.dates_source) && out.includes('href="#waitlist"'), "source line and opt-in nudge");
-ok(!/[–—]/.test(out) && !/[–—]/.test(page), "no em or en dashes");
+ok(!/[\u2013\u2014]/.test(out) && !/[\u2013\u2014]/.test(page), "no em or en dashes");
 
 // ---- page: print view and opt-in present
 ok(/id="print"/.test(out) && /id="ics"/.test(out), "print and calendar buttons");

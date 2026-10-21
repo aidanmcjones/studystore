@@ -12,7 +12,7 @@ const cost = read("compare/mcat-prep-cost-courses-vs-diy.html");
 const rows = (h) => [...h.matchAll(/<tr>(.*?)<\/tr>/gs)].map((m) => m[1]).filter((r) => r.includes("<td"));
 
 for (const [name, h] of [["decks", decks], ["cost", cost]]) {
-  ok(!/[‒-―]/.test(h), name + ": no em or en dashes");
+  ok(!/[\u2012-\u2015]/.test(h), name + ": no em or en dashes");
   ok(/StudyStore (wrote this page and )?sells/.test(h), name + ": discloses that StudyStore sells a product");
   ok(h.includes("Checked 2026-10-21") || h.includes("checked 2026-10-21"), name + ": dated");
   ok(/"@type": "Article"/.test(h), name + ": Article JSON-LD");

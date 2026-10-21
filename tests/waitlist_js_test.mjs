@@ -107,7 +107,7 @@ ok(t.calls[0].body.website === "bot-filled", "honeypot value passed through for 
 
 ok(t.window.ssWaitlist.classify(202, { ok: true, status: "check_email" }) === "ok" && t.window.ssWaitlist.classify(503, {}) === "fallback", "classify");
 const js = readFileSync(new URL("assets/js/waitlist.js", root), "utf8");
-ok(!/[–—]/.test(js + box), "no em or en dashes");
+ok(!/[\u2013\u2014]/.test(js + box), "no em or en dashes");
 
 console.log(`${pass} passed, ${fail} failed`);
 if (fail) process.exit(1);
