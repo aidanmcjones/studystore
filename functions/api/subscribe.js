@@ -1,4 +1,4 @@
-// POST /api/subscribe : launch waitlist signup (the "Get launch day access" box, assets/js/waitlist.js).
+// POST /api/subscribe : email list signup (the waitlist.py box: "Get launch day access" before checkout opens, "Get new packs and free notes" after, assets/js/waitlist.js).
 // Stores only what the visitor submits: email (lower-cased), an optional 2027 test month, the page path
 // the form was on, first-touch utm_source/utm_campaign, a status and a random unsubscribe token.
 // Never stores IPs, user agents or cookies, and never returns anything about other subscribers:
@@ -46,7 +46,7 @@ export async function onRequestPost({ request, env }) {
     ? PAGE("Please check your email address", "That address did not look right. Go back and try again.")
     : json(status, { ok: false, error }));
   const done = () => (isForm
-    ? PAGE("You are on the list", "We will send one email when checkout opens. Unsubscribe anytime from the link in that email.")
+    ? PAGE("You are on the list", "We will only email you about StudyStore packs and free notes. Unsubscribe anytime from the link in any email.")
     : json(200, { ok: true }));
 
   const len = Number(request.headers.get("Content-Length") || 0);

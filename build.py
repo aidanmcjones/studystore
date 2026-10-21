@@ -5,7 +5,7 @@ Usage: python3 build.py
 Placeholders in templates:
   {{root}} relative path to site root, {{site_name}}, {{disclaimer}}, {{contact}},
   {{updated}}, {{base_url}}, {{buy:SLUG}}, {{price:SLUG}}, {{title:SLUG}},
-  {{waitlist}} (launch list box, waitlist.py), {{merchant}} {{orders_url}} {{orders_label}} (checkout provider),
+  {{waitlist}} (launch list box, waitlist.py), {{merchant}} {{orders_url}} {{orders_label}} {{refund_how}} (checkout provider),
   any other top-level site.json string key.
 """
 import json, re, html, math
@@ -60,11 +60,12 @@ def render(text, root):
         if ":" in k:
             kind, slug = k.split(":", 1)
             if kind == "buy": return buy(slug, root=root)
+            if kind == "waitlist": return waitlist.box(root, launch=not PB.buyable(products[slug]))
             if kind == "buyghost": return buy(slug, "btn ghost", root=root)
             if kind == "price": return products[slug]["price"]
             if kind == "title": return html.escape(products[slug]["title"])
         if k == "latest_notes": return LATEST_NOTES
-        if k == "waitlist": return waitlist.box(root)
+        if k == "waitlist": return waitlist.box(root, launch=not PB.checkout_open(site))
         v = PB.placeholder(site, products, k, root)  # catalog data: pack_grid, feat:*, stat:*
         if v is not None: return v
         if k in site and isinstance(site[k], str): return site[k]

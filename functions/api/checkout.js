@@ -11,6 +11,10 @@
 // The client never sets a price; no custom_price is sent. The only LS write calls in this
 // project are POST /v1/checkouts (here) and POST /v1/discounts (see ops/LEMONSQUEEZY_API.md).
 import VARIANTS from "../../ls_variants.json";
+import SITE from "../../site.json";
+
+// Lemon Squeezy checkouts are minted only when site.json selects it; any other provider (polar) -> 503.
+export const lsActive = (site = SITE) => (site && site.checkout_provider) === "lemonsqueezy";
 
 const LS = "https://api.lemonsqueezy.com/v1/checkouts";
 const HOSTS = /^(www\.)?studystore\.co$|^([a-z0-9-]+\.)?studystore\.pages\.dev$/;
@@ -18,7 +22,7 @@ const json = (o, status = 200) => new Response(JSON.stringify(o), {
   status, headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } });
 
 function sellable() { return new Set(VARIANTS.sellable || []); }
-function configured(env) { return !!(env.LS_API_KEY && (env.LS_STORE_ID || VARIANTS.store_id)); }
+function configured(env) { return lsActive() && !!(env.LS_API_KEY && (env.LS_STORE_ID || VARIANTS.store_id)); }
 
 function siteOrigin(request) {
   try { const u = new URL(request.url); if (HOSTS.test(u.hostname)) return u.origin; } catch (e) {}

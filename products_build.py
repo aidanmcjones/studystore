@@ -57,9 +57,15 @@ def lookup(site):
 
 PROVIDERS = {
     "polar": {"merchant": "Polar", "orders_url": "https://polar.sh/aidan-jones/portal",
-              "orders_label": "polar.sh/aidan-jones/portal", "url_re": r"^https://buy\.polar\.sh/polar_cl_[A-Za-z0-9]+$"},
+              "orders_label": "polar.sh/aidan-jones/portal",
+              "refund_how": ("Email support@studystore.co with the email you used at checkout (or your order number). "
+                             "Refunds are issued by StudyStore through Polar, our merchant of record."),
+              "url_re": r"^https://buy\.polar\.sh/polar_cl_[A-Za-z0-9]+$"},
     "lemonsqueezy": {"merchant": "Lemon Squeezy", "orders_url": "https://app.lemonsqueezy.com/my-orders",
-                     "orders_label": "app.lemonsqueezy.com/my-orders", "url_re": r"^https://[a-z0-9.-]+\.lemonsqueezy\.com/"},
+                     "orders_label": "app.lemonsqueezy.com/my-orders",
+                     "refund_how": ("Orders are processed by Lemon Squeezy, our merchant of record. Use the link in your "
+                                    "order receipt email to request a refund, or email support@studystore.co with your order number."),
+                     "url_re": r"^https://[a-z0-9.-]+\.lemonsqueezy\.com/"},
 }
 PROVIDER = "polar"
 
@@ -71,7 +77,7 @@ def configure(site):
     PROVIDER = site.get("checkout_provider") or "polar"
     if PROVIDER not in PROVIDERS:
         raise SystemExit(f"unknown checkout_provider {PROVIDER!r}")
-    for k in ("merchant", "orders_url", "orders_label"):
+    for k in ("merchant", "orders_url", "orders_label", "refund_how"):
         site[k] = PROVIDERS[PROVIDER][k]
     return PROVIDER
 
@@ -87,6 +93,11 @@ def buyable(p):
     if p.get("status") != "available":
         return False
     return bool(checkout_url(p) or (PROVIDER == "lemonsqueezy" and p.get("variant_id")))
+
+
+def checkout_open(site):
+    """True when at least one available pack or bundle can be bought with the active provider."""
+    return any(buyable(p) for p in site.get("products", []) + site.get("bundles", []))
 
 
 def buy(items, slug, cls="btn", root=""):
@@ -568,10 +579,11 @@ def bundle_page(site, items, b, emit, tpl):
 def build_all(site, items, emit):
     tp = (ROOT / "templates" / "product.html").read_text()
     tb = (ROOT / "templates" / "bundle.html").read_text()
+    # {{waitlist:<slug>}}: the launch-list copy shows only when this item cannot be bought (see waitlist.py)
     for p in site.get("products", []):
-        pack_page(site, items, p, emit, tp)
+        pack_page(site, items, p, emit, tp.replace("{{waitlist}}", "{{waitlist:" + p["slug"] + "}}"))
     for b in site.get("bundles", []):
-        bundle_page(site, items, b, emit, tb)
+        bundle_page(site, items, b, emit, tb.replace("{{waitlist}}", "{{waitlist:" + b["slug"] + "}}"))
     emit("products/index.html", "All MCAT Packs and Bundles | StudyStore",
          "Every StudyStore MCAT pack and bundle, with prices and what is ready now.",
          '<div class="wrap phero"><p class="eyebrow mono"><span class="dot"></span>Catalog</p><h1 class="split">MCAT packs</h1>'

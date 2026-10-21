@@ -68,8 +68,9 @@ finds pages through `sitemap.xml` (declared in `robots.txt`) and ordinary crawli
   checkout metadata. After payment Polar redirects to `/thanks?p=<slug>&checkout_id=...`.
   Test: `python3 build.py && node tests/checkout_links_test.mjs`.
 - Lemon Squeezy (dormant, `checkout_provider: "lemonsqueezy"`): Buy buttons call `/api/checkout`
-  (functions/api/checkout.js). Without the `LS_API_KEY` and `LS_STORE_ID` Pages secrets it returns 503 and buttons
-  read "Available soon".
+  (functions/api/checkout.js). It returns 503 unless `checkout_provider` is `lemonsqueezy` and the `LS_API_KEY` /
+  `LS_STORE_ID` Pages secrets exist. Flipping the flag back is not an instant fallback: buttons read "Available soon"
+  until `ops/sync_catalog.py` fills `ls_variants.json` with live variant ids.
 
 ## Problem reports, suggestions and owner approval
 

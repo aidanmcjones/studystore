@@ -128,6 +128,7 @@
     Object.keys(utmExtra).forEach(function (k) { if (utmExtra[k]) u.searchParams.set(k, utmExtra[k]); });
   }
   function tagCheckoutLinks(seen) {
+    if (noTrack) return; // Do Not Track / Global Privacy Control: no utm_* or reference_id on checkout links
     var links = D.querySelectorAll("a[href]");
     for (var i = 0; i < links.length; i++) {
       var a = links[i], host = checkoutHost(a); if (!host) continue;

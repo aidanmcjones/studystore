@@ -36,6 +36,60 @@ for (const p of items) {
   ok(prod && prod.offers && prod.offers.price === p.price_usd.toFixed(2), `${p.slug}: JSON-LD price ${p.price_usd}`);
 }
 
+// every built page (home, catalog, notes, practice, tools, products): each Polar Buy link matches its item
+// and price, and a page that sells never says checkout is not open (review H1)
+const bySlug = Object.fromEntries(items.map((p) => [p.slug, p]));
+const NOT_OPEN = /not open yet|when checkout opens|day it opens|launch day access/i;
+let pagesWithBuy = 0, pagesScanned = 0;
+const allPages = (d) => readdirSync(join(ROOT, d), { withFileTypes: true }).flatMap((e) =>
+  e.isDirectory() ? (["node_modules", "templates", ".deploy", ".git", ".wrangler"].includes(e.name) ? [] : allPages(join(d, e.name)))
+    : e.name.endsWith(".html") ? [join(d, e.name)] : []);
+for (const f of allPages(".")) {
+  const h = readFileSync(join(ROOT, f), "utf8");
+  pagesScanned++;
+  const links = [...h.matchAll(/<a [^>]*href="(https:\/\/buy\.polar\.sh\/[^"]+)"[^>]*data-slug="([^"]+)"[^>]*>Buy now, (\$\d+)<\/a>/g)];
+  const raw = (h.match(/buy\.polar\.sh/g) || []).length;
+  ok(links.length === raw, `${f}: every Polar link is a well-formed Buy link`);
+  for (const [, href, slug, price] of links) {
+    const p = bySlug[slug];
+    ok(p && href === p.checkout_url && price === p.price, `${f}: Buy link for ${slug} -> its own checkout and price`);
+  }
+  if (links.length) {
+    pagesWithBuy++;
+    ok(!NOT_OPEN.test(h.replace(/<script[\s\S]*?<\/script>/g, "")), `${f}: sells, so no "checkout is not open" copy`);
+  }
+}
+ok(pagesScanned >= 172, `scanned ${pagesScanned} pages`);
+console.log(`scanned ${pagesScanned} pages, ${pagesWithBuy} with Polar Buy links`);
+
+// experiments.json: no active variant promises a launch email (review H1)
+const exps = JSON.parse(readFileSync(join(ROOT, "experiments.json"), "utf8"));
+for (const e of exps.experiments) for (const v of e.variants) {
+  if (v.status === "active") ok(!NOT_OPEN.test(JSON.stringify(v.fields || {})), `experiment ${e.id}/${v.id}: no launch promise`);
+}
+
+// /api/checkout stays dormant unless checkout_provider is lemonsqueezy (review L1). The module's JSON imports
+// are swapped for inline values so plain Node can load it.
+async function loadCheckout(provider) {
+  let src = readFileSync(join(ROOT, "functions/api/checkout.js"), "utf8");
+  src = src.replace(/import VARIANTS from "[^"]+";/, `const VARIANTS = ${JSON.stringify({ store_id: "1", variants: { x: { variant_id: "9" } }, sellable: ["x"] })};`)
+    .replace(/import SITE from "[^"]+";/, `const SITE = ${JSON.stringify({ checkout_provider: provider })};`);
+  return import("data:text/javascript;base64," + Buffer.from(src).toString("base64"));
+}
+const envLS = { LS_API_KEY: "k", LS_STORE_ID: "1" };
+for (const prov of ["polar", "lemonsqueezy"]) {
+  const m = await loadCheckout(prov);
+  const g = await (await m.onRequestGet({ env: envLS })).json();
+  const post = await m.onRequestPost({ env: envLS, request: new Request("https://www.studystore.co/api/checkout", { method: "POST", body: "{bad" }) });
+  if (prov === "polar") {
+    ok(g.enabled === false && g.sellable.length === 0, "polar: GET /api/checkout disabled");
+    ok(post.status === 503, "polar: POST /api/checkout 503");
+  } else {
+    ok(g.enabled === true && g.sellable[0] === "x", "lemonsqueezy: GET /api/checkout enabled");
+    ok(post.status === 400, "lemonsqueezy: POST reaches validation");
+  }
+}
+
 // public pages: no Lemon Squeezy copy (admin pages are owner tools and may describe the dormant path)
 const walk = (d) => readdirSync(join(ROOT, d), { withFileTypes: true }).flatMap((e) =>
   e.isDirectory() ? (["admin", "node_modules", "templates", ".deploy", ".git"].includes(e.name) ? [] : walk(join(d, e.name)))
