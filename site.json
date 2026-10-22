@@ -124,12 +124,12 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 450,
+        "cards": 461,
         "card_types": {
-          "sa": 230,
-          "cz": 76,
-          "tf": 63,
-          "mc": 74,
+          "sa": 237,
+          "cz": 77,
+          "tf": 65,
+          "mc": 75,
           "io": 7
         },
         "questions": 57,
@@ -191,12 +191,12 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 488,
+        "cards": 495,
         "card_types": {
-          "cz": 68,
-          "sa": 263,
-          "tf": 68,
-          "mc": 75,
+          "cz": 69,
+          "sa": 266,
+          "tf": 69,
+          "mc": 77,
           "io": 14
         },
         "questions": 55,
@@ -251,13 +251,13 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 436,
+        "cards": 441,
         "card_types": {
           "io": 10,
-          "sa": 124,
+          "sa": 126,
           "cz": 100,
-          "mc": 103,
-          "tf": 99
+          "mc": 104,
+          "tf": 101
         },
         "questions": 53,
         "passage_sets": 3,
@@ -314,12 +314,12 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 472,
+        "cards": 474,
         "card_types": {
           "sa": 267,
           "cz": 73,
-          "tf": 63,
-          "mc": 59,
+          "tf": 64,
+          "mc": 60,
           "io": 10
         },
         "questions": 51,
@@ -379,12 +379,12 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 537,
+        "cards": 550,
         "card_types": {
-          "sa": 280,
-          "cz": 70,
-          "mc": 84,
-          "tf": 85,
+          "sa": 286,
+          "cz": 71,
+          "mc": 87,
+          "tf": 88,
           "io": 18
         },
         "questions": 50,
@@ -438,12 +438,12 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 386,
+        "cards": 391,
         "card_types": {
-          "sa": 215,
+          "sa": 218,
           "cz": 49,
-          "tf": 52,
-          "mc": 52,
+          "tf": 53,
+          "mc": 53,
           "io": 18
         },
         "questions": 52,
@@ -495,13 +495,13 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 389,
+        "cards": 398,
         "card_types": {
-          "sa": 201,
+          "sa": 204,
           "io": 5,
-          "cz": 53,
-          "mc": 76,
-          "tf": 54
+          "cz": 55,
+          "mc": 79,
+          "tf": 55
         },
         "questions": 57,
         "passage_sets": 3,
@@ -549,11 +549,11 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 442,
+        "cards": 445,
         "card_types": {
-          "sa": 210,
+          "sa": 211,
           "cz": 75,
-          "mc": 93,
+          "mc": 95,
           "tf": 57,
           "io": 7
         },
@@ -770,12 +770,12 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 452,
+        "cards": 461,
         "card_types": {
-          "sa": 199,
-          "cz": 70,
-          "mc": 94,
-          "tf": 69,
+          "sa": 203,
+          "cz": 71,
+          "mc": 96,
+          "tf": 71,
           "io": 20
         },
         "questions": 45,
@@ -828,12 +828,12 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 392,
+        "cards": 398,
         "card_types": {
-          "sa": 198,
+          "sa": 201,
           "cz": 33,
-          "mc": 95,
-          "tf": 54,
+          "mc": 97,
+          "tf": 55,
           "io": 12
         },
         "questions": 60,
@@ -1041,12 +1041,12 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 477,
+        "cards": 484,
         "card_types": {
-          "sa": 223,
+          "sa": 226,
           "cz": 91,
-          "mc": 78,
-          "tf": 73,
+          "mc": 81,
+          "tf": 74,
           "io": 12
         },
         "questions": 59,
@@ -1150,11 +1150,11 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 500,
+        "cards": 506,
         "card_types": {
-          "mc": 113,
-          "tf": 93,
-          "sa": 224,
+          "mc": 114,
+          "tf": 95,
+          "sa": 227,
           "cz": 58,
           "io": 12
         },
@@ -1205,13 +1205,13 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 502,
+        "cards": 515,
         "card_types": {
           "io": 9,
-          "cz": 95,
-          "sa": 270,
-          "mc": 78,
-          "tf": 50
+          "cz": 96,
+          "sa": 278,
+          "mc": 81,
+          "tf": 51
         },
         "questions": 55,
         "passage_sets": 3,
@@ -1446,12 +1446,12 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 407,
+        "cards": 410,
         "card_types": {
-          "sa": 199,
+          "sa": 201,
           "cz": 46,
           "mc": 79,
-          "tf": 61,
+          "tf": 62,
           "io": 22
         },
         "questions": 48,
@@ -1591,12 +1591,12 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 476,
+        "cards": 479,
         "card_types": {
           "cz": 139,
-          "sa": 225,
+          "sa": 227,
           "io": 15,
-          "mc": 60,
+          "mc": 61,
           "tf": 37
         },
         "questions": 60,
@@ -1737,12 +1737,12 @@
       ],
       "status": "available",
       "contents": {
-        "cards": 386,
+        "cards": 392,
         "card_types": {
-          "sa": 165,
+          "sa": 168,
           "cz": 57,
-          "mc": 71,
-          "tf": 68,
+          "mc": 72,
+          "tf": 70,
           "io": 25
         },
         "questions": 46,
