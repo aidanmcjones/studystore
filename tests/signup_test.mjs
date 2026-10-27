@@ -6,7 +6,7 @@ import { CONSENT_TEXTS, LIST_ID, BRAIN_SUBSCRIBE_URL } from "../functions/api/su
 let pass = 0, fail = 0;
 const ok = (c, n) => { if (c) pass++; else { fail++; console.log("FAIL:", n); } };
 const rd = (p) => readFileSync(new URL("../" + p, import.meta.url), "utf8");
-const HEAD = "Get the free MCAT sampler + one high-yield note a week";
+const HEAD = "Get the free MCAT sampler + 6 short high-yield lessons by email";
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 
 function check(name, h) {

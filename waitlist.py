@@ -37,7 +37,7 @@ def _sampler_line(root):
     return ", ".join(parts[:-1]) + " and " + parts[-1]
 
 
-SIGNUP_HEADLINE = "Get the free MCAT sampler + one high-yield note a week"
+SIGNUP_HEADLINE = "Get the free MCAT sampler + 6 short high-yield lessons by email"
 
 
 def signup(root):
