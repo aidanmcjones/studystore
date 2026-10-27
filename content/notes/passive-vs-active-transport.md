@@ -1,6 +1,8 @@
 ---
 title: Passive vs Active Transport: Types, Examples and Energy Math
 description: Sort simple diffusion, facilitated diffusion, primary and secondary active transport by energy source, direction and kinetics, with a worked sodium-glucose example.
+seo_title: Passive vs Active Transport | MCAT Free Notes
+seo_description: Free MCAT notes on passive vs active transport: diffusion, facilitated, primary and secondary active transport, with energy math and a quiz.
 product: 2a-cells-membranes
 published: 2026-10-20
 related: action-potential-phases-ion-channels, michaelis-menten-and-lineweaver-burk, glycolysis-steps-enzymes-net-atp

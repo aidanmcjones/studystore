@@ -1,6 +1,8 @@
 ---
 title: Piaget's Stages of Cognitive Development for the MCAT
 description: Piaget's four stages with ages, milestones and limits, plus schemas, assimilation and accommodation, the classic tasks, and how to place a vignette.
+seo_title: Piaget's Stages of Cognitive Development | MCAT
+seo_description: Free MCAT notes on Piaget's 4 stages: ages, milestones, schemas, assimilation vs accommodation, and a 5-question quiz.
 product: 6b-cognition-memory-consciousness
 published: 2026-10-20
 related: eriksons-stages-of-psychosocial-development, types-of-memory-sensory-short-term-long-term, classical-vs-operant-conditioning

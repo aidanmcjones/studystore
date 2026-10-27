@@ -1,6 +1,8 @@
 ---
 title: Anomers vs Epimers: Carbohydrate Stereoisomers for the MCAT
 description: Tell epimers, anomers, enantiomers and other sugar isomers apart using Fischer and Haworth drawings, with a pair-sorting drill and a mutarotation calculation.
+seo_title: Anomers vs Epimers (Carbohydrates) | MCAT Free Notes
+seo_description: Free MCAT notes on anomers vs epimers and other sugar isomers, using Fischer and Haworth drawings, with a sorting drill and a quiz.
 product: 5d-biological-molecules-orgo
 published: 2026-10-20
 related: glycolysis-steps-enzymes-net-atp, lac-operon-regulation-lactose-glucose, amino-acid-pka-charge-ph-7-4

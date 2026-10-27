@@ -1,6 +1,8 @@
 ---
 title: The Lac Operon Explained: Lactose, Glucose, cAMP and CAP
 description: How the lac repressor and CAP-cAMP combine to set lac operon output, a four-condition table, mutant and partial diploid logic, and the traps that cost points.
+seo_title: Lac Operon Explained for the MCAT | Free Notes
+seo_description: Free MCAT lac operon notes: how the repressor and CAP-cAMP control expression, a four-condition table, mutants and a 5-question quiz.
 product: 1b-dna-gene-expression
 published: 2026-10-20
 related: glycolysis-steps-enzymes-net-atp, anomers-vs-epimers-carbohydrates, passive-vs-active-transport

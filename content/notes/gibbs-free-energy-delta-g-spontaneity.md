@@ -1,6 +1,8 @@
 ---
 title: Gibbs Free Energy: Delta G, Spontaneity and Temperature
 description: Use delta G = delta H - T delta S to predict spontaneity, find the crossover temperature, and link delta G to K and Q, with worked numbers.
+seo_title: Gibbs Free Energy and Spontaneity (Delta G) | MCAT
+seo_description: Free MCAT notes on Gibbs free energy: use delta G = delta H - T delta S to predict spontaneity, with worked numbers and a 5-question quiz.
 product: 5e-thermo-kinetics
 published: 2026-10-20
 related: galvanic-vs-electrolytic-cells, passive-vs-active-transport

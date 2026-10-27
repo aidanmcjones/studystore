@@ -1,6 +1,8 @@
 ---
 title: Nephron Function: What Each Segment Reabsorbs and Secretes
 description: Follow filtrate through the nephron segment by segment, see how the loop of Henle and ADH set urine concentration, and work GFR and clearance math.
+seo_title: Nephron Function and Reabsorption by Segment | MCAT
+seo_description: Free MCAT nephron notes: what each segment reabsorbs and secretes, loop of Henle, ADH, and GFR and clearance math, with a quiz.
 product: 3b-organ-systems
 published: 2026-10-20
 related: passive-vs-active-transport, henderson-hasselbalch-for-the-mcat

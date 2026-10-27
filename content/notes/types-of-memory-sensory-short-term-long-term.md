@@ -1,6 +1,8 @@
 ---
 title: Types of Memory for the MCAT: Sensory, Short-Term, Working, Long-Term
 description: How sensory, short-term, working and long-term memory differ in capacity and duration, plus explicit vs implicit memory and the brain areas behind each.
+seo_title: Types of Memory: Sensory, Short-Term, Long-Term | MCAT
+seo_description: Free MCAT notes on the types of memory: sensory, short-term, working and long-term, explicit vs implicit, and the brain areas involved.
 product: 6b-cognition-memory-consciousness
 published: 2026-10-20
 related: classical-vs-operant-conditioning
