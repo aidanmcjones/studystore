@@ -72,8 +72,18 @@
       var k = w.phase === "practice" ? 3 : 2;
       for (var j = 0; j < k; j++) w.review.push(ranked[(rv++) % ranked.length].c);
     });
+    // full-lengths: last one in the second-to-last week, earlier ones 2 weeks apart (1 week if they would not fit)
+    var flReq = Math.max(0, Math.min(12, Math.floor(inp.fl || 0))), flSlots = [], last = n - 2, earliest = n < 4 ? 0 : Math.floor(n / 3);
+    if (flReq && last >= earliest) {
+      [2, 1].some(function (gap) {
+        flSlots = [];
+        for (var k = 0; k < flReq && last - k * gap >= earliest; k++) flSlots.unshift(last - k * gap);
+        return flSlots.length === flReq;
+      });
+    }
+    flSlots.forEach(function (wi2, k) { weeks[wi2].fl = k + 1; });
     var avg = contentBudget / seq.length;
-    return { weeks: weeks, days: days, n: n, contentBudget: contentBudget, avgPerCat: avg, total: H * n, seq: seq };
+    return { flRequested: flReq, flPlaced: flSlots.length, weeks: weeks, days: days, n: n, contentBudget: contentBudget, avgPerCat: avg, total: H * n, seq: seq };
   }
 
   // Free pages first (notes, then practice sets), at most two of each per category so a week stays readable;
@@ -86,6 +96,8 @@
       (notes.length > MAX ? '; <a href="../notes/index.html">' + (notes.length - MAX) + " more</a>" : ""));
     if (prac.length) out.push("Free practice: " + prac.slice(0, MAX).map(function (x) { return a("practice", x); }).join("; ") +
       (prac.length > MAX ? '; <a href="../practice/' + c.aamc.toLowerCase() + '/index.html">all ' + prac.length + " " + SS.esc(c.aamc) + " sets</a>" : ""));
+    var pk = D.packs[c.aamc];
+    if (pk) out.push('Paid pack: <a href="../' + SS.esc(pk.href) + '" data-track="cta">' + SS.esc(pk.title) + "</a>");
     return out;
   }
 
@@ -97,7 +109,8 @@
       (weakList.length ? " Extra weight on: " + weakList.join(", ") + "." : "") + "</p>";
     if (p.n < 4) h += '<p class="warn">That is a short runway. The plan below compresses to the highest-value work; consider a later test date if you are starting content review from scratch.</p>';
     else if (p.avgPerCat < 3 && p.contentBudget > 0) h += '<p class="warn">About ' + SS.fmt(p.avgPerCat, 1) + " hours of content review per topic area is thin for a first pass. More weekly hours or a later date would help; the plan weights larger and weaker areas first.</p>";
-    h += '<p class="noprint"><button class="tbtn primary" id="ics" type="button">Download calendar (.ics)</button> <button class="tbtn" id="print" type="button">Print or save as PDF</button></p>' +
+    if (p.flRequested && p.flPlaced < p.flRequested) h += '<p class="warn">Only ' + p.flPlaced + " of the " + p.flRequested + " full-length exams you asked for fit before your test date with at least a week between them" + (p.flPlaced ? "" : " (none fit)") + ". Pick a later date or fewer exams.</p>";
+    h += '<p class="noprint"><button class="tbtn primary" id="ics" type="button">Download calendar (.ics)</button> <button class="tbtn" id="copy" type="button">Copy as text</button> <button class="tbtn" id="print" type="button">Print or save as PDF</button></p>' +
       '<p class="meta noprint">Print opens your browser print dialog, where you can choose "Save as PDF". Nothing leaves your device.</p></div>';
     h += '<div class="weeks">';
     p.weeks.forEach(function (w) {
@@ -114,7 +127,7 @@
       } else {
         h += "<li>Targeted review: " + SS.fmt(w.content, 1) + " h re-drilling " + w.review.map(function (c) { return SS.esc(c.aamc) + " " + SS.esc(c.title); }).join("; ") + "</li>";
         w.review.forEach(function (c) { var l = linksFor(c, "practice"); if (l.length) h += '<li class="meta">' + SS.esc(c.aamc) + ": " + l.join(" | ") + "</li>"; });
-        h += "<li>Practice: " + SS.fmt(w.practice, 1) + " h. " + (w.phase === "practice" ? (w.hours >= 12 ? "Include one full-length practice exam (about 7.5 hours with breaks) and review it the next day." : "Do section-length blocks; a full-length exam needs a long free day.") : "One last full-length early in the week if you have not done one in 10 days, then lighter sets. No new content in the final two days; sleep and logistics.") + "</li>";
+        h += "<li>Practice: " + SS.fmt(w.practice, 1) + " h. " + (w.fl ? "Full-length practice exam " + w.fl + " of " + p.flPlaced + " (about 7.5 hours with breaks), then a review day: go through every miss and note why." : w.phase === "practice" ? "Do timed section-length blocks and review every miss." : "Light timed sets only; no full-length this week. No new content in the final two days; sleep and logistics.") + "</li>";
       }
       h += "<li>CARS: " + SS.fmt(w.cars, 1) + " h, a few passages most days (steady beats cramming).</li></ul></article>";
     });
@@ -128,6 +141,24 @@
     o.innerHTML = h; o.scrollIntoView && o.scrollIntoView({ behavior: "smooth", block: "start" });
     $("ics").addEventListener("click", function () { download(p, inp); });
     $("print").addEventListener("click", function () { window.print(); });
+    $("copy").addEventListener("click", function () {
+      var t = planText(p, inp), b = $("copy");
+      var done = function () { b.textContent = "Copied"; };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(done, function () {});
+    });
+  }
+
+  function planText(p, inp) {
+    var L = ["MCAT study plan: " + p.n + " week" + (p.n > 1 ? "s" : "") + " to " + nice2(parse(inp.test)) + ", " + inp.hours + " h per week", ""];
+    p.weeks.forEach(function (w) {
+      L.push("Week " + w.n + " (" + nice(w.start) + (w.end > w.start ? " to " + nice(w.end) : "") + "):");
+      if (w.phase === "content") w.cats.forEach(function (x) { L.push("- " + x.c.aamc + " " + x.c.title + " (" + SS.fmt(x.h, 1) + " h)"); });
+      else w.review.forEach(function (c) { L.push("- Review " + c.aamc + " " + c.title); });
+      L.push("- Practice " + SS.fmt(w.practice, 1) + " h" + (w.fl ? "; full-length exam " + w.fl + " plus a review day" : ""));
+      L.push("- CARS " + SS.fmt(w.cars, 1) + " h");
+    });
+    L.push("", "Made with studystore.co/tools/mcat-study-schedule.html. Organizes your time; no promise about your score.");
+    return L.join("\n");
   }
 
   function esc(s) { return s.replace(/\\/g, "\\\\").replace(/;/g, "\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
@@ -137,7 +168,7 @@
     var stamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d+/, "");
     p.weeks.forEach(function (w) {
       var focus = w.phase === "content" ? w.cats.map(function (x) { return x.c.aamc; }).filter(function (v, i, a) { return a.indexOf(v) === i; }).join(", ") : (w.phase === "practice" ? "practice and targeted review" : "final stretch");
-      var desc = (w.phase === "content" ? w.cats.map(function (x) { return x.c.aamc + " " + x.c.title + " (" + SS.fmt(x.h, 1) + " h)"; }) : w.review.map(function (c) { return "Review " + c.aamc + " " + c.title; })).concat(["Practice " + SS.fmt(w.practice, 1) + " h", "CARS " + SS.fmt(w.cars, 1) + " h"]).join("\n");
+      var desc = (w.phase === "content" ? w.cats.map(function (x) { return x.c.aamc + " " + x.c.title + " (" + SS.fmt(x.h, 1) + " h)"; }) : w.review.map(function (c) { return "Review " + c.aamc + " " + c.title; })).concat(["Practice " + SS.fmt(w.practice, 1) + " h" + (w.fl ? " incl. full-length exam " + w.fl + " and a review day" : ""), "CARS " + SS.fmt(w.cars, 1) + " h"]).join("\n");
       L.push("BEGIN:VEVENT", "UID:week" + w.n + "-" + inp.start + "-" + inp.test + "@studystore.co", "DTSTAMP:" + stamp, "DTSTART;VALUE=DATE:" + dt(w.start), "DTEND;VALUE=DATE:" + dt(w.end + MS),
         "SUMMARY:" + esc("MCAT week " + w.n + ": " + focus), "DESCRIPTION:" + esc(desc + "\nPlan from studystore.co/tools/mcat-study-schedule.html"), "END:VEVENT");
     });
@@ -155,13 +186,13 @@
       (s.weak || []).forEach(function (k) { var c = $("w-" + k); if (c) c.checked = true; }); } catch (e) {}
     $("sf").addEventListener("submit", function (e) {
       e.preventDefault();
-      var inp = { start: $("f-start").value, test: sel.value, hours: Math.max(3, Math.min(80, parseFloat($("f-hours").value) || 20)), weak: {} };
+      var inp = { start: $("f-start").value, test: sel.value, hours: Math.max(3, Math.min(80, parseFloat($("f-hours").value) || 20)), fl: Math.max(0, Math.min(12, parseInt($("f-fl").value, 10) || 0)), weak: {} };
       ["bio_biochem", "chem_phys", "psych_soc", "cars"].forEach(function (k) { inp.weak[k] = $("w-" + k).checked; });
       SS.store("sched", JSON.stringify({ hours: inp.hours, test: inp.test, weak: Object.keys(inp.weak).filter(function (k) { return inp.weak[k]; }) }));
       if (!inp.test) { $("result").innerHTML = '<p class="warn" role="alert">Pick a test date.</p>'; return; }
       render(plan(inp), inp);
     });
-    window.__sched = { plan: plan, parse: parse };
+    window.__sched = { plan: plan, parse: parse, planText: planText };
   }
   init();
 })();

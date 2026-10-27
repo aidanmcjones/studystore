@@ -88,8 +88,31 @@ ok(S.plan({ ...inp, test: "2026-11-01" }).error, "test date before start is an e
 const short = S.plan({ start: "2027-01-01", test: "2027-01-15", hours: 10, weak: { ...weak0 } });
 ok(short.n === 2 && short.weeks[1].phase === "final", "two-week runway still ends in the final stretch");
 
+// ---- full-lengths
+const flw = (pl) => pl.weeks.filter((w) => w.fl).map((w) => w.n);
+const fp = S.plan({ ...inp, fl: 4 });
+const fn = flw(fp);
+ok(fn.length === 4 && fp.flPlaced === 4, "4 full-lengths placed for a 23-week runway");
+ok(fn[3] === fp.n - 1, "last full-length is in the second-to-last week");
+ok(fn.every((n, i) => i === 0 || (n - fn[i - 1] >= 1 && n - fn[i - 1] <= 2)), "full-lengths 1 to 2 weeks apart");
+ok(fp.weeks[fp.n - 1].fl === undefined && fp.weeks[0].fl === undefined, "no full-length in the final week or week 1");
+ok(flw(S.plan({ ...inp, fl: 0 })).length === 0, "zero full-lengths requested places none");
+const f12 = S.plan({ ...inp, fl: 12 });
+ok(f12.flPlaced === 12 && flw(f12).every((n, i, a) => i === 0 || n - a[i - 1] === 1 || n - a[i - 1] === 2), "12 full-lengths still spaced 1 to 2 weeks");
+const tight = S.plan({ start: "2027-01-01", test: "2027-02-05", hours: 20, weak: { ...weak0 }, fl: 12 });
+ok(tight.n === 5 && tight.flPlaced < 12 && tight.flPlaced >= 1, "5-week runway places fewer than 12 and reports it");
+const t3 = S.plan({ start: "2027-01-01", test: "2027-01-22", hours: 20, weak: { ...weak0 }, fl: 3 });
+ok(t3.n === 3 && t3.flPlaced >= 1 && t3.weeks[2].fl === undefined, "under 4 weeks: full-lengths only before the final week");
+const t1 = S.plan({ start: "2027-01-01", test: "2027-01-05", hours: 20, weak: { ...weak0 }, fl: 3 });
+ok(t1.n === 1 && t1.flPlaced === 0 && !t1.error, "single-week runway places no full-length");
+const t1d = S.plan({ start: "2027-01-01", test: "2027-01-02", hours: 20, weak: { ...weak0 }, fl: 1 });
+ok(t1d.n === 1 && t1d.weeks[0].end === Date.UTC(2027, 0, 2), "one-day runway is a single week ending on test day");
+ok(S.plan({ ...inp, test: inp.start }).error, "same-day test is an error");
+const txt = S.planText(fp, { ...inp, fl: 4 });
+ok(txt.split("\n").filter((l) => /^Week \d+/.test(l)).length === fp.n && /full-length exam 4/.test(txt) && /no promise about your score/.test(txt), "copy text lists every week and the full-lengths");
+
 // ---- rendered plan: free links resolve, one pack mention, source line, opt-in nudge
-$("f-start").value = "2026-11-02"; $("f-test").value = "2027-04-10"; $("f-hours").value = "20";
+$("f-start").value = "2026-11-02"; $("f-test").value = "2027-04-10"; $("f-hours").value = "20"; $("f-fl").value = "4";
 for (const k of Object.keys(weak0)) $("w-" + k).checked = k === "bio_biochem";
 $("sf").listeners.submit[0]({ preventDefault() {} });
 const out = $("result").innerHTML;
@@ -97,7 +120,8 @@ ok(/Your plan: \d+ weeks to Apr 10, 2027/.test(out), "plan heading names the tes
 const links = [...out.matchAll(/href="\.\.\/([^"#]+)"/g)].map((m) => m[1]);
 ok(links.some((l) => l.startsWith("notes/")) && links.some((l) => l.startsWith("practice/")), "plan links free notes and practice");
 ok(links.filter((l) => l.startsWith("notes/") || l.startsWith("practice/")).every((l) => existsSync(new URL(l, root))), "every free link exists on disk");
-ok(links.filter((l) => l.startsWith("products/")).length === 1, "exactly one product link in the whole plan");
+ok(links.filter((l) => l.startsWith("products/")).length >= 1, "plan links the relevant paid packs");
+ok(/Paid pack:/.test(out) && /id="copy"/.test(out), "paid pack line and copy button");
 ok(!/checkout|buy\.polar/.test(out), "no checkout links in the plan");
 ok(out.includes(data.dates_source) && out.includes('href="#waitlist"'), "source line and opt-in nudge");
 ok(!/[\u2013\u2014]/.test(out) && !/[\u2013\u2014]/.test(page), "no em or en dashes");
