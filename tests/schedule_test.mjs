@@ -52,7 +52,7 @@ function run(today) {
   const RealDate = Date;
   class FakeDate extends RealDate { constructor(...a) { if (a.length) super(...a); else super(today); } static now() { return new RealDate(today).getTime(); } }
   const window = { document, localStorage: undefined, print() {}, URL: { createObjectURL: () => "blob:x", revokeObjectURL() {} } };
-  const ctx = vm.createContext({ window, document, Date: FakeDate, Math, JSON, navigator: {}, setTimeout, console, Blob: class {}, URL: window.URL });
+  const ctx = vm.createContext({ window, document, Date: FakeDate, Math, JSON, navigator: {}, setTimeout, console, Blob: class { constructor(parts) { globalThis.__blob = parts.join(""); } }, URL: window.URL });
   window.window = window;
   vm.runInContext(readFileSync(new URL("assets/js/tools/common.js", root), "utf8"), ctx);
   vm.runInContext(readFileSync(new URL("assets/js/tools/schedule.js", root), "utf8"), ctx);
@@ -110,6 +110,27 @@ ok(t1d.n === 1 && t1d.weeks[0].end === Date.UTC(2027, 0, 2), "one-day runway is 
 ok(S.plan({ ...inp, test: inp.start }).error, "same-day test is an error");
 const txt = S.planText(fp, { ...inp, fl: 4 });
 ok(txt.split("\n").filter((l) => /^Week \d+/.test(l)).length === fp.n && /full-length exam 4/.test(txt) && /no promise about your score/.test(txt), "copy text lists every week and the full-lengths");
+
+// ---- every counted full-length is rendered; .ics escaping
+{
+  const R = run("2026-10-21T12:00:00");
+  const addDays = (d, k) => new Date(Date.UTC(2027, 0, 1) + k * 864e5).toISOString().slice(0, 10);
+  let bad = 0;
+  for (let n = 1; n <= 30; n++) for (let f = 0; f <= 8; f++) {
+    const i2 = { start: "2027-01-01", test: addDays(0, n * 7 - 3), hours: 20, weak: { ...weak0 }, fl: f };
+    const q = R.window.__sched.plan(i2), counted = q.weeks.filter((w) => w.fl).length;
+    R.$("f-start").value = i2.start; R.$("f-test").value = i2.test; R.$("f-hours").value = "20"; R.$("f-fl").value = String(f);
+    for (const k of Object.keys(weak0)) R.$("w-" + k).checked = false;
+    R.$("sf").listeners.submit[0]({ preventDefault() {} });
+    const shown = (R.$("result").innerHTML.match(/Full-length practice exam \d+ of/g) || []).length;
+    if (q.n !== n || counted !== q.flPlaced || shown !== counted || q.flPlaced > f) bad++;
+  }
+  ok(bad === 0, "counted full-lengths equal rendered ones for n 1..30, fl 0..8 (" + bad + " bad)");
+  ok(R.window.__sched.esc("a;b,c\\d\ne") === "a\\;b\\,c\\\\d\\ne", ".ics text escapes semicolon, comma, backslash, newline");
+  R.$("f-start").value = "2026-11-02"; R.$("f-test").value = "2027-04-10"; R.$("sf").listeners.submit[0]({ preventDefault() {} });
+  R.$("ics").listeners.click[0]();
+  ok(/^BEGIN:VCALENDAR/.test(globalThis.__blob) && /SUMMARY:MCAT week 1: /.test(globalThis.__blob) && !/[^\\];[^\r\n]*\r\n/.test(globalThis.__blob.replace(/^(BEGIN|VERSION|PRODID|CALSCALE|UID|DTSTAMP|DTSTART|DTEND|END)[^\r\n]*\r\n/gm, "")), ".ics file has no unescaped semicolons in text lines");
+}
 
 // ---- rendered plan: free links resolve, one pack mention, source line, opt-in nudge
 $("f-start").value = "2026-11-02"; $("f-test").value = "2027-04-10"; $("f-hours").value = "20"; $("f-fl").value = "4";

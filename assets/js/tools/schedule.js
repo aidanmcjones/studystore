@@ -124,6 +124,7 @@
         });
         if (!w.cats.length) h += "<li>Content review is complete. Use this time for extra practice.</li>";
         h += "<li>Practice: " + SS.fmt(w.practice, 1) + " h of timed passages on topics already covered. Review every miss and note why.</li>";
+        if (w.fl) h += "<li>Full-length practice exam " + w.fl + " of " + p.flPlaced + " (about 7.5 hours with breaks), then a review day: go through every miss and note why.</li>";
       } else {
         h += "<li>Targeted review: " + SS.fmt(w.content, 1) + " h re-drilling " + w.review.map(function (c) { return SS.esc(c.aamc) + " " + SS.esc(c.title); }).join("; ") + "</li>";
         w.review.forEach(function (c) { var l = linksFor(c, "practice"); if (l.length) h += '<li class="meta">' + SS.esc(c.aamc) + ": " + l.join(" | ") + "</li>"; });
@@ -161,7 +162,7 @@
     return L.join("\n");
   }
 
-  function esc(s) { return s.replace(/\\/g, "\\\\").replace(/;/g, "\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
+  function esc(s) { return s.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
   function dt(t) { return iso(t).replace(/-/g, ""); }
   function download(p, inp) {
     var L = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//StudyStore//MCAT Study Schedule//EN", "CALSCALE:GREGORIAN"];
@@ -192,7 +193,7 @@
       if (!inp.test) { $("result").innerHTML = '<p class="warn" role="alert">Pick a test date.</p>'; return; }
       render(plan(inp), inp);
     });
-    window.__sched = { plan: plan, parse: parse, planText: planText };
+    window.__sched = { plan: plan, parse: parse, planText: planText, esc: esc };
   }
   init();
 })();
