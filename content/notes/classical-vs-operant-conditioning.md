@@ -1,6 +1,8 @@
 ---
 title: Classical vs Operant Conditioning: Differences, Terms and Examples
 description: The core difference between classical and operant conditioning, the four reinforcement and punishment cells, and the four reinforcement schedules.
+seo_title: Classical vs Operant Conditioning | MCAT Free Notes
+seo_description: Free MCAT notes on classical vs operant conditioning: key terms, reinforcement vs punishment, reinforcement schedules and a 5-question quiz.
 product: 7c-learning-behavior-change
 published: 2026-10-20
 related: types-of-memory-sensory-short-term-long-term

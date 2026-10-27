@@ -1,6 +1,8 @@
 ---
 title: How to Approach a CARS Passage: A Step-by-Step Method
 description: A repeatable way to read a CARS passage: map each paragraph's job, name the main idea, predict before reading choices, and eliminate wrong answers by trap.
+seo_title: How to Approach a CARS Passage | Free MCAT Method
+seo_description: A free step-by-step method for MCAT CARS passages: map each paragraph, find the main idea, predict answers and eliminate trap choices.
 product: cars-strategy
 published: 2026-10-20
 ---

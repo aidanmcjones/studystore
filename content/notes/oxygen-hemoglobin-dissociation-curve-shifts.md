@@ -1,6 +1,8 @@
 ---
 title: Oxygen-Hemoglobin Dissociation Curve: Right vs Left Shifts
 description: Read the oxygen-hemoglobin dissociation curve: why it is sigmoidal, what P50 means, what shifts it right or left, and how shifts change unloading.
+seo_title: Oxygen-Hemoglobin Dissociation Curve Shifts | MCAT
+seo_description: Free MCAT notes on the oxygen-hemoglobin dissociation curve: why it is sigmoidal, P50, what shifts it left or right, and a 5-question quiz.
 product: 3b-organ-systems
 published: 2026-10-20
 related: protein-structure-levels-and-denaturation, henderson-hasselbalch-for-the-mcat, nephron-function-segments-reabsorption

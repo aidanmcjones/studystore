@@ -1,6 +1,8 @@
 ---
 title: Galvanic vs Electrolytic Cells: Signs, Electron Flow and Examples
 description: Compare galvanic and electrolytic cells by spontaneity, electrode signs, electron flow, and sign of E and delta G, with worked Nernst and Faraday examples.
+seo_title: Galvanic vs Electrolytic Cells | MCAT Free Notes
+seo_description: Free MCAT notes comparing galvanic and electrolytic cells: electrode signs, electron flow, E and delta G, with Nernst and Faraday examples.
 product: 4c-electricity-electrochem
 published: 2026-10-20
 related: action-potential-phases-ion-channels, acid-base-titration-curves-equivalence-point

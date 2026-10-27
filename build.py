@@ -227,7 +227,7 @@ def build_note(n, all_notes):
 <p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
 <p class="meta"><a class="reportlink" href="{{{{root}}}}report.html" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
 </article>"""
-    emit(out, f'{m["title"]} | StudyStore Notes', m["description"], body, og_image=img,
+    emit(out, m.get("seo_title") or f'{m["title"]} | StudyStore Notes', m.get("seo_description") or m["description"], body, og_image=img,
          og_type="article", head_extra=ld, lastmod=mod)
 
 def convert_inline(t):

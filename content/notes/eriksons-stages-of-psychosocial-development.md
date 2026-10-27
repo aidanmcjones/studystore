@@ -1,6 +1,8 @@
 ---
 title: Erikson's 8 Stages of Psychosocial Development Explained
 description: All eight of Erikson's psychosocial stages with ages, crises and virtues, how to match a vignette to a stage, and how Erikson differs from Freud.
+seo_title: Erikson's 8 Stages of Psychosocial Development | MCAT
+seo_description: Free MCAT notes on Erikson's 8 stages: ages, crises and virtues, how to match a vignette to a stage, and a 5-question quiz.
 product: 8a-self-identity
 published: 2026-10-20
 related: conformity-vs-obedience-asch-milgram, role-strain-vs-role-conflict-status-and-groups

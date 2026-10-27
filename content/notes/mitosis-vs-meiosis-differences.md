@@ -1,6 +1,8 @@
 ---
 title: Mitosis vs Meiosis: Differences, Chromosome Counts and Errors
 description: Compare mitosis and meiosis stage by stage, track chromosome, chromatid and DNA counts through each division, and see how nondisjunction causes aneuploidy.
+seo_title: Mitosis vs Meiosis Differences | MCAT Free Notes
+seo_description: Free MCAT notes comparing mitosis and meiosis stage by stage, with chromosome and DNA counts, nondisjunction and a 5-question quiz.
 product: 2c-cell-division-development
 published: 2026-10-20
 related: bacteria-vs-viruses-differences
