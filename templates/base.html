@@ -37,6 +37,8 @@
 <script src="{{root}}assets/js/waitlist.js" defer></script>
 </head>
 <body>
+<div class="launchbar" id="launchbar" data-end="{{launch_end}}" role="note"><p>Launch week: 50% off any pack with code <b>{{launch_code}}</b> at checkout, until {{launch_end_label}}</p><button type="button" aria-label="Dismiss offer">&times;</button></div>
+<script>(function(){var b=document.getElementById("launchbar"),k="ss-launch50-x";function h(){b.hidden=true}try{if(Date.now()>Date.parse(b.dataset.end)||localStorage.getItem(k))return h()}catch(e){if(Date.now()>Date.parse(b.dataset.end))return h()}b.querySelector("button").onclick=function(){h();try{localStorage.setItem(k,"1")}catch(e){}}})()</script>
 <a class="skip" href="#main">Skip to content</a>
 <div class="gridbg" aria-hidden="true"></div>
 <header class="site"><div class="wrap">

@@ -652,3 +652,7 @@ html:not(.js) .qitem.qx{display:none}
 .ctable tr:last-child td{border-bottom:0}
 .wrap.compare{max-width:1080px}
 .compare .prose>:not(.tablewrap),.compare>:not(.prose){max-width:70ch}
+.launchbar{display:flex;align-items:center;justify-content:center;gap:12px;padding:8px 14px;background:var(--ink);color:var(--bg);font-size:.9rem;text-align:center}
+.launchbar[hidden]{display:none}
+.launchbar p{margin:0}
+.launchbar button{background:none;border:0;color:inherit;font-size:1.3rem;line-height:1;cursor:pointer;padding:0 6px}

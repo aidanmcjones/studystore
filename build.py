@@ -18,6 +18,9 @@ import waitlist
 
 ROOT = Path(__file__).parent
 site = json.loads((ROOT / "site.json").read_text())
+import datetime as _dt
+_le = _dt.datetime.strptime(site["launch_end"], "%Y-%m-%dT%H:%M:%SZ")  # single source for the LAUNCH50 end (matches the Polar discount)
+site["launch_end_label"] = f"{_le:%b} {_le.day}, {_le.year}"
 PB.configure(site)  # checkout provider (polar by default) and {{merchant}} / {{orders_url}} copy
 products = PB.lookup(site)  # products + bundles + retired-slug aliases
 
