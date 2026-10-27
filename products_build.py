@@ -125,6 +125,21 @@ LD = None             # build.ld_json
 CRUMBS = None         # build.breadcrumbs
 
 
+# Must match refund.html: full refund within 14 days, by email, no return of goods (digital download).
+# returnMethod is omitted on purpose: Google's ReturnByMail/InStore/AtKiosk do not apply to digital goods.
+RETURN_POLICY_LD = {"@type": "MerchantReturnPolicy", "applicableCountry": "US",
+                    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                    "merchantReturnDays": 14, "returnFees": "https://schema.org/FreeReturn",
+                    "refundType": "https://schema.org/FullRefund"}
+# Instant digital delivery after checkout.
+SHIPPING_LD = {"@type": "OfferShippingDetails",
+               "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "USD"},
+               "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "US"},
+               "deliveryTime": {"@type": "ShippingDeliveryTime",
+                                "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"},
+                                "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"}}}
+
+
 def product_ld(site, p, url, image, kind="pack"):
     """schema.org Product. Never aggregateRating or review. PreOrder until the active provider can sell it."""
     if kind == "pack":
@@ -144,7 +159,8 @@ def product_ld(site, p, url, image, kind="pack"):
             "brand": {"@type": "Brand", "name": "StudyStore"},
             "offers": {"@type": "Offer", "url": url, "priceCurrency": "USD", "price": f'{p["price_usd"]:.2f}',
                        "availability": avail, "itemCondition": "https://schema.org/NewCondition",
-                       "seller": {"@type": "Organization", "name": "StudyStore"}}}
+                       "seller": {"@type": "Organization", "name": "StudyStore"},
+                       "hasMerchantReturnPolicy": RETURN_POLICY_LD, "shippingDetails": SHIPPING_LD}}
 
 
 def seo_head(site, p, out, image, kind="pack"):
