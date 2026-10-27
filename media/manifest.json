@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 33,
-  "diagram-reels": 33,
-  "diagram-shorts": 33,
-  "diagram-snapchat": 33,
-  "diagram-threads": 33,
-  "diagram-tiktok": 33,
-  "diagram-x": 33,
-  "pins-notes": 28,
+  "diagram-facebook": 34,
+  "diagram-reels": 34,
+  "diagram-shorts": 34,
+  "diagram-snapchat": 34,
+  "diagram-threads": 34,
+  "diagram-tiktok": 34,
+  "diagram-x": 34,
+  "pins-notes": 29,
   "pins-questions": 15,
-  "qotd-facebook": 43,
-  "qotd-reels": 43,
-  "qotd-shorts": 43,
-  "qotd-snapchat": 43,
-  "qotd-threads": 43,
-  "qotd-tiktok": 43,
-  "qotd-x": 43
+  "qotd-facebook": 44,
+  "qotd-reels": 44,
+  "qotd-shorts": 44,
+  "qotd-snapchat": 44,
+  "qotd-threads": 44,
+  "qotd-tiktok": 44,
+  "qotd-x": 44
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -626,6 +626,27 @@
    "tag": "#biology",
    "title": "Passive vs Active Transport: Types, Examples and Energy Math"
   },
+  "piaget-stages-of-cognitive-development": {
+   "beats": [
+    "Schemas grow by assimilation (fit new info in) and accommodation (change the schema), driven by equilibration.",
+    "Sensorimotor, about 0 to 2: learning through action, object permanence, A-not-B error.",
+    "Preoperational, about 2 to 7: symbols and pretend play, but egocentrism, centration, irreversibility, animism, and no conservation.",
+    "Concrete operational, about 7 to 11: conservation, reversibility, classification, seriation, logic about real things."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-034",
+    "diagram-reels": "diagram-reels-034",
+    "diagram-shorts": "diagram-shorts-034",
+    "diagram-snapchat": "diagram-snapchat-034",
+    "diagram-threads": "diagram-threads-034",
+    "diagram-tiktok": "diagram-tiktok-034",
+    "diagram-x": "diagram-x-034"
+   },
+   "seconds": 22.6,
+   "size": 1561040,
+   "tag": "#psychology",
+   "title": "Piaget's Stages of Cognitive Development for the MCAT"
+  },
   "protein-structure-levels-and-denaturation": {
    "beats": [
     "Primary: sequence, peptide bonds. Secondary: helices and sheets, backbone hydrogen bonds.",
@@ -990,6 +1011,16 @@
    "slug": "nephron-function-segments-reabsorption",
    "tag": "#physiology",
    "title": "Nephron Function: What Each Segment Reabsorbs and Secretes"
+  },
+  "note-oxygen-hemoglobin-dissociation-curve-shifts": {
+   "desc": "Read the oxygen-hemoglobin dissociation curve: why it is sigmoidal, what P50 means, what shifts it right or left, and how shifts change unloading.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-029"
+   },
+   "size": 176014,
+   "slug": "oxygen-hemoglobin-dissociation-curve-shifts",
+   "tag": "#physiology",
+   "title": "Oxygen-Hemoglobin Dissociation Curve: Right vs Left Shifts"
   },
   "q-10a-social-inequality-1": {
    "outbox_ids": {
@@ -1575,6 +1606,25 @@
    "size": 461687,
    "tag": "#chemistry",
    "topic": "Titration curves and equivalence points"
+  },
+  "5a-solutions-acids-bases-3": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-044",
+    "qotd-reels": "qotd-reels-044",
+    "qotd-shorts": "qotd-shorts-044",
+    "qotd-snapchat": "qotd-snapchat-044",
+    "qotd-threads": "qotd-threads-044",
+    "qotd-tiktok": "qotd-tiktok-044",
+    "qotd-x": "qotd-x-044"
+   },
+   "pack_slug": "5a-solutions-acids-bases",
+   "practice": "practice/5a/index.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 492808,
+   "tag": "#chemistry",
+   "topic": "Ksp and molar solubility"
   },
   "5b-molecules-bonding-stereo-1": {
    "outbox_ids": {
