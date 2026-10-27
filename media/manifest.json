@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 31,
-  "diagram-reels": 31,
-  "diagram-shorts": 31,
-  "diagram-snapchat": 31,
-  "diagram-threads": 31,
-  "diagram-tiktok": 31,
-  "diagram-x": 31,
-  "pins-notes": 26,
+  "diagram-facebook": 33,
+  "diagram-reels": 33,
+  "diagram-shorts": 33,
+  "diagram-snapchat": 33,
+  "diagram-threads": 33,
+  "diagram-tiktok": 33,
+  "diagram-x": 33,
+  "pins-notes": 28,
   "pins-questions": 15,
-  "qotd-facebook": 41,
-  "qotd-reels": 41,
-  "qotd-shorts": 41,
-  "qotd-snapchat": 41,
-  "qotd-threads": 41,
-  "qotd-tiktok": 41,
-  "qotd-x": 41
+  "qotd-facebook": 43,
+  "qotd-reels": 43,
+  "qotd-shorts": 43,
+  "qotd-snapchat": 43,
+  "qotd-threads": 43,
+  "qotd-tiktok": 43,
+  "qotd-x": 43
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -184,6 +184,27 @@
    "size": 1794970,
    "tag": "#psychology",
    "title": "Classical vs Operant Conditioning: Differences, Terms and Examples"
+  },
+  "colligative-properties-freezing-point-depression": {
+   "beats": [
+    "Colligative properties depend on particle count. Raoult's law: P = XsolventP\u00b0. Osmotic pressure \u03a0 = iMRT uses molarity and kelvin.",
+    "The van't Hoff factor is 1 for nonelectrolytes, 2 for NaCl, 3 for CaCl2, and real values run slightly lower. To rank solutions, compare i \u00d7 m.",
+    "Here R = 0.0821 L atm/(mol K) and T must be in kelvin. \u0394Tf and \u0394Tb are written as positive sizes of the shift.",
+    "you then subtract from the normal freezing point or add to the normal boiling point."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-032",
+    "diagram-reels": "diagram-reels-032",
+    "diagram-shorts": "diagram-shorts-032",
+    "diagram-snapchat": "diagram-snapchat-032",
+    "diagram-threads": "diagram-threads-032",
+    "diagram-tiktok": "diagram-tiktok-032",
+    "diagram-x": "diagram-x-032"
+   },
+   "seconds": 22.6,
+   "size": 1661402,
+   "tag": "#chemistry",
+   "title": "Colligative Properties: Freezing Point Depression Calculations"
   },
   "conformity-vs-obedience-asch-milgram": {
    "beats": [
@@ -563,6 +584,27 @@
    "tag": "#physiology",
    "title": "Nephron Function: What Each Segment Reabsorbs and Secretes"
   },
+  "oxygen-hemoglobin-dissociation-curve-shifts": {
+   "beats": [
+    "P50 (about 26 to 27 mmHg in adults) is the PO2 at half saturation, and a higher P50 means lower affinity.",
+    "More CO2, more H^+, higher temperature and more 2,3-BPG shift the curve right and boost unloading in working tissue.",
+    "Fetal hemoglobin, carbon monoxide, alkalosis, cold and low 2,3-BPG shift it left. Myoglobin has a hyperbolic curve with a very low P50.",
+    "Anemia lowers oxygen content mainly by reducing hemoglobin, not by shifting the curve."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-033",
+    "diagram-reels": "diagram-reels-033",
+    "diagram-shorts": "diagram-shorts-033",
+    "diagram-snapchat": "diagram-snapchat-033",
+    "diagram-threads": "diagram-threads-033",
+    "diagram-tiktok": "diagram-tiktok-033",
+    "diagram-x": "diagram-x-033"
+   },
+   "seconds": 22.6,
+   "size": 1876329,
+   "tag": "#physiology",
+   "title": "Oxygen-Hemoglobin Dissociation Curve: Right vs Left Shifts"
+  },
   "passive-vs-active-transport": {
    "beats": [
     "Passive: down the gradient, no energy. Simple diffusion for small nonpolar molecules, linear and unsaturable.",
@@ -749,6 +791,16 @@
    "tag": "#psychology",
    "title": "Classical vs Operant Conditioning: Differences, Terms and Examples"
   },
+  "note-colligative-properties-freezing-point-depression": {
+   "desc": "Calculate freezing point depression, boiling point elevation, vapor pressure lowering and osmotic pressure, with the van't Hoff factor and worked examples.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-027"
+   },
+   "size": 140559,
+   "slug": "colligative-properties-freezing-point-depression",
+   "tag": "#chemistry",
+   "title": "Colligative Properties: Freezing Point Depression Calculations"
+  },
   "note-conformity-vs-obedience-asch-milgram": {
    "desc": "The difference between conformity and obedience, what the Asch and Milgram studies found, and which factors push each rate up or down.",
    "outbox_ids": {
@@ -928,6 +980,16 @@
    "slug": "mitosis-vs-meiosis-differences",
    "tag": "#biology",
    "title": "Mitosis vs Meiosis: Differences, Chromosome Counts and Errors"
+  },
+  "note-nephron-function-segments-reabsorption": {
+   "desc": "Follow filtrate through the nephron segment by segment, see how the loop of Henle and ADH set urine concentration, and work GFR and clearance math.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-028"
+   },
+   "size": 150120,
+   "slug": "nephron-function-segments-reabsorption",
+   "tag": "#physiology",
+   "title": "Nephron Function: What Each Segment Reabsorbs and Secretes"
   },
   "q-10a-social-inequality-1": {
    "outbox_ids": {
@@ -1266,6 +1328,25 @@
    "size": 630280,
    "tag": "#biology",
    "topic": "Bacterial shapes and cell wall types (Gram stain)"
+  },
+  "2c-cell-division-development-3": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-043",
+    "qotd-reels": "qotd-reels-043",
+    "qotd-shorts": "qotd-shorts-043",
+    "qotd-snapchat": "qotd-snapchat-043",
+    "qotd-threads": "qotd-threads-043",
+    "qotd-tiktok": "qotd-tiktok-043",
+    "qotd-x": "qotd-x-043"
+   },
+   "pack_slug": "2c-cell-division-development",
+   "practice": "practice/2c-fertilization-embryogenesis-germ-layers.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": false,
+   "size": 575629,
+   "tag": "#biology",
+   "topic": "Germ layer derivatives"
   },
   "2c-cell-division-development-4": {
    "outbox_ids": {
@@ -1627,6 +1708,25 @@
    "size": 440079,
    "tag": "#chemistry",
    "topic": "Reaction rates and rate laws"
+  },
+  "6a-sensation-perception-0": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-042",
+    "qotd-reels": "qotd-reels-042",
+    "qotd-shorts": "qotd-shorts-042",
+    "qotd-snapchat": "qotd-snapchat-042",
+    "qotd-threads": "qotd-threads-042",
+    "qotd-tiktok": "qotd-tiktok-042",
+    "qotd-x": "qotd-x-042"
+   },
+   "pack_slug": "6a-sensation-perception",
+   "practice": "practice/6a-thresholds-weber-law-signal-detection-adaptation.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 537913,
+   "tag": "#psychology",
+   "topic": "Psychophysics"
   },
   "6a-sensation-perception-3": {
    "outbox_ids": {
