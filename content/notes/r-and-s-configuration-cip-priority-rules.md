@@ -1,5 +1,5 @@
 ---
-title: How to Assign R and S Configuration: CIP Priority Rules
+title: CIP Priority Rules: How to Assign R and S Configuration
 description: A step-by-step method to rank groups by CIP priority and assign R or S from wedge-dash drawings and Fischer projections, with tie-breaker practice.
 product: 5b-molecules-bonding-stereo
 published: 2026-10-20

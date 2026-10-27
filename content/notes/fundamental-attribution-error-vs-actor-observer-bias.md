@@ -1,6 +1,6 @@
 ---
-title: Fundamental Attribution Error vs Actor-Observer vs Self-Serving Bias
-description: How to tell the fundamental attribution error, actor-observer bias and self-serving bias apart, with Kelley's covariation model and worked examples.
+title: Self-Serving Bias vs Fundamental Attribution Error (vs Actor-Observer)
+description: Self-serving bias vs fundamental attribution error vs actor-observer bias: the difference in one table, with examples and Kelley's covariation model.
 product: 8b-social-thinking
 published: 2026-10-20
 ---
@@ -119,8 +119,8 @@ Q: A runner says she won the race because of her training and lost the next one 
 A: Self-serving bias. She credits success to herself (dispositional) and blames failure on circumstances (situational).
 Q: Most people find a professor confusing, a student finds only this professor confusing, and he finds her confusing every lecture. What attribution does Kelley's model predict?
 A: Situational, about the professor. High consensus, high distinctiveness and high consistency point to the stimulus rather than the student.
-Q: A driver explains his own speeding by being late for a flight but calls other speeders reckless. Which bias is this?
-A: Actor-observer bias. As the actor he cites the situation, and as the observer he cites the other drivers' dispositions.
+Q: What is the difference between self-serving bias and the fundamental attribution error?
+A: The fundamental attribution error is about explaining other people's behavior: we overweight their personality and underweight the situation. Self-serving bias is about our own outcomes: we credit ourselves for successes and blame circumstances for failures. The actor-observer bias is the contrast between explaining our own behavior (situation) and others' (personality).
 Q: Would the fundamental attribution error be expected to be stronger in an individualistic or a collectivistic culture?
 A: Individualistic. Those cultures emphasize personal traits as causes of behavior, while collectivistic cultures give more weight to situational and social context.
 :::
