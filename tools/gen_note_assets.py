@@ -1581,5 +1581,31 @@ DIAGRAMS.update({
 })
 # ---- end burst-a diagrams ----
 
+def kn_vt():
+    v0, a, T = 4.0, 2.0, 5.0
+    t = np.linspace(0, T, 50)
+    v = v0 + a * t
+    fig, ax = plt.subplots(figsize=(7, 4.2))
+    ax.fill_between(t, 0, np.full_like(t, v0), color=TEAL, alpha=0.22)
+    ax.fill_between(t, np.full_like(t, v0), v, color=ACC, alpha=0.22)
+    ax.plot(t, v, color=ACCD, lw=2.5)
+    ax.text(T / 2, v0 / 2, f"rectangle: v₀t = {v0 * T:.0f} m", ha="center", va="center", color=TEAL, fontsize=10)
+    ax.text(T * 0.68, v0 + 2.2, f"triangle: ½at² = {0.5 * a * T**2:.0f} m", ha="center", va="center",
+            color=ACCD, fontsize=10)
+    ax.annotate(f"slope = a = {a:.0f} m/s²", xy=(1.5, v0 + a * 1.5), xytext=(0.3, 12),
+                arrowprops=dict(arrowstyle="->", color=INK), fontsize=10)
+    ax.text(T * 0.5, v0 + a * T + 0.9, f"total area = Δx = {v0 * T + 0.5 * a * T**2:.0f} m",
+            ha="center", fontsize=10.5, color=INK, weight="bold")
+    ax.set_xlim(0, T + 0.3)
+    ax.set_ylim(0, v0 + a * T + 2.5)
+    ax.set_xlabel("time t (s)")
+    ax.set_ylabel("velocity v (m/s)")
+    ax.set_title("Constant acceleration: v₀ = 4 m/s, a = 2 m/s², 5 s", fontsize=11)
+    save(fig, "kinematics-equations-how-to-choose")
+
+DIAGRAMS.update({
+    "kinematics-equations-how-to-choose": kn_vt,
+})
+
 if __name__ == "__main__":
     main()
