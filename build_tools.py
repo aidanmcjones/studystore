@@ -27,11 +27,11 @@ PACK_AAMC = {}  # product slug -> AAMC code; filled in build() from site.json av
 TOOLS = [
     ("amino-acid-quiz", "Amino Acid Quiz", "Free amino acid quiz: names, codes, structures, charge and pI | StudyStore",
      "Free MCAT amino acid quiz with the 20 standard residues: names and codes, structures, side-chain class, charge at a chosen pH and pI. No signup."),
-    ("pka-trainer", "pKa and Charge at pH Trainer", "pKa Quiz: Free pKa and Charge at pH Practice for the MCAT | StudyStore",
+    ("pka-trainer", "pKa and Charge at pH Trainer", "pKa Quiz: Free MCAT pKa and Charge at pH Practice | StudyStore",
      "Free pKa quiz for the MCAT. Practice Henderson-Hasselbalch: decide if a group is protonated, find the net charge of a short peptide at any pH, with the working shown. Free, no signup."),
     ("mcat-study-schedule", "MCAT Study Schedule Generator", "Free MCAT study schedule generator for 2027 test dates | StudyStore",
      "Pick your 2027 MCAT date, weekly hours and weak sections to get a week-by-week plan by AAMC content category, with a calendar file and printable view."),
-    ("mcat-percentile", "MCAT Score Calculator: Percentile and Target Score", "MCAT Score Calculator: Percentile and Target Score (2026-2027) | StudyStore",
+    ("mcat-percentile", "MCAT Score Calculator: Percentile and Target Score", "MCAT Score Calculator: Percentile and Target Score | StudyStore",
      "Free MCAT score calculator: look up MCAT total and section percentile ranks from the official AAMC table in effect May 2026 to April 2027, and find the score needed for a target percentile."),
 ]
 

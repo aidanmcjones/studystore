@@ -1,5 +1,5 @@
 ---
-title: Recombination Frequency and Map Units: Formula and Worked Examples
+title: Recombination Frequency and Map Units
 description: What recombination frequency is, how to calculate it and convert it to map units (cM) for gene mapping, with worked examples and the 50 percent limit.
 product: 1c-heredity-evolution
 published: 2026-10-20

@@ -1,5 +1,5 @@
 ---
-title: Self-Serving Bias vs Fundamental Attribution Error (vs Actor-Observer)
+title: Self-Serving Bias vs Fundamental Attribution Error
 description: Self-serving bias vs fundamental attribution error vs actor-observer bias: the difference in one table, with examples and Kelley's covariation model.
 product: 8b-social-thinking
 published: 2026-10-20
