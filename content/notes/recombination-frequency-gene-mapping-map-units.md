@@ -1,6 +1,6 @@
 ---
-title: Recombination Frequency and Gene Mapping: Map Units Explained
-description: Calculate recombination frequency from a test cross, convert it to map units, order three linked genes, and see why distances cap at 50 percent.
+title: Recombination Frequency and Map Units
+description: What recombination frequency is, how to calculate it and convert it to map units (cM) for gene mapping, with worked examples and the 50 percent limit.
 product: 1c-heredity-evolution
 published: 2026-10-20
 related: hardy-weinberg-equation-practice-problems, mitosis-vs-meiosis-differences
@@ -117,6 +117,6 @@ Q: Why can observed recombination frequency between two genes never exceed 50 pe
 A: Each crossover involves only two of the four chromatids, so at most half the gametes are recombinant, and double crossovers between the same chromatids restore parental combinations, so even very distant genes give no more than about 50 percent recombinants.
 Q: Genes A and B are 12 cM apart, and genes B and C are 9 cM apart, with B in the middle. If there is no interference, what fraction of test cross offspring should be double crossovers?
 A: 0.12 x 0.09 = 0.0108, so about 1.1 percent of offspring are expected to be double crossovers.
-Q: A heterozygote's test cross gives A b and a B as the two most common classes. What was the arrangement of alleles in the heterozygote?
-A: Repulsion (trans), Ab/aB. The most common classes are parental, so A was on the same chromosome as b, and a was with B.
+Q: What are map units, and how do they relate to recombination frequency?
+A: A map unit (1 centimorgan) is the distance between two genes that gives 1 percent recombinant offspring, so recombination frequency in percent equals the distance in map units.
 :::

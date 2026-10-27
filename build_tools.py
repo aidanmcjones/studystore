@@ -27,12 +27,12 @@ PACK_AAMC = {}  # product slug -> AAMC code; filled in build() from site.json av
 TOOLS = [
     ("amino-acid-quiz", "Amino Acid Quiz", "Free amino acid quiz: names, codes, structures, charge and pI | StudyStore",
      "Free MCAT amino acid quiz with the 20 standard residues: names and codes, structures, side-chain class, charge at a chosen pH and pI. No signup."),
-    ("pka-trainer", "pKa and Charge at pH Trainer", "Free pKa and charge at pH trainer for the MCAT | StudyStore",
-     "Practice Henderson-Hasselbalch: decide if a group is protonated, find the net charge of a short peptide at any pH, with the working shown. Free, no signup."),
+    ("pka-trainer", "pKa and Charge at pH Trainer", "pKa Quiz: Free MCAT pKa and Charge at pH Practice | StudyStore",
+     "Free pKa quiz for the MCAT. Practice Henderson-Hasselbalch: decide if a group is protonated, find the net charge of a short peptide at any pH, with the working shown. Free, no signup."),
     ("mcat-study-schedule", "MCAT Study Schedule Generator", "Free MCAT study schedule generator for 2027 test dates | StudyStore",
      "Pick your 2027 MCAT date, weekly hours and weak sections to get a week-by-week plan by AAMC content category, with a calendar file and printable view."),
-    ("mcat-percentile", "MCAT Percentile Lookup and Target Score", "MCAT percentile lookup and target score calculator (AAMC table 2026-2027) | StudyStore",
-     "Look up MCAT total and section percentile ranks from the official AAMC table in effect May 2026 to April 2027, and find the score needed for a target percentile."),
+    ("mcat-percentile", "MCAT Score Calculator: Percentile and Target Score", "MCAT Score Calculator: Percentile and Target Score | StudyStore",
+     "Free MCAT score calculator: look up MCAT total and section percentile ranks from the official AAMC table in effect May 2026 to April 2027, and find the score needed for a target percentile."),
 ]
 
 FOOT_CTA = ('<aside class="cta"><div><strong>Want these facts as spaced-repetition cards?</strong>'
@@ -161,7 +161,7 @@ def build(emit, site, products, notes_meta, notes_by_aamc=None, practice_by_aamc
          aa_json)
 
     # ---------------- pKa trainer ----------------
-    page("pka-trainer", "pKa and Charge at pH Trainer",
+    page("pka-trainer", "pKa Quiz: pKa and Charge at pH Trainer",
          "Practice Henderson-Hasselbalch the way the MCAT uses it: is a group protonated, and what is the net charge of a short peptide at a given pH? The working is shown every time.",
          '<div class="modes" id="modes" role="group" aria-label="Trainer mode"></div>'
          '<p class="progress"><span id="scorewrap"><span id="score"></span></span><span id="hidewrap"><label><input type="checkbox" id="hidepka"> Hide the pKa (memory challenge)</label></span></p>'
@@ -209,7 +209,7 @@ def build(emit, site, products, notes_meta, notes_by_aamc=None, practice_by_aamc
 <div id="s-out" role="status" aria-live="polite"></div>
 <details><summary>Full total-score table</summary><div class="tablewrap"><table><thead><tr><th>Total score</th><th>Percentile rank</th></tr></thead><tbody id="full-table"></tbody></table></div></details>
 <p class="meta">Source: <a href="{pct["source_url"]}" rel="noopener">AAMC, Summary of MCAT Total and Section Scores, Percentile Ranks in Effect May 1, 2026 to April 30, 2027</a>. Based on all MCAT results from 2023, 2024 and 2025 combined. A percentile rank is the percentage of scores equal to or less than the score.</p>"""
-    page("mcat-percentile", "MCAT Percentile Lookup and Target Score",
+    page("mcat-percentile", "MCAT Score Calculator: Percentile and Target Score",
          "Look up percentile ranks from the official AAMC table in effect May 2026 to April 2027, and see the lowest score that reaches a percentile you are aiming for.",
          ptool, '<script src="{{root}}assets/js/tools/percentile.js" defer></script>',
          """<h2>Reading the percentile table</h2>
