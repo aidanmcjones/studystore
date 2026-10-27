@@ -5,7 +5,7 @@ Usage: python3 build.py
 Placeholders in templates:
   {{root}} relative path to site root, {{site_name}}, {{disclaimer}}, {{contact}},
   {{updated}}, {{base_url}}, {{buy:SLUG}}, {{price:SLUG}}, {{title:SLUG}},
-  {{waitlist}} (launch list box, waitlist.py), {{merchant}} {{orders_url}} {{orders_label}} {{refund_how}} (checkout provider),
+  {{waitlist}} (launch list box, waitlist.py), {{signup}} (compact sampler opt-in, waitlist.py), {{merchant}} {{orders_url}} {{orders_label}} {{refund_how}} (checkout provider),
   any other top-level site.json string key.
 """
 import json, re, html, math
@@ -72,6 +72,7 @@ def render(text, root):
             if kind == "title": return html.escape(products[slug]["title"])
         if k == "latest_notes": return LATEST_NOTES
         if k == "waitlist": return waitlist.box(root, launch=not PB.checkout_open(site))
+        if k == "signup": return waitlist.signup(root)
         v = PB.placeholder(site, products, k, root)  # catalog data: pack_grid, feat:*, stat:*
         if v is not None: return v
         if k in site and isinstance(site[k], str): return site[k]
@@ -212,6 +213,7 @@ def build_note(n, all_notes):
 <p class="eyebrow">Free MCAT study note</p>
 <h1>{html.escape(m["title"])}</h1>
 <p class="meta">By StudyStore &middot; Published {m["published"]} &middot; {mins} min read &middot; {n["words"]} words</p>
+{{{{signup}}}}
 <div class="prose">
 {body_html}
 </div>
@@ -223,7 +225,6 @@ def build_note(n, all_notes):
 <ul>{rel}<li><a href="index.html">All free notes</a></li></ul>
 {practice_build.note_links(slug, PRACTICE_LIVE, None)}
 {cta}
-{{{{waitlist}}}}
 <p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
 <p class="meta"><a class="reportlink" href="{{{{root}}}}report.html" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
 </article>"""
