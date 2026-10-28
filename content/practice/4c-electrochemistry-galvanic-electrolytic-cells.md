@@ -11,7 +11,7 @@ notes:
 
 Every electrochemical cell has oxidation at the anode and reduction at the cathode, and electrons travel through the external wire from anode to cathode. A galvanic cell runs a spontaneous reaction: E<sub>cell</sub> = E<sub>cathode</sub> &minus; E<sub>anode</sub> is positive, &Delta;G = &minus;nFE is negative, and the anode is the negative electrode. An electrolytic cell uses an outside power source to drive a nonspontaneous reaction, so &Delta;G is positive and the anode is the positive electrode. Away from standard conditions, the Nernst equation at 25 &deg;C gives E = E&deg; &minus; (0.0592/n) log Q.
 
-Faraday's law links charge to chemistry: moles of electrons = It/F, with F about 96,485 C per mole of electrons. The [4C electricity and electrochemistry pack](https://buy.polar.sh/polar_cl_X94RFtyX7YA49DoKlhKmG7JFV4tF6NimckFlQ3NZGoZ) adds flashcards and a larger question set on these cells and on circuits, and the [free sampler](/#sampler) lets you try sample cards first.
+Faraday's law links charge to chemistry: moles of electrons = It/F, with F about 96,485 C per mole of electrons. The [4C electricity and electrochemistry pack](../products/4c-electricity-electrochem.html) adds flashcards and a larger question set on these cells and on circuits, and the [free sampler](/#sampler) lets you try sample cards first.
 
 Traps: never multiply a reduction potential by a stoichiometric coefficient, anions in a salt bridge drift toward the anode, and "anode" always means oxidation even when its sign flips.
 

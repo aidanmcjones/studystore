@@ -77,7 +77,7 @@ Split the motion. Vertically, v<sub>0y</sub> = 0 and a = &minus;10 m/s<sup>2</su
 - Translate words into values: "from rest", "stops", and "at the top" each give a zero.
 - Projectiles: solve vertical and horizontal motion separately, linked by time.
 
-If you want more drills on motion, forces and energy, the [4A motion, forces and energy pack](https://buy.polar.sh/polar_cl_JNk012arYDPoX8YBL5ur1qM7noCVz8Y1NNLGw22zgLo) adds flashcards and practice questions on these topics, and the [free sampler](/#sampler) lets you try sample cards first.
+If you want more drills on motion, forces and energy, the [4A motion, forces and energy pack](../products/4a-motion-forces-energy.html) adds flashcards and practice questions on these topics, and the [free sampler](/#sampler) lets you try sample cards first.
 
 :::quiz
 Q: A cart starts from rest and accelerates at 3.0 m/s<sup>2</sup> for 4.0 s. How far does it travel?
