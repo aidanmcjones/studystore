@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-10-26T10:20:13Z",
-  "theme": "free_sampler_push",
+  "updated": "2026-10-28T10:20:09Z",
+  "theme": "topic_of_the_week",
   "note": "Edited by ops/experiments.py and the marketing job. Variant ids are never reused. Text must be true of the product. {orig} is replaced with the element's original text (used to keep prices in sync with site.json).",
   "experiments": [
     {
