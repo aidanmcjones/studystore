@@ -112,6 +112,19 @@ def seo_desc(d):
         return d
     return d[:DESC_MAX - 3].rsplit(" ", 1)[0].rstrip(",;:.") + "..."
 
+_ABS_HTML = re.compile(re.escape(BASE) + r"(/[A-Za-z0-9_\-./]*?\.html)(?=[\"'#?\s<\\]|$)")
+
+def clean_url(u):
+    """The host 308-redirects /x.html to /x and /d/index.html to /d/, so canonical, og:url, JSON-LD and
+    sitemap URLs use the final form; a canonical that points at a redirect splits Search signals."""
+    if u.endswith("/index.html"):
+        return u[:-len("index.html")]
+    return u[:-len(".html")] if u.endswith(".html") else u
+
+def clean_abs_urls(text):
+    """clean_url on every absolute same-site .html URL in a page (relative links are left alone)."""
+    return _ABS_HTML.sub(lambda m: BASE + clean_url(m.group(1)), text)
+
 def ld_json(*objs):
     return "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False).replace("</", "<\\/")}</script>\n'
                    for o in objs)
@@ -139,12 +152,12 @@ def emit(out, title, desc, body, noindex=False, og_image=DEFAULT_OG, og_type="we
     page = page.replace("{{head_extra}}", head_extra)
     if noindex:
         root = "/studystore/" if BASE.endswith("/studystore") else "/"
-    page = version_assets(render(page, root))
+    page = clean_abs_urls(version_assets(render(page, root)))
     dest = ROOT / out
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(page)
     if not noindex:
-        urls.append((BASE + "/" + ("" if out == "index.html" else out), (_iso(lastmod) or lastmod) if lastmod else DEFAULT_LASTMOD))
+        urls.append((clean_url(BASE + "/" + ("" if out == "index.html" else out)), (_iso(lastmod) or lastmod) if lastmod else DEFAULT_LASTMOD))
 
 # ---------- notes ----------
 def load_notes():
