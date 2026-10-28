@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 34,
-  "diagram-reels": 34,
-  "diagram-shorts": 34,
-  "diagram-snapchat": 34,
-  "diagram-threads": 34,
-  "diagram-tiktok": 34,
-  "diagram-x": 34,
-  "pins-notes": 29,
+  "diagram-facebook": 35,
+  "diagram-reels": 35,
+  "diagram-shorts": 35,
+  "diagram-snapchat": 35,
+  "diagram-threads": 35,
+  "diagram-tiktok": 35,
+  "diagram-x": 35,
+  "pins-notes": 30,
   "pins-questions": 15,
-  "qotd-facebook": 44,
-  "qotd-reels": 44,
-  "qotd-shorts": 44,
-  "qotd-snapchat": 44,
-  "qotd-threads": 44,
-  "qotd-tiktok": 44,
-  "qotd-x": 44
+  "qotd-facebook": 45,
+  "qotd-reels": 45,
+  "qotd-shorts": 45,
+  "qotd-snapchat": 45,
+  "qotd-threads": 45,
+  "qotd-tiktok": 45,
+  "qotd-x": 45
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -500,6 +500,27 @@
    "tag": "#chemistry",
    "title": "How to Read IR and NMR Spectra for the MCAT"
   },
+  "kinematics-equations-how-to-choose": {
+   "beats": [
+    "Five variables, four equations, each equation missing one variable.",
+    "Choose the equation that leaves out the variable you neither have nor want.",
+    "Slope of a v-t graph is acceleration, area under it is displacement.",
+    "Translate words into values: \"from rest\", \"stops\", and \"at the top\" each give a zero."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-035",
+    "diagram-reels": "diagram-reels-035",
+    "diagram-shorts": "diagram-shorts-035",
+    "diagram-snapchat": "diagram-snapchat-035",
+    "diagram-threads": "diagram-threads-035",
+    "diagram-tiktok": "diagram-tiktok-035",
+    "diagram-x": "diagram-x-035"
+   },
+   "seconds": 22.6,
+   "size": 1064692,
+   "tag": "#physics",
+   "title": "Kinematics Equations for the MCAT: How to Choose the Right One"
+  },
   "lac-operon-regulation-lactose-glucose": {
    "beats": [
     "The lac operon (CAP site, promoter, operator, lacZ, lacY, lacA) makes one mRNA for the lactose genes.",
@@ -972,6 +993,16 @@
    "tag": "#chemistry",
    "title": "How to Read IR and NMR Spectra for the MCAT"
   },
+  "note-kinematics-equations-how-to-choose": {
+   "desc": "The four constant-acceleration kinematics equations, how to pick one by the variable you lack, and worked braking, free fall and projectile examples.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-030"
+   },
+   "size": 129213,
+   "slug": "kinematics-equations-how-to-choose",
+   "tag": "#physics",
+   "title": "Kinematics Equations for the MCAT: How to Choose the Right One"
+  },
   "note-lac-operon-regulation-lactose-glucose": {
    "desc": "How the lac repressor and CAP-cAMP combine to set lac operon output, a four-condition table, mutant and partial diploid logic, and the traps that cost points.",
    "outbox_ids": {
@@ -1189,6 +1220,25 @@
   }
  },
  "q": {
+  "10a-social-inequality-1": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-045",
+    "qotd-reels": "qotd-reels-045",
+    "qotd-shorts": "qotd-shorts-045",
+    "qotd-snapchat": "qotd-snapchat-045",
+    "qotd-threads": "qotd-threads-045",
+    "qotd-tiktok": "qotd-tiktok-045",
+    "qotd-x": "qotd-x-045"
+   },
+   "pack_slug": "10a-social-inequality",
+   "practice": "practice/10a/index.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 581898,
+   "tag": "#sociology",
+   "topic": "Global inequality"
+  },
   "10a-social-inequality-3": {
    "outbox_ids": {
     "qotd-facebook": "qotd-facebook-001",
