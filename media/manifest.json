@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 35,
-  "diagram-reels": 35,
-  "diagram-shorts": 35,
-  "diagram-snapchat": 35,
-  "diagram-threads": 35,
-  "diagram-tiktok": 35,
-  "diagram-x": 35,
-  "pins-notes": 30,
+  "diagram-facebook": 36,
+  "diagram-reels": 36,
+  "diagram-shorts": 36,
+  "diagram-snapchat": 36,
+  "diagram-threads": 36,
+  "diagram-tiktok": 36,
+  "diagram-x": 36,
+  "pins-notes": 31,
   "pins-questions": 15,
-  "qotd-facebook": 45,
-  "qotd-reels": 45,
-  "qotd-shorts": 45,
-  "qotd-snapchat": 45,
-  "qotd-threads": 45,
-  "qotd-tiktok": 45,
-  "qotd-x": 45
+  "qotd-facebook": 46,
+  "qotd-reels": 46,
+  "qotd-shorts": 46,
+  "qotd-snapchat": 46,
+  "qotd-threads": 46,
+  "qotd-tiktok": 46,
+  "qotd-x": 46
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -730,6 +730,27 @@
    "tag": "#physics",
    "title": "Radioactive Decay and Half-Life Calculations for the MCAT"
   },
+  "rate-law-method-of-initial-rates": {
+   "beats": [
+    "Hold every concentration but one constant, compare two runs, and solve (concentration ratio)^order = rate ratio.",
+    "Doubling with no change means zero order, doubling means first, quadrupling means second, and logs handle awkward numbers.",
+    "If no clean pair exists, divide out the reactant you already solved.",
+    "Write rate = k[A]^m[B]^n, solve k from one run, and give k units of M^1 - overall order s^-1. Coefficients equal orders only for elementary steps."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-036",
+    "diagram-reels": "diagram-reels-036",
+    "diagram-shorts": "diagram-shorts-036",
+    "diagram-snapchat": "diagram-snapchat-036",
+    "diagram-threads": "diagram-threads-036",
+    "diagram-tiktok": "diagram-tiktok-036",
+    "diagram-x": "diagram-x-036"
+   },
+   "seconds": 22.6,
+   "size": 1623037,
+   "tag": "#chemistry",
+   "title": "How to Find a Rate Law from Initial Rates (Method of Initial Rates)"
+  },
   "role-strain-vs-role-conflict-status-and-groups": {
    "beats": [
     "A status is where you stand; a role is what that position asks of you.",
@@ -1053,6 +1074,16 @@
    "tag": "#physiology",
    "title": "Oxygen-Hemoglobin Dissociation Curve: Right vs Left Shifts"
   },
+  "note-passive-vs-active-transport": {
+   "desc": "Sort simple diffusion, facilitated diffusion, primary and secondary active transport by energy source, direction and kinetics, with a worked sodium-glucose example.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-031"
+   },
+   "size": 161924,
+   "slug": "passive-vs-active-transport",
+   "tag": "#biology",
+   "title": "Passive vs Active Transport: Types, Examples and Energy Math"
+  },
   "q-10a-social-inequality-1": {
    "outbox_ids": {
     "pins-questions": "pins-questions-009"
@@ -1371,6 +1402,25 @@
    "size": 540105,
    "tag": "#biochemistry",
    "topic": "Linkage and recombination frequency mapping"
+  },
+  "1d-metabolism-bioenergetics-4": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-046",
+    "qotd-reels": "qotd-reels-046",
+    "qotd-shorts": "qotd-shorts-046",
+    "qotd-snapchat": "qotd-snapchat-046",
+    "qotd-threads": "qotd-threads-046",
+    "qotd-tiktok": "qotd-tiktok-046",
+    "qotd-x": "qotd-x-046"
+   },
+   "pack_slug": "1d-metabolism-bioenergetics",
+   "practice": "practice/1d-hormonal-regulation-fed-fasting-nitrogen.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": false,
+   "size": 665963,
+   "tag": "#biochemistry",
+   "topic": "Fed, fasting and starvation states"
   },
   "2b-prokaryotes-viruses-0": {
    "outbox_ids": {
