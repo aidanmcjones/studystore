@@ -37,7 +37,8 @@
 <script src="assets/js/waitlist.js?v=969555bf76" defer></script>
 </head>
 <body>
-<div class="launchbar" id="launchbar" data-end="2026-11-03T23:59:00Z" role="note"><p>Launch week: 50% off any pack with code <b>LAUNCH50</b> at checkout, until Nov 3, 2026</p><button type="button" aria-label="Dismiss offer">&times;</button></div>
+<div class="launchbar" id="launchbar" data-end="2026-11-03T23:59:00Z" data-code="LAUNCH50" role="note"><p>Launch week: 50% off any pack with code <b>LAUNCH50</b>, applied automatically at checkout, until Nov 3, 2026</p><button type="button" aria-label="Dismiss offer">&times;</button></div>
+<script>(function(){var b=document.getElementById("launchbar"),c=b.dataset.code,e=Date.parse(b.dataset.end);if(c&&Date.now()<e)document.addEventListener("DOMContentLoaded",function(){if(Date.now()>=e)return;var l=document.querySelectorAll("a[data-checkout=polar]");for(var i=0;i<l.length;i++)try{var u=new URL(l[i].href);u.searchParams.set("discount_code",c);l[i].href=u.toString()}catch(x){}})})()</script>
 <script>(function(){var b=document.getElementById("launchbar"),k="ss-launch50-x";function h(){b.hidden=true}try{if(Date.now()>Date.parse(b.dataset.end)||localStorage.getItem(k))return h()}catch(e){if(Date.now()>Date.parse(b.dataset.end))return h()}b.querySelector("button").onclick=function(){h();try{localStorage.setItem(k,"1")}catch(e){}}})()</script>
 <a class="skip" href="#main">Skip to content</a>
 <div class="gridbg" aria-hidden="true"></div>
