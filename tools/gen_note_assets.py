@@ -1607,5 +1607,29 @@ DIAGRAMS.update({
     "kinematics-equations-how-to-choose": kn_vt,
 })
 
+def st_backward():
+    fig, ax = plt.subplots(figsize=(11, 4.6))
+    ax.set_xlim(0, 100); ax.set_ylim(0, 40); ax.axis("off")
+    phases = [(2, 22, "DIAGNOSTIC", "official practice,\ntimed, cold", GREY),
+              (25, 25, "CONTENT REVIEW", "gap list from the\nAAMC content outline", TEAL),
+              (51, 27, "PRACTICE-HEAVY", "passages daily,\nfull-lengths spaced out", ACC),
+              (79, 15, "FINAL REVIEW", "missed-question log,\nrest before test", ACCD)]
+    for x, w, name, sub, c in phases:
+        _nh_box(ax, x, 14, w, 14, c)
+        ax.text(x + w / 2, 24, name, color="white", fontsize=10.5, fontweight="bold", ha="center", va="center")
+        ax.text(x + w / 2, 18.5, sub, color="white", fontsize=8.8, ha="center", va="center")
+    ax.plot([96.5, 96.5], [10, 32], color=INK, lw=2.5)
+    ax.text(96.5, 34, "TEST\nDATE", fontsize=10, fontweight="bold", ha="center", va="bottom")
+    ax.annotate("", (3, 7), (95, 7), arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.6))
+    ax.text(49, 2.5, "plan backward: fix the test date first, then size each block from your own diagnostic",
+            fontsize=9.5, ha="center", color=MUTED, style="italic")
+    ax.set_title("Sizing your MCAT timeline (block widths are illustrative, not hours)", fontsize=12, loc="left",
+                 fontweight="bold")
+    save(fig, "how-long-to-study-for-the-mcat")
+
+DIAGRAMS.update({
+    "how-long-to-study-for-the-mcat": st_backward,
+})
+
 if __name__ == "__main__":
     main()
