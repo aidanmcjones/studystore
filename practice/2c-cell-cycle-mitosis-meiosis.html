@@ -56,7 +56,8 @@
 <script src="../assets/js/waitlist.js?v=969555bf76" defer></script>
 </head>
 <body>
-<div class="launchbar" id="launchbar" data-end="2026-11-03T23:59:00Z" role="note"><p>Launch week: 50% off any pack with code <b>LAUNCH50</b> at checkout, until Nov 3, 2026</p><button type="button" aria-label="Dismiss offer">&times;</button></div>
+<div class="launchbar" id="launchbar" data-end="2026-11-03T23:59:00Z" data-code="LAUNCH50" role="note"><p>Launch week: 50% off any pack with code <b>LAUNCH50</b>, applied automatically at checkout, until Nov 3, 2026</p><button type="button" aria-label="Dismiss offer">&times;</button></div>
+<script>(function(){var b=document.getElementById("launchbar"),c=b.dataset.code,e=Date.parse(b.dataset.end);if(c&&Date.now()<e)document.addEventListener("DOMContentLoaded",function(){if(Date.now()>=e)return;var l=document.querySelectorAll("a[data-checkout=polar]");for(var i=0;i<l.length;i++)try{var u=new URL(l[i].href);u.searchParams.set("discount_code",c);l[i].href=u.toString()}catch(x){}})})()</script>
 <script>(function(){var b=document.getElementById("launchbar"),k="ss-launch50-x";function h(){b.hidden=true}try{if(Date.now()>Date.parse(b.dataset.end)||localStorage.getItem(k))return h()}catch(e){if(Date.now()>Date.parse(b.dataset.end))return h()}b.querySelector("button").onclick=function(){h();try{localStorage.setItem(k,"1")}catch(e){}}})()</script>
 <a class="skip" href="#main">Skip to content</a>
 <div class="gridbg" aria-hidden="true"></div>
@@ -78,7 +79,7 @@
 <h2 id="primer">Quick concept primer</h2>
 <div class="prose">
 <p>A dividing somatic cell moves through G1, S, G2 and M. DNA is copied only in S phase, so a diploid cell that holds an amount of DNA called 2C in G1 holds 4C from the end of S until the chromatids split. Progress is driven by cyclins that bind and switch on cyclin-dependent kinases. Checkpoints act as brakes: at G1/S, DNA damage stabilizes p53, which induces p21 to block CDK activity; at the metaphase to anaphase transition, the spindle checkpoint holds the anaphase-promoting complex off until every kinetochore is attached.</p>
-<p>Mitosis keeps the chromosome number, while meiosis halves it. In meiosis I homologous pairs separate, so the daughter cells are haploid even though each chromosome still has two chromatids; meiosis II separates the chromatids. Spermatogenesis yields four sperm per primary spermatocyte, while oogenesis yields one egg plus polar bodies, with arrests in prophase I and metaphase II. Cancer usually needs gain of function in proto-oncogenes plus loss of both copies of tumor suppressors. The <a href="https://buy.polar.sh/polar_cl_jcxNjJiL3rk9rfqU5DqGh9XvN2HX2Bn9XUEzx2TBGr6">Cell Division pack</a> adds an Anki deck and question set on this unit, or try the <a href="/#sampler">free sampler</a>.</p>
+<p>Mitosis keeps the chromosome number, while meiosis halves it. In meiosis I homologous pairs separate, so the daughter cells are haploid even though each chromosome still has two chromatids; meiosis II separates the chromatids. Spermatogenesis yields four sperm per primary spermatocyte, while oogenesis yields one egg plus polar bodies, with arrests in prophase I and metaphase II. Cancer usually needs gain of function in proto-oncogenes plus loss of both copies of tumor suppressors. The <a href="../products/2c-cell-division-development.html">Cell Division pack</a> adds an Anki deck and question set on this unit, or try the <a href="/#sampler">free sampler</a>.</p>
 <p>Traps: chromosome number is counted by centromeres, not chromatids, and cytokinesis is a separate step from nuclear division.</p>
 </div>
 <div class="notelinks"></div>
