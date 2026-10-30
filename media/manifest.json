@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 36,
-  "diagram-reels": 36,
-  "diagram-shorts": 36,
-  "diagram-snapchat": 36,
-  "diagram-threads": 36,
-  "diagram-tiktok": 36,
-  "diagram-x": 36,
-  "pins-notes": 31,
+  "diagram-facebook": 37,
+  "diagram-reels": 37,
+  "diagram-shorts": 37,
+  "diagram-snapchat": 37,
+  "diagram-threads": 37,
+  "diagram-tiktok": 37,
+  "diagram-x": 37,
+  "pins-notes": 32,
   "pins-questions": 15,
-  "qotd-facebook": 46,
-  "qotd-reels": 46,
-  "qotd-shorts": 46,
-  "qotd-snapchat": 46,
-  "qotd-threads": 46,
-  "qotd-tiktok": 46,
-  "qotd-x": 46
+  "qotd-facebook": 47,
+  "qotd-reels": 47,
+  "qotd-shorts": 47,
+  "qotd-snapchat": 47,
+  "qotd-threads": 47,
+  "qotd-tiktok": 47,
+  "qotd-x": 47
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -457,6 +457,27 @@
    "size": 1264774,
    "tag": "#biochemistry",
    "title": "The Henderson-Hasselbalch Equation for the MCAT"
+  },
+  "how-long-to-study-for-the-mcat": {
+   "beats": [
+    "The AAMC gives no fixed study duration, so size your own. Take a timed official diagnostic first.",
+    "Sort misses into content, reasoning, and timing gaps, and map content gaps onto the AAMC content outline.",
+    "Fix the test date and plan backward: content review, a practice-heavy phase with spaced full-lengths, then final review.",
+    "Adjust from the practice trend, and use daily spaced repetition so reviewed content does not fade."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-037",
+    "diagram-reels": "diagram-reels-037",
+    "diagram-shorts": "diagram-shorts-037",
+    "diagram-snapchat": "diagram-snapchat-037",
+    "diagram-threads": "diagram-threads-037",
+    "diagram-tiktok": "diagram-tiktok-037",
+    "diagram-x": "diagram-x-037"
+   },
+   "seconds": 22.6,
+   "size": 1238176,
+   "tag": "#mcatstudy",
+   "title": "How Long to Study for the MCAT: Size Your Own Timeline"
   },
   "how-to-approach-a-cars-passage": {
    "beats": [
@@ -993,6 +1014,16 @@
    "slug": "henderson-hasselbalch-for-the-mcat",
    "tag": "#biochemistry",
    "title": "The Henderson-Hasselbalch Equation for the MCAT"
+  },
+  "note-how-long-to-study-for-the-mcat": {
+   "desc": "There is no official MCAT study duration. Learn how to size your own timeline from a diagnostic, a gap list, and a test date you plan backward from.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-032"
+   },
+   "size": 126260,
+   "slug": "how-long-to-study-for-the-mcat",
+   "tag": "#mcatstudy",
+   "title": "How Long to Study for the MCAT: Size Your Own Timeline"
   },
   "note-how-to-approach-a-cars-passage": {
    "desc": "A repeatable way to read a CARS passage: map each paragraph's job, name the main idea, predict before reading choices, and eliminate wrong answers by trap.",
@@ -1630,6 +1661,25 @@
    "size": 449163,
    "tag": "#physics",
    "topic": "Ideal gas law"
+  },
+  "4c-electricity-electrochem-2": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-047",
+    "qotd-reels": "qotd-reels-047",
+    "qotd-shorts": "qotd-shorts-047",
+    "qotd-snapchat": "qotd-snapchat-047",
+    "qotd-threads": "qotd-threads-047",
+    "qotd-tiktok": "qotd-tiktok-047",
+    "qotd-x": "qotd-x-047"
+   },
+   "pack_slug": "4c-electricity-electrochem",
+   "practice": "practice/4c/index.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 614018,
+   "tag": "#physics",
+   "topic": "RC circuits"
   },
   "4c-electricity-electrochem-3": {
    "outbox_ids": {
