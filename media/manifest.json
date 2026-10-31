@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 37,
-  "diagram-reels": 37,
-  "diagram-shorts": 37,
-  "diagram-snapchat": 37,
-  "diagram-threads": 37,
-  "diagram-tiktok": 37,
-  "diagram-x": 37,
-  "pins-notes": 32,
+  "diagram-facebook": 38,
+  "diagram-reels": 38,
+  "diagram-shorts": 38,
+  "diagram-snapchat": 38,
+  "diagram-threads": 38,
+  "diagram-tiktok": 38,
+  "diagram-x": 38,
+  "pins-notes": 33,
   "pins-questions": 15,
-  "qotd-facebook": 47,
-  "qotd-reels": 47,
-  "qotd-shorts": 47,
-  "qotd-snapchat": 47,
-  "qotd-threads": 47,
-  "qotd-tiktok": 47,
-  "qotd-x": 47
+  "qotd-facebook": 48,
+  "qotd-reels": 48,
+  "qotd-shorts": 48,
+  "qotd-snapchat": 48,
+  "qotd-threads": 48,
+  "qotd-tiktok": 48,
+  "qotd-x": 48
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -772,6 +772,26 @@
    "tag": "#chemistry",
    "title": "How to Find a Rate Law from Initial Rates (Method of Initial Rates)"
   },
+  "recombination-frequency-gene-mapping-map-units": {
+   "beats": [
+    "Recombination frequency = recombinants / total \u00d7 100, and 1 percent equals 1 map unit (1 cM).",
+    "Use a test cross so offspring phenotypes reveal the heterozygote's gametes. The most common classes are parental and show coupling or repulsion.",
+    "Add the doubles into each interval, then add intervals to get long distances."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-038",
+    "diagram-reels": "diagram-reels-038",
+    "diagram-shorts": "diagram-shorts-038",
+    "diagram-snapchat": "diagram-snapchat-038",
+    "diagram-threads": "diagram-threads-038",
+    "diagram-tiktok": "diagram-tiktok-038",
+    "diagram-x": "diagram-x-038"
+   },
+   "seconds": 18.2,
+   "size": 1180325,
+   "tag": "#biochemistry",
+   "title": "Recombination Frequency and Map Units"
+  },
   "role-strain-vs-role-conflict-status-and-groups": {
    "beats": [
     "A status is where you stand; a role is what that position asks of you.",
@@ -1114,6 +1134,16 @@
    "slug": "passive-vs-active-transport",
    "tag": "#biology",
    "title": "Passive vs Active Transport: Types, Examples and Energy Math"
+  },
+  "note-piaget-stages-of-cognitive-development": {
+   "desc": "Piaget's four stages with ages, milestones and limits, plus schemas, assimilation and accommodation, the classic tasks, and how to place a vignette.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-033"
+   },
+   "size": 140679,
+   "slug": "piaget-stages-of-cognitive-development",
+   "tag": "#psychology",
+   "title": "Piaget's Stages of Cognitive Development for the MCAT"
   },
   "q-10a-social-inequality-1": {
    "outbox_ids": {
@@ -2079,6 +2109,25 @@
    "size": 564061,
    "tag": "#psychology",
    "topic": "Identity types"
+  },
+  "8a-self-identity-3": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-048",
+    "qotd-reels": "qotd-reels-048",
+    "qotd-shorts": "qotd-shorts-048",
+    "qotd-snapchat": "qotd-snapchat-048",
+    "qotd-threads": "qotd-threads-048",
+    "qotd-tiktok": "qotd-tiktok-048",
+    "qotd-x": "qotd-x-048"
+   },
+   "pack_slug": "8a-self-identity",
+   "practice": "practice/8a/index.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 610763,
+   "tag": "#psychology",
+   "topic": "Influence of others on identity"
   },
   "8b-social-thinking-2": {
    "outbox_ids": {
