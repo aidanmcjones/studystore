@@ -318,7 +318,30 @@ def nb_demographic():
     ax.set_title("The demographic transition: deaths drop first, births follow", fontsize=12.5, loc="left", fontweight="bold")
     save(fig, "demographic-transition-model-stages")
 
+def nb_gene_transfer():
+    fig, ax = plt.subplots(figsize=(11, 6.4))
+    ax.set_xlim(0, 100); ax.set_ylim(0, 60); ax.axis("off")
+    ax.text(1, 58, "Three ways bacteria pick up new DNA", fontsize=13.5, fontweight="bold", va="center")
+    cols = [(1, "Transformation", "DNA comes from: the environment\n(free DNA from a lysed cell)",
+             "carrier: none", "contact needed: no", "blocked by DNase: yes", TEAL),
+            (34.5, "Transduction", "DNA comes from: a previous host,\npackaged by mistake",
+             "carrier: a bacteriophage", "contact needed: no", "blocked by DNase: no\n(DNA is inside the capsid)", ACC),
+            (68, "Conjugation", "DNA comes from: a living donor\n(F+ or Hfr cell)",
+             "carrier: sex pilus and bridge", "contact needed: yes", "blocked by DNase: no", "#6b3f7a")]
+    for x, name, src, car, con, dn, c in cols:
+        _nb_box(ax, x, 47, 31, 6.5, c)
+        ax.text(x + 15.5, 50.25, name, ha="center", va="center", color="white", fontsize=12.5, fontweight="bold")
+        _nb_box(ax, x, 6, 31, 39, CARD, LINE)
+        for i, t in enumerate([src, car, con, dn]):
+            ax.text(x + 15.5, 39 - i * 9.2, t, ha="center", va="center", fontsize=9.8, color=INK, linespacing=1.35)
+        for i in range(1, 4):
+            ax.plot([x + 2, x + 29], [43.6 - i * 9.2, 43.6 - i * 9.2], color=LINE, lw=1)
+    ax.text(50, 2, "All three are horizontal gene transfer: none of them is reproduction.", ha="center",
+            fontsize=10, color=MUTED, style="italic")
+    save(fig, "transformation-transduction-conjugation")
+
 DIAGRAMS = {
+    "transformation-transduction-conjugation": nb_gene_transfer,
     "amino-acid-pka-charge-ph-7-4": titration,
     "michaelis-menten-and-lineweaver-burk": mm_lb,
     "enzyme-inhibition-types-compared": inhibition,

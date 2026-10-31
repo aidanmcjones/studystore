@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Transformation vs Transduction vs Conjugation in Bacteria</title>
+<meta name="description" content="How transformation, transduction and conjugation move DNA between bacteria, how to tell them apart in an experiment, and the traps that cost points.">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Transformation vs Transduction vs Conjugation in Bacteria", "description": "How transformation, transduction and conjugation move DNA between bacteria, how to tell them apart in an experiment, and the traps that cost points.", "image": "https://www.studystore.co/assets/notes/og-transformation-transduction-conjugation.png?v=af822132df", "datePublished": "2026-10-31", "dateModified": "2026-10-31", "wordCount": 1141, "inLanguage": "en", "mainEntityOfPage": "https://www.studystore.co/notes/transformation-transduction-conjugation", "author": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}, "publisher": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Gene transfer between two strains continues when DNase is added but stops when a filter keeps the cells apart. Which mechanism is it?", "acceptedAnswer": {"@type": "Answer", "text": "Conjugation. DNase resistance rules out transformation, and the need for contact rules out transduction, which phages can carry through the filter."}}, {"@type": "Question", "name": "Which form of transduction can move any gene of the host?", "acceptedAnswer": {"@type": "Answer", "text": "Generalized transduction, because a lytic phage packages random host fragments by mistake; specialized transduction moves only genes beside the prophage site."}}, {"@type": "Question", "name": "After an F+ by F− conjugation, what is the F status of the recipient?", "acceptedAnswer": {"@type": "Answer", "text": "It becomes F+, since the whole F plasmid is transferred and the complementary strand is made in both cells."}}, {"@type": "Question", "name": "In an interrupted mating, gene X enters at 8 minutes and gene Y at 20 minutes. What is the map distance between them?", "acceptedAnswer": {"@type": "Answer", "text": "12 minutes, because time-of-entry maps measure distance as minutes of transfer from the Hfr origin."}}, {"@type": "Question", "name": "Why must a chromosome fragment taken up by transformation undergo homologous recombination?", "acceptedAnswer": {"@type": "Answer", "text": "A linear fragment usually lacks a working origin and is broken down by nucleases, so it is lost unless it is built into the recipient chromosome."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "StudyStore", "item": "https://www.studystore.co/"}, {"@type": "ListItem", "position": 2, "name": "Free MCAT study notes", "item": "https://www.studystore.co/notes/"}, {"@type": "ListItem", "position": 3, "name": "Transformation vs Transduction vs Conjugation in Bacteria", "item": "https://www.studystore.co/notes/transformation-transduction-conjugation"}]}</script>
+
+<link rel="canonical" href="https://www.studystore.co/notes/transformation-transduction-conjugation">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="Transformation vs Transduction vs Conjugation in Bacteria">
+<meta property="og:description" content="How transformation, transduction and conjugation move DNA between bacteria, how to tell them apart in an experiment, and the traps that cost points.">
+<meta property="og:url" content="https://www.studystore.co/notes/transformation-transduction-conjugation">
+<meta property="og:image" content="https://www.studystore.co/assets/notes/og-transformation-transduction-conjugation.png?v=af822132df">
+<meta name="twitter:image" content="https://www.studystore.co/assets/notes/og-transformation-transduction-conjugation.png?v=af822132df">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Transformation vs Transduction vs Conjugation in Bacteria">
+<meta name="twitter:description" content="How transformation, transduction and conjugation move DNA between bacteria, how to tell them apart in an experiment, and the traps that cost points.">
+<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1512'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23f2b705'/%3E%3Ccircle cx='21' cy='16' r='4' fill='%233ddc84'/%3E%3Ccircle cx='11' cy='21' r='4' fill='%236aa2ff'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("ss-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css?v=d1200ff632">
+<link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="../assets/js/exp.js?v=ee5c878b31" defer></script>
+<script src="../assets/js/site.js?v=1b40ce4c4e" defer></script>
+<script src="../assets/js/buy.js?v=50fe203f05" defer></script>
+<script src="../assets/js/report.js?v=1e5d24d48f" defer></script>
+<script src="../assets/js/waitlist.js?v=969555bf76" defer></script>
+</head>
+<body>
+<div class="launchbar" id="launchbar" data-end="2026-11-03T23:59:00Z" data-code="LAUNCH50" role="note"><p>Launch week: 50% off any pack with code <b>LAUNCH50</b>, applied automatically at checkout, until Nov 3, 2026</p><button type="button" aria-label="Dismiss offer">&times;</button></div>
+<script>(function(){var b=document.getElementById("launchbar"),c=b.dataset.code,e=Date.parse(b.dataset.end);if(c&&Date.now()<e)document.addEventListener("DOMContentLoaded",function(){if(Date.now()>=e)return;var l=document.querySelectorAll("a[data-checkout=polar]");for(var i=0;i<l.length;i++)try{var u=new URL(l[i].href);u.searchParams.set("discount_code",c);l[i].href=u.toString()}catch(x){}})})()</script>
+<script>(function(){var b=document.getElementById("launchbar"),k="ss-launch50-x";function h(){b.hidden=true}try{if(Date.now()>Date.parse(b.dataset.end)||localStorage.getItem(k))return h()}catch(e){if(Date.now()>Date.parse(b.dataset.end))return h()}b.querySelector("button").onclick=function(){h();try{localStorage.setItem(k,"1")}catch(e){}}})()</script>
+<a class="skip" href="#main">Skip to content</a>
+<div class="gridbg" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="../index.html" aria-label="StudyStore home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Study<b>Store</b></span></a>
+<nav aria-label="Main"><a href="../index.html#packs">Packs</a><a href="../notes/index.html">Notes</a><a href="../tools/index.html">Tools</a><a href="../index.html#faq">FAQ</a><a href="../refund.html">Refunds</a></nav>
+<div class="tools">
+<span class="phread" aria-hidden="true">pH <b>1.0</b></span>
+<button class="themetoggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+</div>
+</div><div class="phbar" aria-hidden="true"><i></i></div></header>
+<main id="main">
+<article class="note wrap narrow">
+<p class="eyebrow">Free MCAT study note</p>
+<h1>Transformation vs Transduction vs Conjugation in Bacteria</h1>
+<p class="meta">By StudyStore &middot; Published 2026-10-31 &middot; 5 min read &middot; 1141 words</p>
+<section class="waitlist waitlist-inline" id="signup" aria-labelledby="signup-h">
+<div class="wlcopy">
+<p class="eyebrow mono"><span class="dot"></span>Free MCAT sampler</p>
+<h2 id="signup-h">Get the free MCAT sampler + 6 short high-yield lessons by email</h2>
+<p>Confirm your email and we send the sampler link, then short MCAT lessons. Free, no card.</p>
+<p>Prefer not to sign up? The sampler is open to everyone: <a href="../notes/index.html" data-track="sampler">free notes</a>, <a href="../practice/index.html" data-track="sampler">practice sets</a> and the <a href="../tools/mcat-study-schedule.html">study schedule generator</a>.</p>
+</div>
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
+<label for="su-email">Email</label>
+<input id="su-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
+<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn">Send me the sampler</button>
+<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> Every email has an unsubscribe link. <a href="../privacy.html">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p>Meanwhile, <a href="../notes/index.html" data-track="sampler">start with the free notes</a>.</p>
+</div>
+</section>
+<div class="prose">
+<p>Transformation, transduction and conjugation are the three classic ways a bacterium gains DNA from outside itself. The quickest way to separate them is to ask how the DNA travels: in transformation it is naked DNA picked up from the surroundings, in transduction it rides inside a bacteriophage, and in conjugation it passes directly from a living donor cell through a physical connection. None of the three makes a new cell. They are forms of horizontal gene transfer, which is why bacteria can share traits such as antibiotic resistance without dividing.</p>
+<h2 id="the-three-routes-at-a-glance">The three routes at a glance</h2>
+<div class="tablewrap"><table><thead><tr><th>Feature</th><th>Transformation</th><th>Transduction</th><th>Conjugation</th></tr></thead><tbody><tr><td>Source of DNA</td><td>Free DNA in the environment</td><td>A previous host cell</td><td>A living donor cell</td></tr><tr><td>Carrier</td><td>None</td><td>Bacteriophage</td><td>Sex pilus and mating bridge</td></tr><tr><td>Cell to cell contact</td><td>Not needed</td><td>Not needed</td><td>Required</td></tr><tr><td>Destroyed by added DNase</td><td>Yes</td><td>No, DNA is inside the capsid</td><td>No, DNA stays protected between cells</td></tr><tr><td>Typical DNA moved</td><td>Chromosome fragments or plasmids</td><td>A fragment that fits in a phage head</td><td>A plasmid, sometimes chromosomal genes</td></tr></tbody></table></div>
+<figure><img src="../assets/notes/transformation-transduction-conjugation.png?v=533c4ee1aa" alt="Three columns comparing the DNA source, carrier, contact requirement and DNase sensitivity of transformation, transduction and conjugation" loading="lazy"><figcaption>Ask how the DNA travels and the mechanism follows</figcaption></figure>
+<h2 id="transformation-dna-taken-up-from-the-surroundings">Transformation: DNA taken up from the surroundings</h2>
+<p>When a bacterium dies and lyses, pieces of its DNA are released. A cell that is <strong>competent</strong>, meaning able to bind and import DNA, can take some of that DNA in. Some species become competent naturally under certain conditions; others, such as the E. coli used in labs, are made competent artificially with calcium chloride and a heat shock or with a brief electric pulse (electroporation). That artificial version is how plasmids are put into bacteria in cloning work.</p>
+<p>Imported DNA has two possible fates. A plasmid that carries its own origin of replication can be copied and kept. A chromosome fragment must be built into the recipient chromosome by homologous recombination; otherwise it is degraded and the cell gains nothing lasting.</p>
+<p>Historically, transformation is the process behind Griffith's pneumococcus experiment in 1928, in which a harmless strain became virulent after exposure to heat-killed virulent cells. In 1944 Avery, MacLeod and McCarty showed that the transforming material was DNA, because destroying the DNA, and not the protein or RNA, blocked the effect.</p>
+<h2 id="transduction-dna-carried-by-a-virus">Transduction: DNA carried by a virus</h2>
+<p>A bacteriophage normally packages its own genome. Sometimes it packages bacterial DNA instead, and when that particle infects the next cell it delivers a piece of the old host's genome. There are two forms.</p>
+<ul><li><strong>Generalized transduction.</strong> During the lytic cycle the host chromosome is broken into pieces, and occasionally a host fragment is packed into a phage head by mistake. Any gene can be moved this way, one fragment at a time.</li><li><strong>Specialized transduction.</strong> A temperate phage that has integrated at a fixed site (a prophage) sometimes cuts itself out imprecisely and takes neighboring host genes with it. Only genes next to the integration site can be moved.</li></ul>
+<p>Because the DNA is enclosed in a protein capsid, DNase added to the medium does not stop transduction. Donor and recipient never need to touch.</p>
+<h2 id="conjugation-dna-passed-from-a-donor-through-contact">Conjugation: DNA passed from a donor through contact</h2>
+<p>Conjugation is the closest thing bacteria have to mating, although no gametes form and no new cell results. A donor cell carries a fertility plasmid, the F plasmid, and is called F+. The F plasmid encodes a sex pilus that attaches to a recipient (F&minus;) cell and pulls the two together. One strand of the plasmid is nicked and threaded into the recipient while each cell builds the complementary strand. When transfer finishes, both cells are F+.</p>
+<p>Two variations show up often:</p>
+<ul><li><strong>Hfr cells.</strong> If the F plasmid integrates into the chromosome, the cell is called Hfr (high frequency of recombination). It starts transferring at the F origin and drags chromosomal genes along in a fixed order. The connection usually breaks before the whole chromosome passes, so the recipient gains donor genes but generally stays F&minus;.</li><li><strong>R plasmids.</strong> Many plasmids that carry antibiotic resistance genes can transfer themselves by conjugation, which helps resistance spread through a population, sometimes across species.</li></ul>
+<h2 id="worked-example-mapping-genes-by-interrupted-mating">Worked example: mapping genes by interrupted mating</h2>
+<p>An Hfr strain is mixed with an F&minus; strain, and samples are taken out and shaken apart at set times to break the connections. Recipients are then tested for three donor genes (the times below are illustrative).</p>
+<div class="tablewrap"><table><thead><tr><th>Gene</th><th>First minute it appears in recipients</th></tr></thead><tbody><tr><td>tonA</td><td>6</td></tr><tr><td>lac</td><td>14</td></tr><tr><td>gal</td><td>25</td></tr></tbody></table></div>
+<p>Genes enter in order of their distance from the F origin, so the order is tonA, lac, gal. The map distance between lac and gal is 25 &minus; 14 = 11 minutes, and between tonA and gal it is 25 &minus; 6 = 19 minutes. If shaking at 10 minutes, a recipient could carry tonA but not lac. This is the logic behind time-of-entry maps: distance is measured in minutes of transfer, not in base pairs.</p>
+<h2 id="how-to-tell-them-apart-in-an-experiment">How to tell them apart in an experiment</h2>
+<p>Two simple tests settle most data questions.</p>
+<ol><li><strong>Add DNase to the medium.</strong> If gene transfer stops, the DNA was naked, so the route is transformation. If it continues, the route is transduction or conjugation.</li><li><strong>Separate the strains with a filter</strong> whose pores pass fluid and phages but not whole cells (the U-tube design). If transfer stops, cell contact was needed, so the route is conjugation. If it continues and DNase has no effect, a phage is carrying the DNA: transduction.</li></ol>
+<h2 id="common-traps">Common traps</h2>
+<ul><li><strong>Calling conjugation reproduction.</strong> No new cell is produced. Binary fission is how bacteria reproduce; all three routes here only change the genes of an existing cell.</li><li><strong>Assuming the Hfr recipient becomes F+.</strong> In an F+ by F&minus; cross the recipient becomes F+. In an Hfr cross it usually does not, because the last part of the F sequence would be transferred only at the very end.</li><li><strong>Thinking DNase blocks transduction.</strong> The capsid protects the DNA. DNase only rules out transformation.</li><li><strong>Mixing up the phage forms.</strong> Generalized transduction moves any gene and comes from lytic packaging errors; specialized transduction moves only genes beside the prophage site and comes from faulty prophage excision.</li><li><strong>Forgetting recombination.</strong> A chromosome fragment brought in by transformation or transduction is only kept if it recombines into the chromosome.</li></ul>
+<h2 id="one-minute-recap">One-minute recap</h2>
+<ul><li>Transformation: naked DNA, needs a competent recipient, blocked by DNase.</li><li>Transduction: a phage delivers host DNA, resistant to DNase, no contact needed; generalized versus specialized.</li><li>Conjugation: direct transfer through a sex pilus from an F+ or Hfr donor; contact required.</li><li>All three are horizontal gene transfer and all three can spread antibiotic resistance.</li></ul>
+<p>The <a href="https://buy.polar.sh/polar_cl_IARNm19EeApd4tfhkPt63AtU0yOe6ao3t9GyQ3jBufw">2B Prokaryotes, Viruses and Microbial Genetics pack</a> adds flashcards and practice questions on bacterial genetics, plasmids and viral life cycles, or start with the <a href="/#sampler">free sampler</a>.</p>
+</div>
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Prokaryotes, Viruses and Microbial Genetics is a $13 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/2b-prokaryotes-viruses.html">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_IARNm19EeApd4tfhkPt63AtU0yOe6ao3t9GyQ3jBufw" data-checkout="polar" data-slug="2b-prokaryotes-viruses" rel="noopener">Buy now, $13</a></aside>
+<h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
+<p class="meta">Try each question first, then click it to reveal the answer.</p>
+<div class="quiz"><details class="q"><summary>1. Gene transfer between two strains continues when DNase is added but stops when a filter keeps the cells apart. Which mechanism is it?</summary><div><p>Conjugation. DNase resistance rules out transformation, and the need for contact rules out transduction, which phages can carry through the filter.</p></div></details><details class="q"><summary>2. Which form of transduction can move any gene of the host?</summary><div><p>Generalized transduction, because a lytic phage packages random host fragments by mistake; specialized transduction moves only genes beside the prophage site.</p></div></details><details class="q"><summary>3. After an F+ by F&minus; conjugation, what is the F status of the recipient?</summary><div><p>It becomes F+, since the whole F plasmid is transferred and the complementary strand is made in both cells.</p></div></details><details class="q"><summary>4. In an interrupted mating, gene X enters at 8 minutes and gene Y at 20 minutes. What is the map distance between them?</summary><div><p>12 minutes, because time-of-entry maps measure distance as minutes of transfer from the Hfr origin.</p></div></details><details class="q"><summary>5. Why must a chromosome fragment taken up by transformation undergo homologous recombination?</summary><div><p>A linear fragment usually lacks a working origin and is broken down by nucleases, so it is lost unless it is built into the recipient chromosome.</p></div></details></div>
+<h2>Keep studying</h2>
+<ul><li><a href="bacteria-vs-viruses-differences.html">Bacteria vs Viruses: Structure, Replication and Treatment</a></li><li><a href="mitosis-vs-meiosis-differences.html">Mitosis vs Meiosis: Differences, Chromosome Counts and Errors</a></li><li><a href="index.html">All free notes</a></li></ul>
+
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Prokaryotes, Viruses and Microbial Genetics is a $13 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/2b-prokaryotes-viruses.html">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_IARNm19EeApd4tfhkPt63AtU0yOe6ao3t9GyQ3jBufw" data-checkout="polar" data-slug="2b-prokaryotes-viruses" rel="noopener">Buy now, $13</a></aside>
+<p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+<p class="meta"><a class="reportlink" href="../report.html" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div>
+<p class="flabel">StudyStore</p>
+<p>Original, high-yield MCAT study packs. Written from scratch, checked card by card.</p>
+</div>
+<div>
+<p class="flabel">Shop</p>
+<p class="links"><a href="../index.html#packs">Packs</a><a href="../products/index.html">All packs</a><a href="../notes/index.html">Free notes</a></p>
+</div>
+<div>
+<p class="flabel">Policies</p>
+<p class="links"><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><a href="../refund.html">Refund policy</a><a href="../support.html">Support</a></p>
+</div>
+</div>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p><a class="reportlink" href="../report.html" data-report>Report a problem or suggest something</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+<p class="wordmark" aria-hidden="true">Study<b>Store</b></p>
+</div></footer>
+</body>
+</html>
