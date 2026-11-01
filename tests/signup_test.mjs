@@ -6,7 +6,7 @@ import { CONSENT_TEXTS, LIST_ID, BRAIN_SUBSCRIBE_URL } from "../functions/api/su
 let pass = 0, fail = 0;
 const ok = (c, n) => { if (c) pass++; else { fail++; console.log("FAIL:", n); } };
 const rd = (p) => readFileSync(new URL("../" + p, import.meta.url), "utf8");
-const HEAD = "Get the free MCAT sampler + 6 short high-yield lessons by email";
+const HEAD = "Free sample: a 3-page MCAT cheat sheet (PDF), plus 6 short high-yield lessons by email";
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 
 function check(name, h) {
@@ -21,6 +21,7 @@ function check(name, h) {
   ok(/type="email"[^>]*required|required[^>]*type="email"/.test(b), name + ": email input");
   ok(/name="website"/.test(b), name + ": honeypot");
   ok(/unsubscribe/i.test(b) && /privacy\.html/.test(b), name + ": unsubscribe and privacy note");
+  ok(/assets\/free\/studystore-mcat-sample-cheat-sheet\.pdf/.test(b), name + ": sample PDF link");
   ok(/href="[^"]*notes\/index\.html"/.test(b), name + ": sampler still reachable without signup");
   ok((h.match(/data-waitlist/g) || []).length === (h.match(/id="(su|wl)-email"/g) || []).length, name + ": one id per form");
 }
