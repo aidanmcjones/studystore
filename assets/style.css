@@ -535,7 +535,7 @@ dialog.lightbox button{position:absolute;top:8px;right:8px;width:40px;height:40p
   .icopy{position:static}
   .istage{position:relative;top:0;height:min(110vw,560px);min-height:0}
   .pmain{grid-template-columns:1fr}
-  .buybox{position:relative;top:0}
+  .buybox{position:relative;top:0;order:-1}
   .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
   .gallery .sheets{grid-column:1/-1;grid-template-columns:1fr 1fr}
 }
