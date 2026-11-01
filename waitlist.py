@@ -37,7 +37,18 @@ def _sampler_line(root):
     return ", ".join(parts[:-1]) + " and " + parts[-1]
 
 
-SIGNUP_HEADLINE = "Get the free MCAT sampler + 6 short high-yield lessons by email"
+SAMPLE_PDF = "assets/free/studystore-mcat-sample-cheat-sheet.pdf"
+SAMPLE_NAME = "3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF)"
+SIGNUP_HEADLINE = "Free sample: a 3-page MCAT cheat sheet (PDF), plus 6 short high-yield lessons by email"
+
+
+def _done(root):
+    return f"""<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p><a class="btn" href="{root}{SAMPLE_PDF}" download data-track="sample-pdf">Download your free sample: {SAMPLE_NAME}</a></p>
+<p>Meanwhile, <a href="{root}notes/index.html" data-track="sampler">start with the free notes</a>.</p>
+</div>"""
 
 
 def signup(root):
@@ -48,7 +59,7 @@ def signup(root):
 <div class="wlcopy">
 <p class="eyebrow mono"><span class="dot"></span>Free MCAT sampler</p>
 <h2 id="signup-h">{SIGNUP_HEADLINE}</h2>
-<p>Confirm your email and we send the sampler link, then short MCAT lessons. Free, no card.</p>
+<p>Enter your email and download a real page set from a paid pack: the {SAMPLE_NAME}. Confirm your email and short MCAT lessons follow. Free, no card.</p>
 <p>Prefer not to sign up? The sampler is open to everyone: <a href="{root}notes/index.html" data-track="sampler">free notes</a>, <a href="{root}practice/index.html" data-track="sampler">practice sets</a> and the <a href="{root}tools/mcat-study-schedule.html">study schedule generator</a>.</p>
 </div>
 <form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="{BRAIN_SUBSCRIBE_URL}">
@@ -57,29 +68,23 @@ def signup(root):
 <div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
 <input type="hidden" name="list_id" value="{LIST_ID}"><input type="hidden" name="consent_text" value="{consent}">
 <input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
-<button type="submit" class="btn">Send me the sampler</button>
+<button type="submit" class="btn">Get the free cheat sheet</button>
 <p class="wlnote"><span class="wlconsent">{consent}</span> Every email has an unsubscribe link. <a href="{root}privacy.html">Privacy</a></p>
 <p class="wlstatus" role="status" aria-live="polite"></p>
 </form>
-<div class="wldone" hidden tabindex="-1">
-<p class="wldone-h">Check your email</p>
-<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
-<p>Meanwhile, <a href="{root}notes/index.html" data-track="sampler">start with the free notes</a>.</p>
-</div>
+{_done(root)}
 </section>"""
 
 
 def box(root, launch=True):
     """launch=True: checkout is not open yet (product pages for packs that are not buyable)."""
-    if launch:
-        lead = ("We email you free MCAT notes, practice sets and new packs, including when checkout opens.")
-    else:
-        lead = ("We email you free MCAT notes, practice sets and new packs.")
+    lead = (f"Join the list and download a free sample from a paid pack: the {SAMPLE_NAME}. "
+            "We also email free MCAT notes and practice sets.")
     consent = html.escape(CONSENT_TEXT)
     return f"""<section class="waitlist" id="waitlist" aria-labelledby="waitlist-h">
 <div class="wlcopy">
 <p class="eyebrow mono"><span class="dot"></span>Free MCAT sampler</p>
-<h2 id="waitlist-h">Get the free MCAT sampler</h2>
+<h2 id="waitlist-h">Free sample: MCAT cheat sheet (PDF)</h2>
 <p>{lead}</p>
 <p>Free sampler, no signup needed: {_sampler_line(root)}.</p>
 </div>
@@ -89,13 +94,9 @@ def box(root, launch=True):
 <div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
 <input type="hidden" name="list_id" value="{LIST_ID}"><input type="hidden" name="consent_text" value="{consent}">
 <input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
-<button type="submit" class="btn">Join the email list</button>
+<button type="submit" class="btn">Get the free cheat sheet</button>
 <p class="wlnote"><span class="wlconsent">{consent}</span> <a href="{root}privacy.html">Privacy</a></p>
 <p class="wlstatus" role="status" aria-live="polite"></p>
 </form>
-<div class="wldone" hidden tabindex="-1">
-<p class="wldone-h">Check your email</p>
-<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
-<p>Meanwhile, <a href="{root}notes/index.html" data-track="sampler">start with the free notes</a>.</p>
-</div>
+{_done(root)}
 </section>"""
