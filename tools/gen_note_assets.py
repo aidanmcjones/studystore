@@ -1654,5 +1654,53 @@ DIAGRAMS.update({
     "how-long-to-study-for-the-mcat": st_backward,
 })
 
+def ed_stereo():
+    from itertools import product as _prod
+    fig, (a, b) = plt.subplots(1, 2, figsize=(12, 5.4), gridspec_kw={"width_ratios": [1.25, 1]})
+    a.set_xlim(0, 100); a.set_ylim(0, 100); a.axis("off")
+    qs = [(84, "Same molecular formula?"), (62, "Same connectivity?"), (40, "Every stereocenter flipped?"),
+          (18, "Is the molecule meso?")]
+    for y, q in qs:
+        _nh_box(a, 4, y - 5, 52, 10, TEAL)
+        a.text(30, y, q, color="white", fontsize=10, fontweight="bold", ha="center", va="center")
+    outs = [(84, "not isomers", GREY), (62, "constitutional isomers", GREY), (40, "diastereomers", ACC),
+            (18, "enantiomers", ACCD)]
+    for y, lab, c in outs:
+        a.annotate("", (66, y), (56.5, y), arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.4))
+        a.text(61, y + 2.2, "yes" if y == 18 else "no", fontsize=8.5, ha="center", color=MUTED)
+        _nh_box(a, 66, y - 4.5, 32, 9, c)
+        a.text(82, y, "same compound" if y == 18 else lab, color="white", fontsize=9.5, fontweight="bold",
+               ha="center", va="center")
+    for y0, y1 in [(79, 67), (57, 45), (35, 23)]:
+        a.annotate("", (30, y1), (30, y0), arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.4))
+        a.text(32, (y0 + y1) / 2, "yes" if y1 != 23 else "yes", fontsize=8.5, va="center", color=MUTED)
+    a.annotate("", (30, 3), (30, 12.5), arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.4))
+    a.text(32, 8, "no", fontsize=8.5, va="center", color=MUTED)
+    _nh_box(a, 4, -6, 52, 8.5, ACCD)
+    a.text(30, -1.8, "enantiomers", color="white", fontsize=10, fontweight="bold", ha="center", va="center")
+    a.set_ylim(-8, 100)
+    a.text(2, 97, "Classify a pair of isomers", fontsize=12.5, fontweight="bold")
+    a.text(61, 42.5 - 7.5, "", fontsize=8)
+    # right: all pairs among the four stereoisomers of a two-center molecule
+    iso = ["".join(p) for p in _prod("RS", repeat=2)]
+    b.set_xlim(-0.6, 4.45); b.set_ylim(-0.8, 4.4); b.axis("off"); b.invert_yaxis()
+    for i, s in enumerate(iso):
+        b.text(i + 0.5 + 0.3, -0.25, f"({s[0]},{s[1]})", ha="center", fontsize=10, fontweight="bold")
+        b.text(-0.05, i + 0.5, f"({s[0]},{s[1]})", ha="right", va="center", fontsize=10, fontweight="bold")
+        for j, t in enumerate(iso):
+            diff = sum(x != y for x, y in zip(s, t))
+            lab, c = [("same", GREY), ("diast.", ACC), ("enant.", ACCD)][diff]
+            b.add_patch(plt.Rectangle((j + 0.05 + 0.3, i + 0.05), 0.9, 0.9, fc=c, ec="white", alpha=0.9))
+            b.text(j + 0.5 + 0.3, i + 0.5, lab, ha="center", va="center", color="white", fontsize=9.5,
+                   fontweight="bold")
+    b.text(-0.55, 4.3, "Two stereocenters: 2² = 4 stereoisomers (no meso form)", fontsize=9.5, color=MUTED)
+    b.set_title("Pair relationships by label", fontsize=12.5, loc="left", fontweight="bold")
+    fig.tight_layout(w_pad=2)
+    save(fig, "enantiomers-vs-diastereomers")
+
+DIAGRAMS.update({
+    "enantiomers-vs-diastereomers": ed_stereo,
+})
+
 if __name__ == "__main__":
     main()
