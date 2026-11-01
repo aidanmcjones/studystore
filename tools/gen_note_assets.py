@@ -1702,5 +1702,29 @@ DIAGRAMS.update({
     "enantiomers-vs-diastereomers": ed_stereo,
 })
 
+def ak_loop():
+    fig, ax = plt.subplots(figsize=(11, 4.6))
+    ax.set_xlim(0, 100); ax.set_ylim(0, 40); ax.axis("off")
+    steps = [(2, "1. REVIEWS", "clear every due\ncard first", TEAL),
+             (27, "2. NEW CARDS", "only as many as\nreviews can absorb", ACC),
+             (52, "3. PRACTICE", "passages and\nquestions", ACCD),
+             (77, "4. TAG MISSES", "turn each miss\ninto a card or note", GREY)]
+    for x, name, sub, c in steps:
+        _nh_box(ax, x, 14, 21, 14, c)
+        ax.text(x + 10.5, 24, name, color="white", fontsize=10.5, fontweight="bold", ha="center", va="center")
+        ax.text(x + 10.5, 18.5, sub, color="white", fontsize=8.8, ha="center", va="center")
+    for x in (23.5, 48.5, 73.5):
+        ax.annotate("", (x + 3, 21), (x, 21), arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.6))
+    ax.annotate("", (12.5, 12.5), (87.5, 12.5), arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.6,
+                connectionstyle="arc3,rad=-0.25"))
+    ax.text(50, 2, "next day: yesterday's misses come back as reviews", fontsize=9.5, ha="center",
+            color=MUTED, style="italic")
+    ax.set_title("A daily Anki loop for MCAT prep", fontsize=12, loc="left", fontweight="bold")
+    save(fig, "how-to-use-anki-for-the-mcat")
+
+DIAGRAMS.update({
+    "how-to-use-anki-for-the-mcat": ak_loop,
+})
+
 if __name__ == "__main__":
     main()
