@@ -68,7 +68,7 @@ Check in the other direction: a mixture of 75 percent R and 25 percent S has ee 
 
 ## Practice this further
 
-The 5B Bonding, Molecular Structure and Stereochemistry pack adds flashcards and practice questions on chirality, isomer classification, optical activity and molecular geometry: [get the 5B pack](https://buy.polar.sh/polar_cl_AZYwUU1kDIhp9q0Qcdi4sFnboIQGT81HH8Uyc41FLIR). To see the format first, try the [free sampler](/#sampler).
+The 5B Bonding, Molecular Structure and Stereochemistry pack adds flashcards and practice questions on chirality, isomer classification, optical activity and molecular geometry: [get the 5B pack](../products/5b-molecules-bonding-stereo.html). To see the format first, try the [free sampler](/#sampler).
 
 ## One-minute recap
 

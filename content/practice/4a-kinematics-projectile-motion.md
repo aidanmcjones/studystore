@@ -13,7 +13,7 @@ Kinematics describes motion without asking what causes it. Displacement and velo
 
 A projectile, once released and with air resistance ignored, has only one acceleration: g, straight down. Split the motion into components. The horizontal velocity never changes, the vertical velocity changes by g every second, and the two parts share the same flight time. Launch angles that add to 90 degrees give the same range on level ground, but the steeper one stays up longer.
 
-Traps: velocity is zero at the top of the arc only in the vertical direction, acceleration is never zero in flight, and distance can exceed the size of the displacement. These questions use g = 10 m/s<sup>2</sup>. The [4A Motion, Forces and Energy pack](https://buy.polar.sh/polar_cl_JNk012arYDPoX8YBL5ur1qM7noCVz8Y1NNLGw22zgLo) adds flashcards and more practice on forces, energy and momentum, or try the [free sampler](/#sampler) first.
+Traps: velocity is zero at the top of the arc only in the vertical direction, acceleration is never zero in flight, and distance can exceed the size of the displacement. These questions use g = 10 m/s<sup>2</sup>. The [4A Motion, Forces and Energy pack](../products/4a-motion-forces-energy.html) adds flashcards and more practice on forces, energy and momentum, or try the [free sampler](/#sampler) first.
 
 @@QUESTIONS
 

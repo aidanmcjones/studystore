@@ -13,7 +13,7 @@ Ksp is the equilibrium constant for a sparingly soluble salt dissolving into its
 
 To predict precipitation, compute the ion product Q from the concentrations actually present after mixing. If Q is greater than Ksp, solid forms until Q falls back to Ksp; if Q is less, everything stays dissolved. Adding an ion the salt already contains (a common ion) pushes the equilibrium toward the solid and lowers solubility. Removing an ion raises solubility: acid removes basic anions such as hydroxide, and a ligand that binds the metal as a complex ion removes free metal ions.
 
-For quick precipitation calls, nitrates, group 1 and ammonium salts are soluble, while many iodides, sulfides and carbonates of heavier metals are not. The 5A Water, Solutions, Acids and Bases pack adds flashcards and more practice on solubility, Ksp, acids, bases and buffers: [get the 5A pack](https://buy.polar.sh/polar_cl_VMxLvbJv7gjlabw5cWVtRMG1dHxj4ptpPecRD0uJEYU), or try the [free sampler](/#sampler) first.
+For quick precipitation calls, nitrates, group 1 and ammonium salts are soluble, while many iodides, sulfides and carbonates of heavier metals are not. The 5A Water, Solutions, Acids and Bases pack adds flashcards and more practice on solubility, Ksp, acids, bases and buffers: [get the 5A pack](../products/5a-solutions-acids-bases.html), or try the [free sampler](/#sampler) first.
 
 Traps: dilute before computing Q when two solutions are mixed, and remember that Ksp itself changes only with temperature, not with added ions.
 
