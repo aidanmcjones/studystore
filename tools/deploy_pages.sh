@@ -14,10 +14,10 @@ rsync -a --prune-empty-dirs \
   --include '*/' --include '*.html' --include 'sitemap.xml' --include 'robots.txt' \
   --include '[0-9a-f]*[0-9a-f].txt' --include 'experiments.json' --include '/_redirects' --include '/_headers' \
   --include 'assets/**.css' --include 'assets/**.js' --include 'assets/**.png' --include 'assets/**.jpg' \
-  --include 'assets/**.webp' --include 'assets/**.svg' \
+  --include 'assets/**.webp' --include 'assets/**.svg' --include '/assets/free/*.pdf' \
   --include '/media/**.mp4' --include '/media/**.jpg' --include '/media/**.png' --include '/media/**.webp' \
   --exclude '*' ./ .deploy/
-BAD="$(find .deploy -type f \( -iname '*.apkg' -o -iname '*.zip' -o -iname '*.pdf' -o -iname '*.colpkg' \
+BAD="$(find .deploy -type f ! -path '.deploy/assets/free/*.pdf' \( -iname '*.apkg' -o -iname '*.zip' -o -iname '*.pdf' -o -iname '*.colpkg' \
   -o -name 'cards.json' -o -name 'questions.json' -o -iname '*guide*' -o -iname '*.md' -o -iname '*.py' \
   -o -iname '*full*' -o -iname '*render*' \) -print)"
 if [ -n "$BAD" ]; then echo "REFUSING TO DEPLOY, paid or source files found:" >&2; echo "$BAD" >&2; exit 3; fi
