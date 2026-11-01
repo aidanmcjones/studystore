@@ -80,7 +80,7 @@ Two simple tests settle most data questions.
 - Conjugation: direct transfer through a sex pilus from an F+ or Hfr donor; contact required.
 - All three are horizontal gene transfer and all three can spread antibiotic resistance.
 
-The [2B Prokaryotes, Viruses and Microbial Genetics pack](https://buy.polar.sh/polar_cl_IARNm19EeApd4tfhkPt63AtU0yOe6ao3t9GyQ3jBufw) adds flashcards and practice questions on bacterial genetics, plasmids and viral life cycles, or start with the [free sampler](/#sampler).
+The [2B Prokaryotes, Viruses and Microbial Genetics pack](../products/2b-prokaryotes-viruses.html) adds flashcards and practice questions on bacterial genetics, plasmids and viral life cycles, or start with the [free sampler](/#sampler).
 
 :::quiz
 Q: Gene transfer between two strains continues when DNase is added but stops when a filter keeps the cells apart. Which mechanism is it?
