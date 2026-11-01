@@ -528,8 +528,9 @@ def pack_page(site, items, p, emit, tpl):
                '<li>Unzip the download, then double-click <code>deck.apkg</code> or use File, Import.</li>'
                f'<li>Cards are tagged under <code>StudyStore::MCAT</code>. Re-importing a later version updates the same notes.</li>'
                '<li>Print the PDFs on US Letter at 100 percent, or read them on screen.</li></ol>')
-        note = "One-time purchase. Instant digital download. 14-day no-questions refund."
-        bottom = ('<section class="pbottom"><div class="wrap"><p class="eyebrow mono">Previews</p>'
+        note = ("One-time purchase. Instant digital download. 14-day no-questions refund. "
+                '<a href="#preview">See sample pages and questions first.</a>')
+        bottom = ('<section class="pbottom" id="preview"><div class="wrap"><p class="eyebrow mono">Previews</p>'
                   '<h2 class="split">Look before you buy.</h2>' + gallery_html(p) +
                   ('<div class="sechead" style="margin-top:56px"><p class="eyebrow mono">Try it &middot; sample practice questions</p>'
                    '<h2 class="split">Five questions from the pack.</h2></div>' + sample_quiz(p, 5, "<p class=\"qfinal\">Those are real questions from the pack, word for word.</p>")
