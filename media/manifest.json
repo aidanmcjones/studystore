@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 38,
-  "diagram-reels": 38,
-  "diagram-shorts": 38,
-  "diagram-snapchat": 38,
-  "diagram-threads": 38,
-  "diagram-tiktok": 38,
-  "diagram-x": 38,
-  "pins-notes": 33,
+  "diagram-facebook": 39,
+  "diagram-reels": 39,
+  "diagram-shorts": 39,
+  "diagram-snapchat": 39,
+  "diagram-threads": 39,
+  "diagram-tiktok": 39,
+  "diagram-x": 39,
+  "pins-notes": 34,
   "pins-questions": 15,
-  "qotd-facebook": 48,
-  "qotd-reels": 48,
-  "qotd-shorts": 48,
-  "qotd-snapchat": 48,
-  "qotd-threads": 48,
-  "qotd-tiktok": 48,
-  "qotd-x": 48
+  "qotd-facebook": 49,
+  "qotd-reels": 49,
+  "qotd-shorts": 49,
+  "qotd-snapchat": 49,
+  "qotd-threads": 49,
+  "qotd-tiktok": 49,
+  "qotd-x": 49
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -268,6 +268,27 @@
    "size": 1432951,
    "tag": "#psychology",
    "title": "DSM-5 Categories of Psychological Disorders for the MCAT"
+  },
+  "enantiomers-vs-diastereomers": {
+   "beats": [
+    "Compare R/S labels center by center: all flipped means enantiomers, some flipped means diastereomers, none flipped means the same compound.",
+    "Cis/trans isomers, epimers and anomers are all diastereomers.",
+    "A molecule with n stereocenters has at most 2^n stereoisomers; meso forms reduce the count.",
+    "Enantiomers match in every physical property except the sign of rotation, so they need a chiral agent to separate."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-039",
+    "diagram-reels": "diagram-reels-039",
+    "diagram-shorts": "diagram-shorts-039",
+    "diagram-snapchat": "diagram-snapchat-039",
+    "diagram-threads": "diagram-threads-039",
+    "diagram-tiktok": "diagram-tiktok-039",
+    "diagram-x": "diagram-x-039"
+   },
+   "seconds": 22.6,
+   "size": 1540756,
+   "tag": "#chemistry",
+   "title": "Enantiomers vs Diastereomers: How to Tell Them Apart"
   },
   "enzyme-classes-ec-1-to-7": {
    "beats": [
@@ -935,6 +956,16 @@
    "tag": "#psychology",
    "title": "DSM-5 Categories of Psychological Disorders for the MCAT"
   },
+  "note-enantiomers-vs-diastereomers": {
+   "desc": "Classify any pair of stereoisomers as enantiomers, diastereomers, meso or identical, and see why only diastereomers separate by ordinary methods.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-034"
+   },
+   "size": 123635,
+   "slug": "enantiomers-vs-diastereomers",
+   "tag": "#chemistry",
+   "title": "Enantiomers vs Diastereomers: How to Tell Them Apart"
+  },
   "note-enzyme-classes-ec-1-to-7": {
    "desc": "Learn the seven EC enzyme classes, what reaction each catalyzes, the naming clues that give them away, and the exceptions that fool test takers.",
    "outbox_ids": {
@@ -1482,6 +1513,25 @@
    "size": 665963,
    "tag": "#biochemistry",
    "topic": "Fed, fasting and starvation states"
+  },
+  "2a-cells-membranes-1": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-049",
+    "qotd-reels": "qotd-reels-049",
+    "qotd-shorts": "qotd-shorts-049",
+    "qotd-snapchat": "qotd-snapchat-049",
+    "qotd-threads": "qotd-threads-049",
+    "qotd-tiktok": "qotd-tiktok-049",
+    "qotd-x": "qotd-x-049"
+   },
+   "pack_slug": "2a-cells-membranes",
+   "practice": "practice/2a-membrane-transport-osmosis-tonicity.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": false,
+   "size": 615455,
+   "tag": "#biology",
+   "topic": "Osmosis and tonicity"
   },
   "2b-prokaryotes-viruses-0": {
    "outbox_ids": {
