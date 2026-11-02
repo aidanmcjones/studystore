@@ -73,7 +73,7 @@ A student fails her first chemistry exam. Here is how each approach would explai
 - Big Five: openness, conscientiousness, extraversion, agreeableness, neuroticism.
 - Bandura: reciprocal determinism and self-efficacy. Rotter: locus of control.
 
-The [7A Individual Behavior pack](https://buy.polar.sh/polar_cl_vY1DYJ5WzRkGLeBzebDSYuXnVSP0S4vWtE8992drEn2) adds flashcards and practice questions on personality, motivation, and the biological bases of behavior. You can also try the [free sampler](/#sampler) first.
+The [7A Individual Behavior pack](../products/7a-individual-behavior.html) adds flashcards and practice questions on personality, motivation, and the biological bases of behavior. You can also try the [free sampler](/#sampler) first.
 
 :::quiz
 Q: A man who resents his boss comes home and yells at his dog. Which defense mechanism is this?
