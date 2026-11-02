@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 39,
-  "diagram-reels": 39,
-  "diagram-shorts": 39,
-  "diagram-snapchat": 39,
-  "diagram-threads": 39,
-  "diagram-tiktok": 39,
-  "diagram-x": 39,
-  "pins-notes": 34,
+  "diagram-facebook": 40,
+  "diagram-reels": 40,
+  "diagram-shorts": 40,
+  "diagram-snapchat": 40,
+  "diagram-threads": 40,
+  "diagram-tiktok": 40,
+  "diagram-x": 40,
+  "pins-notes": 35,
   "pins-questions": 15,
-  "qotd-facebook": 49,
-  "qotd-reels": 49,
-  "qotd-shorts": 49,
-  "qotd-snapchat": 49,
-  "qotd-threads": 49,
-  "qotd-tiktok": 49,
-  "qotd-x": 49
+  "qotd-facebook": 50,
+  "qotd-reels": 50,
+  "qotd-shorts": 50,
+  "qotd-snapchat": 50,
+  "qotd-threads": 50,
+  "qotd-tiktok": 50,
+  "qotd-x": 50
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -541,6 +541,27 @@
    "size": 1356809,
    "tag": "#chemistry",
    "title": "How to Read IR and NMR Spectra for the MCAT"
+  },
+  "how-to-use-anki-for-the-mcat": {
+   "beats": [
+    "Anki uses spaced repetition: cards you know come back less often, misses come back soon.",
+    "Daily order: reviews, then new cards, then practice, then tag misses.",
+    "New cards set your future workload; cut them when reviews pile up.",
+    "One fact per card, cloze for lists, your own words, honest grading."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-040",
+    "diagram-reels": "diagram-reels-040",
+    "diagram-shorts": "diagram-shorts-040",
+    "diagram-snapchat": "diagram-snapchat-040",
+    "diagram-threads": "diagram-threads-040",
+    "diagram-tiktok": "diagram-tiktok-040",
+    "diagram-x": "diagram-x-040"
+   },
+   "seconds": 22.6,
+   "size": 1131010,
+   "tag": "#mcatstudy",
+   "title": "How to Use Anki for the MCAT: A Daily Routine That Holds Up"
   },
   "kinematics-equations-how-to-choose": {
    "beats": [
@@ -1095,6 +1116,16 @@
    "slug": "how-to-read-ir-and-nmr-spectra",
    "tag": "#chemistry",
    "title": "How to Read IR and NMR Spectra for the MCAT"
+  },
+  "note-how-to-use-anki-for-the-mcat": {
+   "desc": "How to use Anki for the MCAT: what to put on cards, how many new cards to add, and how to pair flashcards with practice passages.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-035"
+   },
+   "size": 116944,
+   "slug": "how-to-use-anki-for-the-mcat",
+   "tag": "#mcatstudy",
+   "title": "How to Use Anki for the MCAT: A Daily Routine That Holds Up"
   },
   "note-kinematics-equations-how-to-choose": {
    "desc": "The four constant-acceleration kinematics equations, how to pick one by the variable you lack, and worked braking, free fall and projectile examples.",
@@ -1817,6 +1848,25 @@
    "size": 554919,
    "tag": "#physics",
    "topic": "Half-life and decay kinetics"
+  },
+  "4e-atoms-nuclear-periodic-3": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-050",
+    "qotd-reels": "qotd-reels-050",
+    "qotd-shorts": "qotd-shorts-050",
+    "qotd-snapchat": "qotd-snapchat-050",
+    "qotd-threads": "qotd-threads-050",
+    "qotd-tiktok": "qotd-tiktok-050",
+    "qotd-x": "qotd-x-050"
+   },
+   "pack_slug": "4e-atoms-nuclear-periodic",
+   "practice": "practice/4e-periodic-trends-electron-configuration.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 479037,
+   "tag": "#physics",
+   "topic": "Periodic trends: radius, ionization energy, electron affinity, electronegativity"
   },
   "5a-solutions-acids-bases-2": {
    "outbox_ids": {
