@@ -1726,5 +1726,32 @@ DIAGRAMS.update({
     "how-to-use-anki-for-the-mcat": ak_loop,
 })
 
+def pt_compare():
+    PURP = "#6b3f7a"
+    rows = [("Psychoanalytic", "unconscious conflict", "Freud, Jung, Adler, Horney", ACC),
+            ("Humanistic", "drive toward growth", "Maslow, Rogers", TEAL),
+            ("Trait", "stable dispositions", "Allport, Eysenck, Big Five", PURP),
+            ("Behaviorist", "reinforcement history", "Skinner", GREY),
+            ("Social cognitive", "person x behavior x setting", "Bandura, Rotter, Mischel", ACCD),
+            ("Biological", "genes, temperament, arousal", "twin and adoption studies", INK)]
+    fig, ax = plt.subplots(figsize=(11, 6.2))
+    ax.set_xlim(0, 100); ax.set_ylim(0, 62); ax.axis("off")
+    ax.text(1, 60, "Personality theories: where does personality come from?", fontsize=13,
+            fontweight="bold", va="center")
+    ax.text(25.5, 54, "main cause", fontsize=10, color=MUTED, ha="center", style="italic")
+    ax.text(70, 54, "key names", fontsize=10, color=MUTED, ha="center", style="italic")
+    for i, (name, cause, who, c) in enumerate(rows):
+        y = 47 - i * 8.6
+        _nh_box(ax, 1, y - 3.2, 17, 6.4, c)
+        ax.text(9.5, y, name, color="white", fontsize=10.2, fontweight="bold", ha="center", va="center")
+        ax.annotate("", (21.5, y), (18.6, y), arrowprops=dict(arrowstyle="-|>", color=INK, lw=1.4))
+        ax.text(22.5, y, cause, fontsize=10.5, va="center")
+        ax.text(55, y, who, fontsize=10, va="center", color=MUTED)
+    save(fig, "personality-theories-compared")
+
+DIAGRAMS.update({
+    "personality-theories-compared": pt_compare,
+})
+
 if __name__ == "__main__":
     main()
