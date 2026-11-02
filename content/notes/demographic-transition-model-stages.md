@@ -1,6 +1,8 @@
 ---
 title: Demographic Transition Model: The 5 Stages Explained for the MCAT
 description: What happens to birth rates, death rates and population growth in each stage of the demographic transition model, with growth-rate and doubling-time math.
+seo_title: Demographic Transition Model: 5 Stages and Population Pyramids
+seo_description: Free MCAT notes on the 5 stages of the demographic transition model: birth and death rates, growth and the population pyramid shape of each stage.
 product: 9b-demographics
 published: 2026-10-20
 ---
@@ -31,6 +33,7 @@ These rates are "crude" because they do not adjust for age structure. A country 
 - **Birth rate:** high. Children contribute farm and household labor, many die young, and contraception is limited.
 - **Death rate:** high and fluctuating. Famine, epidemics and poor sanitation keep mortality up, with spikes in bad years.
 - **Growth:** slow and unsteady, because births and deaths roughly cancel.
+- **Population pyramid:** a wide base with steeply sloping sides, close to a true triangle. Many children are born, but death rates are high at every age, so few people reach old age.
 - **Today:** no country is in Stage 1; it describes pre-industrial societies.
 
 ### Stage 2: early expanding
@@ -71,6 +74,18 @@ These rates are "crude" because they do not adjust for age structure. A country 
 | 3 Late expanding | Falling | Falling slowly | Slowing | Base narrowing |
 | 4 Low stationary | Low | Low | Near zero | Column |
 | 5 Declining | Very low | Low or rising | Negative | Constrictive |
+
+## Population pyramid for each stage
+
+A population pyramid plots the share of people in each age group, males on one side and females on the other. Its shape follows from the birth and death rates in each stage:
+
+- **Stage 1:** triangle with a wide base and steep sides. High births fill the base; high deaths at every age thin each older group.
+- **Stage 2:** expansive. The base is still wide, and because more children survive, the lower bars widen and the population is young.
+- **Stage 3:** the base narrows as births fall, while the middle bars fill in with the large cohorts born in Stage 2.
+- **Stage 4:** column or beehive. Bars are similar in width until old age, because births are low and steady and most people survive to old age.
+- **Stage 5:** constrictive. The base is narrower than the middle, and the top is wide, because births are below replacement and the population is aging.
+
+If a question shows a pyramid, read the base first: a wide base means high births (Stages 1 and 2), a narrowing base means falling births (Stage 3), and a base narrower than the middle means births below replacement (Stage 5).
 
 A memory aid of our own: **deaths drop, then births follow.** Stage 2 is the "deaths drop" stage and Stage 3 is the "births follow" stage. If a question asks which rate changes first, the answer is the death rate.
 
