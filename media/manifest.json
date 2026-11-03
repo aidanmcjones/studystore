@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 40,
-  "diagram-reels": 40,
-  "diagram-shorts": 40,
-  "diagram-snapchat": 40,
-  "diagram-threads": 40,
-  "diagram-tiktok": 40,
-  "diagram-x": 40,
-  "pins-notes": 35,
+  "diagram-facebook": 41,
+  "diagram-reels": 41,
+  "diagram-shorts": 41,
+  "diagram-snapchat": 41,
+  "diagram-threads": 41,
+  "diagram-tiktok": 41,
+  "diagram-x": 41,
+  "pins-notes": 36,
   "pins-questions": 15,
-  "qotd-facebook": 50,
-  "qotd-reels": 50,
-  "qotd-shorts": 50,
-  "qotd-snapchat": 50,
-  "qotd-threads": 50,
-  "qotd-tiktok": 50,
-  "qotd-x": 50
+  "qotd-facebook": 51,
+  "qotd-reels": 51,
+  "qotd-shorts": 51,
+  "qotd-snapchat": 51,
+  "qotd-threads": 51,
+  "qotd-tiktok": 51,
+  "qotd-x": 51
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -142,6 +142,27 @@
    "size": 1393159,
    "tag": "#physics",
    "title": "Bernoulli's Equation and the Venturi Effect for the MCAT"
+  },
+  "bottom-up-vs-top-down-processing": {
+   "beats": [
+    "Bottom-up: stimulus first, data driven, built from features, best for new or clear input.",
+    "Top-down: knowledge first, concept driven, guided by schemas, context, perceptual set and goals.",
+    "Ambiguous or degraded input pushes perception toward top-down filling in.",
+    "Feature detectors and parallel processing go with bottom-up; expectation and the word superiority effect go with top-down."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-041",
+    "diagram-reels": "diagram-reels-041",
+    "diagram-shorts": "diagram-shorts-041",
+    "diagram-snapchat": "diagram-snapchat-041",
+    "diagram-threads": "diagram-threads-041",
+    "diagram-tiktok": "diagram-tiktok-041",
+    "diagram-x": "diagram-x-041"
+   },
+   "seconds": 22.6,
+   "size": 1422289,
+   "tag": "#psychology",
+   "title": "Bottom-Up vs Top-Down Processing: Differences and Examples"
   },
   "citric-acid-cycle-steps-products-atp": {
    "beats": [
@@ -916,6 +937,16 @@
    "slug": "bernoulli-equation-continuity-venturi",
    "tag": "#physics",
    "title": "Bernoulli's Equation and the Venturi Effect for the MCAT"
+  },
+  "note-bottom-up-vs-top-down-processing": {
+   "desc": "Learn how bottom-up and top-down processing differ, how they combine in perception, and how to label MCAT-style scenarios without falling for common traps.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-036"
+   },
+   "size": 130386,
+   "slug": "bottom-up-vs-top-down-processing",
+   "tag": "#psychology",
+   "title": "Bottom-Up vs Top-Down Processing: Differences and Examples"
   },
   "note-citric-acid-cycle-steps-products-atp": {
    "desc": "Walk the eight citric acid cycle steps, the products of each turn, the three regulated enzymes, and how to count ATP from acetyl-CoA to glucose.",
@@ -2285,6 +2316,25 @@
    "size": 541113,
    "tag": "#psychology",
    "topic": "Attraction factors"
+  },
+  "9a-social-structure-1": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-051",
+    "qotd-reels": "qotd-reels-051",
+    "qotd-shorts": "qotd-shorts-051",
+    "qotd-snapchat": "qotd-snapchat-051",
+    "qotd-threads": "qotd-threads-051",
+    "qotd-tiktok": "qotd-tiktok-051",
+    "qotd-x": "qotd-x-051"
+   },
+   "pack_slug": "9a-social-structure",
+   "practice": "practice/9a-sociological-theories-functionalism-conflict-interactionism.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 639671,
+   "tag": "#sociology",
+   "topic": "Symbolic interactionism"
   },
   "9a-social-structure-3": {
    "outbox_ids": {
