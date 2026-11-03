@@ -656,3 +656,6 @@ html:not(.js) .qitem.qx{display:none}
 .launchbar[hidden]{display:none}
 .launchbar p{margin:0}
 .launchbar button{background:none;border:0;color:inherit;font-size:1.3rem;line-height:1;cursor:pointer;padding:0 6px}
+.cta-top{margin:1.2em 0;padding:16px 20px}
+.cta-top strong{font-size:1.05rem}
+.cta-top p{margin:.2em 0 0;font-size:.95rem}

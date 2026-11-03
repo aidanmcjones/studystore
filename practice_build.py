@@ -153,6 +153,9 @@ def _crumbs_ld(base, *pairs):
         for i, (n, u) in enumerate([("StudyStore", base + "/")] + list(pairs), 1)]}
     return f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False)}</script>\n'
 
+CTA_ARM_PAGES = set()  # set by build.py
+
+
 def build_all(emit, root, pages, cats, notes_by_slug, base_url):
     tpl = (Path(root) / "templates" / "practice.html").read_text()
     hub_tpl = (Path(root) / "templates" / "practice_hub.html").read_text()
@@ -188,7 +191,7 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
             cat_slug=p["cat"]["slug"], cat_code=m["aamc"], cat_title=html.escape(p["cat"]["title"]),
             title=html.escape(m["title"]), published=m["published"], nq=str(len(p["qs"])),
             mins=str(max(5, round(len(p["qs"]) * 1.5))), description=html.escape(m["description"]),
-            primer=convert(_esc(p["primer_md"])), notelinks=notelinks,
+            primer=convert(_esc(p["primer_md"])), notelinks=notelinks, cta_top=("{{topbuy:%s}}" % m["product"]) if m["product"] != "none" and "practice/" + p["slug"] in CTA_ARM_PAGES else "",
             questions="".join(_q_html(i, q) for i, q in enumerate(p["qs"], 1)), cta=cta, more=more))
         emit(f"practice/{p['slug']}.html", f'{m["title"]} | StudyStore', m["description"], body,
              noindex=p["noindex"], og_type="article", head_extra=STYLE + _jsonld(p, base_url, notes_by_slug),
