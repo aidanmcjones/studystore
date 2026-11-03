@@ -64,17 +64,43 @@ def buy(slug, cls="btn", root=""):
 # Arm studystore-checkout-cta-a: the CTA shows only on the top pages by analytics_pageviews (2026-11-03).
 CTA_ARM_PAGES = {"notes/enantiomers-vs-diastereomers", "practice/8c-status-roles-groups-bureaucracy-dramaturgy",
                  "practice/5d-carbohydrates-sugar-chemistry-lipids"}
+# Pages added 2026-11-03 for the outbox day-queue and social sessions; their Polar link carries utm_source=social-cta.
+SOCIAL_CTA_PAGES = [
+   "notes/bottom-up-vs-top-down-processing",
+   "notes/how-to-use-anki-for-the-mcat",
+   "practice/1a-michaelis-menten-kinetics-lineweaver-burk",
+   "practice/1b-translation-genetic-code-protein-targeting",
+   "practice/1c-mendelian-genetics-pedigrees-linkage",
+   "practice/2a-membrane-transport-osmosis-tonicity",
+   "practice/2a-nernst-equation-resting-membrane-potential",
+   "practice/2a-organelles-protein-sorting-cytoskeleton",
+   "practice/3a-endocrine-hormones-feedback-axes",
+   "practice/3b-immune-system-innate-adaptive-hypersensitivity",
+   "practice/3b-kidney-nephron-filtration-acid-base",
+   "practice/4a-work-energy-power-conservation",
+   "practice/4b-ideal-gas-law-dalton-graham-henry",
+   "practice/4e-nuclear-decay-half-life-binding-energy",
+   "practice/4e-periodic-trends-electron-configuration",
+   "practice/6b-sleep-stages-circadian-rhythms-dreaming",
+   "practice/6c-theories-of-emotion-limbic-system-arousal",
+   "practice/9a-sociological-theories-functionalism-conflict-interactionism"
+  ]
+CTA_ARM_PAGES |= set(SOCIAL_CTA_PAGES)
 practice_build.CTA_ARM_PAGES = CTA_ARM_PAGES
+practice_build.SOCIAL_CTA_PAGES = set(SOCIAL_CTA_PAGES)
 
 def topbuy(slug):
-    """Compact above-the-fold checkout CTA: visible price and a Polar link tagged utm_source=site-cta."""
+    """Compact above-the-fold checkout CTA: visible price and a Polar link tagged utm_source=site-cta (or social-cta via "slug:social-cta")."""
+    src = "site-cta"
+    if ":" in slug:
+        slug, src = slug.split(":", 1)
     if slug == "feat":
         slug = PB.featured(site)["slug"]
     p = products[slug]
     if not PB.buyable(p):
         return ""
     btn = PB.buy(products, slug, "btn small")
-    btn = re.sub(r'href="([^"]+)"', lambda m: 'href="%s%sutm_source=site-cta"' % (m.group(1), "&amp;" if "?" in m.group(1) else "?"), btn, count=1)
+    btn = re.sub(r'href="([^"]+)"', lambda m: 'href="%s%sutm_source=%s"' % (m.group(1), "&amp;" if "?" in m.group(1) else "?", src), btn, count=1)
     return (f'<aside class="cta cta-top"><div><strong>{html.escape(p["title"])}</strong>'
             f'<p>{html.escape(p["price"])} pack with original Anki cards, a study guide and a printable cheat sheet.</p></div>{btn}</aside>')
 
@@ -247,7 +273,7 @@ def build_note(n, all_notes):
 <p class="eyebrow">Free MCAT study note</p>
 <h1>{html.escape(m["title"])}</h1>
 <p class="meta">By StudyStore &middot; Published {m["published"]} &middot; {mins} min read &middot; {n["words"]} words</p>
-{("{{topbuy:%s}}" % m["product"]) if out[:-5] in CTA_ARM_PAGES else ""}
+{("{{topbuy:%s%s}}" % (m["product"], ":social-cta" if out[:-5] in SOCIAL_CTA_PAGES else "")) if out[:-5] in CTA_ARM_PAGES else ""}
 {{{{signup}}}}
 <div class="prose">
 {body_html}
