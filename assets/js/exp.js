@@ -123,7 +123,7 @@
   function tagPolar(u, seen) {
     var ref = Object.keys(seen).sort().map(function (k) { return k + "." + seen[k]; }).join("~");
     if (ref) u.searchParams.set("reference_id", ("ss~" + ref).slice(0, 100)); else u.searchParams.delete("reference_id");
-    if (utmSource) u.searchParams.set("utm_source", utmSource);
+    if (utmSource && !u.searchParams.get("utm_source")) u.searchParams.set("utm_source", utmSource); // keep a link's own tag (site-cta)
     if (utmCampaign) u.searchParams.set("utm_campaign", utmCampaign);
     Object.keys(utmExtra).forEach(function (k) { if (utmExtra[k]) u.searchParams.set(k, utmExtra[k]); });
   }
