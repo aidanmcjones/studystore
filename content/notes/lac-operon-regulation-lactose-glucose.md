@@ -1,8 +1,8 @@
 ---
 title: The Lac Operon Explained: Lactose, Glucose, cAMP and CAP
 description: How the lac repressor and CAP-cAMP combine to set lac operon output, a four-condition table, mutant and partial diploid logic, and the traps that cost points.
-seo_title: Lac Operon Explained for the MCAT | Free Notes
-seo_description: Free MCAT lac operon notes: how the repressor and CAP-cAMP control expression, a four-condition table, mutants and a 5-question quiz.
+seo_title: Lac Operon: What CAP and cAMP Do (and Is cAMP the Inducer?)
+seo_description: What CAP and cAMP do in the lac operon, why cAMP is an activator signal and not the inducer, a four-condition table, partial diploids and a quiz.
 product: 1b-dna-gene-expression
 published: 2026-10-20
 related: glycolysis-steps-enzymes-net-atp, anomers-vs-epimers-carbohydrates, passive-vs-active-transport
@@ -111,6 +111,7 @@ A useful way to remember it: a pathway that **uses up** a molecule is switched o
 - **Lactose present does not mean high expression.** If glucose is also present, cAMP is low and output stays low.
 - **Low glucose alone does nothing.** Without inducer, the repressor still blocks the operator.
 - **The inducer is allolactose,** not lactose itself, in the standard model.
+- **cAMP is not the inducer.** cAMP binds CAP, an activator, and signals low glucose. The inducer, allolactose, binds the repressor. Adding cAMP without lactose leaves the operon off.
 - **The repressor binds the operator, not the promoter,** and CAP binds the CAP site, not the operator.
 - **lacI is not part of the polycistronic lac mRNA.** It has its own promoter and is always on.
 - **Operons are a bacterial feature.** Eukaryotic genes are usually transcribed one per mRNA and controlled by enhancers, transcription factors, and chromatin.
