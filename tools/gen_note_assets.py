@@ -1753,5 +1753,29 @@ DIAGRAMS.update({
     "personality-theories-compared": pt_compare,
 })
 
+def bu_td():
+    fig, ax = plt.subplots(figsize=(10, 5.6))
+    ax.set_xlim(0, 100); ax.set_ylim(0, 60); ax.axis("off")
+    _nh_box(ax, 32, 46, 36, 10, INK)
+    ax.text(50, 51, "PERCEPT\n(what you experience)", color="white", ha="center", va="center", fontsize=10.5, fontweight="bold")
+    _nh_box(ax, 32, 4, 36, 10, CARD, LINE, lw=2)
+    ax.text(50, 9, "SENSORY INPUT\n(light, sound, pressure)", ha="center", va="center", fontsize=10)
+    _nh_box(ax, 2, 18, 30, 24, "#fbe3d3", ACC)
+    ax.text(17, 38, "BOTTOM-UP", ha="center", fontsize=11, fontweight="bold", color=ACCD)
+    ax.text(17, 28, "data driven\nfeature detectors\nedges, pitch, motion\nbuilt from the parts", ha="center", va="center", fontsize=9.5)
+    _nh_box(ax, 68, 18, 30, 24, "#d6ecee", TEAL)
+    ax.text(83, 38, "TOP-DOWN", ha="center", fontsize=11, fontweight="bold", color=TEAL)
+    ax.text(83, 28, "concept driven\nexpectations, context\nmemory, goals\nshapes the parts", ha="center", va="center", fontsize=9.5)
+    ax.annotate("", (40, 46), (40, 14), arrowprops=dict(arrowstyle="-|>", color=ACC, lw=3))
+    ax.annotate("", (60, 14), (60, 46), arrowprops=dict(arrowstyle="-|>", color=TEAL, lw=3))
+    ax.text(38.5, 30, "signal rises", rotation=90, ha="center", va="center", fontsize=9, color=ACCD)
+    ax.text(61.8, 30, "knowledge guides", rotation=90, ha="center", va="center", fontsize=9, color=TEAL)
+    ax.set_title("Perception combines both directions at once", fontsize=12.5, loc="left", fontweight="bold")
+    save(fig, "bottom-up-vs-top-down-processing")
+
+DIAGRAMS.update({
+    "bottom-up-vs-top-down-processing": bu_td,
+})
+
 if __name__ == "__main__":
     main()
