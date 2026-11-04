@@ -4,8 +4,8 @@ description: Tell epimers, anomers, enantiomers and other sugar isomers apart us
 product: 5d-biological-molecules-orgo
 published: 2026-10-20
 related: glycolysis-steps-enzymes-net-atp, lac-operon-regulation-lactose-glucose, amino-acid-pka-charge-ph-7-4
-seo_title: Anomers vs Epimers in Carbohydrates: How to Tell Apart
-seo_description: Anomers vs epimers and other sugar isomers, using Fischer and Haworth drawings, with a sorting drill and a 5-question quiz.
+seo_title: Anomers vs Epimers: Carbohydrate Isomers (MCAT)
+seo_description: Anomers vs epimers vs enantiomers: tell sugar isomers apart on Fischer and Haworth drawings, with a pair-sorting drill and a mutarotation calculation.
 ---
 
 **Epimers** are sugars that differ in configuration at exactly one stereocenter, any one. **Anomers** are a special kind of epimer that differ only at the **anomeric carbon**, the new stereocenter created when a sugar closes into a ring (C1 for aldoses such as glucose, C2 for ketoses such as fructose). So every pair of anomers is a pair of epimers, but most epimers are not anomers. D-glucose and D-galactose are epimers at C4; alpha-D-glucose and beta-D-glucose are anomers.

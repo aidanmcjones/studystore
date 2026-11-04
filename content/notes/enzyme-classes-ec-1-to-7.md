@@ -5,7 +5,7 @@ product: 1a-amino-acids-proteins
 published: 2026-10-20
 related: enzyme-inhibition-types-compared, michaelis-menten-and-lineweaver-burk, protein-structure-levels-and-denaturation
 seo_title: 7 Enzyme Classes (EC 1-7): Reactions and Examples
-seo_description: The 7 EC enzyme classes: the reaction each one catalyzes, naming clues and examples, with a 5-question MCAT-style quiz.
+seo_description: The 7 enzyme classes (EC 1 to 7): what reaction each catalyzes, the naming clues that give them away, and the exceptions that fool test takers.
 ---
 
 Enzymes are named by what they do, and the Enzyme Commission (EC) system sorts every enzyme into a numbered class by the type of reaction it catalyzes. The MCAT does not ask you to memorize EC numbers, but it does ask you to look at a reaction, or at a name, and say which class it belongs to. The skill is recognizing the reaction pattern.

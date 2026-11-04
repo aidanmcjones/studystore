@@ -638,6 +638,9 @@ def build_all(site, items, emit):
          f'<p class="lead reveal">One pack per MCAT content category. {len(available(site))} of {len(site.get("products", []))} are ready now; '
          'each one ships only after it passes an accuracy review.</p></div>'
          '<section class="packs"><div class="wrap">{{pack_grid}}</div></section>'
+         '<section><div class="wrap narrow"><h2>Try it free before you buy</h2><p>Every pack pairs with free MCAT notes and practice questions. '
+         '<a href="../notes/">Browse the free MCAT notes</a>, <a href="../practice/">work the practice question sets</a>, '
+         '<a href="../tools/">use the MCAT tools</a>, or <a href="../compare/mcat-anki-decks-anking-miledown-pankow">compare MCAT Anki decks</a>.</p></div></section>'
          '<section><div class="wrap narrow">{{waitlist}}</div></section>')
     emit("thanks.html", "Thank you | StudyStore", "Your StudyStore download.",
          (ROOT / "templates" / "thanks.html").read_text(), noindex=True)

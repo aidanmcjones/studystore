@@ -4,6 +4,8 @@ description: How to tell functionalism, conflict theory and symbolic interaction
 product: 9a-social-structure
 published: 2026-10-20
 related: types-of-social-mobility-and-stratification, demographic-transition-model-stages, fundamental-attribution-error-vs-actor-observer-bias
+seo_title: Functionalism vs Conflict Theory vs Symbolic Interactionism
+seo_description: Functionalism vs conflict theory vs symbolic interactionism: tell them apart by level of analysis and core question, with one scenario.
 ---
 
 **Functionalism** asks how each part of society helps the whole stay stable. **Conflict theory** asks who gains and who loses when groups compete for scarce resources such as money, power and prestige. **Symbolic interactionism** asks how people create and act on shared meanings in everyday, face-to-face encounters. The fastest way to sort them is the **level of analysis**: functionalism and conflict theory look at whole societies and institutions (macro), while symbolic interactionism looks at individuals and small interactions (micro).

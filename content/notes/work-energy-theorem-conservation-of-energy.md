@@ -4,6 +4,8 @@ description: Learn when to use W = Fd cos θ, the work-energy theorem, and conse
 product: 4a-motion-forces-energy
 published: 2026-10-20
 related: bernoulli-equation-continuity-venturi
+seo_title: Work-Energy Theorem and Conservation of Energy
+seo_description: Work-energy theorem and conservation of energy: when to use W = Fd cos θ, with worked examples on friction, springs and power.
 ---
 
 The work-energy theorem states that the total work all forces do on an object equals how much its kinetic energy changes: W<sub>net</sub> = &Delta;KE. Conservation of mechanical energy is a special case that applies when only conservative forces such as gravity and ideal springs do work, so KE + PE stays constant. When friction or another nonconservative force acts, mechanical energy is not conserved, and the missing amount equals the work that force did. Pick the tool by asking which forces do work and whether you know them.
