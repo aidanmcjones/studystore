@@ -56,7 +56,7 @@ for (const f of allPages(".")) {
   ok(links.length === raw, `${f}: every Polar link is a well-formed Buy link`);
   for (const [, href, slug, price] of links) {
     const p = bySlug[slug];
-    ok(p && href === p.checkout_url && price === p.price, `${f}: Buy link for ${slug} -> its own checkout and price`);
+    ok(p && href.replace(/\?utm_source=(site|social)-cta$/, "") === p.checkout_url && price === p.price, `${f}: Buy link for ${slug} -> its own checkout and price`);
   }
   if (links.length) {
     pagesWithBuy++;

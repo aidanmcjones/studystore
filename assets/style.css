@@ -659,3 +659,7 @@ html:not(.js) .qitem.qx{display:none}
 .cta-top{margin:1.2em 0;padding:16px 20px}
 .cta-top strong{font-size:1.05rem}
 .cta-top p{margin:.2em 0 0;font-size:.95rem}
+.waitlist-cta{margin:0 0 1.2em;padding:14px 20px;display:block}
+.waitlist-cta .wlform{display:block}
+.waitlist-cta .wlform label{display:block;margin-bottom:6px}
+.waitlist-cta .wlnote{font-size:.85rem}
