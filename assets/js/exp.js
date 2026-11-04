@@ -152,6 +152,7 @@
     if (isCheckout(a) || (a.hasAttribute("data-buy") && !a.classList.contains("off"))) kind = "checkout_click";
     else if (t === "sampler") kind = "sampler_click";
     else if (t === "cta" || a.closest("aside.cta") || a.closest(".product .row")) kind = "cta_click";
+    if (kind === "checkout_click" && t === "cta") send("cta_click", W.__ssSeen || {}); // above-the-fold buy button: CTA click plus checkout start
     if (kind) send(kind, W.__ssSeen || {});
   }, true);
 
