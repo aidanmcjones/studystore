@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 41,
-  "diagram-reels": 41,
-  "diagram-shorts": 41,
-  "diagram-snapchat": 41,
-  "diagram-threads": 41,
-  "diagram-tiktok": 41,
-  "diagram-x": 41,
-  "pins-notes": 36,
+  "diagram-facebook": 42,
+  "diagram-reels": 42,
+  "diagram-shorts": 42,
+  "diagram-snapchat": 42,
+  "diagram-threads": 42,
+  "diagram-tiktok": 42,
+  "diagram-x": 42,
+  "pins-notes": 37,
   "pins-questions": 15,
-  "qotd-facebook": 51,
-  "qotd-reels": 51,
-  "qotd-shorts": 51,
-  "qotd-snapchat": 51,
-  "qotd-threads": 51,
-  "qotd-tiktok": 51,
-  "qotd-x": 51
+  "qotd-facebook": 52,
+  "qotd-reels": 52,
+  "qotd-shorts": 52,
+  "qotd-snapchat": 52,
+  "qotd-threads": 52,
+  "qotd-tiktok": 52,
+  "qotd-x": 52
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -731,6 +731,27 @@
    "tag": "#biology",
    "title": "Passive vs Active Transport: Types, Examples and Energy Math"
   },
+  "personality-theories-compared": {
+   "beats": [
+    "Find the cause the passage stresses: unconscious conflict, growth, stable traits, reinforcement, person by situation loops, or biology.",
+    "Freud: id, ego, superego and defenses. Neo-Freudians: Jung, Adler, Horney, Erikson.",
+    "Maslow and Rogers: self-actualization, congruence, unconditional positive regard.",
+    "Big Five: openness, conscientiousness, extraversion, agreeableness, neuroticism."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-042",
+    "diagram-reels": "diagram-reels-042",
+    "diagram-shorts": "diagram-shorts-042",
+    "diagram-snapchat": "diagram-snapchat-042",
+    "diagram-threads": "diagram-threads-042",
+    "diagram-tiktok": "diagram-tiktok-042",
+    "diagram-x": "diagram-x-042"
+   },
+   "seconds": 22.6,
+   "size": 1441338,
+   "tag": "#psychology",
+   "title": "Personality Theories for the MCAT, Compared Side by Side"
+  },
   "piaget-stages-of-cognitive-development": {
    "beats": [
     "Schemas grow by assimilation (fit new info in) and accommodation (change the schema), driven by equilibration.",
@@ -1227,6 +1248,16 @@
    "slug": "passive-vs-active-transport",
    "tag": "#biology",
    "title": "Passive vs Active Transport: Types, Examples and Energy Math"
+  },
+  "note-personality-theories-compared": {
+   "desc": "How the psychoanalytic, humanistic, trait, behaviorist, social cognitive and biological views explain personality, and how to tell them apart fast.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-037"
+   },
+   "size": 135971,
+   "slug": "personality-theories-compared",
+   "tag": "#psychology",
+   "title": "Personality Theories for the MCAT, Compared Side by Side"
   },
   "note-piaget-stages-of-cognitive-development": {
    "desc": "Piaget's four stages with ages, milestones and limits, plus schemas, assimilation and accommodation, the classic tasks, and how to place a vignette.",
@@ -1842,6 +1873,25 @@
    "tag": "#physics",
    "topic": "Magnetic force on charges and currents (right-hand rule)"
   },
+  "4d-light-sound-optics-1": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-052",
+    "qotd-reels": "qotd-reels-052",
+    "qotd-shorts": "qotd-shorts-052",
+    "qotd-snapchat": "qotd-snapchat-052",
+    "qotd-threads": "qotd-threads-052",
+    "qotd-tiktok": "qotd-tiktok-052",
+    "qotd-x": "qotd-x-052"
+   },
+   "pack_slug": "4d-light-sound-optics",
+   "practice": "practice/4d-sound-doppler-decibels-standing-waves.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 552205,
+   "tag": "#physics",
+   "topic": "Sound production and speed"
+  },
   "4d-light-sound-optics-2": {
    "outbox_ids": {
     "qotd-facebook": "qotd-facebook-019",
@@ -2385,7 +2435,8 @@
    "cars-strategy-0",
    "1d-metabolism-bioenergetics-1",
    "2a-cells-membranes-3",
-   "3a-nervous-endocrine-2"
+   "3a-nervous-endocrine-2",
+   "1a-amino-acids-proteins-0"
   ]
  }
 }
