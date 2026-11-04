@@ -4,8 +4,8 @@ description: Learn absolute and difference thresholds, apply Weber's law, and se
 product: 6a-sensation-perception
 published: 2026-10-20
 related: types-of-memory-sensory-short-term-long-term, action-potential-phases-ion-channels
-seo_title: Signal Detection Theory and Weber's Law for the MCAT
-seo_description: Signal detection theory and Weber's law: absolute and difference thresholds, d' vs response bias and the JND, with worked numbers.
+seo_title: Signal Detection Theory and Weber's Law Explained
+seo_description: Signal detection theory and Weber's law: thresholds, the JND, sensitivity (d') vs response bias, with worked numbers for the MCAT.
 ---
 
 Weber's law and signal detection theory both come from psychophysics, the study of how physical stimulus intensity relates to what people report sensing. **Weber's law** says the smallest change you can notice, the just noticeable difference (JND), is a constant fraction of the starting intensity: &Delta;I / I = k. **Signal detection theory** (SDT) says that whether you report a faint stimulus depends on two separate things: how well your sensory system separates signal from noise (sensitivity, d') and how willing you are to say "yes" (your response criterion, or bias). Weber's law is about telling two stimuli apart. SDT is about deciding whether a stimulus was there at all.

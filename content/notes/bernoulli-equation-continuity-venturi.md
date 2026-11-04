@@ -4,6 +4,8 @@ description: Use the continuity equation and Bernoulli's equation to find flow s
 product: 4b-fluids-gases
 published: 2026-10-20
 related: work-energy-theorem-conservation-of-energy
+seo_title: Bernoulli's Equation and the Venturi Effect (MCAT)
+seo_description: Bernoulli's equation and the continuity equation for flow speed and pressure in a pipe, with worked Venturi, height and Torricelli examples.
 ---
 
 Bernoulli's equation, P + &frac12;&rho;v<sup>2</sup> + &rho;gh = constant along a streamline, is conservation of energy for a moving ideal fluid, with every term written as energy per unit volume. Pair it with the continuity equation, A<sub>1</sub>v<sub>1</sub> = A<sub>2</sub>v<sub>2</sub>, and most flow problems fall out: a narrower section forces faster flow, and at the same height faster flow means lower pressure. That pressure drop at a constriction is the Venturi effect.

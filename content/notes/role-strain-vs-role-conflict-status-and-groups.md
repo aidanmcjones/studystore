@@ -4,6 +4,8 @@ description: Role strain vs role conflict, ascribed, achieved and master status,
 product: 8c-social-interactions
 published: 2026-10-20
 related: conformity-vs-obedience-asch-milgram, eriksons-stages-of-psychosocial-development, fundamental-attribution-error-vs-actor-observer-bias
+seo_title: Role Strain vs Role Conflict: Status and Groups
+seo_description: Role strain vs role conflict, ascribed, achieved and master status, and primary, secondary, in-groups and reference groups, with worked examples.
 ---
 
 **Role strain** is tension inside a single role, when that one role makes demands that are too heavy or that contradict each other. **Role conflict** is tension between two or more roles a person holds, when meeting one role's demands means failing another's. The quick test is to ask how many roles the competing demands come from: a single role points to strain, several roles point to conflict. Both ideas sit on top of a small vocabulary of statuses, roles and groups, so this note builds that vocabulary first and then works through examples.
