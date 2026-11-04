@@ -89,7 +89,7 @@ CTA_ARM_PAGES |= set(SOCIAL_CTA_PAGES)
 practice_build.CTA_ARM_PAGES = CTA_ARM_PAGES
 practice_build.SOCIAL_CTA_PAGES = set(SOCIAL_CTA_PAGES)
 
-def topbuy(slug):
+def topbuy(slug, root=""):
     """Compact above-the-fold checkout CTA: visible price and a Polar link tagged utm_source=site-cta (or social-cta via "slug:social-cta")."""
     src = "site-cta"
     if ":" in slug:
@@ -102,7 +102,7 @@ def topbuy(slug):
     btn = PB.buy(products, slug, "btn small")
     btn = re.sub(r'href="([^"]+)"', lambda m: 'href="%s%sutm_source=%s"' % (m.group(1), "&amp;" if "?" in m.group(1) else "?", src), btn, count=1)
     return (f'<aside class="cta cta-top"><div><strong>{html.escape(p["title"])}</strong>'
-            f'<p>{html.escape(p["price"])} pack with original Anki cards, a study guide and a printable cheat sheet.</p></div>{btn}</aside>')
+            f'<p>{html.escape(p["price"])} pack with original Anki cards, a study guide and a printable cheat sheet.</p></div>{btn}</aside>' + waitlist.capture(root))
 
 def render(text, root):
     def sub(m):
@@ -113,7 +113,7 @@ def render(text, root):
             kind, slug = k.split(":", 1)
             if kind == "buy": return buy(slug, root=root)
             if kind == "waitlist": return waitlist.box(root, launch=not PB.buyable(products[slug]))
-            if kind == "topbuy": return topbuy(slug)
+            if kind == "topbuy": return topbuy(slug, root)
             if kind == "buyghost": return buy(slug, "btn ghost", root=root)
             if kind == "price": return products[slug]["price"]
             if kind == "title": return html.escape(products[slug]["title"])
