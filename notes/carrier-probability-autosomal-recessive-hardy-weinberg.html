@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carrier Probability and Affected Child: Hardy-Weinberg Steps</title>
+<meta name="description" content="If a recessive disorder affects 1 in 650 births, what is the chance two unrelated people have an affected child? Full Hardy-Weinberg worked solution and quiz.">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Probability That Two Carriers Have an Affected Child (Hardy-Weinberg)", "description": "Worked method for the classic question: a recessive disorder affects 1 in N births, two unrelated people pick each other, what is the chance of an affected child? Includes the full calculation.", "image": "https://www.studystore.co/assets/notes/og-carrier-probability-autosomal-recessive-hardy-weinberg.png", "datePublished": "2026-11-04", "dateModified": "2026-11-04", "wordCount": 483, "inLanguage": "en", "mainEntityOfPage": "https://www.studystore.co/notes/carrier-probability-autosomal-recessive-hardy-weinberg", "author": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}, "publisher": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A recessive disease affects 1 in 10,000. What is q?", "acceptedAnswer": {"@type": "Answer", "text": "q = 1/100 = 0.01."}}, {"@type": "Question", "name": "What is the carrier frequency when q = 0.01?", "acceptedAnswer": {"@type": "Answer", "text": "2pq = 2 x 0.99 x 0.01, about 0.0198 (roughly 1 in 50)."}}, {"@type": "Question", "name": "What is the chance two known carriers have an affected child?", "acceptedAnswer": {"@type": "Answer", "text": "1/4."}}, {"@type": "Question", "name": "Why is the chance of an affected child to random partners about q squared?", "acceptedAnswer": {"@type": "Answer", "text": "(2q)(2q)(1/4) = q squared when p is near 1."}}, {"@type": "Question", "name": "What is the chance an unaffected person with an affected sibling and unaffected parents is a carrier?", "acceptedAnswer": {"@type": "Answer", "text": "2/3."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "StudyStore", "item": "https://www.studystore.co/"}, {"@type": "ListItem", "position": 2, "name": "Free MCAT study notes", "item": "https://www.studystore.co/notes/"}, {"@type": "ListItem", "position": 3, "name": "Probability That Two Carriers Have an Affected Child (Hardy-Weinberg)", "item": "https://www.studystore.co/notes/carrier-probability-autosomal-recessive-hardy-weinberg"}]}</script>
+
+<link rel="canonical" href="https://www.studystore.co/notes/carrier-probability-autosomal-recessive-hardy-weinberg">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="Carrier Probability and Affected Child: Hardy-Weinberg Steps">
+<meta property="og:description" content="If a recessive disorder affects 1 in 650 births, what is the chance two unrelated people have an affected child? Full Hardy-Weinberg worked solution and quiz.">
+<meta property="og:url" content="https://www.studystore.co/notes/carrier-probability-autosomal-recessive-hardy-weinberg">
+<meta property="og:image" content="https://www.studystore.co/assets/notes/og-carrier-probability-autosomal-recessive-hardy-weinberg.png">
+<meta name="twitter:image" content="https://www.studystore.co/assets/notes/og-carrier-probability-autosomal-recessive-hardy-weinberg.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Carrier Probability and Affected Child: Hardy-Weinberg Steps">
+<meta name="twitter:description" content="If a recessive disorder affects 1 in 650 births, what is the chance two unrelated people have an affected child? Full Hardy-Weinberg worked solution and quiz.">
+<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1512'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23f2b705'/%3E%3Ccircle cx='21' cy='16' r='4' fill='%233ddc84'/%3E%3Ccircle cx='11' cy='21' r='4' fill='%236aa2ff'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("ss-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css?v=46eb688697">
+<link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="../assets/js/exp.js?v=5e2a4fc27e" defer></script>
+<script src="../assets/js/site.js?v=1b40ce4c4e" defer></script>
+<script src="../assets/js/buy.js?v=50fe203f05" defer></script>
+<script src="../assets/js/report.js?v=1e5d24d48f" defer></script>
+<script src="../assets/js/waitlist.js?v=969555bf76" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="gridbg" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="../" aria-label="StudyStore home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Study<b>Store</b></span></a>
+<nav aria-label="Main"><a href="../#packs">Packs</a><a href="../notes/">Notes</a><a href="../tools/">Tools</a><a href="../#faq">FAQ</a><a href="../refund">Refunds</a></nav>
+<div class="tools">
+<span class="phread" aria-hidden="true">pH <b>1.0</b></span>
+<button class="themetoggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+</div>
+</div><div class="phbar" aria-hidden="true"><i></i></div></header>
+<main id="main">
+<article class="note wrap narrow">
+<p class="eyebrow">Free MCAT study note</p>
+<h1>Probability That Two Carriers Have an Affected Child (Hardy-Weinberg)</h1>
+<p class="meta">By StudyStore &middot; Published 2026-11-04 &middot; 2 min read &middot; 483 words</p>
+<aside class="cta cta-top"><div><strong>Heredity, Population Genetics and Evolution</strong><p>$15 pack with original Anki cards, a study guide and a printable cheat sheet.</p></div><a class="btn small" href="https://buy.polar.sh/polar_cl_NExYWAqVZGeFtJMhqZ1pB3qFrPwpQulBFlS6K1K4K1M?utm_source=site-cta" data-checkout="polar" data-slug="1c-heredity-evolution" rel="noopener">Buy now, $15</a></aside><section class="waitlist waitlist-cta" aria-label="Free sample pack by email">
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
+<label for="cc-email">Not ready to buy? Get a free sample pack by email.</label>
+<input id="cc-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
+<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn small">Send the free sample</button>
+<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> <a href="../privacy">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p><a class="btn" href="../assets/free/studystore-mcat-sample-cheat-sheet.pdf" download data-track="sample-pdf">Download your free sample: 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF)</a></p>
+<p>Meanwhile, <a href="../notes/" data-track="sampler">start with the free notes</a>.</p>
+</div>
+</section>
+<div class="prose">
+<p>A common genetics question reads: <em>an autosomal recessive disorder affects 1 in 650 births; what is the probability that two unrelated people who choose each other as partners have an affected child?</em> The answer chains three steps: <strong>allele frequency, carrier frequency, then Punnett probability</strong>. Each step is a single line of arithmetic.</p>
+<h2 id="the-three-steps">The three steps</h2>
+<ol><li><strong>q<sup>2</sup> is the disease frequency.</strong> Here q<sup>2</sup> = 1/650, so q = the square root of 1/650, about 1/25.5, or roughly 0.0392.</li><li><strong>Carrier frequency is 2pq.</strong> With p = 1 - q, about 0.9608, 2pq = 2 x 0.9608 x 0.0392, about 0.0753, or roughly 1 in 13.3.</li><li><strong>Combine.</strong> For a child to be affected, both partners must be carriers, and then both must pass the allele.</li></ol>
+<h2 id="the-full-calculation">The full calculation</h2>
+<ul><li>Chance partner 1 is a carrier: about 0.0753.</li><li>Chance partner 2 is a carrier: about 0.0753.</li><li>Chance two carriers have an affected child: 1/4.</li><li>Product: 0.0753 x 0.0753 x 0.25, about 0.00142, or roughly <strong>1 in 705</strong>.</li></ul>
+<p>Because answer choices are usually spread widely, this lands closest to the choice near <strong>1/700</strong> in a list such as 1/3,650, 1/78,500, 1/120 and 1/700.</p>
+<h2 id="a-shortcut-check">A shortcut check</h2>
+<p>For a rare recessive disease, p is close to 1, so carriers are about 2q. Then the probability is about (2q)(2q)(1/4) = q<sup>2</sup>, which is the same as the population frequency of 1/650. That makes sense: if people mate at random, a random child is affected with probability q<sup>2</sup>. The small difference from 1/650 comes from using p = 1 - q instead of p = 1. So the shortcut gives about 1/650, and the exact answer about 1/705. Both point to the same answer choice.</p>
+<h2 id="when-the-question-changes">When the question changes</h2>
+<ul><li><strong>Partners are not random (they are siblings or cousins).</strong> The carrier probability for the second partner is no longer 2pq; use the pedigree relationship instead.</li><li><strong>One partner is a known carrier.</strong> Skip his term: chance = 2pq x 1/4.</li><li><strong>One partner is unaffected with an affected sibling and unaffected parents.</strong> That person is a carrier with probability 2/3, not 2pq.</li><li><strong>Both are known carriers.</strong> The answer is 1/4.</li></ul>
+<h2 id="common-traps">Common traps</h2>
+<ul><li><strong>Taking q = 1/650.</strong> That is q<sup>2</sup>. Take the square root first.</li><li><strong>Using q instead of 2pq for carriers.</strong> The carrier class is heterozygotes.</li><li><strong>Forgetting the 1/4.</strong> Two carriers do not always have an affected child.</li><li><strong>Assuming Hardy-Weinberg when the question states otherwise.</strong> Random mating, no selection and no migration are required.</li></ul>
+<h2 id="one-minute-recap">One-minute recap</h2>
+<ul><li>q<sup>2</sup> is disease frequency; q is its square root.</li><li>Carrier frequency is 2pq, about 2q for rare alleles.</li><li>Probability of an affected child from random partners is (2pq)(2pq)(1/4).</li></ul>
+</div>
+<aside class="cta"><a class="cta-thumb" href="../products/1c-heredity-evolution#preview"><img src="../assets/packs/1c-heredity-evolution/card-1.webp?v=afef999f69" alt="Real sample card from the pack" width="680" height="504" loading="lazy"></a><div><strong>Want this as spaced-repetition cards?</strong><p>Heredity, Population Genetics and Evolution is a $15 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/1c-heredity-evolution">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_NExYWAqVZGeFtJMhqZ1pB3qFrPwpQulBFlS6K1K4K1M" data-checkout="polar" data-slug="1c-heredity-evolution" rel="noopener">Buy now, $15</a></aside>
+<h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
+<p class="meta">Try each question first, then click it to reveal the answer.</p>
+<div class="quiz"><details class="q"><summary>1. A recessive disease affects 1 in 10,000. What is q?</summary><div><p>q = 1/100 = 0.01.</p></div></details><details class="q"><summary>2. What is the carrier frequency when q = 0.01?</summary><div><p>2pq = 2 x 0.99 x 0.01, about 0.0198 (roughly 1 in 50).</p></div></details><details class="q"><summary>3. What is the chance two known carriers have an affected child?</summary><div><p>1/4.</p></div></details><details class="q"><summary>4. Why is the chance of an affected child to random partners about q squared?</summary><div><p>(2q)(2q)(1/4) = q squared when p is near 1.</p></div></details><details class="q"><summary>5. What is the chance an unaffected person with an affected sibling and unaffected parents is a carrier?</summary><div><p>2/3.</p></div></details></div>
+<section class="waitlist waitlist-inline" id="signup" aria-labelledby="signup-h">
+<div class="wlcopy">
+<p class="eyebrow mono"><span class="dot"></span>Free MCAT sampler</p>
+<h2 id="signup-h">Free sample: a 3-page MCAT cheat sheet (PDF), plus 6 short high-yield lessons by email</h2>
+<p>Enter your email and download a real page set from a paid pack: the 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF). Confirm your email and short MCAT lessons follow. Free, no card.</p>
+<p>Prefer not to sign up? The sampler is open to everyone: <a href="../notes/" data-track="sampler">free notes</a>, <a href="../practice/" data-track="sampler">practice sets</a> and the <a href="../tools/mcat-study-schedule">study schedule generator</a>.</p>
+</div>
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
+<label for="su-email">Email</label>
+<input id="su-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
+<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn">Get the free cheat sheet</button>
+<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> Every email has an unsubscribe link. <a href="../privacy">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p><a class="btn" href="../assets/free/studystore-mcat-sample-cheat-sheet.pdf" download data-track="sample-pdf">Download your free sample: 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF)</a></p>
+<p>Meanwhile, <a href="../notes/" data-track="sampler">start with the free notes</a>.</p>
+</div>
+</section>
+<h2>Keep studying</h2>
+<ul><li><a href="hardy-weinberg-equation-practice-problems">Hardy-Weinberg Equation: How to Solve Every MCAT Problem Type</a></li><li><a href="recombination-frequency-gene-mapping-map-units">Recombination Frequency and Map Units</a></li><li><a href="./">All free notes</a></li></ul>
+
+<aside class="cta"><a class="cta-thumb" href="../products/1c-heredity-evolution#preview"><img src="../assets/packs/1c-heredity-evolution/card-1.webp?v=afef999f69" alt="Real sample card from the pack" width="680" height="504" loading="lazy"></a><div><strong>Want this as spaced-repetition cards?</strong><p>Heredity, Population Genetics and Evolution is a $15 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/1c-heredity-evolution">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_NExYWAqVZGeFtJMhqZ1pB3qFrPwpQulBFlS6K1K4K1M" data-checkout="polar" data-slug="1c-heredity-evolution" rel="noopener">Buy now, $15</a></aside>
+<p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+<p class="meta"><a class="reportlink" href="../report" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div>
+<p class="flabel">StudyStore</p>
+<p>Original, high-yield MCAT study packs. Written from scratch, checked card by card.</p>
+</div>
+<div>
+<p class="flabel">Shop</p>
+<p class="links"><a href="../#packs">Packs</a><a href="../products/">All packs</a><a href="../notes/">Free notes</a></p>
+</div>
+<div>
+<p class="flabel">Policies</p>
+<p class="links"><a href="../terms">Terms</a><a href="../privacy">Privacy</a><a href="../refund">Refund policy</a><a href="../support">Support</a></p>
+</div>
+</div>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p><a class="reportlink" href="../report" data-report>Report a problem or suggest something</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+<p class="wordmark" aria-hidden="true">Study<b>Store</b></p>
+</div></footer>
+</body>
+</html>
