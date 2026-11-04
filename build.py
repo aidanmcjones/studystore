@@ -21,6 +21,7 @@ site = json.loads((ROOT / "site.json").read_text())
 import datetime as _dt
 _le = _dt.datetime.strptime(site["launch_end"], "%Y-%m-%dT%H:%M:%SZ")  # single source for the LAUNCH50 end (matches the Polar discount)
 site["launch_end_label"] = f"{_le:%b} {_le.day}, {_le.year}"
+LAUNCHBAR = (ROOT / "templates" / "launchbar.html").read_text() if _dt.datetime.now(_dt.timezone.utc).replace(tzinfo=None) < _le else ""  # offer bar + scripts only before launch_end
 PB.configure(site)  # checkout provider (polar by default) and {{merchant}} / {{orders_url}} copy
 products = PB.lookup(site)  # products + bundles + retired-slug aliases
 
@@ -188,7 +189,7 @@ def emit(out, title, desc, body, noindex=False, og_image=DEFAULT_OG, og_type="we
             if v in seen:
                 print(f"SEO WARNING: duplicate {kind} on {out} and {seen[v]}: {v}")
             seen[v] = out
-    page = base.replace("{{content}}", body)
+    page = base.replace("{{launchbar}}", LAUNCHBAR).replace("{{content}}", body)
     page = page.replace("{{page_title}}", html.escape(title)).replace("{{page_desc}}", html.escape(desc))
     page = page.replace("{{page_url}}", f"{BASE}/{out}" if out != "index.html" else BASE + "/")
     page = page.replace("{{robots}}", '<meta name="robots" content="noindex">' if noindex else "")

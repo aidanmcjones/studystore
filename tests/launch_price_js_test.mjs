@@ -11,7 +11,15 @@ const site = JSON.parse(readFileSync(new URL("site.json", root), "utf8"));
 const END = Date.parse(site.launch_end);
 
 const page = readFileSync(new URL("products/1b-dna-gene-expression.html", root), "utf8");
-const src = page.match(/<script>(\(function\(\)\{var b=document\.getElementById\("launchbar"\),c=b\.dataset\.code[\s\S]*?)<\/script>/)[1];
+// build.py injects templates/launchbar.html only before launch_end, so test the script from the template itself.
+const bar = readFileSync(new URL("templates/launchbar.html", root), "utf8");
+const src = bar.match(/<script>(\(function\(\)\{var b=document\.getElementById\("launchbar"\),c=b\.dataset\.code[\s\S]*?)<\/script>/)[1];
+
+// A build after launch_end must leave no offer text in any page.
+if (Date.now() > END) {
+  const pages = ["index.html", "products/1b-dna-gene-expression.html", "practice/index.html", "terms.html"];
+  ok(pages.every(p => { const h = readFileSync(new URL(p, root), "utf8"); return !/launchbar|LAUNCH50|Launch week/.test(h); }), "after launch_end: built pages contain no launchbar/LAUNCH50 text");
+}
 
 function el(text, href) {
   const e = { href, attrs: {}, kids: [], set textContent(v) { this.kids = [{ text: v }]; },
