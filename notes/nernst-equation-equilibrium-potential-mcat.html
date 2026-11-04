@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nernst Equation and Equilibrium Potential Formula (MCAT)</title>
+<meta name="description" content="Equilibrium potential formula and the Nernst equation on the MCAT: shortcut form, worked K+ and Na+ examples, sign rules and common traps.">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Nernst Equation and Equilibrium Potential for the MCAT", "description": "The Nernst equation for equilibrium potential, the shortcut form at body temperature, worked K+ and Na+ examples, and how it differs from the resting potential.", "image": "https://www.studystore.co/assets/notes/og-nernst-equation-equilibrium-potential-mcat.png", "datePublished": "2026-11-04", "dateModified": "2026-11-04", "wordCount": 804, "inLanguage": "en", "mainEntityOfPage": "https://www.studystore.co/notes/nernst-equation-equilibrium-potential-mcat", "author": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}, "publisher": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the equilibrium potential for a monovalent cation with a 10-to-1 outside-to-inside concentration ratio at 37 C?", "acceptedAnswer": {"@type": "Answer", "text": "About +61 mV, since log(10) = 1 and the slope is 61.5 mV per tenfold ratio."}}, {"@type": "Question", "name": "Why is the resting membrane potential closer to E_K than to E_Na?", "acceptedAnswer": {"@type": "Answer", "text": "The resting membrane is much more permeable to K+ than to Na+, so K+ dominates the Goldman equation."}}, {"@type": "Question", "name": "If V_m is -70 mV and E_Cl is -70 mV, what is the net movement of Cl-?", "acceptedAnswer": {"@type": "Answer", "text": "None. The driving force is zero, so Cl- is at equilibrium."}}, {"@type": "Question", "name": "Which equation handles more than one permeant ion?", "acceptedAnswer": {"@type": "Answer", "text": "The Goldman-Hodgkin-Katz equation, which weights each ion by its permeability."}}, {"@type": "Question", "name": "What is the driving force on Na+ at V_m = -70 mV when E_Na is +60 mV?", "acceptedAnswer": {"@type": "Answer", "text": "-130 mV (V_m minus E_Na), a large inward push."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "StudyStore", "item": "https://www.studystore.co/"}, {"@type": "ListItem", "position": 2, "name": "Free MCAT study notes", "item": "https://www.studystore.co/notes/"}, {"@type": "ListItem", "position": 3, "name": "Nernst Equation and Equilibrium Potential for the MCAT", "item": "https://www.studystore.co/notes/nernst-equation-equilibrium-potential-mcat"}]}</script>
+
+<link rel="canonical" href="https://www.studystore.co/notes/nernst-equation-equilibrium-potential-mcat">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="Nernst Equation and Equilibrium Potential Formula (MCAT)">
+<meta property="og:description" content="Equilibrium potential formula and the Nernst equation on the MCAT: shortcut form, worked K+ and Na+ examples, sign rules and common traps.">
+<meta property="og:url" content="https://www.studystore.co/notes/nernst-equation-equilibrium-potential-mcat">
+<meta property="og:image" content="https://www.studystore.co/assets/notes/og-nernst-equation-equilibrium-potential-mcat.png">
+<meta name="twitter:image" content="https://www.studystore.co/assets/notes/og-nernst-equation-equilibrium-potential-mcat.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nernst Equation and Equilibrium Potential Formula (MCAT)">
+<meta name="twitter:description" content="Equilibrium potential formula and the Nernst equation on the MCAT: shortcut form, worked K+ and Na+ examples, sign rules and common traps.">
+<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1512'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23f2b705'/%3E%3Ccircle cx='21' cy='16' r='4' fill='%233ddc84'/%3E%3Ccircle cx='11' cy='21' r='4' fill='%236aa2ff'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("ss-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css?v=6b5ee5c0cc">
+<link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="../assets/js/exp.js?v=5e2a4fc27e" defer></script>
+<script src="../assets/js/site.js?v=1b40ce4c4e" defer></script>
+<script src="../assets/js/buy.js?v=50fe203f05" defer></script>
+<script src="../assets/js/report.js?v=1e5d24d48f" defer></script>
+<script src="../assets/js/waitlist.js?v=969555bf76" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="gridbg" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="../" aria-label="StudyStore home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Study<b>Store</b></span></a>
+<nav aria-label="Main"><a href="../#packs">Packs</a><a href="../notes/">Notes</a><a href="../tools/">Tools</a><a href="../#faq">FAQ</a><a href="../refund">Refunds</a></nav>
+<div class="tools">
+<span class="phread" aria-hidden="true">pH <b>1.0</b></span>
+<button class="themetoggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+</div>
+</div><div class="phbar" aria-hidden="true"><i></i></div></header>
+<main id="main">
+<article class="note wrap narrow">
+<p class="eyebrow">Free MCAT study note</p>
+<h1>Nernst Equation and Equilibrium Potential for the MCAT</h1>
+<p class="meta">By StudyStore &middot; Published 2026-11-04 &middot; 4 min read &middot; 804 words</p>
+<aside class="cta cta-top"><div><strong>Cells, Membranes and Tissues</strong><p>$15 pack with original Anki cards, a study guide and a printable cheat sheet.</p></div><a class="btn small" href="https://buy.polar.sh/polar_cl_uNDlEzNoFExYboa7c9L6El66YJZpEAhzkRGkZ3FIPq6?utm_source=site-cta" data-checkout="polar" data-slug="2a-cells-membranes" rel="noopener">Buy now, $15</a></aside><section class="waitlist waitlist-cta" aria-label="Free sample pack by email">
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
+<label for="cc-email">Not ready to buy? Get a free sample pack by email.</label>
+<input id="cc-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
+<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn small">Send the free sample</button>
+<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> <a href="../privacy">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p><a class="btn" href="../assets/free/studystore-mcat-sample-cheat-sheet.pdf" download data-track="sample-pdf">Download your free sample: 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF)</a></p>
+<p>Meanwhile, <a href="../notes/" data-track="sampler">start with the free notes</a>.</p>
+</div>
+</section>
+<section class="waitlist waitlist-inline" id="signup" aria-labelledby="signup-h">
+<div class="wlcopy">
+<p class="eyebrow mono"><span class="dot"></span>Free MCAT sampler</p>
+<h2 id="signup-h">Free sample: a 3-page MCAT cheat sheet (PDF), plus 6 short high-yield lessons by email</h2>
+<p>Enter your email and download a real page set from a paid pack: the 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF). Confirm your email and short MCAT lessons follow. Free, no card.</p>
+<p>Prefer not to sign up? The sampler is open to everyone: <a href="../notes/" data-track="sampler">free notes</a>, <a href="../practice/" data-track="sampler">practice sets</a> and the <a href="../tools/mcat-study-schedule">study schedule generator</a>.</p>
+</div>
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
+<label for="su-email">Email</label>
+<input id="su-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
+<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn">Get the free cheat sheet</button>
+<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> Every email has an unsubscribe link. <a href="../privacy">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p><a class="btn" href="../assets/free/studystore-mcat-sample-cheat-sheet.pdf" download data-track="sample-pdf">Download your free sample: 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF)</a></p>
+<p>Meanwhile, <a href="../notes/" data-track="sampler">start with the free notes</a>.</p>
+</div>
+</section>
+<div class="prose">
+<p>The <strong>equilibrium potential</strong> of an ion is the membrane voltage at which the electrical force on that ion exactly balances its concentration gradient, so there is no net movement. The <strong>Nernst equation</strong> calculates it for one ion at a time: E = (RT/zF) ln([ion]<sub>out</sub>/[ion]<sub>in</sub>). Yes, the Nernst equation is on the MCAT, usually as a membrane potential or electrochemistry passage, and the shortcut form below is the version you will actually use.</p>
+<h2 id="the-formula-and-its-shortcut">The formula and its shortcut</h2>
+<ul><li><strong>Full form:</strong> E<sub>ion</sub> = (RT/zF) ln([out]/[in])</li><li><strong>Base-10 form at 37 C:</strong> E<sub>ion</sub> = (61.5 mV / z) log<sub>10</sub>([out]/[in])</li><li><strong>Rounded for exam math:</strong> use about 60 mV, or 58 mV at 25 C.</li></ul>
+<p>Here z is the charge of the ion (+1 for Na<sup>+</sup> and K<sup>+</sup>, +2 for Ca<sup>2+</sup>, -1 for Cl<sup>-</sup>). Keep the ratio as <strong>outside over inside</strong> and let z carry the sign. Many people reverse the ratio for anions; that is unnecessary if z is -1.</p>
+<h2 id="worked-example-potassium">Worked example: potassium</h2>
+<p>Typical neuron: [K<sup>+</sup>]<sub>out</sub> = 5 mM, [K<sup>+</sup>]<sub>in</sub> = 150 mM.</p>
+<p>E<sub>K</sub> = 61.5 log<sub>10</sub>(5/150) = 61.5 x log<sub>10</sub>(0.0333) = 61.5 x (-1.48) = about <strong>-90 mV</strong>.</p>
+<p>Interpretation: K<sup>+</sup> is concentrated inside, so it tends to leak out, leaving the inside negative. At -90 mV the inward electrical pull exactly cancels the outward chemical push.</p>
+<h2 id="worked-example-sodium">Worked example: sodium</h2>
+<p>[Na<sup>+</sup>]<sub>out</sub> = 145 mM, [Na<sup>+</sup>]<sub>in</sub> = 15 mM.</p>
+<p>E<sub>Na</sub> = 61.5 log<sub>10</sub>(145/15) = 61.5 x 0.985 = about <strong>+60 mV</strong>.</p>
+<p>Na<sup>+</sup> is concentrated outside, so it wants to flow in, and the inside would have to be positive to hold it back.</p>
+<h2 id="a-quick-way-to-estimate-without-a-calculator">A quick way to estimate without a calculator</h2>
+<p>Each <strong>tenfold</strong> concentration ratio is worth about 60 mV for a monovalent ion. A ratio of 30 is a bit over one factor of ten, so roughly 60 to 90 mV. Always decide the <strong>sign</strong> first (cation concentrated outside means positive, cation concentrated inside means negative), then estimate the size.</p>
+<h2 id="equilibrium-potential-vs-resting-membrane-potential">Equilibrium potential vs resting membrane potential</h2>
+<div class="tablewrap"><table><thead><tr><th></th><th>Equilibrium (Nernst) potential</th><th>Resting membrane potential</th></tr></thead><tbody><tr><td>Applies to</td><td>One ion</td><td>All ions together</td></tr><tr><td>Equation</td><td>Nernst</td><td>Goldman-Hodgkin-Katz</td></tr><tr><td>Depends on</td><td>Concentration ratio and charge</td><td>Ratios weighted by each ion's permeability</td></tr><tr><td>Neuron value</td><td>K<sup>+</sup> about -90 mV, Na<sup>+</sup> about +60 mV</td><td>About -70 mV</td></tr></tbody></table></div>
+<p>The resting potential sits near E<sub>K</sub> because the resting membrane is far more permeable to K<sup>+</sup> than to Na<sup>+</sup>. It is a little less negative than E<sub>K</sub> because of the small Na<sup>+</sup> leak. During the action potential, Na<sup>+</sup> permeability surges, and the membrane voltage moves toward E<sub>Na</sub>.</p>
+<h2 id="driving-force">Driving force</h2>
+<p><strong>Driving force = V<sub>m</sub> - E<sub>ion</sub>.</strong> It tells you the direction and strength of net ion flow when channels open.</p>
+<p>At V<sub>m</sub> = -70 mV and E<sub>Na</sub> = +60 mV, the driving force on Na<sup>+</sup> is -130 mV, a large inward push. For K<sup>+</sup> it is -70 - (-90) = +20 mV, a small outward push. This is why opening Na<sup>+</sup> channels produces a big, fast current and opening K<sup>+</sup> channels a smaller one.</p>
+<h2 id="link-to-electrochemistry">Link to electrochemistry</h2>
+<p>The same logic appears in galvanic cells. The cell version is E = E&deg; - (RT/nF) ln Q, which at equilibrium (E = 0) gives the relationship between E&deg; and K. A membrane is a concentration cell: the same ion on both sides, with the "cell potential" set only by the concentration ratio.</p>
+<h2 id="common-traps">Common traps</h2>
+<ul><li><strong>Using Nernst for the resting potential.</strong> Nernst is for one ion. Several permeable ions need Goldman.</li><li><strong>Flipping the ratio.</strong> Use outside over inside, with the sign of z.</li><li><strong>Ignoring z.</strong> Ca<sup>2+</sup> has half the slope of a monovalent ion.</li><li><strong>Forgetting the pump.</strong> The Na<sup>+</sup>/K<sup>+</sup> ATPase builds the gradients; the Nernst potential is set by them, not by the pump's electrogenic contribution.</li><li><strong>Mixing up direction and sign.</strong> A negative equilibrium potential means the inside is negative at equilibrium, not that ions flow out.</li></ul>
+<h2 id="one-minute-recap">One-minute recap</h2>
+<ul><li>E = (61.5 mV / z) log([out]/[in]) at 37 C.</li><li>E<sub>K</sub> is about -90 mV, E<sub>Na</sub> about +60 mV in a typical neuron.</li><li>Resting potential (about -70 mV) is closest to E<sub>K</sub> because of K<sup>+</sup> permeability.</li><li>Driving force = V<sub>m</sub> - E<sub>ion</sub>.</li></ul>
+</div>
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Cells, Membranes and Tissues is a $15 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/2a-cells-membranes">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_uNDlEzNoFExYboa7c9L6El66YJZpEAhzkRGkZ3FIPq6" data-checkout="polar" data-slug="2a-cells-membranes" rel="noopener">Buy now, $15</a></aside>
+<h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
+<p class="meta">Try each question first, then click it to reveal the answer.</p>
+<div class="quiz"><details class="q"><summary>1. What is the equilibrium potential for a monovalent cation with a 10-to-1 outside-to-inside concentration ratio at 37 C?</summary><div><p>About +61 mV, since log(10) = 1 and the slope is 61.5 mV per tenfold ratio.</p></div></details><details class="q"><summary>2. Why is the resting membrane potential closer to E_K than to E_Na?</summary><div><p>The resting membrane is much more permeable to K+ than to Na+, so K+ dominates the Goldman equation.</p></div></details><details class="q"><summary>3. If V_m is -70 mV and E_Cl is -70 mV, what is the net movement of Cl-?</summary><div><p>None. The driving force is zero, so Cl- is at equilibrium.</p></div></details><details class="q"><summary>4. Which equation handles more than one permeant ion?</summary><div><p>The Goldman-Hodgkin-Katz equation, which weights each ion by its permeability.</p></div></details><details class="q"><summary>5. What is the driving force on Na+ at V_m = -70 mV when E_Na is +60 mV?</summary><div><p>-130 mV (V_m minus E_Na), a large inward push.</p></div></details></div>
+<h2>Keep studying</h2>
+<ul><li><a href="action-potential-phases-ion-channels">Action Potential Phases and Ion Channels, Step by Step</a></li><li><a href="passive-vs-active-transport">Passive vs Active Transport: Types, Examples and Energy Math</a></li><li><a href="galvanic-vs-electrolytic-cells">Galvanic vs Electrolytic Cells: Signs, Electron Flow and Examples</a></li><li><a href="./">All free notes</a></li></ul>
+
+<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Cells, Membranes and Tissues is a $15 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/2a-cells-membranes">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_uNDlEzNoFExYboa7c9L6El66YJZpEAhzkRGkZ3FIPq6" data-checkout="polar" data-slug="2a-cells-membranes" rel="noopener">Buy now, $15</a></aside>
+<p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+<p class="meta"><a class="reportlink" href="../report" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div>
+<p class="flabel">StudyStore</p>
+<p>Original, high-yield MCAT study packs. Written from scratch, checked card by card.</p>
+</div>
+<div>
+<p class="flabel">Shop</p>
+<p class="links"><a href="../#packs">Packs</a><a href="../products/">All packs</a><a href="../notes/">Free notes</a></p>
+</div>
+<div>
+<p class="flabel">Policies</p>
+<p class="links"><a href="../terms">Terms</a><a href="../privacy">Privacy</a><a href="../refund">Refund policy</a><a href="../support">Support</a></p>
+</div>
+</div>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p><a class="reportlink" href="../report" data-report>Report a problem or suggest something</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+<p class="wordmark" aria-hidden="true">Study<b>Store</b></p>
+</div></footer>
+</body>
+</html>
