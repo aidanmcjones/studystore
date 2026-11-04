@@ -192,7 +192,7 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
             cat_slug=p["cat"]["slug"], cat_code=m["aamc"], cat_title=html.escape(p["cat"]["title"]),
             title=html.escape(m["title"]), published=m["published"], nq=str(len(p["qs"])),
             mins=str(max(5, round(len(p["qs"]) * 1.5))), description=html.escape(m["description"]),
-            primer=convert(_esc(p["primer_md"])), notelinks=notelinks, cta_top=("{{topbuy:%s%s}}" % (m["product"], ":social-cta" if "practice/" + p["slug"] in SOCIAL_CTA_PAGES else "")) if m["product"] != "none" and "practice/" + p["slug"] in CTA_ARM_PAGES else "",
+            primer=convert(_esc(p["primer_md"])), notelinks=notelinks, cta_top=("{{topbuy:%s%s}}" % (m["product"], ":social-cta" if "practice/" + p["slug"] in SOCIAL_CTA_PAGES else "")) if m["product"] != "none" else "",
             questions="".join(_q_html(i, q) for i, q in enumerate(p["qs"], 1)), cta=cta, more=more))
         emit(f"practice/{p['slug']}.html", f'{m["title"]} | StudyStore', m["description"], body,
              noindex=p["noindex"], og_type="article", head_extra=STYLE + _jsonld(p, base_url, notes_by_slug),
@@ -209,9 +209,11 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
         if nl:
             notes_html = "<h2>Free notes</h2><ul>" + "".join(
                 f'<li><a href="{{{{root}}}}notes/{n}.html">{html.escape(notes_by_slug[n]["meta"]["title"])}</a></li>' for n in nl) + "</ul>"
+        prods = [x["meta"]["product"] for x in items if x["meta"]["product"] != "none"]
+        hub_cta = ("{{topbuy:%s}}" % max(set(prods), key=prods.count)) if prods else ""
         body = fill(hub_tpl, dict(eyebrow=f"Free MCAT-style practice, {code}", title=html.escape(f"{c['title']} Practice Questions"),
                                   lead=html.escape(c["blurb"] + " Original questions with full explanations, free, no signup."),
-                                  body=f'<ul class="catlist">{lis}</ul>{notes_html}<p><a href="{{{{root}}}}practice/index.html">All practice categories</a></p>'))
+                                  body=f'{hub_cta}<ul class="catlist">{lis}</ul>{notes_html}<p><a href="{{{{root}}}}practice/index.html">All practice categories</a></p>'))
         emit(f"practice/{c['slug']}/index.html", f"MCAT {c['title']} Practice Questions | StudyStore",
              f"Free MCAT-style practice questions for {c['title']}: {len(items)} topic pages with full explanations.", body,
              head_extra=STYLE + _crumbs_ld(base_url, ("Practice questions", f"{base_url}/practice/index.html"),
@@ -229,7 +231,7 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
     total = sum(len(x["qs"]) for x in live)
     body = fill(hub_tpl, dict(eyebrow="Free MCAT-style practice", title="MCAT Practice Questions by Topic",
                               lead=f"{total} original practice questions across {len(live)} topic pages, each with a concept primer and a full explanation for every answer. Free, no signup.",
-                              body=secs))
+                              body="{{topbuy:feat}}" + secs))
     emit("practice/index.html", "Free MCAT Practice Questions by Topic | StudyStore",
          f"{total} free, original MCAT-style practice questions by topic with full explanations: biology, biochemistry, general and organic chemistry, physics, psychology and sociology.",
          body, head_extra=STYLE + _crumbs_ld(base_url, ("Practice questions", f"{base_url}/practice/index.html")), lastmod=max((x["meta"]["published"] for x in live), default=None))

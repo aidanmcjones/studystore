@@ -274,7 +274,7 @@ def build_note(n, all_notes):
 <p class="eyebrow">Free MCAT study note</p>
 <h1>{html.escape(m["title"])}</h1>
 <p class="meta">By StudyStore &middot; Published {m["published"]} &middot; {mins} min read &middot; {n["words"]} words</p>
-{("{{topbuy:%s%s}}" % (m["product"], ":social-cta" if out[:-5] in SOCIAL_CTA_PAGES else "")) if out[:-5] in CTA_ARM_PAGES else ""}
+{("{{topbuy:%s%s}}" % (m["product"], ":social-cta" if out[:-5] in SOCIAL_CTA_PAGES else "")) if m["product"] != "none" else ""}
 {{{{signup}}}}
 <div class="prose">
 {body_html}
