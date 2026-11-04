@@ -70,12 +70,12 @@ WHY: Because Q is less than K, there are too many reactants and too few products
 
 ### Q7
 Helium gas is added at constant volume to an equilibrium mixture of gases. What happens?
-A) The equilibrium shifts to the side with more moles of gas
-B) No shift occurs because the partial pressures of the reacting gases do not change
-C) The equilibrium shifts to the side with fewer moles of gas
+A) The reaction moves toward whichever side has the larger number of gas moles
+B) Nothing shifts, since each reactant and product keeps its original partial pressure
+C) The reaction moves toward whichever side has the smaller number of gas moles
 D) K decreases
 ANSWER: B
-WHY: Adding an unreactive gas at constant volume increases total pressure but leaves each reacting gas at the same concentration and partial pressure, so Q still equals K. If the volume were allowed to expand, the partial pressures would fall and a shift would occur.
+WHY: Helium is inert here. In a rigid container it raises the total pressure, yet the amount of each species per liter stays fixed, so every concentration and partial pressure in Q is unchanged and Q remains equal to K. Only if the container expanded would those partial pressures drop and push the system toward whichever side holds more gas particles.
 
 ### Q8
 For a reaction at 25 degrees C, K is much greater than 1. What does this indicate about the standard Gibbs free energy change?

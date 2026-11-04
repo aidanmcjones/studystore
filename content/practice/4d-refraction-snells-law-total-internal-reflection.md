@@ -51,7 +51,7 @@ ANSWER: B
 WHY: Two conditions are required: n1 must exceed n2, and the angle of incidence must be larger than the critical angle. If light enters a medium of higher index, a refracted ray always exists. At normal incidence, there is no bending at all.
 
 ### Q5
-What is the critical angle for light going from a material with n = 2.0 into air (n = 1.0)?
+A ray travels inside a medium of index n = 2.0 toward its boundary with air (n = 1.0). Above what angle of incidence does total internal reflection begin?
 A) 60 degrees
 B) 45 degrees
 C) 90 degrees

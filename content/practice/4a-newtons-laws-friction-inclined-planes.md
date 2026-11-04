@@ -51,7 +51,7 @@ ANSWER: C
 WHY: The component of gravity along the incline is g sin(theta) = 10 x sin 30 = 10 x 0.5 = 5 m/s^2. The mass cancels. The value 8.7 would come from using the cosine, which gives the component perpendicular to the surface.
 
 ### Q5
-A 60 kg person stands on a scale in an elevator that accelerates upward at 2 m/s^2. Using g = 10 m/s^2, what does the scale read in newtons?
+An elevator speeds up while rising, with an upward acceleration of 2 m/s^2. A bathroom scale on its floor supports a 60 kg rider. Using g = 10 m/s^2, what force in newtons does the scale display?
 A) 480 N
 B) 600 N
 C) 720 N
