@@ -7,6 +7,8 @@ cluster: Sensory thresholds and Weber's law, Signal detection theory, Sensory ad
 product: 6a-sensation-perception
 published: 2026-10-20
 notes:
+seo_title: Weber's Law and Signal Detection Practice Questions
+seo_description: Free MCAT-style practice on absolute thresholds, the JND, Weber's law, signal detection theory and sensory adaptation, with full explanations.
 ---
 
 Psychophysics links the physical size of a stimulus to the sensation it produces. The absolute threshold is the weakest stimulus detected on 50 percent of trials, so it is a statistical point, not a hard wall. The difference threshold, or just noticeable difference (JND), is the smallest change between two stimuli noticed half the time. Weber's law says the JND is a constant fraction of the baseline (delta I / I = k), so heavier baselines need larger absolute changes. Fechner assumed every JND is an equal step in sensation and derived a logarithmic law. Stevens later fit a power law whose exponent differs by sense.

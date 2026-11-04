@@ -4,6 +4,8 @@ description: Compare the James-Lange, Cannon-Bard, Schachter-Singer and Lazarus 
 product: 6c-emotion-stress
 published: 2026-10-20
 related: fundamental-attribution-error-vs-actor-observer-bias, types-of-memory-sensory-short-term-long-term
+seo_title: Theories of Emotion: James-Lange vs Cannon-Bard
+seo_description: James-Lange vs Cannon-Bard vs Schachter-Singer and Lazarus: sequence, evidence and critiques compared, with practice scenarios for the MCAT.
 ---
 
 The classic theories of emotion disagree about one thing: the order of events. **James-Lange** says bodily arousal comes first and the feeling is your perception of that arousal. **Cannon-Bard** says arousal and feeling happen at the same time, triggered in parallel by the brain. **Schachter-Singer** (two-factor theory) says arousal is generic and you need a cognitive label from the situation to know which emotion you feel. **Lazarus** says a cognitive appraisal of the event comes first and drives both the feeling and the body's response. If you can write each sequence from memory, most questions on this topic become a matching exercise.

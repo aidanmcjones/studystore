@@ -4,6 +4,8 @@ description: Read IR peaks and 1H NMR shift, integration and splitting step by s
 product: 5c-separations-spectroscopy
 published: 2026-10-20
 related: amino-acid-pka-charge-ph-7-4, acid-base-titration-curves-equivalence-point
+seo_title: How to Read IR and NMR Spectra for the MCAT
+seo_description: Read IR peaks and 1H NMR shift, integration and splitting step by step, then combine them with degrees of unsaturation to solve a structure.
 ---
 
 IR and NMR answer different questions. Infrared spectroscopy tells you which functional groups are present, mostly by looking for a carbonyl near 1700 cm<sup>-1</sup> and an O-H or N-H stretch above 3000 cm<sup>-1</sup>. Proton NMR tells you how the hydrogens are arranged: how many kinds there are (number of signals), what they sit next to (chemical shift), how many of each there are (integration), and how many hydrogens are on the neighboring carbons (splitting). Use IR to name the group, then NMR to build the skeleton around it.

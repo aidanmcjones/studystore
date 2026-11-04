@@ -1,11 +1,11 @@
 ---
 title: Erikson's 8 Stages of Psychosocial Development Explained
 description: All eight of Erikson's psychosocial stages with ages, crises and virtues, how to match a vignette to a stage, and how Erikson differs from Freud.
-seo_title: Erikson's 8 Stages of Psychosocial Development | MCAT
-seo_description: Free MCAT notes on Erikson's 8 stages: ages, crises and virtues, how to match a vignette to a stage, and a 5-question quiz.
 product: 8a-self-identity
 published: 2026-10-20
 related: conformity-vs-obedience-asch-milgram, role-strain-vs-role-conflict-status-and-groups
+seo_title: Erikson's Stages of Development: 8 Crises and Ages
+seo_description: Erikson's 8 stages of psychosocial development: ages, crises and virtues, and how to match a vignette to a stage, with a quiz.
 ---
 
 Erik Erikson proposed that personality develops through **eight psychosocial stages** that span the entire lifespan, from infancy to old age. Each stage centers on a **crisis**, a tension between a healthy outcome and an unhealthy one, such as trust vs mistrust in infancy or identity vs role confusion in adolescence. Resolving a crisis well gives the person a lasting strength Erikson called a **virtue**. To answer most questions, match the person's age and main social challenge to the stage, then name the crisis or virtue.

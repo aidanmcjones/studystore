@@ -27,12 +27,12 @@ PACK_AAMC = {}  # product slug -> AAMC code; filled in build() from site.json av
 TOOLS = [
     ("amino-acid-quiz", "Amino Acid Quiz", "Free amino acid quiz: names, codes, structures, charge and pI | StudyStore",
      "Free MCAT amino acid quiz with the 20 standard residues: names and codes, structures, side-chain class, charge at a chosen pH and pI. No signup."),
-    ("pka-trainer", "pKa and Charge at pH Trainer", "pKa Quiz: Free MCAT pKa and Charge at pH Practice | StudyStore",
-     "Free pKa quiz for the MCAT. Practice Henderson-Hasselbalch: decide if a group is protonated, find the net charge of a short peptide at any pH, with the working shown. Free, no signup."),
+    ("pka-trainer", "pKa and Charge at pH Trainer", "pKa Quiz: Free MCAT pKa and Charge at pH Practice",
+     "Free pKa quiz for the MCAT: quiz yourself on pKa values, protonation and peptide charge at any pH with Henderson-Hasselbalch, working shown. No signup."),
     ("mcat-study-schedule", "MCAT Study Schedule Generator", "MCAT Study Schedule Generator: Free Week-by-Week Study Plan | StudyStore",
      "Free MCAT study plan generator: enter your 2027 test date, weekly hours, weak sections and full-length count for a week-by-week MCAT study schedule. Printable, runs in your browser."),
-    ("mcat-percentile", "MCAT Score Calculator: Percentile and Target Score", "MCAT Score Calculator: Percentile and Target Score | StudyStore",
-     "Free MCAT score calculator: look up MCAT total and section percentile ranks from the official AAMC table in effect May 2026 to April 2027, and find the score needed for a target percentile."),
+    ("mcat-percentile", "MCAT Score Calculator: Percentile and Target Score", "MCAT Score Calculator: Percentile and Target Score",
+     "Free MCAT score calculator: total and section percentile ranks from the official AAMC table (May 2026 to April 2027) and the score for a target percentile."),
 ]
 
 FOOT_CTA = ('<aside class="cta"><div><strong>Want these facts as spaced-repetition cards?</strong>'
@@ -129,6 +129,7 @@ def build(emit, site, products, notes_meta, notes_by_aamc=None, practice_by_aamc
 <p class="eyebrow mono noembed"><span class="dot"></span>Free MCAT tool</p>
 <h1>{html.escape(h1)}</h1>
 <p class="lead noembed">{lead}</p>
+<div class="noembed">{{{{topbuy:{"1a-amino-acids-proteins" if cta else "feat"}}}}}</div>
 <section class="panel" style="border-top:1px solid var(--line)" aria-label="{html.escape(h1)}">
 {tool_html}
 </section>
@@ -227,9 +228,10 @@ def build(emit, site, products, notes_meta, notes_by_aamc=None, practice_by_aamc
                 "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{base}/tools/{s}.html", "name": h} for i, (s, h, _, _) in enumerate(TOOLS)]}
     idx = f"""<div class="wrap phero"><p class="eyebrow mono"><span class="dot"></span>Free MCAT tools</p><h1 class="split">Free tools</h1>
 <p class="lead">Interactive MCAT practice and planning tools. Free, no signup, runs in your browser, and nothing you enter leaves your device.</p></div>
+<section><div class="wrap">{{{{topbuy:feat}}}}</div></section>
 <section><div class="wrap"><div class="toolgrid">{cards}</div></div></section>
 <section><div class="wrap narrow"><h2>Comparison guides</h2><ul><li><a href="../compare/mcat-anki-decks-anking-miledown-pankow.html">AnKing vs MileDown vs Pankow vs StudyStore: MCAT Anki decks compared</a></li><li><a href="../compare/mcat-prep-cost-courses-vs-diy.html">MCAT prep cost in 2027: courses vs DIY, with official AAMC prices</a></li></ul></div></section>
 <section><div class="wrap narrow">{{{{waitlist}}}}</div></section>"""
-    emit("tools/index.html", "Free MCAT Tools: Amino Acid Quiz, pKa Trainer, Study Planner | StudyStore",
+    emit("tools/index.html", "Free MCAT Tools: Amino Acid Quiz, pKa Quiz, Study Planner",
          "Free interactive MCAT tools: amino acid quiz, pKa and charge at pH trainer, 2027 study schedule generator and AAMC percentile lookup. No signup.",
          idx, og_image=f"{base}/assets/tools/og-index.png", head_extra='<link rel="stylesheet" href="{{root}}assets/tools.css">' + ld(itemlist), lastmod=today)

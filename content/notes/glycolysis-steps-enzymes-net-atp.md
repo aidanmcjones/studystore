@@ -1,11 +1,11 @@
 ---
 title: Glycolysis Steps, Enzymes and Net ATP Yield for the MCAT
 description: The ten steps of glycolysis grouped into investment and payoff, the three regulated enzymes, a step-by-step ATP and NADH ledger, and trap questions.
-seo_title: MCAT Glycolysis Steps, Enzymes and Net ATP (Free Notes)
-seo_description: Free MCAT glycolysis notes: all 10 steps, the 3 regulated enzymes, net ATP and NADH, plus a 5-question quiz. Investment vs payoff phase explained.
 product: 1d-metabolism-bioenergetics
 published: 2026-10-20
 related: michaelis-menten-and-lineweaver-burk, enzyme-classes-ec-1-to-7, passive-vs-active-transport
+seo_title: Glycolysis Steps, Enzymes and Net ATP Yield | MCAT
+seo_description: Glycolysis for the MCAT: all 10 steps, the 3 regulated enzymes, net ATP and NADH yield, plus a 5-question quiz.
 ---
 
 Glycolysis turns one glucose (6 carbons) into two pyruvate (3 carbons each) in the cytosol, without needing oxygen. It spends 2 ATP early, makes 4 ATP and 2 NADH later, and so **nets 2 ATP, 2 NADH and 2 pyruvate per glucose**. Three steps are effectively one-way and serve as the control points: **hexokinase, phosphofructokinase-1 (PFK-1) and pyruvate kinase**. If you can place those three and keep a running ATP tally, most glycolysis questions fall out.
