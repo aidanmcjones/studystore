@@ -4,6 +4,8 @@ description: Walk through each action potential phase, which voltage-gated chann
 product: 3a-nervous-endocrine
 published: 2026-10-20
 related: passive-vs-active-transport, galvanic-vs-electrolytic-cells
+seo_title: Action Potential Phases and Ion Channels Explained
+seo_description: Each action potential phase and the voltage-gated channel that opens or closes, why refractory periods exist and how Nernst potentials set limits.
 ---
 
 An action potential is a brief, all-or-none reversal of a neuron's membrane voltage. It runs in five phases: the cell rests near -70 mV, a stimulus depolarizes it to threshold (roughly -55 mV), voltage-gated Na<sup>+</sup> channels open and Na<sup>+</sup> rushes in to push the voltage toward +30 mV or so, the Na<sup>+</sup> channels inactivate while voltage-gated K<sup>+</sup> channels open and K<sup>+</sup> leaves to repolarize the cell, and the slow-closing K<sup>+</sup> channels briefly overshoot the resting value (hyperpolarization). The exact millivolt values vary between cell types, so learn the sequence and the reasons rather than the decimals.

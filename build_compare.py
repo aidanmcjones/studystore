@@ -55,7 +55,7 @@ def build(emit, site, ld_json, breadcrumbs):
     slug = "mcat-anki-decks-anking-miledown-pankow"
     url = f"{base}/compare/{slug}.html"
     title = "AnKing vs MileDown vs Pankow vs StudyStore: MCAT Anki Decks Compared"
-    desc = "A dated, sourced comparison of the main free MCAT Anki decks (AnKing, MileDown, Pankow P/S) and StudyStore's paid packs: size, price, coverage and where each lives."
+    desc = "Dated, sourced comparison of AnKing, MileDown, Pankow and StudyStore packs: size, price, coverage and where each deck lives."
     rows = []
     for r in d["decks"]:
         size = E(r["size"]) + (" (approximate)" if r.get("approximate") else "")
@@ -67,6 +67,7 @@ def build(emit, site, ld_json, breadcrumbs):
     body = f"""<article class="note wrap compare">
 <p class="eyebrow">Comparison guide</p>
 <h1>{E(title)}</h1>
+{{{{topbuy:feat}}}}
 <p class="meta">By StudyStore &middot; Checked {E(day)} &middot; StudyStore sells one of the products compared here</p>
 <div class="prose">
 <p><strong>Disclosure:</strong> StudyStore wrote this page and sells MCAT study packs. Numbers for other decks come only from the maker's own page or a dated third-party page, linked in each row. Where a number is a note count, an estimate, or differs between sources, the row says so. Corrections are welcome through the report link at the bottom.</p>
@@ -94,7 +95,7 @@ def build(emit, site, ld_json, breadcrumbs):
 {{{{waitlist}}}}
 <p class="meta"><a class="reportlink" href="{{{{root}}}}report.html" data-report>Spotted an outdated number? Report a problem or suggest something</a></p>
 </article>"""
-    emit(f"compare/{slug}.html", title + " | StudyStore", desc, body,
+    emit(f"compare/{slug}.html", "AnKing vs MileDown vs Pankow: MCAT Anki Decks Compared | StudyStore", desc, body,
          head_extra=ld_json(article_ld(base, url, title, desc, day), breadcrumbs((title, url))), lastmod=day)
 
     # ---------------- cost ----------------

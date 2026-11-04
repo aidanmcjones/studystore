@@ -4,6 +4,8 @@ description: What recombination frequency is, how to calculate it and convert it
 product: 1c-heredity-evolution
 published: 2026-10-20
 related: hardy-weinberg-equation-practice-problems, mitosis-vs-meiosis-differences
+seo_title: Recombination Frequency and Map Units (cM) Explained
+seo_description: How to calculate recombination frequency and convert it to map units (cM), with worked examples, the 50 percent limit and a 5-question quiz.
 ---
 
 Recombination frequency is the fraction of offspring that carry a new combination of alleles not seen in either parental chromosome. **Recombination frequency (percent) = recombinant offspring / total offspring &times; 100, and 1 percent recombination = 1 map unit = 1 centimorgan (cM).** Genes that are close together on a chromosome rarely have a crossover between them, so they recombine rarely; genes far apart recombine more often. The expected observed value never goes above 50 percent, which is what unlinked genes show.

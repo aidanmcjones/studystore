@@ -170,6 +170,17 @@ def clean_abs_urls(text):
     """clean_url on every absolute same-site .html URL in a page (relative links are left alone)."""
     return _ABS_HTML.sub(lambda m: BASE + clean_url(m.group(1)), text)
 
+_REL_HTML = re.compile(r'(href=")((?![a-z][a-z0-9+.-]*:|//)[^"#?]*?)\.html([#?][^"]*)?(?=")', re.I)
+
+def clean_rel_links(text):
+    """Point internal relative and root-relative .html hrefs at the final (non-redirecting) URL."""
+    def sub(m):
+        path, tail = m.group(2), m.group(3) or ""
+        if path == "index" or path.endswith("/index"):
+            path = path[:-len("index")] or "./"
+        return m.group(1) + path + tail
+    return _REL_HTML.sub(sub, text)
+
 def ld_json(*objs):
     return "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False).replace("</", "<\\/")}</script>\n'
                    for o in objs)
@@ -197,7 +208,7 @@ def emit(out, title, desc, body, noindex=False, og_image=DEFAULT_OG, og_type="we
     page = page.replace("{{head_extra}}", head_extra)
     if noindex:
         root = "/studystore/" if BASE.endswith("/studystore") else "/"
-    page = clean_abs_urls(version_assets(render(page, root)))
+    page = clean_rel_links(clean_abs_urls(version_assets(render(page, root))))
     dest = ROOT / out
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(page)

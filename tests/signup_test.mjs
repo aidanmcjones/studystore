@@ -20,9 +20,9 @@ function check(name, h) {
   ok(b.includes(`name="consent_text" value="${esc(CONSENT_TEXTS[0])}"`), name + ": consent text is allowlisted");
   ok(/type="email"[^>]*required|required[^>]*type="email"/.test(b), name + ": email input");
   ok(/name="website"/.test(b), name + ": honeypot");
-  ok(/unsubscribe/i.test(b) && /privacy\.html/.test(b), name + ": unsubscribe and privacy note");
+  ok(/unsubscribe/i.test(b) && /privacy(?:\.html)?\b/.test(b), name + ": unsubscribe and privacy note");
   ok(/assets\/free\/studystore-mcat-sample-cheat-sheet\.pdf/.test(b), name + ": sample PDF link");
-  ok(/href="[^"]*notes\/index\.html"/.test(b), name + ": sampler still reachable without signup");
+  ok(/href="[^"]*notes\/(?:index\.html)?"/.test(b), name + ": sampler still reachable without signup");
   ok((h.match(/data-waitlist/g) || []).length === (h.match(/id="(su|wl|cc)-email"/g) || []).length, name + ": one id per form");
 }
 

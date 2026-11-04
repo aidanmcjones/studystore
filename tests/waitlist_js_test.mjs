@@ -17,7 +17,7 @@ ok(box.includes(`data-endpoint="${BRAIN}"`), "form posts to the brain endpoint w
 ok(/<form class="wlform" method="post" action="\/api\/subscribe"/.test(box), "no-JS fallback posts same-origin");
 ok(box.includes('name="list_id" value="studystore-mcat"'), "list_id studystore-mcat");
 ok(box.includes(`name="consent_text" value="${CONSENT}"`), "consent_text field is the verbatim text");
-ok(box.includes(`<span class="wlconsent">${CONSENT}</span> <a href="privacy.html">Privacy</a>`), "consent shown verbatim next to the button with the privacy link");
+ok(box.includes(`<span class="wlconsent">${CONSENT}</span> <a href="privacy">Privacy</a>`), "consent shown verbatim next to the button with the privacy link");
 ok(box.indexOf('class="wlconsent"') > box.indexOf('<button type="submit"'), "consent sits right after the button");
 ok(/<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"><\/label><\/div>/.test(box), "hidden website honeypot");
 ok(!/name="exam_month"|name="hp"/.test(box), "legacy fields gone");

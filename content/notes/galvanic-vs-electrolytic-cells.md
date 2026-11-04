@@ -1,11 +1,11 @@
 ---
 title: Galvanic vs Electrolytic Cells: Signs, Electron Flow and Examples
 description: Compare galvanic and electrolytic cells by spontaneity, electrode signs, electron flow, and sign of E and delta G, with worked Nernst and Faraday examples.
-seo_title: Galvanic vs Electrolytic Cells | MCAT Free Notes
-seo_description: Free MCAT notes comparing galvanic and electrolytic cells: electrode signs, electron flow, E and delta G, with Nernst and Faraday examples.
 product: 4c-electricity-electrochem
 published: 2026-10-20
 related: action-potential-phases-ion-channels, acid-base-titration-curves-equivalence-point
+seo_title: Galvanic vs Electrolytic Cells: Key Differences
+seo_description: Galvanic vs electrolytic cells: electrode signs, electron flow, E and delta G, with Nernst and Faraday examples and a quiz.
 ---
 
 A galvanic (voltaic) cell runs a spontaneous redox reaction and turns chemical energy into electrical work, so its cell potential is positive and delta G is negative. An electrolytic cell uses an outside power source to force a nonspontaneous reaction, so the reaction it drives has a negative cell potential and a positive delta G. In both, oxidation happens at the anode, reduction happens at the cathode, and electrons travel through the wire from anode to cathode. What changes between the two is the sign printed on each electrode.

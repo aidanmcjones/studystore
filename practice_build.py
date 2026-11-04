@@ -194,7 +194,7 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
             mins=str(max(5, round(len(p["qs"]) * 1.5))), description=html.escape(m["description"]),
             primer=convert(_esc(p["primer_md"])), notelinks=notelinks, cta_top=("{{topbuy:%s%s}}" % (m["product"], ":social-cta" if "practice/" + p["slug"] in SOCIAL_CTA_PAGES else "")) if m["product"] != "none" else "",
             questions="".join(_q_html(i, q) for i, q in enumerate(p["qs"], 1)), cta=cta, more=more))
-        emit(f"practice/{p['slug']}.html", f'{m["title"]} | StudyStore', m["description"], body,
+        emit(f"practice/{p['slug']}.html", m.get("seo_title") or f'{m["title"]} | StudyStore', m.get("seo_description") or m["description"], body,
              noindex=p["noindex"], og_type="article", head_extra=STYLE + _jsonld(p, base_url, notes_by_slug),
              lastmod=m.get("updated", m["published"]))
     # category hubs

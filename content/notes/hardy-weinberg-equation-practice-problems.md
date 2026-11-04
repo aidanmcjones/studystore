@@ -1,11 +1,11 @@
 ---
 title: Hardy-Weinberg Equation: How to Solve Every MCAT Problem Type
 description: Solve Hardy-Weinberg problems from any starting point: recessive or dominant phenotypes, genotype counts, carriers, X-linked traits, and equilibrium tests.
-seo_title: Hardy-Weinberg Practice Problems for the MCAT
-seo_description: Free Hardy-Weinberg practice for the MCAT: solve recessive, carrier, genotype count and X-linked problems step by step, with a quiz.
 product: 1c-heredity-evolution
 published: 2026-10-20
 related: lac-operon-regulation-lactose-glucose
+seo_title: Hardy-Weinberg Practice Problems for the MCAT
+seo_description: Hardy-Weinberg practice problems: solve recessive, carrier, genotype count and X-linked cases step by step, with a 5-question quiz.
 ---
 
 The Hardy-Weinberg equations are **p + q = 1** for allele frequencies and **p<sup>2</sup> + 2pq + q<sup>2</sup> = 1** for genotype frequencies, where p is the frequency of one allele (usually the dominant one) and q is the frequency of the other. The single most useful move in any problem is to find **q<sup>2</sup>**, because the homozygous recessive class is the only genotype you can usually see directly from a phenotype. Take its square root, get q, then everything else follows.

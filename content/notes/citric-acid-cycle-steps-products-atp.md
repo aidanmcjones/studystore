@@ -1,11 +1,11 @@
 ---
 title: Citric Acid (Krebs) Cycle Steps, Enzymes, and Products
 description: Walk the eight citric acid cycle steps, the products of each turn, the three regulated enzymes, and how to count ATP from acetyl-CoA to glucose.
-seo_title: Citric Acid (Krebs) Cycle Steps and Products | MCAT
-seo_description: Free MCAT notes on the citric acid cycle: the 8 steps, enzymes, products per turn, regulation and ATP count, with a 5-question quiz.
 product: 1d-metabolism-bioenergetics
 published: 2026-10-20
 related: glycolysis-steps-enzymes-net-atp, gibbs-free-energy-delta-g-spontaneity, enzyme-classes-ec-1-to-7
+seo_title: Citric Acid Cycle: Steps, Products and ATP | MCAT
+seo_description: Citric acid (Krebs) cycle steps: the 8 enzymes, products per turn, regulation and ATP count, with a 5-question MCAT-style quiz.
 ---
 
 The citric acid cycle (also called the Krebs cycle or TCA cycle) runs in the mitochondrial matrix and oxidizes the equivalent of the two-carbon acetyl group of acetyl-CoA to two CO<sub>2</sub>. **Each turn makes 3 NADH, 1 FADH<sub>2</sub>, 1 GTP (or ATP) and 2 CO<sub>2</sub>**, and regenerates the oxaloacetate it started with. One glucose gives two pyruvate and therefore two acetyl-CoA, so the cycle turns twice per glucose. The cycle itself makes very little ATP directly; its real job is loading electron carriers for the electron transport chain.

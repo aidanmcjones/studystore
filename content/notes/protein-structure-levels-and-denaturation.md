@@ -1,11 +1,11 @@
 ---
 title: Protein Structure: Primary to Quaternary, and What Denaturation Destroys
 description: The four levels of protein structure, the bonds that hold each level together, and how heat, pH, urea, and SDS unfold proteins, written for the MCAT.
-seo_title: Protein Structure Levels and Denaturation | MCAT
-seo_description: Free MCAT notes on primary to quaternary protein structure, the bonds at each level and denaturation by heat, pH, urea and SDS, with a quiz.
 product: 1a-amino-acids-proteins
 published: 2026-10-20
 related: amino-acid-pka-charge-ph-7-4, enzyme-inhibition-types-compared, enzyme-classes-ec-1-to-7
+seo_title: Protein Structure: Primary to Quaternary and Denaturation
+seo_description: MCAT notes on primary to quaternary protein structure, the bonds at each level and denaturation by heat, pH, urea and SDS, with a quiz.
 ---
 
 A protein's shape decides its job. The MCAT organizes that idea into four levels of structure and then tests whether you know which kinds of bonds hold each level together and which treatments break them. That pairing, level plus bond, is the key to the topic, and it is also the key to understanding denaturation.

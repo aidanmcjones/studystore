@@ -1,11 +1,11 @@
 ---
 title: Piaget's Stages of Cognitive Development for the MCAT
 description: Piaget's four stages with ages, milestones and limits, plus schemas, assimilation and accommodation, the classic tasks, and how to place a vignette.
-seo_title: Piaget's Stages of Cognitive Development | MCAT
-seo_description: Free MCAT notes on Piaget's 4 stages: ages, milestones, schemas, assimilation vs accommodation, and a 5-question quiz.
 product: 6b-cognition-memory-consciousness
 published: 2026-10-20
 related: eriksons-stages-of-psychosocial-development, types-of-memory-sensory-short-term-long-term, classical-vs-operant-conditioning
+seo_title: Piaget's 4 Stages of Cognitive Development
+seo_description: Piaget's 4 stages: ages, milestones, schemas, and assimilation vs accommodation, with a 5-question MCAT-style quiz.
 ---
 
 Jean Piaget proposed that children think in qualitatively different ways as they grow, passing in a fixed order through four stages: **sensorimotor** (birth to about 2), **preoperational** (about 2 to 7), **concrete operational** (about 7 to 11), and **formal operational** (about 11 onward). Children move forward by building mental frameworks called schemas and adjusting them through assimilation and accommodation. To place a child in a stage, look at what the child can and cannot do, not just the age given.

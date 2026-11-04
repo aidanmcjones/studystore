@@ -7,6 +7,8 @@ cluster: Chirality and chiral centers, Cahn-Ingold-Prelog R and S, Enantiomers a
 product: 5b-molecules-bonding-stereo
 published: 2026-10-20
 notes:
+seo_title: MCAT Stereochemistry Practice Questions: R/S, Enantiomers
+seo_description: Free MCAT-style stereochemistry practice: R and S assignment, enantiomers vs diastereomers, meso compounds and E and Z alkenes, with explanations.
 ---
 
 A carbon with four different groups is a chiral center. To name it, rank the groups by the Cahn-Ingold-Prelog rules: higher atomic number at the first point of difference wins, and a double bond counts as two single bonds to the same atom. With the lowest-priority group pointing away, a clockwise path from 1 to 2 to 3 is R and counterclockwise is S; if the lowest group points toward you, reverse the answer. The same priorities name alkenes: E when the two higher-priority groups sit on opposite sides, Z when they share a side.

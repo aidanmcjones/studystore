@@ -1,11 +1,11 @@
 ---
 title: Enzyme Inhibition Types Compared: Competitive, Noncompetitive, Uncompetitive, Mixed
 description: A side-by-side guide to the four reversible inhibition types, how each changes Km and Vmax, and how to recognize them on a Lineweaver-Burk plot.
-seo_title: Enzyme Inhibition Types: Competitive vs Noncompetitive
-seo_description: Free MCAT table of competitive, noncompetitive, uncompetitive and mixed inhibition: effect on Km and Vmax, and how to spot each on a Lineweaver-Burk plot.
 product: 1a-amino-acids-proteins
 published: 2026-10-20
 related: michaelis-menten-and-lineweaver-burk, protein-structure-levels-and-denaturation, enzyme-classes-ec-1-to-7
+seo_title: Enzyme Inhibition Types Compared: Km and Vmax Effects
+seo_description: Competitive, noncompetitive, uncompetitive and mixed inhibition in one table: effect on Km and Vmax and how to spot each on a Lineweaver-Burk plot.
 ---
 
 Inhibition questions are some of the most predictable on the MCAT, and also some of the most commonly missed, because students memorize a table without understanding where the table came from. This note derives the table from one question: **which enzyme form does the inhibitor bind?** Once you can answer that, the effects on K<sub>m</sub> and V<sub>max</sub> follow.
