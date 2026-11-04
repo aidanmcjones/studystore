@@ -100,15 +100,16 @@ def checkout_open(site):
     return any(buyable(p) for p in site.get("products", []) + site.get("bundles", []))
 
 
-def buy(items, slug, cls="btn", root=""):
+def buy(items, slug, cls="btn", root="", cta=False):
     p = items[slug]
     if p.get("status") != "available":
         return f'<a class="{cls} off" aria-disabled="true" role="link" tabindex="-1">Coming soon</a>'
     url = checkout_url(p)
     if PROVIDER == "polar":
         if url:
-            return (f'<a class="{cls}" href="{E(url)}" data-checkout="polar" data-slug="{E(p["slug"])}" '
-                    f'rel="noopener">Buy now, {E(p["price"])}</a>')
+            href, track = (E(url) + "?utm_source=site-cta", ' data-track="cta"') if cta else (E(url), "")
+            return (f'<a class="{cls}" href="{href}" data-checkout="polar" data-slug="{E(p["slug"])}" '
+                    f'rel="noopener"{track}>Buy now, {E(p["price"])}</a>')
         return f'<a class="{cls} off" aria-disabled="true" role="link" tabindex="-1">Available soon</a>'
     if p.get("variant_id"):
         href = E(url) if url else f'{root}products/{p["slug"]}.html#buy'
@@ -591,7 +592,8 @@ def pack_page(site, items, p, emit, tpl):
                 title=esc(p["title"]), lead=lead, inside=inside, how=how, topics_count=p["subtopic_count"],
                 elements=elements_html(p), price=E(p["price"]), price_note=note,
                 price_attr=' data-exp="price_frame" data-exp-field="price"' if avail else "",
-                buy=buy(items, p["slug"], root=root), facts=pack_facts(p), compare=compare_html(site, p, root),
+                buy=buy(items, p["slug"], root=root), facts=pack_facts(p),
+                herobuy=(f'<p class="herobuy">{buy(items, p["slug"], root=root, cta=True)}</p>' if avail else ""), compare=compare_html(site, p, root),
                 bottom=bottom + sticky_html(items, p, root, avail), kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
                 related=RELATED.get(p["slug"], ""))
     s = sample(p["slug"]) if avail else None
@@ -616,6 +618,7 @@ def bundle_page(site, items, b, emit, tpl):
               f'{b["ready_count"]} of {b["pack_count"]} packs have passed accuracy review so far. The bundle goes on sale when all of them have.')
     body = fill(tpl, title=esc(b["title"]), pack_count=b["pack_count"], price=E(b["price"]), list_value=b["list_value_usd"],
                 status=status, rows="".join(rows), buy=buy(items, b["slug"], root=root),
+                herobuy=(f'<p class="herobuy">{buy(items, b["slug"], root=root, cta=True)}</p>' if avail else ""),
                 ready=b["ready_count"], kicker="Bundle &middot; one-time" if avail else "Bundle &middot; coming soon")
     out = f'products/{b["slug"]}.html'
     emit(out, f'{b["title"]} MCAT Bundle | StudyStore',
