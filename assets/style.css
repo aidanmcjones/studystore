@@ -663,3 +663,16 @@ html:not(.js) .qitem.qx{display:none}
 .waitlist-cta .wlform{display:block}
 .waitlist-cta .wlform label{display:block;margin-bottom:6px}
 .waitlist-cta .wlnote{font-size:.85rem}
+
+/* conversion: early look inside, note CTA thumb, mobile sticky buy bar */
+.peek{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:14px 0}
+.peek figure{margin:0}.peek img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}
+.peek button{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.peek figcaption{font-size:.8rem;color:var(--muted);margin-top:6px}
+.peekbuy{margin:18px 0 0}
+.cta-thumb{flex:0 0 150px;max-width:150px}.cta-thumb img{width:100%;height:auto;border-radius:8px;display:block;border:1px solid color-mix(in srgb,var(--bg) 30%,transparent)}
+.stickybuy{display:none}
+@media (max-width:860px){
+  .stickybuy{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--surface);border-top:1px solid var(--ink)}
+  body:has(.stickybuy){padding-bottom:72px}
+}

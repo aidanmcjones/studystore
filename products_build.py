@@ -289,6 +289,28 @@ def gallery_html(p, root="{{root}}"):
     return '<div class="gallery g4">' + "".join(figs) + ('<div class="sheets">' + "".join(sheets) + "</div>" if sheets else "") + "</div>"
 
 
+def peek_html(items, p, root):
+    """Early 'look inside' block: two real sample cards, the first cheat sheet page, a buy button and who the pack is for."""
+    s = sample(p["slug"]) or {}
+    imgs = []
+    for c in (s.get("cards") or [])[:2]:
+        imgs.append(f'<figure><button type="button" data-zoom="{root}{E(c["src"])}" aria-label="Enlarge sample card">'
+                    f'<img src="{root}{E(c["src"])}" alt="Sample card from {esc(p["title"])}, answer side" width="{c["w"]}" height="{c["h"]}" loading="lazy"></button>'
+                    f'<figcaption>Real card from the pack</figcaption></figure>')
+    for c in [x for x in (s.get("sheets") or []) if x.get("kind") == "sheet"][:1]:
+        imgs.append(f'<figure><button type="button" data-zoom="{root}{E(c["src"])}" aria-label="Enlarge {esc(c["alt"])}">'
+                    f'<img src="{root}{E(c["src"])}" alt="{esc(c["alt"])}" width="{c["w"]}" height="{c["h"]}" loading="lazy"></button>'
+                    f'<figcaption>{esc(c["alt"])}</figcaption></figure>')
+    if not imgs:
+        return ""
+    return ('<h2 class="split">A look inside</h2><div class="peek">' + "".join(imgs) + "</div>"
+            f'<p class="meta"><a href="#preview">More sample cards and 5 free practice questions from this pack</a></p>'
+            f'<p class="peekbuy">{buy(items, p["slug"], root=root)}</p>'
+            f'<h2 class="split">Who it is for</h2><p class="reveal">MCAT students who want to drill MCAT content category {E(p["aamc"])} '
+            f'({esc(p["title"])}) with spaced repetition in Anki, plus a printable guide and cheat sheet for review away from the screen. '
+            'It covers one AAMC content category. It is not a full-length exam and does not replace AAMC official materials.</p>')
+
+
 def quiz_html(qs, final_html):
     items = []
     for i, q in enumerate(qs, 1):
@@ -516,6 +538,14 @@ def compare_html(site, p, root):
     return '<p class="eyebrow mono" style="margin-top:22px">Or get the whole section</p><ul class="mono compare">' + "".join(rows) + "</ul>"
 
 
+def sticky_html(items, p, root, avail):
+    """Mobile-only bottom bar with price and the buy link, so the checkout is always one tap away."""
+    if not avail:
+        return ""
+    return (f'<div class="stickybuy"><span class="mono">{E(p["price"])} one-time</span>'
+            + re.sub(r'class="btn[^"]*"', 'class="btn small"', buy(items, p["slug"], root=root), count=1) + "</div>")
+
+
 def pack_page(site, items, p, emit, tpl):
     root = "../"
     avail = p["status"] == "available"
@@ -524,6 +554,7 @@ def pack_page(site, items, p, emit, tpl):
         lead = (f'{c.get("cards")} original Anki flashcards, {a_n(c.get("guide_pages"))} {c.get("guide_pages")}-page illustrated study guide, '
                 f'{a_n(c.get("cheatsheet_pages"))} {c.get("cheatsheet_pages")}-page cheat sheet and {c.get("questions")} practice questions for MCAT content category {E(p["aamc"])}.')
         inside = ('<h2 class="split">What is inside</h2><ul class="files mono reveal">' + files_html(c) + "</ul>" + mix_html(c, label=False))
+        inside += peek_html(items, p, root)
         how = ('<h2 class="split">Import in 30 seconds</h2><ol class="steps reveal"><li>Install Anki (free) from apps.ankiweb.net.</li>'
                '<li>Unzip the download, then double-click <code>deck.apkg</code> or use File, Import.</li>'
                f'<li>Cards are tagged under <code>StudyStore::MCAT</code>. Re-importing a later version updates the same notes.</li>'
@@ -561,7 +592,7 @@ def pack_page(site, items, p, emit, tpl):
                 elements=elements_html(p), price=E(p["price"]), price_note=note,
                 price_attr=' data-exp="price_frame" data-exp-field="price"' if avail else "",
                 buy=buy(items, p["slug"], root=root), facts=pack_facts(p), compare=compare_html(site, p, root),
-                bottom=bottom, kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
+                bottom=bottom + sticky_html(items, p, root, avail), kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
                 related=RELATED.get(p["slug"], ""))
     s = sample(p["slug"]) if avail else None
     kw = {}

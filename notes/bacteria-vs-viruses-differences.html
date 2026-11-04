@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
-<link rel="stylesheet" href="../assets/style.css?v=6b5ee5c0cc">
+<link rel="stylesheet" href="../assets/style.css?v=366a8bade2">
 <link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
 <style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
 <script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
@@ -74,30 +74,6 @@
 <p>Meanwhile, <a href="../notes/" data-track="sampler">start with the free notes</a>.</p>
 </div>
 </section>
-<section class="waitlist waitlist-inline" id="signup" aria-labelledby="signup-h">
-<div class="wlcopy">
-<p class="eyebrow mono"><span class="dot"></span>Free MCAT sampler</p>
-<h2 id="signup-h">Free sample: a 3-page MCAT cheat sheet (PDF), plus 6 short high-yield lessons by email</h2>
-<p>Enter your email and download a real page set from a paid pack: the 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF). Confirm your email and short MCAT lessons follow. Free, no card.</p>
-<p>Prefer not to sign up? The sampler is open to everyone: <a href="../notes/" data-track="sampler">free notes</a>, <a href="../practice/" data-track="sampler">practice sets</a> and the <a href="../tools/mcat-study-schedule">study schedule generator</a>.</p>
-</div>
-<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
-<label for="su-email">Email</label>
-<input id="su-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
-<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
-<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
-<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
-<button type="submit" class="btn">Get the free cheat sheet</button>
-<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> Every email has an unsubscribe link. <a href="../privacy">Privacy</a></p>
-<p class="wlstatus" role="status" aria-live="polite"></p>
-</form>
-<div class="wldone" hidden tabindex="-1">
-<p class="wldone-h">Check your email</p>
-<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
-<p><a class="btn" href="../assets/free/studystore-mcat-sample-cheat-sheet.pdf" download data-track="sample-pdf">Download your free sample: 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF)</a></p>
-<p>Meanwhile, <a href="../notes/" data-track="sampler">start with the free notes</a>.</p>
-</div>
-</section>
 <div class="prose">
 <p>Bacteria are cells: single-celled prokaryotes with their own membrane, ribosomes and metabolism, able to grow and divide on their own by binary fission. Viruses are not cells: they are a nucleic acid genome wrapped in a protein coat, with no ribosomes and no metabolism, and they can only be copied inside a living host cell. Nearly every practical difference, from size to how each is treated, follows from that one split. Antibiotics work by hitting machinery that bacteria have and human cells lack, and a virus has none of that machinery of its own.</p>
 <h2 id="the-differences-at-a-glance">The differences at a glance</h2>
@@ -130,14 +106,38 @@
 <h2 id="one-minute-recap">One-minute recap</h2>
 <p>Bacteria: prokaryotic cells, about 1 to 5 &micro;m, dsDNA circular chromosome plus plasmids, 70S ribosomes, own metabolism, usually a peptidoglycan wall, divide by binary fission, killed by antibiotics. Viruses: non-cellular particles, about 20 to 300 nm, DNA or RNA genome in a capsid, sometimes an envelope, no ribosomes or metabolism, copied only inside host cells, treated with antivirals that hit viral enzymes and prevented by vaccines. Watch the exceptions: intracellular bacteria, wall-less <em>Mycoplasma</em>, giant viruses, prions and viroids.</p>
 </div>
-<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Prokaryotes, Viruses and Microbial Genetics is a $13 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/2b-prokaryotes-viruses">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_IARNm19EeApd4tfhkPt63AtU0yOe6ao3t9GyQ3jBufw" data-checkout="polar" data-slug="2b-prokaryotes-viruses" rel="noopener">Buy now, $13</a></aside>
+<aside class="cta"><a class="cta-thumb" href="../products/2b-prokaryotes-viruses#preview"><img src="../assets/packs/2b-prokaryotes-viruses/card-1.webp?v=7cfad83243" alt="Real sample card from the pack" width="680" height="841" loading="lazy"></a><div><strong>Want this as spaced-repetition cards?</strong><p>Prokaryotes, Viruses and Microbial Genetics is a $13 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/2b-prokaryotes-viruses">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_IARNm19EeApd4tfhkPt63AtU0yOe6ao3t9GyQ3jBufw" data-checkout="polar" data-slug="2b-prokaryotes-viruses" rel="noopener">Buy now, $13</a></aside>
 <h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
 <p class="meta">Try each question first, then click it to reveal the answer.</p>
 <div class="quiz"><details class="q"><summary>1. Why does penicillin have no effect on an influenza infection?</summary><div><p>Penicillin blocks the transpeptidases that cross-link bacterial peptidoglycan. Influenza is a virus with no cell wall and no transpeptidase, so the drug has no target.</p></div></details><details class="q"><summary>2. A pathogen grows only inside host cells, but it has 70S ribosomes and its own metabolic enzymes. Is it a bacterium or a virus?</summary><div><p>A bacterium, such as Chlamydia. Ribosomes and metabolism mark it as a cell; viruses have neither, even though both groups can be obligate intracellular.</p></div></details><details class="q"><summary>3. Why must a negative-sense RNA virus carry its own RNA-dependent RNA polymerase inside the virion?</summary><div><p>Its genome cannot be translated directly, and host cells do not supply an enzyme that copies RNA from an RNA template, so the virus must bring one to make readable mRNA.</p></div></details><details class="q"><summary>4. Hand sanitizer containing alcohol inactivates which kind of virus more easily, enveloped or naked, and why?</summary><div><p>Enveloped viruses. Their outer envelope is a lipid membrane, which alcohol and detergents disrupt, while naked viruses have only a protein capsid.</p></div></details><details class="q"><summary>5. A bacterium has a 20 minute generation time. Starting from one cell, how many cells are present after 2 hours of steady growth?</summary><div><p>64 cells. Two hours is 120 / 20 = 6 generations, and 2 to the 6th power is 64.</p></div></details></div>
+<section class="waitlist waitlist-inline" id="signup" aria-labelledby="signup-h">
+<div class="wlcopy">
+<p class="eyebrow mono"><span class="dot"></span>Free MCAT sampler</p>
+<h2 id="signup-h">Free sample: a 3-page MCAT cheat sheet (PDF), plus 6 short high-yield lessons by email</h2>
+<p>Enter your email and download a real page set from a paid pack: the 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF). Confirm your email and short MCAT lessons follow. Free, no card.</p>
+<p>Prefer not to sign up? The sampler is open to everyone: <a href="../notes/" data-track="sampler">free notes</a>, <a href="../practice/" data-track="sampler">practice sets</a> and the <a href="../tools/mcat-study-schedule">study schedule generator</a>.</p>
+</div>
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
+<label for="su-email">Email</label>
+<input id="su-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
+<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn">Get the free cheat sheet</button>
+<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> Every email has an unsubscribe link. <a href="../privacy">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p><a class="btn" href="../assets/free/studystore-mcat-sample-cheat-sheet.pdf" download data-track="sample-pdf">Download your free sample: 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF)</a></p>
+<p>Meanwhile, <a href="../notes/" data-track="sampler">start with the free notes</a>.</p>
+</div>
+</section>
 <h2>Keep studying</h2>
 <ul><li><a href="mitosis-vs-meiosis-differences">Mitosis vs Meiosis: Differences, Chromosome Counts and Errors</a></li><li><a href="passive-vs-active-transport">Passive vs Active Transport: Types, Examples and Energy Math</a></li><li><a href="./">All free notes</a></li></ul>
 
-<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong><p>Prokaryotes, Viruses and Microbial Genetics is a $13 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/2b-prokaryotes-viruses">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_IARNm19EeApd4tfhkPt63AtU0yOe6ao3t9GyQ3jBufw" data-checkout="polar" data-slug="2b-prokaryotes-viruses" rel="noopener">Buy now, $13</a></aside>
+<aside class="cta"><a class="cta-thumb" href="../products/2b-prokaryotes-viruses#preview"><img src="../assets/packs/2b-prokaryotes-viruses/card-1.webp?v=7cfad83243" alt="Real sample card from the pack" width="680" height="841" loading="lazy"></a><div><strong>Want this as spaced-repetition cards?</strong><p>Prokaryotes, Viruses and Microbial Genetics is a $13 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/2b-prokaryotes-viruses">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_IARNm19EeApd4tfhkPt63AtU0yOe6ao3t9GyQ3jBufw" data-checkout="polar" data-slug="2b-prokaryotes-viruses" rel="noopener">Buy now, $13</a></aside>
 <p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
 <p class="meta"><a class="reportlink" href="../report" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
 </article>

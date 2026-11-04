@@ -278,7 +278,11 @@ def build_note(n, all_notes):
                           for q, a in n["quiz"]]}
     crumbs = breadcrumbs(("Free MCAT study notes", f"{BASE}/notes/index.html"), (m["title"], page_url))
     ld = ld_json(article, faq, crumbs)
-    cta = (f'<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong>'
+    _s = (PB.sample(m["product"]) or {}) if m["product"] != "none" else {}
+    _c = (_s.get("cards") or [None])[0]
+    _thumb = (f'<a class="cta-thumb" href="{{{{root}}}}products/{m["product"]}.html#preview"><img src="{{{{root}}}}{_c["src"]}" alt="Real sample card from the pack" width="{_c["w"]}" height="{_c["h"]}" loading="lazy"></a>'
+              if _c and (ROOT / _c["src"]).exists() else "")
+    cta = (f'<aside class="cta">{_thumb}<div><strong>Want this as spaced-repetition cards?</strong>'
            f'<p>{{{{title:{m["product"]}}}}} is a {{{{price:{m["product"]}}}}} pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. '
            f'<a href="{{{{root}}}}products/{m["product"]}.html">See what is inside</a>.</p></div>{{{{buy:{m["product"]}}}}}</aside>')
     body = f"""<article class="note wrap narrow">
@@ -286,7 +290,6 @@ def build_note(n, all_notes):
 <h1>{html.escape(m["title"])}</h1>
 <p class="meta">By StudyStore &middot; Published {m["published"]} &middot; {mins} min read &middot; {n["words"]} words</p>
 {("{{topbuy:%s%s}}" % (m["product"], ":social-cta" if out[:-5] in SOCIAL_CTA_PAGES else "")) if m["product"] != "none" else ""}
-{{{{signup}}}}
 <div class="prose">
 {body_html}
 </div>
@@ -294,6 +297,7 @@ def build_note(n, all_notes):
 <h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
 <p class="meta">Try each question first, then click it to reveal the answer.</p>
 <div class="quiz">{quiz_html}</div>
+{{{{signup}}}}
 <h2>Keep studying</h2>
 <ul>{rel}<li><a href="index.html">All free notes</a></li></ul>
 {practice_build.note_links(slug, PRACTICE_LIVE, None)}
