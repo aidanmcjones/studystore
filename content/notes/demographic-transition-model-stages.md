@@ -3,8 +3,8 @@ title: Demographic Transition Model: The 5 Stages Explained for the MCAT
 description: What happens to birth rates, death rates and population growth in each stage of the demographic transition model, with growth-rate and doubling-time math.
 product: 9b-demographics
 published: 2026-10-20
-seo_title: Demographic Transition Model: Stages 1-5 Explained
-seo_description: Demographic transition model stages 1-5: birth and death rates, population growth and the pyramid shape of each stage, plus a 5-question quiz.
+seo_title: Demographic Transition Model: 5 Stages and Pyramids
+seo_description: Which demographic transition stage has the biggest birth-death gap? Stages 1-5 with birth and death rates, growth, pyramid shapes and a 5-question quiz.
 ---
 
 The **demographic transition model** describes how a society's birth and death rates change as it industrializes. It starts with high birth and death rates and slow growth (Stage 1), moves through a phase where **death rates fall first** and the population grows quickly (Stage 2), then a phase where **birth rates fall** and growth slows (Stage 3), and ends with low birth and death rates and little growth (Stage 4). Many modern descriptions add a Stage 5, where births drop below deaths and the population shrinks and ages. The key idea is the **lag**: death rates fall before birth rates do, and the gap between them is when populations boom.
