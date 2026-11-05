@@ -3,7 +3,7 @@ title: How to Calculate Map Units From Recombination Frequency
 description: Step-by-step method to turn offspring counts into recombination frequency and map units (cM), with three worked problems and the order-of-genes check.
 product: 1c-heredity-evolution
 published: 2026-11-04
-related: recombination-frequency-gene-mapping-map-units, carrier-probability-autosomal-recessive-hardy-weinberg
+related: recombination-frequency-gene-mapping-map-units, carrier-probability-autosomal-recessive-hardy-weinberg, recombination-frequency-vs-map-distance-50-percent-limit
 seo_title: How to Calculate Map Units From Recombination Frequency
 seo_description: Count recombinants, divide by total offspring, multiply by 100: that is the map distance in map units (cM). Three worked problems with answers.
 ---

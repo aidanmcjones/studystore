@@ -3,7 +3,7 @@ title: Acetyl-CoA to Citrate: Carbon Counting in the Krebs Cycle for the MCAT
 description: How many carbons citrate has, how acetyl-CoA enters the citric acid cycle, where the two CO2 leave, and how many acetyl-CoA enter per glucose.
 product: 1d-metabolism-bioenergetics
 published: 2026-11-04
-related: citric-acid-cycle-steps-products-atp, glycolysis-steps-enzymes-net-atp, atp-yield-per-glucose-electron-transport-chain-oxidative-phosphorylation
+related: citric-acid-cycle-steps-products-atp, glycolysis-steps-enzymes-net-atp, atp-yield-per-glucose-electron-transport-chain-oxidative-phosphorylation, citric-acid-cycle-intermediates-carbons-nadh-fadh2-table
 seo_title: Acetyl-CoA to Citrate: Krebs Cycle Carbon Count
 seo_description: How many carbons does citrate have? Follow acetyl-CoA into the Krebs cycle, count carbons through each step, and see products per glucose, with a quiz.
 ---
