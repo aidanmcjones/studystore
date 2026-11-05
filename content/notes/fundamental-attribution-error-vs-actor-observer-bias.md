@@ -5,6 +5,7 @@ product: 8b-social-thinking
 published: 2026-10-20
 seo_title: Fundamental Attribution Error vs Self-Serving Bias
 seo_description: Fundamental attribution error vs self-serving bias vs actor-observer bias: the difference in one table, with examples.
+related: attribution-theory-kelley-covariation-dispositional-situational
 ---
 
 All three biases are mistakes in **attribution**, the explanations people give for behavior. The **fundamental attribution error** is overestimating personality and underestimating the situation when explaining **other people's** behavior. The **actor-observer bias** is the contrast between how we explain **our own** behavior (situation) and **others'** behavior (personality). The **self-serving bias** depends on the **outcome**: we credit ourselves for successes and blame circumstances for failures. To tell them apart, ask two questions: whose behavior is being explained, and was the outcome good or bad?

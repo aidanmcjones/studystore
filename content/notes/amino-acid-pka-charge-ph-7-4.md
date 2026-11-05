@@ -3,7 +3,7 @@ title: Amino Acid pKa Values and Charge at pH 7.4
 description: How to predict the charge, pI, and titration behavior of any amino acid for the MCAT, with the side chain pKa values worth memorizing.
 product: 1a-amino-acids-proteins
 published: 2026-10-20
-related: henderson-hasselbalch-for-the-mcat, protein-structure-levels-and-denaturation, michaelis-menten-and-lineweaver-burk
+related: henderson-hasselbalch-for-the-mcat, protein-structure-levels-and-denaturation, michaelis-menten-and-lineweaver-burk, histidine-pka-isoelectric-point-pi-calculation
 seo_title: Amino Acid pKa Values and Charge at pH 7.4 (with Quiz)
 seo_description: Amino acid pKa values, net charge at pH 7.4 and how to find pI, with the side chain pKa values worth memorizing and a pKa quiz.
 ---
