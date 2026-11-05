@@ -158,7 +158,7 @@
       L.push("- Practice " + SS.fmt(w.practice, 1) + " h" + (w.fl ? "; full-length exam " + w.fl + " plus a review day" : ""));
       L.push("- CARS " + SS.fmt(w.cars, 1) + " h");
     });
-    L.push("", "Made with studystore.co/tools/mcat-study-schedule.html. Organizes your time; no promise about your score.");
+    L.push("", "Made with studystore.co/tools/mcat-study-schedule. Organizes your time; no promise about your score.");
     return L.join("\n");
   }
 
@@ -171,7 +171,7 @@
       var focus = w.phase === "content" ? w.cats.map(function (x) { return x.c.aamc; }).filter(function (v, i, a) { return a.indexOf(v) === i; }).join(", ") : (w.phase === "practice" ? "practice and targeted review" : "final stretch");
       var desc = (w.phase === "content" ? w.cats.map(function (x) { return x.c.aamc + " " + x.c.title + " (" + SS.fmt(x.h, 1) + " h)"; }) : w.review.map(function (c) { return "Review " + c.aamc + " " + c.title; })).concat(["Practice " + SS.fmt(w.practice, 1) + " h" + (w.fl ? " incl. full-length exam " + w.fl + " and a review day" : ""), "CARS " + SS.fmt(w.cars, 1) + " h"]).join("\n");
       L.push("BEGIN:VEVENT", "UID:week" + w.n + "-" + inp.start + "-" + inp.test + "@studystore.co", "DTSTAMP:" + stamp, "DTSTART;VALUE=DATE:" + dt(w.start), "DTEND;VALUE=DATE:" + dt(w.end + MS),
-        "SUMMARY:" + esc("MCAT week " + w.n + ": " + focus), "DESCRIPTION:" + esc(desc + "\nPlan from studystore.co/tools/mcat-study-schedule.html"), "END:VEVENT");
+        "SUMMARY:" + esc("MCAT week " + w.n + ": " + focus), "DESCRIPTION:" + esc(desc + "\nPlan from studystore.co/tools/mcat-study-schedule"), "END:VEVENT");
     });
     L.push("BEGIN:VEVENT", "UID:test-" + inp.test + "@studystore.co", "DTSTAMP:" + stamp, "DTSTART;VALUE=DATE:" + dt(parse(inp.test)), "DTEND;VALUE=DATE:" + dt(parse(inp.test) + MS), "SUMMARY:MCAT test day", "END:VEVENT", "END:VCALENDAR");
     var blob = new Blob([L.join("\r\n") + "\r\n"], { type: "text/calendar" }), a = document.createElement("a");

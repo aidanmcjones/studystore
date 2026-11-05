@@ -168,9 +168,10 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
     for p in pages:
         m = p["meta"]
         notelinks = ""
-        if p["notes"]:
+        pnotes = p["notes"] or [s for s, n in notes_by_slug.items() if m["product"] != "none" and n["meta"].get("product") == m["product"]][:3]
+        if pnotes:
             notelinks = ("<strong>Free notes for this topic:</strong> " + " &middot; ".join(
-                f'<a href="{{{{root}}}}notes/{n}.html">{html.escape(notes_by_slug[n]["meta"]["title"])}</a>' for n in p["notes"]))
+                f'<a href="{{{{root}}}}notes/{n}.html">{html.escape(notes_by_slug[n]["meta"]["title"])}</a>' for n in pnotes))
         if p["tools"]:
             notelinks += ("<br><strong>Free tools:</strong> " + " &middot; ".join(
                 f'<a href="{{{{root}}}}tools/{x}.html">{TOOLS[x]}</a>' for x in p["tools"]))
@@ -205,20 +206,48 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
         lis = "".join(f'<li><a href="{{{{root}}}}practice/{x["slug"]}.html"><strong>{html.escape(x["meta"]["title"])}</strong></a>'
                       f'<p class="meta">{html.escape(x["meta"]["description"])}</p></li>' for x in items)
         nl = sorted({n for x in items for n in x["notes"]})
+        extra = sorted(sl for sl, n in notes_by_slug.items() if n["meta"].get("product") in {x["meta"]["product"] for x in items} and sl not in nl)
+        nl = (nl + extra)[:10]
         notes_html = ""
         if nl:
-            notes_html = "<h2>Free notes</h2><ul>" + "".join(
+            notes_html = "<h2>Free study notes for this section</h2><ul>" + "".join(
                 f'<li><a href="{{{{root}}}}notes/{n}.html">{html.escape(notes_by_slug[n]["meta"]["title"])}</a></li>' for n in nl) + "</ul>"
+        nq = sum(len(x["qs"]) for x in items)
+        topics = []
+        for x in items:
+            for t in x["meta"]["cluster"].split(","):
+                t = t.strip()
+                if t and t.lower() not in {u.lower() for u in topics}:
+                    topics.append(t)
+        topics_html = ("<h2>Topics covered</h2><p>" + html.escape("; ".join(topics[:24])) + ".</p>") if topics else ""
+        samples, ns = "", 0
+        for x in items:
+            if ns >= 3:
+                break
+            q = next((q for q in x["qs"] if "|" not in q["stem"] and "![" not in q["stem"] and len(q["stem"]) < 700), None)
+            if q:
+                i = x["qs"].index(q) + 1
+                samples += _q_html(i, q).replace(f'<h3>Question {i}</h3>', f'<h3>Sample: <a href="{{{{root}}}}practice/{x["slug"]}.html#q{i}">{html.escape(x["meta"]["title"])}</a></h3>')
+                ns += 1
+        samples_html = ("<h2>Sample questions</h2>" + samples) if samples else ""
+        plist = [x["meta"]["product"] for x in items if x["meta"]["product"] != "none"]
+        pack_html = ""
+        if plist:
+            pk = max(set(plist), key=plist.count)
+            pack_html = (f'<h2>The matching pack</h2><p>{{{{title:{pk}}}}} covers this section with original Anki cards, an illustrated study guide and a printable cheat sheet. '
+                         f'<a href="{{{{root}}}}products/{pk}.html">See what is inside the pack</a>.</p>')
+        intro = (f'<p>{html.escape(c["blurb"])} This section has {len(items)} topic page{"s" if len(items) != 1 else ""} with {nq} original practice questions in all, '
+                 f'each with a short concept primer and a full explanation for every answer choice. Work a topic page, check the explanation, then read the matching note.</p>')
         prods = [x["meta"]["product"] for x in items if x["meta"]["product"] != "none"]
         hub_cta = ("{{topbuy:%s}}" % max(set(prods), key=prods.count)) if prods else ""
         body = fill(hub_tpl, dict(eyebrow=f"Free MCAT-style practice, {code}", title=html.escape(f"{c['title']} Practice Questions"),
                                   lead=html.escape(c["blurb"] + " Original questions with full explanations, free, no signup."),
-                                  body=f'{hub_cta}<ul class="catlist">{lis}</ul>{notes_html}<p><a href="{{{{root}}}}practice/index.html">All practice categories</a></p>'))
+                                  body=f'{hub_cta}{intro}{topics_html}<h2>Topic pages</h2><ul class="catlist">{lis}</ul>{samples_html}{notes_html}{pack_html}<p><a href="{{{{root}}}}practice/index.html">All practice categories</a></p>'))
         emit(f"practice/{c['slug']}/index.html", f"MCAT {c['title']} Practice Questions | StudyStore",
-             f"Free MCAT-style practice questions for {c['title']}: {len(items)} topic pages with full explanations.", body,
+             f"Free MCAT-style {c['title']} practice: {nq} original questions across {len(items)} topic page{'s' if len(items) != 1 else ''}, with the topics covered, sample questions and full explanations.", body,
              head_extra=STYLE + _crumbs_ld(base_url, ("Practice questions", f"{base_url}/practice/index.html"),
                                            (f"{code} {c['title']}", f"{base_url}/practice/{c['slug']}/index.html")),
-             lastmod=max(x["meta"]["published"] for x in items))
+             lastmod="2026-11-04")
     # main hub
     secs = ""
     for code, c in cats.items():
@@ -234,7 +263,7 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
                               body="{{topbuy:feat}}" + secs))
     emit("practice/index.html", "Free MCAT Practice Questions by Topic | StudyStore",
          f"{total} free, original MCAT-style practice questions by topic with full explanations: biology, biochemistry, general and organic chemistry, physics, psychology and sociology.",
-         body, head_extra=STYLE + _crumbs_ld(base_url, ("Practice questions", f"{base_url}/practice/index.html")), lastmod=max((x["meta"]["published"] for x in live), default=None))
+         body, head_extra=STYLE + _crumbs_ld(base_url, ("Practice questions", f"{base_url}/practice/index.html")), lastmod="2026-11-04")
     return live
 
 def note_links(slug, live, cats):

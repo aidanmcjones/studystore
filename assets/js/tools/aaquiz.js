@@ -125,9 +125,9 @@
   function finish() {
     var best = parseInt(SS.store("aa_best_" + st.mode) || "0", 10);
     if (st.score > best) SS.store("aa_best_" + st.mode, String(st.score));
-    var text = "I scored " + st.score + "/" + ROUND + " on the free StudyStore Amino Acid Quiz (" + MODES[st.mode] + "). Try it: https://www.studystore.co/tools/amino-acid-quiz.html";
+    var text = "I scored " + st.score + "/" + ROUND + " on the free StudyStore Amino Acid Quiz (" + MODES[st.mode] + "). Try it: https://www.studystore.co/tools/amino-acid-quiz";
     $("qbox").innerHTML = '<div class="card-share" id="rcard"><h3>Amino Acid Quiz</h3><p style="font-size:2.2rem;font-family:Georgia,serif;font-weight:700;margin:0">' +
-      st.score + " / " + ROUND + "</p><p>" + MODES[st.mode] + ' mode</p><p style="font-size:.85rem">studystore.co/tools/amino-acid-quiz.html</p></div>' +
+      st.score + " / " + ROUND + "</p><p>" + MODES[st.mode] + ' mode</p><p style="font-size:.85rem">studystore.co/tools/amino-acid-quiz</p></div>' +
       '<p class="meta">Your best in this mode on this device: ' + Math.max(best, st.score) + "/" + ROUND + ". Nothing is sent anywhere; scores live in this browser only.</p>" +
       '<p><button type="button" class="tbtn primary" id="again">Play another round</button> <button type="button" class="tbtn" id="share">Copy result text</button></p>';
     $("again").addEventListener("click", reset);
