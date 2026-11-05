@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 42,
-  "diagram-reels": 42,
-  "diagram-shorts": 42,
-  "diagram-snapchat": 42,
-  "diagram-threads": 42,
-  "diagram-tiktok": 42,
-  "diagram-x": 42,
-  "pins-notes": 37,
+  "diagram-facebook": 43,
+  "diagram-reels": 43,
+  "diagram-shorts": 43,
+  "diagram-snapchat": 43,
+  "diagram-threads": 43,
+  "diagram-tiktok": 43,
+  "diagram-x": 43,
+  "pins-notes": 38,
   "pins-questions": 15,
-  "qotd-facebook": 52,
-  "qotd-reels": 52,
-  "qotd-shorts": 52,
-  "qotd-snapchat": 52,
-  "qotd-threads": 52,
-  "qotd-tiktok": 52,
-  "qotd-x": 52
+  "qotd-facebook": 53,
+  "qotd-reels": 53,
+  "qotd-shorts": 53,
+  "qotd-snapchat": 53,
+  "qotd-threads": 53,
+  "qotd-tiktok": 53,
+  "qotd-x": 53
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -896,6 +896,27 @@
    "size": 1380661,
    "tag": "#psychology",
    "title": "Role Strain vs Role Conflict, Status Types and Social Groups"
+  },
+  "signal-detection-theory-and-webers-law": {
+   "beats": [
+    "Absolute threshold: weakest stimulus detected 50 percent of the time. JND: smallest detectable change, 50 percent of the time.",
+    "Weber's law: \u0394I/I = k, so the needed change scales with the baseline. Fechner: felt magnitude tracks log intensity; Stevens: S = kI^n.",
+    "SDT: four outcomes (hit, miss, false alarm, correct rejection). d' = z(hit) - z(false alarm) measures sensitivity.",
+    "the criterion measures bias, liberal or conservative. Rewards and expectations shift the cutoff and leave d' alone."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-043",
+    "diagram-reels": "diagram-reels-043",
+    "diagram-shorts": "diagram-shorts-043",
+    "diagram-snapchat": "diagram-snapchat-043",
+    "diagram-threads": "diagram-threads-043",
+    "diagram-tiktok": "diagram-tiktok-043",
+    "diagram-x": "diagram-x-043"
+   },
+   "seconds": 22.6,
+   "size": 1453485,
+   "tag": "#psychology",
+   "title": "Signal Detection Theory and Weber's Law: d', Bias and the JND"
   }
  },
  "pins": {
@@ -1268,6 +1289,16 @@
    "slug": "piaget-stages-of-cognitive-development",
    "tag": "#psychology",
    "title": "Piaget's Stages of Cognitive Development for the MCAT"
+  },
+  "note-protein-structure-levels-and-denaturation": {
+   "desc": "The four levels of protein structure, the bonds that hold each level together, and how heat, pH, urea, and SDS unfold proteins, written for the MCAT.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-038"
+   },
+   "size": 129658,
+   "slug": "protein-structure-levels-and-denaturation",
+   "tag": "#biochemistry",
+   "title": "Protein Structure: Primary to Quaternary, and What Denaturation Destroys"
   },
   "q-10a-social-inequality-1": {
    "outbox_ids": {
@@ -2176,6 +2207,25 @@
    "size": 633239,
    "tag": "#psychology",
    "topic": "Psychoactive drug classes"
+  },
+  "6b-cognition-memory-consciousness-4": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-053",
+    "qotd-reels": "qotd-reels-053",
+    "qotd-shorts": "qotd-shorts-053",
+    "qotd-snapchat": "qotd-snapchat-053",
+    "qotd-threads": "qotd-threads-053",
+    "qotd-tiktok": "qotd-tiktok-053",
+    "qotd-x": "qotd-x-053"
+   },
+   "pack_slug": "6b-cognition-memory-consciousness",
+   "practice": "practice/6b-memory-encoding-retrieval-forgetting-ltp.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 704210,
+   "tag": "#psychology",
+   "topic": "Memory errors and reconstruction"
   },
   "6c-emotion-stress-2": {
    "outbox_ids": {
