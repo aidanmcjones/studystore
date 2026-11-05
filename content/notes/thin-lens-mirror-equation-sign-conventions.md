@@ -1,6 +1,8 @@
 ---
 title: Thin Lens and Mirror Equation: Sign Conventions for the MCAT
 description: Solve any lens or mirror problem with 1/f = 1/do + 1/di and m = -di/do, using one sign convention, an image table and four worked examples.
+seo_title: Thin Lens and Mirror Equation Sign Conventions
+seo_description: Solve lens and mirror problems with 1/f = 1/do + 1/di using one sign convention, an image table and four worked examples.
 product: 4d-light-sound-optics
 published: 2026-10-20
 ---

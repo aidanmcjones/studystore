@@ -1,6 +1,8 @@
 ---
 title: Transformation vs Transduction vs Conjugation in Bacteria
 description: How transformation, transduction and conjugation move DNA between bacteria, how to tell them apart in an experiment, and the traps that cost points.
+seo_title: Transformation vs Transduction vs Conjugation
+seo_description: Transformation vs transduction vs conjugation: how each moves DNA between bacteria and how to tell them apart in an experiment.
 product: 2b-prokaryotes-viruses
 published: 2026-10-31
 related: bacteria-vs-viruses-differences, mitosis-vs-meiosis-differences

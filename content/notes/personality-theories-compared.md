@@ -1,6 +1,8 @@
 ---
 title: Personality Theories for the MCAT, Compared Side by Side
 description: How the psychoanalytic, humanistic, trait, behaviorist, social cognitive and biological views explain personality, and how to tell them apart fast.
+seo_title: Personality Theories Compared for the MCAT
+seo_description: Personality theories compared: psychoanalytic, humanistic, trait, behaviorist, social cognitive and biological, side by side.
 product: 7a-individual-behavior
 published: 2026-11-02
 related: eriksons-stages-of-psychosocial-development, dsm-5-psychological-disorders-categories

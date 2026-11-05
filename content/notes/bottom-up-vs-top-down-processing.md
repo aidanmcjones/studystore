@@ -1,6 +1,8 @@
 ---
 title: Bottom-Up vs Top-Down Processing: Differences and Examples
 description: Learn how bottom-up and top-down processing differ, how they combine in perception, and how to label MCAT-style scenarios without falling for common traps.
+seo_title: Bottom-Up vs Top-Down Processing, With Examples
+seo_description: Bottom-up vs top-down processing: how each works, how they combine in perception, and how to label MCAT scenarios.
 product: 6a-sensation-perception
 published: 2026-11-03
 related: signal-detection-theory-and-webers-law, types-of-memory-sensory-short-term-long-term

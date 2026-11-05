@@ -1,6 +1,8 @@
 ---
 title: Types of Social Mobility and Stratification for the MCAT
 description: Vertical vs horizontal, intergenerational vs intragenerational, structural vs exchange mobility, plus caste and class systems, with a worked mobility table.
+seo_title: Types of Social Mobility and Stratification
+seo_description: Types of social mobility (vertical, horizontal, intergenerational, structural) and caste vs class systems, with a worked table.
 product: 10a-social-inequality
 published: 2026-10-20
 related: functionalism-vs-conflict-theory-vs-symbolic-interactionism, demographic-transition-model-stages

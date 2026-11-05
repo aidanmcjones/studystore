@@ -1,6 +1,8 @@
 ---
 title: DSM-5 Categories of Psychological Disorders for the MCAT
 description: How the DSM-5 groups psychological disorders, what separates look-alike diagnoses, and the duration rules that decide most diagnosis questions.
+seo_title: DSM-5 Disorder Categories for the MCAT
+seo_description: The DSM-5 disorder categories, what separates look-alike diagnoses, and the duration rules that decide most questions.
 product: 7a-individual-behavior
 published: 2026-10-20
 related: classical-vs-operant-conditioning, types-of-memory-sensory-short-term-long-term

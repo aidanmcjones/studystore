@@ -1,6 +1,8 @@
 ---
 title: Enantiomers vs Diastereomers: How to Tell Them Apart
 description: Classify any pair of stereoisomers as enantiomers, diastereomers, meso or identical, and see why only diastereomers separate by ordinary methods.
+seo_title: Enantiomers vs Diastereomers: How to Tell Them Apart
+seo_description: Tell enantiomers, diastereomers, meso and identical pairs apart, and why only diastereomers separate by ordinary methods.
 product: 5b-molecules-bonding-stereo
 published: 2026-11-01
 related: r-and-s-configuration-cip-priority-rules, anomers-vs-epimers-carbohydrates
