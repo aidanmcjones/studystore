@@ -3,7 +3,7 @@ title: Action Potential Phases and Ion Channels, Step by Step
 description: Walk through each action potential phase, which voltage-gated channel opens or closes, why refractory periods exist, and how Nernst potentials set the limits.
 product: 3a-nervous-endocrine
 published: 2026-10-20
-related: passive-vs-active-transport, galvanic-vs-electrolytic-cells
+related: passive-vs-active-transport, galvanic-vs-electrolytic-cells, peptide-vs-steroid-hormones-mechanisms
 seo_title: Action Potential Phases and Ion Channels Explained
 seo_description: Each action potential phase and the voltage-gated channel that opens or closes, why refractory periods exist and how Nernst potentials set limits.
 ---

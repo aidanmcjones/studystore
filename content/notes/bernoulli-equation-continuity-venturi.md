@@ -3,7 +3,7 @@ title: Bernoulli's Equation and the Venturi Effect for the MCAT
 description: Use the continuity equation and Bernoulli's equation to find flow speed and pressure in a pipe, with worked Venturi, height and Torricelli examples.
 product: 4b-fluids-gases
 published: 2026-10-20
-related: work-energy-theorem-conservation-of-energy
+related: work-energy-theorem-conservation-of-energy, ideal-gas-law-and-gas-laws-boyle-charles-avogadro-mcat
 seo_title: Bernoulli's Equation and the Venturi Effect (MCAT)
 seo_description: Bernoulli's equation and the continuity equation for flow speed and pressure in a pipe, with worked Venturi, height and Torricelli examples.
 ---
