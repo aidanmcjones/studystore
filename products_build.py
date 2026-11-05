@@ -109,14 +109,14 @@ def buy(items, slug, cls="btn", root="", cta=True):
         if url:
             href, track = (E(url) + "?utm_source=site-cta", ' data-track="cta"') if cta else (E(url), "")
             return (f'<a class="{cls}" href="{href}" data-checkout="polar" data-slug="{E(p["slug"])}" '
-                    f'rel="noopener"{track}>Buy now, {E(p["price"])}</a>')
+                    f'rel="nofollow noopener"{track}>Buy now, {E(p["price"])}</a>')
         return f'<a class="{cls} off" aria-disabled="true" role="link" tabindex="-1">Available soon</a>'
     if p.get("variant_id"):
         href = E(url) if url else f'{root}products/{p["slug"]}.html#buy'
         return (f'<a class="{cls}" href="{href}" data-buy="{E(p["slug"])}" data-fallback="{E(url or "")}" '
-                f'rel="noopener">Buy now, {E(p["price"])}</a>')
+                f'rel="nofollow noopener">Buy now, {E(p["price"])}</a>')
     if url:
-        return f'<a class="{cls}" href="{E(url)}" rel="noopener">Buy now, {E(p["price"])}</a>'
+        return f'<a class="{cls}" href="{E(url)}" rel="nofollow noopener">Buy now, {E(p["price"])}</a>'
     return f'<a class="{cls} off" aria-disabled="true" role="link" tabindex="-1">Available soon</a>'
 
 
