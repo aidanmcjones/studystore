@@ -3,7 +3,7 @@ title: Glycolysis Steps, Enzymes and Net ATP Yield for the MCAT
 description: The ten steps of glycolysis grouped into investment and payoff, the three regulated enzymes, a step-by-step ATP and NADH ledger, and trap questions.
 product: 1d-metabolism-bioenergetics
 published: 2026-10-20
-related: michaelis-menten-and-lineweaver-burk, enzyme-classes-ec-1-to-7, passive-vs-active-transport, net-yield-of-glycolysis-atp-nadh-pyruvate-per-glucose
+related: michaelis-menten-and-lineweaver-burk, enzyme-classes-ec-1-to-7, passive-vs-active-transport, net-yield-of-glycolysis-atp-nadh-pyruvate-per-glucose, glycolysis-regulation-irreversible-steps-hexokinase-pfk-1
 seo_title: Glycolysis Steps, Enzymes and Net ATP Yield
 seo_description: The 10 steps of glycolysis, its three regulated enzymes and the net ATP and NADH yield, laid out as an investment and payoff ledger with trap questions.
 ---

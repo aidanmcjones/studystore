@@ -3,7 +3,7 @@ title: Enzyme Inhibition Types Compared: Competitive, Noncompetitive, Uncompetit
 description: A side-by-side guide to the four reversible inhibition types, how each changes Km and Vmax, and how to recognize them on a Lineweaver-Burk plot.
 product: 1a-amino-acids-proteins
 published: 2026-10-20
-related: michaelis-menten-and-lineweaver-burk, protein-structure-levels-and-denaturation, enzyme-classes-ec-1-to-7
+related: michaelis-menten-and-lineweaver-burk, protein-structure-levels-and-denaturation, enzyme-classes-ec-1-to-7, uncompetitive-inhibition-lineweaver-burk-parallel-lines
 seo_title: Enzyme Inhibition Types Compared: Km and Vmax Effects
 seo_description: Competitive, noncompetitive, uncompetitive and mixed inhibition in one table: effect on Km and Vmax and how to spot each on a Lineweaver-Burk plot.
 ---

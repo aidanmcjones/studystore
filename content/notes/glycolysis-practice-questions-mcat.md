@@ -3,7 +3,7 @@ title: Glycolysis MCAT Practice Questions with Worked Answers
 description: Five glycolysis questions in MCAT style, covering net ATP, the committed step, regulation, fermentation and what happens with no oxygen, each with a short worked answer.
 product: 1d-metabolism-bioenergetics
 published: 2026-11-04
-related: glycolysis-steps-enzymes-net-atp, citric-acid-cycle-steps-products-atp, enzyme-inhibition-types-compared
+related: glycolysis-steps-enzymes-net-atp, citric-acid-cycle-steps-products-atp, enzyme-inhibition-types-compared, beta-oxidation-fatty-acid-breakdown-ketone-bodies
 seo_title: Glycolysis MCAT Questions with Worked Answers
 seo_description: Glycolysis MCAT questions with worked answers: net ATP, PFK-1 regulation, fermentation, NAD+ regeneration and the traps that cost points.
 ---
