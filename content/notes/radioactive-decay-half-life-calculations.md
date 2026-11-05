@@ -1,6 +1,8 @@
 ---
 title: Radioactive Decay and Half-Life Calculations for the MCAT
 description: Balance alpha, beta and gamma decay equations, then solve half-life problems for fraction left, elapsed time and activity, with worked examples.
+seo_title: Radioactive Decay and Half-Life Calculations
+seo_description: Balance alpha, beta and gamma decay, then solve half-life problems for fraction left, time and activity, with examples.
 product: 4e-atoms-nuclear-periodic
 published: 2026-10-20
 ---

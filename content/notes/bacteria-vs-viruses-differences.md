@@ -1,6 +1,8 @@
 ---
 title: Bacteria vs Viruses: Structure, Replication and Treatment
 description: Learn how bacteria and viruses differ in size, structure, genome, replication and drug targets, why antibiotics fail on viruses, and the exceptions that test you.
+seo_title: Bacteria vs Viruses: Key Differences for the MCAT
+seo_description: Bacteria vs viruses in one table: size, structure, genome, replication and drug targets, plus why antibiotics fail on viruses.
 product: 2b-prokaryotes-viruses
 published: 2026-10-20
 related: mitosis-vs-meiosis-differences, passive-vs-active-transport

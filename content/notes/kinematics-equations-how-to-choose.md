@@ -1,6 +1,8 @@
 ---
 title: Kinematics Equations for the MCAT: How to Choose the Right One
 description: The four constant-acceleration kinematics equations, how to pick one by the variable you lack, and worked braking, free fall and projectile examples.
+seo_title: Kinematics Equations: How to Choose the Right One
+seo_description: Pick the right of the four kinematics equations by the variable you lack, with braking, free fall and projectile examples.
 product: 4a-motion-forces-energy
 published: 2026-10-27
 related: work-energy-theorem-conservation-of-energy, bernoulli-equation-continuity-venturi

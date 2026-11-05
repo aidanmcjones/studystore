@@ -1,6 +1,8 @@
 ---
 title: How to Use Anki for the MCAT: A Daily Routine That Holds Up
 description: How to use Anki for the MCAT: what to put on cards, how many new cards to add, and how to pair flashcards with practice passages.
+seo_title: How to Use Anki for the MCAT: Daily Routine
+seo_description: How to use Anki for the MCAT: what goes on cards, how many new cards a day, and how to pair them with practice passages.
 product: bundle-complete-mcat
 published: 2026-11-01
 related: how-long-to-study-for-the-mcat, how-to-approach-a-cars-passage

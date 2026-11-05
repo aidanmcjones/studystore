@@ -1,6 +1,8 @@
 ---
 title: Conformity vs Obedience: Asch and Milgram Explained
 description: The difference between conformity and obedience, what the Asch and Milgram studies found, and which factors push each rate up or down.
+seo_title: Conformity vs Obedience: Asch and Milgram Studies
+seo_description: Conformity vs obedience: what the Asch and Milgram studies found and which factors raise or lower each rate.
 product: 7b-social-processes
 published: 2026-10-20
 related: fundamental-attribution-error-vs-actor-observer-bias

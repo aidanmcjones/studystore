@@ -1,6 +1,8 @@
 ---
 title: How to Find a Rate Law from Initial Rates (Method of Initial Rates)
 description: Find reaction orders, the rate law, and k from an initial rates table, with ratio and log shortcuts, k units by order, and worked MCAT-style examples.
+seo_title: Rate Law From Initial Rates: Step-by-Step Method
+seo_description: Find reaction orders, the rate law and k from an initial rates table with ratio shortcuts and worked examples.
 product: 5e-thermo-kinetics
 published: 2026-10-20
 related: gibbs-free-energy-delta-g-spontaneity, radioactive-decay-half-life-calculations, michaelis-menten-and-lineweaver-burk

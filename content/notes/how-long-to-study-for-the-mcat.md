@@ -1,6 +1,8 @@
 ---
 title: How Long to Study for the MCAT: Size Your Own Timeline
 description: There is no official MCAT study duration. Learn how to size your own timeline from a diagnostic, a gap list, and a test date you plan backward from.
+seo_title: How Long to Study for the MCAT: Build Your Timeline
+seo_description: How long to study for the MCAT: size your own timeline from a diagnostic, a gap list and your test date.
 product: bundle-complete-mcat
 published: 2026-10-29
 related: how-to-approach-a-cars-passage, henderson-hasselbalch-for-the-mcat, mcat-study-schedule-weekly-plan

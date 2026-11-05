@@ -1,6 +1,8 @@
 ---
 title: Equivalence Point vs End Point, and the Second Equivalence Point
 description: What the equivalence point is, how it differs from the end point, how to find the second equivalence point of a polyprotic acid, and what trial 1 of a titration is for.
+seo_title: Second Equivalence Point of a Titration, Explained
+seo_description: Find the second equivalence point of a polyprotic acid, see how it differs from the end point, and what trial 1 is for.
 product: 5a-solutions-acids-bases
 published: 2026-10-26
 related: acid-base-titration-curves-equivalence-point, henderson-hasselbalch-for-the-mcat, amino-acid-pka-charge-ph-7-4
