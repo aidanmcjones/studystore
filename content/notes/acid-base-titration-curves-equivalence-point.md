@@ -4,8 +4,8 @@ description: What the equivalence point is and how to find it on any acid-base t
 product: 5a-solutions-acids-bases
 published: 2026-10-20
 related: equivalence-point-second-equivalence-point-titration, henderson-hasselbalch-for-the-mcat, amino-acid-pka-charge-ph-7-4, weak-acid-strong-base-titration-half-equivalence-point
-seo_title: Equivalence Point on a Titration Curve, Explained
-seo_description: Find the equivalence point and half-equivalence point on any acid-base titration curve, choose the indicator, and work a full example.
+seo_title: Equivalence vs Half-Equivalence Point on a Titration Curve
+seo_description: Find the equivalence point and half-equivalence point (pH = pKa) on a titration curve, the pH at each, indicator choice and a worked example.
 ---
 
 A titration curve plots pH against the volume of titrant added. The equivalence point is where moles of added base equal moles of acid originally present (or the reverse), and its pH depends on what is left in the flask: exactly 7 for a strong acid with a strong base, above 7 for a weak acid with a strong base, and below 7 for a weak base with a strong acid. Halfway to the equivalence point, a weak acid is half converted to its conjugate base, so pH = pK<sub>a</sub>. Those two landmarks let you read almost any curve.

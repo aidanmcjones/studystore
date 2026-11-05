@@ -4,8 +4,8 @@ description: How the lac repressor and CAP-cAMP combine to set lac operon output
 product: 1b-dna-gene-expression
 published: 2026-10-20
 related: glycolysis-steps-enzymes-net-atp, anomers-vs-epimers-carbohydrates, passive-vs-active-transport, cap-camp-lac-operon-catabolite-repression, trp-operon-vs-lac-operon-repressible-inducible
-seo_title: Lac Operon Regulation: Lactose, Glucose, CAP and cAMP
-seo_description: Lac operon regulation in four conditions: how lactose, glucose, cAMP and CAP set expression, plus partial diploid logic and a quiz.
+seo_title: Lac Operon: Lactose, Glucose, CAP and cAMP Table
+seo_description: Lac operon expression in all four lactose and glucose conditions, what CAP and cAMP do, and how to solve partial diploid (lacI, lacO) questions.
 ---
 
 The lac operon is turned on strongly only when two conditions hold at once: **lactose is present** (so the repressor lets go of the operator) and **glucose is scarce** (so cAMP is high and the activator CAP helps RNA polymerase bind). Lactose alone removes the brake; low glucose presses the accelerator. Every lac question, including the mutant and partial diploid ones, is a matter of checking those two switches.
