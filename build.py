@@ -88,6 +88,7 @@ SOCIAL_CTA_PAGES = [
   ]
 CTA_ARM_PAGES |= set(SOCIAL_CTA_PAGES)
 practice_build.CTA_ARM_PAGES = CTA_ARM_PAGES
+practice_build.SECTION_OF = {p["aamc"]: p["section_name"] for p in site["products"]}
 practice_build.SOCIAL_CTA_PAGES = set(SOCIAL_CTA_PAGES)
 
 def topbuy(slug, root=""):
@@ -199,6 +200,20 @@ def breadcrumbs(*pairs):
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": i, "name": n, "item": u} for i, (n, u) in enumerate(items, 1)]}
 
+def with_crumbs(body, head_extra):
+    """Visible breadcrumb nav from the page's BreadcrumbList JSON-LD (one source for both), unless the body has its own."""
+    if 'class="crumbs' in body or '"BreadcrumbList"' not in head_extra:
+        return body
+    m = re.search(r'<script type="application/ld\+json">(\{[^<]*"@type": "BreadcrumbList"[^<]*\})</script>', head_extra)
+    if not m:
+        return body
+    items = json.loads(m.group(1))["itemListElement"]
+    parts = []
+    for i, it in enumerate(items):
+        name = html.escape(it["name"])
+        parts.append(f'<span aria-current="page">{name}</span>' if i == len(items) - 1 else f'<a href="{it["item"]}">{name}</a>')
+    return f'<div class="wrap"><nav class="crumbs" aria-label="Breadcrumb">{" / ".join(parts)}</nav></div>\n' + body
+
 def emit(out, title, desc, body, noindex=False, og_image=DEFAULT_OG, og_type="website",
          head_extra="", lastmod=None):
     root = "../" * out.count("/")
@@ -208,6 +223,7 @@ def emit(out, title, desc, body, noindex=False, og_image=DEFAULT_OG, og_type="we
             if v in seen:
                 print(f"SEO WARNING: duplicate {kind} on {out} and {seen[v]}: {v}")
             seen[v] = out
+    body = with_crumbs(body, head_extra)
     page = base.replace("{{launchbar}}", LAUNCHBAR).replace("{{content}}", body)
     page = page.replace("{{page_title}}", html.escape(title)).replace("{{page_desc}}", html.escape(desc))
     page = page.replace("{{page_url}}", f"{BASE}/{out}" if out != "index.html" else BASE + "/")
@@ -331,6 +347,25 @@ waitlist.STATS.update(notes=len(notes), practice=len(PRACTICE_LIVE), questions=s
 LATEST_NOTES = "".join(note_card(n, "notes/", "assets/notes/") for n in notes[:6])
 for n in notes:
     build_note(n, notes)
+SECTION_ORDER = ["Bio/Biochem", "Chem/Phys", "Psych/Soc", "CARS"]
+OTHER_SECTION = "MCAT strategy and planning"
+
+def note_section(n):
+    return (products.get(n["meta"]["product"]) or {}).get("section_name") or OTHER_SECTION
+
+def note_sections_html(notes):
+    """Every note linked from the notes hub, grouped by MCAT section, with jump links."""
+    groups = [(s, [n for n in notes if note_section(n) == s]) for s in SECTION_ORDER + [OTHER_SECTION]]
+    groups = [(s, ns) for s, ns in groups if ns]
+    jump = " &middot; ".join(f'<a href="#{re.sub(r"[^a-z]+", "-", s.lower()).strip("-")}">{html.escape(s)} ({len(ns)})</a>' for s, ns in groups)
+    out = f'<section><div class="wrap"><p class="meta">Jump to: {jump}</p></div></section>'
+    for s, ns in groups:
+        sid = re.sub(r"[^a-z]+", "-", s.lower()).strip("-")
+        out += (f'<section id="{sid}"><div class="wrap"><h2>{html.escape(s)} notes</h2>'
+                f'<div class="notegrid">{"".join(note_card(n, "", "../assets/notes/") for n in ns)}</div></div></section>')
+    return out
+
+note_sections = note_sections_html(notes)
 idx = f"""<div class="wrap hero" style="padding-bottom:24px">
 <div class="eyebrow">Free MCAT study notes</div>
 <h1>Notes</h1>
@@ -338,11 +373,12 @@ idx = f"""<div class="wrap hero" style="padding-bottom:24px">
 <p class="meta"><a href="../practice/index.html">Looking for practice questions? Browse the free MCAT practice questions by topic.</a></p>
 </div>
 <section><div class="wrap">{{{{topbuy:feat}}}}</div></section>
-<section><div class="wrap"><div class="notegrid">{"".join(note_card(n, "", "../assets/notes/") for n in notes)}</div></div></section>
+{note_sections}
 <section><div class="wrap narrow">{{{{waitlist}}}}</div></section>"""
 emit("notes/index.html", "Free MCAT Study Notes | StudyStore",
      "Free MCAT biochemistry study notes with original diagrams and mini-quizzes: amino acids, enzyme kinetics, inhibition, protein structure, and more.",
-     idx, lastmod=max((n["meta"]["published"] for n in notes), default=None))
+     idx, head_extra=ld_json(breadcrumbs(("Free MCAT study notes", f"{BASE}/notes/index.html"))),
+     lastmod=max((n["meta"]["published"] for n in notes), default=None))
 
 # ---------- catalog product pages ----------
 def product_related(slug, aamc):
