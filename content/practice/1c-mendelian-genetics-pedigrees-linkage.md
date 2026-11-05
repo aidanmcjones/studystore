@@ -6,7 +6,8 @@ category: 1c-heredity-evolution
 cluster: Dominance patterns, Mendel's laws, Punnett squares and probability rules, dihybrid crosses, test crosses, linkage and recombination frequency mapping, sex-linked inheritance, pedigree analysis
 product: 1c-heredity-evolution
 published: 2026-10-20
-notes:
+updated: 2026-11-04
+notes: mendelian-genetics-practice-problems-mcat, carrier-probability-autosomal-recessive-hardy-weinberg, recombination-frequency-gene-mapping-map-units
 ---
 
 Most genetics questions reduce to probability. Mendel's law of segregation says each parent passes on one of its two alleles at random, and the law of independent assortment says alleles of genes on different chromosomes sort independently. Treat each gene as its own one-gene cross, then multiply: in an AaBb by AaBb cross, the chance of a dominant A phenotype is 3/4 and of a recessive b phenotype is 1/4, so the combined chance is 3/16. Use the product rule for "and" and the sum rule for mutually exclusive "or" outcomes, and the binomial expression when the question asks about exactly k of n children.

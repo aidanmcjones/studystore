@@ -76,9 +76,9 @@
   /* ---- shared page behavior: embed mode, copy-embed box ---- */
   SS.initEmbedBox = function (slug) {
     var ta = document.getElementById("embed-code"); if (!ta) return;
-    var url = "https://www.studystore.co/tools/" + slug + ".html?embed=1";
+    var url = "https://www.studystore.co/tools/" + slug + "?embed=1";
     ta.value = '<iframe src="' + url + '" title="StudyStore free MCAT tool" width="100%" height="720" style="border:1px solid #ddd3c0;border-radius:8px" loading="lazy"></iframe>\n' +
-      '<p style="font-size:13px">Free tool by <a href="https://www.studystore.co/tools/' + slug + '.html">StudyStore</a></p>';
+      '<p style="font-size:13px">Free tool by <a href="https://www.studystore.co/tools/' + slug + '">StudyStore</a></p>';
     var b = document.getElementById("embed-copy");
     if (b) b.addEventListener("click", function () { SS.copy(ta.value, function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy embed code"; }, 1800); }); });
   };
