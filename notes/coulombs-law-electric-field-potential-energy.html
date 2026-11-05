@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coulomb&#x27;s Law and Electric Field | MCAT Free Notes</title>
+<meta name="description" content="Free MCAT notes on Coulomb&#x27;s law, electric field, potential and potential energy: scaling with distance, sign conventions, worked example and quiz.">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": ["Article", "LearningResource"], "headline": "Coulomb's Law, Electric Field and Electric Potential: What Changes With Distance", "name": "Coulomb's Law, Electric Field and Electric Potential: What Changes With Distance", "educationalLevel": "Undergraduate pre-health", "learningResourceType": "study note", "isAccessibleForFree": true, "teaches": "Coulomb's law, electric field, electric potential and potential energy for the MCAT, with the 1/r versus 1/r squared scaling, sign rules and a worked example.", "about": {"@type": "Thing", "name": "Electrostatics, Circuits, Magnetism and Electrochemistry"}, "description": "Coulomb's law, electric field, electric potential and potential energy for the MCAT, with the 1/r versus 1/r squared scaling, sign rules and a worked example.", "image": "https://www.studystore.co/assets/notes/og-coulombs-law-electric-field-potential-energy.png?v=f7b80ea89a", "datePublished": "2026-11-05", "dateModified": "2026-11-05", "wordCount": 498, "inLanguage": "en", "mainEntityOfPage": "https://www.studystore.co/notes/coulombs-law-electric-field-potential-energy", "author": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}, "publisher": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "The distance between two point charges triples. By what factor does the force change?", "acceptedAnswer": {"@type": "Answer", "text": "It falls to 1/9, because force scales as 1/r squared."}}, {"@type": "Question", "name": "The distance between two point charges triples. By what factor does the potential energy change?", "acceptedAnswer": {"@type": "Answer", "text": "It falls to 1/3, because U scales as 1/r."}}, {"@type": "Question", "name": "At the midpoint between two equal positive charges, what are E and V?", "acceptedAnswer": {"@type": "Answer", "text": "E is zero because the fields cancel, but V is nonzero because potentials are scalars that add."}}, {"@type": "Question", "name": "A negative charge is released in an electric field. Does it move toward higher or lower potential?", "acceptedAnswer": {"@type": "Answer", "text": "Higher potential, which lowers its potential energy."}}, {"@type": "Question", "name": "A charge moves along an equipotential line. How much work does the field do?", "acceptedAnswer": {"@type": "Answer", "text": "Zero, because the potential difference is zero."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "StudyStore", "item": "https://www.studystore.co/"}, {"@type": "ListItem", "position": 2, "name": "Free MCAT study notes", "item": "https://www.studystore.co/notes/"}, {"@type": "ListItem", "position": 3, "name": "Coulomb's Law, Electric Field and Electric Potential: What Changes With Distance", "item": "https://www.studystore.co/notes/coulombs-law-electric-field-potential-energy"}]}</script>
+
+<link rel="canonical" href="https://www.studystore.co/notes/coulombs-law-electric-field-potential-energy">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="Coulomb&#x27;s Law and Electric Field | MCAT Free Notes">
+<meta property="og:description" content="Free MCAT notes on Coulomb&#x27;s law, electric field, potential and potential energy: scaling with distance, sign conventions, worked example and quiz.">
+<meta property="og:url" content="https://www.studystore.co/notes/coulombs-law-electric-field-potential-energy">
+<meta property="og:image" content="https://www.studystore.co/assets/notes/og-coulombs-law-electric-field-potential-energy.png?v=f7b80ea89a">
+<meta name="twitter:image" content="https://www.studystore.co/assets/notes/og-coulombs-law-electric-field-potential-energy.png?v=f7b80ea89a">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Coulomb&#x27;s Law and Electric Field | MCAT Free Notes">
+<meta name="twitter:description" content="Free MCAT notes on Coulomb&#x27;s law, electric field, potential and potential energy: scaling with distance, sign conventions, worked example and quiz.">
+<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1512'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23f2b705'/%3E%3Ccircle cx='21' cy='16' r='4' fill='%233ddc84'/%3E%3Ccircle cx='11' cy='21' r='4' fill='%236aa2ff'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("ss-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css?v=79f1498a75">
+<link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="../assets/js/exp.js?v=13b76eb01b" defer></script>
+<script src="../assets/js/site.js?v=1b40ce4c4e" defer></script>
+<script src="../assets/js/buy.js?v=50fe203f05" defer></script>
+<script src="../assets/js/report.js?v=1e5d24d48f" defer></script>
+<script src="../assets/js/waitlist.js?v=969555bf76" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="gridbg" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="../" aria-label="StudyStore home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Study<b>Store</b></span></a>
+<nav aria-label="Main"><a href="../#packs">Packs</a><a href="../notes/">Notes</a><a href="../tools/">Tools</a><a href="../#faq">FAQ</a><a href="../refund">Refunds</a></nav>
+<div class="tools">
+<span class="phread" aria-hidden="true">pH <b>1.0</b></span>
+<button class="themetoggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+</div>
+</div><div class="phbar" aria-hidden="true"><i></i></div></header>
+<main id="main">
+<div class="wrap"><nav class="crumbs" aria-label="Breadcrumb"><a href="https://www.studystore.co/">StudyStore</a> / <a href="https://www.studystore.co/notes/">Free MCAT study notes</a> / <span aria-current="page">Coulomb&#x27;s Law, Electric Field and Electric Potential: What Changes With Distance</span></nav></div>
+<article class="note wrap narrow">
+<p class="eyebrow">Free MCAT study note</p>
+<h1>Coulomb&#x27;s Law, Electric Field and Electric Potential: What Changes With Distance</h1>
+<p class="meta">By StudyStore &middot; Published 2026-11-05 &middot; 2 min read &middot; 498 words</p>
+<aside class="cta cta-top"><div><strong>Electrostatics, Circuits, Magnetism and Electrochemistry</strong><p>$15 one-time, instant download. Inside: 396 Anki flashcards, 8-page study guide, 3-page cheat sheet and 57 practice questions. <a href="../products/4c-electricity-electrochem" data-track="cta">See what is inside</a>.</p></div><a class="btn small" href="https://buy.polar.sh/polar_cl_X94RFtyX7YA49DoKlhKmG7JFV4tF6NimckFlQ3NZGoZ?utm_source=site-cta" data-checkout="polar" data-slug="4c-electricity-electrochem" rel="noopener" data-track="cta">Buy now, $15</a></aside><section class="waitlist waitlist-cta" aria-label="Free sample pack by email">
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
+<label for="cc-email">Not ready to buy? Get a free sample pack by email.</label>
+<input id="cc-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
+<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn small">Send the free sample</button>
+<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> <a href="../privacy">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p><a class="btn" href="../assets/free/studystore-mcat-sample-cheat-sheet.pdf" download data-track="sample-pdf">Download your free sample: 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF)</a></p>
+<p>Meanwhile, <a href="../notes/" data-track="sampler">start with the free notes</a>.</p>
+</div>
+</section>
+<div class="prose">
+<p>Four quantities describe point charges, and the MCAT tests which one scales with which power of distance. Force and field go as 1/r<sup>2</sup>. Potential and potential energy go as 1/r. Force and field are vectors, potential and energy are scalars.</p>
+<h2 id="the-four-formulas">The four formulas</h2>
+<div class="tablewrap"><table><thead><tr><th>Quantity</th><th>Formula (point charge)</th><th>Scaling</th><th>Type</th></tr></thead><tbody><tr><td>Force between two charges</td><td>F = k q<sub>1</sub>q<sub>2</sub> / r<sup>2</sup></td><td>1/r<sup>2</sup></td><td>Vector</td></tr><tr><td>Electric field</td><td>E = kq / r<sup>2</sup> (also E = F/q)</td><td>1/r<sup>2</sup></td><td>Vector</td></tr><tr><td>Electric potential</td><td>V = kq / r</td><td>1/r</td><td>Scalar</td></tr><tr><td>Potential energy</td><td>U = k q<sub>1</sub>q<sub>2</sub> / r (also U = qV)</td><td>1/r</td><td>Scalar</td></tr></tbody></table></div>
+<p>The constant k is about 9 x 10<sup>9</sup> N m<sup>2</sup>/C<sup>2</sup>.</p>
+<h2 id="sign-rules">Sign rules</h2>
+<ul><li>Like charges repel, opposite charges attract.</li><li>The field points away from positive charge and toward negative charge. A positive test charge feels force along E, a negative one feels force against E.</li><li>In U = k q<sub>1</sub>q<sub>2</sub>/r, keep the signs. Positive U means repulsive pair, negative U means bound (attractive) pair.</li><li>Positive charges move to lower potential on their own. Negative charges move to higher potential on their own. Either way, a free charge lowers its potential energy.</li></ul>
+<h2 id="scalars-add-simply-vectors-need-components">Scalars add simply, vectors need components</h2>
+<p>For several charges, total V is the plain sum of kq/r with signs. Total E needs vector addition. At the midpoint between two equal positive charges, E is zero (the fields cancel) but V is not zero (it is twice the single value). That contrast is a standard MCAT question.</p>
+<h2 id="uniform-field-between-plates">Uniform field between plates</h2>
+<p>Between parallel plates, E = V/d is constant, and a charge moves with constant force F = qE. Equipotential lines are perpendicular to field lines, and no work is done moving a charge along an equipotential.</p>
+<h2 id="worked-example">Worked example</h2>
+<p>Two charges, +2 uC and +3 uC, sit 0.30 m apart.</p>
+<ul><li>Force: F = (9 x 10<sup>9</sup>)(2 x 10<sup>-6</sup>)(3 x 10<sup>-6</sup>) / 0.30<sup>2</sup> = 0.054 / 0.09 = 0.60 N, repulsive.</li><li>Potential energy: U = 0.054 / 0.30 = 0.18 J.</li><li>If the distance doubles to 0.60 m, F falls to 0.15 N (one fourth) and U falls to 0.09 J (one half).</li></ul>
+<h2 id="common-traps">Common traps</h2>
+<ul><li><strong>Using 1/r<sup>2</sup> for potential.</strong> Potential and U go as 1/r.</li><li><strong>Adding field magnitudes without direction.</strong> E is a vector.</li><li><strong>Dropping signs in U.</strong> The sign tells repulsion or attraction.</li><li><strong>Assuming zero field means zero potential.</strong> They are independent at a point.</li></ul>
+<h2 id="one-minute-recap">One-minute recap</h2>
+<p>F and E: 1/r<sup>2</sup>, vectors. V and U: 1/r, scalars. E = F/q, U = qV, E = V/d between plates. Positive charges fall toward lower V, negative toward higher V. No work along equipotentials.</p>
+</div>
+<aside class="cta"><a class="cta-thumb" href="../products/4c-electricity-electrochem#preview"><img src="../assets/packs/4c-electricity-electrochem/card-1.webp?v=40e8042e8d" alt="Real sample card from the pack" width="680" height="344" loading="lazy"></a><div><strong>Want this as spaced-repetition cards?</strong><p>Electrostatics, Circuits, Magnetism and Electrochemistry is a $15 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/4c-electricity-electrochem">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_X94RFtyX7YA49DoKlhKmG7JFV4tF6NimckFlQ3NZGoZ?utm_source=site-cta" data-checkout="polar" data-slug="4c-electricity-electrochem" rel="noopener" data-track="cta">Buy now, $15</a></aside>
+<h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
+<p class="meta">Try each question first, then click it to reveal the answer.</p>
+<div class="quiz"><details class="q"><summary>1. The distance between two point charges triples. By what factor does the force change?</summary><div><p>It falls to 1/9, because force scales as 1/r squared.</p></div></details><details class="q"><summary>2. The distance between two point charges triples. By what factor does the potential energy change?</summary><div><p>It falls to 1/3, because U scales as 1/r.</p></div></details><details class="q"><summary>3. At the midpoint between two equal positive charges, what are E and V?</summary><div><p>E is zero because the fields cancel, but V is nonzero because potentials are scalars that add.</p></div></details><details class="q"><summary>4. A negative charge is released in an electric field. Does it move toward higher or lower potential?</summary><div><p>Higher potential, which lowers its potential energy.</p></div></details><details class="q"><summary>5. A charge moves along an equipotential line. How much work does the field do?</summary><div><p>Zero, because the potential difference is zero.</p></div></details></div>
+<section class="waitlist waitlist-inline" id="signup" aria-labelledby="signup-h">
+<div class="wlcopy">
+<p class="eyebrow mono"><span class="dot"></span>Free MCAT sampler</p>
+<h2 id="signup-h">Free sample: a 3-page MCAT cheat sheet (PDF), plus 6 short high-yield lessons by email</h2>
+<p>Enter your email and download a real page set from a paid pack: the 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF). Confirm your email and short MCAT lessons follow. Free, no card.</p>
+<p>Prefer not to sign up? The sampler is open to everyone: <a href="../notes/" data-track="sampler">free notes</a>, <a href="../practice/" data-track="sampler">practice sets</a> and the <a href="../tools/mcat-study-schedule">study schedule generator</a>.</p>
+</div>
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
+<label for="su-email">Email</label>
+<input id="su-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
+<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn">Get the free cheat sheet</button>
+<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> Every email has an unsubscribe link. <a href="../privacy">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p><a class="btn" href="../assets/free/studystore-mcat-sample-cheat-sheet.pdf" download data-track="sample-pdf">Download your free sample: 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF)</a></p>
+<p>Meanwhile, <a href="../notes/" data-track="sampler">start with the free notes</a>.</p>
+</div>
+</section>
+<h2>Keep studying</h2>
+<ul><li><a href="ohms-law-series-vs-parallel-circuits-equivalent-resistance">Ohm&#x27;s Law, Series vs Parallel Circuits and Equivalent Resistance</a></li><li><a href="galvanic-vs-electrolytic-cells">Galvanic vs Electrolytic Cells: Signs, Electron Flow and Examples</a></li><li><a href="work-energy-theorem-conservation-of-energy">Work-Energy Theorem and Conservation of Energy for the MCAT</a></li><li><a href="strong-vs-weak-acids-ka-pka-conjugate-base-strength">Strong vs Weak Acids: Ka, pKa and Conjugate Base Strength</a></li><li><a href="sn1-vs-sn2-vs-e1-vs-e2-mechanisms">SN1 vs SN2 vs E1 vs E2: Choosing the Mechanism</a></li><li><a href="projectile-motion-range-max-height-components">Projectile Motion: Components, Max Height and Range</a></li><li><a href="integrated-rate-laws-half-life-reaction-order">Integrated Rate Laws and Half-Life by Reaction Order</a></li><li><a href="./">All free notes</a></li></ul>
+
+<aside class="cta"><a class="cta-thumb" href="../products/4c-electricity-electrochem#preview"><img src="../assets/packs/4c-electricity-electrochem/card-1.webp?v=40e8042e8d" alt="Real sample card from the pack" width="680" height="344" loading="lazy"></a><div><strong>Want this as spaced-repetition cards?</strong><p>Electrostatics, Circuits, Magnetism and Electrochemistry is a $15 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/4c-electricity-electrochem">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_X94RFtyX7YA49DoKlhKmG7JFV4tF6NimckFlQ3NZGoZ?utm_source=site-cta" data-checkout="polar" data-slug="4c-electricity-electrochem" rel="noopener" data-track="cta">Buy now, $15</a></aside>
+<p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+<p class="meta"><a class="reportlink" href="../report" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div>
+<p class="flabel">StudyStore</p>
+<p>Original, high-yield MCAT study packs. Written from scratch, checked card by card.</p>
+</div>
+<div>
+<p class="flabel">Shop</p>
+<p class="links"><a href="../#packs">Packs</a><a href="../products/">All packs</a><a href="../notes/">Free notes</a></p>
+</div>
+<div>
+<p class="flabel">Policies</p>
+<p class="links"><a href="../terms">Terms</a><a href="../privacy">Privacy</a><a href="../refund">Refund policy</a><a href="../support">Support</a></p>
+</div>
+</div>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p><a class="reportlink" href="../report" data-report>Report a problem or suggest something</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+<p class="wordmark" aria-hidden="true">Study<b>Store</b></p>
+</div></footer>
+</body>
+</html>

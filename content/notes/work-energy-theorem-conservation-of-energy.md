@@ -3,7 +3,7 @@ title: Work-Energy Theorem and Conservation of Energy for the MCAT
 description: Learn when to use W = Fd cos θ, the work-energy theorem, and conservation of mechanical energy, with worked examples on friction, springs and power.
 product: 4a-motion-forces-energy
 published: 2026-10-20
-related: bernoulli-equation-continuity-venturi
+related: bernoulli-equation-continuity-venturi, coulombs-law-electric-field-potential-energy
 seo_title: Work-Energy Theorem and Conservation of Energy
 seo_description: Work-energy theorem and conservation of energy: when to use W = Fd cos θ, with worked examples on friction, springs and power.
 ---

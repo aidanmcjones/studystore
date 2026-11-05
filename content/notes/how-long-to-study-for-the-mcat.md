@@ -5,7 +5,7 @@ seo_title: How Long to Study for the MCAT: Build Your Timeline
 seo_description: How long to study for the MCAT: size your own timeline from a diagnostic, a gap list and your test date.
 product: bundle-complete-mcat
 published: 2026-10-29
-related: how-to-approach-a-cars-passage, henderson-hasselbalch-for-the-mcat, mcat-study-schedule-weekly-plan
+related: how-to-approach-a-cars-passage, henderson-hasselbalch-for-the-mcat, mcat-study-schedule-weekly-plan, mcat-exam-format-sections-timing-breaks
 ---
 
 There is no official answer. The AAMC, which writes the exam, does not publish a recommended number of weeks or hours; its prep page says only that "Preparing for the MCAT exam takes time and dedication" and points you toward two habits: make a study plan and practice regularly ([AAMC: Prepare for the MCAT Exam](https://students-residents.aamc.org/prepare-mcat-exam/prepare-mcat-exam)). So the useful question is not "how long does everyone study?" but "how long do I need, given where I start?" This note shows how to answer that for yourself in four steps.

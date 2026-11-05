@@ -5,7 +5,7 @@ seo_title: Bacteria vs Viruses: Key Differences for the MCAT
 seo_description: Bacteria vs viruses in one table: size, structure, genome, replication and drug targets, plus why antibiotics fail on viruses.
 product: 2b-prokaryotes-viruses
 published: 2026-10-20
-related: mitosis-vs-meiosis-differences, passive-vs-active-transport
+related: mitosis-vs-meiosis-differences, passive-vs-active-transport, innate-vs-adaptive-immunity-b-cells-t-cells-antibodies
 ---
 
 Bacteria are cells: single-celled prokaryotes with their own membrane, ribosomes and metabolism, able to grow and divide on their own by binary fission. Viruses are not cells: they are a nucleic acid genome wrapped in a protein coat, with no ribosomes and no metabolism, and they can only be copied inside a living host cell. Nearly every practical difference, from size to how each is treated, follows from that one split. Antibiotics work by hitting machinery that bacteria have and human cells lack, and a virus has none of that machinery of its own.

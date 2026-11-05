@@ -3,7 +3,7 @@ title: Mendelian Genetics Practice Problems for the MCAT with Worked Answers
 description: Worked MCAT-style genetics problems: monohybrid and dihybrid crosses, the product and sum rules, testcrosses and X-linked inheritance, with answers.
 product: 1c-heredity-evolution
 published: 2026-11-04
-related: hardy-weinberg-equation-practice-problems, carrier-probability-autosomal-recessive-hardy-weinberg
+related: hardy-weinberg-equation-practice-problems, carrier-probability-autosomal-recessive-hardy-weinberg, natural-selection-vs-genetic-drift-founder-bottleneck
 seo_title: MCAT Genetics Practice Problems with Worked Answers
 seo_description: MCAT genetics practice problems with answers: monohybrid and dihybrid crosses, product and sum rules, testcrosses and X-linked traits.
 ---

@@ -3,7 +3,7 @@ title: Galvanic vs Electrolytic Cells: Signs, Electron Flow and Examples
 description: Compare galvanic and electrolytic cells by spontaneity, electrode signs, electron flow, and sign of E and delta G, with worked Nernst and Faraday examples.
 product: 4c-electricity-electrochem
 published: 2026-10-20
-related: action-potential-phases-ion-channels, acid-base-titration-curves-equivalence-point, ohms-law-series-vs-parallel-circuits-equivalent-resistance
+related: action-potential-phases-ion-channels, acid-base-titration-curves-equivalence-point, ohms-law-series-vs-parallel-circuits-equivalent-resistance, coulombs-law-electric-field-potential-energy, capacitors-capacitance-dielectrics-energy-stored
 seo_title: Galvanic vs Electrolytic Cells: Key Differences
 seo_description: Galvanic vs electrolytic cells: electrode signs, electron flow, E and delta G, with Nernst and Faraday examples and a quiz.
 ---

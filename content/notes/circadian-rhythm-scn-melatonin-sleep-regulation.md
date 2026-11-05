@@ -3,7 +3,7 @@ title: Circadian Rhythm, the SCN and Melatonin: Sleep Regulation for the MCAT
 description: How the suprachiasmatic nucleus, light, melatonin and sleep pressure regulate the sleep-wake cycle, and the sleep disorders that tend to appear on the MCAT.
 product: 6b-cognition-memory-consciousness
 published: 2026-11-04
-related: sleep-stages-nrem-rem-eeg-waves, dsm-5-psychological-disorders-categories
+related: sleep-stages-nrem-rem-eeg-waves, dsm-5-psychological-disorders-categories, hypothalamic-pituitary-axes-feedback-loops
 seo_title: Circadian Rhythm, SCN and Melatonin | MCAT Sleep
 seo_description: How the SCN, light and melatonin set the circadian rhythm, plus common MCAT sleep disorders and zeitgebers, with a 5-question quiz.
 ---
