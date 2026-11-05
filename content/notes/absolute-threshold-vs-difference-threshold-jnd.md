@@ -3,7 +3,7 @@ title: Absolute Threshold vs Difference Threshold (JND) with Examples
 description: Absolute threshold is the weakest detectable stimulus; difference threshold (JND) is the smallest detectable change. Learn Weber's law with worked JND examples.
 product: 6a-sensation-perception
 published: 2026-11-04
-related: signal-detection-theory-and-webers-law, bottom-up-vs-top-down-processing
+related: signal-detection-theory-and-webers-law, bottom-up-vs-top-down-processing, weber-fraction-formula-jnd-worked-examples
 seo_title: Absolute vs Difference Threshold: JND Example | MCAT
 seo_description: Absolute threshold vs difference threshold (just noticeable difference), with a Weber's law JND example and a 5-question MCAT-style quiz.
 ---

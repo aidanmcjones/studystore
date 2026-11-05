@@ -3,7 +3,7 @@ title: Beta-Oxidation and Ketone Bodies: Fatty Acid Breakdown for the MCAT
 description: The four repeating steps of beta-oxidation, carnitine transport, how to count ATP from a fatty acid, odd-chain and unsaturated differences, and ketogenesis.
 product: 1d-metabolism-bioenergetics
 published: 2026-11-04
-related: pyruvate-dehydrogenase-complex-pyruvate-to-acetyl-coa, citric-acid-cycle-steps-products-atp, atp-yield-per-glucose-electron-transport-chain-oxidative-phosphorylation
+related: pyruvate-dehydrogenase-complex-pyruvate-to-acetyl-coa, citric-acid-cycle-steps-products-atp, atp-yield-per-glucose-electron-transport-chain-oxidative-phosphorylation, fatty-acid-synthesis-vs-beta-oxidation
 seo_title: Beta-Oxidation: Steps, ATP Count and Ketone Bodies
 seo_description: Beta-oxidation for the MCAT: carnitine shuttle, the four steps, ATP per cycle, odd-chain and unsaturated fatty acids, and ketone body formation.
 ---

@@ -5,7 +5,7 @@ seo_title: Henderson-Hasselbalch Equation for the MCAT, Free Guide
 seo_description: Free MCAT guide to the Henderson-Hasselbalch equation: derivation, buffer and blood bicarbonate problems, amino acids and worked examples.
 product: 1a-amino-acids-proteins
 published: 2026-10-20
-related: amino-acid-pka-charge-ph-7-4, michaelis-menten-and-lineweaver-burk, protein-structure-levels-and-denaturation
+related: amino-acid-pka-charge-ph-7-4, michaelis-menten-and-lineweaver-burk, protein-structure-levels-and-denaturation, strong-vs-weak-acids-ka-pka-conjugate-base-strength
 ---
 
 The Henderson-Hasselbalch equation links the pH of a solution to the ratio of a weak acid and its conjugate base. It looks like a formula to memorize, but it is really a shortcut for one idea, and once you see the idea you can use the equation fast and without a calculator.
