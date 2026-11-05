@@ -26,7 +26,7 @@ for (const p of items) {
   ok(!urls.has(p.checkout_url), `${p.slug}: checkout_url is unique`);
   urls.add(p.checkout_url);
   const page = readFileSync(join(ROOT, "products", `${p.slug}.html`), "utf8");
-  const buy = `href="${p.checkout_url}" data-checkout="polar" data-slug="${p.slug}" rel="noopener">Buy now, ${p.price}</a>`;
+  const buy = `href="${p.checkout_url}?utm_source=site-cta" data-checkout="polar" data-slug="${p.slug}" rel="noopener" data-track="cta">Buy now, ${p.price}</a>`;
   ok(page.includes(buy), `${p.slug}: Buy link points to its Polar checkout with ${p.price}`);
   ok(!/data-buy=/.test(page), `${p.slug}: no Lemon Squeezy data-buy buttons`);
   const ld = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]

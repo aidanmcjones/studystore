@@ -100,7 +100,7 @@ def checkout_open(site):
     return any(buyable(p) for p in site.get("products", []) + site.get("bundles", []))
 
 
-def buy(items, slug, cls="btn", root="", cta=False):
+def buy(items, slug, cls="btn", root="", cta=True):
     p = items[slug]
     if p.get("status") != "available":
         return f'<a class="{cls} off" aria-disabled="true" role="link" tabindex="-1">Coming soon</a>'
