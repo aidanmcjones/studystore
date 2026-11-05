@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS events (
   page TEXT NOT NULL,             -- path only, no query string
   exp TEXT NOT NULL DEFAULT '',   -- experiment id ('' for plain events)
   variant TEXT NOT NULL DEFAULT '',
-  event TEXT NOT NULL,            -- view | cta_click | checkout_click | sampler_click | subscribe
+  event TEXT NOT NULL,            -- view | cta_click | checkout_click | checkout_start | sampler_click | subscribe
   ref_domain TEXT NOT NULL DEFAULT '',
   utm_source TEXT NOT NULL DEFAULT '',
   utm_campaign TEXT NOT NULL DEFAULT ''
