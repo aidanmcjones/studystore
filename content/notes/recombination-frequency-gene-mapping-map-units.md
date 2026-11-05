@@ -3,7 +3,7 @@ title: Recombination Frequency and Map Units
 description: What recombination frequency is, how to calculate it and convert it to map units (cM) for gene mapping, with worked examples and the 50 percent limit.
 product: 1c-heredity-evolution
 published: 2026-10-20
-related: hardy-weinberg-equation-practice-problems, mitosis-vs-meiosis-differences
+related: hardy-weinberg-equation-practice-problems, mitosis-vs-meiosis-differences, how-to-calculate-map-units-from-recombination-frequency
 seo_title: Recombination Frequency and Map Units (cM) Explained
 seo_description: What recombination frequency means and how to turn it into map units (cM) for gene mapping, with worked examples and the 50 percent limit.
 ---
