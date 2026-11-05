@@ -5,6 +5,7 @@ seo_title: Thin Lens and Mirror Equation Sign Conventions
 seo_description: Solve lens and mirror problems with 1/f = 1/do + 1/di using one sign convention, an image table and four worked examples.
 product: 4d-light-sound-optics
 published: 2026-10-20
+related: concave-vs-convex-mirrors-focal-length-sign
 ---
 
 One equation handles every thin lens and spherical mirror: **1/f = 1/d<sub>o</sub> + 1/d<sub>i</sub>**, with magnification **m = -d<sub>i</sub>/d<sub>o</sub>**. The sign conventions are what make it work. Converging elements (concave mirrors and convex lenses) have positive f, diverging elements (convex mirrors and concave lenses) have negative f, a positive d<sub>i</sub> means a real image, and a positive m means an upright image. Learn those four rules once and you never need separate formulas for mirrors and lenses.

@@ -3,7 +3,7 @@ title: Glycolysis Regulation: Irreversible Steps, PFK-1 and Hexokinase
 description: The three irreversible glycolysis steps, how PFK-1, hexokinase and pyruvate kinase are regulated, and why PFK-1 is the committed step.
 product: 1d-metabolism-bioenergetics
 published: 2026-11-04
-related: glycolysis-steps-enzymes-net-atp, net-yield-of-glycolysis-atp-nadh-pyruvate-per-glucose, glycolysis-practice-questions-mcat
+related: glycolysis-steps-enzymes-net-atp, net-yield-of-glycolysis-atp-nadh-pyruvate-per-glucose, glycolysis-practice-questions-mcat, pentose-phosphate-pathway-nadph-ribose-5-phosphate
 seo_title: Glycolysis Regulation: Hexokinase, PFK-1, Pyruvate Kinase
 seo_description: Glycolysis regulation for the MCAT: the three irreversible steps, PFK-1 as the committed step, and the activators and inhibitors of each enzyme.
 ---

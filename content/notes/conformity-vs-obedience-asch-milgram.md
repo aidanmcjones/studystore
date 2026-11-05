@@ -5,7 +5,7 @@ seo_title: Conformity vs Obedience: Asch and Milgram Studies
 seo_description: Conformity vs obedience: what the Asch and Milgram studies found and which factors raise or lower each rate.
 product: 7b-social-processes
 published: 2026-10-20
-related: fundamental-attribution-error-vs-actor-observer-bias
+related: fundamental-attribution-error-vs-actor-observer-bias, social-facilitation-bystander-effect-social-loafing
 ---
 
 **Conformity** is adjusting what you do or believe so it lines up with a group of peers, usually without anyone asking you to. **Obedience** is following a direct command from someone who holds authority. Solomon Asch's line-judgment studies are the classic demonstration of conformity, and Stanley Milgram's shock studies are the classic demonstration of obedience. The fastest way to sort a question: if the pressure comes sideways from equals, it is conformity; if it comes down from an authority giving orders, it is obedience.

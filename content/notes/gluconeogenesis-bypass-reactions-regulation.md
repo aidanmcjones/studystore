@@ -3,7 +3,7 @@ title: Gluconeogenesis: Bypass Reactions, Substrates and Regulation
 description: How the liver makes glucose from lactate, glycerol and amino acids, the four enzymes that bypass the irreversible glycolysis steps, and how glucagon and insulin control it.
 product: 1d-metabolism-bioenergetics
 published: 2026-11-04
-related: glycolysis-regulation-irreversible-steps-hexokinase-pfk-1, glycolysis-steps-enzymes-net-atp, pyruvate-dehydrogenase-complex-pyruvate-to-acetyl-coa
+related: glycolysis-regulation-irreversible-steps-hexokinase-pfk-1, glycolysis-steps-enzymes-net-atp, pyruvate-dehydrogenase-complex-pyruvate-to-acetyl-coa, fed-vs-fasted-state-insulin-glucagon-metabolism
 seo_title: Gluconeogenesis: Bypass Enzymes and Regulation
 seo_description: Gluconeogenesis for the MCAT: the four bypass enzymes, substrates, energy cost, the Cori cycle and hormonal control.
 ---
