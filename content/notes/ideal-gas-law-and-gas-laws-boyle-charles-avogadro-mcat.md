@@ -3,7 +3,7 @@ title: Ideal Gas Law and the Simple Gas Laws for the MCAT
 description: PV = nRT with Boyle's, Charles's, Gay-Lussac's and Avogadro's laws, STP values, Dalton's law of partial pressures, and the assumptions behind ideal behavior.
 product: 4b-fluids-gases
 published: 2026-11-04
-related: bernoulli-equation-continuity-venturi, colligative-properties-freezing-point-depression, le-chateliers-principle-equilibrium-shifts-mcat
+related: bernoulli-equation-continuity-venturi, colligative-properties-freezing-point-depression, le-chateliers-principle-equilibrium-shifts-mcat, buoyancy-archimedes-principle-floating-sinking
 seo_title: Ideal Gas Law MCAT: PV = nRT and Boyle, Charles, Avogadro
 seo_description: The ideal gas law and simple gas laws for the MCAT: Boyle, Charles, Gay-Lussac, Avogadro, Dalton's partial pressures, STP and ideal assumptions, with a quiz.
 ---

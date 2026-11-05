@@ -3,7 +3,7 @@ title: DNA Replication Enzymes: Leading vs Lagging Strand for the MCAT
 description: The order and job of each replication enzyme, why the lagging strand is made in Okazaki fragments, and the prokaryote vs eukaryote differences.
 product: 1b-dna-gene-expression
 published: 2026-11-04
-related: transformation-transduction-conjugation, lac-operon-regulation-lactose-glucose
+related: transformation-transduction-conjugation, lac-operon-regulation-lactose-glucose, cell-cycle-checkpoints-cyclins-cdks-p53
 seo_title: DNA Replication MCAT: Enzymes, Leading vs Lagging Strand
 seo_description: DNA replication for the MCAT: helicase, primase, DNA polymerase, ligase, Okazaki fragments, and how prokaryotic and eukaryotic replication differ.
 ---

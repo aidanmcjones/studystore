@@ -5,7 +5,7 @@ seo_title: Cannon-Bard vs Schachter-Singer Theory of Emotion
 seo_description: Cannon-Bard says arousal and emotion happen at the same time; Schachter-Singer adds a cognitive label. Compare them with a quiz.
 product: 6c-emotion-stress
 published: 2026-11-05
-related: theories-of-emotion-james-lange-cannon-bard, fundamental-attribution-error-vs-actor-observer-bias
+related: theories-of-emotion-james-lange-cannon-bard, fundamental-attribution-error-vs-actor-observer-bias, stress-response-general-adaptation-syndrome-cortisol
 ---
 
 **Cannon-Bard**: a stimulus triggers physiological arousal and the feeling of emotion **at the same time**, in parallel, through the thalamus. **Schachter-Singer** (two-factor): arousal comes first, then you **label** it using the situation, and the label decides the emotion.

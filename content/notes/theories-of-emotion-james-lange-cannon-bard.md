@@ -3,7 +3,7 @@ title: Theories of Emotion: James-Lange vs Cannon-Bard vs Schachter-Singer
 description: Compare the James-Lange, Cannon-Bard, Schachter-Singer and Lazarus theories of emotion by sequence, evidence and critiques, with practice scenarios.
 product: 6c-emotion-stress
 published: 2026-10-20
-related: fundamental-attribution-error-vs-actor-observer-bias, types-of-memory-sensory-short-term-long-term, schachter-singer-two-factor-theory-vs-cannon-bard, cannon-bard-vs-schachter-singer-two-factor-theory
+related: fundamental-attribution-error-vs-actor-observer-bias, types-of-memory-sensory-short-term-long-term, schachter-singer-two-factor-theory-vs-cannon-bard, cannon-bard-vs-schachter-singer-two-factor-theory, stress-response-general-adaptation-syndrome-cortisol
 seo_title: Theories of Emotion: James-Lange vs Cannon-Bard
 seo_description: James-Lange vs Cannon-Bard vs Schachter-Singer vs Lazarus: the sequence, evidence and critiques of each emotion theory, with practice scenarios.
 ---
