@@ -3,7 +3,7 @@ title: Pure vs Mixed Noncompetitive Inhibition: Km, Vmax and Lineweaver-Burk
 description: How pure and mixed noncompetitive inhibitors differ in binding, Km and Vmax effects, and where their Lineweaver-Burk lines intersect.
 product: 1a-amino-acids-proteins
 published: 2026-11-04
-related: enzyme-inhibition-types-compared, michaelis-menten-and-lineweaver-burk
+related: enzyme-inhibition-types-compared, michaelis-menten-and-lineweaver-burk, uncompetitive-inhibition-lineweaver-burk-parallel-lines
 seo_title: Pure vs Mixed Noncompetitive Inhibition: Km and Vmax
 seo_description: Pure noncompetitive inhibition lowers Vmax and leaves Km unchanged. Mixed inhibition lowers Vmax and shifts Km. Learn the binding logic and Lineweaver-Burk intersections.
 ---

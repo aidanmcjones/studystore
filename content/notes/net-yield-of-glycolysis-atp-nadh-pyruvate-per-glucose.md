@@ -3,7 +3,7 @@ title: Net Yield of Glycolysis: ATP, NADH and Pyruvate per Glucose
 description: The net products of glycolysis per glucose, how to count them, and how the yield changes with and without oxygen when NADH is counted.
 product: 1d-metabolism-bioenergetics
 published: 2026-11-04
-related: glycolysis-steps-enzymes-net-atp, citric-acid-cycle-steps-products-atp
+related: glycolysis-steps-enzymes-net-atp, citric-acid-cycle-steps-products-atp, gluconeogenesis-bypass-reactions-regulation
 seo_title: Net Yield of Glycolysis: 2 ATP, 2 NADH, 2 Pyruvate
 seo_description: Net yield of glycolysis per glucose is 2 ATP, 2 NADH and 2 pyruvate. How to count it, and what changes with oxygen, fermentation and the NADH shuttles.
 ---

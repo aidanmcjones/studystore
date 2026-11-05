@@ -3,7 +3,7 @@ title: Nernst Equation and Equilibrium Potential for the MCAT
 description: The Nernst equation for equilibrium potential, the shortcut form at body temperature, worked K+ and Na+ examples, and how it differs from the resting potential.
 product: 2a-cells-membranes
 published: 2026-11-04
-related: action-potential-phases-ion-channels, passive-vs-active-transport, galvanic-vs-electrolytic-cells
+related: action-potential-phases-ion-channels, passive-vs-active-transport, galvanic-vs-electrolytic-cells, goldman-equation-resting-membrane-potential-mcat
 seo_title: Nernst Equation and Equilibrium Potential Formula (MCAT)
 seo_description: Equilibrium potential formula and the Nernst equation on the MCAT: shortcut form, worked K+ and Na+ examples, sign rules and common traps.
 ---
