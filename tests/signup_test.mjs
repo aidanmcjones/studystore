@@ -23,7 +23,7 @@ function check(name, h) {
   ok(/unsubscribe/i.test(b) && /privacy(?:\.html)?\b/.test(b), name + ": unsubscribe and privacy note");
   ok(/assets\/free\/studystore-mcat-sample-cheat-sheet\.pdf/.test(b), name + ": sample PDF link");
   ok(/href="[^"]*notes\/(?:index\.html)?"/.test(b), name + ": sampler still reachable without signup");
-  ok((h.match(/data-waitlist/g) || []).length === (h.match(/id="(su|wl|cc)-email"/g) || []).length, name + ": one id per form");
+  ok((h.match(/data-waitlist/g) || []).length === (h.match(/id="(su|wl|cc2?)-email"/g) || []).length, name + ": one id per form");
 }
 
 check("home", rd("index.html"));
