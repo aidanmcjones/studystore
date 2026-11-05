@@ -1,6 +1,6 @@
 ---
-title: MCAT Attribution Theory and Attribution Bias Practice Questions
-description: Ten free MCAT-style practice questions on Kelley's covariation model, the fundamental attribution error, actor-observer and self-serving bias, halo effect and just-world belief, full explanations.
+title: Attribution Theory and FAE: 10 Free MCAT Questions
+description: Ten free MCAT style questions on Kelley's model, fundamental attribution error, actor observer bias, self serving bias and just world belief.
 aamc: 8B
 category: 8b-social-thinking
 cluster: Attribution theory, Fundamental attribution error and actor-observer bias, Self-serving bias, Cultural effects on attribution, Halo effect and just-world hypothesis, Social perception and impression formation

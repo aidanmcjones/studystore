@@ -1,6 +1,6 @@
 ---
-title: MCAT Immune System Practice Questions
-description: Ten free MCAT-style immune system practice questions on innate defenses, complement, B cells and antibody responses, T cells and MHC, vaccines and hypersensitivity, with full explanations.
+title: MCAT Immune System Practice: 10 Free Questions
+description: Ten free MCAT style questions on innate defenses, complement, B cells, T cells and MHC, vaccines and hypersensitivity. Every answer is explained.
 aamc: 3B
 category: 3b-organ-systems
 cluster: Innate immunity, adaptive immunity B cells and antibodies, adaptive immunity T cells and MHC, immune tolerance vaccines and hypersensitivity

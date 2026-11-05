@@ -1,6 +1,6 @@
 ---
-title: MCAT Kidney, Nephron Function and Acid-Base Practice Questions
-description: Eight free MCAT-style practice questions on glomerular filtration, clearance, tubular reabsorption, the loop of Henle, ADH, the renin-angiotensin system and acid-base balance, with calculations and explanations.
+title: Kidney and Nephron: 8 Free MCAT Practice Questions
+description: Eight free MCAT style questions on filtration, clearance, reabsorption, the loop of Henle, ADH and acid base balance, with calculations explained.
 aamc: 3B
 category: 3b-organ-systems
 cluster: Nephron anatomy, filtration, reabsorption and secretion, urine concentration, renal hormones, acid-base regulation

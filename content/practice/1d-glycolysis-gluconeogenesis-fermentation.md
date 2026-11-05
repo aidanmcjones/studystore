@@ -1,6 +1,6 @@
 ---
-title: MCAT Glycolysis, Gluconeogenesis and Fermentation Practice Questions
-description: Eight free MCAT-style practice questions on glycolysis yield and regulation, gluconeogenic bypass steps, fermentation, the Cori cycle, the pentose phosphate pathway and glucose handling, with explanations.
+title: Glycolysis and Gluconeogenesis: 8 Free MCAT Questions
+description: Eight free MCAT style questions on glycolysis yield and regulation, gluconeogenesis bypass steps, fermentation and the Cori cycle. Answers explained.
 aamc: 1D
 category: 1d-metabolism-bioenergetics
 cluster: Glycolysis, regulated enzymes, fermentation, gluconeogenesis, pentose phosphate pathway, glucose transport

@@ -1,6 +1,6 @@
 ---
-title: MCAT Optics Practice Questions: Mirrors, Lenses and Vision
-description: Ten free MCAT-style optics practice questions on spherical mirrors, the thin lens equation, magnification, lens power, two-lens systems, the eye and vision correction, with full explanations.
+title: MCAT Optics Practice: Mirrors and Lenses, 10 Questions
+description: Ten free MCAT style questions on spherical mirrors, the thin lens equation, magnification, lens power and vision correction. Answers explained.
 aamc: 4D
 category: 4d-light-sound-optics
 cluster: Spherical mirrors, Thin lenses and the lens equation, Magnification and power of lenses, Multiple lens systems and the eye, Vision correction

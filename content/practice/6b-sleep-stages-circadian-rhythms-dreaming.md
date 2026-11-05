@@ -1,6 +1,6 @@
 ---
-title: MCAT Sleep and Consciousness Practice Questions: Stages, Rhythms and Dreams
-description: Ten free MCAT-style practice questions on sleep stages and EEG waves, sleep architecture, circadian rhythms, sleep disorders, dream theories, hypnosis and meditation, with full explanations.
+title: MCAT Sleep Stages and Circadian Rhythm: 10 Questions
+description: Ten free MCAT style questions on sleep stages and EEG waves, circadian rhythms, sleep disorders and dream theories. Every answer is explained.
 aamc: 6B
 category: 6b-cognition-memory-consciousness
 cluster: States of consciousness, Sleep stages and EEG, Circadian rhythms, Sleep disorders, Dreaming theories, Hypnosis and meditation

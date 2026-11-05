@@ -1,6 +1,6 @@
 ---
-title: MCAT Gas Laws Practice Questions: Ideal Gas, Dalton, Graham and Henry
-description: Ten free MCAT-style gas law practice questions on the ideal and combined gas laws, partial pressures, effusion, gas solubility, real gas behavior and kinetic theory, with full explanations.
+title: MCAT Gas Laws Practice: 10 Free Questions with Answers
+description: Ten free MCAT style questions on the ideal gas law, Dalton, Graham and Henry, plus real gas behavior and kinetic theory. Every answer is explained.
 aamc: 4B
 category: 4b-fluids-gases
 cluster: Kinetic molecular theory, Ideal gas law, Combined and individual gas laws, Dalton's law of partial pressures, Henry's law and gas solubility, Real gas deviations, Graham's law of effusion, STP and molar volume
