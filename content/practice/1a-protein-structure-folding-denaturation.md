@@ -1,6 +1,6 @@
 ---
-title: MCAT Protein Structure, Folding and Denaturation Practice Questions
-description: Eight free MCAT-style practice questions on peptide bonds, alpha helices, beta sheets, disulfides, the hydrophobic effect, prions and denaturation, with full explanations.
+title: Protein Structure and Denaturation: 8 MCAT Questions
+description: Eight free MCAT style questions on peptide bonds, alpha helices, beta sheets, disulfides, the hydrophobic effect and denaturation. Answers explained.
 aamc: 1A
 category: 1a-amino-acids-proteins
 cluster: Peptide bond, secondary to quaternary structure, folding thermodynamics, chaperones and prions, denaturation

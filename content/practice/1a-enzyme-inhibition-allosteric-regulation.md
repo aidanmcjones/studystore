@@ -1,6 +1,6 @@
 ---
-title: MCAT Enzyme Inhibition and Allosteric Regulation Practice Questions
-description: Eight free MCAT-style practice questions on competitive, noncompetitive and uncompetitive inhibition, irreversible inhibitors, allostery, feedback and covalent regulation, with explanations.
+title: Enzyme Inhibition and Allostery: 8 Free MCAT Questions
+description: Eight free MCAT style questions on competitive, noncompetitive and uncompetitive inhibition, allostery and feedback regulation. Answers explained.
 aamc: 1A
 category: 1a-amino-acids-proteins
 cluster: Reversible and irreversible inhibition, allosteric regulation and cooperativity, covalent modification, feedback inhibition

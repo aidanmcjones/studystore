@@ -1,6 +1,6 @@
 ---
-title: MCAT DNA Replication, Mutation and Repair Practice Questions
-description: Eight free MCAT-style practice questions on semiconservative replication, replication enzymes, Okazaki fragments, telomeres, mutations and DNA repair pathways, with full explanations.
+title: DNA Replication and Repair: 8 Free MCAT Questions
+description: Eight free MCAT style questions on replication enzymes, Okazaki fragments, telomeres, mutations and DNA repair pathways. Every answer is explained.
 aamc: 1B
 category: 1b-dna-gene-expression
 cluster: DNA structure and melting, replication, mutation types, DNA repair, oncogenes and tumor suppressors

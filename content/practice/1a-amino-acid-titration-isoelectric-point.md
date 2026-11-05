@@ -1,6 +1,6 @@
 ---
-title: MCAT Amino Acid Titration and Isoelectric Point Practice Questions
-description: Eight free MCAT-style practice questions on amino acid pKa values, titration curves, Henderson-Hasselbalch ratios and isoelectric point, with full explanations.
+title: Amino Acid Titration and pI: 8 Free MCAT Questions
+description: Eight free MCAT style questions on amino acid pKa, titration curves, Henderson Hasselbalch ratios and isoelectric point. Every answer is explained.
 aamc: 1A
 category: 1a-amino-acids-proteins
 cluster: Side chain pKa values, titration curves, isoelectric point, Henderson-Hasselbalch

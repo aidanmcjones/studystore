@@ -1,6 +1,6 @@
 ---
-title: MCAT Michaelis-Menten Kinetics and Lineweaver-Burk Practice Questions
-description: Eight free MCAT-style practice questions on Km, Vmax, kcat, catalytic efficiency and Lineweaver-Burk plots, with worked calculations and full explanations.
+title: Michaelis Menten and Lineweaver Burk: 8 MCAT Questions
+description: Eight free MCAT style questions on Km, Vmax, kcat and Lineweaver Burk plots, with worked calculations and a full explanation for each answer.
 aamc: 1A
 category: 1a-amino-acids-proteins
 cluster: Michaelis-Menten kinetics, Km, Vmax, kcat, catalytic efficiency, Lineweaver-Burk plots

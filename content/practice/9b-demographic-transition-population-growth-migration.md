@@ -1,6 +1,6 @@
 ---
-title: MCAT Demographic Transition and Population Growth Practice Questions
-description: Nine free MCAT-style practice questions on growth rate, doubling time, dependency ratios, the demographic transition, population pyramids, Malthus and push and pull migration, with full explanations.
+title: Demographic Transition Practice: 9 Free MCAT Questions
+description: Nine free MCAT style questions on growth rate, doubling time, dependency ratio, demographic transition stages, population pyramids and migration.
 aamc: 9B
 category: 9b-demographics
 cluster: Fertility, mortality and migration, Demographic transition, Population pyramids, Malthusian theory, Population aging and dependency ratio, Push and pull factors in migration

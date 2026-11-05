@@ -1,6 +1,6 @@
 ---
-title: MCAT Status, Roles, Groups and Bureaucracy Practice Questions
-description: Ten free MCAT-style practice questions on master status, role strain and conflict, primary groups, weak ties, Weber's bureaucracy, oligarchy and Goffman's dramaturgy, with full explanations.
+title: Status, Roles and Groups: 10 Free MCAT Questions
+description: Ten free MCAT style questions on master status, role strain, primary groups, weak ties, Weber's bureaucracy and dramaturgy. Answers explained.
 aamc: 8C
 category: 8c-social-interactions
 cluster: Status types: ascribed, achieved, master, Roles, role conflict and role strain, Groups: primary and secondary, Networks and organizations, Bureaucracy and the iron law of oligarchy, Impression management and dramaturgy
