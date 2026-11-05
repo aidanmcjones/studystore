@@ -102,8 +102,15 @@ def topbuy(slug, root=""):
         return ""
     btn = PB.buy(products, slug, "btn small")
     btn = btn.replace("?utm_source=site-cta", "?utm_source=" + src, 1)  # PB.buy already tags site-cta and data-track="cta"
+    c = p.get("contents") or {}
+    if c.get("cards"):
+        inside = (f'{c["cards"]} Anki flashcards, {c.get("guide_pages")}-page study guide, {c.get("cheatsheet_pages")}-page cheat sheet '
+                  f'and {c.get("questions")} practice questions')
+    else:
+        inside = "original Anki cards, a study guide and a printable cheat sheet"
     return (f'<aside class="cta cta-top"><div><strong>{html.escape(p["title"])}</strong>'
-            f'<p>{html.escape(p["price"])} pack with original Anki cards, a study guide and a printable cheat sheet.</p></div>{btn}</aside>' + waitlist.capture(root))
+            f'<p>{html.escape(p["price"])} one-time, instant download. Inside: {html.escape(inside)}. '
+            f'<a href="{root}products/{slug}.html" data-track="cta">See what is inside</a>.</p></div>{btn}</aside>' + waitlist.capture(root))
 
 def render(text, root):
     def sub(m):
