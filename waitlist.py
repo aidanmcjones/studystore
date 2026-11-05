@@ -76,14 +76,14 @@ def signup(root):
 </section>"""
 
 
-def capture(root):
+def capture(root, uid="cc"):
     """One-field capture shown right under the inline checkout CTA (arm studystore-email-capture-a). Same contract and
     handlers as signup(); ids are prefixed cc- so it can sit on a page next to signup() or box()."""
     consent = html.escape(CONSENT_TEXT)
     return f"""<section class="waitlist waitlist-cta" aria-label="Free sample pack by email">
 <form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="{BRAIN_SUBSCRIBE_URL}">
-<label for="cc-email">Not ready to buy? Get a free sample pack by email.</label>
-<input id="cc-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<label for="{uid}-email">Not ready to buy? Get a free sample pack by email.</label>
+<input id="{uid}-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
 <div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
 <input type="hidden" name="list_id" value="{LIST_ID}"><input type="hidden" name="consent_text" value="{consent}">
 <input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">

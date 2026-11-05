@@ -348,7 +348,7 @@ def build_note(n, all_notes):
 <h2>Keep studying</h2>
 <ul>{rel}<li><a href="index.html">All free notes</a></li></ul>
 {practice_build.note_links(slug, PRACTICE_LIVE, None)}
-{cta}
+{cta}{waitlist.capture("{{root}}", "cc2")}
 <p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
 <p class="meta"><a class="reportlink" href="{{{{root}}}}report.html" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
 </article>"""
