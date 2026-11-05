@@ -228,6 +228,10 @@ def emit(out, title, desc, body, noindex=False, og_image=DEFAULT_OG, og_type="we
     page = page.replace("{{page_title}}", html.escape(title)).replace("{{page_desc}}", html.escape(desc))
     page = page.replace("{{page_url}}", f"{BASE}/{out}" if out != "index.html" else BASE + "/")
     page = page.replace("{{robots}}", '<meta name="robots" content="noindex">' if noindex else "")
+    if og_image == DEFAULT_OG:
+        _k = re.sub(r"[^a-z0-9]+", "-", out[:-5].lower()).strip("-")
+        if (ROOT / "assets" / "og" / f"{_k}.png").exists():
+            og_image = f"{BASE}/assets/og/{_k}.png"
     page = page.replace("{{og_image}}", og_image).replace("{{og_type}}", og_type)
     page = page.replace("{{head_extra}}", head_extra)
     if noindex:
@@ -284,13 +288,32 @@ def build_note(n, all_notes):
     quiz_html = "".join(
         f'<details class="q"><summary>{i}. {convert_inline(q)}</summary><div>{convert(esc_braces(a))}</div></details>'
         for i, (q, a) in enumerate(n["quiz"], 1))
-    rel = "".join(f'<li><a href="{r}.html">{html.escape(next(x for x in all_notes if x["slug"]==r)["meta"]["title"])}</a></li>'
-                  for r in m["related"])
+    _pp = products.get(m["product"]) or {}
+    _sec = _pp.get("section_name") or "MCAT strategy and planning"
+    _rl = [r for r in m["related"] if r != slug]
+    for x in all_notes:
+        if len(_rl) >= 7:
+            break
+        _xs = (products.get(x["meta"]["product"]) or {}).get("section_name") or "MCAT strategy and planning"
+        if x["slug"] != slug and x["slug"] not in _rl and _xs == _sec:
+            _rl.append(x["slug"])
+    for x in all_notes:
+        if len(_rl) >= 5:
+            break
+        if x["slug"] != slug and x["slug"] not in _rl:
+            _rl.append(x["slug"])
+    _bt = {x["slug"]: x["meta"]["title"] for x in all_notes}
+    rel = "".join(f'<li><a href="{r}.html">{html.escape(_bt[r])}</a></li>' for r in _rl)
     mins = max(1, round(n["words"] / 220))
     img = f'{BASE}/assets/notes/og-{slug}.png'
     page_url = f"{BASE}/{out}"
     mod = m.get("updated", m["published"])
-    article = {"@context": "https://schema.org", "@type": "Article", "headline": m["title"],
+    _topic = _pp.get("title") or "MCAT preparation"
+    article = {"@context": "https://schema.org", "@type": ["Article", "LearningResource"], "headline": m["title"],
+               "name": m["title"], "educationalLevel": "Undergraduate pre-health",
+               "learningResourceType": "study note", "isAccessibleForFree": True,
+               "teaches": m["description"],
+               "about": {"@type": "Thing", "name": _topic},
                "description": m["description"], "image": img, "datePublished": m["published"],
                "dateModified": mod, "wordCount": n["words"], "inLanguage": "en",
                "mainEntityOfPage": page_url,
@@ -387,8 +410,14 @@ def product_related(slug, aamc):
     prs = [x for x in PRACTICE_LIVE if own(x["meta"]["product"]) or x["meta"]["aamc"].upper() == aamc.upper()]
     ns = {n["slug"] for n in notes if own(n["meta"]["product"])} | {s for x in prs for s in x["notes"]}
     nts = [n for n in notes if n["slug"] in ns]
+    sib = [x for x in site.get("products", []) if x["slug"] != slug]
+    me = next((x for x in sib + [products.get(slug) or {}] if x.get("slug") == slug), None) or next(x for x in site["products"] if x["slug"] == slug)
+    sib.sort(key=lambda x: (x["section_name"] != me["section_name"], x.get("rank", 99)))
+    packs_html = ('<h2 class="split">More MCAT packs</h2><ul class="reveal">' + "".join(
+        f'<li><a href="{{{{root}}}}products/{x["slug"]}.html">{html.escape(x["title"])} ({html.escape(x["aamc"])})</a></li>' for x in sib[:6])
+        + '<li><a href="{{root}}products/index.html">All packs and bundles</a></li></ul>')
     if not prs and not nts:
-        return ""
+        return packs_html
     li = "".join(f'<li><a href="{{{{root}}}}practice/{x["slug"]}.html">{html.escape(x["meta"]["title"])}</a></li>' for x in prs)
     cat = PRACTICE_CATS.get(aamc.upper())
     if prs and cat:
@@ -396,7 +425,7 @@ def product_related(slug, aamc):
     li += "".join(f'<li><a href="{{{{root}}}}notes/{n["slug"]}.html">{html.escape(n["meta"]["title"])}</a></li>' for n in nts)
     return ('<h2 class="split">Free practice and notes</h2>'
             '<p class="reveal">Free pages on this content category, no signup.</p>'
-            f'<ul class="reveal">{li}</ul>')
+            f'<ul class="reveal">{li}</ul>') + packs_html
 
 PB.RELATED = {p["slug"]: product_related(p["slug"], p["aamc"]) for p in site.get("products", [])}
 PB.LD, PB.CRUMBS = ld_json, breadcrumbs
@@ -411,7 +440,17 @@ PAGE_LASTMOD = {"rangecheck-privacy.html": "2026-10-21", "rangecheck-support.htm
 
 for tpl, out, title, desc, noindex in PAGES:
     body = (ROOT / "templates" / tpl).read_text()
-    emit(out, title, desc, body, noindex=noindex, lastmod=PAGE_LASTMOD.get(out))
+    _u = BASE + "/" if out == "index.html" else f"{BASE}/{out}"
+    if noindex:
+        _ld = ""
+    elif out == "index.html":
+        _ld = ld_json({"@context": "https://schema.org", "@type": "WebSite", "name": "StudyStore", "url": BASE + "/", "inLanguage": "en"},
+                      {"@context": "https://schema.org", "@type": "Organization", "name": "StudyStore", "url": BASE + "/"})
+    else:
+        _ld = ld_json({"@context": "https://schema.org", "@type": "WebPage", "name": title, "description": desc, "url": clean_url(_u),
+                       "isPartOf": {"@type": "WebSite", "name": "StudyStore", "url": BASE + "/"}},
+                      breadcrumbs((title.split(" | ")[0], clean_url(_u))))
+    emit(out, title, desc, body, noindex=noindex, lastmod=PAGE_LASTMOD.get(out), head_extra=_ld)
 
 # ---------- free tools (isolated in build_tools.py) ----------
 import build_tools
