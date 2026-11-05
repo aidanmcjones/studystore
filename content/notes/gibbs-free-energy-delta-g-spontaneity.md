@@ -4,8 +4,8 @@ description: Use delta G = delta H - T delta S to predict spontaneity, find the 
 product: 5e-thermo-kinetics
 published: 2026-10-20
 related: galvanic-vs-electrolytic-cells, passive-vs-active-transport, le-chateliers-principle-equilibrium-shifts-mcat, calorimetry-specific-heat-latent-heat-phase-changes
-seo_title: Gibbs Free Energy: Delta G and Spontaneity (MCAT)
-seo_description: Gibbs free energy: use delta G = delta H - T delta S to predict spontaneity, find the crossover temperature, and link delta G to K and Q.
+seo_title: Gibbs Free Energy: Delta G = Delta H - T Delta S (MCAT)
+seo_description: When is a reaction spontaneous? Delta G = delta H - T delta S sign table, crossover temperature and delta G vs K and Q, with worked examples.
 ---
 
 Gibbs free energy tells you whether a process can happen on its own at constant temperature and pressure. The working equation is **&Delta;G = &Delta;H - T&Delta;S**. If &Delta;G is negative the process is spontaneous (exergonic), if it is positive the process is nonspontaneous as written (endergonic) and the reverse direction is favored, and if it is zero the system is at equilibrium. Spontaneous means thermodynamically allowed. It says nothing about speed.

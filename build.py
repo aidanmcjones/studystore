@@ -332,6 +332,9 @@ def build_note(n, all_notes):
     cta = (f'<aside class="cta">{_thumb}<div><strong>Want this as spaced-repetition cards?</strong>'
            f'<p>{{{{title:{m["product"]}}}}} is a {{{{price:{m["product"]}}}}} pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. '
            f'<a href="{{{{root}}}}products/{m["product"]}.html">See what is inside</a>.</p></div>{{{{buy:{m["product"]}}}}}</aside>')
+    related_pack = (f'<aside class="related-pack"><h2>Related pack</h2><p>This note is part of <a href="{{{{root}}}}products/{m["product"]}.html?utm_source=site-cta">'
+                    f'{{{{title:{m["product"]}}}}}</a>: original Anki cards, a study guide and practice questions on the same topic.</p></aside>'
+                    if m["product"] != "none" else "")
     body = f"""<article class="note wrap narrow">
 <p class="eyebrow">Free MCAT study note</p>
 <h1>{html.escape(m["title"])}</h1>
@@ -347,6 +350,7 @@ def build_note(n, all_notes):
 {{{{signup}}}}
 <h2>Keep studying</h2>
 <ul>{rel}<li><a href="index.html">All free notes</a></li></ul>
+{related_pack}
 {practice_build.note_links(slug, PRACTICE_LIVE, None)}
 {cta}{waitlist.capture("{{root}}", "cc2")}
 <p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>

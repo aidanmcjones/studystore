@@ -4,7 +4,7 @@ description: Self-serving bias vs fundamental attribution error vs actor-observe
 product: 8b-social-thinking
 published: 2026-10-20
 seo_title: Fundamental Attribution Error vs Self-Serving Bias
-seo_description: Fundamental attribution error vs self-serving bias vs actor-observer bias: the difference in one table, with examples.
+seo_description: Fundamental attribution error blames others' character, self-serving bias protects your ego, actor-observer splits by role. One table with examples.
 related: attribution-theory-kelley-covariation-dispositional-situational
 ---
 
