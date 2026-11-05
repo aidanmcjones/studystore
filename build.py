@@ -101,7 +101,7 @@ def topbuy(slug, root=""):
     if not PB.buyable(p):
         return ""
     btn = PB.buy(products, slug, "btn small")
-    btn = re.sub(r'href="([^"]+)"', lambda m: 'href="%s%sutm_source=%s"' % (m.group(1), "&amp;" if "?" in m.group(1) else "?", src), btn, count=1)
+    btn = btn.replace("?utm_source=site-cta", "?utm_source=" + src, 1)  # PB.buy already tags site-cta and data-track="cta"
     return (f'<aside class="cta cta-top"><div><strong>{html.escape(p["title"])}</strong>'
             f'<p>{html.escape(p["price"])} pack with original Anki cards, a study guide and a printable cheat sheet.</p></div>{btn}</aside>' + waitlist.capture(root))
 
