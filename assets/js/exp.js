@@ -7,6 +7,7 @@
  * - Tags checkout links: Polar (buy.polar.sh) links get the first-touch utm_* tags and
  *   reference_id=<id>.<variant>~... (shown experiments); Lemon Squeezy links (dormant provider)
  *   get checkout[custom][exp_<id>]=<variant> and utm tags.
+ * - A click on any checkout link sends cta_click and checkout_click (the old build sent only checkout_click).
  * - Sends nothing when Do Not Track or Global Privacy Control is on.
  */
 (function () {

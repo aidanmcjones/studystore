@@ -480,8 +480,8 @@ tr:last-child td{border-bottom:0}
 .cta .btn.off{background:transparent;color:var(--bg);border-color:color-mix(in srgb,var(--bg) 40%,transparent)}
 
 /* ---------- product page ---------- */
-.phero{padding-top:clamp(40px,7vw,100px);padding-bottom:clamp(40px,6vw,80px)}
-.phero h1{font-size:clamp(2.4rem,6.4vw,5.6rem);max-width:15ch}
+.phero{padding-top:clamp(24px,4vw,56px);padding-bottom:clamp(32px,5vw,64px)}
+.phero h1{font-size:clamp(2rem,5vw,4.2rem);max-width:18ch}
 .pmain{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.8fr);gap:clamp(28px,5vw,80px);align-items:start;padding-bottom:clamp(56px,8vw,110px)}
 .pbody h2{font-size:clamp(1.6rem,3vw,2.4rem);margin-top:1.6em;padding-top:1em;border-top:1px solid var(--line)}
 .pbody h2:first-child{margin-top:0;padding-top:0;border:0}
@@ -678,4 +678,4 @@ html:not(.js) .qitem.qx{display:none}
 }
 .topics>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-size:.95rem;color:var(--muted);margin:24px 0 8px}
 .topics[open]>summary{margin-bottom:16px}
-.herobuy{margin:22px 0 0}
+.herobuy{margin:18px 0 0}
