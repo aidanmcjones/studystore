@@ -3,7 +3,7 @@ title: Cell Adhesion Molecules: Cadherins, Integrins and Selectins Compared
 description: Compare cadherins, integrins, selectins and IgSF adhesion molecules by what they bind, whether they need calcium, and their roles, with a junction recap.
 product: 2a-cells-membranes
 published: 2026-11-04
-related: passive-vs-active-transport, mitosis-vs-meiosis-differences
+related: passive-vs-active-transport, mitosis-vs-meiosis-differences, innate-vs-adaptive-immunity-b-cells-t-cells-antibodies
 seo_title: Cadherins vs Integrins vs Selectins | MCAT Notes
 seo_description: Cadherins, integrins and selectins compared: what each binds, calcium dependence and function, plus cell junctions, with a 5-question MCAT quiz.
 ---

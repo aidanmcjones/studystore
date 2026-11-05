@@ -3,7 +3,7 @@ title: MCAT Study Schedule: How to Build a Weekly Plan That Holds
 description: A simple weekly structure for MCAT prep with content review, practice questions, full-length exams and review time, plus how to adjust it when you fall behind.
 product: bundle-complete-mcat
 published: 2026-11-04
-related: how-long-to-study-for-the-mcat, how-to-use-anki-for-the-mcat
+related: how-long-to-study-for-the-mcat, how-to-use-anki-for-the-mcat, mcat-exam-format-sections-timing-breaks
 seo_title: MCAT Study Schedule: A Weekly Plan Template
 seo_description: Build an MCAT study schedule: a weekly block structure, when to add full-length exams, how to review errors, and what to cut when you fall behind.
 ---

@@ -3,7 +3,7 @@ title: Probability That Two Carriers Have an Affected Child (Hardy-Weinberg)
 description: Worked method for the classic question: a recessive disorder affects 1 in N births, two unrelated people pick each other, what is the chance of an affected child? Includes the full calculation.
 product: 1c-heredity-evolution
 published: 2026-11-04
-related: hardy-weinberg-equation-practice-problems, recombination-frequency-gene-mapping-map-units
+related: hardy-weinberg-equation-practice-problems, recombination-frequency-gene-mapping-map-units, natural-selection-vs-genetic-drift-founder-bottleneck
 seo_title: Carrier Probability and Affected Child: Hardy-Weinberg Steps
 seo_description: If a recessive disorder affects 1 in 650 births, what is the chance two unrelated people have an affected child? Full Hardy-Weinberg worked solution and quiz.
 ---

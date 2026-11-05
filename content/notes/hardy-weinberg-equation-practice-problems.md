@@ -3,7 +3,7 @@ title: Hardy-Weinberg Equation: How to Solve Every MCAT Problem Type
 description: Solve Hardy-Weinberg problems from any starting point: recessive or dominant phenotypes, genotype counts, carriers, X-linked traits, and equilibrium tests.
 product: 1c-heredity-evolution
 published: 2026-10-20
-related: lac-operon-regulation-lactose-glucose
+related: lac-operon-regulation-lactose-glucose, natural-selection-vs-genetic-drift-founder-bottleneck
 seo_title: Hardy-Weinberg Equation Practice Problems (MCAT)
 seo_description: Hardy-Weinberg equation practice problems: solve for recessive or dominant phenotypes, carriers, X-linked traits and equilibrium tests, step by step.
 ---

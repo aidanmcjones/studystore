@@ -3,7 +3,7 @@ title: MCAT Score Calculator: How Scaled Scoring Works and What to Estimate
 description: How the MCAT is scored, from raw correct answers to a 118 to 132 section score and a 472 to 528 total, and how to use a calculator to set a target without fooling yourself.
 product: bundle-complete-mcat
 published: 2026-11-04
-related: how-long-to-study-for-the-mcat, how-to-approach-a-cars-passage
+related: how-long-to-study-for-the-mcat, how-to-approach-a-cars-passage, mcat-exam-format-sections-timing-breaks
 seo_title: MCAT Score Calculator: How Scaled Scoring Works
 seo_description: How MCAT scores work: 118-132 per section, 472-528 total, no penalty for guessing, and how to turn practice results into a realistic target.
 ---

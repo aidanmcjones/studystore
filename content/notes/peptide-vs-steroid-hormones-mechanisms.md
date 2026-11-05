@@ -3,7 +3,7 @@ title: Peptide vs Steroid Hormones for the MCAT: Receptors, Speed and Examples
 description: How peptide and steroid hormones differ in solubility, receptor location, second messengers, speed and duration, with examples and the amino-acid derived hormones in between.
 product: 3a-nervous-endocrine
 published: 2026-11-04
-related: action-potential-phases-ion-channels, passive-vs-active-transport, cell-adhesion-molecules-cadherins-integrins-selectins
+related: action-potential-phases-ion-channels, passive-vs-active-transport, cell-adhesion-molecules-cadherins-integrins-selectins, innate-vs-adaptive-immunity-b-cells-t-cells-antibodies, hypothalamic-pituitary-axes-feedback-loops
 seo_title: Peptide vs Steroid Hormones MCAT: Receptors and Mechanisms
 seo_description: Peptide versus steroid hormones for the MCAT: solubility, receptor location, second messengers, speed, duration and examples, with a five-question quiz.
 ---
