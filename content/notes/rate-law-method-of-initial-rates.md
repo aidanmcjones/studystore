@@ -5,7 +5,7 @@ seo_title: Rate Law From Initial Rates: Step-by-Step Method
 seo_description: Find reaction orders, the rate law and k from an initial rates table with ratio shortcuts and worked examples.
 product: 5e-thermo-kinetics
 published: 2026-10-20
-related: gibbs-free-energy-delta-g-spontaneity, radioactive-decay-half-life-calculations, michaelis-menten-and-lineweaver-burk
+related: gibbs-free-energy-delta-g-spontaneity, radioactive-decay-half-life-calculations, michaelis-menten-and-lineweaver-burk, integrated-rate-laws-half-life-reaction-order
 ---
 
 To find a rate law from initial rates, pick two experiments in which only one reactant concentration changes, divide the two rates, and ask what power of the concentration ratio gives that rate ratio. That power is the order in that reactant. Repeat for each reactant, write rate = k[A]<sup>m</sup>[B]<sup>n</sup>, then plug any single experiment back in to solve for k. The orders come from the data, never from the coefficients in the balanced equation.

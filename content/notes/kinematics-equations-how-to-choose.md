@@ -5,7 +5,7 @@ seo_title: Kinematics Equations: How to Choose the Right One
 seo_description: Pick the right of the four kinematics equations by the variable you lack, with braking, free fall and projectile examples.
 product: 4a-motion-forces-energy
 published: 2026-10-27
-related: work-energy-theorem-conservation-of-energy, bernoulli-equation-continuity-venturi
+related: work-energy-theorem-conservation-of-energy, bernoulli-equation-continuity-venturi, projectile-motion-range-max-height-components
 ---
 
 There are four kinematics equations for motion with constant acceleration, and each one leaves out exactly one of the five variables: displacement &Delta;x, initial velocity v<sub>0</sub>, final velocity v, acceleration a, and time t. To choose, list the three values the problem gives you and the one it asks for. The variable that is neither given nor asked for is the one you do not care about, so pick the equation that does not contain it.

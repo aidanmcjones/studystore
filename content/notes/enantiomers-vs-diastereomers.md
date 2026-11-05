@@ -5,7 +5,7 @@ seo_title: Enantiomers vs Diastereomers: How to Tell Them Apart
 seo_description: Tell enantiomers, diastereomers, meso and identical pairs apart, and why only diastereomers separate by ordinary methods.
 product: 5b-molecules-bonding-stereo
 published: 2026-11-01
-related: r-and-s-configuration-cip-priority-rules, anomers-vs-epimers-carbohydrates
+related: r-and-s-configuration-cip-priority-rules, anomers-vs-epimers-carbohydrates, sn1-vs-sn2-vs-e1-vs-e2-mechanisms
 ---
 
 **Enantiomers** are stereoisomers that are non-superimposable mirror images: every stereocenter has the opposite configuration. **Diastereomers** are stereoisomers that are not mirror images: at least one stereocenter matches and at least one differs (or, for alkenes, the cis and trans arrangement differs). Enantiomers share every physical property except the sign of optical rotation and behavior toward other chiral things; diastereomers are different compounds with different melting points, boiling points and solubilities.
