@@ -3,7 +3,7 @@ title: Population Pyramids for Demographic Transition Stages 1 to 5
 description: What the population pyramid looks like at each stage of the demographic transition, why the shape changes, and how to read a pyramid on the MCAT.
 product: 9b-demographics
 published: 2026-11-04
-related: demographic-transition-model-stages, fertility-transition-and-migration-transition-mcat
+related: demographic-transition-model-stages, fertility-transition-and-migration-transition-mcat, epidemiologic-transition-causes-of-death-by-dtm-stage
 seo_title: Population Pyramid for Stage 1, 2, 3, 4 and 5 of the Demographic Transition
 seo_description: Match each demographic transition stage to its population pyramid shape: wide base, bell, column or inverted. Reading rules and a 5-question quiz.
 ---

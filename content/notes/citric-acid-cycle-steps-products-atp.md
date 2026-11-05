@@ -3,7 +3,7 @@ title: Citric Acid (Krebs) Cycle Steps, Enzymes, and Products
 description: Walk the eight citric acid cycle steps, the products of each turn, the three regulated enzymes, and how to count ATP from acetyl-CoA to glucose.
 product: 1d-metabolism-bioenergetics
 published: 2026-10-20
-related: glycolysis-steps-enzymes-net-atp, gibbs-free-energy-delta-g-spontaneity, enzyme-classes-ec-1-to-7, pyruvate-dehydrogenase-complex-pyruvate-to-acetyl-coa
+related: glycolysis-steps-enzymes-net-atp, gibbs-free-energy-delta-g-spontaneity, enzyme-classes-ec-1-to-7, pyruvate-dehydrogenase-complex-pyruvate-to-acetyl-coa, citric-acid-cycle-intermediates-carbons-nadh-fadh2-table
 seo_title: Citric Acid Cycle: Steps, Products and ATP | MCAT
 seo_description: Citric acid (Krebs) cycle steps: the 8 enzymes, products per turn, regulation and ATP count, with a 5-question MCAT-style quiz.
 ---
