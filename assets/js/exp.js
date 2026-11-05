@@ -123,7 +123,7 @@
   function tagPolar(u, seen) {
     var ref = Object.keys(seen).sort().map(function (k) { return k + "." + seen[k]; }).join("~");
     if (ref) u.searchParams.set("reference_id", ("ss~" + ref).slice(0, 100)); else u.searchParams.delete("reference_id");
-    if (utmSource && !u.searchParams.get("utm_source")) u.searchParams.set("utm_source", utmSource); // keep a link's own tag (site-cta)
+    if (!u.searchParams.get("utm_source")) u.searchParams.set("utm_source", utmSource || "site-cta"); // keep a link's own tag (site-cta)
     if (utmCampaign) u.searchParams.set("utm_campaign", utmCampaign);
     Object.keys(utmExtra).forEach(function (k) { if (utmExtra[k]) u.searchParams.set(k, utmExtra[k]); });
   }
@@ -152,7 +152,7 @@
     if (isCheckout(a) || (a.hasAttribute("data-buy") && !a.classList.contains("off"))) kind = "checkout_click";
     else if (t === "sampler") kind = "sampler_click";
     else if (t === "cta" || a.closest("aside.cta") || a.closest(".product .row")) kind = "cta_click";
-    if (kind === "checkout_click" && t === "cta") send("cta_click", W.__ssSeen || {}); // above-the-fold buy button: CTA click plus checkout start
+    if (kind === "checkout_click") send("cta_click", W.__ssSeen || {}); // every checkout link (hero, buybox, inline, bundle) counts as a CTA click plus checkout start
     if (kind) send(kind, W.__ssSeen || {});
   }, true);
 
