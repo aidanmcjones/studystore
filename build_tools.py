@@ -230,8 +230,10 @@ def build(emit, site, products, notes_meta, notes_by_aamc=None, practice_by_aamc
 <p class="lead">Interactive MCAT practice and planning tools. Free, no signup, runs in your browser, and nothing you enter leaves your device.</p></div>
 <section><div class="wrap">{{{{topbuy:feat}}}}</div></section>
 <section><div class="wrap"><div class="toolgrid">{cards}</div></div></section>
-<section><div class="wrap narrow"><h2>Comparison guides</h2><ul><li><a href="../compare/mcat-anki-decks-anking-miledown-pankow.html">AnKing vs MileDown vs Pankow vs StudyStore: MCAT Anki decks compared</a></li><li><a href="../compare/mcat-prep-cost-courses-vs-diy.html">MCAT prep cost in 2027: courses vs DIY, with official AAMC prices</a></li></ul></div></section>
+<section><div class="wrap narrow"><h2>Comparison guides</h2><p class="meta"><a href="../compare/index.html">All comparison guides</a></p><ul><li><a href="../compare/mcat-anki-decks-anking-miledown-pankow.html">AnKing vs MileDown vs Pankow vs StudyStore: MCAT Anki decks compared</a></li><li><a href="../compare/mcat-prep-cost-courses-vs-diy.html">MCAT prep cost in 2027: courses vs DIY, with official AAMC prices</a></li></ul></div></section>
 <section><div class="wrap narrow">{{{{waitlist}}}}</div></section>"""
     emit("tools/index.html", "Free MCAT Tools: Amino Acid Quiz, pKa Quiz, Study Planner",
          "Free interactive MCAT tools: amino acid quiz, pKa and charge at pH trainer, 2027 study schedule generator and AAMC percentile lookup. No signup.",
-         idx, og_image=f"{base}/assets/tools/og-index.png", head_extra='<link rel="stylesheet" href="{{root}}assets/tools.css">' + ld(itemlist), lastmod=today)
+         idx, og_image=f"{base}/assets/tools/og-index.png", head_extra='<link rel="stylesheet" href="{{root}}assets/tools.css">' + ld(itemlist, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "StudyStore", "item": base + "/"},
+            {"@type": "ListItem", "position": 2, "name": "Free tools", "item": base + "/tools/"}]}), lastmod=today)

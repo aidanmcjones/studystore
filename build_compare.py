@@ -96,7 +96,7 @@ def build(emit, site, ld_json, breadcrumbs):
 <p class="meta"><a class="reportlink" href="{{{{root}}}}report.html" data-report>Spotted an outdated number? Report a problem or suggest something</a></p>
 </article>"""
     emit(f"compare/{slug}.html", "AnKing vs MileDown vs Pankow: MCAT Anki Decks Compared | StudyStore", desc, body,
-         head_extra=ld_json(article_ld(base, url, title, desc, day), breadcrumbs((title, url))), lastmod=day)
+         head_extra=ld_json(article_ld(base, url, title, desc, day), breadcrumbs(("MCAT comparison guides", f"{base}/compare/index.html"), (title, url))), lastmod=day)
 
     # ---------------- cost ----------------
     slug2 = "mcat-prep-cost-courses-vs-diy"
@@ -154,5 +154,16 @@ def build(emit, site, ld_json, breadcrumbs):
 <p class="meta"><a class="reportlink" href="{{{{root}}}}report.html" data-report>Spotted an outdated price? Report a problem or suggest something</a></p>
 </article>"""
     emit(f"compare/{slug2}.html", title2 + " | StudyStore", desc2, body2,
-         head_extra=ld_json(article_ld(base, url2, title2, desc2, day), breadcrumbs((title2, url2))), lastmod=day)
+         head_extra=ld_json(article_ld(base, url2, title2, desc2, day), breadcrumbs(("MCAT comparison guides", f"{base}/compare/index.html"), (title2, url2))), lastmod=day)
+    guides = [(slug, title, desc), (slug2, title2, desc2)]
+    lis = "".join(f'<li><a href="{s}.html">{E(t)}</a><br><span class="meta">{E(dd)}</span></li>' for s, t, dd in guides)
+    idx = (f'<div class="wrap hero" style="padding-bottom:24px"><div class="eyebrow">Comparison guides</div><h1>MCAT comparison guides</h1>'
+           f'<p class="lead">Dated, sourced comparisons of MCAT study decks and prep costs. Every number links to its source.</p></div>'
+           f'<section><div class="wrap narrow"><ul class="catlist">{lis}</ul>'
+           f'<p class="meta"><a href="../notes/index.html">Free MCAT notes</a> &middot; <a href="../practice/index.html">Free practice questions</a> &middot; '
+           f'<a href="../tools/index.html">Free MCAT tools</a> &middot; <a href="../products/index.html">All packs</a></p></div></section>'
+           '<section><div class="wrap narrow">{{waitlist}}</div></section>')
+    emit("compare/index.html", "MCAT Comparison Guides: Anki Decks and Prep Costs | StudyStore",
+         "Sourced, dated MCAT comparison guides: Anki decks (AnKing, MileDown, Pankow) and 2027 prep costs, courses vs DIY.",
+         idx, head_extra=ld_json(breadcrumbs(("MCAT comparison guides", f"{base}/compare/index.html"))), lastmod=day)
     return [(slug, title), (slug2, title2)]

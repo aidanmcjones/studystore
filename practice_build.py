@@ -157,6 +157,9 @@ CTA_ARM_PAGES = set()  # set by build.py
 SOCIAL_CTA_PAGES = set()  # set by build.py
 
 
+SECTION_ORDER = ["Bio/Biochem", "Chem/Phys", "Psych/Soc", "CARS"]
+SECTION_OF = {}  # AAMC code -> MCAT section name; set by build.py from site.json products
+
 def build_all(emit, root, pages, cats, notes_by_slug, base_url):
     tpl = (Path(root) / "templates" / "practice.html").read_text()
     hub_tpl = (Path(root) / "templates" / "practice_hub.html").read_text()
@@ -250,12 +253,17 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
              lastmod="2026-11-04")
     # main hub
     secs = ""
-    for code, c in cats.items():
+    last_sec = None
+    for code, c in sorted(cats.items(), key=lambda kv: (SECTION_ORDER.index(SECTION_OF.get(kv[0], "CARS")), list(cats).index(kv[0]))):
         items = [x for x in live if x["meta"]["aamc"] == code]
         if not items:
             continue
+        sec = SECTION_OF.get(code)
+        if sec and sec != last_sec:
+            secs += f'<h2 class="secthead" id="{sec.lower().replace("/", "-").replace(" ", "-")}">{html.escape(sec)} practice questions</h2>'
+            last_sec = sec
         lis = "".join(f'<li><a href="{{{{root}}}}practice/{x["slug"]}.html">{html.escape(x["meta"]["title"])}</a></li>' for x in items)
-        secs += (f'<h2><a href="{{{{root}}}}practice/{c["slug"]}/index.html">{code}: {html.escape(c["title"])}</a></h2>'
+        secs += (f'<h3><a href="{{{{root}}}}practice/{c["slug"]}/index.html">{code}: {html.escape(c["title"])}</a></h3>'
                  f'<p class="meta">{html.escape(c["blurb"])}</p><ul>{lis}</ul>')
     total = sum(len(x["qs"]) for x in live)
     body = fill(hub_tpl, dict(eyebrow="Free MCAT-style practice", title="MCAT Practice Questions by Topic",

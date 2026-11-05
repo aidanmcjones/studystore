@@ -679,3 +679,6 @@ html:not(.js) .qitem.qx{display:none}
 .topics>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-size:.95rem;color:var(--muted);margin:24px 0 8px}
 .topics[open]>summary{margin-bottom:16px}
 .herobuy{margin:18px 0 0}
+
+.wrap>.crumbs{font-size:.9rem;color:var(--muted);margin:18px 0 6px}
+.crumbs a{color:inherit}
