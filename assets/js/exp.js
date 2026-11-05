@@ -2,7 +2,7 @@
  * - Anonymous random session id in localStorage (key ss_sid). No cookies, no PII.
  * - Assigns one variant per experiment per session by weight (sticky), swaps text in
  *   elements marked data-exp="<id>" data-exp-field="<field>" (textContent only).
- * - Sends view, cta_click, checkout_click, sampler_click to /api/e via sendBeacon, plus
+ * - Sends view, cta_click, checkout_click, checkout_start, sampler_click to /api/e via sendBeacon, plus
  *   subscribe (launch list signup) through window.ssTrack("subscribe") from waitlist.js.
  * - Tags checkout links: Polar (buy.polar.sh) links get the first-touch utm_* tags and
  *   reference_id=<id>.<variant>~... (shown experiments); Lemon Squeezy links (dormant provider)
@@ -147,15 +147,18 @@
   // Named events from other scripts (waitlist.js). Only known names; the email is never sent here.
   W.ssTrack = function (event) { if (event === "subscribe") send(event, W.__ssSeen || {}); };
 
-  D.addEventListener("click", function (ev) {
+  function onLinkClick(ev) {
     var a = ev.target && ev.target.closest ? ev.target.closest("a") : null; if (!a) return;
     var t = a.getAttribute("data-track"), kind = null;
     if (isCheckout(a) || (a.hasAttribute("data-buy") && !a.classList.contains("off"))) kind = "checkout_click";
     else if (t === "sampler") kind = "sampler_click";
     else if (t === "cta" || a.closest("aside.cta") || a.closest(".product .row")) kind = "cta_click";
     if (kind === "checkout_click") send("cta_click", W.__ssSeen || {}); // every checkout link (hero, buybox, inline, bundle) counts as a CTA click plus checkout start
+    if (kind === "checkout_click") send("checkout_start", W.__ssSeen || {}); // checkout_start: a visitor left for the Polar checkout
     if (kind) send(kind, W.__ssSeen || {});
-  }, true);
+  }
+  D.addEventListener("click", onLinkClick, true);
+  D.addEventListener("auxclick", onLinkClick, true); // middle click / open in new tab
 
   function start() {
     fetch(CONFIG, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : { experiments: [] }; })
