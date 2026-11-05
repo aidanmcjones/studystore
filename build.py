@@ -121,6 +121,7 @@ def render(text, root):
         if k == "latest_notes": return LATEST_NOTES
         if k == "waitlist": return waitlist.box(root, launch=not PB.checkout_open(site))
         if k == "signup": return waitlist.signup(root)
+        if k == "capture": return waitlist.capture(root)
         v = PB.placeholder(site, products, k, root)  # catalog data: pack_grid, feat:*, stat:*
         if v is not None: return v
         if k in site and isinstance(site[k], str): return site[k]

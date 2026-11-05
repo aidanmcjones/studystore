@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
 <style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
 <script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
-<script src="../assets/js/exp.js?v=86afcedcb2" defer></script>
+<script src="../assets/js/exp.js?v=54ac12746d" defer></script>
 <script src="../assets/js/site.js?v=1b40ce4c4e" defer></script>
 <script src="../assets/js/buy.js?v=50fe203f05" defer></script>
 <script src="../assets/js/report.js?v=1e5d24d48f" defer></script>
@@ -102,6 +102,24 @@
 <div class="price" data-exp="price_frame" data-exp-field="price">$12</div>
 <p class="meta">One-time purchase. Instant digital download. 14-day no-questions refund. <a href="#preview">See sample pages and questions first.</a></p>
 <p><a class="btn" href="https://buy.polar.sh/polar_cl_ezIbpsE5Z4Vj5w6hDDgsatzn1nCUZvIuiBT0k3I7Mkf" data-checkout="polar" data-slug="8a-self-identity" rel="noopener">Buy now, $12</a></p>
+<section class="waitlist waitlist-cta" aria-label="Free sample pack by email">
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
+<label for="cc-email">Not ready to buy? Get a free sample pack by email.</label>
+<input id="cc-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
+<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn small">Send the free sample</button>
+<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> <a href="../privacy">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p><a class="btn" href="../assets/free/studystore-mcat-sample-cheat-sheet.pdf" download data-track="sample-pdf">Download your free sample: 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF)</a></p>
+<p>Meanwhile, <a href="../notes/" data-track="sampler">start with the free notes</a>.</p>
+</div>
+</section>
 <ul class="mono">
 <li><span>Flashcards</span><span>397</span></li><li><span>Original diagrams</span><span>22</span></li><li><span>Study guide</span><span>9 pages</span></li><li><span>Cheat sheet</span><span>3 pages</span></li><li><span>Practice questions</span><span>52</span></li><li><span>Topics</span><span>15</span></li><li><span>Files</span><span>.apkg, .pdf</span></li><li><span>Refund window</span><span>14 days</span></li>
 </ul>
