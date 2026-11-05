@@ -5,7 +5,7 @@ seo_title: Nephron Function and Reabsorption by Segment | MCAT
 seo_description: Free MCAT nephron notes: what each segment reabsorbs and secretes, loop of Henle, ADH, and GFR and clearance math, with a quiz.
 product: 3b-organ-systems
 published: 2026-10-20
-related: passive-vs-active-transport, henderson-hasselbalch-for-the-mcat
+related: passive-vs-active-transport, henderson-hasselbalch-for-the-mcat, cardiac-conduction-system-sa-node-cardiac-cycle
 ---
 
 The nephron makes urine in three moves: it filters plasma at the glomerulus, reabsorbs most of that filtrate back into the blood along the tubule, and secretes a few extra substances into the tubule. Each segment has one signature job. The proximal tubule reclaims the bulk of everything useful, the loop of Henle builds a salt gradient in the medulla, the distal tubule fine-tunes salt and calcium, and the collecting duct decides, under hormonal control, how concentrated the final urine will be. If you know what each segment does to water and to salt, you can predict the effect of almost any hormone or diuretic.

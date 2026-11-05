@@ -3,7 +3,7 @@ title: Self-Serving Bias vs Fundamental Attribution Error: The Difference
 description: Self-serving bias explains your own outcomes in a flattering way; the fundamental attribution error blames other people's behavior on their character. A side-by-side comparison with examples.
 product: 8b-social-thinking
 published: 2026-11-04
-related: fundamental-attribution-error-vs-actor-observer-bias, theories-of-emotion-james-lange-cannon-bard
+related: fundamental-attribution-error-vs-actor-observer-bias, theories-of-emotion-james-lange-cannon-bard, cognitive-dissonance-and-elaboration-likelihood-model
 seo_title: Self-Serving Bias vs Fundamental Attribution Error
 seo_description: What separates self-serving bias from the fundamental attribution error: whose behavior is explained, which cause is favored, and how each differs from actor-observer bias.
 ---
