@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edge Sharpening and Lateral Inhibition | MCAT Vision</title>
+<meta name="description" content="Lateral inhibition and center-surround receptive fields sharpen edges in the retina. Understand the mechanism and feature detection, with a quiz.">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Edge Sharpening and Lateral Inhibition in Vision for the MCAT", "description": "How lateral inhibition and center-surround receptive fields sharpen edges in the retina, and how feature detectors in visual cortex build on that signal.", "image": "https://www.studystore.co/assets/notes/og-edge-sharpening-lateral-inhibition-vision.png?v=46bcb8fcef", "datePublished": "2026-11-04", "dateModified": "2026-11-04", "wordCount": 253, "inLanguage": "en", "mainEntityOfPage": "https://www.studystore.co/notes/edge-sharpening-lateral-inhibition-vision", "author": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}, "publisher": {"@type": "Organization", "name": "StudyStore", "url": "https://www.studystore.co/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is lateral inhibition?", "acceptedAnswer": {"@type": "Answer", "text": "An active neuron reducing the activity of its neighbors."}}, {"@type": "Question", "name": "Which retinal cells spread inhibition sideways?", "acceptedAnswer": {"@type": "Answer", "text": "Horizontal cells."}}, {"@type": "Question", "name": "When does an ON-center ganglion cell fire most?", "acceptedAnswer": {"@type": "Answer", "text": "When light falls on the center of its field and the surround is dark."}}, {"@type": "Question", "name": "What perceptual effect does lateral inhibition produce at a boundary?", "acceptedAnswer": {"@type": "Answer", "text": "Exaggerated contrast, seen as Mach bands."}}, {"@type": "Question", "name": "What did Hubel and Wiesel find in visual cortex?", "acceptedAnswer": {"@type": "Answer", "text": "Neurons that respond to specific features such as oriented edges."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "StudyStore", "item": "https://www.studystore.co/"}, {"@type": "ListItem", "position": 2, "name": "Free MCAT study notes", "item": "https://www.studystore.co/notes/"}, {"@type": "ListItem", "position": 3, "name": "Edge Sharpening and Lateral Inhibition in Vision for the MCAT", "item": "https://www.studystore.co/notes/edge-sharpening-lateral-inhibition-vision"}]}</script>
+
+<link rel="canonical" href="https://www.studystore.co/notes/edge-sharpening-lateral-inhibition-vision">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StudyStore">
+<meta property="og:title" content="Edge Sharpening and Lateral Inhibition | MCAT Vision">
+<meta property="og:description" content="Lateral inhibition and center-surround receptive fields sharpen edges in the retina. Understand the mechanism and feature detection, with a quiz.">
+<meta property="og:url" content="https://www.studystore.co/notes/edge-sharpening-lateral-inhibition-vision">
+<meta property="og:image" content="https://www.studystore.co/assets/notes/og-edge-sharpening-lateral-inhibition-vision.png?v=46bcb8fcef">
+<meta name="twitter:image" content="https://www.studystore.co/assets/notes/og-edge-sharpening-lateral-inhibition-vision.png?v=46bcb8fcef">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Edge Sharpening and Lateral Inhibition | MCAT Vision">
+<meta name="twitter:description" content="Lateral inhibition and center-surround receptive fields sharpen edges in the retina. Understand the mechanism and feature detection, with a quiz.">
+<meta name="theme-color" content="#f3f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f0d" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1512'/%3E%3Ccircle cx='11' cy='11' r='4' fill='%23f2b705'/%3E%3Ccircle cx='21' cy='16' r='4' fill='%233ddc84'/%3E%3Ccircle cx='11' cy='21' r='4' fill='%236aa2ff'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("ss-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/style.css?v=810ac8e4d4">
+<link rel="stylesheet" href="../assets/packs.css?v=7a31827607">
+<style>.exp-wait [data-exp]{visibility:hidden}.cta.cta-compact{padding:12px 16px;margin:1.4em 0;font-size:.95rem}</style>
+<script>document.documentElement.classList.add("exp-wait");setTimeout(function(){document.documentElement.classList.remove("exp-wait")},1500)</script>
+<script src="../assets/js/exp.js?v=54ac12746d" defer></script>
+<script src="../assets/js/site.js?v=1b40ce4c4e" defer></script>
+<script src="../assets/js/buy.js?v=50fe203f05" defer></script>
+<script src="../assets/js/report.js?v=1e5d24d48f" defer></script>
+<script src="../assets/js/waitlist.js?v=969555bf76" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="gridbg" aria-hidden="true"></div>
+<header class="site"><div class="wrap">
+<a class="brand" href="../" aria-label="StudyStore home"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Study<b>Store</b></span></a>
+<nav aria-label="Main"><a href="../#packs">Packs</a><a href="../notes/">Notes</a><a href="../tools/">Tools</a><a href="../#faq">FAQ</a><a href="../refund">Refunds</a></nav>
+<div class="tools">
+<span class="phread" aria-hidden="true">pH <b>1.0</b></span>
+<button class="themetoggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7a5 5 0 0 1 0 10z" fill="currentColor"/></svg></button>
+</div>
+</div><div class="phbar" aria-hidden="true"><i></i></div></header>
+<main id="main">
+<article class="note wrap narrow">
+<p class="eyebrow">Free MCAT study note</p>
+<h1>Edge Sharpening and Lateral Inhibition in Vision for the MCAT</h1>
+<p class="meta">By StudyStore &middot; Published 2026-11-04 &middot; 1 min read &middot; 253 words</p>
+<aside class="cta cta-top"><div><strong>Sensation and Perception</strong><p>$12 pack with original Anki cards, a study guide and a printable cheat sheet.</p></div><a class="btn small" href="https://buy.polar.sh/polar_cl_lO88JF8XHNPTgaFRg1r8KUmLoej3DtmpjNKiN4HtLV1?utm_source=site-cta" data-checkout="polar" data-slug="6a-sensation-perception" rel="noopener" data-track="cta">Buy now, $12</a></aside><section class="waitlist waitlist-cta" aria-label="Free sample pack by email">
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
+<label for="cc-email">Not ready to buy? Get a free sample pack by email.</label>
+<input id="cc-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
+<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn small">Send the free sample</button>
+<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> <a href="../privacy">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p><a class="btn" href="../assets/free/studystore-mcat-sample-cheat-sheet.pdf" download data-track="sample-pdf">Download your free sample: 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF)</a></p>
+<p>Meanwhile, <a href="../notes/" data-track="sampler">start with the free notes</a>.</p>
+</div>
+</section>
+<div class="prose">
+<p><strong>Edge sharpening</strong> is the exaggeration of contrast at a boundary between light and dark. It results from <strong>lateral inhibition</strong>: an active neuron reduces the activity of its neighbors.</p>
+<h2 id="the-mechanism">The mechanism</h2>
+<ul><li>Photoreceptors signal to bipolar and ganglion cells.</li><li><strong>Horizontal cells</strong> in the retina spread inhibition sideways to neighboring photoreceptor-bipolar connections.</li><li>This produces <strong>center-surround receptive fields</strong>. An ON-center ganglion cell fires most when light hits the center and the surround is dark. An OFF-center cell does the reverse.</li></ul>
+<h2 id="what-happens-at-an-edge">What happens at an edge</h2>
+<p>A cell just inside the bright side of an edge receives little inhibition from its darker neighbors, so it responds strongly. A cell just inside the dark side receives strong inhibition from bright neighbors, so it responds weakly. The result is a perceived bright band and dark band at the boundary (Mach bands), which makes the edge look sharper than the physical difference.</p>
+<h2 id="beyond-the-retina">Beyond the retina</h2>
+<p>Hubel and Wiesel found that neurons in primary visual cortex respond to specific features. Simple cells prefer bars or edges at a particular orientation and location. This is a bottom-up, feature-detection step in perception.</p>
+<h2 id="common-traps">Common traps</h2>
+<ul><li><strong>Calling lateral inhibition an effect of the brain's expectations.</strong> It is a bottom-up mechanism.</li><li><strong>Placing it in the cortex only.</strong> It begins in the retina.</li><li><strong>Confusing ON-center and OFF-center.</strong> Check which part of the field light must hit.</li></ul>
+<h2 id="one-minute-recap">One-minute recap</h2>
+<ul><li>Lateral inhibition: active cells suppress neighbors.</li><li>Result: center-surround fields and sharper edges.</li><li>Cortical feature detectors build on this.</li></ul>
+</div>
+<aside class="cta"><a class="cta-thumb" href="../products/6a-sensation-perception#preview"><img src="../assets/packs/6a-sensation-perception/card-1.webp?v=3744fedbe5" alt="Real sample card from the pack" width="680" height="541" loading="lazy"></a><div><strong>Want this as spaced-repetition cards?</strong><p>Sensation and Perception is a $12 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/6a-sensation-perception">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_lO88JF8XHNPTgaFRg1r8KUmLoej3DtmpjNKiN4HtLV1?utm_source=site-cta" data-checkout="polar" data-slug="6a-sensation-perception" rel="noopener" data-track="cta">Buy now, $12</a></aside>
+<h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
+<p class="meta">Try each question first, then click it to reveal the answer.</p>
+<div class="quiz"><details class="q"><summary>1. What is lateral inhibition?</summary><div><p>An active neuron reducing the activity of its neighbors.</p></div></details><details class="q"><summary>2. Which retinal cells spread inhibition sideways?</summary><div><p>Horizontal cells.</p></div></details><details class="q"><summary>3. When does an ON-center ganglion cell fire most?</summary><div><p>When light falls on the center of its field and the surround is dark.</p></div></details><details class="q"><summary>4. What perceptual effect does lateral inhibition produce at a boundary?</summary><div><p>Exaggerated contrast, seen as Mach bands.</p></div></details><details class="q"><summary>5. What did Hubel and Wiesel find in visual cortex?</summary><div><p>Neurons that respond to specific features such as oriented edges.</p></div></details></div>
+<section class="waitlist waitlist-inline" id="signup" aria-labelledby="signup-h">
+<div class="wlcopy">
+<p class="eyebrow mono"><span class="dot"></span>Free MCAT sampler</p>
+<h2 id="signup-h">Free sample: a 3-page MCAT cheat sheet (PDF), plus 6 short high-yield lessons by email</h2>
+<p>Enter your email and download a real page set from a paid pack: the 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF). Confirm your email and short MCAT lessons follow. Free, no card.</p>
+<p>Prefer not to sign up? The sampler is open to everyone: <a href="../notes/" data-track="sampler">free notes</a>, <a href="../practice/" data-track="sampler">practice sets</a> and the <a href="../tools/mcat-study-schedule">study schedule generator</a>.</p>
+</div>
+<form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="https://income-brain.premed-toolkit.workers.dev/api/subscribe">
+<label for="su-email">Email</label>
+<input id="su-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
+<div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+<input type="hidden" name="list_id" value="studystore-mcat"><input type="hidden" name="consent_text" value="Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.">
+<input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
+<button type="submit" class="btn">Get the free cheat sheet</button>
+<p class="wlnote"><span class="wlconsent">Email me free MCAT notes, practice sets and new packs from StudyStore. Double opt-in, unsubscribe in one click.</span> Every email has an unsubscribe link. <a href="../privacy">Privacy</a></p>
+<p class="wlstatus" role="status" aria-live="polite"></p>
+</form>
+<div class="wldone" hidden tabindex="-1">
+<p class="wldone-h">Check your email</p>
+<p class="wldone-msg">We sent a link to confirm your address. Nothing else is sent until you click it.</p>
+<p><a class="btn" href="../assets/free/studystore-mcat-sample-cheat-sheet.pdf" download data-track="sample-pdf">Download your free sample: 3-page Amino Acids, Proteins and Enzymes cheat sheet (PDF)</a></p>
+<p>Meanwhile, <a href="../notes/" data-track="sampler">start with the free notes</a>.</p>
+</div>
+</section>
+<h2>Keep studying</h2>
+<ul><li><a href="bottom-up-vs-top-down-processing">Bottom-Up vs Top-Down Processing: Differences and Examples</a></li><li><a href="signal-detection-theory-and-webers-law">Signal Detection Theory and Weber&#x27;s Law: d&#x27;, Bias and the JND</a></li><li><a href="./">All free notes</a></li></ul>
+
+<aside class="cta"><a class="cta-thumb" href="../products/6a-sensation-perception#preview"><img src="../assets/packs/6a-sensation-perception/card-1.webp?v=3744fedbe5" alt="Real sample card from the pack" width="680" height="541" loading="lazy"></a><div><strong>Want this as spaced-repetition cards?</strong><p>Sensation and Perception is a $12 pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. <a href="../products/6a-sensation-perception">See what is inside</a>.</p></div><a class="btn" href="https://buy.polar.sh/polar_cl_lO88JF8XHNPTgaFRg1r8KUmLoej3DtmpjNKiN4HtLV1?utm_source=site-cta" data-checkout="polar" data-slug="6a-sensation-perception" rel="noopener" data-track="cta">Buy now, $12</a></aside>
+<p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
+<p class="meta"><a class="reportlink" href="../report" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<div class="fgrid">
+<div>
+<p class="flabel">StudyStore</p>
+<p>Original, high-yield MCAT study packs. Written from scratch, checked card by card.</p>
+</div>
+<div>
+<p class="flabel">Shop</p>
+<p class="links"><a href="../#packs">Packs</a><a href="../products/">All packs</a><a href="../notes/">Free notes</a></p>
+</div>
+<div>
+<p class="flabel">Policies</p>
+<p class="links"><a href="../terms">Terms</a><a href="../privacy">Privacy</a><a href="../refund">Refund policy</a><a href="../support">Support</a></p>
+</div>
+</div>
+<p>Contact: <a href="mailto:support@studystore.co">support@studystore.co</a></p>
+<p><a class="reportlink" href="../report" data-report>Report a problem or suggest something</a></p>
+<p>MCAT is a registered trademark of the Association of American Medical Colleges (AAMC), which is not affiliated with and does not endorse StudyStore.</p>
+<p>All content and diagrams are original work by StudyStore. Study aid only; not medical or professional advice. &copy; 2026 StudyStore.</p>
+<p class="wordmark" aria-hidden="true">Study<b>Store</b></p>
+</div></footer>
+</body>
+</html>
