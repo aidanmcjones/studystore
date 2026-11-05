@@ -5,7 +5,7 @@ seo_title: Capacitors and Dielectrics | MCAT Free Notes
 seo_description: Free MCAT notes on capacitors: C = Q/V, plate area and separation, dielectrics, energy stored, series vs parallel, worked example and quiz.
 product: 4c-electricity-electrochem
 published: 2026-11-05
-related: ohms-law-series-vs-parallel-circuits-equivalent-resistance, coulombs-law-electric-field-potential-energy, work-energy-theorem-conservation-of-energy
+related: ohms-law-series-vs-parallel-circuits-equivalent-resistance, coulombs-law-electric-field-potential-energy, work-energy-theorem-conservation-of-energy, magnetic-force-lorentz-right-hand-rule
 ---
 
 A capacitor stores charge and energy in the electric field between two conductors. Capacitance C is how much charge it holds per volt. The MCAT checks three things: what C depends on, what happens when a dielectric is added, and that series and parallel rules are the reverse of resistors.

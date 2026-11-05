@@ -5,7 +5,7 @@ seo_title: Coulomb's Law and Electric Field | MCAT Free Notes
 seo_description: Free MCAT notes on Coulomb's law, electric field, potential and potential energy: scaling with distance, sign conventions, worked example and quiz.
 product: 4c-electricity-electrochem
 published: 2026-11-05
-related: ohms-law-series-vs-parallel-circuits-equivalent-resistance, galvanic-vs-electrolytic-cells, work-energy-theorem-conservation-of-energy
+related: ohms-law-series-vs-parallel-circuits-equivalent-resistance, galvanic-vs-electrolytic-cells, work-energy-theorem-conservation-of-energy, magnetic-force-lorentz-right-hand-rule
 ---
 
 Four quantities describe point charges, and the MCAT tests which one scales with which power of distance. Force and field go as 1/r<sup>2</sup>. Potential and potential energy go as 1/r. Force and field are vectors, potential and energy are scalars.

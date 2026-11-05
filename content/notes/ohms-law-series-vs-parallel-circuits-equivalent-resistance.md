@@ -5,7 +5,7 @@ seo_title: Ohm's Law, Series vs Parallel Resistors | MCAT
 seo_description: Ohm's law, series and parallel equivalent resistance, and what stays constant in each. Worked example and quiz.
 product: 4c-electricity-electrochem
 published: 2026-11-05
-related: delta-g-equals-negative-nfe-cell-potential, galvanic-vs-electrolytic-cells, coulombs-law-electric-field-potential-energy, capacitors-capacitance-dielectrics-energy-stored
+related: delta-g-equals-negative-nfe-cell-potential, galvanic-vs-electrolytic-cells, coulombs-law-electric-field-potential-energy, capacitors-capacitance-dielectrics-energy-stored, magnetic-force-lorentz-right-hand-rule
 ---
 
 **Ohm's law**: V = IR. Power: P = IV = I<sup>2</sup>R = V<sup>2</sup>/R.

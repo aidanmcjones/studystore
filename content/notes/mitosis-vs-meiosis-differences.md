@@ -5,7 +5,7 @@ seo_title: Mitosis vs Meiosis Differences | MCAT Free Notes
 seo_description: Free MCAT notes comparing mitosis and meiosis stage by stage, with chromosome and DNA counts, nondisjunction and a 5-question quiz.
 product: 2c-cell-division-development
 published: 2026-10-20
-related: bacteria-vs-viruses-differences
+related: bacteria-vs-viruses-differences, cell-cycle-checkpoints-cyclins-cdks-p53
 ---
 
 Mitosis is one division that turns one cell into two genetically identical daughters with the same chromosome number as the parent. Meiosis is two divisions after a single round of DNA replication, turning one diploid cell into four haploid cells that are genetically different from the parent and from each other. Mitosis builds and repairs the body; meiosis makes gametes. Almost every exam question on the topic comes down to one thing: in which division do homologous chromosomes separate, and in which do sister chromatids separate?

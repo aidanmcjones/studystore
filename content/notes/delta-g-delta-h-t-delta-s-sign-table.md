@@ -3,7 +3,7 @@ title: Delta G = Delta H - T Delta S: Sign Table and What Delta G Means
 description: Use the delta G = delta H - T delta S sign table to decide when a reaction is spontaneous, what delta G below, above and at zero mean, and a worked example.
 product: 5e-thermo-kinetics
 published: 2026-11-04
-related: gibbs-free-energy-delta-g-spontaneity, delta-g-equals-negative-nfe-cell-potential
+related: gibbs-free-energy-delta-g-spontaneity, delta-g-equals-negative-nfe-cell-potential, calorimetry-specific-heat-latent-heat-phase-changes
 seo_title: Delta G = Delta H - T Delta S Sign Table | MCAT
 seo_description: Delta G = delta H - T delta S sign table: when reactions are spontaneous at high or low temperature, what delta G of zero means, with a worked example.
 ---

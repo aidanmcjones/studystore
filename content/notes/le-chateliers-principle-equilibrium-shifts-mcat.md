@@ -3,7 +3,7 @@ title: Le Chatelier's Principle for the MCAT: Predicting Equilibrium Shifts
 description: How a system at equilibrium responds to changes in concentration, pressure, volume and temperature, what a catalyst does not do, and how Q compared with K gives the direction.
 product: 5e-thermo-kinetics
 published: 2026-11-04
-related: gibbs-free-energy-delta-g-spontaneity, rate-law-method-of-initial-rates, delta-g-delta-h-t-delta-s-sign-table
+related: gibbs-free-energy-delta-g-spontaneity, rate-law-method-of-initial-rates, delta-g-delta-h-t-delta-s-sign-table, ksp-solubility-product-common-ion-effect
 seo_title: Le Chatelier's Principle MCAT: Equilibrium Shifts Explained
 seo_description: Le Chatelier's principle for the MCAT: how concentration, pressure, volume, temperature and catalysts affect equilibrium, with Q versus K and a quiz.
 ---

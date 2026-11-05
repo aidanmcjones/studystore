@@ -5,7 +5,7 @@ seo_title: Strong vs Weak Acids: Ka, pKa, Conjugate Bases
 seo_description: Ka and pKa rank acid strength; stronger acids have weaker conjugate bases. Worked examples and a 5-question quiz.
 product: 5a-solutions-acids-bases
 published: 2026-11-05
-related: henderson-hasselbalch-for-the-mcat, acid-base-titration-curves-equivalence-point, amino-acid-pka-charge-ph-7-4
+related: henderson-hasselbalch-for-the-mcat, acid-base-titration-curves-equivalence-point, amino-acid-pka-charge-ph-7-4, ksp-solubility-product-common-ion-effect
 ---
 
 A **strong acid** dissociates essentially completely in water. A **weak acid** only partly dissociates, and is described by Ka. pKa = -log Ka, so a **lower pKa means a stronger acid**.
