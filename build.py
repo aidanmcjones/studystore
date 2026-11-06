@@ -11,6 +11,8 @@ Placeholders in templates:
 import json, re, html, math
 from pathlib import Path
 from mdlite import convert, parse_frontmatter, extract_quiz
+import qbank_downloads as QD
+import qbank_shots as QS
 import products_build as PB  # catalog product/bundle/thanks pages (G01)
 import practice_build
 from assetver import version_assets
@@ -43,10 +45,10 @@ PAGES = [
      "Help for the RangeCheck browser extension: how it works on LinkedIn job pages, why a job has no verdict, free checks, Pro license keys and refunds.", False),
     ("support.html", "support.html", "Support | StudyStore",
      "Help with StudyStore MCAT pack downloads, refunds and problem reports, and support for the RangeCheck browser extension.", False),
-    ("qbank.html", "binder.html", "Binder for Mac: flashcard app for your Anki decks | StudyStore",
-     "Binder shows each flashcard right before you'd forget it, so you review less and remember more. One window, opens your Anki decks. Mac, $29 one-time.", False),
+    ("qbank.html", "binder.html", "Binder: flashcard app with deadline-aware scheduling | StudyStore",
+     "Binder shows each flashcard right before you'd forget it, so you review less and remember more. One window, opens your existing deck files. $29 one-time.", False),
     ("qbank_source.html", "binder/source.html", "Binder source code (AGPL-3) | StudyStore",
-     "Source tarballs for every Binder release under the GNU AGPL v3. Binder is built on Anki and is not affiliated with Anki or Ankitects.", True),
+     "Source code for every Binder release under the GNU AGPL-3.0. The full license and credits are inside the tarball and in the app's licenses view.", True),
     ("404.html", "404.html", "Page not found | StudyStore", "Page not found.", True),
     ("report.html", "report.html", "Report a problem or suggest something | StudyStore",
      "Tell StudyStore about a broken link, a wrong answer, a typo or a display problem, or suggest a topic.", True),
@@ -471,7 +473,7 @@ def qbank_subs(body):
     subs = {"qb_buy": btn(q["checkout_url"], f'Buy now, {q["price"]}', "qbank"),
             "qb_buy_hero": '<p class="reveal">' + btn(q["checkout_url"], f'Buy now, {q["price"]}', "qbank") + ' <a class="btn ghost" href="#how-to-open">How to open</a></p>',
             "qb_bundle_buy": btn(b["checkout_url"], f'Buy now, {b["price"]}', "qbank-complete-mcat", "btn ghost"),
-            "qb_price": q["price"], "qb_version": q["version"], "qb_dmg": q["dmg_name"],
+            "qb_price": q["price"], "qb_version": q["version"], **QD.tokens(q), **QS.tokens(),
             "qb_bundle_name": b["name"], "qb_bundle_price": b["price"], "qb_bundle_list": f'${b["list_usd"]}',
             "qb_releases": "<ul>" + "".join(rel) + "</ul>"}
     for k, v in subs.items():

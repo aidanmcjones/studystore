@@ -656,8 +656,14 @@ def build_all(site, items, emit):
          '<a href="../tools/">use the MCAT tools</a>, or <a href="../compare/mcat-anki-decks-anking-miledown-pankow">compare MCAT Anki decks</a>.</p></div></section>'
          '<section><div class="wrap narrow">{{waitlist}}</div></section>',
          head_extra=LD(CRUMBS(("MCAT packs", f"{site['base_url']}/products/index.html"))))
+    def _thanks_body():
+        import qbank_downloads as QD
+        body = (ROOT / "templates" / "thanks.html").read_text()
+        for k, v in QD.tokens(site["qbank"]).items():
+            body = body.replace(f"%%{k}%%", v)
+        return body
     emit("thanks.html", "Thank you | StudyStore", "Your StudyStore download.",
-         (ROOT / "templates" / "thanks.html").read_text(), noindex=True)
+         _thanks_body(), noindex=True)
 
 
 def write_redirects(site):
