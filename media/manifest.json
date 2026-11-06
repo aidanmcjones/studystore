@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 43,
-  "diagram-reels": 43,
-  "diagram-shorts": 43,
-  "diagram-snapchat": 43,
-  "diagram-threads": 43,
-  "diagram-tiktok": 43,
-  "diagram-x": 43,
-  "pins-notes": 38,
+  "diagram-facebook": 44,
+  "diagram-reels": 44,
+  "diagram-shorts": 44,
+  "diagram-snapchat": 44,
+  "diagram-threads": 44,
+  "diagram-tiktok": 44,
+  "diagram-x": 44,
+  "pins-notes": 39,
   "pins-questions": 15,
-  "qotd-facebook": 53,
-  "qotd-reels": 53,
-  "qotd-shorts": 53,
-  "qotd-snapchat": 53,
-  "qotd-threads": 53,
-  "qotd-tiktok": 53,
-  "qotd-x": 53
+  "qotd-facebook": 54,
+  "qotd-reels": 54,
+  "qotd-shorts": 54,
+  "qotd-snapchat": 54,
+  "qotd-threads": 54,
+  "qotd-tiktok": 54,
+  "qotd-x": 54
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -917,6 +917,27 @@
    "size": 1453485,
    "tag": "#psychology",
    "title": "Signal Detection Theory and Weber's Law: d', Bias and the JND"
+  },
+  "theories-of-emotion-james-lange-cannon-bard": {
+   "beats": [
+    "James-Lange: event, arousal, feeling; the body leads and each emotion has its own pattern.",
+    "Cannon-Bard: the thalamus triggers feeling and arousal at the same time; central and parallel.",
+    "Schachter-Singer: general arousal plus a cognitive label from the setting; misattribution of arousal.",
+    "Lazarus: appraisal of meaning comes first and drives feeling and arousal. Zajonc: some emotional reactions precede cognition."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-044",
+    "diagram-reels": "diagram-reels-044",
+    "diagram-shorts": "diagram-shorts-044",
+    "diagram-snapchat": "diagram-snapchat-044",
+    "diagram-threads": "diagram-threads-044",
+    "diagram-tiktok": "diagram-tiktok-044",
+    "diagram-x": "diagram-x-044"
+   },
+   "seconds": 22.6,
+   "size": 1546893,
+   "tag": "#psychology",
+   "title": "Theories of Emotion: James-Lange vs Cannon-Bard vs Schachter-Singer"
   }
  },
  "pins": {
@@ -1300,6 +1321,16 @@
    "tag": "#biochemistry",
    "title": "Protein Structure: Primary to Quaternary, and What Denaturation Destroys"
   },
+  "note-r-and-s-configuration-cip-priority-rules": {
+   "desc": "A step-by-step method to rank groups by CIP priority and assign R or S from wedge-dash drawings and Fischer projections, with tie-breaker practice.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-039"
+   },
+   "size": 133065,
+   "slug": "r-and-s-configuration-cip-priority-rules",
+   "tag": "#chemistry",
+   "title": "CIP Priority Rules: How to Assign R and S Configuration"
+  },
   "q-10a-social-inequality-1": {
    "outbox_ids": {
     "pins-questions": "pins-questions-009"
@@ -1580,6 +1611,25 @@
    "size": 595247,
    "tag": "#biochemistry",
    "topic": "DNA sequencing"
+  },
+  "1c-heredity-evolution-0": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-054",
+    "qotd-reels": "qotd-reels-054",
+    "qotd-shorts": "qotd-shorts-054",
+    "qotd-snapchat": "qotd-snapchat-054",
+    "qotd-threads": "qotd-threads-054",
+    "qotd-tiktok": "qotd-tiktok-054",
+    "qotd-x": "qotd-x-054"
+   },
+   "pack_slug": "1c-heredity-evolution",
+   "practice": "practice/1c-hardy-weinberg-genetic-drift-natural-selection.html",
+   "seconds": 17.9,
+   "section": "Bio/Biochem",
+   "shorts": false,
+   "size": 550552,
+   "tag": "#biochemistry",
+   "topic": "Genes, alleles and loci"
   },
   "1c-heredity-evolution-1": {
    "outbox_ids": {
