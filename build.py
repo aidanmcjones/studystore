@@ -234,6 +234,7 @@ def emit(out, title, desc, body, noindex=False, og_image=DEFAULT_OG, og_type="we
     page = page.replace("{{robots}}", '<meta name="robots" content="noindex">' if noindex else "")
     if og_image == DEFAULT_OG:
         _k = re.sub(r"[^a-z0-9]+", "-", out[:-5].lower()).strip("-")
+        _k = {"binder": "qbank"}.get(_k, _k)  # og image file keeps its old name until the images are replaced
         if (ROOT / "assets" / "og" / f"{_k}.png").exists():
             og_image = f"{BASE}/assets/og/{_k}.png"
     page = page.replace("{{og_image}}", og_image).replace("{{og_type}}", og_type)
