@@ -84,6 +84,8 @@ Two simple tests settle most data questions.
 
 The [2B Prokaryotes, Viruses and Microbial Genetics pack](../products/2b-prokaryotes-viruses.html) adds flashcards and practice questions on bacterial genetics, plasmids and viral life cycles, or start with the [free sampler](/#sampler).
 
+Related: see the [Hfr strains and interrupted mating note](hfr-interrupted-mating-gene-order-conjugation-mapping.html).
+
 :::quiz
 Q: Gene transfer between two strains continues when DNase is added but stops when a filter keeps the cells apart. Which mechanism is it?
 A: Conjugation. DNase resistance rules out transformation, and the need for contact rules out transduction, which phages can carry through the filter.

@@ -89,6 +89,8 @@ A patient has a viral throat infection and asks for penicillin. Penicillin block
 
 Bacteria: prokaryotic cells, about 1 to 5 &micro;m, dsDNA circular chromosome plus plasmids, 70S ribosomes, own metabolism, usually a peptidoglycan wall, divide by binary fission, killed by antibiotics. Viruses: non-cellular particles, about 20 to 300 nm, DNA or RNA genome in a capsid, sometimes an envelope, no ribosomes or metabolism, copied only inside host cells, treated with antivirals that hit viral enzymes and prevented by vaccines. Watch the exceptions: intracellular bacteria, wall-less *Mycoplasma*, giant viruses, prions and viroids.
 
+Related: see the [Hfr strains and interrupted mating note](hfr-interrupted-mating-gene-order-conjugation-mapping.html).
+
 :::quiz
 Q: Why does penicillin have no effect on an influenza infection?
 A: Penicillin blocks the transpeptidases that cross-link bacterial peptidoglycan. Influenza is a virus with no cell wall and no transpeptidase, so the drug has no target.

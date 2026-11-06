@@ -43,6 +43,8 @@ Glucagon phosphorylates and inactivates liver pyruvate kinase, so the liver spar
 - PFK-1 is committed and rate-limiting. ATP and citrate inhibit; AMP and F2,6BP activate.
 - Glucokinase has high Km and is not product-inhibited.
 
+Related: see the [Positive delta G and coupling note](positive-delta-g-nonspontaneous-endergonic-reaction-coupling.html).
+
 :::quiz
 Q: Which glycolysis enzyme catalyzes the committed step?
 A: Phosphofructokinase-1 (PFK-1).

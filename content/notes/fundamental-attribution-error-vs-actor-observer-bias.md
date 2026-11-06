@@ -115,6 +115,8 @@ The trap in Scenario B is to focus on the 3/3 consistency. Consistency is high i
 - Kelley: high consensus + high distinctiveness + high consistency points to the situation; low + low + high points to the person.
 - Individualistic cultures show a stronger fundamental attribution error than collectivistic cultures.
 
+Related: see the [Self-serving bias vs actor-observer bias note](self-serving-bias-vs-actor-observer-bias.html).
+
 :::quiz
 Q: A manager assumes a new employee is lazy after she misses a deadline, without learning that her computer crashed. Which bias is this?
 A: The fundamental attribution error. The manager overweights a dispositional cause (laziness) and underweights the situation when judging someone else.

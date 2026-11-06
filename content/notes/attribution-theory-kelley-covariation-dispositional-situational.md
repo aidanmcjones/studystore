@@ -48,6 +48,8 @@ The fundamental attribution error is weaker in collectivist cultures than in ind
 - Kelley: consensus, distinctiveness, consistency.
 - Biases skew who gets blamed.
 
+Related: see the [Self-serving bias vs actor-observer bias note](self-serving-bias-vs-actor-observer-bias.html).
+
 :::quiz
 Q: What is a dispositional attribution?
 A: Explaining behavior by internal traits or character.

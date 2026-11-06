@@ -43,6 +43,8 @@ Two crossovers between a pair of genes can restore the parental arrangement. Tha
 - Recombination frequency maxes at 50 percent.
 - Far apart genes are underestimated, so add intervals.
 
+Related: see the [Three-point cross and gene order note](three-point-cross-gene-order-double-crossover.html).
+
 :::quiz
 Q: How many map units equal 1 percent recombination?
 A: One map unit (one centimorgan).

@@ -56,6 +56,8 @@ Even genes very far apart, or on different chromosomes, give at most 50 percent 
 - Largest two classes are parental.
 - Largest pairwise distance spans the outer genes.
 
+Related: see the [Three-point cross and gene order note](three-point-cross-gene-order-double-crossover.html).
+
 :::quiz
 Q: How many map units is 12 percent recombination?
 A: 12 map units (12 cM).
