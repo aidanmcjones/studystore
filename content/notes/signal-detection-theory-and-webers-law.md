@@ -50,6 +50,8 @@ Gustav Fechner assumed every JND is an equal step in felt sensation and derived 
 
 ![Three panels: noise and signal-plus-noise distributions with a criterion line, ROC curves for d' of 0, 1 and 2.5 with three listeners plotted, and JND rising in proportion to baseline for three Weber fractions](assets/notes/signal-detection-theory-and-webers-law.png "Sensitivity is the gap between the two curves. The criterion is where you draw the line. The JND grows with the baseline.")
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/6a-sensation-perception.html?utm_source=site-cta) has original Anki cards, a study guide and practice questions for it.*
+
 ## Signal detection theory
 
 Older threshold models picture detection as an on-off switch. SDT replaces the switch with a decision made under uncertainty. Your nervous system is never perfectly quiet: random neural activity and background stimulation create a fluctuating internal response even when nothing is presented. On each trial the observer has an internal response and must decide whether it came from noise alone or from signal plus noise.

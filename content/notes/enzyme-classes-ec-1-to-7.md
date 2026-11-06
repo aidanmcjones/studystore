@@ -28,6 +28,8 @@ Names often include *dehydrogenase*, *oxidase*, *reductase*, or *oxygenase*. The
 
 **Examples:** lactate dehydrogenase (pyruvate and NADH to lactate and NAD<sup>+</sup>), alcohol dehydrogenase, glyceraldehyde-3-phosphate dehydrogenase, succinate dehydrogenase.
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/1a-amino-acids-proteins.html?utm_source=site-cta) has original Anki cards, a study guide and practice questions for it.*
+
 ## EC 2: transferases
 
 **Reaction:** transfer of a functional group (phosphate, amino, methyl, acyl, glycosyl) from a donor to an acceptor.
