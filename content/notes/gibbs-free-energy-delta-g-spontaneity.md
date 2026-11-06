@@ -33,6 +33,8 @@ A memory hook of my own: in the two mixed cases, temperature takes the side of e
 
 ![Delta G plotted against temperature for the four sign combinations of delta H and delta S, with crossover temperatures marked](assets/notes/gibbs-free-energy-delta-g-spontaneity.png "Each line has intercept delta H and slope minus delta S. A line crosses zero only when delta H and delta S share a sign.")
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/5e-thermo-kinetics.html?utm_source=site-cta) has original Anki cards, a study guide and practice questions for it.*
+
 ## The crossover temperature
 
 When &Delta;H and &Delta;S have the same sign, &Delta;G changes sign at one temperature. Set &Delta;G = 0 and solve:

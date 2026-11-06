@@ -33,6 +33,8 @@ Every bias in this note is a systematic tilt toward one pole or the other.
 - **Effortful correction.** One influential account says people first make a quick dispositional judgment and only then adjust for the situation, and that the adjustment takes mental effort. Tired, rushed or distracted observers adjust less.
 - **Culture.** The error is stronger in individualistic cultures, which emphasize the person as an independent agent. People raised in collectivistic cultures tend to weigh situational and social context more heavily. The bias is not absent there, but it is weaker, which is one reason "fundamental" is considered an overstatement.
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/8b-social-thinking.html?utm_source=site-cta) has original Anki cards, a study guide and practice questions for it.*
+
 ## Actor-observer bias
 
 **Definition:** as the **actor**, we explain our own behavior situationally. As the **observer**, we explain other people's behavior dispositionally. Jones and Nisbett proposed it in 1971.
