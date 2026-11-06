@@ -39,7 +39,7 @@ for (const p of items) {
 // every built page (home, catalog, notes, practice, tools, products): each Polar Buy link matches its item
 // and price, and a page that sells never says checkout is not open (review H1)
 const RANGECHECK_PRO = "https://buy.polar.sh/polar_cl_sUpu5djOZXY5cYCkVrcttt5nnwWt3TriORkj84XGdq4";
-const qb = site.qbank; // Qbank and its bundle sell from /qbank, not a products/ page
+const qb = site.qbank; // Binder and its bundle sell from /binder, not a products/ page
 const qbItems = [{ slug: "qbank", price: qb.price, checkout_url: qb.checkout_url }, { slug: "qbank-complete-mcat", price: qb.bundle.price, checkout_url: qb.bundle.checkout_url }];
 const bySlug = Object.fromEntries([...items, ...qbItems].map((p) => [p.slug, p]));
 const NOT_OPEN = /not open yet|when checkout opens|day it opens|launch day access/i;

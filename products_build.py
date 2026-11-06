@@ -665,6 +665,7 @@ def write_redirects(site):
     for old, new in (site.get("retired_products") or {}).items():
         lines.append(f"/products/{old}.html /products/{new} 301")
         lines.append(f"/products/{old} /products/{new} 301")
+    lines += ["/qbank /binder 301", "/qbank.html /binder 301", "/qbank/source /binder/source 301", "/qbank/source.html /binder/source 301"]
     (ROOT / "_redirects").write_text("\n".join(lines) + "\n")
     for old in (site.get("retired_products") or {}):
         f = ROOT / "products" / f"{old}.html"
