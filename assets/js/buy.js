@@ -54,8 +54,10 @@
       if (!a || a.classList.contains("off")) return;
       ev.preventDefault(); go(a);
     });
+    var qb = D.getElementById("qbank-thanks"), packs = D.getElementById("pack-thanks");
+    if (qb && packs && new URLSearchParams(location.search).get("p") === "qbank") { qb.hidden = false; packs.hidden = true; }
     var up = D.getElementById("upgrade");
-    if (up) {
+    if (up && !(qb && !qb.hidden)) {
       var p = new URLSearchParams(location.search).get("p") || "";
       if (/^[a-z0-9-]{1,60}$/.test(p)) {
         fetch("/api/upgrade?p=" + encodeURIComponent(p), { cache: "no-store" })

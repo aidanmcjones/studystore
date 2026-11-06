@@ -1886,5 +1886,33 @@
   ],
   "retired_products": {
     "aa-enzymes": "1a-amino-acids-proteins"
+  },
+  "qbank": {
+    "name": "Qbank for Mac",
+    "price": "$29",
+    "price_usd": 29,
+    "version": "1.0.0",
+    "dmg_name": "qbank-1.0.0-mac-apple.dmg",
+    "checkout_url": "https://buy.polar.sh/polar_cl_VI11xjqetKpwMwcDMzuK1JPjJVykp6B5l3c7Z4DBiv5",
+    "bundle": {
+      "name": "Qbank + Complete MCAT",
+      "price": "$129",
+      "price_usd": 129,
+      "list_usd": 148,
+      "pack_bundle": "bundle-complete-mcat",
+      "checkout_url": "https://buy.polar.sh/polar_cl_YyLoAHuUwOgE4HV6WU5GwZSnN4rRIt9cqSExQ3zCvzr"
+    },
+    "source_base": "https://source.studystore.co/qbank",
+    "releases": [
+      {
+        "version": "1.0.0",
+        "file": "qbank-1.0.0-source.tar.gz",
+        "sha256": "274deec6a80301b92dac9b251dc3c8e468d25d289f706a028d736664344749db",
+        "size_bytes": 10074269,
+        "date": "2026-11-05",
+        "uploaded": true
+      }
+    ],
+    "min_macos": "13"
   }
 }

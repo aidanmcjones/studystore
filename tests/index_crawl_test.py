@@ -15,7 +15,7 @@ def links(f):
         n = h[1:] if h.startswith('/') else os.path.normpath(os.path.join(os.path.dirname(f), h))
         if n in ('', '.'): n = 'index.html'
         if n.endswith('/'): n += 'index.html'
-        if os.path.isdir(n): n += '/index.html'
+        if os.path.isdir(n) and os.path.exists(n + '/index.html'): n += '/index.html'
         if not n.endswith('.html') and os.path.exists(n + '.html'): n += '.html'
         out.add(n)
     return out
