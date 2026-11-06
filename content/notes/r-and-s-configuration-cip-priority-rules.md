@@ -4,8 +4,8 @@ description: A step-by-step method to rank groups by CIP priority and assign R o
 product: 5b-molecules-bonding-stereo
 published: 2026-10-20
 related: amino-acid-pka-charge-ph-7-4, enzyme-classes-ec-1-to-7
-seo_title: R and S Configuration: CIP Priority Rules
-seo_description: How to assign R and S configuration with CIP priority rules, from wedge-dash drawings and Fischer projections, with tie-breaker practice.
+seo_title: How to Assign R and S: CIP Priority Rules Step by Step
+seo_description: Assign R or S in four steps: rank CIP priorities, orient the lowest group back, trace the path. Covers wedge-dash, Fischer projections and tie-breakers.
 ---
 
 To assign R or S to a stereocenter, rank its four groups by the Cahn-Ingold-Prelog (CIP) rules, point the lowest priority group away from you, and trace the path from priority 1 to 2 to 3. A clockwise path gives R (from the Latin rectus) and a counterclockwise path gives S (sinister). If the lowest priority group is pointing toward you instead, read the direction and then reverse it. Almost every error comes from ranking the groups wrong, so most of this note is about the priority rules.

@@ -4,8 +4,8 @@ description: Calculate freezing point depression, boiling point elevation, vapor
 product: 5a-solutions-acids-bases
 published: 2026-10-20
 related: passive-vs-active-transport, henderson-hasselbalch-for-the-mcat, acid-base-titration-curves-equivalence-point, osmotic-pressure-vant-hoff-factor-colligative, ksp-solubility-product-common-ion-effect
-seo_title: Freezing Point Depression and Colligative Properties
-seo_description: Freezing point depression, boiling point elevation, vapor pressure lowering and osmotic pressure: formulas, the van't Hoff factor and worked examples.
+seo_title: Freezing Point Depression Formula and Worked Examples
+seo_description: Freezing point depression formula with worked examples, plus boiling point elevation, vapor pressure lowering, osmotic pressure and the van't Hoff factor.
 ---
 
 Colligative properties are the solution properties that depend on how many solute particles are dissolved, not on what those particles are. There are four: vapor pressure lowering, boiling point elevation, freezing point depression, and osmotic pressure. Freezing point depression is calculated with **&Delta;T<sub>f</sub> = i K<sub>f</sub> m**, where i is the van't Hoff factor, K<sub>f</sub> is a constant for the solvent (about 1.86 &deg;C kg/mol for water), and m is the molality. Boiling point elevation uses the same form with K<sub>b</sub> (about 0.512 &deg;C kg/mol for water).
