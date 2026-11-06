@@ -7,8 +7,8 @@ cluster: Membrane potential, Nernst equation, Goldman equation, driving force
 product: 2a-cells-membranes
 published: 2026-10-20
 notes:
-seo_title: Nernst Equation and Resting Potential Practice Questions
-seo_description: Free MCAT-style practice questions with worked calculations on equilibrium potentials, the Nernst and Goldman equations and ion driving forces.
+seo_title: Nernst Equation Practice Questions (MCAT) with Answers
+seo_description: Free Nernst equation practice for the MCAT: 8 worked questions on equilibrium potential, Goldman equation, driving force and resting membrane potential.
 ---
 
 The Nernst equation gives the voltage at which an ion's concentration gradient is exactly balanced by the electrical gradient. At 37 degrees C and with base-10 logs it simplifies to E = (61.5 mV / z) x log([ion]out / [ion]in), where z is the ion's charge. Typical mammalian neuron concentrations (mM) are K+ about 5 out and 140 in, Na+ about 145 out and 15 in, Cl- about 110 out and 10 in, and Ca2+ about 2 out and 0.0001 in.

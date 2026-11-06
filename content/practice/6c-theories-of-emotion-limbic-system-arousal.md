@@ -7,8 +7,8 @@ cluster: Components of emotion, Universal emotions, James-Lange theory, Cannon-B
 product: 6c-emotion-stress
 published: 2026-10-20
 notes:
-seo_title: Theories of Emotion Practice Questions for the MCAT
-seo_description: Free MCAT-style practice on James-Lange, Cannon-Bard, Schachter-Singer and appraisal theories, the amygdala and autonomic arousal, with explanations.
+seo_title: Theories of Emotion Practice Questions (MCAT) with Answers
+seo_description: Free MCAT practice on James-Lange, Cannon-Bard and Schachter-Singer: 10 questions on arousal, the amygdala and appraisal, each with a full explanation.
 ---
 
 An emotion has physiological, cognitive and behavioral components, and the classic theories differ mainly in order. James-Lange is a peripheral theory: a stimulus triggers bodily arousal, and perceiving that arousal is the emotion. Cannon-Bard is a central theory: the thalamus sends signals at the same time to the cortex (the feeling) and to the hypothalamus and autonomic nervous system (the arousal). Schachter and Singer's two-factor theory says arousal is general and the emotion depends on the cognitive label drawn from the situation. Lazarus put cognitive appraisal of the event first, before both feeling and arousal.
