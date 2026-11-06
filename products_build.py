@@ -304,8 +304,17 @@ def peek_html(items, p, root):
                     f'<figcaption>{esc(c["alt"])}</figcaption></figure>')
     if not imgs:
         return ""
-    return ('<h2 class="split">A look inside</h2><div class="peek">' + "".join(imgs) + "</div>"
-            f'<p class="meta"><a href="#preview">More sample cards and 5 free practice questions from this pack</a></p>'
+    pairs = ""
+    for c in (s.get("demo_cards") or [])[:3]:
+        kind, front, back = anki_faces(c)
+        pairs += (f'<div class="cardpair"><div class="face"><p class="kind mono">Front &middot; {kind}</p>{front}</div>'
+                  f'<div class="face"><p class="kind mono">Back</p>{back}</div></div>')
+    cards = ('<h3 class="peekh">Three cards, front and back</h3><div class="cardpairs">' + pairs + "</div>") if pairs else ""
+    quiz = sample_quiz(p, 5, '<p class="qfinal">Those are real questions from the pack, word for word.</p>')
+    quiz = ('<h3 class="peekh">Try the 5-question sample quiz</h3>' + quiz) if quiz else ""
+    return ('<h2 class="split">A look inside</h2><div class="peek">' + "".join(imgs) + "</div>" + cards + quiz +
+            f'<p class="meta"><a href="#preview">More sample pages from this pack</a> &middot; '
+            f'<a href="{root}notes/index.html" data-track="sampler">Free MCAT sampler</a></p>'
             f'<p class="peekbuy">{buy(items, p["slug"], root=root)}</p>'
             f'<h2 class="split">Who it is for</h2><p class="reveal">MCAT students who want to drill MCAT content category {E(p["aamc"])} '
             f'({esc(p["title"])}) with spaced repetition in Anki, plus a printable guide and cheat sheet for review away from the screen. '
@@ -375,6 +384,12 @@ def home_anki(site):
 
 
 def anki_card(c, attrs=""):
+    kind, front, back = anki_faces(c)
+    return (f'<article class="ankicard"{attrs}><div class="face front"><p class="kind mono">{kind}</p>{front}</div>'
+            f'<div class="face back"><p class="kind mono">{kind}</p>{back}</div></article>')
+
+
+def anki_faces(c):
     t = c["type"]
     if t == "sa":
         kind, q, a = "Short answer", esc(c["front"]), f'<p class="a">{esc(c["back"])}</p>'
@@ -395,8 +410,7 @@ def anki_card(c, attrs=""):
         kind = "True or false"
         front = f'<p class="q">{esc(c["statement"])}</p>'
         back = f'<p class="q">{esc(c["statement"])}</p><hr><p class="a"><b>{"True" if c["truth"] else "False"}.</b> {esc(c["why"])}</p>'
-    return (f'<article class="ankicard"{attrs}><div class="face front"><p class="kind mono">{kind}</p>{front}</div>'
-            f'<div class="face back"><p class="kind mono">{kind}</p>{back}</div></article>')
+    return kind, front, back
 
 
 # ---------- home / catalog blocks ----------
@@ -573,10 +587,7 @@ def pack_page(site, items, p, emit, tpl):
                 '<a href="#preview">See sample pages and questions first.</a>')
         bottom = ('<section class="pbottom" id="preview"><div class="wrap"><p class="eyebrow mono">Previews</p>'
                   '<h2 class="split">Look before you buy.</h2>' + gallery_html(p) +
-                  ('<div class="sechead" style="margin-top:56px"><p class="eyebrow mono">Try it &middot; sample practice questions</p>'
-                   '<h2 class="split">Five questions from the pack.</h2></div>' + sample_quiz(p, 5, "<p class=\"qfinal\">Those are real questions from the pack, word for word.</p>")
-                   if sample_quiz(p, 5) else "")
-                  + f'<p style="margin-top:36px">{buy(items, p["slug"], root=root)}</p></div></section>'
+                  f'<p style="margin-top:36px">{buy(items, p["slug"], root=root)}</p></div></section>'
                   '<dialog class="lightbox" aria-label="Preview image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">'
                   '<button type="button" aria-label="Close">&times;</button></dialog>')
         desc = (f'{p["title"]} MCAT pack ({p["aamc"]}): {c.get("cards")} original Anki flashcards, study guide, cheat sheet '
