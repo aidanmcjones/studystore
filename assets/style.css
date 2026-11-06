@@ -683,3 +683,21 @@ html:not(.js) .qitem.qx{display:none}
 
 .wrap>.crumbs{font-size:.9rem;color:var(--muted);margin:18px 0 6px}
 .crumbs a{color:inherit}
+
+/* Binder page: app screenshots. A dark and a light version of each; the one matching the site theme shows.
+   Mirrors the site theme system: OS preference unless data-theme is set, and data-theme wins in both directions. */
+.shot{margin:1.6em 0}
+.shot img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.phero .shot{margin:clamp(28px,4vw,48px) 0 0;max-width:1100px}
+.phero .shot img{border-radius:12px}
+.shot figcaption{margin-top:8px}
+.shot-dark{display:none}
+.shot-light{display:block}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .shot-light{display:none}
+  :root:not([data-theme="light"]) .shot-dark{display:block}
+}
+:root[data-theme="dark"] .shot-light{display:none}
+:root[data-theme="dark"] .shot-dark{display:block}
+:root[data-theme="light"] .shot-dark{display:none}
+:root[data-theme="light"] .shot-light{display:block}

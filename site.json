@@ -1888,11 +1888,10 @@
     "aa-enzymes": "1a-amino-acids-proteins"
   },
   "qbank": {
-    "name": "Binder for Mac",
+    "name": "Binder",
     "price": "$29",
     "price_usd": 29,
     "version": "1.0.0",
-    "dmg_name": "qbank-1.0.0-mac-apple.dmg",
     "checkout_url": "https://buy.polar.sh/polar_cl_VI11xjqetKpwMwcDMzuK1JPjJVykp6B5l3c7Z4DBiv5",
     "bundle": {
       "name": "Binder + Complete MCAT",
@@ -1913,6 +1912,33 @@
         "uploaded": true
       }
     ],
-    "min_macos": "13"
+    "downloads": [
+      {
+        "id": "mac",
+        "platform": "Mac",
+        "label": "Mac (Apple Silicon)",
+        "file": "qbank-1.0.0-mac-apple.dmg",
+        "requires": "macOS 13 (Ventura) or later on a Mac with Apple Silicon (M1 or later). Intel Macs are not supported in this release.",
+        "requires_short": "macOS 13 or later, Apple Silicon",
+        "unsigned_note": "Version 1 is not signed with an Apple Developer ID, so macOS blocks the first launch. This is expected. Open it once like this:",
+        "how_to_open": [
+          "Open the DMG and drag Binder to Applications.",
+          "In Applications, right-click Binder and choose Open, then choose Open in the dialog.",
+          "On macOS 15 and later, if there is no Open button, double-click Binder once, then go to System Settings, Privacy and Security, scroll to the message about Binder and click Open Anyway. Confirm with your password."
+        ],
+        "available": true
+      },
+      {
+        "id": "windows",
+        "platform": "Windows",
+        "label": "Windows",
+        "file": "",
+        "requires": "",
+        "requires_short": "",
+        "unsigned_note": "",
+        "how_to_open": [],
+        "available": false
+      }
+    ]
   }
 }
