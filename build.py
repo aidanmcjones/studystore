@@ -449,7 +449,8 @@ practice_build.build_all(emit, ROOT, PRACTICE, PRACTICE_CATS, {n["slug"]: n for 
 
 # ---------- regular pages ----------
 # Pages whose own "last updated" date differs from site.json `updated` (sitemap lastmod must match the page).
-PAGE_LASTMOD = {"rangecheck-privacy.html": "2026-10-21", "rangecheck-support.html": "2026-10-21", "support.html": "2026-10-21", "privacy.html": "2026-10-21"}
+PAGE_LASTMOD = {"rangecheck-privacy.html": "2026-10-21", "rangecheck-support.html": "2026-10-21", "support.html": "2026-10-21", "privacy.html": "2026-10-21",
+                "qbank.html": "2026-11-05", "qbank/source.html": "2026-11-05"}
 
 def qbank_subs(body):
     """Fill the %%qb_*%% tokens of the Qbank pages from site.json `qbank` (checkout links stay disabled until set)."""
