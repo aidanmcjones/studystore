@@ -61,6 +61,8 @@ Example: carbon-14 (Z = 6) undergoes beta-minus decay. A stays 14 and Z becomes 
 - Beta-minus: Z up 1; beta-plus and electron capture: Z down 1.
 - Gamma: no change in A or Z.
 
+Related: see the [photoelectric effect and work function note](photoelectric-effect-work-function-stopping-potential.html).
+
 :::quiz
 Q: What does alpha decay do to A and Z?
 A: A decreases by 4 and Z decreases by 2.

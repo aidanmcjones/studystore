@@ -85,6 +85,8 @@ C = (50 &times; 1.25) / 0.5 = **125 mL/min**, which is the GFR.
 
 Filtration: net pressure about 10 mmHg, GFR about 125 mL/min (180 L/day), proteins and cells stay in the blood. Proximal tubule: about 65% of Na<sup>+</sup> and water, all glucose and amino acids, isosmotic. Descending limb: water out. Thick ascending limb: NaCl out, watertight, filtrate dilutes, medulla concentrates to about 1200 mOsm/L. Distal tubule: NaCl (thiazides) and Ca<sup>2+</sup> (PTH). Collecting duct: ADH adds aquaporin-2 for concentrated urine; aldosterone saves Na<sup>+</sup> and spends K<sup>+</sup> and H<sup>+</sup>. Clearance C = UV/P; inulin clearance equals GFR.
 
+Related: see the [Starling forces and capillary exchange note](starling-forces-capillary-exchange-oncotic-pressure.html).
+
 :::quiz
 Q: Which nephron segment reabsorbs the largest share of filtered sodium and water?
 A: The proximal tubule, at about 65 percent of filtered Na+ and water. The fluid stays isosmotic because water follows the solutes.

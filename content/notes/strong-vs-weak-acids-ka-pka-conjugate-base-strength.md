@@ -36,6 +36,8 @@ Stability of the conjugate base: more electronegative atom, larger atom down a g
 - pKa + pKb = 14.
 - Strong acid, spectator conjugate base.
 
+Related: see the [carboxylic acid derivatives and acyl substitution note](carboxylic-acid-derivatives-reactivity-nucleophilic-acyl-substitution.html).
+
 :::quiz
 Q: Which is the stronger acid, pKa 3 or pKa 5?
 A: The one with pKa 3.

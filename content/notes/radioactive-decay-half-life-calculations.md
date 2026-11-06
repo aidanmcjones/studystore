@@ -115,6 +115,8 @@ Two samples contain the same number of nuclei: one of technetium-99m (half-life 
 
 Balance every nuclear equation by conserving A and Z separately. Alpha: A drops 4, Z drops 2. Beta-minus: Z up 1. Beta-plus and electron capture: Z down 1. Gamma: no change. Decay is first order, so N = N<sub>0</sub>(1/2)<sup>t/t<sub>1/2</sub></sup> and t<sub>1/2</sub> = 0.693/k. Count half-lives first, then halve that many times. For non-integer cases, bracket between whole half-lives or use logs. Activity A = kN falls with the same half-life, and at equal N a shorter half-life means higher activity.
 
+Related: see the [photoelectric effect and work function note](photoelectric-effect-work-function-stopping-potential.html).
+
 :::quiz
 Q: Thorium-232 (Z = 90) emits an alpha particle. What are the mass number and atomic number of the product?
 A: A = 228 and Z = 88, which is radium-228. Alpha emission removes 4 from the mass number and 2 from the atomic number.
