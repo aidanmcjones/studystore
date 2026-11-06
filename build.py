@@ -342,6 +342,16 @@ def build_note(n, all_notes):
     related_pack = (f'<aside class="related-pack"><h2>Related pack</h2><p>This note is part of <a href="{{{{root}}}}products/{m["product"]}.html?utm_source=site-cta">'
                     f'{{{{title:{m["product"]}}}}}</a>: original Anki cards, a study guide and practice questions on the same topic.</p></aside>'
                     if m["product"] != "none" else "")
+    mid = (f'<aside class="midsample">{_thumb}<div><strong>Free sample from the pack</strong>'
+           f'<p>Real card from {{{{title:{m["product"]}}}}}. <a href="{{{{root}}}}products/{m["product"]}.html?utm_source=site-cta#preview">See sample cards and 5 free questions</a>, '
+           f'or <a href="{{{{root}}}}notes/index.html" data-track="sampler">browse the free MCAT sampler</a>.</p></div></aside>'
+           if m["product"] != "none" else "")
+    _parts = re.split(r"(?=<h2[ >])", body_html)
+    if len(_parts) > 2:
+        _k = (len(_parts) + 1) // 2
+        body_html = "".join(_parts[:_k]) + mid + "".join(_parts[_k:])
+    else:
+        body_html += mid
     body = f"""<article class="note wrap narrow">
 <p class="eyebrow">Free MCAT study note</p>
 <h1>{html.escape(m["title"])}</h1>
