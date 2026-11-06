@@ -4,8 +4,8 @@ description: Solve Hardy-Weinberg problems from any starting point: recessive or
 product: 1c-heredity-evolution
 published: 2026-10-20
 related: lac-operon-regulation-lactose-glucose, natural-selection-vs-genetic-drift-founder-bottleneck
-seo_title: Hardy-Weinberg Equation Practice Problems (MCAT)
-seo_description: Hardy-Weinberg equation practice problems: solve for recessive or dominant phenotypes, carriers, X-linked traits and equilibrium tests, step by step.
+seo_title: Hardy-Weinberg Practice Problems with Answers (MCAT)
+seo_description: Hardy-Weinberg practice problems with step-by-step answers: solve for p and q from recessive phenotypes, carriers, X-linked traits and equilibrium tests.
 ---
 
 The Hardy-Weinberg equations are **p + q = 1** for allele frequencies and **p<sup>2</sup> + 2pq + q<sup>2</sup> = 1** for genotype frequencies, where p is the frequency of one allele (usually the dominant one) and q is the frequency of the other. The single most useful move in any problem is to find **q<sup>2</sup>**, because the homozygous recessive class is the only genotype you can usually see directly from a phenotype. Take its square root, get q, then everything else follows.
