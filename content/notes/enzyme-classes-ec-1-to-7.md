@@ -1,6 +1,6 @@
 ---
-title: 7 Enzyme Classes (EC 1 to 7): Names, Reactions and Examples
-description: Learn the seven EC enzyme classes, what reaction each catalyzes, the naming clues that give them away, and the exceptions that fool test takers.
+title: The 7 Enzyme Classes (EC 1 to 7) with Examples
+description: The 7 enzyme classes in order, the reaction each catalyzes, naming clues that give each away, and the exceptions that fool test takers.
 product: 1a-amino-acids-proteins
 published: 2026-10-20
 related: enzyme-inhibition-types-compared, michaelis-menten-and-lineweaver-burk, protein-structure-levels-and-denaturation

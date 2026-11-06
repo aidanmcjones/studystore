@@ -1,6 +1,6 @@
 ---
-title: Equivalence Point and Half-Equivalence Point on a Titration Curve
-description: What the equivalence point is and how to find it on any acid-base titration curve, plus the half-equivalence point, indicator choice and a worked example.
+title: Equivalence Point vs Half-Equivalence Point (and the Second)
+description: Find the equivalence point, half-equivalence point and second equivalence point on a titration curve, with indicator choice and a worked example.
 product: 5a-solutions-acids-bases
 published: 2026-10-20
 related: equivalence-point-second-equivalence-point-titration, henderson-hasselbalch-for-the-mcat, amino-acid-pka-charge-ph-7-4, weak-acid-strong-base-titration-half-equivalence-point

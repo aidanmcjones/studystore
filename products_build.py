@@ -556,6 +556,30 @@ def bottom_cta_html(items, p, root, avail):
             f'<p class="herobuy">{buy(items, p["slug"], root=root, cta=True)}</p></div></section>')
 
 
+def faq_items(p):
+    c = p.get("contents") or {}
+    inc = (f'{c.get("cards")} original Anki flashcards (deck.apkg), a {c.get("guide_pages")}-page illustrated study guide, '
+           f'a {c.get("cheatsheet_pages")}-page printable cheat sheet and {c.get("questions")} original practice questions with explanations, '
+           f'plus a short README. It covers MCAT content category {p["aamc"]}.')
+    return [
+        ("How much does this pack cost?", f'{p["price"]}, one-time. There is no subscription.'),
+        ("What is included?", inc),
+        ("How does delivery work?", "It is an instant digital download. Polar, our merchant of record, processes your payment and delivers the files. "
+                                    "Unzip the download, then double-click deck.apkg to import it into Anki (free)."),
+        ("What is the refund policy?", "Every pack has a 14-day, no-questions-asked refund. Email support@studystore.co with the email you used at checkout "
+                                       "(or your order number). Refunds go back to your original payment method."),
+    ]
+
+
+def faq_html(p):
+    qa = faq_items(p)
+    det = "".join(f"<details><summary>{E(q)}</summary><div><p>{E(a)}</p></div></details>" for q, a in qa)
+    ld = LD({"@context": "https://schema.org", "@type": "FAQPage",
+             "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qa]}) if LD else ""
+    return ('<section class="faqsec pfaq"><div class="wrap fgrid2"><div><p class="eyebrow mono">FAQ</p>'
+            f'<h2 class="split">About this pack.</h2></div><div class="faq">{det}</div></div></section>'), ld
+
+
 def pack_page(site, items, p, emit, tpl):
     root = "../"
     avail = p["status"] == "available"
@@ -579,6 +603,8 @@ def pack_page(site, items, p, emit, tpl):
                   + f'<p style="margin-top:36px">{buy(items, p["slug"], root=root)}</p></div></section>'
                   '<dialog class="lightbox" aria-label="Preview image"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">'
                   '<button type="button" aria-label="Close">&times;</button></dialog>')
+        faq, faq_ld = faq_html(p)
+        bottom += faq
         desc = (f'{p["title"]} MCAT pack ({p["aamc"]}): {c.get("cards")} original Anki flashcards, study guide, cheat sheet '
                 f'and {c.get("questions")} practice questions. {p["price"]}, one-time.')
     else:
@@ -611,7 +637,7 @@ def pack_page(site, items, p, emit, tpl):
     if s and s.get("sheets") and (ROOT / s["sheets"][0]["src"]).exists():
         image = kw["og_image"] = site["base_url"] + "/" + s["sheets"][0]["src"]
     out = f'products/{p["slug"]}.html'
-    kw["head_extra"] = seo_head(site, p, out, image)
+    kw["head_extra"] = seo_head(site, p, out, image) + (faq_ld if avail and c else "")
     emit(out, f'{p["title"]} MCAT {p["aamc"]} Pack | StudyStore', desc, body, **kw)
 
 
