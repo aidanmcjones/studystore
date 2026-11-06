@@ -1892,7 +1892,7 @@
     "price": "$29",
     "price_usd": 29,
     "version": "1.0.0",
-    "dmg_name": "binder-1.0.0-mac-apple.dmg",
+    "dmg_name": "qbank-1.0.0-mac-apple.dmg",
     "checkout_url": "https://buy.polar.sh/polar_cl_VI11xjqetKpwMwcDMzuK1JPjJVykp6B5l3c7Z4DBiv5",
     "bundle": {
       "name": "Binder + Complete MCAT",
