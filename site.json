@@ -1888,14 +1888,14 @@
     "aa-enzymes": "1a-amino-acids-proteins"
   },
   "qbank": {
-    "name": "Qbank for Mac",
+    "name": "Binder for Mac",
     "price": "$29",
     "price_usd": 29,
     "version": "1.0.0",
     "dmg_name": "qbank-1.0.0-mac-apple.dmg",
     "checkout_url": "https://buy.polar.sh/polar_cl_VI11xjqetKpwMwcDMzuK1JPjJVykp6B5l3c7Z4DBiv5",
     "bundle": {
-      "name": "Qbank + Complete MCAT",
+      "name": "Binder + Complete MCAT",
       "price": "$129",
       "price_usd": 129,
       "list_usd": 148,

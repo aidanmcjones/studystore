@@ -55,7 +55,7 @@
       ev.preventDefault(); go(a);
     });
     var qb = D.getElementById("qbank-thanks"), packs = D.getElementById("pack-thanks");
-    if (qb && packs && new URLSearchParams(location.search).get("p") === "qbank") { qb.hidden = false; packs.hidden = true; }
+    if (qb && packs && ["qbank", "binder"].indexOf(new URLSearchParams(location.search).get("p")) > -1) { qb.hidden = false; packs.hidden = true; }
     var up = D.getElementById("upgrade");
     if (up && !(qb && !qb.hidden)) {
       var p = new URLSearchParams(location.search).get("p") || "";

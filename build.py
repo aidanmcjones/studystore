@@ -43,10 +43,10 @@ PAGES = [
      "Help for the RangeCheck browser extension: how it works on LinkedIn job pages, why a job has no verdict, free checks, Pro license keys and refunds.", False),
     ("support.html", "support.html", "Support | StudyStore",
      "Help with StudyStore MCAT pack downloads, refunds and problem reports, and support for the RangeCheck browser extension.", False),
-    ("qbank.html", "qbank.html", "Qbank for Mac: flashcard app for your Anki decks | StudyStore",
-     "Qbank shows each flashcard right before you'd forget it, so you review less and remember more. One window, opens your Anki decks. Mac, $29 one-time.", False),
-    ("qbank_source.html", "qbank/source.html", "Qbank source code (AGPL-3) | StudyStore",
-     "Source tarballs for every Qbank release under the GNU AGPL v3. Qbank is built on Anki and is not affiliated with Anki or Ankitects.", True),
+    ("qbank.html", "binder.html", "Binder for Mac: flashcard app for your Anki decks | StudyStore",
+     "Binder shows each flashcard right before you'd forget it, so you review less and remember more. One window, opens your Anki decks. Mac, $29 one-time.", False),
+    ("qbank_source.html", "binder/source.html", "Binder source code (AGPL-3) | StudyStore",
+     "Source tarballs for every Binder release under the GNU AGPL v3. Binder is built on Anki and is not affiliated with Anki or Ankitects.", True),
     ("404.html", "404.html", "Page not found | StudyStore", "Page not found.", True),
     ("report.html", "report.html", "Report a problem or suggest something | StudyStore",
      "Tell StudyStore about a broken link, a wrong answer, a typo or a display problem, or suggest a topic.", True),
@@ -234,6 +234,7 @@ def emit(out, title, desc, body, noindex=False, og_image=DEFAULT_OG, og_type="we
     page = page.replace("{{robots}}", '<meta name="robots" content="noindex">' if noindex else "")
     if og_image == DEFAULT_OG:
         _k = re.sub(r"[^a-z0-9]+", "-", out[:-5].lower()).strip("-")
+        _k = {"binder": "qbank"}.get(_k, _k)  # og image file keeps its old name until the images are replaced
         if (ROOT / "assets" / "og" / f"{_k}.png").exists():
             og_image = f"{BASE}/assets/og/{_k}.png"
     page = page.replace("{{og_image}}", og_image).replace("{{og_type}}", og_type)
@@ -450,10 +451,10 @@ practice_build.build_all(emit, ROOT, PRACTICE, PRACTICE_CATS, {n["slug"]: n for 
 # ---------- regular pages ----------
 # Pages whose own "last updated" date differs from site.json `updated` (sitemap lastmod must match the page).
 PAGE_LASTMOD = {"rangecheck-privacy.html": "2026-10-21", "rangecheck-support.html": "2026-10-21", "support.html": "2026-10-21", "privacy.html": "2026-10-21",
-                "qbank.html": "2026-11-05", "qbank/source.html": "2026-11-05"}
+                "binder.html": "2026-11-06", "binder/source.html": "2026-11-06"}
 
 def qbank_subs(body):
-    """Fill the %%qb_*%% tokens of the Qbank pages from site.json `qbank` (checkout links stay disabled until set)."""
+    """Fill the %%qb_*%% tokens of the Binder pages from site.json `qbank` (checkout links stay disabled until set)."""
     q = site["qbank"]; b = q["bundle"]
     def btn(url, label, slug, cls="btn"):
         if not url:
@@ -466,7 +467,7 @@ def qbank_subs(body):
             link = f'<a href="{html.escape(q["source_base"])}/{html.escape(r["file"])}" rel="noopener">{html.escape(r["file"])}</a>'
         else:
             link = f'{html.escape(r["file"])} (upload pending)'
-        rel.append(f'<li><b>Qbank {html.escape(r["version"])}</b>, {html.escape(r["date"])}: {link}, {size}<br><span class="mono meta">SHA-256 {r["sha256"]}</span></li>')
+        rel.append(f'<li><b>Binder {html.escape(r["version"])}</b>, {html.escape(r["date"])}: {link}, {size}<br><span class="mono meta">SHA-256 {r["sha256"]}</span></li>')
     subs = {"qb_buy": btn(q["checkout_url"], f'Buy now, {q["price"]}', "qbank"),
             "qb_buy_hero": '<p class="reveal">' + btn(q["checkout_url"], f'Buy now, {q["price"]}', "qbank") + ' <a class="btn ghost" href="#how-to-open">How to open</a></p>',
             "qb_bundle_buy": btn(b["checkout_url"], f'Buy now, {b["price"]}', "qbank-complete-mcat", "btn ghost"),
