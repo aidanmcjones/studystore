@@ -37,6 +37,8 @@ Then:
 
 The arrangement of alleles in the heterozygote matters. If both dominant alleles sit on one chromosome (AB/ab) the genes are in **coupling** (cis). If each chromosome carries one dominant and one recessive (Ab/aB) they are in **repulsion** (trans). You do not need to know the phase in advance: the most frequent offspring classes reveal it.
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/1c-heredity-evolution.html?utm_source=site-cta) has original Anki cards, a study guide and practice questions for it.*
+
 ## Worked example 1: two genes
 
 A heterozygous plant is test crossed to an aabb plant. The 1,000 offspring are:

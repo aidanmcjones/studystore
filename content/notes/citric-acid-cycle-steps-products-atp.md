@@ -47,6 +47,8 @@ A memory sentence for the order of intermediates, starting from citrate: **"Curi
 - **Step 6** is unique. Succinate dehydrogenase is embedded in the inner mitochondrial membrane, uses covalently bound FAD, and doubles as **Complex II** of the electron transport chain. Its electrons go to ubiquinone without passing through Complex I.
 - **Step 8** has a positive standard free energy change. It runs forward in the cell because oxaloacetate is kept at a very low concentration and is immediately consumed by citrate synthase. This is a good example of a reaction pulled forward by the next step.
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/1d-metabolism-bioenergetics.html?utm_source=site-cta) has original Anki cards, a study guide and practice questions for it.*
+
 ## Regulation: three control points
 
 The cycle speeds up when the cell needs energy and slows when energy is plentiful. The three regulated enzymes are the ones with large negative free energy changes:

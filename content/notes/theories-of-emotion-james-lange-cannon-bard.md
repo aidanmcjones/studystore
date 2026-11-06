@@ -31,6 +31,8 @@ Two predictions follow. First, different emotions should come with different pat
 
 **Critique.** Studies of people with spinal cord injuries, which cut much of the feedback from the body, have produced mixed results rather than a clear loss of emotion. That leads to the next theory.
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/6c-emotion-stress.html?utm_source=site-cta) has original Anki cards, a study guide and practice questions for it.*
+
 ## Cannon-Bard: brain first, in parallel
 
 Walter Cannon, later joined by Philip Bard, argued against James-Lange in the 1920s. His main objections:

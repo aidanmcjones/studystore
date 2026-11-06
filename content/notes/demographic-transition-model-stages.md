@@ -66,6 +66,8 @@ These rates are "crude" because they do not adjust for age structure. A country 
 - **Population pyramid:** **constrictive**, narrower at the base than in the middle.
 - **Examples:** Japan, whose population has been falling since roughly 2010, and several countries in southern and eastern Europe.
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/9b-demographics.html?utm_source=site-cta) has original Anki cards, a study guide and practice questions for it.*
+
 ## Summary table
 
 | Stage | Birth rate | Death rate | Natural increase | Pyramid shape |

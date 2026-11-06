@@ -37,6 +37,8 @@ One way to remember it: at equivalence the pH leans toward the stronger partner.
 
 For a weak base titrated with strong acid, the curve runs downhill. The half-equivalence point gives pH = pK<sub>a</sub> of the conjugate acid (for ammonia, NH<sub>4</sub><sup>+</sup> has pK<sub>a</sub> of about 9.25), which is the same as saying pOH = pK<sub>b</sub> of the base.
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/5a-solutions-acids-bases.html?utm_source=site-cta) has original Anki cards, a study guide and practice questions for it.*
+
 ## Worked example: acetic acid with NaOH
 
 Titrate 25.0 mL of 0.100 M acetic acid (pK<sub>a</sub> 4.76, so K<sub>a</sub> is about 1.74 &times; 10<sup>-5</sup>) with 0.100 M NaOH. The flask starts with 25.0 &times; 0.100 = 2.50 mmol of acid. Equivalence needs 2.50 mmol of NaOH, which is 25.0 mL.

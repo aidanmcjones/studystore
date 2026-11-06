@@ -32,6 +32,8 @@ Two kinds of element appear in the table. **Genes** (lacI, lacZ, lacY, lacA) cod
 
 ![Lac operon map with the repressor and CAP-cAMP state under four conditions](assets/notes/lac-operon-regulation-lactose-glucose.png "The repressor blocks transcription unless inducer is present; CAP-cAMP boosts it only when glucose is low. High output needs both.")
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/1b-dna-gene-expression.html?utm_source=site-cta) has original Anki cards, a study guide and practice questions for it.*
+
 ## Switch 1: the repressor and the inducer (is lactose here?)
 
 The lacI gene is expressed constitutively, so the cell always holds a small pool of **lac repressor**. With no lactose around, the repressor sits on the operator and physically gets in the way of RNA polymerase. Transcription is close to off.
