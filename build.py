@@ -454,10 +454,10 @@ PAGE_LASTMOD = {"rangecheck-privacy.html": "2026-10-21", "rangecheck-support.htm
 def qbank_subs(body):
     """Fill the %%qb_*%% tokens of the Qbank pages from site.json `qbank` (checkout links stay disabled until set)."""
     q = site["qbank"]; b = q["bundle"]
-    def btn(url, label, cls="btn"):
+    def btn(url, label, slug, cls="btn"):
         if not url:
             return f'<a class="{cls} off" aria-disabled="true" role="link" tabindex="-1">Available soon</a>'
-        return f'<a class="{cls}" href="{html.escape(url)}" data-checkout="polar" rel="nofollow noopener" data-track="cta">{label}</a>'
+        return f'<a class="{cls}" href="{html.escape(url)}" data-checkout="polar" data-slug="{slug}" rel="nofollow noopener" data-track="cta">{label}</a>'
     rel = []
     for r in q["releases"]:
         size = f'{r["size_bytes"] / 1048576:.1f} MB'
@@ -466,9 +466,9 @@ def qbank_subs(body):
         else:
             link = f'{html.escape(r["file"])} (upload pending)'
         rel.append(f'<li><b>Qbank {html.escape(r["version"])}</b>, {html.escape(r["date"])}: {link}, {size}<br><span class="mono meta">SHA-256 {r["sha256"]}</span></li>')
-    subs = {"qb_buy": btn(q["checkout_url"], f'Buy now, {q["price"]}'),
-            "qb_buy_hero": '<p class="reveal">' + btn(q["checkout_url"], f'Buy now, {q["price"]}') + ' <a class="btn ghost" href="#how-to-open">How to open</a></p>',
-            "qb_bundle_buy": btn(b["checkout_url"], f'Buy the bundle, {b["price"]}', "btn ghost"),
+    subs = {"qb_buy": btn(q["checkout_url"], f'Buy now, {q["price"]}', "qbank"),
+            "qb_buy_hero": '<p class="reveal">' + btn(q["checkout_url"], f'Buy now, {q["price"]}', "qbank") + ' <a class="btn ghost" href="#how-to-open">How to open</a></p>',
+            "qb_bundle_buy": btn(b["checkout_url"], f'Buy now, {b["price"]}', "qbank-complete-mcat", "btn ghost"),
             "qb_price": q["price"], "qb_version": q["version"], "qb_dmg": q["dmg_name"],
             "qb_bundle_name": b["name"], "qb_bundle_price": b["price"], "qb_bundle_list": f'${b["list_usd"]}',
             "qb_releases": "<ul>" + "".join(rel) + "</ul>"}
