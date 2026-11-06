@@ -547,6 +547,15 @@ def sticky_html(items, p, root, avail):
             + re.sub(r'class="btn[^"]*"', 'class="btn small"', buy(items, p["slug"], root=root), count=1) + "</div>")
 
 
+def bottom_cta_html(items, p, root, avail):
+    """Repeated buy block at the foot of the page, all widths, so a reader who scrolled never has to scroll back up."""
+    if not avail:
+        return ""
+    return (f'<section class="pbuyagain"><div class="wrap"><p class="eyebrow mono">Ready when you are</p>'
+            f'<p class="lead">{E(p["price"])} one-time. 14-day no-questions refund.</p>'
+            f'<p class="herobuy">{buy(items, p["slug"], root=root, cta=True)}</p></div></section>')
+
+
 def pack_page(site, items, p, emit, tpl):
     root = "../"
     avail = p["status"] == "available"
@@ -594,7 +603,7 @@ def pack_page(site, items, p, emit, tpl):
                 price_attr=' data-exp="price_frame" data-exp-field="price"' if avail else "",
                 buy=buy(items, p["slug"], root=root), facts=pack_facts(p),
                 herobuy=(f'<p class="herobuy">{buy(items, p["slug"], root=root, cta=True)}</p>' if avail else ""), compare=compare_html(site, p, root),
-                bottom=bottom + sticky_html(items, p, root, avail), kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
+                bottom=bottom + bottom_cta_html(items, p, root, avail) + sticky_html(items, p, root, avail), kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
                 related=RELATED.get(p["slug"], ""))
     s = sample(p["slug"]) if avail else None
     kw = {}
@@ -619,6 +628,7 @@ def bundle_page(site, items, b, emit, tpl):
     body = fill(tpl, title=esc(b["title"]), pack_count=b["pack_count"], price=E(b["price"]), list_value=b["list_value_usd"],
                 status=status, rows="".join(rows), buy=buy(items, b["slug"], root=root),
                 herobuy=(f'<p class="herobuy">{buy(items, b["slug"], root=root, cta=True)}</p>' if avail else ""),
+                bottom=bottom_cta_html(items, b, root, avail) + sticky_html(items, b, root, avail),
                 ready=b["ready_count"], kicker="Bundle &middot; one-time" if avail else "Bundle &middot; coming soon")
     out = f'products/{b["slug"]}.html'
     emit(out, f'{b["title"]} MCAT Bundle | StudyStore',
