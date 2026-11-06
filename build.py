@@ -414,6 +414,11 @@ def product_related(slug, aamc):
     prs = [x for x in PRACTICE_LIVE if own(x["meta"]["product"]) or x["meta"]["aamc"].upper() == aamc.upper()]
     ns = {n["slug"] for n in notes if own(n["meta"]["product"])} | {s for x in prs for s in x["notes"]}
     nts = [n for n in notes if n["slug"] in ns]
+    if len(nts) < 4:  # thin packs: top up to 4 related notes from the same section, then any pack
+        _sec = (products.get(slug) or {}).get("section_name")
+        _more = sorted((n for n in notes if n["slug"] not in ns and n["meta"]["product"] != "none"),
+                       key=lambda n: (note_section(n) != _sec, n["meta"]["product"] != slug, n["slug"]))
+        nts = nts + _more[:4 - len(nts)]
     sib = [x for x in site.get("products", []) if x["slug"] != slug]
     me = next((x for x in sib + [products.get(slug) or {}] if x.get("slug") == slug), None) or next(x for x in site["products"] if x["slug"] == slug)
     sib.sort(key=lambda x: (x["section_name"] != me["section_name"], x.get("rank", 99)))
