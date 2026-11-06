@@ -56,6 +56,8 @@ Convert &Delta;S from J to kJ before combining it with &Delta;H.
 - Same-sign &Delta;H and &Delta;S make temperature decisive.
 - Spontaneous does not mean fast.
 
+Related: see the [Positive delta G and coupling note](positive-delta-g-nonspontaneous-endergonic-reaction-coupling.html).
+
 :::quiz
 Q: What does &Delta;G = 0 mean?
 A: The system is at equilibrium.

@@ -111,6 +111,8 @@ Free energy also connects to electrochemistry through &Delta;G = -nFE. A positiv
 
 &Delta;G = &Delta;H - T&Delta;S. Negative means spontaneous, positive means the reverse is favored, zero means equilibrium. With &Delta;H negative and &Delta;S positive the process is always spontaneous; with the opposite signs, never. When the signs match, the crossover temperature T = &Delta;H/&Delta;S divides the two regimes, and temperature sides with entropy. &Delta;G = &Delta;G&deg; + RT ln Q, &Delta;G&deg; = -RT ln K, and at 298 K each factor of 10 in K is about 5.7 kJ/mol. Convert J to kJ and use kelvin.
 
+Related: see the [Positive delta G and coupling note](positive-delta-g-nonspontaneous-endergonic-reaction-coupling.html).
+
 :::quiz
 Q: A reaction has ΔH = -40 kJ/mol and ΔS = -0.080 kJ/(mol·K). Above what temperature is it nonspontaneous?
 A: T = ΔH/ΔS = (-40)/(-0.080) = 500 K. Both signs are negative, so the reaction is spontaneous below 500 K and nonspontaneous above it.

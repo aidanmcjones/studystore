@@ -110,6 +110,10 @@ Positive interference means one crossover makes another nearby crossover less li
 
 Recombination frequency = recombinants / total &times; 100, and 1 percent equals 1 map unit (1 cM). Use a test cross so offspring phenotypes reveal the heterozygote's gametes. The most common classes are parental and show coupling or repulsion. In a three-point cross the rarest classes are double crossovers, and the one gene that differs between a double crossover class and the parental class it most resembles is the middle gene. Add the doubles into each interval, then add intervals to get long distances. Expected recombination cannot exceed 50 percent, because one crossover affects only two of four chromatids and some double crossovers restore parental combinations.
 
+Related: see the [Three-point cross and gene order note](three-point-cross-gene-order-double-crossover.html).
+
+Related: see the [Hfr strains and interrupted mating note](hfr-interrupted-mating-gene-order-conjugation-mapping.html).
+
 :::quiz
 Q: A test cross gives 1,000 offspring, of which 46 + 54 have recombinant phenotypes. How far apart are the two genes?
 A: Recombination frequency = 100 / 1,000 = 10 percent, so the genes are 10 map units (10 cM) apart.

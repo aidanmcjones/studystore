@@ -48,6 +48,8 @@ It maintains self-esteem. It is typically weaker in people with depression, who 
 - Self-serving bias: self, credit for wins, excuses for losses.
 - Actor-observer: self gets the situation, others get the disposition.
 
+Related: see the [Self-serving bias vs actor-observer bias note](self-serving-bias-vs-actor-observer-bias.html).
+
 :::quiz
 Q: Which bias involves explaining another person's behavior by their traits?
 A: The fundamental attribution error.
