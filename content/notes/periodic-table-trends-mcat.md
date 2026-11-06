@@ -61,6 +61,8 @@ Fluorine is the most electronegative element and cesium and francium are among t
 - Down a group, shells are added, so radius rises and ionization energy and electronegativity fall.
 - Know the dips at B and O, and the jump after removing valence electrons.
 
+Related: see the [VSEPR geometry and polarity note](vsepr-molecular-geometry-bond-angles-polarity.html).
+
 :::quiz
 Q: What happens to atomic radius across a period?
 A: It decreases, because effective nuclear charge increases with the same shell.

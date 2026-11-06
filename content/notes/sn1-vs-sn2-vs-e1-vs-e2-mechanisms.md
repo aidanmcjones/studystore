@@ -43,6 +43,8 @@ Heat favors elimination. Carbocations can rearrange in SN1 and E1. A good leavin
 - SN1/E1: carbocation, first order.
 - E2: strong base, anti-periplanar.
 
+Related: see the [carboxylic acid derivatives and acyl substitution note](carboxylic-acid-derivatives-reactivity-nucleophilic-acyl-substitution.html).
+
 :::quiz
 Q: What stereochemical outcome does SN2 give?
 A: Inversion of configuration.

@@ -76,6 +76,8 @@ The 5B Bonding, Molecular Structure and Stereochemistry pack adds flashcards and
 
 Compare R/S labels center by center: all flipped means enantiomers, some flipped means diastereomers, none flipped means the same compound. Cis/trans isomers, epimers and anomers are all diastereomers. A molecule with n stereocenters has at most 2<sup>n</sup> stereoisomers; meso forms reduce the count. Enantiomers match in every physical property except the sign of rotation, so they need a chiral agent to separate; diastereomers separate by ordinary means. Enantiomeric excess equals observed rotation divided by the pure enantiomer's rotation.
 
+Related: see the [VSEPR geometry and polarity note](vsepr-molecular-geometry-bond-angles-polarity.html).
+
 :::quiz
 Q: Compound A is (2R,3S) and compound B is (2S,3S). Both have the same connectivity and no internal mirror plane. What is their relationship?
 A: Diastereomers. Only C2 differs while C3 matches, so they are stereoisomers but not mirror images.

@@ -129,6 +129,8 @@ Notice the trap in ethyl formate: its formyl hydrogen sits near 8 ppm rather tha
 
 IR detects bond vibrations that change the dipole. Bonds to H sit high (above 2700), triple bonds near 2100 to 2260, C=O near 1650 to 1800, and C-O near 1000 to 1300. A broad trough above 3200 is O-H; an acid's O-H is broader and lower. Proton NMR gives four readings: number of signals (environments), shift (electronic surroundings, downfield means deshielded), integration (relative H count), and splitting (n neighbors give n + 1 lines). Combine both with degrees of unsaturation and check that the pieces add up to the formula.
 
+Related: see the [VSEPR geometry and polarity note](vsepr-molecular-geometry-bond-angles-polarity.html).
+
 :::quiz
 Q: Why does an N-H or O-H stretch appear at a higher wavenumber than a C-O stretch?
 A: Hydrogen is very light, and a bond to a light atom vibrates at a higher frequency. Higher frequency means higher wavenumber, so X-H stretches sit above 2700 cm-1 while C-O sits near 1000 to 1300.

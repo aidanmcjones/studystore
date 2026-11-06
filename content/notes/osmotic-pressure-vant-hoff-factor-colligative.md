@@ -52,6 +52,8 @@ Water moves from low solute concentration (hypotonic) to high solute concentrati
 - pi = iMRT; water flows toward higher osmolarity.
 - Solutes lower freezing point and raise boiling point.
 
+Related: see the [Starling forces and capillary exchange note](starling-forces-capillary-exchange-oncotic-pressure.html).
+
 :::quiz
 Q: What is the ideal van't Hoff factor for CaCl2?
 A: Three.
