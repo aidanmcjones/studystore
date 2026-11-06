@@ -1,14 +1,25 @@
 <div class="wrap phero">
 <p class="eyebrow mono"><span class="dot"></span>Qbank for Mac</p>
-<h1 class="split">A dark, fast flashcard app for your Anki decks.</h1>
-<p class="lead reveal">Qbank is a macOS flashcard app that opens the decks you already have. It adds exam-deadline pacing, a shared FSRS optimizer, Restudy and a command palette, with Browse, Add and Stats inside the main window.</p>
+<h1 class="split">Flashcards that know when you're about to forget.</h1>
+<p class="lead reveal">Qbank shows each card right before it slips, so you review less and remember more. One window, one Settings page, nothing to tune. Bring your Anki decks and press Study.</p>
 %%qb_buy_hero%%
+<figure style="margin:clamp(28px,4vw,48px) 0 0"><img style="width:100%;height:auto;max-width:1100px;border:1px solid var(--line);border-radius:12px;display:block" src="{{root}}assets/img/qbank-home.webp" width="1200" height="800" alt="Qbank home: due, new and learning counts, deck list and a study heatmap" loading="eager" fetchpriority="high"><figcaption class="meta">The whole app is one window. Demo decks shown.</figcaption></figure>
 </div>
 
 <div class="wrap pmain">
 <div class="pbody">
+<h2 class="split">How it decides what you see</h2>
+<p>Qbank schedules cards with FSRS, a modern memory model. In plain terms:</p>
+<ol class="steps reveal">
+<li><b>It learns how you remember.</b> Every answer you give updates its guess of how well you know that card.</li>
+<li><b>It waits until you're about to forget.</b> A card comes back when your odds of recalling it drop to 90% (you can change the target). Not sooner, which wastes time. Not later, which means relearning.</li>
+<li><b>Easy cards fade out, hard ones stay close.</b> Each button shows when the card returns. Miss it and it's back in minutes. Know it cold and it waits months.</li>
+<li><b>It tunes itself to you.</b> Once a week, when enough new reviews exist, it re-fits to your own history. It never shifts cards you already have scheduled.</li>
+</ol>
+<figure style="margin:1.6em 0"><img style="width:100%;height:auto;max-width:100%;border:1px solid var(--line);border-radius:10px;display:block" src="{{root}}assets/img/qbank-study.webp" width="1200" height="800" alt="Qbank study screen after showing the answer, with four answer buttons labeled under 10 minutes, 2.7 months, 5.7 months and 9.7 months" loading="lazy"><figcaption class="meta">Studying. The buttons show when the card comes back: under 10 minutes if you miss it, months if you know it.</figcaption></figure>
+
 <h2 class="split">What it is</h2>
-<p>Qbank is an Anki-compatible flashcard app for the Mac, built on the open-source Anki code with a dark redesign. One window holds everything: study, decks, Browse, Add and Stats.</p>
+<p>Qbank is a flashcard app for the Mac that opens Anki decks. One window holds everything: study, decks, Browse, Add and Stats.</p>
 <ul>
 <li><b>Exam-deadline pacing.</b> Set an exam date on a deck and choose what happens after it: pause or keep reviewing.</li>
 <li><b>Shared FSRS optimizer.</b> One FSRS parameter set fit on your whole collection and written to every preset. It re-fits weekly once enough new reviews exist, never moves due dates, and has a live dashboard in Settings.</li>
@@ -17,7 +28,6 @@
 <li><b>Browse, Add and Stats in the window.</b> No separate floating windows for the everyday tools.</li>
 <li><b>Dark only.</b> A single dark theme with an accent color and optional video backdrop on the deck list.</li>
 </ul>
-<figure style="margin:1.6em 0"><img style="width:100%;height:auto;max-width:100%;border:1px solid var(--line);border-radius:10px;display:block" src="{{root}}assets/img/qbank-home.webp" width="1200" height="800" alt="Qbank home: due, new and learning counts, deck list and a study heatmap" loading="lazy"><figcaption class="meta">Home. Demo decks only.</figcaption></figure>
 <figure style="margin:1.6em 0"><img style="width:100%;height:auto;max-width:100%;border:1px solid var(--line);border-radius:10px;display:block" src="{{root}}assets/img/qbank-palette.webp" width="1200" height="800" alt="Qbank command palette listing Study, Add Card, Decks, Open Stats, Sync and Import File" loading="lazy"><figcaption class="meta">The command palette.</figcaption></figure>
 <figure style="margin:1.6em 0"><img style="width:100%;height:auto;max-width:100%;border:1px solid var(--line);border-radius:10px;display:block" src="{{root}}assets/img/qbank-stats.webp" width="1200" height="800" alt="Qbank statistics page with a future due chart" loading="lazy"><figcaption class="meta">Stats, inside the main window.</figcaption></figure>
 <figure style="margin:1.6em 0"><img style="width:100%;height:auto;max-width:100%;border:1px solid var(--line);border-radius:10px;display:block" src="{{root}}assets/img/qbank-add.webp" width="1200" height="800" alt="Qbank Add screen with the note editor toolbar and image occlusion" loading="lazy"><figcaption class="meta">Add, with the full editor toolbar.</figcaption></figure>
@@ -47,12 +57,9 @@
 </ol>
 <p>After that it opens normally.</p>
 
-<h2 class="split" id="open-source">Open source</h2>
-<p>Qbank is built on <a href="https://github.com/ankitects/anki" rel="noopener">Anki</a> and is released under the GNU Affero General Public License v3 (AGPL-3). The full source of every release is available: <a href="{{root}}qbank/source.html">Qbank source downloads</a>.</p>
-<p><b>Qbank is not affiliated with, endorsed by or sponsored by Anki or Ankitects Pty Ltd.</b> Anki is a trademark of its owner.</p>
-
 <h2 class="split">Price and updates</h2>
 <p>%%qb_price%% one time, with one year of updates. The purchase includes a license key and the DMG download, delivered by {{merchant}}.</p>
+<p class="meta">Qbank is not affiliated with, endorsed by or sponsored by Anki or Ankitects Pty Ltd. Anki is a trademark of its owner.</p>
 <p class="meta"><a class="reportlink" href="{{root}}report.html" data-report>Report a problem or suggest something</a></p>
 </div>
 <aside class="buybox" id="buy">
