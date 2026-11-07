@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 44,
-  "diagram-reels": 44,
-  "diagram-shorts": 44,
-  "diagram-snapchat": 44,
-  "diagram-threads": 44,
-  "diagram-tiktok": 44,
-  "diagram-x": 44,
-  "pins-notes": 39,
+  "diagram-facebook": 45,
+  "diagram-reels": 45,
+  "diagram-shorts": 45,
+  "diagram-snapchat": 45,
+  "diagram-threads": 45,
+  "diagram-tiktok": 45,
+  "diagram-x": 45,
+  "pins-notes": 40,
   "pins-questions": 15,
-  "qotd-facebook": 54,
-  "qotd-reels": 54,
-  "qotd-shorts": 54,
-  "qotd-snapchat": 54,
-  "qotd-threads": 54,
-  "qotd-tiktok": 54,
-  "qotd-x": 54
+  "qotd-facebook": 55,
+  "qotd-reels": 55,
+  "qotd-shorts": 55,
+  "qotd-snapchat": 55,
+  "qotd-threads": 55,
+  "qotd-tiktok": 55,
+  "qotd-x": 55
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -604,6 +604,27 @@
    "size": 1064692,
    "tag": "#physics",
    "title": "Kinematics Equations for the MCAT: How to Choose the Right One"
+  },
+  "kohlberg-stages-moral-development": {
+   "beats": [
+    "The stage is set by the reasoning, not the decision.",
+    "Most adults reason at the conventional level; stage 6 is rare.",
+    "Gilligan's critique: a male sample and a justice focus undervalue an ethic of care.",
+    "Other critiques: cultural bias and a gap between reasoning and behavior."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-045",
+    "diagram-reels": "diagram-reels-045",
+    "diagram-shorts": "diagram-shorts-045",
+    "diagram-snapchat": "diagram-snapchat-045",
+    "diagram-threads": "diagram-threads-045",
+    "diagram-tiktok": "diagram-tiktok-045",
+    "diagram-x": "diagram-x-045"
+   },
+   "seconds": 22.6,
+   "size": 1610440,
+   "tag": "#psychology",
+   "title": "Kohlberg's Stages of Moral Development, Explained for the MCAT"
   },
   "lac-operon-regulation-lactose-glucose": {
    "beats": [
@@ -1230,6 +1251,16 @@
    "slug": "kinematics-equations-how-to-choose",
    "tag": "#physics",
    "title": "Kinematics Equations for the MCAT: How to Choose the Right One"
+  },
+  "note-kohlberg-stages-moral-development": {
+   "desc": "Learn Kohlberg's three levels and six stages of moral reasoning, how to score a response by its reasoning, and the main critiques, including Gilligan.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-040"
+   },
+   "size": 138364,
+   "slug": "kohlberg-stages-moral-development",
+   "tag": "#psychology",
+   "title": "Kohlberg's Stages of Moral Development, Explained for the MCAT"
   },
   "note-lac-operon-regulation-lactose-glucose": {
    "desc": "How the lac repressor and CAP-cAMP combine to set lac operon output, a four-condition table, mutant and partial diploid logic, and the traps that cost points.",
@@ -2124,6 +2155,25 @@
    "size": 657243,
    "tag": "#chemistry",
    "topic": "Liquid-liquid extraction"
+  },
+  "5c-separations-spectroscopy-4": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-055",
+    "qotd-reels": "qotd-reels-055",
+    "qotd-shorts": "qotd-shorts-055",
+    "qotd-snapchat": "qotd-snapchat-055",
+    "qotd-threads": "qotd-threads-055",
+    "qotd-tiktok": "qotd-tiktok-055",
+    "qotd-x": "qotd-x-055"
+   },
+   "pack_slug": "5c-separations-spectroscopy",
+   "practice": "practice/5c-ir-nmr-mass-spec-uv-vis-spectroscopy.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 533317,
+   "tag": "#chemistry",
+   "topic": "1H NMR: shift, integration, splitting"
   },
   "5d-biological-molecules-orgo-0": {
    "outbox_ids": {
