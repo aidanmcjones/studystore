@@ -7,6 +7,9 @@ const MAX_BODY = 2048;
 const IP_LIMIT = 60;        // requests per minute per IP, held in memory only
 const SID_LIMIT = 200;      // rows per session id per hour (checked in D1)
 const BOT = /bot|crawl|spider|slurp|preview|headless|lighthouse|facebookexternalhit/i;
+// Only the live site counts. Pages preview deploys (<hash>.<project>.pages.dev) serve this same
+// function with the same D1 binding, so crawler hits on PR previews would otherwise land in prod data.
+const PROD_HOSTS = new Set(["www.studystore.co", "studystore.co"]);
 
 const ipHits = new Map();   // per-isolate, never persisted
 let cfgCache = null, cfgAt = 0;
@@ -51,6 +54,9 @@ async function edgeLimited(ip) {
 }
 
 export async function onRequestPost({ request, env }) {
+  let host = "";
+  try { host = new URL(request.url).hostname; } catch (e) {}
+  if (!PROD_HOSTS.has(host)) return ok(204);   // accept quietly, store nothing
   const ip = request.headers.get("CF-Connecting-IP") || "";
   if (rateLimited(ip) || (await edgeLimited(ip))) return ok(429);
   if (BOT.test(request.headers.get("User-Agent") || "")) return ok(204);
