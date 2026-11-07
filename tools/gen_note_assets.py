@@ -340,7 +340,36 @@ def nb_gene_transfer():
             fontsize=10, color=MUTED, style="italic")
     save(fig, "transformation-transduction-conjugation")
 
+def nb_kohlberg():
+    fig, ax = plt.subplots(figsize=(11, 6.6))
+    ax.set_xlim(0, 100); ax.set_ylim(0, 62); ax.axis("off")
+    ax.text(1, 60, "Kohlberg's stages: what makes an act right?", fontsize=13.5, fontweight="bold", va="center")
+    levels = [("Preconventional", "self-interest", GREY,
+               [("1  Obedience and punishment", "right = what avoids punishment"),
+                ("2  Self-interest (exchange)", "right = what pays off for me")]),
+              ("Conventional", "approval and order", TEAL,
+               [("3  Good relations", "right = what others approve of"),
+                ("4  Law and order", "right = keeping rules and duty")]),
+              ("Postconventional", "principles", ACC,
+               [("5  Social contract", "laws serve people; can be changed"),
+                ("6  Universal principles", "conscience over unjust law")])]
+    for i, (lev, tag, c, stages) in enumerate(levels):
+        for j, (name, desc) in enumerate(stages):
+            k = i * 2 + j
+            x, y = 1 + k * 13.5, 4 + k * 7.6
+            _nb_box(ax, x, y, 23, 6.4, c if j == 0 else CARD, c)
+            ax.text(x + 11.5, y + 4.3, name, ha="center", va="center", fontsize=8.2, fontweight="bold",
+                    color="white" if j == 0 else c)
+            ax.text(x + 11.5, y + 1.9, desc, ha="center", va="center", fontsize=7.4,
+                    color="white" if j == 0 else INK)
+        lx, ly = 1 + i * 27, 4 + i * 15.2 + 17
+        ax.text(lx + 1, ly + 2.5, f"{lev}\n({tag})", ha="left", va="center", fontsize=10.5, fontweight="bold", color=c)
+    ax.text(84, 8, "reasoning becomes\nless self-focused,\nmore principle-based", ha="center", fontsize=9.5,
+            color=MUTED, style="italic")
+    save(fig, "kohlberg-stages-moral-development")
+
 DIAGRAMS = {
+    "kohlberg-stages-moral-development": nb_kohlberg,
     "transformation-transduction-conjugation": nb_gene_transfer,
     "amino-acid-pka-charge-ph-7-4": titration,
     "michaelis-menten-and-lineweaver-burk": mm_lb,
