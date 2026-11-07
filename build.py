@@ -100,8 +100,12 @@ practice_build.SOCIAL_CTA_PAGES = set(SOCIAL_CTA_PAGES)
 def topbuy(slug, root=""):
     """Compact above-the-fold checkout CTA: visible price and a Polar link tagged utm_source=site-cta (or social-cta via "slug:social-cta")."""
     src = "site-cta"
-    if ":" in slug:
-        slug, src = slug.split(":", 1)
+    parts = slug.split(":")
+    preview = "preview" in parts[1:]
+    parts = [x for x in parts if x != "preview"]
+    slug = parts[0]
+    if len(parts) > 1:
+        src = parts[1]
     if slug == "feat":
         slug = PB.featured(site)["slug"]
     p = products[slug]
@@ -115,9 +119,12 @@ def topbuy(slug, root=""):
                   f'and {c.get("questions")} practice questions')
     else:
         inside = "original Anki cards, a study guide and a printable cheat sheet"
+    _c = ((PB.sample(slug) or {}).get("cards") or [None])[0] if preview else None
+    prev = (f' <a href="{root}products/{slug}.html#preview" data-track="cta">Preview a sample card</a>.'
+            if _c and (ROOT / _c["src"]).exists() else "")
     return (f'<aside class="cta cta-top"><div><strong>{html.escape(p["title"])}</strong>'
             f'<p>{html.escape(p["price"])} one-time, instant download, 14-day refund. Inside: {html.escape(inside)}. '
-            f'<a href="{root}products/{slug}.html" data-track="cta">See what is inside</a>.</p></div>{btn}</aside>' + waitlist.capture(root))
+            f'<a href="{root}products/{slug}.html" data-track="cta">See what is inside</a>.{prev}</p></div>{btn}</aside>' + waitlist.capture(root))
 
 def render(text, root):
     def sub(m):
@@ -346,7 +353,7 @@ def build_note(n, all_notes):
 <p class="eyebrow">Free MCAT study note</p>
 <h1>{html.escape(m["title"])}</h1>
 <p class="meta">By StudyStore &middot; Published {m["published"]} &middot; {mins} min read &middot; {n["words"]} words</p>
-{("{{topbuy:%s%s}}" % (m["product"], ":social-cta" if out[:-5] in SOCIAL_CTA_PAGES else "")) if m["product"] != "none" else ""}
+{("{{topbuy:%s%s:preview}}" % (m["product"], ":social-cta" if out[:-5] in SOCIAL_CTA_PAGES else "")) if m["product"] != "none" else ""}
 <div class="prose">
 {body_html}
 </div>
