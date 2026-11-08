@@ -1806,5 +1806,60 @@ DIAGRAMS.update({
     "bottom-up-vs-top-down-processing": bu_td,
 })
 
+def nr_fee_windows():
+    labels = ["60+ days", "30 to 59 days", "10 to 29 days", "Under 10 days"]
+    resched = [55, 110, 210, 0]
+    refund = [180, 180, 0, 0]
+    x = np.arange(4)
+    w = 0.36
+    fig, ax = plt.subplots(figsize=(8, 4.4))
+    b1 = ax.bar(x - w / 2, resched, w, color=ACC, label="Reschedule fee")
+    b2 = ax.bar(x + w / 2, refund, w, color=TEAL, label="Cancellation refund")
+    for bars in (b1, b2):
+        for b in bars[:3]:
+            ax.text(b.get_x() + b.get_width() / 2, b.get_height() + 4, f"${int(b.get_height())}",
+                    ha="center", va="bottom", fontsize=10)
+    ax.text(3, 40, "No changes\nallowed", ha="center", va="center", fontsize=11, color=MUTED)
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    ax.set_ylim(0, 240)
+    ax.set_ylabel("US dollars (standard fee)")
+    ax.set_xlabel("Days before your exam")
+    ax.set_title("2027 MCAT: what a change costs by window", fontsize=12)
+    ax.legend(frameon=False, loc="upper right")
+    save(fig, "mcat-registration-2027-dates-fees-deadlines")
+
+DIAGRAMS.update({
+    "mcat-registration-2027-dates-fees-deadlines": nr_fee_windows,
+})
+
+def nrp_curves():
+    # idealized model: both behaviors start at the same baseline, consequence applied from session 1
+    s = np.linspace(0, 10, 201)
+    change = 0.4 * (1 - np.exp(-0.4 * s))
+    nr, pun = 0.5 + change, 0.5 - change
+    fig, ax = plt.subplots(figsize=(10, 5.2))
+    ax.plot(s, nr, color=TEAL, lw=3)
+    ax.plot(s, pun, color=ACC, lw=3)
+    ax.axhline(0.5, color=GREY, lw=1.2, ls=":")
+    ax.text(10.2, nr[-1], "negative reinforcement\n(aversive thing removed\nafter the response)",
+            va="center", fontsize=10, color=TEAL, fontweight="bold")
+    ax.text(10.2, pun[-1], "punishment\n(aversive thing added, or\npleasant thing removed)",
+            va="center", fontsize=10, color=ACCD, fontweight="bold")
+    ax.text(6, 0.52, "same starting baseline", fontsize=9.5, color=MUTED)
+    ax.set_xlim(0, 14.5); ax.set_ylim(0, 1)
+    ax.set_xticks(range(0, 11, 2))
+    ax.set_xlabel("training sessions")
+    ax.set_ylabel("probability of the response")
+    ax.set_title("Same starting point, opposite direction (idealized model)", fontsize=12.5, loc="left",
+                 fontweight="bold")
+    fig.tight_layout()
+    save(fig, "negative-reinforcement-vs-punishment")
+
+
+DIAGRAMS.update({
+    "negative-reinforcement-vs-punishment": nrp_curves,
+})
+
 if __name__ == "__main__":
     main()
