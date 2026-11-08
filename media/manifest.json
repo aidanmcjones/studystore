@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 45,
-  "diagram-reels": 45,
-  "diagram-shorts": 45,
-  "diagram-snapchat": 45,
-  "diagram-threads": 45,
-  "diagram-tiktok": 45,
-  "diagram-x": 45,
-  "pins-notes": 40,
+  "diagram-facebook": 46,
+  "diagram-reels": 46,
+  "diagram-shorts": 46,
+  "diagram-snapchat": 46,
+  "diagram-threads": 46,
+  "diagram-tiktok": 46,
+  "diagram-x": 46,
+  "pins-notes": 41,
   "pins-questions": 15,
-  "qotd-facebook": 55,
-  "qotd-reels": 55,
-  "qotd-shorts": 55,
-  "qotd-snapchat": 55,
-  "qotd-threads": 55,
-  "qotd-tiktok": 55,
-  "qotd-x": 55
+  "qotd-facebook": 56,
+  "qotd-reels": 56,
+  "qotd-shorts": 56,
+  "qotd-snapchat": 56,
+  "qotd-threads": 56,
+  "qotd-tiktok": 56,
+  "qotd-x": 56
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -689,6 +689,27 @@
    "tag": "#biology",
    "title": "Mitosis vs Meiosis: Differences, Chromosome Counts and Errors"
   },
+  "negative-reinforcement-vs-punishment": {
+   "beats": [
+    "Reinforcement increases a behavior; punishment decreases it.",
+    "Positive means a stimulus is added; negative means a stimulus is removed.",
+    "Negative reinforcement removes or prevents something aversive (escape and avoidance), so the behavior increases.",
+    "Positive punishment adds something aversive; negative punishment removes something valued; both make the behavior decrease."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-046",
+    "diagram-reels": "diagram-reels-046",
+    "diagram-shorts": "diagram-shorts-046",
+    "diagram-snapchat": "diagram-snapchat-046",
+    "diagram-threads": "diagram-threads-046",
+    "diagram-tiktok": "diagram-tiktok-046",
+    "diagram-x": "diagram-x-046"
+   },
+   "seconds": 22.6,
+   "size": 1226983,
+   "tag": "#psychology",
+   "title": "Negative Reinforcement vs Punishment: How to Tell Them Apart"
+  },
   "nephron-function-segments-reabsorption": {
    "beats": [
     "Filtration: net pressure about 10 mmHg, GFR about 125 mL/min (180 L/day), proteins and cells stay in the blood.",
@@ -1291,6 +1312,16 @@
    "slug": "mitosis-vs-meiosis-differences",
    "tag": "#biology",
    "title": "Mitosis vs Meiosis: Differences, Chromosome Counts and Errors"
+  },
+  "note-negative-reinforcement-vs-punishment": {
+   "desc": "Learn why negative reinforcement increases a behavior while punishment decreases it, with a two-question test, worked examples and common MCAT traps.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-041"
+   },
+   "size": 129761,
+   "slug": "negative-reinforcement-vs-punishment",
+   "tag": "#psychology",
+   "title": "Negative Reinforcement vs Punishment: How to Tell Them Apart"
   },
   "note-nephron-function-segments-reabsorption": {
    "desc": "Follow filtrate through the nephron segment by segment, see how the loop of Henle and ADH set urine concentration, and work GFR and clearance math.",
@@ -2554,6 +2585,25 @@
    "size": 517658,
    "tag": "#sociology",
    "topic": "Religion as an institution"
+  },
+  "9b-demographics-3": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-056",
+    "qotd-reels": "qotd-reels-056",
+    "qotd-shorts": "qotd-shorts-056",
+    "qotd-snapchat": "qotd-snapchat-056",
+    "qotd-threads": "qotd-threads-056",
+    "qotd-tiktok": "qotd-tiktok-056",
+    "qotd-x": "qotd-x-056"
+   },
+   "pack_slug": "9b-demographics",
+   "practice": "practice/9b-demographic-transition-population-growth-migration.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 656115,
+   "tag": "#sociology",
+   "topic": "Population pyramids"
   },
   "9b-demographics-4": {
    "outbox_ids": {
