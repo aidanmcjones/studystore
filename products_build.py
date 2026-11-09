@@ -709,6 +709,8 @@ def write_redirects(site):
         lines.append(f"/products/{old}.html /products/{new} 301")
         lines.append(f"/products/{old} /products/{new} 301")
     lines += ["/qbank /binder 301", "/qbank.html /binder 301", "/qbank/source /binder/source 301", "/qbank/source.html /binder/source 301"]
+    n = "/notes/cannon-bard-vs-schachter-singer-two-factor-theory"
+    lines += [f"{n} /notes/schachter-singer-two-factor-theory-vs-cannon-bard 301", f"{n}.html /notes/schachter-singer-two-factor-theory-vs-cannon-bard 301"]
     (ROOT / "_redirects").write_text("\n".join(lines) + "\n")
     for old in (site.get("retired_products") or {}):
         f = ROOT / "products" / f"{old}.html"

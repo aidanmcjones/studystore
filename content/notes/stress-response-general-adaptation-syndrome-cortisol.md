@@ -5,7 +5,7 @@ seo_title: General Adaptation Syndrome and Cortisol | MCAT Free Notes
 seo_description: Free MCAT notes on stress: general adaptation syndrome, SAM vs HPA axis, cortisol effects, Lazarus appraisal, eustress vs distress and a quiz.
 product: 6c-emotion-stress
 published: 2026-11-05
-related: theories-of-emotion-james-lange-cannon-bard, cannon-bard-vs-schachter-singer-two-factor-theory
+related: theories-of-emotion-james-lange-cannon-bard, schachter-singer-two-factor-theory-vs-cannon-bard
 ---
 
 Stress is the response to a perceived demand. The MCAT tests Selye's three stages, the two body systems that carry the response, and Lazarus's idea that appraisal decides how stressful an event is.
