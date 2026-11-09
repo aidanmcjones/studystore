@@ -181,7 +181,12 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
         if m["product"] != "none":
             pr = m["product"]
             lead = ("is a {{price:%s}} pack" % pr) if m.get("product_status") == "available" else ("is coming soon, a planned {{price:%s}} pack" % pr)
-            cta = (f'<aside class="cta"><div><strong>Want this as spaced-repetition cards?</strong>'
+            import products_build as PB
+            _s = (PB.sample(pr) or {}) if m.get("product_status") == "available" else {}
+            _c = (_s.get("cards") or [None])[0]
+            _thumb = (f'<a class="cta-thumb" href="{{{{root}}}}products/{pr}.html#preview"><img src="{{{{root}}}}{_c["src"]}" alt="Real sample card from the pack" width="{_c["w"]}" height="{_c["h"]}" loading="lazy"></a>'
+                      if _c and (Path(root) / _c["src"]).exists() else "")
+            cta = (f'<aside class="cta">{_thumb}<div><strong>Want this as spaced-repetition cards?</strong>'
                    f'<p>{{{{title:{pr}}}}} {lead} with original Anki cards, a study guide and a printable cheat sheet. '
                    f'<a href="{{{{root}}}}products/{pr}.html">See what is inside</a>.</p></div>{{{{buy:{pr}}}}}</aside>')
         else:
