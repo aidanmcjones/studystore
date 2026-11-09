@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 46,
-  "diagram-reels": 46,
-  "diagram-shorts": 46,
-  "diagram-snapchat": 46,
-  "diagram-threads": 46,
-  "diagram-tiktok": 46,
-  "diagram-x": 46,
-  "pins-notes": 41,
+  "diagram-facebook": 47,
+  "diagram-reels": 47,
+  "diagram-shorts": 47,
+  "diagram-snapchat": 47,
+  "diagram-threads": 47,
+  "diagram-tiktok": 47,
+  "diagram-x": 47,
+  "pins-notes": 42,
   "pins-questions": 15,
-  "qotd-facebook": 56,
-  "qotd-reels": 56,
-  "qotd-shorts": 56,
-  "qotd-snapchat": 56,
-  "qotd-threads": 56,
-  "qotd-tiktok": 56,
-  "qotd-x": 56
+  "qotd-facebook": 57,
+  "qotd-reels": 57,
+  "qotd-shorts": 57,
+  "qotd-snapchat": 57,
+  "qotd-threads": 57,
+  "qotd-tiktok": 57,
+  "qotd-x": 57
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -163,6 +163,27 @@
    "size": 1422289,
    "tag": "#psychology",
    "title": "Bottom-Up vs Top-Down Processing: Differences and Examples"
+  },
+  "cars-question-types-explained": {
+   "beats": [
+    "Sort every stem into one of three families before reading the choices.",
+    "Comprehension questions live in specific lines, so go back to the text.",
+    "Reasoning within the text is about what a claim does, not just what it says.",
+    "Reasoning beyond the text applies the author's principle to something new; state the principle first."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-047",
+    "diagram-reels": "diagram-reels-047",
+    "diagram-shorts": "diagram-shorts-047",
+    "diagram-snapchat": "diagram-snapchat-047",
+    "diagram-threads": "diagram-threads-047",
+    "diagram-tiktok": "diagram-tiktok-047",
+    "diagram-x": "diagram-x-047"
+   },
+   "seconds": 22.6,
+   "size": 1535556,
+   "tag": "#mcatcars",
+   "title": "CARS Question Types Explained: What Each Stem Asks You to Do"
   },
   "citric-acid-cycle-steps-products-atp": {
    "beats": [
@@ -1053,6 +1074,16 @@
    "tag": "#psychology",
    "title": "Bottom-Up vs Top-Down Processing: Differences and Examples"
   },
+  "note-cars-question-types-explained": {
+   "desc": "The CARS question types sorted into three skill families, the stem wording that signals each one, and where in the passage to look for the answer.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-042"
+   },
+   "size": 132617,
+   "slug": "cars-question-types-explained",
+   "tag": "#mcatcars",
+   "title": "CARS Question Types Explained: What Each Stem Asks You to Do"
+  },
   "note-citric-acid-cycle-steps-products-atp": {
    "desc": "Walk the eight citric acid cycle steps, the products of each turn, the three regulated enzymes, and how to count ATP from acetyl-CoA to glucose.",
    "outbox_ids": {
@@ -1921,6 +1952,25 @@
    "tag": "#physics",
    "topic": "Units, dimensional analysis and significant figures"
   },
+  "4a-motion-forces-energy-2": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-057",
+    "qotd-reels": "qotd-reels-057",
+    "qotd-shorts": "qotd-shorts-057",
+    "qotd-snapchat": "qotd-snapchat-057",
+    "qotd-threads": "qotd-threads-057",
+    "qotd-tiktok": "qotd-tiktok-057",
+    "qotd-x": "qotd-x-057"
+   },
+   "pack_slug": "4a-motion-forces-energy",
+   "practice": "practice/4a/index.html",
+   "seconds": 17.9,
+   "section": "Chem/Phys",
+   "shorts": false,
+   "size": 489097,
+   "tag": "#physics",
+   "topic": "Circular motion and centripetal force"
+  },
   "4a-motion-forces-energy-3": {
    "outbox_ids": {
     "qotd-facebook": "qotd-facebook-015",
@@ -2636,7 +2686,8 @@
    "1d-metabolism-bioenergetics-1",
    "2a-cells-membranes-3",
    "3a-nervous-endocrine-2",
-   "1a-amino-acids-proteins-0"
+   "1a-amino-acids-proteins-0",
+   "3a-nervous-endocrine-0"
   ]
  }
 }
