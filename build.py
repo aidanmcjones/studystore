@@ -461,6 +461,30 @@ def product_related(slug, aamc):
             f'<ul class="reveal">{li}</ul>') + packs_html
 
 PB.RELATED = {p["slug"]: product_related(p["slug"], p["aamc"]) for p in site.get("products", [])}
+
+def sample_notes_block(slugs, n_max=4):
+    """'Free sample notes' block: up to 4 live notes (>=3) for a pack or bundle, linked with utm_source=site-cta."""
+    seen, picks = set(), []
+    for s in slugs:
+        for nt in notes:
+            if nt["slug"] not in seen and (products.get(nt["meta"]["product"]) or {}).get("slug") == s:
+                seen.add(nt["slug"]); picks.append(nt); break
+    for s in slugs * 4:
+        if len(picks) >= n_max:
+            break
+        for nt in notes:
+            if nt["slug"] not in seen and (products.get(nt["meta"]["product"]) or {}).get("slug") == s:
+                seen.add(nt["slug"]); picks.append(nt); break
+    picks = picks[:n_max]
+    if len(picks) < 3:
+        return ""
+    li = "".join(f'<li><a href="{{{{root}}}}notes/{nt["slug"]}.html?utm_source=site-cta">{html.escape(nt["meta"]["title"])}</a></li>' for nt in picks)
+    return ('<section class="psamplenotes"><div class="wrap"><p class="eyebrow mono">Free sample notes</p>'
+            '<h2 class="split">Read a few of our notes first</h2>'
+            f'<ul class="reveal">{li}</ul></div></section>')
+
+PB.SAMPLE_NOTES = {p["slug"]: sample_notes_block([p["slug"]]) for p in site.get("products", [])}
+PB.SAMPLE_NOTES.update({b["slug"]: sample_notes_block(list(b["members"])) for b in site.get("bundles", [])})
 PB.LD, PB.CRUMBS = ld_json, breadcrumbs
 PB.build_all(site, products, emit)
 PB.write_redirects(site)

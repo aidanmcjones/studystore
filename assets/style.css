@@ -680,6 +680,7 @@ html:not(.js) .qitem.qx{display:none}
 .topics[open]>summary{margin-bottom:16px}
 .herobuy{margin:18px 0 0}
 .pbuyagain{border-top:1px solid var(--line);padding:36px 0}
+.psamplenotes{border-top:1px solid var(--line);padding:36px 0}.psamplenotes ul{margin:12px 0;padding-left:20px}.psamplenotes li{margin:6px 0}
 .psampleqa{border-top:1px solid var(--line);padding:36px 0}.psampleqa .qa{margin:18px 0}.psampleqa .qaopts{list-style:none;padding:0;margin:8px 0}.psampleqa .qaopts li{margin:4px 0}
 
 .wrap>.crumbs{font-size:.9rem;color:var(--muted);margin:18px 0 6px}

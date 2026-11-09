@@ -121,6 +121,7 @@ def buy(items, slug, cls="btn", root="", cta=True):
 
 
 # SEO hooks, set by build.py before build_all(): related-link HTML per product slug, and JSON-LD helpers.
+SAMPLE_NOTES = {}     # slug -> HTML "Free sample notes" block for pack and bundle pages (set by build.py)
 RELATED = {}          # slug -> HTML section linking free practice pages and notes (root-relative via {{root}})
 LD = None             # build.ld_json
 CRUMBS = None         # build.breadcrumbs
@@ -657,7 +658,7 @@ def pack_page(site, items, p, emit, tpl):
                 price_attr=' data-exp="price_frame" data-exp-field="price"' if avail else "",
                 buy=buy(items, p["slug"], root=root), facts=pack_facts(p),
                 herobuy=(f'<p class="herobuy">{buy(items, p["slug"], root=root, cta=True)}</p>' if avail else ""), compare=compare_html(site, p, root),
-                bottom=bottom + sample_qa_html(p, avail) + bottom_cta_html(items, p, root, avail) + sticky_html(items, p, root, avail), kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
+                bottom=bottom + sample_qa_html(p, avail) + SAMPLE_NOTES.get(p["slug"], "") + bottom_cta_html(items, p, root, avail) + sticky_html(items, p, root, avail), kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
                 related=RELATED.get(p["slug"], ""))
     s = sample(p["slug"]) if avail else None
     kw = {}
@@ -682,7 +683,7 @@ def bundle_page(site, items, b, emit, tpl):
     body = fill(tpl, title=esc(b["title"]), pack_count=b["pack_count"], price=E(b["price"]), list_value=b["list_value_usd"],
                 status=status, rows="".join(rows), buy=buy(items, b["slug"], root=root),
                 herobuy=(f'<p class="herobuy">{buy(items, b["slug"], root=root, cta=True)}</p>' if avail else ""),
-                bottom=bottom_cta_html(items, b, root, avail) + sticky_html(items, b, root, avail),
+                bottom=SAMPLE_NOTES.get(b["slug"], "") + bottom_cta_html(items, b, root, avail) + sticky_html(items, b, root, avail),
                 ready=b["ready_count"], kicker="Bundle &middot; one-time" if avail else "Bundle &middot; coming soon")
     out = f'products/{b["slug"]}.html'
     emit(out, f'{b["title"]} MCAT Bundle | StudyStore',
