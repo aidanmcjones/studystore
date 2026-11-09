@@ -579,6 +579,14 @@ def sample_qa_html(p, avail, n=5):
             f'<h2 class="split">{len(qs)} real question{"" if len(qs) == 1 else "s"} from this pack, with answers</h2>' + rows + '</div></section>')
 
 
+def free_sample_link(site, p, root):
+    """Link to the standalone free sample-questions page; it exists only for the featured pack."""
+    if p["slug"] != (featured(site) or {}).get("slug"):
+        return ""
+    return (f'<section><div class="wrap"><p class="meta"><a href="{root}free-mcat-sample-questions.html?utm_source=site-cta" data-track="sampler">'
+            'Work the free sample questions on one page, no signup</a></p></div></section>')
+
+
 def bottom_cta_html(items, p, root, avail):
     """Repeated buy block at the foot of the page, all widths, so a reader who scrolled never has to scroll back up."""
     if not avail:
@@ -658,7 +666,7 @@ def pack_page(site, items, p, emit, tpl):
                 price_attr=' data-exp="price_frame" data-exp-field="price"' if avail else "",
                 buy=buy(items, p["slug"], root=root), facts=pack_facts(p),
                 herobuy=(f'<p class="herobuy">{buy(items, p["slug"], root=root, cta=True)}</p>' if avail else ""), compare=compare_html(site, p, root),
-                bottom=bottom + sample_qa_html(p, avail) + SAMPLE_NOTES.get(p["slug"], "") + bottom_cta_html(items, p, root, avail) + sticky_html(items, p, root, avail), kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
+                bottom=bottom + sample_qa_html(p, avail) + free_sample_link(site, p, root) + SAMPLE_NOTES.get(p["slug"], "") + bottom_cta_html(items, p, root, avail) + sticky_html(items, p, root, avail), kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
                 related=RELATED.get(p["slug"], ""))
     s = sample(p["slug"]) if avail else None
     kw = {}

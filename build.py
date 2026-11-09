@@ -421,7 +421,7 @@ idx = f"""<div class="wrap hero" style="padding-bottom:24px">
 <div class="eyebrow">Free MCAT study notes</div>
 <h1>Notes</h1>
 <p class="lead">Plain-language MCAT biochemistry explainers, each with an original diagram and a 5-question mini-quiz. Free, no signup.</p>
-<p class="meta"><a href="../practice/index.html">Looking for practice questions? Browse the free MCAT practice questions by topic.</a></p>
+<p class="meta"><a href="../practice/index.html">Looking for practice questions? Browse the free MCAT practice questions by topic.</a> Or <a href="../free-mcat-sample-questions.html?utm_source=site-cta" data-track="sampler">try five free pack sample questions with answers</a>.</p>
 </div>
 <section><div class="wrap">{{{{topbuy:feat}}}}</div></section>
 {note_sections}
@@ -430,6 +430,21 @@ emit("notes/index.html", "Free MCAT Study Notes | StudyStore",
      "Free MCAT biochemistry study notes with original diagrams and mini-quizzes: amino acids, enzyme kinetics, inhibition, protein structure, and more.",
      idx, head_extra=ld_json(breadcrumbs(("Free MCAT study notes", f"{BASE}/notes/index.html"))),
      lastmod=max((n["meta"]["published"] for n in notes), default=None))
+
+# ---------- free sample questions (flagship pack) ----------
+_fp = PB.featured(site)
+_fcap = waitlist.capture("").replace('name="utm_source" value=""', 'name="utm_source" value="site-cta"', 1)
+emit("free-mcat-sample-questions.html", f"Free MCAT Sample Questions with Answers ({_fp['title']})",
+     f"Five free MCAT style sample questions on {_fp['title'].lower()}, each with the answer and a full explanation. No signup. Same format as the {_fp['title']} pack.",
+     '<div class="wrap phero"><p class="eyebrow mono"><span class="dot"></span>Free sample</p>'
+     f'<h1>Free MCAT sample questions: {html.escape(_fp["title"])}</h1>'
+     '<p class="lead">Five questions straight from the pack, with the answer and why. No signup, no paywall.</p></div>'
+     + PB.sample_qa_html(_fp, True, 5) +
+     '<section><div class="wrap">{{topbuy:feat}}</div></section>'
+     '<section><div class="wrap narrow"><p class="meta">More free material: <a href="notes/index.html">MCAT study notes</a> and '
+     '<a href="practice/index.html">practice questions by topic</a>.</p></div></section>'
+     + f'<section><div class="wrap narrow">{_fcap}</div></section>',
+     head_extra=ld_json(breadcrumbs(("Free MCAT sample questions", f"{BASE}/free-mcat-sample-questions.html"))))
 
 # ---------- catalog product pages ----------
 def product_related(slug, aamc):
