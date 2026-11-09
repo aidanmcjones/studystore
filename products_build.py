@@ -561,6 +561,23 @@ def sticky_html(items, p, root, avail):
             + re.sub(r'class="btn[^"]*"', 'class="btn small"', buy(items, p["slug"], root=root), count=1) + "</div>")
 
 
+def sample_qa_html(p, avail, n=5):
+    """Static 'Sample questions' list (stem, options, answer, explanation) from the pack's own sample.json, shown above the final buy block.
+    Skips questions that need a passage or figure; shows fewer than n if the pack has fewer, nothing if none."""
+    if not avail:
+        return ""
+    qs = [q for q in ((sample(p["slug"]) or {}).get("questions") or []) if not CONTEXT_RE.search(q["stem"])][:n]
+    if not qs:
+        return ""
+    rows = ""
+    for i, q in enumerate(qs, 1):
+        opts = "".join(f'<li><b>{chr(65 + j)}.</b> {esc(o)}</li>' for j, o in enumerate(q["options"]))
+        rows += (f'<div class="qa"><p><span class="mono qn">Q{i}</span> {esc(q["stem"])}</p><ul class="qaopts">{opts}</ul>'
+                 f'<p class="meta"><b>Answer: {esc(q["answer"])}.</b> {esc(q["explanation"])}</p></div>')
+    return ('<section class="psampleqa"><div class="wrap"><p class="eyebrow mono">Sample questions</p>'
+            f'<h2 class="split">{len(qs)} real question{"" if len(qs) == 1 else "s"} from this pack, with answers</h2>' + rows + '</div></section>')
+
+
 def bottom_cta_html(items, p, root, avail):
     """Repeated buy block at the foot of the page, all widths, so a reader who scrolled never has to scroll back up."""
     if not avail:
@@ -640,7 +657,7 @@ def pack_page(site, items, p, emit, tpl):
                 price_attr=' data-exp="price_frame" data-exp-field="price"' if avail else "",
                 buy=buy(items, p["slug"], root=root), facts=pack_facts(p),
                 herobuy=(f'<p class="herobuy">{buy(items, p["slug"], root=root, cta=True)}</p>' if avail else ""), compare=compare_html(site, p, root),
-                bottom=bottom + bottom_cta_html(items, p, root, avail) + sticky_html(items, p, root, avail), kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
+                bottom=bottom + sample_qa_html(p, avail) + bottom_cta_html(items, p, root, avail) + sticky_html(items, p, root, avail), kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
                 related=RELATED.get(p["slug"], ""))
     s = sample(p["slug"]) if avail else None
     kw = {}
