@@ -124,7 +124,7 @@ def topbuy(slug, root=""):
             if _c and (ROOT / _c["src"]).exists() else "")
     return (f'<aside class="cta cta-top"><div><strong>{html.escape(p["title"])}</strong>'
             f'<p>{html.escape(p["price"])} one-time, instant download, 14-day refund. Inside: {html.escape(inside)}. '
-            f'<a href="{root}products/{slug}.html" data-track="cta">See what is inside</a>.{prev}</p></div>{btn}</aside>' + waitlist.capture(root))
+            f'<a href="{root}products/{slug}.html?utm_source=site-cta" data-track="cta">See what is inside</a>.{prev}</p></div>{btn}</aside>' + waitlist.capture(root))
 
 def render(text, root):
     def sub(m):
@@ -345,7 +345,7 @@ def build_note(n, all_notes):
               if _c and (ROOT / _c["src"]).exists() else "")
     cta = (f'<aside class="cta">{_thumb}<div><strong>Want this as spaced-repetition cards?</strong>'
            f'<p>{{{{title:{m["product"]}}}}} is a {{{{price:{m["product"]}}}}} pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions, with a 14-day refund. '
-           f'<a href="{{{{root}}}}products/{m["product"]}.html">See what is inside</a>.</p></div>{{{{buy:{m["product"]}}}}}</aside>')
+           f'<a href="{{{{root}}}}products/{m["product"]}.html?utm_source=site-cta">See what is inside</a>.</p></div>{{{{buy:{m["product"]}}}}}</aside>')
     related_pack = (f'<aside class="related-pack"><h2>Related pack</h2><p>This note is part of <a href="{{{{root}}}}products/{m["product"]}.html?utm_source=site-cta">'
                     f'{{{{title:{m["product"]}}}}}</a>: original Anki cards, a study guide and practice questions on the same topic.</p></aside>'
                     if m["product"] != "none" else "")
