@@ -1861,5 +1861,40 @@ DIAGRAMS.update({
     "negative-reinforcement-vs-punishment": nrp_curves,
 })
 
+
+def cq_families():
+    from matplotlib.patches import FancyBboxPatch
+    fig, ax = plt.subplots(figsize=(10, 5.6))
+    ax.set_xlim(0, 30); ax.set_ylim(0, 18); ax.axis("off")
+    ax.add_patch(FancyBboxPatch((10, 15), 10, 2.2, boxstyle="round,pad=0.2", fc="white", ec=GREY, lw=1.5))
+    ax.text(15, 16.1, "Read the stem: what is it asking?", ha="center", va="center", fontsize=11.5, fontweight="bold")
+    cols = [
+        ("Comprehension", TEAL, ["main idea", "detail: \"according to\"", "word in context"],
+         "look: the exact lines"),
+        ("Reasoning within", ACC, ["function: \"in order to\"", "support / evidence", "inference, tone"],
+         "look: claim + its support"),
+        ("Reasoning beyond", GREY, ["apply to a new case", "strengthen / weaken", "analogy"],
+         "look: author's principle"),
+    ]
+    for i, (name, col, items, where) in enumerate(cols):
+        x = 0.6 + i * 10
+        ax.annotate("", xy=(x + 4.4, 12.2), xytext=(15, 14.7),
+                    arrowprops=dict(arrowstyle="->", color=MUTED, lw=1.4))
+        ax.add_patch(FancyBboxPatch((x, 10.2), 8.8, 1.8, boxstyle="round,pad=0.2", fc=col, ec=col))
+        ax.text(x + 4.4, 11.1, name, ha="center", va="center", fontsize=11.5, color="white", fontweight="bold")
+        ax.add_patch(FancyBboxPatch((x, 3.2), 8.8, 6.2, boxstyle="round,pad=0.2", fc="white", ec=col, lw=1.5))
+        for j, it in enumerate(items):
+            ax.text(x + 0.5, 8.3 - j * 1.6, "- " + it, va="center", fontsize=10.2)
+        ax.text(x + 4.4, 1.8, where, ha="center", va="center", fontsize=10, color=MUTED, style="italic")
+    ax.set_title("CARS question types: sort the stem, then find the right evidence", fontsize=12.5,
+                 loc="left", fontweight="bold")
+    fig.tight_layout()
+    save(fig, "cars-question-types-explained")
+
+
+DIAGRAMS.update({
+    "cars-question-types-explained": cq_families,
+})
+
 if __name__ == "__main__":
     main()
