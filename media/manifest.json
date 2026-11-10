@@ -1,21 +1,21 @@
 {
  "counters": {
-  "diagram-facebook": 47,
-  "diagram-reels": 47,
-  "diagram-shorts": 47,
-  "diagram-snapchat": 47,
-  "diagram-threads": 47,
-  "diagram-tiktok": 47,
-  "diagram-x": 47,
-  "pins-notes": 42,
+  "diagram-facebook": 48,
+  "diagram-reels": 48,
+  "diagram-shorts": 48,
+  "diagram-snapchat": 48,
+  "diagram-threads": 48,
+  "diagram-tiktok": 48,
+  "diagram-x": 48,
+  "pins-notes": 43,
   "pins-questions": 15,
-  "qotd-facebook": 57,
-  "qotd-reels": 57,
-  "qotd-shorts": 57,
-  "qotd-snapchat": 57,
-  "qotd-threads": 57,
-  "qotd-tiktok": 57,
-  "qotd-x": 57
+  "qotd-facebook": 58,
+  "qotd-reels": 58,
+  "qotd-shorts": 58,
+  "qotd-snapchat": 58,
+  "qotd-threads": 58,
+  "qotd-tiktok": 58,
+  "qotd-x": 58
  },
  "d": {
   "acid-base-titration-curves-equivalence-point": {
@@ -667,6 +667,27 @@
    "size": 1746187,
    "tag": "#biochemistry",
    "title": "The Lac Operon Explained: Lactose, Glucose, cAMP and CAP"
+  },
+  "mcat-registration-2027-dates-fees-deadlines": {
+   "beats": [
+    "Register in the MRS now; all January to September 2027 dates are open. Standard registration is $360 ($145 with FAP).",
+    "Changes cost $55 at 60+ days, $110 at 30 to 59 days and $210 at 10 to 29 days.",
+    "the $180 refund disappears at the 30-day mark, and nothing changes inside 10 days.",
+    "Pick your test date backward from the score release you need, and calendar your 60-day mark the day you book."
+   ],
+   "outbox_ids": {
+    "diagram-facebook": "diagram-facebook-048",
+    "diagram-reels": "diagram-reels-048",
+    "diagram-shorts": "diagram-shorts-048",
+    "diagram-snapchat": "diagram-snapchat-048",
+    "diagram-threads": "diagram-threads-048",
+    "diagram-tiktok": "diagram-tiktok-048",
+    "diagram-x": "diagram-x-048"
+   },
+   "seconds": 22.6,
+   "size": 1137513,
+   "tag": "#mcatstudy",
+   "title": "MCAT Registration 2027: Dates, Fees, Deadlines and Score Release"
   },
   "michaelis-menten-and-lineweaver-burk": {
    "beats": [
@@ -1323,6 +1344,16 @@
    "slug": "lac-operon-regulation-lactose-glucose",
    "tag": "#biochemistry",
    "title": "The Lac Operon Explained: Lactose, Glucose, cAMP and CAP"
+  },
+  "note-mcat-registration-2027-dates-fees-deadlines": {
+   "desc": "How to register for a 2027 MCAT date, what it costs, the three change windows that set reschedule and refund fees, and every 2027 US test date with its score release.",
+   "outbox_ids": {
+    "pins-notes": "pins-notes-043"
+   },
+   "size": 134706,
+   "slug": "mcat-registration-2027-dates-fees-deadlines",
+   "tag": "#mcatstudy",
+   "title": "MCAT Registration 2027: Dates, Fees, Deadlines and Score Release"
   },
   "note-michaelis-menten-and-lineweaver-burk": {
    "desc": "What Km, Vmax, and kcat mean, how to read a Michaelis-Menten curve, and how to pull the numbers out of a Lineweaver-Burk plot, with a worked example.",
@@ -2540,6 +2571,25 @@
    "size": 610763,
    "tag": "#psychology",
    "topic": "Influence of others on identity"
+  },
+  "8b-social-thinking-1": {
+   "outbox_ids": {
+    "qotd-facebook": "qotd-facebook-058",
+    "qotd-reels": "qotd-reels-058",
+    "qotd-shorts": "qotd-shorts-058",
+    "qotd-snapchat": "qotd-snapchat-058",
+    "qotd-threads": "qotd-threads-058",
+    "qotd-tiktok": "qotd-tiktok-058",
+    "qotd-x": "qotd-x-058"
+   },
+   "pack_slug": "8b-social-thinking",
+   "practice": "practice/8b-attribution-theory-fundamental-attribution-error.html",
+   "seconds": 17.9,
+   "section": "Psych/Soc",
+   "shorts": false,
+   "size": 661017,
+   "tag": "#psychology",
+   "topic": "Self-serving bias"
   },
   "8b-social-thinking-2": {
    "outbox_ids": {
