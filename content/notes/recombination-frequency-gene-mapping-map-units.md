@@ -116,6 +116,12 @@ Related: see the [Three-point cross and gene order note](three-point-cross-gene-
 
 Related: see the [Hfr strains and interrupted mating note](hfr-interrupted-mating-gene-order-conjugation-mapping.html).
 
+Related: see the [How to calculate map units note](how-to-calculate-map-units-from-recombination-frequency.html).
+
+Related: see the [Recombination frequency vs map distance note](recombination-frequency-vs-map-distance-50-percent-limit.html).
+
+Related: see the [Hardy-Weinberg practice problems note](hardy-weinberg-equation-practice-problems.html).
+
 :::quiz
 Q: A test cross gives 1,000 offspring, of which 46 + 54 have recombinant phenotypes. How far apart are the two genes?
 A: Recombination frequency = 100 / 1,000 = 10 percent, so the genes are 10 map units (10 cM) apart.
