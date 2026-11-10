@@ -113,6 +113,14 @@ Physiology uses **osmolarity**, i &times; M, often in milliosmoles per liter. No
 
 Colligative properties depend on particle count. Raoult's law: P = X<sub>solvent</sub>P&deg;. Boiling point rises by i K<sub>b</sub> m, freezing point falls by i K<sub>f</sub> m, with K<sub>b</sub> about 0.512 and K<sub>f</sub> about 1.86 &deg;C kg/mol for water and m in mol per kg of solvent. Osmotic pressure &Pi; = iMRT uses molarity and kelvin. The van't Hoff factor is 1 for nonelectrolytes, 2 for NaCl, 3 for CaCl<sub>2</sub>, and real values run slightly lower. To rank solutions, compare i &times; m.
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/5a-solutions-acids-bases.html?utm_source=site-cta) ($19) has original Anki cards, a study guide and practice questions for it.*
+
+Related: see the [Osmotic pressure and van't Hoff factor note](osmotic-pressure-vant-hoff-factor-colligative.html).
+
+Related: see the [Why solutes lower the freezing point note](why-solutes-lower-freezing-point-colligative-property-explained.html).
+
+Related: see the [Ksp and the common ion effect note](ksp-solubility-product-common-ion-effect.html).
+
 :::quiz
 Q: Which has the higher boiling point: 0.15 m MgCl2 or 0.20 m KCl?
 A: 0.15 m MgCl2. Its particle molality is 3 × 0.15 = 0.45 m, compared with 2 × 0.20 = 0.40 m for KCl.

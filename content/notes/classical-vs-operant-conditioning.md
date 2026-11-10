@@ -124,6 +124,14 @@ The diagram's right panel plots this idea with an idealized model: ratio schedul
 - Continuous reinforcement: fast learning, fast extinction. Variable ratio: highest rate, slowest extinction. Fixed interval: scalloped responding.
 - Extinction is suppression, shown by spontaneous recovery. Taste aversions show biological preparedness.
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/7c-learning-behavior-change.html?utm_source=site-cta) ($19) has original Anki cards, a study guide and practice questions for it.*
+
+Related: see the [Negative reinforcement vs punishment note](negative-reinforcement-vs-punishment.html).
+
+Related: see the [Types of memory note](types-of-memory-sensory-short-term-long-term.html).
+
+Related: see the [Attribution theory note](attribution-theory-kelley-covariation-dispositional-situational.html).
+
 :::quiz
 Q: A dog flinches at the sound of a can opener because the sound used to come right before a loud blender ran. What is the conditioned stimulus?
 A: The can opener sound. It was neutral until paired with the blender noise (the US), and now it triggers flinching (the CR) on its own.

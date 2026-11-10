@@ -136,6 +136,12 @@ An enzyme speeds up a reaction in both directions, since it does not change the 
 
 The seven classes are oxidoreductases (redox), transferases (move a group), hydrolases (cleave with water), lyases (cleave or form double bonds without water or redox), isomerases (rearrange one molecule), ligases (join with ATP), and translocases (move across membranes). Learn the reaction pattern first and the name clues second, and double-check the odd ones: phosphorylase, synthase vs. synthetase, and dehydratase.
 
+Related: see the [Enzyme inhibition types compared](enzyme-inhibition-types-compared.html).
+
+Related: see the [Michaelis-Menten and Lineweaver-Burk note](michaelis-menten-and-lineweaver-burk.html).
+
+Related: see the [Protein structure levels and denaturation note](protein-structure-levels-and-denaturation.html).
+
 :::quiz
 Q: Alanine aminotransferase moves an amino group from alanine to alpha-ketoglutarate. Which EC class is it?
 A: Class 2, a transferase. It transfers a functional group (the amino group) from one molecule to another.

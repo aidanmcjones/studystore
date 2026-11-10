@@ -50,6 +50,12 @@ It maintains self-esteem. It is typically weaker in people with depression, who 
 
 Related: see the [Self-serving bias vs actor-observer bias note](self-serving-bias-vs-actor-observer-bias.html).
 
+*Want this topic as spaced-repetition cards? The [matching StudyStore MCAT pack](../products/8b-social-thinking.html?utm_source=site-cta) ($19) has original Anki cards, a study guide and practice questions for it.*
+
+Related: see the [Kelley covariation and attribution theory note](attribution-theory-kelley-covariation-dispositional-situational.html).
+
+Related: see the [Cognitive dissonance and ELM note](cognitive-dissonance-and-elaboration-likelihood-model.html).
+
 :::quiz
 Q: Which bias involves explaining another person's behavior by their traits?
 A: The fundamental attribution error.
