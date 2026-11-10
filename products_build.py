@@ -562,12 +562,16 @@ def sticky_html(items, p, root, avail):
             + re.sub(r'class="btn[^"]*"', 'class="btn small"', buy(items, p["slug"], root=root), count=1) + "</div>")
 
 
-def sample_qa_html(p, avail, n=5):
+def sample_qa_html(p, avail, n=5, members=None):
     """Static 'Sample questions' list (stem, options, answer, explanation) from the pack's own sample.json, shown above the final buy block.
     Skips questions that need a passage or figure; shows fewer than n if the pack has fewer, nothing if none."""
     if not avail:
         return ""
-    qs = [q for q in ((sample(p["slug"]) or {}).get("questions") or []) if not CONTEXT_RE.search(q["stem"])][:n]
+    if members:   # bundle: one question per included pack, round-robin, so the samples span the bundle
+        pools = [[q for q in ((sample(m) or {}).get("questions") or []) if not CONTEXT_RE.search(q["stem"])] for m in members]
+        qs = [pool[r] for r in range(n) for pool in pools if r < len(pool)][:n]
+    else:
+        qs = [q for q in ((sample(p["slug"]) or {}).get("questions") or []) if not CONTEXT_RE.search(q["stem"])][:n]
     if not qs:
         return ""
     rows = ""
@@ -576,7 +580,7 @@ def sample_qa_html(p, avail, n=5):
         rows += (f'<div class="qa"><p><span class="mono qn">Q{i}</span> {esc(q["stem"])}</p><ul class="qaopts">{opts}</ul>'
                  f'<p class="meta"><b>Answer: {esc(q["answer"])}.</b> {esc(q["explanation"])}</p></div>')
     return ('<section class="psampleqa"><div class="wrap"><p class="eyebrow mono">Sample questions</p>'
-            f'<h2 class="split">{len(qs)} real question{"" if len(qs) == 1 else "s"} from this pack, with answers</h2>' + rows + '</div></section>')
+            f'<h2 class="split">{len(qs)} real question{"" if len(qs) == 1 else "s"} from {"the packs in this bundle" if members else "this pack"}, with answers</h2>' + rows + '</div></section>')
 
 
 def free_sample_link(site, p, root):
@@ -691,7 +695,7 @@ def bundle_page(site, items, b, emit, tpl):
     body = fill(tpl, title=esc(b["title"]), pack_count=b["pack_count"], price=E(b["price"]), list_value=b["list_value_usd"],
                 status=status, rows="".join(rows), buy=buy(items, b["slug"], root=root),
                 herobuy=(f'<p class="herobuy">{buy(items, b["slug"], root=root, cta=True)}</p>' if avail else ""),
-                bottom=SAMPLE_NOTES.get(b["slug"], "") + bottom_cta_html(items, b, root, avail) + sticky_html(items, b, root, avail),
+                bottom=sample_qa_html(b, avail, members=b["members"]) + SAMPLE_NOTES.get(b["slug"], "") + bottom_cta_html(items, b, root, avail) + sticky_html(items, b, root, avail),
                 ready=b["ready_count"], kicker="Bundle &middot; one-time" if avail else "Bundle &middot; coming soon")
     out = f'products/{b["slug"]}.html'
     emit(out, f'{b["title"]} MCAT Bundle | StudyStore',
