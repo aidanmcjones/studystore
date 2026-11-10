@@ -637,7 +637,13 @@ def pack_page(site, items, p, emit, tpl):
                '<li>Unzip the download, then double-click <code>deck.apkg</code> or use File, Import.</li>'
                f'<li>Cards are tagged under <code>StudyStore::MCAT</code>. Re-importing a later version updates the same notes.</li>'
                '<li>Print the PDFs on US Letter at 100 percent, or read them on screen.</li></ol>')
-        note = ("One-time purchase. Instant digital download. 14-day no-questions refund. "
+        per = ""
+        try:
+            cents = float(str(p["price"]).replace("$", "")) * 100 / int(c.get("cards"))
+            per = f"That is about {cents:.1f} cents a flashcard, with the study guide, cheat sheet and practice questions included. "
+        except (ValueError, TypeError, ZeroDivisionError):
+            per = ""
+        note = (per + "One-time purchase. Instant digital download. 14-day no-questions refund. "
                 '<a href="#preview">See sample pages and questions first.</a>')
         bottom = ('<section class="pbottom" id="preview"><div class="wrap"><p class="eyebrow mono">Previews</p>'
                   '<h2 class="split">Look before you buy.</h2>' + gallery_html(p) +
