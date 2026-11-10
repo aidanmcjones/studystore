@@ -421,7 +421,7 @@ idx = f"""<div class="wrap hero" style="padding-bottom:24px">
 <div class="eyebrow">Free MCAT study notes</div>
 <h1>Notes</h1>
 <p class="lead">Plain-language MCAT biochemistry explainers, each with an original diagram and a 5-question mini-quiz. Free, no signup.</p>
-<p class="meta"><a href="../practice/index.html">Looking for practice questions? Browse the free MCAT practice questions by topic.</a> Or <a href="../free-mcat-sample-questions.html?utm_source=site-cta" data-track="sampler">try five free pack sample questions with answers</a>.</p>
+<p class="meta"><a href="../practice/index.html">Looking for practice questions? Browse the free MCAT practice questions by topic.</a> Or <a href="../free-mcat-sample-questions.html" data-track="sampler">try five free pack sample questions with answers</a>.</p>
 </div>
 <section><div class="wrap">{{{{topbuy:feat}}}}</div></section>
 {note_sections}
