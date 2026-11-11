@@ -1896,5 +1896,86 @@ DIAGRAMS.update({
     "cars-question-types-explained": cq_families,
 })
 
+
+def rs_records():
+    # Simple model: cumulative responses over a 10-minute session (time step 0.01 min).
+    import numpy as np
+    rng = np.random.default_rng(7)
+    dt = 0.01
+    t = np.arange(0, 10 + dt, dt)
+
+    def ratio(rate, n_fn, pause):
+        y, count, need, wait = [0.0], 0.0, n_fn(), 0.0
+        for _ in t[1:]:
+            if wait > 0:
+                wait -= dt
+            else:
+                count += rate * dt
+                if count >= need:
+                    count -= need; need = n_fn(); wait = pause
+            y.append(y[-1] + (0 if wait > 0 and count == 0 else rate * dt) * (wait <= 0))
+        return np.array(y)
+
+    def interval(base, peak, i_fn):
+        y, since, length = [0.0], 0.0, i_fn()
+        for _ in t[1:]:
+            since += dt
+            frac = min(since / length, 1.0)
+            r = base + (peak - base) * frac ** 3
+            if since >= length:
+                since, length = 0.0, i_fn()
+            y.append(y[-1] + r * dt)
+        return np.array(y)
+
+    vr = ratio(65, lambda: rng.integers(5, 36), 0.0)
+    fr = ratio(75, lambda: 25, 0.08)
+    vi = interval(28, 28, lambda: rng.uniform(0.3, 1.7))
+    fi = interval(1, 50, lambda: 2.0)
+    fig, ax = plt.subplots(figsize=(9, 5.2))
+    for y, lab, col, ls in [(vr, "Variable ratio (VR)", ACC, "-"), (fr, "Fixed ratio (FR)", ACCD, "--"),
+                            (vi, "Variable interval (VI)", TEAL, "-"), (fi, "Fixed interval (FI)", GREY, "--")]:
+        ax.plot(t, y, color=col, lw=2.2, ls=ls)
+        ax.text(10.15, y[-1], lab, color=col, va="center", fontsize=10.5, fontweight="bold")
+    ax.set_xlim(0, 13.2)
+    ax.set_xticks(range(0, 11, 2))
+    ax.set_xlabel("Time in session (minutes)")
+    ax.set_ylabel("Cumulative responses")
+    ax.set_title("Cumulative records: ratio schedules climb fastest, FI forms scallops", fontsize=12.5,
+                 loc="left", fontweight="bold")
+    fig.tight_layout()
+    save(fig, "reinforcement-schedules-explained")
+
+
+DIAGRAMS.update({
+    "reinforcement-schedules-explained": rs_records,
+})
+
+
+def ak_hydration():
+    # Percent hydrate = K / (1 + K), approximate K values stated in the note.
+    data = [("Formaldehyde\nH, H", 2000.0, ACC), ("Acetaldehyde\nH, CH3", 1.0, TEAL),
+            ("Acetone\nCH3, CH3", 0.0014, GREY)]
+    names = [d[0] for d in data]
+    pct = [100 * k / (1 + k) for _, k, _ in data]
+    fig, ax = plt.subplots(figsize=(8.5, 5))
+    bars = ax.bar(names, pct, color=[d[2] for d in data], width=0.55)
+    ax.set_yscale("log")
+    ax.set_ylim(0.05, 400)
+    ax.set_yticks([0.1, 1, 10, 100])
+    ax.set_yticklabels(["0.1%", "1%", "10%", "100%"])
+    for b, p, (_, k, _) in zip(bars, pct, data):
+        ax.text(b.get_x() + b.get_width() / 2, p * 1.35, f"{p:.2f}% hydrate\nK = {k:g}",
+                ha="center", va="bottom", fontsize=10.5)
+    ax.set_ylabel("Percent present as hydrate (log scale)")
+    ax.set_title("Each carbon group on C=O pushes hydration back toward the carbonyl", fontsize=12,
+                 loc="left", fontweight="bold")
+    fig.tight_layout()
+    save(fig, "aldehyde-vs-ketone-nucleophilic-addition")
+
+
+DIAGRAMS.update({
+    "aldehyde-vs-ketone-nucleophilic-addition": ak_hydration,
+})
+
 if __name__ == "__main__":
     main()
