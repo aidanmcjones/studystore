@@ -5,8 +5,8 @@ product: 1c-heredity-evolution
 published: 2026-10-20
 updated: 2026-11-11
 related: three-point-cross-gene-order-double-crossover, hardy-weinberg-equation-practice-problems, mitosis-vs-meiosis-differences, hfr-interrupted-mating-gene-order-conjugation-mapping
-seo_title: Recombination Frequency and Map Units: How to Calculate
-seo_description: Recombination frequency = recombinants / total offspring x 100, and 1% = 1 map unit (cM). How to calculate map units, worked crosses, the 50% limit.
+seo_title: Recombination Frequency to Map Units: Formula + Examples
+seo_description: Recombination frequency = recombinants / total offspring, and 1% = 1 map unit (cM). Worked examples, the 50% ceiling and a 5-question quiz.
 ---
 
 > **Quick answer: how to calculate map units from recombination frequency.** Count the recombinant offspring from a test cross, divide by the total offspring and multiply by 100. **That percent is the distance in map units: 1 percent recombination = 1 map unit = 1 centimorgan (cM).**

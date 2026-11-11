@@ -5,8 +5,8 @@ product: 1a-amino-acids-proteins
 published: 2026-10-20
 updated: 2026-11-11
 related: enzyme-inhibition-types-compared, michaelis-menten-and-lineweaver-burk, protein-structure-levels-and-denaturation
-seo_title: 7 Classes of Enzymes (EC 1-7): Reactions and Examples
-seo_description: The 7 classes of enzymes in order: oxidoreductases, transferases, hydrolases, lyases, isomerases, ligases, translocases. Reaction, example and name clues.
+seo_title: The 7 Enzyme Classes (EC 1-7) with Examples and Mnemonic
+seo_description: All 7 EC enzyme classes with the reaction each catalyzes, a real enzyme example and the name clues that tell them apart on the MCAT.
 ---
 
 > **Quick answer: the 7 classes of enzymes, in EC order.**

@@ -90,8 +90,11 @@ async function hit(url) {
 for (const u of sm) {
   const path = u.slice(BASE.length);
   const variants = [`https://studystore.co${path}`];
-  if (path.endsWith("/")) variants.push(`${BASE}${path}index.html`, `https://studystore.co${path}index.html`);
-  else variants.push(`${u}.html`, `https://studystore.co${path}.html`);
+  if (path === "/") variants.push(`${BASE}/index.html`, "https://studystore.co/index.html");
+  else if (path.endsWith("/")) {
+    const bare = path.slice(0, -1);
+    variants.push(`${BASE}${path}index.html`, `https://studystore.co${path}index.html`, `${BASE}${bare}`, `https://studystore.co${bare}`);
+  } else variants.push(`${u}.html`, `https://studystore.co${path}.html`, `${u}/`, `https://studystore.co${path}/`);
   for (const v of variants) {
     const { res, nexted } = await hit(v);
     if (res.status !== 301 || res.headers.get("location") !== u || nexted) err(`${v}: want one 301 to ${u}, got ${res.status} ${res.headers.get("location")}`);
@@ -105,7 +108,7 @@ const { REDIRECTS } = await import("../functions/_lib/redirects.js");
 const fromFile = Object.fromEntries(rules.filter((r) => !r[0].endsWith(".html")).map((r) => [r[0], r[1]]));
 if (JSON.stringify(Object.entries(REDIRECTS).sort()) !== JSON.stringify(Object.entries(fromFile).sort())) err("functions/_lib/redirects.js does not match _redirects (rebuild)");
 for (const [src, dst] of Object.entries(fromFile)) {
-  for (const v of [BASE + src, BASE + src + ".html", "https://studystore.co" + src, "https://studystore.co" + src + ".html"]) {
+  for (const host of [BASE, "https://studystore.co"]) for (const v of [host + src, host + src + ".html", host + src + "/"]) {
     const { res, nexted } = await hit(v + "?utm_source=x");
     if (res.status !== 301 || res.headers.get("location") !== BASE + dst + "?utm_source=x" || nexted) err(`${v}: want one 301 to ${dst}, got ${res.status} ${res.headers.get("location")}`);
   }

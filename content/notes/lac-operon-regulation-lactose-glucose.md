@@ -5,8 +5,8 @@ product: 1b-dna-gene-expression
 published: 2026-10-20
 updated: 2026-11-11
 related: trp-operon-vs-lac-operon-repressible-inducible, lac-operon-partial-diploids-merodiploid-problems, glycolysis-steps-enzymes-net-atp, passive-vs-active-transport
-seo_title: Lac Operon: CAP and cAMP, Lactose and Glucose Table
-seo_description: What CAP and cAMP do in the lac operon, why glucose keeps it low, lac output in all 4 lactose and glucose conditions, and partial diploid problems.
+seo_title: Lac Operon: Lactose, Glucose, CAP and cAMP Table
+seo_description: Lac operon expression in all four lactose and glucose conditions, what CAP and cAMP do, and how to solve partial diploid (lacI, lacO) questions.
 ---
 
 > **Quick answer: CAP and cAMP in the lac operon.** Low glucose raises **cAMP**. cAMP binds **CAP** (the catabolite activator protein), and the CAP-cAMP complex binds just upstream of the lac promoter and helps RNA polymerase start transcription. **Lactose** (as allolactose) separately pulls the **repressor** off the operator. Strong expression needs both: lactose present **and** glucose low.

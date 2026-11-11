@@ -2,10 +2,14 @@
 // - apex studystore.co -> https://www.studystore.co (301 GET/HEAD, 308 other methods so POST bodies survive)
 // - /x.html -> /x and /d/index.html -> /d/ in the SAME hop (Pages alone answers these with a 308, and an apex
 //   .html URL took two hops: apex -> www/x.html -> www/x). Query strings are kept.
-// - retired URLs (functions/_lib/redirects.js, generated with _redirects) go to their final page in the same hop.
+// - retired URLs (functions/_lib/redirects.js, generated with _redirects) go to their final page in the same hop,
+//   with or without a trailing slash.
+// - slash form is fixed in the same hop too: /d -> /d/ for directory pages (functions/_lib/dirs.js), /x/ -> /x for
+//   everything else (the static host would otherwise add a second 308).
 // - *.pages.dev (production alias and branch previews) is served as-is but marked noindex, so the Pages host
 //   never competes with www in search.
 import { REDIRECTS } from "./_lib/redirects.js";
+import { DIRS } from "./_lib/dirs.js";
 
 const CANON = "https://www.studystore.co";
 
@@ -17,14 +21,24 @@ export function cleanPath(p) {
   return p;
 }
 
+// The one canonical path for a GET/HEAD request path.
+export function finalPath(p) {
+  let path = cleanPath(p);
+  if (path.startsWith("/api/") || path.startsWith("/cdn-cgi/")) return path;
+  const bare = path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path;
+  if (REDIRECTS[bare]) return REDIRECTS[bare]; // retired product or merged note: straight to the final page
+  if (bare !== path && !DIRS.has(path)) return bare; // /x/ -> /x
+  if (bare === path && DIRS.has(path + "/")) return path + "/"; // /d -> /d/
+  return path;
+}
+
 export async function onRequest(context) {
   const url = new URL(context.request.url);
   const host = url.hostname;
   const method = context.request.method;
   const read = method === "GET" || method === "HEAD";
   if (host === "studystore.co" || host === "www.studystore.co") {
-    let path = read ? cleanPath(url.pathname) : url.pathname;
-    if (read && REDIRECTS[path]) path = REDIRECTS[path]; // retired product or merged note: straight to the final page
+    const path = read ? finalPath(url.pathname) : url.pathname;
     if (host === "studystore.co" || path !== url.pathname) {
       return Response.redirect(CANON + path + url.search, read ? 301 : 308);
     }

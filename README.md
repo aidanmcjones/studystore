@@ -52,6 +52,10 @@ finds pages through `sitemap.xml` (declared in `robots.txt`) and ordinary crawli
   fold its useful content into the kept note, delete `content/notes/<old>.md` and its built/asset files, and fix
   `related:`/`notes:` references (the build fails on a dangling one). `build.py` writes both `_redirects` and
   `functions/_lib/redirects.js`.
+- Real hop counts: `tools/check_hops.sh` runs `wrangler pages dev` on the checkout and checks that every duplicate form
+  of every sitemap and retired URL (www/apex, .html, index.html, with/without slash) reaches its page in one 301.
+- Title freeze: until `frozen_until` in `tools/gsc_targets.json` (2026-12-10), `tests/frozen_titles_test.mjs` fails if
+  the `<title>` or canonical of a listed page changes. Do not rewrite those titles before then.
 - `tools/gsc_targets.json` is the Search Console baseline (2026-11-11) for the pages and queries the SEO pass targeted.
   Compare a later export with `python3 tools/gsc_compare.py --pages Pages.csv --queries Queries.csv`.
 - After deploying content changes: `tools/ping_sitemap.sh --changed <commit before the change>` submits every changed

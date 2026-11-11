@@ -56,6 +56,20 @@ for (const [from, to] of [
   ok(r.res.status === 301 && r.res.headers.get("location") === to && r.nexted === 0, `${from} -> ${to} in one 301`);
 }
 
+for (const [from, to] of [
+  ["https://www.studystore.co/notes/cap-camp-lac-operon-catabolite-repression/", "https://www.studystore.co/notes/lac-operon-regulation-lactose-glucose"],
+  ["https://studystore.co/notes/cap-camp-lac-operon-catabolite-repression/", "https://www.studystore.co/notes/lac-operon-regulation-lactose-glucose"],
+  ["https://studystore.co/go/mcat-1a", "https://www.studystore.co/go/mcat-1a/"],
+  ["https://www.studystore.co/go/mcat-1a", "https://www.studystore.co/go/mcat-1a/"],
+  ["https://studystore.co/notes/x/", "https://www.studystore.co/notes/x"],
+  ["https://www.studystore.co/notes/x/", "https://www.studystore.co/notes/x"],
+]) {
+  r = await run(from);
+  ok(r.res.status === 301 && r.res.headers.get("location") === to && r.nexted === 0, `${from} -> ${to} in one 301`);
+}
+r = await run("https://www.studystore.co/go/mcat-1a/");
+ok(r.nexted === 1, "directory page with its slash is served");
+
 r = await run("https://www.studystore.co/notes/x");
 ok(r.nexted === 1 && !r.res.headers.get("x-robots-tag"), "clean www URL is served, indexable");
 

@@ -6,7 +6,7 @@ published: 2026-10-20
 updated: 2026-11-11
 related: fundamental-attribution-error-vs-actor-observer-bias, types-of-memory-sensory-short-term-long-term, schachter-singer-two-factor-theory-vs-cannon-bard, stress-response-general-adaptation-syndrome-cortisol
 seo_title: James-Lange vs Cannon-Bard vs Schachter-Singer (MCAT)
-seo_description: Which comes first, feeling or body response? James-Lange, Cannon-Bard, Schachter-Singer and Lazarus side by side, with a bear example and practice.
+seo_description: Which comes first, feeling or body response? James-Lange, Cannon-Bard, Schachter-Singer and Lazarus side by side, with a bear example and practice scenarios.
 ---
 
 > **Quick answer.** The classic theories of emotion disagree about one thing: the order of events. **James-Lange** says bodily arousal comes first and the feeling is your perception of that arousal. **Cannon-Bard** says arousal and feeling happen at the same time, triggered in parallel by the brain. **Schachter-Singer** (two-factor theory) says arousal is generic and you need a cognitive label from the situation to know which emotion you feel. **Lazarus** says a cognitive appraisal of the event comes first and drives both the feeling and the body's response. If you can write each sequence from memory, most questions on this topic become a matching exercise.

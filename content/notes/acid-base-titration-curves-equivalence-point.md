@@ -5,8 +5,8 @@ product: 5a-solutions-acids-bases
 published: 2026-10-20
 updated: 2026-11-11
 related: henderson-hasselbalch-for-the-mcat, amino-acid-pka-charge-ph-7-4, strong-vs-weak-acids-ka-pka-conjugate-base-strength, histidine-pka-isoelectric-point-pi-calculation
-seo_title: Second Equivalence Point, Equivalence and Half-Equivalence
-seo_description: Equivalence point: moles base = moles acid. Half-equivalence: pH = pKa. Second equivalence point: twice the first volume. Worked titrations with pH.
+seo_title: Equivalence vs Half-Equivalence Point on a Titration Curve
+seo_description: Find the equivalence point and half-equivalence point (pH = pKa) on a titration curve, the pH at each, indicator choice and a worked example.
 ---
 
 > **Quick answer.** The **equivalence point** is where moles of titrant added equal moles of analyte (M<sub>a</sub>V<sub>a</sub> = M<sub>b</sub>V<sub>b</sub> for a monoprotic acid and NaOH). The **half-equivalence point** is at half that volume, where [HA] = [A<sup>-</sup>] and **pH = pK<sub>a</sub>**. A diprotic acid has a **second equivalence point at exactly twice the volume of the first**, and its half-way point between them gives pK<sub>a2</sub>.

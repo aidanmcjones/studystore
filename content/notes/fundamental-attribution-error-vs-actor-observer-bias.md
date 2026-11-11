@@ -5,7 +5,7 @@ product: 8b-social-thinking
 published: 2026-10-20
 updated: 2026-11-11
 seo_title: Fundamental Attribution Error vs Self-Serving Bias
-seo_description: The difference: the fundamental attribution error blames others' character; self-serving bias credits you for wins, luck for losses. Table with examples.
+seo_description: Fundamental attribution error blames others' character, self-serving bias protects your ego, actor-observer splits by role. One table with examples.
 related: attribution-theory-kelley-covariation-dispositional-situational, cognitive-dissonance-and-elaboration-likelihood-model, conformity-vs-obedience-asch-milgram
 ---
 

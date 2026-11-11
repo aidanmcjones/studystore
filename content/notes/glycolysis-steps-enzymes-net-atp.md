@@ -5,8 +5,8 @@ product: 1d-metabolism-bioenergetics
 published: 2026-10-20
 updated: 2026-11-11
 related: michaelis-menten-and-lineweaver-burk, enzyme-classes-ec-1-to-7, passive-vs-active-transport, glycolysis-regulation-irreversible-steps-hexokinase-pfk-1, glycolysis-intermediates-in-order-first-intermediate-g6p
-seo_title: Net Yield of Glycolysis (2 ATP, 2 NADH) and the 10 Steps
-seo_description: Net yield of glycolysis: 2 ATP, 2 NADH, 2 pyruvate per glucose. The ATP ledger, all 10 steps and the 3 regulated enzymes (hexokinase, PFK-1, PK).
+seo_title: Glycolysis Steps and Net ATP Yield (2 ATP, 2 NADH)
+seo_description: The 10 steps of glycolysis, the 3 regulated enzymes and the net yield (2 ATP, 2 NADH, 2 pyruvate) in an investment and payoff ledger.
 ---
 
 > **Quick answer.** Glycolysis turns one glucose (6 carbons) into two pyruvate (3 carbons each) in the cytosol, without needing oxygen. It spends 2 ATP early, makes 4 ATP and 2 NADH later, and so **nets 2 ATP, 2 NADH and 2 pyruvate per glucose**. Three steps are effectively one-way and serve as the control points: **hexokinase, phosphofructokinase-1 (PFK-1) and pyruvate kinase**. If you can place those three and keep a running ATP tally, most glycolysis questions fall out.
