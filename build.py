@@ -10,7 +10,8 @@ Placeholders in templates:
 """
 import json, re, html, math
 from pathlib import Path
-from mdlite import convert, parse_frontmatter, extract_quiz
+from mdlite import convert, parse_frontmatter, extract_quiz, lint as md_lint
+import safeurl
 import qbank_downloads as QD
 import qbank_shots as QS
 import products_build as PB  # catalog product/bundle/thanks pages (G01)
@@ -19,6 +20,7 @@ from assetver import version_assets
 import waitlist
 
 ROOT = Path(__file__).parent
+safeurl.validate_content_json(ROOT)  # every URL field in every content JSON: https + host allowlist, or site-relative; stops the build otherwise
 site = json.loads((ROOT / "site.json").read_text())
 import datetime as _dt
 _le = _dt.datetime.strptime(site["launch_end"], "%Y-%m-%dT%H:%M:%SZ")  # single source for the LAUNCH50 end (matches the Polar discount)
@@ -315,7 +317,7 @@ def clean_rel_links(text):
     return _REL_HTML.sub(sub, text)
 
 def ld_json(*objs):
-    return "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False).replace("</", "<\\/")}</script>\n'
+    return "".join(f'<script type="application/ld+json">{safeurl.json_script(o)}</script>\n'
                    for o in objs)
 
 def breadcrumbs(*pairs):
@@ -372,8 +374,11 @@ def emit(out, title, desc, body, noindex=False, og_image=DEFAULT_OG, og_type="we
 def load_notes():
     notes = []
     for f in sorted((ROOT / "content" / "notes").glob("*.md")):
+        md_lint(f.read_text(), f"content/notes/{f.name}")  # unsafe link or image: build stops naming file and line
         meta, text = parse_frontmatter(f.read_text())
         slug = f.stem
+        if not re.fullmatch(r"[a-z0-9][a-z0-9-]*", slug):  # the slug goes into hrefs and ids unescaped
+            raise SystemExit(f"{f.name}: file name must be lowercase letters, digits and hyphens")
         for req in ("title", "description", "product", "published"):
             if req not in meta:
                 raise SystemExit(f"{f.name}: missing frontmatter '{req}'")
@@ -465,7 +470,7 @@ def build_note(n, all_notes):
     body = f"""<article class="note wrap narrow">
 <p class="eyebrow">Free MCAT study note</p>
 <h1>{html.escape(m["title"])}</h1>
-<p class="meta">By StudyStore &middot; Published {m["published"]} &middot; {mins} min read &middot; {n["words"]} words</p>
+<p class="meta">By StudyStore &middot; Published {html.escape(m["published"])} &middot; {mins} min read &middot; {n["words"]} words</p>
 <div class="prose">
 {body_html}
 </div>
@@ -674,8 +679,8 @@ for d in LANDINGS:
     offer, preview = hero_offer(root, d["pack"], hook=d.get("hook", ""), headline=d.get("headline", ""),
                                 subhead=d.get("subhead", ""), src="", capture_uid="go", preview_ids=ids)
     u = d.get("default_utm") or {}
-    setu = "".join(f'H.setAttribute("data-{k.replace("_", "-")}",{json.dumps(v)});' for k, v in u.items())
-    setu += f'H.setAttribute("data-landing",{json.dumps(d["slug"])});'
+    setu = "".join(f'H.setAttribute("data-{k.replace("_", "-")}",{safeurl.js_str(v)});' for k, v in u.items())
+    setu += f'H.setAttribute("data-landing",{safeurl.js_str(d["slug"])});'
     qs = sjson.get("questions") or []
     qs = [qs[i - 1] for i in d["question_ids"]] if d.get("question_ids") else qs[:3]
     what = "pack" if p.get("aamc") else "bundle"

@@ -5,6 +5,7 @@ so nothing but HTML, CSS and JS needs to be deployed. Stdlib only.
 """
 import json, html, datetime
 import products_build as PB
+import safeurl
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -71,10 +72,10 @@ FAQ = {
 }
 
 def ld(*objs):
-    return "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False).replace("</", "<\\/")}</script>\n' for o in objs)
+    return "".join(f'<script type="application/ld+json">{safeurl.json_script(o)}</script>\n' for o in objs)
 
 def jsn(obj):
-    return json.dumps(obj, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
+    return safeurl.json_script(obj, separators=(",", ":"))
 
 def faq_html(slug):
     return "".join(f'<details class="q"><summary>{html.escape(q)}</summary><div><p>{html.escape(a)}</p></div></details>' for q, a in FAQ[slug])

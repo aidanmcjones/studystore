@@ -1,0 +1,22 @@
+{
+  "_note": "Hosts that content (notes, practice, landing, compare, site.json) may link to over https. Anything else fails the build (safeurl.py). Generated 2026-11-11 from the https hosts present in content/, landing/, data/ and site.json, plus the site's own domains and the Polar checkout hosts. To allow a new host, add it here in a reviewed change.",
+  "hosts": [
+    "ankiweb.net",
+    "blueprintprep.com",
+    "buy.polar.sh",
+    "gradschool.uworld.com",
+    "mcat.magoosh.com",
+    "medlifemastery.com",
+    "polar.sh",
+    "premedtoolkit.com",
+    "premiermcatprep.com",
+    "source.studystore.co",
+    "store.aamc.org",
+    "students-residents.aamc.org",
+    "studystore.co",
+    "testpreppal.com",
+    "www.aamc.org",
+    "www.princetonreview.com",
+    "www.studystore.co"
+  ]
+}

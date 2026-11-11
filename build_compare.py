@@ -9,6 +9,7 @@ No question content lives on these pages, so the practice overlap guard has noth
 """
 import html, json
 from pathlib import Path
+from safeurl import check_link
 
 ROOT = Path(__file__).parent
 E = html.escape
@@ -23,6 +24,7 @@ def money(x):
 def src(r):
     kind = {"own": "own page", "listing": "AnkiWeb shared-deck listing, uploader not verified as the maker"}.get(r["source_type"], "third-party page")
     dated = f", page dated {E(r['page_date'])}" if r.get("page_date") else ""
+    check_link(r["url"], f"data/compare.json source {r.get('source_name')!r}")
     return f'<a href="{E(r["url"])}" rel="noopener">{E(r["source_name"])}</a> ({kind}{dated}, checked {E(r["as_of"])})'
 
 
