@@ -118,11 +118,15 @@
       var shown = exp.id === "note_cta" ? applyNoteLayout(v) : applyText(exp, v);
       if (shown) applied[exp.id] = v.id;
     });
+    // Drop stored assignments for experiments that are not running now (ended or removed), so an old session
+    // never carries them into a reference_id or event.
+    var live = {}; (cfg.experiments || []).forEach(function (x) { if (x.status === "running") live[x.id] = 1; });
+    Object.keys(assign).forEach(function (k) { if (!live[k]) { delete assign[k]; changed = true; } });
     if (changed) store("ss_exp", JSON.stringify(assign));
     // Seen set: experiments this session has actually been shown (for click attribution).
     var seen; try { seen = JSON.parse(store("ss_seen") || "{}") || {}; } catch (e) { seen = {}; }
     Object.keys(applied).forEach(function (k) { seen[k] = applied[k]; });
-    Object.keys(seen).forEach(function (k) { if (assign[k] !== seen[k]) delete seen[k]; });
+    Object.keys(seen).forEach(function (k) { if (!live[k] || assign[k] !== seen[k]) delete seen[k]; });
     store("ss_seen", JSON.stringify(seen));
     W.__ssSeen = seen;
     tagCheckoutLinks(seen);
