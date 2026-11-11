@@ -763,3 +763,5 @@ section.hero.offerhero{min-height:0;padding:clamp(28px,5vw,72px) 0 clamp(40px,6v
 .herobuy .refundline{display:block;margin-top:10px;font-size:.85rem;color:var(--muted)}
 .herobuy .refundline a{color:inherit}
 @media (max-width:980px){.phero.withpv{grid-template-columns:1fr}}
+/* a sent form hides itself (waitlist.js sets hidden); display rules above must not override that */
+.waitlist .wlform[hidden],.waitlist .wldone[hidden]{display:none!important}

@@ -153,7 +153,8 @@ def hero_offer(root, slug=None, hook="", headline="", subhead="", src="site-cta"
     slug = slug or PB.featured(site)["slug"]
     p, inside, btn, preview = _offer_parts(slug, root, src)
     if not PB.buyable(p):
-        return ""
+        print(f"WARNING: hero offer {slug} is not buyable; offer block left empty")
+        return "", ""
     tag = f'MCAT {p["aamc"]}' if p.get("aamc") else "MCAT bundle"
     headline = headline or (f'MCAT {p["title"].lower()}, in one small pack.' if p.get("aamc") else f'{p["title"]}, in one bundle.')
     if p.get("members") and not subhead:
@@ -608,26 +609,37 @@ for tpl, out, title, desc, noindex in PAGES:
 LANDING_KEYS = {"slug", "pack", "hook", "headline", "subhead", "default_utm"}
 _UTM_OK = re.compile(r"^[A-Za-z0-9_.\-]{1,60}$")
 
+class _BadLanding(Exception):
+    pass
+
 def load_landings():
+    """Bad entries are skipped with a warning so one typo never stops the whole build; tests/landing_test.mjs fails on them."""
     out = []
     for f in sorted((ROOT / "landing").glob("*.json")):
+        try:
+            out.append(_check_landing(f))
+        except (_BadLanding, ValueError, TypeError, AttributeError, KeyError) as e:
+            print(f"LANDING WARNING: skipped {f.name}: {e}")
+    return out
+
+def _check_landing(f):
+    if True:
         d = json.loads(f.read_text())
         bad = set(d) - LANDING_KEYS
-        if bad: raise SystemExit(f"{f.name}: unknown keys {sorted(bad)}")
+        if bad: raise _BadLanding(f"{f.name}: unknown keys {sorted(bad)}")
         if not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,60}", d.get("slug", "")) or d["slug"] != f.stem:
-            raise SystemExit(f"{f.name}: slug must be a-z0-9- and match the file name")
+            raise _BadLanding(f"{f.name}: slug must be a-z0-9- and match the file name")
         if d.get("pack") not in products or not PB.buyable(products[d["pack"]]):
-            raise SystemExit(f"{f.name}: pack {d.get('pack')!r} is not a buyable product or bundle slug")
+            raise _BadLanding(f"{f.name}: pack {d.get('pack')!r} is not a buyable product or bundle slug")
         for k in ("hook", "headline", "subhead"):
             v = d.get(k, "")
-            if not isinstance(v, str) or "—" in v or "–" in v or "<" in v or len(v) > 300:
-                raise SystemExit(f"{f.name}: {k} must be plain text under 300 chars, no dashes or HTML")
+            if not isinstance(v, str) or "\u2014" in v or "\u2013" in v or "<" in v or len(v) > 300:
+                raise _BadLanding(f"{f.name}: {k} must be plain text under 300 chars, no dashes or HTML")
         u = d.get("default_utm") or {}
         for k, v in u.items():
             if k not in ("utm_source", "utm_campaign", "utm_medium", "utm_content") or not _UTM_OK.match(str(v)):
-                raise SystemExit(f"{f.name}: default_utm {k}={v!r} not allowed")
-        out.append(d)
-    return out
+                raise _BadLanding(f"{f.name}: default_utm {k}={v!r} not allowed")
+        return d
 
 LANDINGS = load_landings()
 for d in LANDINGS:

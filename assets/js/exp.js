@@ -93,7 +93,12 @@
   function applyNoteLayout(v) {
     var art = D.querySelector("article.note"); if (!art) return false;
     var ctas = art.querySelectorAll("aside.cta"); if (!ctas.length) return false;
-    if (v.layout === "end_only" && ctas.length > 1) ctas[0].style.display = "none";
+    if (v.layout === "end_only" && ctas.length > 1) {
+      ctas[0].style.display = "none";
+      // its "Not ready to buy?" capture would otherwise sit alone with no offer above it
+      var nx = ctas[0].nextElementSibling;
+      if (nx && nx.classList.contains("waitlist-cta")) nx.style.display = "none";
+    }
     if (v.layout === "early") {
       var paras = art.querySelectorAll(".prose > p");
       var anchor = paras[Math.min(2, paras.length - 1)];
