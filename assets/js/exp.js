@@ -107,9 +107,16 @@
     return true;
   }
 
+  // A config is usable only when experiments is an array of objects with a string id and status. Anything else
+  // (failed load, malformed JSON, wrong shape) leaves stored assignments untouched.
+  function validCfg(cfg) {
+    return !!cfg && Array.isArray(cfg.experiments) && cfg.experiments.every(function (x) {
+      return x && typeof x === "object" && typeof x.id === "string" && typeof x.status === "string" && Array.isArray(x.variants || []);
+    });
+  }
   function run(cfg) {
-    var changed = false;
-    (cfg.experiments || []).forEach(function (exp) {
+    var changed = false, valid = validCfg(cfg), list = valid ? cfg.experiments : [];
+    list.forEach(function (exp) {
       if (exp.status !== "running") return;
       try { if (!new RegExp(exp.pages).test(path)) return; } catch (e) { return; }
       var cur = assign[exp.id], v = null;
@@ -118,15 +125,18 @@
       var shown = exp.id === "note_cta" ? applyNoteLayout(v) : applyText(exp, v);
       if (shown) applied[exp.id] = v.id;
     });
-    // Drop stored assignments for experiments that are not running now (ended or removed), so an old session
-    // never carries them into a reference_id or event.
-    var live = {}; (cfg.experiments || []).forEach(function (x) { if (x.status === "running") live[x.id] = 1; });
-    Object.keys(assign).forEach(function (k) { if (!live[k]) { delete assign[k]; changed = true; } });
+    // Only after a successfully loaded, valid list: drop stored assignments for experiments that are not running now
+    // (ended or removed; an empty list drops all), so an old session never carries them into a reference_id or event.
+    var live = null;
+    if (valid) {
+      live = {}; list.forEach(function (x) { if (x.status === "running") live[x.id] = 1; });
+      Object.keys(assign).forEach(function (k) { if (!live[k]) { delete assign[k]; changed = true; } });
+    }
     if (changed) store("ss_exp", JSON.stringify(assign));
     // Seen set: experiments this session has actually been shown (for click attribution).
     var seen; try { seen = JSON.parse(store("ss_seen") || "{}") || {}; } catch (e) { seen = {}; }
     Object.keys(applied).forEach(function (k) { seen[k] = applied[k]; });
-    Object.keys(seen).forEach(function (k) { if (!live[k] || assign[k] !== seen[k]) delete seen[k]; });
+    Object.keys(seen).forEach(function (k) { if ((live && !live[k]) || assign[k] !== seen[k]) delete seen[k]; });
     store("ss_seen", JSON.stringify(seen));
     W.__ssSeen = seen;
     tagCheckoutLinks(seen);
@@ -246,7 +256,7 @@
   D.addEventListener("auxclick", onLinkClick, true); // middle click / open in new tab
 
   function start() {
-    fetch(CONFIG, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : { experiments: [] }; })
+    fetch(CONFIG, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; })
       .then(run).catch(function () { try { tagCheckoutLinks({}); } catch (e) {} done(); send("view", {}); });
   }
   if (D.readyState === "loading") D.addEventListener("DOMContentLoaded", start); else start();
