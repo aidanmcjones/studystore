@@ -2,7 +2,9 @@
 // Stores only: server timestamp, random session id, page path, experiment/variant,
 // event name, referrer domain, utm_source, utm_campaign. Never stores IPs, user
 // agents, cookies, or anything typed by the visitor.
-const EVENTS = new Set(["view", "cta_click", "checkout_click", "checkout_start", "sampler_click", "subscribe"]);
+const EVENTS = new Set(["view", "cta_click", "checkout_click", "checkout_start", "sampler_click", "subscribe", "refund_confirm"]);
+// refund_confirm carries a one-time code in `page` (/refund/<32 hex>); support_agent.py reads it from D1 and refunds the bound order.
+const REFUND_PAGE = /^\/refund\/[a-f0-9]{32}$/;
 const MAX_BODY = 2048;
 const IP_LIMIT = 60;        // requests per minute per IP, held in memory only
 const SID_LIMIT = 200;      // rows per session id per hour (checked in D1)
@@ -72,6 +74,7 @@ export async function onRequestPost({ request, env }) {
   const event = EVENTS.has(b.event) ? b.event : "";
   const page = clean(b.page, /^\/[A-Za-z0-9._\-\/]*$/, 200);
   if (!sid || !event || !page) return ok(400);
+  if ((event === "refund_confirm") !== REFUND_PAGE.test(page)) return ok(400);   // the code only travels with this event
   const ref = clean((b.ref_domain || "").toLowerCase(), /^[a-z0-9.\-]+$/, 100);
   const src = clean(b.utm_source || "", /^[A-Za-z0-9_.\-]+$/, 60);
   const camp = clean(b.utm_campaign || "", /^[A-Za-z0-9_.\-]+$/, 60);

@@ -16,3 +16,8 @@
   X-Robots-Tag: noindex
 /media/*
   X-Robots-Tag: noindex
+
+/refund/*
+  X-Robots-Tag: noindex
+  Referrer-Policy: no-referrer
+  Cache-Control: no-store
