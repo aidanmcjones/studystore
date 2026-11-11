@@ -49,6 +49,7 @@ PAGES = [
      "Binder shows each flashcard right before you'd forget it, so you review less and remember more. One window, opens your existing deck files. $29 one-time.", False),
     ("qbank_source.html", "binder/source.html", "Binder source code (AGPL-3) | StudyStore",
      "Source code for every Binder release under the GNU AGPL-3.0. The full license and credits are inside the tarball and in the app's licenses view.", True),
+    ("refund_confirm.html", "refund-confirm/index.html", "Confirm your refund | StudyStore", "One-time refund confirmation for StudyStore orders.", True),
     ("404.html", "404.html", "Page not found | StudyStore", "Page not found.", True),
     ("report.html", "report.html", "Report a problem or suggest something | StudyStore",
      "Tell StudyStore about a broken link, a wrong answer, a typo or a display problem, or suggest a topic.", True),
