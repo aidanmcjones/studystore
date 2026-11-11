@@ -145,10 +145,18 @@ def validate_content_json(root=ROOT):
         for f in sorted(root.glob(pat)):
             if f.name == "link_hosts.json":
                 continue
+            landing = f.parent.name == "landing"
             try:
                 doc = json.loads(f.read_text())
             except ValueError as e:
+                if landing:
+                    continue  # landing.py reports this with its own "LANDING ERROR" message naming the file
                 raise UnsafeContent(f"{f.relative_to(root)}: not valid JSON ({e})")
-            check_json_urls(doc, str(f.relative_to(root)))
+            try:
+                check_json_urls(doc, str(f.relative_to(root)))
+            except UnsafeContent as e:
+                if landing:  # keep the landing validator's prefix so the failure reads the same as any landing problem
+                    raise UnsafeContent(f"LANDING ERROR (build stopped, nothing written for /go/): {e}") from None
+                raise
             n += 1
     return n

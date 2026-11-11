@@ -31,11 +31,5 @@ jobs:
       - name: build
         run: python3 build.py
       - name: tests
-        run: |
-          status=0
-          for t in tests/*_test.mjs; do
-            echo "::group::$t"
-            node "$t" || status=1
-            echo "::endgroup::"
-          done
-          exit $status
+        # the same runner tools/deploy_pages.sh gates the deploy on: every tests/*_test.mjs and tests/*_test.py
+        run: tools/run_tests.sh
