@@ -1,0 +1,4 @@
+{
+ "_note": "Reviewed SVG files allowed in the repo or deployable output, by path and sha256. Empty by default: no SVG is allowed. Content images may never be SVG (safeurl.py).",
+ "reviewed": []
+}

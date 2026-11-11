@@ -83,19 +83,9 @@ check("ankiweb exact deck path kept", rejects(safeurl.check_link, "https://ankiw
 check("catalog checkout_url may use buy.polar.sh", rejects(safeurl.check_json_urls, {"checkout_url": "https://buy.polar.sh/polar_cl_abc"}, "site.json") is None)
 check("other json field may not use buy.polar.sh", rejects(safeurl.check_json_urls, {"url": "https://buy.polar.sh/polar_cl_abc"}, "t.json") is not None)
 check("polar.sh rejected even as checkout_url", rejects(safeurl.check_json_urls, {"checkout_url": "https://polar.sh/evilorg/x"}, "t.json") is not None)
-with tempfile.TemporaryDirectory() as _td:
-    _real = safeurl.ROOT
-    safeurl.ROOT = Path(_td).resolve()
-    (safeurl.ROOT / "a").mkdir()
-    for fn, body in {"ok.svg": '<svg xmlns="http://www.w3.org/2000/svg"><path d="M0 0"/></svg>',
-                     "script.svg": "<svg><script>alert(1)</script></svg>", "onload.svg": '<svg onload="x()"></svg>',
-                     "fo.svg": "<svg><foreignObject></foreignObject></svg>", "ext.svg": '<svg><image href="https://evil.example/a.png"/></svg>',
-                     "css.svg": '<svg><rect style="fill:url(https://evil.example/x)"/></svg>'}.items():
-        (safeurl.ROOT / "a" / fn).write_text(body)
-        r = rejects(safeurl.check_asset, "a/" + fn, "t")
-        check(f"svg {fn}: {'accepted' if fn == 'ok.svg' else 'rejected'}", (r is None) if fn == "ok.svg" else (r is not None), r)
-    check("svg not in repo rejected", rejects(safeurl.check_asset, "a/missing.svg", "t") is not None)
-    safeurl.ROOT = _real
+for fn in ("a/x.svg", "a/X.SVG", "/assets/x.svg"):
+    check(f"svg image rejected: {fn}", rejects(safeurl.check_asset, fn, "t") is not None)
+check("svg src in sample.json rejected", rejects(safeurl.check_json_urls, {"cards": [{"src": "assets/a.svg"}]}, "t.json") is not None)
 
 # ---------- unit: raw HTML in content stays text ----------
 HOSTILE_TEXT = [

@@ -4,7 +4,7 @@ Content (notes, practice pages, landing and compare JSON, catalog copy) is writt
 build itself must be safe whoever writes it. This module is the one place the rules live:
 
   check_link(url)   https URL on the host allowlist (data/link_hosts.json) or a site-relative path
-  check_asset(src)  local image path only (png/jpg/webp/gif/svg/avif), never a URL
+  check_asset(src)  local image path only (png/jpg/webp/gif (SVG is not allowed)), never a URL
   check_json_urls() walk a JSON document, apply the rules to every URL field
   json_script()     JSON for an inline <script>: no </script>, <!-- or <script sequence can survive
   js_str()          one JS string literal for an inline <script>
@@ -44,7 +44,7 @@ def _rules():
 
 _BAD_CHARS = re.compile(r"[\x00-\x20\x7f-\x9f\\<>\"'`]")
 _SCHEME = re.compile(r"^[A-Za-z][A-Za-z0-9+.\-]*:")
-_ASSET = re.compile(r"/?[A-Za-z0-9_][A-Za-z0-9_./\-]*\.(?:png|jpe?g|webp|gif|svg|avif)", re.I)
+_ASSET = re.compile(r"/?[A-Za-z0-9_][A-Za-z0-9_./\-]*\.(?:png|jpe?g|webp|gif)", re.I)
 
 
 _CHECKOUT_HOSTS = ("buy.polar.sh", "polar.sh")
@@ -82,24 +82,9 @@ def check_asset(src, where="image"):
     """Return src if it is a local image path (no scheme, no '..'), else raise UnsafeContent."""
     s = src if isinstance(src, str) else ""
     if not _ASSET.fullmatch(s) or ".." in s.split("/") or "//" in s:
-        raise UnsafeContent(f"UNSAFE CONTENT: {where}: image source {src!r} must be a local asset path ending in png/jpg/webp/gif/svg/avif (no URL, no '..')")
-    if s.lower().endswith(".svg"):
-        check_svg(s, where)
+        raise UnsafeContent(f"UNSAFE CONTENT: {where}: image source {src!r} must be a local asset path ending in png/jpg/webp/gif (SVG is not allowed) (no URL, no '..')")
     return s
 
-
-_SVG_BAD = re.compile(r"<\s*(?:script|foreignObject|iframe|object|embed|use|image|a|style|animate|set)\b|\bon[a-z]+\s*=|javascript:|data:|<!(?:ENTITY|DOCTYPE)|@import|(?:xlink:)?href\s*=\s*[\"']?(?!#)|url\(\s*[\"']?(?!#)|https?:|//", re.I)
-
-
-def check_svg(rel, where):
-    """An SVG is served from our origin and can run script, so only an SVG file already in the repo is allowed, and it
-    must be plain shapes: no script, event handlers, foreignObject, style, links or any external reference."""
-    f = (ROOT / rel.lstrip("/")).resolve()
-    if ROOT not in f.parents or not f.is_file():
-        raise UnsafeContent(f"UNSAFE CONTENT: {where}: SVG {rel!r} is not a file already in the repo")
-    m = _SVG_BAD.search(f.read_text(errors="replace").replace("http://www.w3.org/2000/svg", "").replace("http://www.w3.org/1999/xlink", ""))
-    if m:
-        raise UnsafeContent(f"UNSAFE CONTENT: {where}: SVG {rel!r} contains {m.group(0)!r} (script, handler, link or external reference)")
 
 
 _URL_KEY = re.compile(r"(?:^|_)(?:url|href|base)$", re.I)
