@@ -1977,5 +1977,35 @@ DIAGRAMS.update({
     "aldehyde-vs-ketone-nucleophilic-addition": ak_hydration,
 })
 
+
+def abx_ionization():
+    # Percent charged from Henderson-Hasselbalch, using the approximate pKa values stated in the note.
+    ph = np.linspace(0, 14, 600)
+    amine = 100 / (1 + 10 ** (ph - 4.6))    # aniline present as anilinium
+    acid = 100 / (1 + 10 ** (4.2 - ph))     # benzoic acid present as benzoate
+    phenol = 100 / (1 + 10 ** (10.0 - ph))  # phenol present as phenoxide
+    fig, ax = plt.subplots(figsize=(8.5, 5.2))
+    ax.plot(ph, amine, color=GREY, lw=2.6, label="Aniline as anilinium (pKa 4.6)")
+    ax.plot(ph, acid, color=ACC, lw=2.6, label="Benzoic acid as benzoate (pKa 4.2)")
+    ax.plot(ph, phenol, color=TEAL, lw=2.6, label="Phenol as phenoxide (pKa 10.0)")
+    for x, lab in [(0, "1 M HCl"), (8.3, "sat. NaHCO3"), (14, "1 M NaOH")]:
+        ax.plot([x, x], [-3, 102], color=INK, ls="--", lw=1)
+        ax.text(x, 105, lab, ha="center", va="bottom", fontsize=10)
+    ax.set_xlim(-1, 15)
+    ax.set_ylim(-3, 114)
+    ax.set_xticks(range(0, 15, 2))
+    ax.set_yticks([0, 25, 50, 75, 100])
+    ax.set_xlabel("pH of the aqueous wash")
+    ax.set_ylabel("Percent in charged, water-soluble form")
+    ax.set_title("Which compound is charged at each wash pH", fontsize=12, loc="left", fontweight="bold")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=1, frameon=False, fontsize=10)
+    fig.tight_layout()
+    save(fig, "acid-base-extraction")
+
+
+DIAGRAMS.update({
+    "acid-base-extraction": abx_ionization,
+})
+
 if __name__ == "__main__":
     main()
