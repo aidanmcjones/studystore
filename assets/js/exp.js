@@ -145,10 +145,16 @@
   function refFor(seen, entry) {
     var parts = [], land = H.getAttribute("data-landing") || "";
     if (/^[a-z0-9-]{1,61}$/.test(land)) parts.push("go." + land);
-    if (/^[np]\.[a-z0-9-]{1,80}$/.test(entry || "")) parts.push("e." + entry); // entry page: n.<note slug> or p.<practice slug>
     if (utmCampaign) parts.push("c." + utmCampaign);
     Object.keys(seen).sort().forEach(function (k) { parts.push(k + "." + seen[k]); });
-    return parts.length ? ("ss~" + parts.join("~")).slice(0, 100) : "";
+    var ref = parts.length ? ("ss~" + parts.join("~")).slice(0, 100) : "";
+    // entry page last (n.<note slug> or p.<practice slug>): only its slug is cut, never the short fixed fields before it
+    var m = /^([np])\.([a-z0-9-]{1,80})$/.exec(entry || "");
+    if (m) {
+        var head = (ref || "ss") + "~e." + m[1] + ".", room = 100 - head.length;
+        if (room >= 8) ref = head + m[2].slice(0, room);
+    }
+    return ref;
   }
   function tagPolar(u, seen, entry) {
     var ref = refFor(seen, entry);
