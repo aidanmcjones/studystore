@@ -4,6 +4,7 @@ export const DIRS = new Set([
  "/go/bio-biochem-bundle/",
  "/go/enzyme-inhibition/",
  "/go/mcat-1a/",
+ "/go/sheet-1d/",
  "/notes/",
  "/practice/",
  "/practice/10a/",
