@@ -1,4 +1,4 @@
-/* /refund/?c=<code>: one-time refund confirmation. The code is read from the URL, but nothing is sent on page load:
+/* /refund-confirm/?c=<code>: one-time refund confirmation. The code is read from the URL, but nothing is sent on page load:
    only a click on the button POSTs a refund_confirm event to /api/e (the existing anonymous beacon). Link scanners and
    unfurlers load the page without running a click, so they cannot confirm. */
 (function () {

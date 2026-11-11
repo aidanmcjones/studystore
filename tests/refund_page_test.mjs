@@ -1,12 +1,14 @@
-// /refund/?c=<code>: loading the page never confirms; only a click on "Confirm refund" POSTs the event.
+// /refund-confirm/?c=<code>: loading the page never confirms; only a click on "Confirm refund" POSTs the event.
 // Run after build.py: node tests/refund_page_test.mjs
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import vm from "node:vm";
 
-const html = fs.readFileSync("refund/index.html", "utf8");
+const html = fs.readFileSync("refund-confirm/index.html", "utf8");
 assert.match(html, /<button[^>]*id="rc-go"[^>]*>Confirm refund<\/button>/, "visible Confirm refund button");
 assert.match(html, /<meta name="robots" content="noindex">/);
+assert.match(html, /<noscript>[^]*reply to the email[^]*order number[^]*<\/noscript>/, "visible no-JS fallback");
+assert.doesNotMatch(html, /30 minutes/, "no timing promise");
 assert.doesNotMatch(html, /fetch\(|\/api\/e/, "no inline beacon: nothing can fire on load");
 const src = fs.readFileSync("assets/js/refund.js", "utf8");
 
