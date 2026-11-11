@@ -1,0 +1,9 @@
+{
+  "slug": "sheet-1d",
+  "pack": "1d-metabolism-bioenergetics",
+  "headline": "The full 3-page 1D cheat sheet, plus 461 cards",
+  "subhead": "The 1D pack: 461 Anki cards, a 3-page cheat sheet, an 11-page study guide and 57 practice questions for MCAT category 1D, metabolism and bioenergetics.",
+  "default_utm": {"utm_source": "go", "utm_campaign": "sheet-1d"},
+  "preview_ids": ["sheet-1"],
+  "question_ids": [1, 2, 3, 4, 5]
+}
