@@ -6,6 +6,7 @@ blockquotes, horizontal rules, fenced code, images (![alt](path "caption")),
 Quiz block:  :::quiz  with  Q: ...  /  A: ...  lines, closed by  :::
 """
 import re, html
+from safeurl import check_link, check_asset, UnsafeContent
 
 def slugify(t):
     return re.sub(r"[^a-z0-9]+", "-", re.sub(r"<[^>]+>", "", t).lower()).strip("-")
@@ -38,11 +39,18 @@ def extract_quiz(text):
 
 _KEEP = ("sub", "sup")
 
+def _link(m):
+    """[text](url): the URL must pass safeurl.check_link (https on the host allowlist, or site-relative) and is written
+    as an escaped attribute value. The text was already escaped by inline()."""
+    url = check_link(html.unescape(m.group(2)), f"markdown link [{html.unescape(m.group(1))[:40]}]")
+    return f'<a href="{html.escape(url, quote=True)}">{m.group(1)}</a>'
+
 def inline(t):
     codes = []
     def stash(m):
         codes.append(f"<code>{html.escape(m.group(1))}</code>")
         return f"\x00{len(codes)-1}\x00"
+    t = t.replace("\x00", "")  # the stash markers below must not come from content
     t = re.sub(r"`([^`]+)`", stash, t)
     t = html.escape(t, quote=False)
     t = re.sub(r"&amp;(#\d+|#x[0-9a-fA-F]+|[a-zA-Z]+);", r"&\1;", t)
@@ -50,7 +58,7 @@ def inline(t):
         t = t.replace(f"&lt;{tag}&gt;", f"<{tag}>").replace(f"&lt;/{tag}&gt;", f"</{tag}>")
     t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
     t = re.sub(r"(?<![\w*])\*(?!\s)(.+?)(?<!\s)\*(?![\w*])", r"<em>\1</em>", t)
-    t = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", lambda m: f'<a href="{m.group(2)}">{m.group(1)}</a>', t)
+    t = re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", _link, t)
     return re.sub(r"\x00(\d+)\x00", lambda m: codes[int(m.group(1))], t)
 
 def _img(line, prefix):
@@ -58,10 +66,29 @@ def _img(line, prefix):
     if not m:
         return None
     alt, src, cap = m.groups()
-    if not re.match(r"https?:", src):
-        src = prefix + src
+    src = prefix + check_asset(html.unescape(src), f"markdown image ![{alt[:40]}]")  # local assets only
     c = f"<figcaption>{inline(cap)}</figcaption>" if cap else ""
-    return f'<figure><img src="{src}" alt="{html.escape(alt)}" loading="lazy">{c}</figure>'
+    return f'<figure><img src="{html.escape(src, quote=True)}" alt="{html.escape(alt)}" loading="lazy">{c}</figure>'
+
+def lint(text, path):
+    """Check every image and link in a whole content file (frontmatter, quiz and question lines included) and raise
+    UnsafeContent naming `path` and the line number. convert() applies the same rules, so this only adds the location."""
+    fm = re.match(r"---\n.*?\n---\n", text, re.S)
+    skip = fm.group(0).count("\n") if fm else 0
+    fence = False
+    for no, ln in enumerate(text.splitlines(), 1):
+        if no <= skip:
+            continue
+        if ln.startswith("```"):
+            fence = not fence
+            continue
+        if fence:
+            continue
+        try:
+            if _img(ln, "") is None:
+                inline(ln)
+        except UnsafeContent as e:
+            raise UnsafeContent(f"{path}:{no}: {e}") from None
 
 def convert(text, asset_prefix=""):
     lines = text.strip("\n").splitlines()

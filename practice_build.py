@@ -11,7 +11,8 @@ no "official exam" claims, answer letters not all identical.
 """
 import json, re, html
 from pathlib import Path
-from mdlite import convert, parse_frontmatter, inline
+from mdlite import convert, parse_frontmatter, inline, lint as md_lint
+import safeurl
 
 STYLE = """<style>
 .practice .crumbs{font-size:.9rem;color:var(--muted);margin:18px 0 6px}
@@ -57,9 +58,15 @@ def parse_questions(text, fname):
 def load(root, products, note_slugs):
     d = Path(root) / "content" / "practice"
     cats = json.loads((d / "categories.json").read_text())
+    for code, c in cats.items():  # these go into hrefs and ids unescaped
+        if not re.fullmatch(r"[0-9A-Za-z]{1,4}", code) or not re.fullmatch(r"[a-z0-9][a-z0-9-]*", str(c.get("slug", ""))):
+            raise SystemExit(f"content/practice/categories.json: bad code {code!r} or slug {c.get('slug')!r}")
     pages, seen = [], {}
     for f in sorted(d.glob("*.md")):
+        md_lint(f.read_text(), f"content/practice/{f.name}")  # unsafe link or image: build stops naming file and line
         meta, text = parse_frontmatter(f.read_text())
+        if not re.fullmatch(r"[a-z0-9][a-z0-9-]*", f.stem):  # the slug goes into hrefs and ids unescaped
+            raise SystemExit(f"{f.name}: file name must be lowercase letters, digits and hyphens")
         for req in ("title", "description", "aamc", "category", "cluster", "product", "published"):
             if req not in meta:
                 raise SystemExit(f"{f.name}: missing frontmatter '{req}'")
@@ -144,14 +151,14 @@ def _jsonld(p, BASE, notes_by_slug):
         {"@type": "ListItem", "position": 2, "name": f"{p['meta']['aamc']} {p['cat']['title']}",
          "item": f"{BASE}/practice/{p['cat']['slug']}/index.html"},
         {"@type": "ListItem", "position": 3, "name": p["meta"]["title"], "item": url}]}
-    return "".join(f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False).replace("</", "<\\/")}</script>\n'
+    return "".join(f'<script type="application/ld+json">{safeurl.json_script(o)}</script>\n'
                    for o in (quiz, crumbs))
 
 def _crumbs_ld(base, *pairs):
     o = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": i, "name": n, "item": u}
         for i, (n, u) in enumerate([("StudyStore", base + "/")] + list(pairs), 1)]}
-    return f'<script type="application/ld+json">{json.dumps(o, ensure_ascii=False)}</script>\n'
+    return f'<script type="application/ld+json">{safeurl.json_script(o)}</script>\n'
 
 CTA_ARM_PAGES = set()  # set by build.py
 SOCIAL_CTA_PAGES = set()  # set by build.py
@@ -184,7 +191,7 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
         more += '<li><a href="{{root}}practice/index.html">All practice questions</a></li><li><a href="{{root}}notes/index.html">Free study notes</a></li><li><a href="{{root}}tools/mcat-study-schedule.html">Build an MCAT study schedule</a></li>'
         body = fill(tpl, dict(
             cat_slug=p["cat"]["slug"], cat_code=m["aamc"], cat_title=html.escape(p["cat"]["title"]),
-            title=html.escape(m["title"]), published=m["published"], nq=str(len(p["qs"])),
+            title=html.escape(m["title"]), published=html.escape(m["published"]), nq=str(len(p["qs"])),
             mins=str(max(5, round(len(p["qs"]) * 1.5))), description=html.escape(m["description"]),
             primer=convert(_esc(p["primer_md"])), notelinks=notelinks,
             offer_mid="{{offer:mid:%s:p.%s}}" % (m["product"], p["slug"]), offer_end="{{offer:end:%s:p.%s}}" % (m["product"], p["slug"]),
