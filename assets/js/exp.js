@@ -8,6 +8,11 @@
  *   reference_id=<id>.<variant>~... (shown experiments); Lemon Squeezy links (dormant provider)
  *   get checkout[custom][exp_<id>]=<variant> and utm tags.
  * - A click on any checkout link sends cta_click and checkout_click (the old build sent only checkout_click).
+ * - Sends engaged once per page on the first scroll, tap or key press, so bot page loads can be excluded.
+ * - QA traffic: ?qa=1 (sticky in this browser until ?qa=0) or an automated browser (navigator.webdriver) sends
+ *   utm_source=selftest, which ops/experiments.py and campaign_stats.py already exclude.
+ * - Landing pages (/go/<slug>/) may set a default first touch with <html data-utm-source data-utm-campaign>;
+ *   tags in the URL always win.
  * - Sends nothing when Do Not Track or Global Privacy Control is on.
  */
 (function () {
@@ -34,13 +39,22 @@
 
   var path = location.pathname;
   var q = new URLSearchParams(location.search);
-  // Remember the first-touch utm tags for this session (sessionStorage).
+  if (q.get("qa") === "1") store("ss_qa", "1");
+  if (q.get("qa") === "0") { try { W.localStorage.removeItem("ss_qa"); } catch (e) {} }
+  var isQA = store("ss_qa") === "1" || navigator.webdriver === true;
+  // Remember the first-touch utm tags for this session (sessionStorage). A landing page's default applies
+  // only when neither the URL nor the session has a tag.
   function utm(k) {
     var v = q.get(k);
     try { if (v) W.sessionStorage.setItem("ss_" + k, v); else v = W.sessionStorage.getItem("ss_" + k); } catch (e) {}
+    if (!v) {
+      v = H.getAttribute("data-" + k.replace("_", "-")) || "";
+      try { if (v) W.sessionStorage.setItem("ss_" + k, v); } catch (e) {}
+    }
     return (v || "").slice(0, 60);
   }
-  var utmSource = utm("utm_source"), utmCampaign = utm("utm_campaign");
+  var utmSource = isQA ? "selftest" : utm("utm_source"), utmCampaign = utm("utm_campaign");
+  W.ssQA = isQA;
   var utmExtra = { utm_medium: utm("utm_medium"), utm_content: utm("utm_content"), utm_term: utm("utm_term") };
   var refDomain = "";
   try { if (D.referrer) { var r = new URL(D.referrer).hostname; if (r !== location.hostname) refDomain = r; } } catch (e) {}
@@ -79,7 +93,12 @@
   function applyNoteLayout(v) {
     var art = D.querySelector("article.note"); if (!art) return false;
     var ctas = art.querySelectorAll("aside.cta"); if (!ctas.length) return false;
-    if (v.layout === "end_only" && ctas.length > 1) ctas[0].style.display = "none";
+    if (v.layout === "end_only" && ctas.length > 1) {
+      ctas[0].style.display = "none";
+      // its "Not ready to buy?" capture would otherwise sit alone with no offer above it
+      var nx = ctas[0].nextElementSibling;
+      if (nx && nx.classList.contains("waitlist-cta")) nx.style.display = "none";
+    }
     if (v.layout === "early") {
       var paras = art.querySelectorAll(".prose > p");
       var anchor = paras[Math.min(2, paras.length - 1)];
@@ -121,10 +140,20 @@
   }
   function isCheckout(a) { return !!checkoutHost(a); }
   // Polar checkout links copy utm_* and reference_id into the checkout session metadata.
+  // reference_id: ss~go.<landing slug>~c.<utm_campaign>~<exp>.<variant>... (each part only when present), max 100
+  // chars, so an order can be traced to its landing page, campaign and shown variants.
+  function refFor(seen) {
+    var parts = [], land = H.getAttribute("data-landing") || "";
+    if (/^[a-z0-9-]{1,61}$/.test(land)) parts.push("go." + land);
+    if (utmCampaign) parts.push("c." + utmCampaign);
+    Object.keys(seen).sort().forEach(function (k) { parts.push(k + "." + seen[k]); });
+    return parts.length ? ("ss~" + parts.join("~")).slice(0, 100) : "";
+  }
   function tagPolar(u, seen) {
-    var ref = Object.keys(seen).sort().map(function (k) { return k + "." + seen[k]; }).join("~");
-    if (ref) u.searchParams.set("reference_id", ("ss~" + ref).slice(0, 100)); else u.searchParams.delete("reference_id");
-    if (!u.searchParams.get("utm_source")) u.searchParams.set("utm_source", utmSource || "site-cta"); // keep a link's own tag (site-cta)
+    var ref = refFor(seen);
+    if (ref) u.searchParams.set("reference_id", ref); else u.searchParams.delete("reference_id");
+    if (isQA) u.searchParams.set("utm_source", "selftest");
+    else if (!u.searchParams.get("utm_source")) u.searchParams.set("utm_source", utmSource || "site-cta"); // keep a link's own tag (site-cta)
     if (utmCampaign) u.searchParams.set("utm_campaign", utmCampaign);
     Object.keys(utmExtra).forEach(function (k) { if (utmExtra[k]) u.searchParams.set(k, utmExtra[k]); });
   }
@@ -145,6 +174,7 @@
   }
 
   // Named events from other scripts (waitlist.js). Only known names; the email is never sent here.
+  W.ssExp = { refFor: refFor, tagPolar: tagPolar }; // for tests
   W.ssTrack = function (event) { if (event === "subscribe") send(event, W.__ssSeen || {}); };
 
   function onLinkClick(ev) {
@@ -158,6 +188,17 @@
     if (kind) send(kind, W.__ssSeen || {});
   }
   D.addEventListener("click", onLinkClick, true);
+  // engaged: once per page, on the first real interaction (scroll past 120 px, tap, click or key press).
+  var engaged = false;
+  function engage() {
+    if (engaged) return; engaged = true;
+    W.removeEventListener("scroll", onScroll); D.removeEventListener("pointerdown", engage, true); D.removeEventListener("keydown", engage, true);
+    send("engaged", W.__ssSeen || {});
+  }
+  function onScroll() { if ((W.scrollY || 0) > 120) engage(); }
+  W.addEventListener("scroll", onScroll, { passive: true });
+  D.addEventListener("pointerdown", engage, true);
+  D.addEventListener("keydown", engage, true);
   D.addEventListener("auxclick", onLinkClick, true); // middle click / open in new tab
 
   function start() {

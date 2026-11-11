@@ -717,3 +717,52 @@ html:not(.js) .qitem.qx{display:none}
 .midsample{display:flex;gap:18px;align-items:center;flex-wrap:wrap;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:2em 0}
 .midsample img{width:150px;height:auto;border-radius:8px;border:1px solid var(--line)}
 .midsample p{margin:.3em 0;max-width:52ch}
+
+/* one-offer hero (home + /go/ landing pages) */
+section.hero.offerhero{min-height:0;padding:clamp(28px,5vw,72px) 0 clamp(40px,6vw,88px)}
+.offer h1{font-size:clamp(2.1rem,4.4vw,4rem);max-width:15ch;margin-bottom:.3em;min-height:0}
+.goquiz{padding:clamp(24px,4vw,56px) 0 clamp(48px,6vw,88px)}
+.offer .lead{min-height:0;margin-bottom:22px;max-width:46ch}
+.offerhook{display:inline-block;font-size:.92rem;margin:0 0 14px;padding:6px 12px;border-radius:99px;background:var(--surface);border:1px solid var(--line)}
+.offerbuy{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:0 0 18px}
+.btn.big{padding:18px 28px;font-size:1.08rem;background:var(--acid);border-color:var(--acid);color:#0d1512}
+.btn.big::before{background:var(--ink)}
+.btn.big:hover{color:var(--bg)}
+.offerterms{margin:0;font-size:.78rem;letter-spacing:.03em;color:var(--muted)}
+.offerterms a{color:inherit}
+.offer .offercap{margin:0 0 14px;max-width:560px;border-radius:12px}
+.offer .offercap .wlform label{font-size:.95rem}
+.offer .offercap .wlform{display:grid;grid-template-columns:1fr auto;gap:8px 10px;align-items:end}
+.offer .offercap .wlform label,.offer .offercap .wlnote,.offer .offercap .wlstatus,.offer .offercap .rhp{grid-column:1/-1}
+.offer .offercap .wlform .btn{width:auto}
+.offer .offercap .wlform>input,.offer .offercap .wlform>.btn{margin:0;align-self:center;min-height:46px}
+.offer .offercap .wlform>label{margin:0}
+.offermore{font-size:.95rem;color:var(--muted);margin:0}
+.offerpv{position:relative;padding:0 7% 28px 0}
+.offerpv figure{margin:0}
+.offerpv img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+.offerpv .pv-sheet{width:100%}
+.offerpv .pv-card{position:absolute;right:0;bottom:-4%;width:40%;transform:rotate(2.5deg)}
+.offerpv .stagecap{margin-top:16px;max-width:60%}
+.offerpv .stagecap a{color:inherit}
+.ankisec{padding:clamp(48px,7vw,96px) 0}
+.ankigrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,430px);gap:clamp(32px,5vw,72px);align-items:center}
+@media (max-width:980px){.ankigrid{grid-template-columns:1fr}.offerpv{max-width:560px}}
+@media (max-width:760px){
+  .offer h1{font-size:clamp(1.9rem,8.4vw,2.6rem)}
+  .offer .lead{font-size:1rem;margin-bottom:16px}
+  .offer .eyebrow{margin-bottom:10px}
+  .btn.big{width:100%;justify-content:center}
+  .offerbuy{gap:8px}
+  .offer .offercap .wlform{grid-template-columns:1fr}
+  .offer .offercap .wlform .btn{width:100%}
+  .offerpv .pv-card{width:44%}
+  .offerpv .stagecap{max-width:50%}
+}
+/* pack page: real preview beside the hero copy */
+.phero.withpv{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,4vw,64px);align-items:center}
+.herobuy .refundline{display:block;margin-top:10px;font-size:.85rem;color:var(--muted)}
+.herobuy .refundline a{color:inherit}
+@media (max-width:980px){.phero.withpv{grid-template-columns:1fr}}
+/* a sent form hides itself (waitlist.js sets hidden); display rules above must not override that */
+.waitlist .wlform[hidden],.waitlist .wldone[hidden]{display:none!important}

@@ -23,14 +23,14 @@ function check(name, h) {
   ok(/unsubscribe/i.test(b) && /privacy(?:\.html)?\b/.test(b), name + ": unsubscribe and privacy note");
   ok(/assets\/free\/studystore-mcat-sample-cheat-sheet\.pdf/.test(b), name + ": sample PDF link");
   ok(/href="[^"]*notes\/(?:index\.html)?"/.test(b), name + ": sampler still reachable without signup");
-  ok((h.match(/data-waitlist/g) || []).length === (h.match(/id="(su|wl|cc2?)-email"/g) || []).length, name + ": one id per form");
+  ok((h.match(/data-waitlist/g) || []).length === (h.match(/id="(su|wl|cc2?|hero|go)-email"/g) || []).length, name + ": one id per form");
 }
 
 check("home", rd("index.html"));
 const notes = readdirSync(new URL("../notes/", import.meta.url)).filter((f) => f.endsWith(".html") && f !== "index.html");
 ok(notes.length > 0, "notes built");
 for (const f of notes) check("notes/" + f, rd("notes/" + f));
-const ids = (rd("index.html").match(/ id="(su|wl|cc)-email"/g) || []);
+const ids = (rd("index.html").match(/ id="(su|wl|cc|hero)-email"/g) || []);
 ok(new Set(ids).size === ids.length, "home: unique email input ids");
 
 console.log(`signup_test: ${pass} passed, ${fail} failed`);

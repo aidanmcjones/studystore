@@ -1,0 +1,10 @@
+{
+  "slug": "enzyme-inhibition",
+  "pack": "1a-amino-acids-proteins",
+  "hook": "From today's question of the day",
+  "headline": "Enzyme inhibition, done in one sitting",
+  "subhead": "The 1A pack: Anki deck, 3-page cheat sheet with the enzyme kinetics and inhibition tables, and practice questions for MCAT category 1A.",
+  "default_utm": {"utm_source": "shorts", "utm_campaign": "qotd-enzyme-inhibition"},
+  "preview_ids": ["sheet-2", "card-3"],
+  "question_ids": [4, 3]
+}

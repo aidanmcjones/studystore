@@ -76,18 +76,23 @@ def signup(root):
 </section>"""
 
 
-def capture(root, uid="cc"):
+CAPTURE_LABEL = "Not ready to buy? Get our free 3-page amino acids, proteins and enzymes cheat sheet (PDF)."
+CAPTURE_BUTTON = "Send the free cheat sheet"
+
+
+def capture(root, uid="cc", label=CAPTURE_LABEL, button=CAPTURE_BUTTON, extra_class=""):
     """One-field capture shown right under the inline checkout CTA (arm studystore-email-capture-a). Same contract and
-    handlers as signup(); ids are prefixed cc- so it can sit on a page next to signup() or box()."""
+    handlers as signup(); ids are prefixed cc- so it can sit on a page next to signup() or box(). The PDF download
+    appears in place as soon as the form is sent (_done), so the sample never waits on the confirm email."""
     consent = html.escape(CONSENT_TEXT)
-    return f"""<section class="waitlist waitlist-cta" aria-label="Free sample pack by email">
+    return f"""<section class="waitlist waitlist-cta{(' ' + extra_class) if extra_class else ''}" aria-label="Free cheat sheet by email">
 <form class="wlform" method="post" action="/api/subscribe" data-waitlist data-endpoint="{BRAIN_SUBSCRIBE_URL}">
-<label for="{uid}-email">Not ready to buy? Get a free sample pack by email.</label>
+<label for="{uid}-email">{html.escape(label)}</label>
 <input id="{uid}-email" name="email" type="email" required maxlength="254" autocomplete="email" inputmode="email" spellcheck="false" placeholder="you@example.com">
 <div class="rhp" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
 <input type="hidden" name="list_id" value="{LIST_ID}"><input type="hidden" name="consent_text" value="{consent}">
 <input type="hidden" name="source_url" value=""><input type="hidden" name="utm_source" value=""><input type="hidden" name="utm_medium" value=""><input type="hidden" name="utm_campaign" value="">
-<button type="submit" class="btn small">Send the free sample</button>
+<button type="submit" class="btn small">{html.escape(button)}</button>
 <p class="wlnote"><span class="wlconsent">{consent}</span> <a href="{root}privacy.html">Privacy</a></p>
 <p class="wlstatus" role="status" aria-live="polite"></p>
 </form>

@@ -1,23 +1,22 @@
-<p class="meta wrap narrow" id="qotd-note" hidden>Here from our question-of-the-day video? The <a class="textlink" href="{{root}}practice/index.html">free MCAT practice question sets</a> are here.</p>
-<script>if(/[?&]utm_campaign=social-qotd(&|$)/.test(location.search))document.getElementById("qotd-note").hidden=false</script>
-<section class="hero" id="top">
-<canvas class="helix" aria-hidden="true"></canvas>
-<div class="helix-label mono" aria-hidden="true"><span class="hl-a">Fig. 0 &middot; alpha helix &middot; 3.6 residues per turn &middot; i to i+4 H-bonds</span><span class="hl-b">Denatured &middot; same primary sequence, no secondary structure</span></div>
+<section class="hero offerhero" id="top">
 <div class="wrap herogrid">
 <div class="herocopy">
-<p class="eyebrow mono"><span class="dot"></span>{{stat:available}} MCAT packs &middot; featured: {{feat:aamc}} {{feat:title}}</p>
-<h1 class="split" data-exp="home_hero" data-exp-field="headline">Study less text. Recall more science.</h1>
-<p class="lead reveal" data-exp="home_hero" data-exp-field="subhead">StudyStore makes original, high-yield MCAT study packs. Each pack pairs a tight Anki deck with a printable cheat sheet, written from scratch and checked card by card.</p>
-<div class="ctas reveal"><a class="btn magnetic" href="#packs" data-track="cta"><span data-exp="primary_cta" data-exp-field="label">See the packs</span><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M4 10h11m-4-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2"/></svg></a><a class="btn ghost magnetic" href="#quiz"><span>Try {{feat_quiz_n}} sample questions</span></a></div>
-{{topbuy:feat}}
-<ul class="facts mono reveal" aria-label="All {{stat:available}} packs at a glance">
-<li><b>{{stat:cards}}</b> Anki flashcards</li>
-<li><b>{{stat:diagrams}}</b> original diagrams</li>
-<li><b>{{stat:questions}}</b> practice questions</li>
-<li><b>From {{stat:price_from}}</b> per pack</li>
-</ul>
+{{hero_offer}}
 </div>
 <div class="herostage">
+{{hero_preview}}
+</div>
+</div>
+</section>
+
+<div class="marquee mono" aria-label="Topics in {{feat:title}}"><div class="track">
+{{feat_marquee}}
+</div></div>
+
+<section class="ankisec" id="cards"><div class="wrap ankigrid">
+<div><p class="eyebrow mono">Real cards</p><h2>Flip a few cards from the decks.</h2>
+<p class="lead">One card per MCAT section, picked at random from the shipped decks. Short answers, original diagrams, nothing padded.</p>
+<p><a class="btn ghost" href="#quiz">Try {{feat_quiz_n}} sample questions</a></p></div>
 <div class="anki" data-anki data-pick aria-roledescription="flashcard demo" aria-label="Sample cards from every MCAT section">
 <div class="ankibar mono"><span class="ankitag">{{feat:tag}}</span><span class="ankicount" aria-live="polite">1 / {{home_anki_n}}</span></div>
 <div class="ankiflip">
@@ -25,17 +24,7 @@
 </div>
 <div class="ankictl"><button type="button" class="btn small" data-flip>Show answer</button><button type="button" class="btn small ghost" data-next>Next card</button></div>
 </div>
-<p class="stagecap mono">Real cards from our decks, one per MCAT section, picked at random. Click to flip.</p>
-</div>
-</div>
-<a class="scrollcue mono" href="#kinetics" aria-label="Scroll to the demo"><span>Scroll</span><i></i></a>
-</section>
-
-<div class="marquee mono" aria-label="Topics in {{feat:title}}"><div class="track">
-{{feat_marquee}}
-</div></div>
-
-<section class="wlsec"><div class="wrap narrow">{{signup}}</div></section>
+</div></section>
 
 <section class="kinetics" id="kinetics" data-scrub data-pickscene>
 <div class="wrap kgrid">
@@ -238,14 +227,11 @@
 {{pack_grid}}
 <div class="pgrid" style="margin-top:56px">
 <article class="pcard sampler reveal" id="sampler">
-<div class="pcardtop mono"><span>Free sampler</span><span class="soonpill">Coming soon</span></div>
-<h3 data-exp="sampler_offer" data-exp-field="title">Free sampler</h3>
-<p class="pprice"><span class="amt">$0</span><span class="mono">five one-page sheets</span></p>
-<p data-exp="sampler_offer" data-exp-field="body">A free set of one-page MCAT sheets is on the way. The free notes are open now, no signup needed, and each links to the pack that covers its topic.</p>
-<p><a class="textlink" href="{{root}}notes/index.html" data-track="sampler" data-exp="sampler_offer" data-exp-field="link">Read the free notes now</a></p>
-<ol class="fan mono" aria-label="Sampler topics">
-<li><b>01</b>Amino acids</li><li><b>02</b>Buffers and Henderson-Hasselbalch</li><li><b>03</b>Enzyme kinetics and inhibition</li><li><b>04</b>Glycolysis</li><li><b>05</b>DC circuits</li>
-</ol>
+<div class="pcardtop mono"><span>Free sample</span><span class="soonpill">Free</span></div>
+<h3>Free 1A cheat sheet</h3>
+<p class="pprice"><span class="amt">$0</span><span class="mono">3-page PDF</span></p>
+<p>The real 3-page cheat sheet from the {{feat:title}} pack. Enter your email at the top of the page and the download link appears right away. The free notes and practice sets need no signup at all.</p>
+<p><a class="textlink" href="#top" data-track="sampler">Get the free cheat sheet</a> &middot; <a class="textlink" href="{{root}}notes/index.html" data-track="sampler">Read the free notes</a></p>
 </article>
 </div>
 <ul class="promises mono reveal">
@@ -268,6 +254,8 @@
 <p class="meta"><a class="textlink" href="{{root}}practice/index.html">Free MCAT practice questions by topic</a> &middot; <a class="textlink" href="{{root}}tools/mcat-study-schedule.html">Free MCAT study schedule generator</a></p>
 </div>
 </section>
+
+<section class="wlsec"><div class="wrap narrow">{{signup}}</div></section>
 
 <section id="faq" class="faqsec">
 <div class="wrap fgrid2">
