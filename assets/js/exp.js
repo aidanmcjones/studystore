@@ -107,9 +107,16 @@
     return true;
   }
 
+  // A config is usable only when experiments is an array of objects with a string id and status. Anything else
+  // (failed load, malformed JSON, wrong shape) leaves stored assignments untouched.
+  function validCfg(cfg) {
+    return !!cfg && Array.isArray(cfg.experiments) && cfg.experiments.every(function (x) {
+      return x && typeof x === "object" && typeof x.id === "string" && typeof x.status === "string" && Array.isArray(x.variants || []);
+    });
+  }
   function run(cfg) {
-    var changed = false;
-    (cfg.experiments || []).forEach(function (exp) {
+    var changed = false, valid = validCfg(cfg), list = valid ? cfg.experiments : [];
+    list.forEach(function (exp) {
       if (exp.status !== "running") return;
       try { if (!new RegExp(exp.pages).test(path)) return; } catch (e) { return; }
       var cur = assign[exp.id], v = null;
@@ -118,11 +125,18 @@
       var shown = exp.id === "note_cta" ? applyNoteLayout(v) : applyText(exp, v);
       if (shown) applied[exp.id] = v.id;
     });
+    // Only after a successfully loaded, valid list: drop stored assignments for experiments that are not running now
+    // (ended or removed; an empty list drops all), so an old session never carries them into a reference_id or event.
+    var live = null;
+    if (valid) {
+      live = {}; list.forEach(function (x) { if (x.status === "running") live[x.id] = 1; });
+      Object.keys(assign).forEach(function (k) { if (!live[k]) { delete assign[k]; changed = true; } });
+    }
     if (changed) store("ss_exp", JSON.stringify(assign));
     // Seen set: experiments this session has actually been shown (for click attribution).
     var seen; try { seen = JSON.parse(store("ss_seen") || "{}") || {}; } catch (e) { seen = {}; }
     Object.keys(applied).forEach(function (k) { seen[k] = applied[k]; });
-    Object.keys(seen).forEach(function (k) { if (assign[k] !== seen[k]) delete seen[k]; });
+    Object.keys(seen).forEach(function (k) { if ((live && !live[k]) || assign[k] !== seen[k]) delete seen[k]; });
     store("ss_seen", JSON.stringify(seen));
     W.__ssSeen = seen;
     tagCheckoutLinks(seen);
@@ -142,15 +156,22 @@
   // Polar checkout links copy utm_* and reference_id into the checkout session metadata.
   // reference_id: ss~go.<landing slug>~c.<utm_campaign>~<exp>.<variant>... (each part only when present), max 100
   // chars, so an order can be traced to its landing page, campaign and shown variants.
-  function refFor(seen) {
+  function refFor(seen, entry) {
     var parts = [], land = H.getAttribute("data-landing") || "";
     if (/^[a-z0-9-]{1,61}$/.test(land)) parts.push("go." + land);
     if (utmCampaign) parts.push("c." + utmCampaign);
     Object.keys(seen).sort().forEach(function (k) { parts.push(k + "." + seen[k]); });
-    return parts.length ? ("ss~" + parts.join("~")).slice(0, 100) : "";
+    var ref = parts.length ? ("ss~" + parts.join("~")).slice(0, 100) : "";
+    // entry page last (n.<note slug> or p.<practice slug>): only its slug is cut, never the short fixed fields before it
+    var m = /^([np])\.([a-z0-9-]{1,80})$/.exec(entry || "");
+    if (m) {
+        var head = (ref || "ss") + "~e." + m[1] + ".", room = 100 - head.length;
+        if (room >= 8) ref = head + m[2].slice(0, room);
+    }
+    return ref;
   }
-  function tagPolar(u, seen) {
-    var ref = refFor(seen);
+  function tagPolar(u, seen, entry) {
+    var ref = refFor(seen, entry);
     if (ref) u.searchParams.set("reference_id", ref); else u.searchParams.delete("reference_id");
     if (isQA) u.searchParams.set("utm_source", "selftest");
     else if (!u.searchParams.get("utm_source")) u.searchParams.set("utm_source", utmSource || "site-cta"); // keep a link's own tag (site-cta)
@@ -164,7 +185,7 @@
       var a = links[i], host = checkoutHost(a); if (!host) continue;
       try {
         var u = new URL(a.href);
-        if (host === "polar") { tagPolar(u, seen); a.href = u.toString(); continue; }
+        if (host === "polar") { var en = a.closest("[data-entry]"); tagPolar(u, seen, en ? en.getAttribute("data-entry") : ""); a.href = u.toString(); continue; }
         Object.keys(seen).forEach(function (k) { u.searchParams.set("checkout[custom][exp_" + k + "]", seen[k]); });
         if (utmSource) u.searchParams.set("checkout[custom][utm_source]", utmSource);
         if (utmCampaign) u.searchParams.set("checkout[custom][utm_campaign]", utmCampaign);
@@ -197,12 +218,45 @@
   }
   function onScroll() { if ((W.scrollY || 0) > 120) engage(); }
   W.addEventListener("scroll", onScroll, { passive: true });
+
+  // offer_view: once per offer block (data-offer="mid" | "end") when at least a third of it enters the viewport.
+  // Mobile bar (.offerbar): appears after 50% scroll, dismissible for the session, hidden while an offer block is on screen.
+  function offers() {
+    var blocks = D.querySelectorAll("[data-offer]"), bar = D.querySelector(".offerbar");
+    var visible = 0, dismissed = false, mq = W.matchMedia ? W.matchMedia("(max-width: 700px)") : { matches: false };
+    try { dismissed = W.sessionStorage.getItem("ss_bar_x") === "1"; } catch (e) {}
+    function syncBar() {
+      if (!bar || dismissed || !mq.matches) { if (bar) bar.hidden = true; return; }
+      var h = D.documentElement, max = h.scrollHeight - W.innerHeight;
+      bar.hidden = !(max > 0 && (W.scrollY || 0) / max >= 0.5) || visible > 0;
+    }
+    if ("IntersectionObserver" in W && blocks.length) {
+      var seenBlk = {};
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          var k = e.target.getAttribute("data-offer");
+          if (e.isIntersecting) { visible++; if (!seenBlk[k]) { seenBlk[k] = 1; send("offer_view", W.__ssSeen || {}); } }
+          else if (e.target.__in) visible--;
+          e.target.__in = e.isIntersecting;
+        });
+        syncBar();
+      }, { threshold: 0.33 });
+      for (var i = 0; i < blocks.length; i++) io.observe(blocks[i]);
+    }
+    if (bar) {
+      var x = bar.querySelector(".offerbar-x");
+      if (x) x.addEventListener("click", function () { dismissed = true; bar.hidden = true; try { W.sessionStorage.setItem("ss_bar_x", "1"); } catch (e) {} });
+      W.addEventListener("scroll", syncBar, { passive: true });
+      W.addEventListener("resize", syncBar);
+    }
+  }
+  if (D.readyState === "loading") D.addEventListener("DOMContentLoaded", offers); else offers();
   D.addEventListener("pointerdown", engage, true);
   D.addEventListener("keydown", engage, true);
   D.addEventListener("auxclick", onLinkClick, true); // middle click / open in new tab
 
   function start() {
-    fetch(CONFIG, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : { experiments: [] }; })
+    fetch(CONFIG, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; })
       .then(run).catch(function () { try { tagCheckoutLinks({}); } catch (e) {} done(); send("view", {}); });
   }
   if (D.readyState === "loading") D.addEventListener("DOMContentLoaded", start); else start();

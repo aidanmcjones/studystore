@@ -178,21 +178,6 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
         if p["tools"]:
             notelinks += ("<br><strong>Free tools:</strong> " + " &middot; ".join(
                 f'<a href="{{{{root}}}}tools/{x}.html">{TOOLS[x]}</a>' for x in p["tools"]))
-        if m["product"] != "none":
-            pr = m["product"]
-            lead = ("is a {{price:%s}} pack" % pr) if m.get("product_status") == "available" else ("is coming soon, a planned {{price:%s}} pack" % pr)
-            import products_build as PB
-            _s = (PB.sample(pr) or {}) if m.get("product_status") == "available" else {}
-            _c = (_s.get("cards") or [None])[0]
-            _thumb = (f'<a class="cta-thumb" href="{{{{root}}}}products/{pr}.html#preview"><img src="{{{{root}}}}{_c["src"]}" alt="Real sample card from the pack" width="{_c["w"]}" height="{_c["h"]}" loading="lazy"></a>'
-                      if _c and (Path(root) / _c["src"]).exists() else "")
-            cta = (f'<aside class="cta">{_thumb}<div><strong>Want this as spaced-repetition cards?</strong>'
-                   f'<p>{{{{title:{pr}}}}} {lead} with original Anki cards, a study guide and a printable cheat sheet. '
-                   f'<a href="{{{{root}}}}products/{pr}.html">See what is inside</a>.</p></div>{{{{buy:{pr}}}}}</aside>')
-        else:
-            cta = (f'<aside class="cta"><div><strong>Study this topic with spaced repetition</strong>'
-                   f'<p>StudyStore makes one pack per MCAT content category: original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions. '
-                   f'<a href="{{{{root}}}}products/index.html">See every pack</a>.</p></div></aside>')
         same = [x for x in live if x["meta"]["aamc"] == m["aamc"] and x["slug"] != p["slug"]]
         more = "".join(f'<li><a href="{{{{root}}}}practice/{x["slug"]}.html">{html.escape(x["meta"]["title"])}</a></li>' for x in same)
         more += f'<li><a href="{{{{root}}}}practice/{p["cat"]["slug"]}/index.html">All {m["aamc"]} practice pages</a></li>'
@@ -201,8 +186,9 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
             cat_slug=p["cat"]["slug"], cat_code=m["aamc"], cat_title=html.escape(p["cat"]["title"]),
             title=html.escape(m["title"]), published=m["published"], nq=str(len(p["qs"])),
             mins=str(max(5, round(len(p["qs"]) * 1.5))), description=html.escape(m["description"]),
-            primer=convert(_esc(p["primer_md"])), notelinks=notelinks, cta_top=("{{topbuy:%s%s}}" % (m["product"], ":social-cta" if "practice/" + p["slug"] in SOCIAL_CTA_PAGES else "")) if m["product"] != "none" else "",
-            questions="".join(_q_html(i, q) for i, q in enumerate(p["qs"], 1)), cta=cta, more=more))
+            primer=convert(_esc(p["primer_md"])), notelinks=notelinks,
+            offer_mid="{{offer:mid:%s:p.%s}}" % (m["product"], p["slug"]), offer_end="{{offer:end:%s:p.%s}}" % (m["product"], p["slug"]),
+            questions="".join(_q_html(i, q) for i, q in enumerate(p["qs"], 1)), more=more))
         emit(f"practice/{p['slug']}.html", m.get("seo_title") or f'{m["title"]} | StudyStore', m.get("seo_description") or m["description"], body,
              noindex=p["noindex"], og_type="article", head_extra=STYLE + _jsonld(p, base_url, notes_by_slug),
              lastmod=m.get("updated", m["published"]))

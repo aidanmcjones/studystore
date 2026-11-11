@@ -1,7 +1,7 @@
 // exp.js reference_id on Polar links: home, pack and /go/ pages all carry ss~..., /go/ adds go.<slug>, a campaign adds
 // c.<utm_campaign>; experiments follow; max 100 chars. Runs exp.js in a minimal fake browser.
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import vm from "node:vm";
 const src = readFileSync(new URL("../assets/js/exp.js", import.meta.url), "utf8");
 let pass = 0;
@@ -25,6 +25,23 @@ function load({ search = "", landing = "" } = {}) {
 }
 const tag = (exp, seen) => { const u = new URL("https://buy.polar.sh/polar_cl_x"); exp.tagPolar(u, seen); return u; };
 
+{ // entry page (notes and practice offers): fixed fields first (landing, campaign, experiments), entry last; only the slug is cut
+  const x = load({ search: "?utm_campaign=reel7" }), mk = (en, seen = { note_cta: "a" }) => { const u = new URL("https://buy.polar.sh/polar_cl_x"); x.tagPolar(u, seen, en); return u.searchParams.get("reference_id"); };
+  assert.equal(mk("n.enantiomers-vs-diastereomers"), "ss~c.reel7~note_cta.a~e.n.enantiomers-vs-diastereomers"); pass++;
+  assert.equal(mk("p.8c-status-roles"), "ss~c.reel7~note_cta.a~e.p.8c-status-roles"); pass++;
+  assert.equal(mk("x.bad slug"), "ss~c.reel7~note_cta.a"); pass++;
+  assert.equal(mk("n.enantiomers-vs-diastereomers", {}), "ss~c.reel7~e.n.enantiomers-vs-diastereomers"); pass++;
+  // longest slug in the site with a long campaign and two experiments: nothing before the slug is cut
+  const slugs = [...readdirSync(new URL("../content/notes/", import.meta.url)).map((f) => "n." + f.replace(/\.md$/, "")),
+                 ...readdirSync(new URL("../content/practice/", import.meta.url)).filter((f) => f.endsWith(".md")).map((f) => "p." + f.replace(/\.md$/, ""))];
+  const longest = slugs.sort((a, b) => b.length - a.length)[0];
+  const camp = "c".repeat(40), y = load({ search: "?utm_campaign=" + camp });
+  const u2 = new URL("https://buy.polar.sh/polar_cl_x"); y.tagPolar(u2, { home_hero: "e", price_frame: "d" }, longest);
+  const r = u2.searchParams.get("reference_id");
+  assert.ok(r.length <= 100, r); pass++;
+  assert.ok(r.startsWith(`ss~c.${camp}~home_hero.e~price_frame.d~e.${longest[0]}.`), r); pass++;
+  assert.ok(r.endsWith(longest.slice(2, 12)) || longest.length < 70 || r.includes(longest.slice(2, 12)), r); pass++;
+}
 let e = load({ landing: "enzyme-inhibition", search: "?utm_source=shorts&utm_campaign=qotd-enzyme" });
 let u = tag(e, {});
 assert.equal(u.searchParams.get("reference_id"), "ss~go.enzyme-inhibition~c.qotd-enzyme"); pass++;
