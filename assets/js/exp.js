@@ -142,15 +142,16 @@
   // Polar checkout links copy utm_* and reference_id into the checkout session metadata.
   // reference_id: ss~go.<landing slug>~c.<utm_campaign>~<exp>.<variant>... (each part only when present), max 100
   // chars, so an order can be traced to its landing page, campaign and shown variants.
-  function refFor(seen) {
+  function refFor(seen, entry) {
     var parts = [], land = H.getAttribute("data-landing") || "";
     if (/^[a-z0-9-]{1,61}$/.test(land)) parts.push("go." + land);
+    if (/^[np]\.[a-z0-9-]{1,80}$/.test(entry || "")) parts.push("e." + entry); // entry page: n.<note slug> or p.<practice slug>
     if (utmCampaign) parts.push("c." + utmCampaign);
     Object.keys(seen).sort().forEach(function (k) { parts.push(k + "." + seen[k]); });
     return parts.length ? ("ss~" + parts.join("~")).slice(0, 100) : "";
   }
-  function tagPolar(u, seen) {
-    var ref = refFor(seen);
+  function tagPolar(u, seen, entry) {
+    var ref = refFor(seen, entry);
     if (ref) u.searchParams.set("reference_id", ref); else u.searchParams.delete("reference_id");
     if (isQA) u.searchParams.set("utm_source", "selftest");
     else if (!u.searchParams.get("utm_source")) u.searchParams.set("utm_source", utmSource || "site-cta"); // keep a link's own tag (site-cta)
@@ -164,7 +165,7 @@
       var a = links[i], host = checkoutHost(a); if (!host) continue;
       try {
         var u = new URL(a.href);
-        if (host === "polar") { tagPolar(u, seen); a.href = u.toString(); continue; }
+        if (host === "polar") { var en = a.closest("[data-entry]"); tagPolar(u, seen, en ? en.getAttribute("data-entry") : ""); a.href = u.toString(); continue; }
         Object.keys(seen).forEach(function (k) { u.searchParams.set("checkout[custom][exp_" + k + "]", seen[k]); });
         if (utmSource) u.searchParams.set("checkout[custom][utm_source]", utmSource);
         if (utmCampaign) u.searchParams.set("checkout[custom][utm_campaign]", utmCampaign);
@@ -197,6 +198,39 @@
   }
   function onScroll() { if ((W.scrollY || 0) > 120) engage(); }
   W.addEventListener("scroll", onScroll, { passive: true });
+
+  // offer_view: once per offer block (data-offer="mid" | "end") when at least a third of it enters the viewport.
+  // Mobile bar (.offerbar): appears after 50% scroll, dismissible for the session, hidden while an offer block is on screen.
+  function offers() {
+    var blocks = D.querySelectorAll("[data-offer]"), bar = D.querySelector(".offerbar");
+    var visible = 0, dismissed = false, mq = W.matchMedia ? W.matchMedia("(max-width: 700px)") : { matches: false };
+    try { dismissed = W.sessionStorage.getItem("ss_bar_x") === "1"; } catch (e) {}
+    function syncBar() {
+      if (!bar || dismissed || !mq.matches) { if (bar) bar.hidden = true; return; }
+      var h = D.documentElement, max = h.scrollHeight - W.innerHeight;
+      bar.hidden = !(max > 0 && (W.scrollY || 0) / max >= 0.5) || visible > 0;
+    }
+    if ("IntersectionObserver" in W && blocks.length) {
+      var seenBlk = {};
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          var k = e.target.getAttribute("data-offer");
+          if (e.isIntersecting) { visible++; if (!seenBlk[k]) { seenBlk[k] = 1; send("offer_view", W.__ssSeen || {}); } }
+          else if (e.target.__in) visible--;
+          e.target.__in = e.isIntersecting;
+        });
+        syncBar();
+      }, { threshold: 0.33 });
+      for (var i = 0; i < blocks.length; i++) io.observe(blocks[i]);
+    }
+    if (bar) {
+      var x = bar.querySelector(".offerbar-x");
+      if (x) x.addEventListener("click", function () { dismissed = true; bar.hidden = true; try { W.sessionStorage.setItem("ss_bar_x", "1"); } catch (e) {} });
+      W.addEventListener("scroll", syncBar, { passive: true });
+      W.addEventListener("resize", syncBar);
+    }
+  }
+  if (D.readyState === "loading") D.addEventListener("DOMContentLoaded", offers); else offers();
   D.addEventListener("pointerdown", engage, true);
   D.addEventListener("keydown", engage, true);
   D.addEventListener("auxclick", onLinkClick, true); // middle click / open in new tab

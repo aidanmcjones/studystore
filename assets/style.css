@@ -766,3 +766,23 @@ section.hero.offerhero{min-height:0;padding:clamp(28px,5vw,72px) 0 clamp(40px,6v
 @media (max-width:980px){.phero.withpv{grid-template-columns:1fr}}
 /* a sent form hides itself (waitlist.js sets hidden); display rules above must not override that */
 .waitlist .wlform[hidden],.waitlist .wldone[hidden]{display:none!important}
+
+/* topic-matched offer on notes and practice pages (build.py offer_block), and the slim mobile bar */
+.offerblk{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:14px 24px;align-items:start;margin:2em 0;padding:20px;border:1px solid var(--ink);border-radius:14px;background:var(--surface)}
+.offerblk .ofimg{display:block;grid-row:1}
+.offerblk .ofimg img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line)}
+.offerblk .ofbody p{margin:.4em 0}
+.offerblk .ofh{font-size:1.3rem;margin:.1em 0 .3em}
+.offerblk .ofbuy{margin:.8em 0 .4em}
+.offerblk .ofnote{font-size:.9rem;color:var(--muted)}
+.offerblk .ofcap{grid-column:1/-1;margin:0;max-width:none}
+.offerbar{display:none}
+@media(max-width:700px){
+  .offerblk{grid-template-columns:1fr;padding:16px}
+  .offerblk .ofimg{max-width:420px}
+  .offerbar:not([hidden]){display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;align-items:center;gap:10px;padding:8px 8px 8px 14px;padding-bottom:calc(8px + env(safe-area-inset-bottom));background:var(--surface);border-top:1px solid var(--ink)}
+  .offerbar p{margin:0;flex:1;font-size:.9rem;line-height:1.25;min-width:0}
+  .offerbar .btn{flex:0 0 auto;white-space:nowrap}
+  .offerbar-x{flex:0 0 auto;width:36px;height:36px;border:0;background:transparent;font-size:1.4rem;line-height:1;color:var(--ink);cursor:pointer}
+  body:has(.offerbar){padding-bottom:64px}
+}

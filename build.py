@@ -126,6 +126,46 @@ def topbuy(slug, root=""):
             f'<p>{html.escape(p["price"])} one-time, instant download, 14-day refund. Inside: {html.escape(inside)}. '
             f'<a href="{root}products/{slug}.html?utm_source=site-cta" data-track="cta">See what is inside</a>.{prev}</p></div>{btn}</aside>' + waitlist.capture(root))
 
+def offer_block(slug, root, entry, where):
+    """Topic-matched offer for notes and practice pages (entry "n.<slug>" or "p.<slug>", where "mid" or "end"): the pack that covers
+    the page's topic, its real cheat-sheet page (fixed size, lazy), catalog price, one buy button whose reference_id carries the entry
+    page, a plain statement of which free PDF the capture sends, and the free cheat-sheet capture. Bundles and "none" fall back to the
+    featured 1A pack. Also emits the slim mobile bar once per page (where == "end")."""
+    p = products.get(slug)
+    if not p or p.get("members") or not PB.buyable(p):
+        p = PB.featured(site)
+    slug = p["slug"]
+    c = p.get("contents") or {}
+    inside = (f'{c["cards"]} Anki cards, a {c.get("cheatsheet_pages")}-page cheat sheet, a {c.get("guide_pages")}-page study guide '
+              f'and {c.get("questions")} practice questions') if c.get("cards") else "Anki cards, a cheat sheet, a study guide and practice questions"
+    btn = PB.buy(products, slug, "btn", root=root)
+    if re.fullmatch(r"[0-9A-Z]{2,3}", p["aamc"]):
+        btn = btn.replace(f'>Buy now, {html.escape(p["price"])}<', f'>Buy the {html.escape(p["aamc"])} pack, {html.escape(p["price"])}<', 1)
+    s = PB.sample(slug) or {}
+    sh = next((x for x in (s.get("sheets") or []) if x.get("kind") == "sheet" and (ROOT / x["src"]).exists()), None)
+    img = (f'<a class="ofimg" href="{root}products/{slug}.html#preview" data-track="cta"><img src="{root}{html.escape(sh["src"])}" '
+           f'alt="{html.escape(p["title"])}: {html.escape(sh["alt"])}" width="{sh["w"]}" height="{sh["h"]}" loading="lazy" decoding="async"></a>') if sh else ""
+    one_a = p["aamc"] == "1A"
+    if one_a:
+        label = waitlist.CAPTURE_LABEL
+        free = "The free PDF is the 3-page cheat sheet from this pack."
+    else:
+        label = ("Not ready to buy? Get a free 3-page MCAT cheat sheet (PDF). It is the 1A amino acids, proteins and enzymes sheet, "
+                 f"not the {p['aamc']} sheet.")
+        free = ""
+    head = "Want this topic as a full pack?" if where == "mid" else "Keep going with the pack for this topic"
+    cap = waitlist.capture(root, "of-" + where, label=label, button=waitlist.CAPTURE_BUTTON, extra_class="ofcap")
+    out = (f'<aside class="offerblk" data-offer="{where}" data-entry="{html.escape(entry)}" aria-label="Pack for this topic">'
+           f'{img}<div class="ofbody"><p class="eyebrow mono">MCAT {html.escape(p["aamc"])} pack</p><h2 class="ofh">{head}</h2>'
+           f'<p><strong>{html.escape(p["title"])}</strong>: {html.escape(p["price"])} one-time, instant download, 14-day refund. Inside: {html.escape(inside)}. '
+           f'<a href="{root}products/{slug}.html" data-track="cta">See what is inside</a>.</p>'
+           f'<p class="ofbuy">{btn}</p>{('<p class="ofnote">' + html.escape(free) + '</p>') if free else ""}</div>{cap}</aside>')
+    if where == "end":
+        out += (f'<div class="offerbar" data-entry="{html.escape(entry)}" hidden><p>MCAT {html.escape(p["aamc"])} pack, {html.escape(p["price"])}</p>'
+                f'{btn.replace("btn", "btn small", 1)}<button type="button" class="offerbar-x" aria-label="Dismiss">&times;</button></div>')
+    return out
+
+
 def _offer_parts(slug, root, src="site-cta", preview_ids=()):
     """Shared pieces of the one-offer block (home hero and /go/ landing pages): pack, contents line, buy button and
     the real preview images from content/packs/<slug>/sample.json."""
@@ -183,6 +223,9 @@ def render(text, root):
             if kind == "buy": return buy(slug, root=root)
             if kind == "waitlist": return waitlist.box(root, launch=not PB.buyable(products[slug]))
             if kind == "topbuy": return topbuy(slug, root)
+            if kind == "offer":
+                w, pr, entry = slug.split(":", 2)
+                return offer_block(pr, root, entry, w)
             if kind == "buyghost": return buy(slug, "btn ghost", root=root)
             if kind == "price": return products[slug]["price"]
             if kind == "title": return html.escape(products[slug]["title"])
@@ -388,44 +431,33 @@ def build_note(n, all_notes):
                           for q, a in n["quiz"]]}
     crumbs = breadcrumbs(("Free MCAT study notes", f"{BASE}/notes/index.html"), (m["title"], page_url))
     ld = ld_json(article, faq, crumbs)
-    _s = (PB.sample(m["product"]) or {}) if m["product"] != "none" else {}
-    _c = (_s.get("cards") or [None])[0]
-    _thumb = (f'<a class="cta-thumb" href="{{{{root}}}}products/{m["product"]}.html#preview"><img src="{{{{root}}}}{_c["src"]}" alt="Real sample card from the pack" width="{_c["w"]}" height="{_c["h"]}" loading="lazy"></a>'
-              if _c and (ROOT / _c["src"]).exists() else "")
-    cta = (f'<aside class="cta">{_thumb}<div><strong>Want this as spaced-repetition cards?</strong>'
-           f'<p>{{{{title:{m["product"]}}}}} is a {{{{price:{m["product"]}}}}} pack with original Anki cards, an illustrated study guide, a printable cheat sheet and practice questions, with a 14-day refund. '
-           f'<a href="{{{{root}}}}products/{m["product"]}.html?utm_source=site-cta">See what is inside</a>.</p></div>{{{{buy:{m["product"]}}}}}</aside>')
     related_pack = (f'<aside class="related-pack"><h2>Related pack</h2><p>This note is part of <a href="{{{{root}}}}products/{m["product"]}.html?utm_source=site-cta">'
                     f'{{{{title:{m["product"]}}}}}</a>: original Anki cards, a study guide and practice questions on the same topic.</p></aside>'
                     if m["product"] != "none" else "")
-    mid = (f'<aside class="midsample">{_thumb}<div><strong>Free sample from the pack</strong>'
-           f'<p>Real card from {{{{title:{m["product"]}}}}}. <a href="{{{{root}}}}products/{m["product"]}.html?utm_source=site-cta#preview">See sample cards and 5 free questions</a>, '
-           f'or <a href="{{{{root}}}}notes/index.html" data-track="sampler">browse the free MCAT sampler</a>.</p></div></aside>'
-           if m["product"] != "none" else "")
+    _entry = "n." + slug
+    mid = "{{offer:mid:%s:%s}}" % (m["product"], _entry)
+    end_offer = "{{offer:end:%s:%s}}" % (m["product"], _entry)
+    # the page's own answer and first section come first; the offer follows the first <h2> section
     _parts = re.split(r"(?=<h2[ >])", body_html)
     if len(_parts) > 2:
-        _k = (len(_parts) + 1) // 2
-        body_html = "".join(_parts[:_k]) + mid + "".join(_parts[_k:])
+        body_html = "".join(_parts[:2]) + mid + "".join(_parts[2:])
     else:
         body_html += mid
     body = f"""<article class="note wrap narrow">
 <p class="eyebrow">Free MCAT study note</p>
 <h1>{html.escape(m["title"])}</h1>
 <p class="meta">By StudyStore &middot; Published {m["published"]} &middot; {mins} min read &middot; {n["words"]} words</p>
-{("{{topbuy:%s%s:preview}}" % (m["product"], ":social-cta" if out[:-5] in SOCIAL_CTA_PAGES else "")) if m["product"] != "none" else ""}
 <div class="prose">
 {body_html}
 </div>
-{cta}
 <h2 id="quiz">Check yourself: 5-question mini-quiz</h2>
 <p class="meta">Try each question first, then click it to reveal the answer.</p>
 <div class="quiz">{quiz_html}</div>
-{{{{signup}}}}
 <h2>Keep studying</h2>
 <ul>{rel}<li><a href="index.html">All free notes</a></li></ul>
 {related_pack}
 {practice_build.note_links(slug, PRACTICE_LIVE, None)}
-{cta}{waitlist.capture("{{root}}", "cc2")}
+{end_offer}
 <p class="meta">Written by StudyStore from standard scientific facts. Study aid only. Always check values against the reference your exam provides.</p>
 <p class="meta"><a class="reportlink" href="{{{{root}}}}report.html" data-report>Spotted a mistake or want a topic covered? Report a problem or suggest something</a></p>
 </article>"""

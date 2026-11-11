@@ -25,6 +25,13 @@ function load({ search = "", landing = "" } = {}) {
 }
 const tag = (exp, seen) => { const u = new URL("https://buy.polar.sh/polar_cl_x"); exp.tagPolar(u, seen); return u; };
 
+{ // entry page (notes and practice offers): e.n.<note slug> / e.p.<practice slug>, ahead of campaign and experiments
+  const x = load({ search: "?utm_campaign=reel7" }), mk = (en) => { const u = new URL("https://buy.polar.sh/polar_cl_x"); x.tagPolar(u, { note_cta: "a" }, en); return u.searchParams.get("reference_id"); };
+  assert.equal(mk("n.enantiomers-vs-diastereomers"), "ss~e.n.enantiomers-vs-diastereomers~c.reel7~note_cta.a"); pass++;
+  assert.equal(mk("p.8c-status-roles"), "ss~e.p.8c-status-roles~c.reel7~note_cta.a"); pass++;
+  assert.equal(mk("x.bad slug"), "ss~c.reel7~note_cta.a"); pass++;
+  assert.ok(mk("n." + "a".repeat(80)).length <= 100); pass++;
+}
 let e = load({ landing: "enzyme-inhibition", search: "?utm_source=shorts&utm_campaign=qotd-enzyme" });
 let u = tag(e, {});
 assert.equal(u.searchParams.get("reference_id"), "ss~go.enzyme-inhibition~c.qotd-enzyme"); pass++;
