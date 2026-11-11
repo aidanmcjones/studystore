@@ -32,13 +32,27 @@ def hosts():
     return _HOSTS
 
 
+_RULES = None
+
+
+def _rules():
+    global _RULES
+    if _RULES is None:
+        _RULES = {h.lower(): frozenset(p.rstrip("/") for p in ps) for h, ps in json.loads((ROOT / "data" / "link_hosts.json").read_text()).get("path_exact", {}).items()}
+    return _RULES
+
+
 _BAD_CHARS = re.compile(r"[\x00-\x20\x7f-\x9f\\<>\"'`]")
 _SCHEME = re.compile(r"^[A-Za-z][A-Za-z0-9+.\-]*:")
 _ASSET = re.compile(r"/?[A-Za-z0-9_][A-Za-z0-9_./\-]*\.(?:png|jpe?g|webp|gif|svg|avif)", re.I)
 
 
-def check_link(url, where="link"):
-    """Return url if it is an allowed link, else raise UnsafeContent. `where` names the file and line for the message."""
+_CHECKOUT_HOSTS = ("buy.polar.sh", "polar.sh")
+
+
+def check_link(url, where="link", catalog=False):
+    """Return url if it is an allowed link, else raise UnsafeContent. `where` names the file and line for the message.
+    catalog=True is for the catalog's own checkout_url fields: only there may buy.polar.sh appear."""
     u = url if isinstance(url, str) else ""
     if not u or _BAD_CHARS.search(u):
         raise UnsafeContent(f"UNSAFE CONTENT: {where}: URL {url!r} is empty or has a space, control, quote, angle bracket or backslash")
@@ -54,6 +68,11 @@ def check_link(url, where="link"):
             raise UnsafeContent(f"UNSAFE CONTENT: {where}: URL {url!r} does not parse")
         if "@" in parts.netloc or port not in (None, 443):
             raise UnsafeContent(f"UNSAFE CONTENT: {where}: URL {url!r} has credentials or a port")
+        if host.endswith(_CHECKOUT_HOSTS) and not (catalog and host == "buy.polar.sh"):
+            raise UnsafeContent(f"UNSAFE CONTENT: {where}: {host} links are checkout links and may only come from the catalog's checkout_url fields (URL {url!r})")
+        rules = _rules().get(host)
+        if rules is not None and parts.path.rstrip("/") not in rules:
+            raise UnsafeContent(f"UNSAFE CONTENT: {where}: path {parts.path!r} on {host} is not in data/link_hosts.json path_exact (URL {url!r})")
         if host not in hosts():
             raise UnsafeContent(f"UNSAFE CONTENT: {where}: host {host!r} is not in data/link_hosts.json (URL {url!r})")
     return u
@@ -64,7 +83,23 @@ def check_asset(src, where="image"):
     s = src if isinstance(src, str) else ""
     if not _ASSET.fullmatch(s) or ".." in s.split("/") or "//" in s:
         raise UnsafeContent(f"UNSAFE CONTENT: {where}: image source {src!r} must be a local asset path ending in png/jpg/webp/gif/svg/avif (no URL, no '..')")
+    if s.lower().endswith(".svg"):
+        check_svg(s, where)
     return s
+
+
+_SVG_BAD = re.compile(r"<\s*(?:script|foreignObject|iframe|object|embed|use|image|a|style|animate|set)\b|\bon[a-z]+\s*=|javascript:|data:|<!(?:ENTITY|DOCTYPE)|@import|(?:xlink:)?href\s*=\s*[\"']?(?!#)|url\(\s*[\"']?(?!#)|https?:|//", re.I)
+
+
+def check_svg(rel, where):
+    """An SVG is served from our origin and can run script, so only an SVG file already in the repo is allowed, and it
+    must be plain shapes: no script, event handlers, foreignObject, style, links or any external reference."""
+    f = (ROOT / rel.lstrip("/")).resolve()
+    if ROOT not in f.parents or not f.is_file():
+        raise UnsafeContent(f"UNSAFE CONTENT: {where}: SVG {rel!r} is not a file already in the repo")
+    m = _SVG_BAD.search(f.read_text(errors="replace").replace("http://www.w3.org/2000/svg", "").replace("http://www.w3.org/1999/xlink", ""))
+    if m:
+        raise UnsafeContent(f"UNSAFE CONTENT: {where}: SVG {rel!r} contains {m.group(0)!r} (script, handler, link or external reference)")
 
 
 _URL_KEY = re.compile(r"(?:^|_)(?:url|href|base)$", re.I)
@@ -83,7 +118,7 @@ def check_json_urls(obj, where, path=""):
                     check_asset(v, f"{where} {p}")
                 elif _URL_KEY.search(k):
                     if v:
-                        check_link(v, f"{where} {p}")
+                        check_link(v, f"{where} {p}", catalog=(k == "checkout_url"))
                 elif _SCHEMEISH.search(v):
                     raise UnsafeContent(f"UNSAFE CONTENT: {where} {p}: value {v[:60]!r} starts with a script/data scheme or '//'")
             else:

@@ -48,12 +48,12 @@ for name, md in BAD_LINKS.items():
     check(f"link rejected: {name}", rejects(mdlite.convert, md) is not None)
     check(f"link rejected in table cell: {name}", rejects(mdlite.convert, "| a |\n|---|\n| " + md + " |") is not None)
 
-GOOD_LINKS = ["[x](https://buy.polar.sh/abc?a=1&b=2)", "[x](passive-vs-active-transport.html)", "[x](../products/1a.html?utm_source=site-cta)",
+GOOD_LINKS = ["[x](https://students-residents.aamc.org/abc?a=1&b=2)", "[x](passive-vs-active-transport.html)", "[x](../products/1a.html?utm_source=site-cta)",
               "[x](/#sampler)", "[x](https://students-residents.aamc.org/register-mcat-exam/mcat-scheduling-fees)"]
 for md in GOOD_LINKS:
     out = mdlite.convert(md)
     check(f"link kept: {md}", out.startswith('<p><a href="') and "javascript" not in out, out)
-check("& in a URL stays escaped", 'href="https://buy.polar.sh/abc?a=1&amp;b=2"' in mdlite.convert(GOOD_LINKS[0]))
+check("& in a URL stays escaped", 'href="https://students-residents.aamc.org/abc?a=1&amp;b=2"' in mdlite.convert(GOOD_LINKS[0]))
 
 BAD_IMAGES = {
     "reviewer onerror case": "![diagram](a.png\"onerror=\"location='//evil.example'\")",
@@ -74,6 +74,28 @@ out = mdlite.convert("![he said \"hi\" & 'bye' <b>](assets/notes/a.png)")
 check("alt is one escaped attribute", out.count('alt="') == 1 and re.search(r'alt="[^"]*" loading', out) and "<b>" not in out, out)
 out = mdlite.convert("![x](assets/notes/a.png)", asset_prefix="{{root}}")
 check("legit image unchanged", out == '<figure><img src="{{root}}assets/notes/a.png" alt="x" loading="lazy"></figure>', out)
+
+# ---------- unit: checkout hosts, ankiweb paths, svg ----------
+for name, u in {"polar.sh storefront": "https://polar.sh/evilorg/products/x", "buy.polar.sh in markdown": "https://buy.polar.sh/polar_cl_abc",
+                "ankiweb other deck": "https://ankiweb.net/shared/info/1", "ankiweb root": "https://ankiweb.net/"}.items():
+    check(f"link rejected: {name}", rejects(mdlite.convert, f"[x]({u})") is not None)
+check("ankiweb exact deck path kept", rejects(safeurl.check_link, "https://ankiweb.net/shared/info/178384887", "t") is None)
+check("catalog checkout_url may use buy.polar.sh", rejects(safeurl.check_json_urls, {"checkout_url": "https://buy.polar.sh/polar_cl_abc"}, "site.json") is None)
+check("other json field may not use buy.polar.sh", rejects(safeurl.check_json_urls, {"url": "https://buy.polar.sh/polar_cl_abc"}, "t.json") is not None)
+check("polar.sh rejected even as checkout_url", rejects(safeurl.check_json_urls, {"checkout_url": "https://polar.sh/evilorg/x"}, "t.json") is not None)
+with tempfile.TemporaryDirectory() as _td:
+    _real = safeurl.ROOT
+    safeurl.ROOT = Path(_td).resolve()
+    (safeurl.ROOT / "a").mkdir()
+    for fn, body in {"ok.svg": '<svg xmlns="http://www.w3.org/2000/svg"><path d="M0 0"/></svg>',
+                     "script.svg": "<svg><script>alert(1)</script></svg>", "onload.svg": '<svg onload="x()"></svg>',
+                     "fo.svg": "<svg><foreignObject></foreignObject></svg>", "ext.svg": '<svg><image href="https://evil.example/a.png"/></svg>',
+                     "css.svg": '<svg><rect style="fill:url(https://evil.example/x)"/></svg>'}.items():
+        (safeurl.ROOT / "a" / fn).write_text(body)
+        r = rejects(safeurl.check_asset, "a/" + fn, "t")
+        check(f"svg {fn}: {'accepted' if fn == 'ok.svg' else 'rejected'}", (r is None) if fn == "ok.svg" else (r is not None), r)
+    check("svg not in repo rejected", rejects(safeurl.check_asset, "a/missing.svg", "t") is not None)
+    safeurl.ROOT = _real
 
 # ---------- unit: raw HTML in content stays text ----------
 HOSTILE_TEXT = [

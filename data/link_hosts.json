@@ -1,5 +1,5 @@
 {
-  "_note": "Hosts that content (notes, practice, landing, compare, site.json) may link to over https. Anything else fails the build (safeurl.py). Generated 2026-11-11 from the https hosts present in content/, landing/, data/ and site.json, plus the site's own domains and the Polar checkout hosts. To allow a new host, add it here in a reviewed change.",
+  "_note": "Hosts that content (notes, practice, landing, compare, site.json) may link to over https. Anything else fails the build (safeurl.py). Generated 2026-11-11 from the https hosts present in content/, landing/, data/ and site.json, plus the site's own domains and the Polar checkout hosts. To allow a new host, add it here in a reviewed change. path_exact limits a host to those exact paths (ankiweb.net hosts user content). buy.polar.sh is accepted only in catalog checkout_url fields, never in markdown or other fields; polar.sh is not allowed.",
   "hosts": [
     "ankiweb.net",
     "blueprintprep.com",
@@ -7,7 +7,6 @@
     "gradschool.uworld.com",
     "mcat.magoosh.com",
     "medlifemastery.com",
-    "polar.sh",
     "premedtoolkit.com",
     "premiermcatprep.com",
     "source.studystore.co",
@@ -18,5 +17,11 @@
     "www.aamc.org",
     "www.princetonreview.com",
     "www.studystore.co"
-  ]
+  ],
+  "path_exact": {
+    "ankiweb.net": [
+      "/shared/info/178384887",
+      "/shared/info/710572280"
+    ]
+  }
 }
