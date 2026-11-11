@@ -757,6 +757,7 @@ section.hero.offerhero{min-height:0;padding:clamp(28px,5vw,72px) 0 clamp(40px,6v
   .offer .offercap .wlform{grid-template-columns:1fr}
   .offer .offercap .wlform .btn{width:100%}
   .offerpv .pv-card{width:44%}
+  .offerpv .stagecap{max-width:50%}
 }
 /* pack page: real preview beside the hero copy */
 .phero.withpv{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,4vw,64px);align-items:center}

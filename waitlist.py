@@ -76,7 +76,7 @@ def signup(root):
 </section>"""
 
 
-CAPTURE_LABEL = "Not ready to buy? Get the free 3-page cheat sheet (PDF) from the 1A pack."
+CAPTURE_LABEL = "Not ready to buy? Get our free 3-page amino acids, proteins and enzymes cheat sheet (PDF)."
 CAPTURE_BUTTON = "Send the free cheat sheet"
 
 

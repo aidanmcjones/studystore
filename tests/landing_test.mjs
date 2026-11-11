@@ -10,7 +10,8 @@ const sitemap = rd("sitemap.xml");
 const files = readdirSync(new URL("../landing/", import.meta.url)).filter((f) => f.endsWith(".json"));
 ok(files.length > 0, "landing entries exist");
 for (const f of files) {
-  const d = JSON.parse(rd("landing/" + f));
+  let d;
+  try { d = JSON.parse(rd("landing/" + f)); } catch (e) { ok(false, `landing/${f}: not valid JSON (${e.message})`); continue; }
   const out = `go/${d.slug}/index.html`;
   ok(existsSync(new URL("../" + out, import.meta.url)), out + " built");
   if (!existsSync(new URL("../" + out, import.meta.url))) continue;
@@ -25,6 +26,9 @@ for (const f of files) {
   ok(/14-day refund/.test(h), out + ": refund line");
   for (const [k, v] of Object.entries(d.default_utm || {}))
     ok(h.includes(`H.setAttribute("data-${k.replace("_", "-")}",${JSON.stringify(v)})`), out + `: default ${k}`);
+  if (d.question_ids) ok((h.match(/class="qitem"/g) || []).length === d.question_ids.length, out + ": shows exactly the chosen questions");
+  for (const id of d.preview_ids || []) ok(new RegExp(`/${id}\\.webp[?"]`).test(h), out + `: preview ${id} shown`);
+  ok(h.includes('H.setAttribute("data-landing",' + JSON.stringify(d.slug) + ')'), out + ": landing slug for reference_id");
   for (const k of ["hook", "headline", "subhead"]) if (d[k]) ok(h.includes(d[k].replace(/&/g, "&amp;").replace(/'/g, "&#x27;")), out + `: ${k} shown`);
 }
 // home hero: the same one-offer block, one primary buy button above the capture form

@@ -7,6 +7,9 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 python3 build.py
+# Never deploy on a failed check: the same suites CI runs (tests read the built pages, so they run after the build).
+for t in tests/*_test.mjs; do node "$t" >/dev/null || { echo "REFUSING TO DEPLOY, test failed: $t" >&2; exit 4; }; done
+for t in tests/*_test.py; do python3 "$t" >/dev/null || { echo "REFUSING TO DEPLOY, test failed: $t" >&2; exit 4; }; done
 rm -rf .deploy && mkdir .deploy
 rsync -a --prune-empty-dirs \
   --exclude '.*' --exclude '__pycache__/' --exclude '/tools/*.sh' --exclude '/tools/*.py' --exclude 'templates/' --exclude 'content/' \

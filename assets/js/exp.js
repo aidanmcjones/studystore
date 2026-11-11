@@ -140,9 +140,18 @@
   }
   function isCheckout(a) { return !!checkoutHost(a); }
   // Polar checkout links copy utm_* and reference_id into the checkout session metadata.
+  // reference_id: ss~go.<landing slug>~c.<utm_campaign>~<exp>.<variant>... (each part only when present), max 100
+  // chars, so an order can be traced to its landing page, campaign and shown variants.
+  function refFor(seen) {
+    var parts = [], land = H.getAttribute("data-landing") || "";
+    if (/^[a-z0-9-]{1,61}$/.test(land)) parts.push("go." + land);
+    if (utmCampaign) parts.push("c." + utmCampaign);
+    Object.keys(seen).sort().forEach(function (k) { parts.push(k + "." + seen[k]); });
+    return parts.length ? ("ss~" + parts.join("~")).slice(0, 100) : "";
+  }
   function tagPolar(u, seen) {
-    var ref = Object.keys(seen).sort().map(function (k) { return k + "." + seen[k]; }).join("~");
-    if (ref) u.searchParams.set("reference_id", ("ss~" + ref).slice(0, 100)); else u.searchParams.delete("reference_id");
+    var ref = refFor(seen);
+    if (ref) u.searchParams.set("reference_id", ref); else u.searchParams.delete("reference_id");
     if (isQA) u.searchParams.set("utm_source", "selftest");
     else if (!u.searchParams.get("utm_source")) u.searchParams.set("utm_source", utmSource || "site-cta"); // keep a link's own tag (site-cta)
     if (utmCampaign) u.searchParams.set("utm_campaign", utmCampaign);
@@ -165,6 +174,7 @@
   }
 
   // Named events from other scripts (waitlist.js). Only known names; the email is never sent here.
+  W.ssExp = { refFor: refFor, tagPolar: tagPolar }; // for tests
   W.ssTrack = function (event) { if (event === "subscribe") send(event, W.__ssSeen || {}); };
 
   function onLinkClick(ev) {

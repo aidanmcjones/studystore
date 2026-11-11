@@ -291,22 +291,27 @@ def gallery_html(p, root="{{root}}"):
     return '<div class="gallery g4">' + "".join(figs) + ('<div class="sheets">' + "".join(sheets) + "</div>" if sheets else "") + "</div>"
 
 
-def hero_preview_html(p, root, what=None):
-    """Real preview for above the fold: cheat sheet page 1 with a sample card on top (content/packs/<slug>/sample.json)."""
+def hero_preview_html(p, root, what=None, ids=()):
+    """Real preview for above the fold: a cheat sheet (or guide) page with a sample card on top (content/packs/<slug>/sample.json).
+    ids: optional image ids by file stem ("sheet-2", "card-3"), validated by landing.py; default sheet-1 + card-1."""
     s = sample(p["slug"]) or {}
     what = what or (f'{p["aamc"]} pack' if p.get("aamc") else "bundle")
-    sheet = next((x for x in (s.get("sheets") or []) if x.get("kind") == "sheet" and (ROOT / x["src"]).exists()), None)
-    card = next((x for x in (s.get("cards") or []) if (ROOT / x["src"]).exists()), None)
+    stem = lambda x: Path(x["src"]).stem
+    pages = [x for x in (s.get("sheets") or []) if (ROOT / x["src"]).exists()]
+    cards = [x for x in (s.get("cards") or []) if (ROOT / x["src"]).exists()]
+    sheet = next((x for x in pages if stem(x) in ids), None) or next((x for x in pages if x.get("kind") == "sheet"), None)
+    card = next((x for x in cards if stem(x) in ids), None) or (cards[0] if cards else None)
     figs = ""
     if sheet:
-        figs += (f'<figure class="pv-sheet"><img src="{root}{E(sheet["src"])}" alt="{esc(p["title"])} cheat sheet, page 1 (partial preview)" '
+        figs += (f'<figure class="pv-sheet"><img src="{root}{E(sheet["src"])}" alt="{esc(p["title"])}: {esc(sheet["alt"])}" '
                  f'width="{sheet["w"]}" height="{sheet["h"]}" fetchpriority="high"></figure>')
     if card:
         figs += (f'<figure class="pv-card"><img src="{root}{E(card["src"])}" alt="Sample card from {esc(p["title"])}, answer side" '
                  f'width="{card["w"]}" height="{card["h"]}" loading="lazy"></figure>')
     if not figs:
         return ""
-    return (f'<div class="offerpv">{figs}<p class="stagecap mono">Real pages from the {esc(what)}: cheat sheet page 1 and a card. '
+    page = esc(sheet["alt"].split(" (")[0].lower()) if sheet else "a page"
+    return (f'<div class="offerpv">{figs}<p class="stagecap mono">Real pages from the {esc(what)}: {page} and a card. '
             f'<a href="{root}products/{E(p["slug"])}.html#preview" data-track="cta">More previews</a></p></div>')
 
 

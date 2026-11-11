@@ -126,7 +126,7 @@ def topbuy(slug, root=""):
             f'<p>{html.escape(p["price"])} one-time, instant download, 14-day refund. Inside: {html.escape(inside)}. '
             f'<a href="{root}products/{slug}.html?utm_source=site-cta" data-track="cta">See what is inside</a>.{prev}</p></div>{btn}</aside>' + waitlist.capture(root))
 
-def _offer_parts(slug, root, src="site-cta"):
+def _offer_parts(slug, root, src="site-cta", preview_ids=()):
     """Shared pieces of the one-offer block (home hero and /go/ landing pages): pack, contents line, buy button and
     the real preview images from content/packs/<slug>/sample.json."""
     p = products[slug]
@@ -142,16 +142,16 @@ def _offer_parts(slug, root, src="site-cta"):
         inside = (f'{p["pack_count"]} packs, one per content category, each with an Anki deck, a cheat sheet, a study guide and practice questions. '
                   f'Bought separately they cost ${p["list_value_usd"]}')
         first = products.get(p["members"][0])
-        preview = PB.hero_preview_html(first, root, f'{first["aamc"]} pack in this bundle') if first else ""
+        preview = PB.hero_preview_html(first, root, f'{first["aamc"]} pack in this bundle', preview_ids) if first else ""
     else:
-        preview = PB.hero_preview_html(p, root, what)
+        preview = PB.hero_preview_html(p, root, what, preview_ids)
     return p, inside, btn, preview
 
 
-def hero_offer(root, slug=None, hook="", headline="", subhead="", src="site-cta", capture_uid="hero"):
+def hero_offer(root, slug=None, hook="", headline="", subhead="", src="site-cta", capture_uid="hero", preview_ids=()):
     """One clear offer: what it is, who it is for, price, one primary buy button, then the free cheat sheet capture."""
     slug = slug or PB.featured(site)["slug"]
-    p, inside, btn, preview = _offer_parts(slug, root, src)
+    p, inside, btn, preview = _offer_parts(slug, root, src, preview_ids)
     if not PB.buyable(p):
         print(f"WARNING: hero offer {slug} is not buyable; offer block left empty")
         return "", ""
@@ -606,56 +606,35 @@ for tpl, out, title, desc, noindex in PAGES:
 # and "pack" (product or bundle slug); optional "hook", "headline", "subhead" (plain text) and "default_utm" (utm_* map,
 # used only when the visitor URL carries no utm tags).
 # Pages are noindex and stay out of the sitemap. Price, checkout link and previews always come from the catalog.
-LANDING_KEYS = {"slug", "pack", "hook", "headline", "subhead", "default_utm"}
-_UTM_OK = re.compile(r"^[A-Za-z0-9_.\-]{1,60}$")
-
-class _BadLanding(Exception):
-    pass
-
-def load_landings():
-    """Bad entries are skipped with a warning so one typo never stops the whole build; tests/landing_test.mjs fails on them."""
-    out = []
-    for f in sorted((ROOT / "landing").glob("*.json")):
-        try:
-            out.append(_check_landing(f))
-        except (_BadLanding, ValueError, TypeError, AttributeError, KeyError) as e:
-            print(f"LANDING WARNING: skipped {f.name}: {e}")
-    return out
-
-def _check_landing(f):
-    if True:
-        d = json.loads(f.read_text())
-        bad = set(d) - LANDING_KEYS
-        if bad: raise _BadLanding(f"{f.name}: unknown keys {sorted(bad)}")
-        if not re.fullmatch(r"[a-z0-9][a-z0-9-]{0,60}", d.get("slug", "")) or d["slug"] != f.stem:
-            raise _BadLanding(f"{f.name}: slug must be a-z0-9- and match the file name")
-        if d.get("pack") not in products or not PB.buyable(products[d["pack"]]):
-            raise _BadLanding(f"{f.name}: pack {d.get('pack')!r} is not a buyable product or bundle slug")
-        for k in ("hook", "headline", "subhead"):
-            v = d.get(k, "")
-            if not isinstance(v, str) or "\u2014" in v or "\u2013" in v or "<" in v or len(v) > 300:
-                raise _BadLanding(f"{f.name}: {k} must be plain text under 300 chars, no dashes or HTML")
-        u = d.get("default_utm") or {}
-        for k, v in u.items():
-            if k not in ("utm_source", "utm_campaign", "utm_medium", "utm_content") or not _UTM_OK.match(str(v)):
-                raise _BadLanding(f"{f.name}: default_utm {k}={v!r} not allowed")
-        return d
-
-LANDINGS = load_landings()
+import landing as LP
+try:
+    LANDINGS = LP.load(ROOT, products, PB.buyable, PB.sample)
+except LP.LandingError as _e:
+    raise SystemExit(f"LANDING ERROR (build stopped, nothing written for /go/): {_e}")
+import shutil as _sh
+for _d in LP.stale_dirs(ROOT, LANDINGS):  # a removed or renamed entry must not leave a stale page behind
+    print(f"removing stale landing page {_d.relative_to(ROOT)}/")
+    _sh.rmtree(_d)
 for d in LANDINGS:
     root = "/"
     p = products[d["pack"]]
+    sslug, sjson = LP.sample_for(d["pack"], products, PB.sample)
+    ids = d.get("preview_ids") or []
     offer, preview = hero_offer(root, d["pack"], hook=d.get("hook", ""), headline=d.get("headline", ""),
-                                subhead=d.get("subhead", ""), src="", capture_uid="go")
+                                subhead=d.get("subhead", ""), src="", capture_uid="go", preview_ids=ids)
     u = d.get("default_utm") or {}
     setu = "".join(f'H.setAttribute("data-{k.replace("_", "-")}",{json.dumps(v)});' for k, v in u.items())
-    quiz = PB.sample_quiz(p, 3, '<p class="qfinal">Real questions from the pack, word for word.</p>') if p.get("aamc") else ""
+    setu += f'H.setAttribute("data-landing",{json.dumps(d["slug"])});'
+    qs = sjson.get("questions") or []
+    qs = [qs[i - 1] for i in d["question_ids"]] if d.get("question_ids") else qs[:3]
+    what = "pack" if p.get("aamc") else "bundle"
+    quiz = PB.quiz_html(qs, f'<p class="qfinal">Real questions from the {html.escape(products[sslug]["title"])} pack, word for word.</p>') if qs else ""
     body = (f'<script>(function(){{var H=document.documentElement;{setu}}})()</script>'
             f'<section class="hero offerhero go" id="top"><div class="wrap herogrid"><div class="herocopy">{offer}</div>'
             f'<div class="herostage">{preview}</div></div></section>'
-            + (f'<section class="goquiz"><div class="wrap narrow"><h2>Try 3 questions from the pack</h2>{quiz}'
+            + (f'<section class="goquiz"><div class="wrap narrow"><h2>Try {len(qs)} question{"s" if len(qs) > 1 else ""} from the {what}</h2>{quiz}'
                f'<p class="offermore"><a href="#top">Back to the offer</a></p></div></section>' if quiz else ""))
-    emit(f'go/{d["slug"]}/index.html', f'{p["title"]} MCAT pack | StudyStore', d.get("subhead") or p["title"], body, noindex=True)
+    emit(f'go/{d["slug"]}/index.html', f'{p["title"]} MCAT {what} | StudyStore', d.get("subhead") or p["title"], body, noindex=True)
 
 # ---------- free tools (isolated in build_tools.py) ----------
 import build_tools
