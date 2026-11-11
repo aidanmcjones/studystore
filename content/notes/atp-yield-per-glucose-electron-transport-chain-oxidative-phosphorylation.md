@@ -3,7 +3,7 @@ title: ATP Yield per Glucose: Electron Transport Chain and Oxidative Phosphoryla
 description: Count ATP from one glucose through glycolysis, the citric acid cycle and the electron transport chain, with P/O ratios, the two shuttles and the chemiosmotic mechanism.
 product: 1d-metabolism-bioenergetics
 published: 2026-11-04
-related: citric-acid-cycle-steps-products-atp, pyruvate-dehydrogenase-complex-pyruvate-to-acetyl-coa, net-yield-of-glycolysis-atp-nadh-pyruvate-per-glucose
+related: citric-acid-cycle-steps-products-atp, pyruvate-dehydrogenase-complex-pyruvate-to-acetyl-coa, glycolysis-steps-enzymes-net-atp
 seo_title: ATP per Glucose: ETC and Oxidative Phosphorylation Count
 seo_description: How many ATP per glucose on the MCAT: 30 to 32 by the modern P/O ratios, 36 to 38 by older ones, plus the ETC complexes, shuttles and uncouplers.
 ---

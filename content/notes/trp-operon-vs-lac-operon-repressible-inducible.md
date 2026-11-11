@@ -3,7 +3,7 @@ title: Trp Operon vs Lac Operon for the MCAT: Repressible vs Inducible
 description: How the trp operon is repressible and normally on while the lac operon is inducible and normally off, what each regulator binds, and how to predict expression in a vignette.
 product: 1b-dna-gene-expression
 published: 2026-11-04
-related: lac-operon-regulation-lactose-glucose, cap-camp-lac-operon-catabolite-repression, lac-operon-partial-diploids-merodiploid-problems
+related: lac-operon-regulation-lactose-glucose, lac-operon-partial-diploids-merodiploid-problems
 seo_title: Trp Operon vs Lac Operon MCAT: Repressible vs Inducible
 seo_description: Compare the trp and lac operons for the MCAT: repressible versus inducible, corepressor versus inducer, anabolic versus catabolic, with a five-question quiz.
 ---

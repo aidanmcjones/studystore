@@ -3,12 +3,17 @@ title: Glycolysis: Steps, Enzymes and Net ATP Yield (MCAT)
 description: Net yield of glycolysis is 2 ATP and 2 NADH. See all ten steps split into investment and payoff, the 3 regulated enzymes and common trap questions.
 product: 1d-metabolism-bioenergetics
 published: 2026-10-20
-related: michaelis-menten-and-lineweaver-burk, enzyme-classes-ec-1-to-7, passive-vs-active-transport, net-yield-of-glycolysis-atp-nadh-pyruvate-per-glucose, glycolysis-regulation-irreversible-steps-hexokinase-pfk-1, glycolysis-intermediates-in-order-first-intermediate-g6p
+updated: 2026-11-11
+related: michaelis-menten-and-lineweaver-burk, enzyme-classes-ec-1-to-7, passive-vs-active-transport, glycolysis-regulation-irreversible-steps-hexokinase-pfk-1, glycolysis-intermediates-in-order-first-intermediate-g6p
 seo_title: Glycolysis Steps and Net ATP Yield (2 ATP, 2 NADH)
 seo_description: The 10 steps of glycolysis, the 3 regulated enzymes and the net yield (2 ATP, 2 NADH, 2 pyruvate) in an investment and payoff ledger.
 ---
 
-Glycolysis turns one glucose (6 carbons) into two pyruvate (3 carbons each) in the cytosol, without needing oxygen. It spends 2 ATP early, makes 4 ATP and 2 NADH later, and so **nets 2 ATP, 2 NADH and 2 pyruvate per glucose**. Three steps are effectively one-way and serve as the control points: **hexokinase, phosphofructokinase-1 (PFK-1) and pyruvate kinase**. If you can place those three and keep a running ATP tally, most glycolysis questions fall out.
+> **Quick answer.** Glycolysis turns one glucose (6 carbons) into two pyruvate (3 carbons each) in the cytosol, without needing oxygen. It spends 2 ATP early, makes 4 ATP and 2 NADH later, and so **nets 2 ATP, 2 NADH and 2 pyruvate per glucose**. Three steps are effectively one-way and serve as the control points: **hexokinase, phosphofructokinase-1 (PFK-1) and pyruvate kinase**. If you can place those three and keep a running ATP tally, most glycolysis questions fall out.
+>
+> **Worked example (ATP ledger):** investment: hexokinase and PFK-1 each spend 1 ATP (-2). Payoff, counted twice because each glucose makes two three-carbon halves: phosphoglycerate kinase +2 and pyruvate kinase +2 (+4). Net **+2 ATP**, plus **2 NADH** from glyceraldehyde-3-phosphate dehydrogenase.
+>
+> Practice: [1D glycolysis practice questions](../practice/1d-glycolysis-gluconeogenesis-fermentation.html).
 
 ## The big picture in two phases
 

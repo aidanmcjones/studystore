@@ -6,7 +6,7 @@ category: 1d-metabolism-bioenergetics
 cluster: Glycolysis, regulated enzymes, fermentation, gluconeogenesis, pentose phosphate pathway, glucose transport
 product: 1d-metabolism-bioenergetics
 published: 2026-10-20
-notes: henderson-hasselbalch-for-the-mcat
+notes: glycolysis-steps-enzymes-net-atp, gluconeogenesis-bypass-reactions-regulation
 ---
 
 Glycolysis turns one glucose into two pyruvate, with a net gain of 2 ATP and 2 NADH. Three steps are essentially irreversible and are the regulated ones: hexokinase or glucokinase, phosphofructokinase-1 (PFK-1, the main control point) and pyruvate kinase. Gluconeogenesis is not simply glycolysis in reverse. It uses the same reversible steps but bypasses those three irreversible reactions with four enzymes: pyruvate carboxylase, PEP carboxykinase, fructose-1,6-bisphosphatase and glucose-6-phosphatase. The two pathways are regulated reciprocally so they do not run at full speed together.

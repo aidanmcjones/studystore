@@ -3,7 +3,7 @@ title: Stage 5 of the Demographic Transition Model: Below-Replacement Fertility
 description: What stage 5 of the demographic transition model is, how it differs from stage 4, and the birth rate, death rate, pyramid and growth-rate clues the MCAT uses.
 product: 9b-demographics
 published: 2026-11-06
-related: demographic-transition-model-stages, population-pyramids-demographic-transition-stages-1-to-5, epidemiologic-transition-causes-of-death-by-dtm-stage, fertility-transition-and-migration-transition-mcat
+related: demographic-transition-model-stages, epidemiologic-transition-causes-of-death-by-dtm-stage, fertility-transition-and-migration-transition-mcat
 seo_title: Stage 5 of the Demographic Transition Model (MCAT)
 seo_description: Stage 5 of the DTM has birth rates below death rates, so the population shrinks without immigration. Compare stage 4 vs 5 with pyramid shape and examples.
 ---

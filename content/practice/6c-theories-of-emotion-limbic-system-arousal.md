@@ -6,7 +6,7 @@ category: 6c-emotion-stress
 cluster: Components of emotion, Universal emotions, James-Lange theory, Cannon-Bard theory, Schachter-Singer two-factor theory, Limbic system and emotion, Autonomic nervous system in emotion, Yerkes-Dodson law
 product: 6c-emotion-stress
 published: 2026-10-20
-notes:
+notes: theories-of-emotion-james-lange-cannon-bard, schachter-singer-two-factor-theory-vs-cannon-bard
 seo_title: Theories of Emotion Practice Questions (MCAT) with Answers
 seo_description: Free MCAT practice on James-Lange, Cannon-Bard and Schachter-Singer: 10 questions on arousal, the amygdala and appraisal, each with a full explanation.
 ---

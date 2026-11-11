@@ -1,0 +1,434 @@
+{
+ "frozen_until": "2026-12-10",
+ "frozen_note": "Titles, URLs and canonicals of the pages below must not change before frozen_until (tests/frozen_titles_test.mjs). They were rewritten repeatedly after the 10/21-10/27 test window; let Google settle before judging them.",
+ "about": "Search Console baseline for the pages and queries targeted by the overhaul/seo PR. Compare later runs with tools/gsc_compare.py. Source: Search Console UI, property sc-domain:studystore.co, read 2026-11-11 (data through 2026-11-08).",
+ "property": "sc-domain:studystore.co",
+ "baseline_window": {
+  "start": "2026-10-19",
+  "end": "2026-11-08",
+  "label": "last 28 days as of 2026-11-11"
+ },
+ "totals": {
+  "clicks": 9,
+  "impressions": 3590,
+  "ctr": 0.003,
+  "position": 17.5
+ },
+ "warning": "About 97 percent of baseline impressions fall in 2026-10-21..2026-10-27. From 2026-10-28 the site got at most 14 impressions a day (89 in total through 11-08). Compare a new window against post_1028, not only against the 28-day totals, or the old week rolling out of the window will look like a drop.",
+ "daily_impressions": {
+  "2026-10-19": 0,
+  "2026-10-20": 6,
+  "2026-10-21": 180,
+  "2026-10-22": 659,
+  "2026-10-23": 643,
+  "2026-10-24": 439,
+  "2026-10-25": 500,
+  "2026-10-26": 603,
+  "2026-10-27": 487,
+  "2026-10-28": 14,
+  "2026-10-29": 4,
+  "2026-10-30": 0,
+  "2026-10-31": 5,
+  "2026-11-01": 1,
+  "2026-11-02": 7,
+  "2026-11-03": 10,
+  "2026-11-04": 2,
+  "2026-11-05": 9,
+  "2026-11-06": 9,
+  "2026-11-07": 2,
+  "2026-11-08": 7
+ },
+ "daily_clicks": {
+  "2026-10-21": 1,
+  "2026-10-22": 2,
+  "2026-10-25": 2,
+  "2026-11-05": 3,
+  "2026-11-08": 1
+ },
+ "post_1028": {
+  "start": "2026-10-28",
+  "end": "2026-11-10",
+  "impressions": 89,
+  "note": "per-page post_1028_impressions null = page not among the rows read (the visible rows bottomed out at 2 impressions), so it had 2 or fewer"
+ },
+ "indexing": {
+  "read": "2026-11-11",
+  "indexed": 208,
+  "not_indexed": 436,
+  "reasons": {
+   "page_with_redirect": 269,
+   "alternate_page_with_proper_canonical": 96,
+   "excluded_by_noindex": 8,
+   "not_found_404": 1,
+   "discovered_currently_not_indexed": 57,
+   "crawled_currently_not_indexed": 5
+  }
+ },
+ "pages": [
+  {
+   "page": "/notes/demographic-transition-model-stages",
+   "variants": [
+    "/notes/demographic-transition-model-stages.html"
+   ],
+   "clicks": 0,
+   "impressions": 756,
+   "position": 10.4,
+   "post_1028_impressions": null,
+   "merged_in": [
+    "/notes/population-pyramids-demographic-transition-stages-1-to-5",
+    "/notes/dtm-stage-with-greatest-birth-rate-death-rate-gap"
+   ],
+   "frozen": {
+    "title": "Demographic Transition Model: 5 Stages, Pyramids, Examples",
+    "canonical": "https://www.studystore.co/notes/demographic-transition-model-stages"
+   },
+   "title_ranking_week": "Demographic Transition Model: The 5 Stages Explained for the MCAT"
+  },
+  {
+   "page": "/notes/recombination-frequency-gene-mapping-map-units",
+   "variants": [
+    "/notes/recombination-frequency-gene-mapping-map-units.html"
+   ],
+   "clicks": 1,
+   "impressions": 391,
+   "position": 9.9,
+   "post_1028_impressions": 18,
+   "post_1028_position": 14.4,
+   "merged_in": [
+    "/notes/how-to-calculate-map-units-from-recombination-frequency",
+    "/notes/recombination-frequency-vs-map-distance-50-percent-limit"
+   ],
+   "frozen": {
+    "title": "Recombination Frequency to Map Units: Formula + Examples",
+    "canonical": "https://www.studystore.co/notes/recombination-frequency-gene-mapping-map-units"
+   },
+   "title_ranking_week": "Recombination Frequency and Gene Mapping: Map Units Explained"
+  },
+  {
+   "page": "/notes/lac-operon-regulation-lactose-glucose",
+   "variants": [],
+   "clicks": 0,
+   "impressions": 194,
+   "position": 11.1,
+   "post_1028_impressions": null,
+   "merged_in": [
+    "/notes/cap-camp-lac-operon-catabolite-repression",
+    "/notes/is-camp-an-inducer-lac-operon-camp-vs-allolactose"
+   ],
+   "frozen": {
+    "title": "Lac Operon: Lactose, Glucose, CAP and cAMP Table",
+    "canonical": "https://www.studystore.co/notes/lac-operon-regulation-lactose-glucose"
+   },
+   "title_ranking_week": "The Lac Operon Explained: Lactose, Glucose, cAMP and CAP"
+  },
+  {
+   "page": "/notes/fundamental-attribution-error-vs-actor-observer-bias",
+   "variants": [],
+   "clicks": 0,
+   "impressions": 162,
+   "position": 12.6,
+   "post_1028_impressions": null,
+   "merged_in": [
+    "/notes/self-serving-bias-vs-fundamental-attribution-error",
+    "/notes/self-serving-bias-vs-actor-observer-bias"
+   ],
+   "frozen": {
+    "title": "Fundamental Attribution Error vs Self-Serving Bias",
+    "canonical": "https://www.studystore.co/notes/fundamental-attribution-error-vs-actor-observer-bias"
+   },
+   "title_ranking_week": "Fundamental Attribution Error vs Actor-Observer vs Self-Serving Bias"
+  },
+  {
+   "page": "/notes/acid-base-titration-curves-equivalence-point",
+   "variants": [
+    "/notes/acid-base-titration-curves-equivalence-point.html"
+   ],
+   "clicks": 0,
+   "impressions": 135,
+   "position": 18.0,
+   "post_1028_impressions": null,
+   "merged_in": [
+    "/notes/equivalence-point-second-equivalence-point-titration",
+    "/notes/half-equivalence-point-vs-equivalence-point-titration",
+    "/notes/weak-acid-strong-base-titration-half-equivalence-point"
+   ],
+   "merged_in_baseline": {
+    "/notes/equivalence-point-second-equivalence-point-titration": {
+     "impressions": 7,
+     "position": 8.6
+    }
+   },
+   "frozen": {
+    "title": "Equivalence vs Half-Equivalence Point on a Titration Curve",
+    "canonical": "https://www.studystore.co/notes/acid-base-titration-curves-equivalence-point"
+   },
+   "title_ranking_week": "Acid-Base Titration Curves: Equivalence and Half-Equivalence Points"
+  },
+  {
+   "page": "/notes/enzyme-classes-ec-1-to-7",
+   "variants": [],
+   "clicks": 1,
+   "impressions": 104,
+   "position": 7.4,
+   "post_1028_impressions": 2,
+   "post_1028_position": 24.0,
+   "frozen": {
+    "title": "The 7 Enzyme Classes (EC 1-7) with Examples and Mnemonic",
+    "canonical": "https://www.studystore.co/notes/enzyme-classes-ec-1-to-7"
+   },
+   "title_ranking_week": "The Seven Enzyme Classes (EC 1 to 7) With Examples and Traps"
+  },
+  {
+   "page": "/notes/theories-of-emotion-james-lange-cannon-bard",
+   "variants": [],
+   "clicks": 0,
+   "impressions": 99,
+   "position": 13.5,
+   "post_1028_impressions": null,
+   "frozen": {
+    "title": "James-Lange vs Cannon-Bard vs Schachter-Singer (MCAT)",
+    "canonical": "https://www.studystore.co/notes/theories-of-emotion-james-lange-cannon-bard"
+   },
+   "title_ranking_week": "Theories of Emotion: James-Lange vs Cannon-Bard vs Schachter-Singer"
+  },
+  {
+   "page": "/notes/citric-acid-cycle-steps-products-atp",
+   "variants": [
+    "/notes/citric-acid-cycle-steps-products-atp.html"
+   ],
+   "clicks": 0,
+   "impressions": 98,
+   "position": 25.2,
+   "post_1028_impressions": 3,
+   "frozen": {
+    "title": "Citric Acid Cycle: Steps, Enzymes, Products, ATP",
+    "canonical": "https://www.studystore.co/notes/citric-acid-cycle-steps-products-atp"
+   },
+   "title_ranking_week": "Citric Acid (Krebs) Cycle Steps, Enzymes, and Products"
+  },
+  {
+   "page": "/notes/signal-detection-theory-and-webers-law",
+   "variants": [],
+   "clicks": 0,
+   "impressions": 87,
+   "position": 8.9,
+   "post_1028_impressions": 2,
+   "frozen": {
+    "title": "Signal Detection Theory and Weber&#x27;s Law: d&#x27; and JND",
+    "canonical": "https://www.studystore.co/notes/signal-detection-theory-and-webers-law"
+   },
+   "title_ranking_week": "Signal Detection Theory and Weber&#x27;s Law: d&#x27;, Bias and the JND"
+  },
+  {
+   "page": "/notes/amino-acid-pka-charge-ph-7-4",
+   "variants": [
+    "/notes/amino-acid-pka-charge-ph-7-4.html"
+   ],
+   "clicks": 0,
+   "impressions": 85,
+   "position": 23.1,
+   "post_1028_impressions": 4,
+   "frozen": {
+    "title": "pKa Values of Amino Acids and Charge at pH 7.4",
+    "canonical": "https://www.studystore.co/notes/amino-acid-pka-charge-ph-7-4"
+   },
+   "title_ranking_week": "Amino Acid pKa Values and Charge at pH 7.4 | StudyStore Notes"
+  },
+  {
+   "page": "/notes/enzyme-inhibition-types-compared",
+   "variants": [
+    "/notes/enzyme-inhibition-types-compared.html"
+   ],
+   "clicks": 0,
+   "impressions": 69,
+   "position": 29.0,
+   "post_1028_impressions": null,
+   "frozen": {
+    "title": "Enzyme Inhibition Types Compared: Km and Vmax Effects",
+    "canonical": "https://www.studystore.co/notes/enzyme-inhibition-types-compared"
+   },
+   "title_ranking_week": "Enzyme Inhibition Types Compared: Competitive, Noncompetitive, Uncompetitive, Mixed"
+  },
+  {
+   "page": "/notes/gibbs-free-energy-delta-g-spontaneity",
+   "variants": [],
+   "clicks": 0,
+   "impressions": 66,
+   "position": 18.4,
+   "post_1028_impressions": null,
+   "frozen": {
+    "title": "Gibbs Free Energy: Delta G = Delta H - T Delta S (MCAT)",
+    "canonical": "https://www.studystore.co/notes/gibbs-free-energy-delta-g-spontaneity"
+   },
+   "title_ranking_week": "Gibbs Free Energy: Delta G, Spontaneity and Temperature"
+  },
+  {
+   "page": "/notes/oxygen-hemoglobin-dissociation-curve-shifts",
+   "variants": [],
+   "clicks": 0,
+   "impressions": 54,
+   "position": 25.0,
+   "post_1028_impressions": null,
+   "frozen": {
+    "title": "Hemoglobin Dissociation Curve: Right vs Left Shift",
+    "canonical": "https://www.studystore.co/notes/oxygen-hemoglobin-dissociation-curve-shifts"
+   },
+   "title_ranking_week": "Oxygen-Hemoglobin Dissociation Curve: Right vs Left Shifts"
+  },
+  {
+   "page": "/notes/glycolysis-steps-enzymes-net-atp",
+   "variants": [],
+   "clicks": 0,
+   "impressions": 46,
+   "position": 14.3,
+   "post_1028_impressions": null,
+   "merged_in": [
+    "/notes/net-yield-of-glycolysis-atp-nadh-pyruvate-per-glucose"
+   ],
+   "frozen": {
+    "title": "Glycolysis Steps and Net ATP Yield (2 ATP, 2 NADH)",
+    "canonical": "https://www.studystore.co/notes/glycolysis-steps-enzymes-net-atp"
+   },
+   "title_ranking_week": "Glycolysis Steps, Enzymes and Net ATP Yield for the MCAT"
+  },
+  {
+   "page": "/notes/colligative-properties-freezing-point-depression",
+   "variants": [],
+   "clicks": 1,
+   "impressions": 20,
+   "position": 10.0,
+   "post_1028_impressions": null,
+   "frozen": {
+    "title": "Freezing Point Depression Formula and Worked Examples",
+    "canonical": "https://www.studystore.co/notes/colligative-properties-freezing-point-depression"
+   },
+   "title_ranking_week": "Colligative Properties: Freezing Point Depression Calculations"
+  },
+  {
+   "page": "/tools/",
+   "variants": [
+    "/tools/index.html"
+   ],
+   "clicks": 0,
+   "impressions": 44,
+   "position": 9.6,
+   "note": "39 of these are the query 'quizpka' (unidentified, left untouched)",
+   "frozen": {
+    "title": "Free MCAT Tools: Amino Acid Quiz, pKa Quiz, Study Planner",
+    "canonical": "https://www.studystore.co/tools/"
+   },
+   "title_ranking_week": "Free MCAT Tools: Amino Acid Quiz, pKa Trainer, Study Planner"
+  }
+ ],
+ "queries": [
+  {
+   "query": "recombination frequency",
+   "impressions": 35,
+   "position": 11.9,
+   "page": "/notes/recombination-frequency-gene-mapping-map-units"
+  },
+  {
+   "query": "map units",
+   "impressions": 9,
+   "position": 6.7,
+   "page": "/notes/recombination-frequency-gene-mapping-map-units"
+  },
+  {
+   "query": "how to calculate map units from recombination frequency",
+   "impressions": 7,
+   "position": 8.9,
+   "page": "/notes/recombination-frequency-gene-mapping-map-units"
+  },
+  {
+   "query": "what does recombination frequency mean",
+   "impressions": 5,
+   "position": 9.0,
+   "page": "/notes/recombination-frequency-gene-mapping-map-units"
+  },
+  {
+   "query": "fundamental attribution error vs self serving bias",
+   "impressions": 15,
+   "position": 8.1,
+   "page": "/notes/fundamental-attribution-error-vs-actor-observer-bias"
+  },
+  {
+   "query": "self serving bias vs fundamental attribution error",
+   "impressions": 10,
+   "position": 8.0,
+   "page": "/notes/fundamental-attribution-error-vs-actor-observer-bias"
+  },
+  {
+   "query": "self-serving bias vs fundamental attribution error",
+   "impressions": 7,
+   "position": 7.9,
+   "page": "/notes/fundamental-attribution-error-vs-actor-observer-bias"
+  },
+  {
+   "query": "difference between self serving bias and fundamental attribution error",
+   "impressions": 5,
+   "position": 8.8,
+   "page": "/notes/fundamental-attribution-error-vs-actor-observer-bias"
+  },
+  {
+   "query": "7 classes of enzymes",
+   "clicks": 1,
+   "impressions": 2,
+   "position": 6.5,
+   "page": "/notes/enzyme-classes-ec-1-to-7"
+  },
+  {
+   "query": "7 enzyme classes",
+   "impressions": 5,
+   "position": 5.6,
+   "page": "/notes/enzyme-classes-ec-1-to-7"
+  },
+  {
+   "query": "enzyme inhibition types",
+   "impressions": 5,
+   "position": 6.6,
+   "page": "/notes/enzyme-inhibition-types-compared"
+  },
+  {
+   "query": "second equivalence point",
+   "impressions": 6,
+   "position": 10.5,
+   "page": "/notes/acid-base-titration-curves-equivalence-point"
+  },
+  {
+   "query": "equivalence point",
+   "impressions": 7,
+   "position": 36.1,
+   "page": "/notes/acid-base-titration-curves-equivalence-point"
+  },
+  {
+   "query": "cap and camp in lac operon",
+   "impressions": 5,
+   "position": 10.6,
+   "page": "/notes/lac-operon-regulation-lactose-glucose"
+  },
+  {
+   "query": "net yield of glycolysis",
+   "impressions": 4,
+   "position": 8.5,
+   "page": "/notes/glycolysis-steps-enzymes-net-atp"
+  },
+  {
+   "query": "stage 1 5 population pyramid",
+   "impressions": 4,
+   "position": 10.2,
+   "page": "/notes/demographic-transition-model-stages"
+  },
+  {
+   "query": "colligative properties freezing point depression",
+   "impressions": 3,
+   "position": 8.7,
+   "page": "/notes/colligative-properties-freezing-point-depression"
+  },
+  {
+   "query": "quizpka",
+   "impressions": 39,
+   "position": 10.0,
+   "page": "/tools/"
+  }
+ ]
+}

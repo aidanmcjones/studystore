@@ -6,7 +6,7 @@ category: 1b-dna-gene-expression
 cluster: Operon regulation, epigenetics, PCR, restriction enzymes, blotting, sequencing, CRISPR
 product: 1b-dna-gene-expression
 published: 2026-10-20
-notes:
+notes: lac-operon-regulation-lactose-glucose, trp-operon-vs-lac-operon-repressible-inducible, lac-operon-partial-diploids-merodiploid-problems
 ---
 
 Gene regulation questions ask which factor sits where. In the lac operon the repressor blocks transcription by binding the operator; allolactose releases it, and the cAMP-CAP complex boosts transcription when glucose is low. In eukaryotes, DNA methylation at promoter CpG islands and histone deacetylation compact chromatin and silence genes, while histone acetylation and open euchromatin favor expression.

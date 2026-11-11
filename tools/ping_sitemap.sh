@@ -5,6 +5,9 @@
 # Usage:
 #   tools/ping_sitemap.sh            submit every URL in sitemap.xml
 #   tools/ping_sitemap.sh --new      submit only URLs added to sitemap.xml since the last commit
+#   tools/ping_sitemap.sh --changed REF   submit every page whose built HTML changed or was removed since git REF
+#                                    (e.g. origin/main before a merge, or the last deployed commit). Removed pages
+#                                    are included so engines recrawl them and see their 301.
 #   tools/ping_sitemap.sh URL [URL]  submit specific URLs
 #
 # Key: the key file is <key>.txt at the site root (its content is the key). It must be
@@ -18,7 +21,12 @@ KEYFILE=$(ls -1 ./*.txt 2>/dev/null | grep -E '/[0-9a-f]{32}\.txt$' | head -1 ||
 KEY=$(basename "$KEYFILE" .txt)
 if [ "$(tr -d '[:space:]' < "$KEYFILE")" != "$KEY" ]; then echo "key file content does not match its name" >&2; exit 1; fi
 
-if [ "$#" -gt 0 ] && [ "$1" != "--new" ]; then
+if [ "${1:-}" = "--changed" ]; then
+  REF="${2:?usage: --changed <git ref>}"
+  URLS=$(git diff --name-only "$REF" HEAD -- '*.html' | grep -vE '^(templates|admin|go|landing|design|content)/|^(404|owner|report|thanks)\.html$' \
+    | sed -E 's@(^|/)index\.html$@\1@; s@\.html$@@; s@^@https://'"$HOST"'/@' || true)
+  [ -n "$URLS" ] || { echo "no changed pages since $REF"; exit 0; }
+elif [ "$#" -gt 0 ] && [ "$1" != "--new" ]; then
   URLS=$(printf '%s\n' "$@")
 elif [ "${1:-}" = "--new" ]; then
   URLS=$(git diff -U0 HEAD~1 -- sitemap.xml 2>/dev/null | grep -E '^\+.*<loc>' | sed -E 's@.*<loc>([^<]+)</loc>.*@\1@' || true)

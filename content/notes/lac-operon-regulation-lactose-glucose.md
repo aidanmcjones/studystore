@@ -3,10 +3,24 @@ title: Lac Operon: Lactose, Glucose, cAMP and CAP Explained
 description: How the lac repressor and CAP-cAMP set lac operon output, with a four-condition table, mutant and partial diploid logic, and common traps.
 product: 1b-dna-gene-expression
 published: 2026-10-20
-related: glycolysis-steps-enzymes-net-atp, anomers-vs-epimers-carbohydrates, passive-vs-active-transport, cap-camp-lac-operon-catabolite-repression, trp-operon-vs-lac-operon-repressible-inducible
+updated: 2026-11-11
+related: trp-operon-vs-lac-operon-repressible-inducible, lac-operon-partial-diploids-merodiploid-problems, glycolysis-steps-enzymes-net-atp, passive-vs-active-transport
 seo_title: Lac Operon: Lactose, Glucose, CAP and cAMP Table
 seo_description: Lac operon expression in all four lactose and glucose conditions, what CAP and cAMP do, and how to solve partial diploid (lacI, lacO) questions.
 ---
+
+> **Quick answer: CAP and cAMP in the lac operon.** Low glucose raises **cAMP**. cAMP binds **CAP** (the catabolite activator protein), and the CAP-cAMP complex binds just upstream of the lac promoter and helps RNA polymerase start transcription. **Lactose** (as allolactose) separately pulls the **repressor** off the operator. Strong expression needs both: lactose present **and** glucose low.
+>
+> | Lactose | Glucose | lac output |
+> |---|---|---|
+> | Absent | Present | Off: repressor bound, cAMP low |
+> | Absent | Absent | Off: repressor still bound |
+> | Present | Present | Low: repressor off, but cAMP low |
+> | Present | Absent | **High**: repressor off, CAP-cAMP on |
+>
+> Practice: [1B gene regulation questions](../practice/1b-gene-regulation-pcr-cloning-techniques.html).
+
+## The two switches in one paragraph
 
 The lac operon is turned on strongly only when two conditions hold at once: **lactose is present** (so the repressor lets go of the operator) and **glucose is scarce** (so cAMP is high and the activator CAP helps RNA polymerase bind). Lactose alone removes the brake; low glucose presses the accelerator. Every lac question, including the mutant and partial diploid ones, is a matter of checking those two switches.
 
@@ -52,6 +66,14 @@ Even with the repressor gone, the lac promoter is weak on its own, and RNA polym
 - When glucose is **high**, cAMP stays low, CAP is mostly empty, and it does not bind well. Expression stays low even if lactose is present.
 
 The glucose effect is called **catabolite repression**. A further part of it in real cells is inducer exclusion: active glucose uptake inhibits the lactose permease, so less lactose gets in to make allolactose. For exam purposes, the cAMP and CAP logic is the core you need.
+
+### Is cAMP an inducer?
+
+No. The **inducer** of the lac operon is **allolactose**, made from lactose by the small basal amount of beta-galactosidase. It binds the repressor and changes its shape so it leaves the operator. **cAMP** is a different kind of signal: it binds the **activator** CAP and lets CAP bind DNA. cAMP reports "glucose is low"; allolactose reports "lactose is here". With cAMP high but no lactose, the repressor still sits on the operator and the operon stays off.
+
+### Glucose as the only carbon source
+
+If glucose is the only sugar in the medium, there is no lactose to make allolactose, so the repressor stays bound, and glucose keeps cAMP low, so CAP is inactive. Lac mRNA stays at a trace (basal) level. Add lactose and remove glucose and lac mRNA rises sharply; that shift from glucose to lactose is the classic diauxic growth curve.
 
 Notice the opposite logic of the two proteins. The repressor is **negative control** (a protein that stops transcription when bound). CAP is **positive control** (a protein that boosts transcription when bound).
 

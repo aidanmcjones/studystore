@@ -41,6 +41,26 @@ deploy, run `tools/ping_sitemap.sh` (all URLs) or `tools/ping_sitemap.sh --new` 
 api.indexnow.org; HTTP 200 or 202 means accepted. IndexNow reaches Bing and partner engines. Google does not use IndexNow; it
 finds pages through `sitemap.xml` (declared in `robots.txt`) and ordinary crawling.
 
+## One URL per page, merged notes, Search Console baseline
+
+- Canonical form is `https://www.studystore.co/<path>` with no `.html` and no `index.html`. `functions/_middleware.js`
+  answers every other form (apex host, `/x.html`, `/d/index.html`, retired or merged URLs) with ONE 301 to it, and marks
+  `*.pages.dev` hosts `X-Robots-Tag: noindex`. Canonical tags, og:url, the sitemap and internal links all use the clean
+  form; `node tests/canonical_urls_test.mjs` (after `python3 build.py`) fails if any of them disagree, if a page is
+  reachable at two indexable URLs, or if a redirect chains.
+- Merging a thin near-duplicate note into a stronger page: add `old: kept` to `MERGED_NOTES` in `products_build.py`,
+  fold its useful content into the kept note, delete `content/notes/<old>.md` and its built/asset files, and fix
+  `related:`/`notes:` references (the build fails on a dangling one). `build.py` writes both `_redirects` and
+  `functions/_lib/redirects.js`.
+- Real hop counts: `tools/check_hops.sh` runs `wrangler pages dev` on the checkout and checks that every duplicate form
+  of every sitemap and retired URL (www/apex, .html, index.html, with/without slash) reaches its page in one 301.
+- Title freeze: until `frozen_until` in `tools/gsc_targets.json` (2026-12-10), `tests/frozen_titles_test.mjs` fails if
+  the `<title>` or canonical of a listed page changes. Do not rewrite those titles before then.
+- `tools/gsc_targets.json` is the Search Console baseline (2026-11-11) for the pages and queries the SEO pass targeted.
+  Compare a later export with `python3 tools/gsc_compare.py --pages Pages.csv --queries Queries.csv`.
+- After deploying content changes: `tools/ping_sitemap.sh --changed <commit before the change>` submits every changed
+  or removed page to IndexNow.
+
 ## Cloudflare Pages, experiments and analytics
 
 - Deploy: `tools/deploy_pages.sh` builds, copies an allowlist of public files into `.deploy/` (aborts on any paid or source

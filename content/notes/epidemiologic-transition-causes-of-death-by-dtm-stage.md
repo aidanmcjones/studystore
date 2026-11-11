@@ -3,7 +3,7 @@ title: Causes of Death in Each Stage of the Demographic Transition (Epidemiologi
 description: What kills people in each stage of the demographic transition model, from infectious disease and famine to chronic disease, with the epidemiologic transition and life expectancy trends.
 product: 9b-demographics
 published: 2026-11-05
-related: demographic-transition-model-stages, population-pyramids-demographic-transition-stages-1-to-5, fertility-transition-and-migration-transition-mcat
+related: demographic-transition-model-stages, fertility-transition-and-migration-transition-mcat
 seo_title: Causes of Death by Demographic Transition Stage | MCAT
 seo_description: Distinctive causes of death in each stage of the demographic transition model, the epidemiologic transition, and a 5-question MCAT quiz.
 ---

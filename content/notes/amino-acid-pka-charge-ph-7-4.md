@@ -3,10 +3,17 @@ title: Amino Acid pKa Values and Charge at pH 7.4
 description: How to predict the charge, pI, and titration behavior of any amino acid for the MCAT, with the side chain pKa values worth memorizing.
 product: 1a-amino-acids-proteins
 published: 2026-10-20
+updated: 2026-11-11
 related: henderson-hasselbalch-for-the-mcat, protein-structure-levels-and-denaturation, michaelis-menten-and-lineweaver-burk, histidine-pka-isoelectric-point-pi-calculation
 seo_title: pKa Values of Amino Acids and Charge at pH 7.4
 seo_description: pKa values of amino acids, net charge at pH 7.4 and how to find pI, with the side chain pKa of histidine and others worth memorizing.
 ---
+
+> **Quick answer: amino acid pKa values to memorize.** alpha-COOH about 2, alpha-NH<sub>3</sub><sup>+</sup> about 9 to 10. Side chains: Asp 3.9, Glu 4.3, His 6.0, Cys 8.3, Tyr 10.1, Lys 10.5, Arg 12.5. **Rule:** a group is protonated when pH is below its pK<sub>a</sub> and deprotonated when pH is above it.
+>
+> **Worked example: lysine at pH 7.4.** alpha-COOH (pK<sub>a</sub> about 2) is deprotonated: -1. alpha-NH<sub>3</sub><sup>+</sup> (about 9) is still protonated: +1. Side-chain amine (10.5) is protonated: +1. Net charge **+1**. Its pI is the average of the two highest pK<sub>a</sub> values, about (9 + 10.5) / 2 = 9.75 with these rounded values.
+>
+> Practice: [1A amino acid titration and pI questions](../practice/1a-amino-acid-titration-isoelectric-point.html).
 
 Every amino acid is a small acid-base system, and the MCAT keeps asking the same three questions about it: what is its charge at a given pH, what is its isoelectric point (pI), and where does it buffer? This note gives you one method that answers all three, plus the handful of numbers worth memorizing.
 

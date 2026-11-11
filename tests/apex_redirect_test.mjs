@@ -37,6 +37,47 @@ ok(r.res.status === 200 && r.nexted === 1, "www GET passes through");
 
 r = await run("https://studystore.pages.dev/");
 ok(r.nexted === 1, "other hosts pass through");
+ok(r.res.headers.get("x-robots-tag") === "noindex", "pages.dev is noindex");
+
+r = await run("https://abc123.studystore.pages.dev/notes/x");
+ok(r.nexted === 1 && r.res.headers.get("x-robots-tag") === "noindex", "preview host is noindex");
+
+// One hop from every duplicate form to the clean www URL.
+for (const [from, to] of [
+  ["https://www.studystore.co/notes/x.html", "https://www.studystore.co/notes/x"],
+  ["https://www.studystore.co/notes/x.html?utm_source=a", "https://www.studystore.co/notes/x?utm_source=a"],
+  ["https://studystore.co/notes/x.html", "https://www.studystore.co/notes/x"],
+  ["https://www.studystore.co/index.html", "https://www.studystore.co/"],
+  ["https://studystore.co/index.html", "https://www.studystore.co/"],
+  ["https://www.studystore.co/practice/1c/index.html", "https://www.studystore.co/practice/1c/"],
+  ["https://studystore.co/practice/1c/", "https://www.studystore.co/practice/1c/"],
+]) {
+  r = await run(from);
+  ok(r.res.status === 301 && r.res.headers.get("location") === to && r.nexted === 0, `${from} -> ${to} in one 301`);
+}
+
+for (const [from, to] of [
+  ["https://www.studystore.co/notes/cap-camp-lac-operon-catabolite-repression/", "https://www.studystore.co/notes/lac-operon-regulation-lactose-glucose"],
+  ["https://studystore.co/notes/cap-camp-lac-operon-catabolite-repression/", "https://www.studystore.co/notes/lac-operon-regulation-lactose-glucose"],
+  ["https://studystore.co/go/mcat-1a", "https://www.studystore.co/go/mcat-1a/"],
+  ["https://www.studystore.co/go/mcat-1a", "https://www.studystore.co/go/mcat-1a/"],
+  ["https://studystore.co/notes/x/", "https://www.studystore.co/notes/x"],
+  ["https://www.studystore.co/notes/x/", "https://www.studystore.co/notes/x"],
+]) {
+  r = await run(from);
+  ok(r.res.status === 301 && r.res.headers.get("location") === to && r.nexted === 0, `${from} -> ${to} in one 301`);
+}
+r = await run("https://www.studystore.co/go/mcat-1a/");
+ok(r.nexted === 1, "directory page with its slash is served");
+
+r = await run("https://www.studystore.co/notes/x");
+ok(r.nexted === 1 && !r.res.headers.get("x-robots-tag"), "clean www URL is served, indexable");
+
+r = await run("https://www.studystore.co/report.html", "POST");
+ok(r.nexted === 1, "www POST to an .html path is not redirected");
+
+r = await run("https://www.studystore.co/api/x.html");
+ok(r.nexted === 1, "/api/ paths are never rewritten");
 
 console.log(`${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);
