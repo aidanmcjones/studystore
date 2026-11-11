@@ -3,6 +3,7 @@ title: Lac Operon: Lactose, Glucose, cAMP and CAP Explained
 description: How the lac repressor and CAP-cAMP set lac operon output, with a four-condition table, mutant and partial diploid logic, and common traps.
 product: 1b-dna-gene-expression
 published: 2026-10-20
+updated: 2026-11-11
 related: trp-operon-vs-lac-operon-repressible-inducible, lac-operon-partial-diploids-merodiploid-problems, glycolysis-steps-enzymes-net-atp, passive-vs-active-transport
 seo_title: Lac Operon: CAP and cAMP, Lactose and Glucose Table
 seo_description: What CAP and cAMP do in the lac operon, why glucose keeps it low, lac output in all 4 lactose and glucose conditions, and partial diploid problems.

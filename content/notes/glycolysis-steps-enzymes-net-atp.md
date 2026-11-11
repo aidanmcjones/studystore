@@ -3,6 +3,7 @@ title: Glycolysis: Steps, Enzymes and Net ATP Yield (MCAT)
 description: Net yield of glycolysis is 2 ATP and 2 NADH. See all ten steps split into investment and payoff, the 3 regulated enzymes and common trap questions.
 product: 1d-metabolism-bioenergetics
 published: 2026-10-20
+updated: 2026-11-11
 related: michaelis-menten-and-lineweaver-burk, enzyme-classes-ec-1-to-7, passive-vs-active-transport, glycolysis-regulation-irreversible-steps-hexokinase-pfk-1, glycolysis-intermediates-in-order-first-intermediate-g6p
 seo_title: Net Yield of Glycolysis (2 ATP, 2 NADH) and the 10 Steps
 seo_description: Net yield of glycolysis: 2 ATP, 2 NADH, 2 pyruvate per glucose. The ATP ledger, all 10 steps and the 3 regulated enzymes (hexokinase, PFK-1, PK).

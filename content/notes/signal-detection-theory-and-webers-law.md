@@ -3,6 +3,7 @@ title: Signal Detection Theory and Weber's Law: d', Bias and the JND
 description: Learn absolute and difference thresholds, apply Weber's law, and separate sensitivity (d') from response bias in signal detection theory, with worked numbers.
 product: 6a-sensation-perception
 published: 2026-10-20
+updated: 2026-11-11
 related: types-of-memory-sensory-short-term-long-term, action-potential-phases-ion-channels
 seo_title: Signal Detection Theory and Weber's Law: d' and JND
 seo_description: Signal detection theory (hits, misses, d', response bias) and Weber's law (JND = k x stimulus) with worked numbers and a quiz.

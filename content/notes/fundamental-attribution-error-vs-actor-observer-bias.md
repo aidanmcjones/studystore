@@ -3,6 +3,7 @@ title: Fundamental Attribution Error vs Self-Serving and Actor-Observer Bias
 description: Fundamental attribution error vs self-serving bias vs actor-observer bias: the difference in one table, with examples and Kelley's covariation model.
 product: 8b-social-thinking
 published: 2026-10-20
+updated: 2026-11-11
 seo_title: Fundamental Attribution Error vs Self-Serving Bias
 seo_description: The difference: the fundamental attribution error blames others' character; self-serving bias credits you for wins, luck for losses. Table with examples.
 related: attribution-theory-kelley-covariation-dispositional-situational, cognitive-dissonance-and-elaboration-likelihood-model, conformity-vs-obedience-asch-milgram
@@ -14,13 +15,13 @@ related: attribution-theory-kelley-covariation-dispositional-situational, cognit
 
 ## Self-serving bias vs fundamental attribution error vs actor-observer bias
 
-| | Fundamental attribution error | Self-serving bias | Actor-observer bias |
-|---|---|---|---|
-| Whose behavior | Someone else's | Your own | Your own compared with someone else's |
-| Cause favored | Their disposition (character) | Success: you. Failure: the situation | You: situation. Them: disposition |
-| Does the outcome matter? | No | Yes, it flips with success vs failure | No |
-| Main driver | The person is more noticeable than the situation | Protecting self-esteem | Seeing the scene from your own vantage point |
-| Example | "She was curt because she is rude" | "I aced it because I studied; I failed because the test was unfair" | "I was late because of traffic; he was late because he is careless" |
+| Bias | Whose behavior | Cause favored |
+|---|---|---|
+| Fundamental attribution error | Someone else's | Their character ("she was curt because she is rude") |
+| Self-serving bias | Your own outcome | Win: you ("I studied"). Loss: the situation ("the test was unfair") |
+| Actor-observer bias | Yours vs someone else's | You: situation ("traffic"). Them: character ("he is careless") |
+
+Only self-serving bias flips with success vs failure. Its driver is protecting self-esteem; the other two come from what is most visible from where you stand (the person when you watch someone, the situation when you act).
 
 ### One event, three biases
 

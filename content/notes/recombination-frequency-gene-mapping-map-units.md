@@ -3,6 +3,7 @@ title: Recombination Frequency: Formula and How to Find Map Units
 description: Recombination frequency is recombinants divided by total offspring. See how to convert it to map units (cM), worked examples and why it caps at 50 percent.
 product: 1c-heredity-evolution
 published: 2026-10-20
+updated: 2026-11-11
 related: three-point-cross-gene-order-double-crossover, hardy-weinberg-equation-practice-problems, mitosis-vs-meiosis-differences, hfr-interrupted-mating-gene-order-conjugation-mapping
 seo_title: Recombination Frequency and Map Units: How to Calculate
 seo_description: Recombination frequency = recombinants / total offspring x 100, and 1% = 1 map unit (cM). How to calculate map units, worked crosses, the 50% limit.

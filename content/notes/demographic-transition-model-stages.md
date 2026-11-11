@@ -3,8 +3,9 @@ title: Demographic Transition Model: The 5 Stages Explained for the MCAT
 description: What happens to birth rates, death rates and population growth in each stage of the demographic transition model, with growth-rate and doubling-time math.
 product: 9b-demographics
 published: 2026-10-20
+updated: 2026-11-11
 related: epidemiologic-transition-causes-of-death-by-dtm-stage, dtm-stage-5-below-replacement-fertility-population-decline, fertility-transition-and-migration-transition-mcat, conflict-theory-mcat-marx-weber-dahrendorf-mills
-seo_title: Demographic Transition Model: Stages 1-5, Graph and Pyramids
+seo_title: Demographic Transition Model Stages 1-5: Graph and Pyramids
 seo_description: The 5 stages of the demographic transition model in one table: birth and death rates, growth and pyramid shape, plus which stage has the biggest gap.
 ---
 

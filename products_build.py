@@ -767,7 +767,8 @@ def build_all(site, items, emit):
 
 
 # Notes folded into a stronger page that answers the same query. Thin near-duplicates split Search signals
-# (Search Console 2026-11-11: none of these had impressions; the kept page held every query for the topic).
+# (Search Console 2026-11-11: the kept page held the topic's queries; the merged notes had at most 7 impressions,
+# and several were published after 11/4, so their own numbers say little either way).
 # The old slug 301s to the kept page. The private engine keeps each slug "covered" in growth/seo/topic_map.json,
 # so it is never planned again.
 MERGED_NOTES = {

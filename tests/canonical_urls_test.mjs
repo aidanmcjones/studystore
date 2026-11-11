@@ -100,6 +100,17 @@ for (const u of sm) {
   if (nexted !== 1 || res.status !== 200) err(`${u}: clean URL not served directly`);
 }
 
+// Retired and merged URLs: every form reaches the final page in one 301, and the middleware map matches _redirects.
+const { REDIRECTS } = await import("../functions/_lib/redirects.js");
+const fromFile = Object.fromEntries(rules.filter((r) => !r[0].endsWith(".html")).map((r) => [r[0], r[1]]));
+if (JSON.stringify(Object.entries(REDIRECTS).sort()) !== JSON.stringify(Object.entries(fromFile).sort())) err("functions/_lib/redirects.js does not match _redirects (rebuild)");
+for (const [src, dst] of Object.entries(fromFile)) {
+  for (const v of [BASE + src, BASE + src + ".html", "https://studystore.co" + src, "https://studystore.co" + src + ".html"]) {
+    const { res, nexted } = await hit(v + "?utm_source=x");
+    if (res.status !== 301 || res.headers.get("location") !== BASE + dst + "?utm_source=x" || nexted) err(`${v}: want one 301 to ${dst}, got ${res.status} ${res.headers.get("location")}`);
+  }
+}
+
 const robots = readFileSync(join(ROOT, "robots.txt"), "utf8");
 if (!robots.includes(`Sitemap: ${BASE}/sitemap.xml`)) err("robots.txt: sitemap line missing or not www");
 if (!/Disallow: \/cdn-cgi\//.test(robots)) err("robots.txt: /cdn-cgi/ not disallowed");
