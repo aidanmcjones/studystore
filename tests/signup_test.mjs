@@ -12,7 +12,7 @@ const esc = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 // Home keeps the full signup block. Notes carry the free cheat-sheet capture inside the end-of-page topic offer
 // (build.py offer_block): same form contract, no separate headline.
 function check(name, h, offer = false) {
-  const m = offer ? h.match(/<aside class="offerblk" data-offer="end"[\s\S]*?<\/aside>/)
+  const m = offer ? h.match(/<aside class="offerblk[^"]*"[^>]*data-offer="end"[\s\S]*?<\/aside>/)
                   : h.match(/<section class="waitlist waitlist-inline" id="signup"[\s\S]*?<\/section>/);
   ok(!!m, name + (offer ? ": end offer with capture present" : ": signup block present"));
   if (!m) return;
