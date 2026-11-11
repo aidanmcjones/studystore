@@ -50,7 +50,7 @@ const allPages = (d) => readdirSync(join(ROOT, d), { withFileTypes: true }).flat
 for (const f of allPages(".")) {
   const h = readFileSync(join(ROOT, f), "utf8");
   pagesScanned++;
-  const links = [...h.matchAll(/<a [^>]*href="(https:\/\/buy\.polar\.sh\/[^"]+)"[^>]*data-slug="([^"]+)"[^>]*>Buy now, (\$\d+)<\/a>/g)];
+  const links = [...h.matchAll(/<a [^>]*href="(https:\/\/buy\.polar\.sh\/[^"]+)"[^>]*data-slug="([^"]+)"[^>]*>Buy (?:now|the [0-9A-Z]{2,3} pack|the bundle), (\$\d+)<\/a>/g)];
   // The RangeCheck Pro link (not a StudyStore pack) is allowed only on the RangeCheck support page.
   const rcPro = (h.match(new RegExp(RANGECHECK_PRO.replace(/[.]/g, "\\."), "g")) || []).length;
   ok(rcPro === 0 || f.endsWith("rangecheck-support.html"), `${f}: RangeCheck Pro link only on rangecheck-support`);

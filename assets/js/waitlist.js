@@ -18,6 +18,7 @@
   var PENDING = "You are on the list. Before we send anything else, we will email you a link to confirm your address.";
 
   function firstTouch(k) {
+    if (k === "utm_source" && W.ssQA) return "selftest"; // QA browser (exp.js): keep test signups out of metrics
     var v = ""; try { v = new URLSearchParams(location.search).get(k) || W.sessionStorage.getItem("ss_" + k) || ""; } catch (e) {}
     return /^[A-Za-z0-9_.\-]{1,60}$/.test(v) ? v : "";
   }

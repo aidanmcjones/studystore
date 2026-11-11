@@ -291,6 +291,25 @@ def gallery_html(p, root="{{root}}"):
     return '<div class="gallery g4">' + "".join(figs) + ('<div class="sheets">' + "".join(sheets) + "</div>" if sheets else "") + "</div>"
 
 
+def hero_preview_html(p, root, what=None):
+    """Real preview for above the fold: cheat sheet page 1 with a sample card on top (content/packs/<slug>/sample.json)."""
+    s = sample(p["slug"]) or {}
+    what = what or (f'{p["aamc"]} pack' if p.get("aamc") else "bundle")
+    sheet = next((x for x in (s.get("sheets") or []) if x.get("kind") == "sheet" and (ROOT / x["src"]).exists()), None)
+    card = next((x for x in (s.get("cards") or []) if (ROOT / x["src"]).exists()), None)
+    figs = ""
+    if sheet:
+        figs += (f'<figure class="pv-sheet"><img src="{root}{E(sheet["src"])}" alt="{esc(p["title"])} cheat sheet, page 1 (partial preview)" '
+                 f'width="{sheet["w"]}" height="{sheet["h"]}" fetchpriority="high"></figure>')
+    if card:
+        figs += (f'<figure class="pv-card"><img src="{root}{E(card["src"])}" alt="Sample card from {esc(p["title"])}, answer side" '
+                 f'width="{card["w"]}" height="{card["h"]}" loading="lazy"></figure>')
+    if not figs:
+        return ""
+    return (f'<div class="offerpv">{figs}<p class="stagecap mono">Real pages from the {esc(what)}: cheat sheet page 1 and a card. '
+            f'<a href="{root}products/{E(p["slug"])}.html#preview" data-track="cta">More previews</a></p></div>')
+
+
 def peek_html(items, p, root):
     """Early 'look inside' block: two real sample cards, the first cheat sheet page, a buy button and who the pack is for."""
     s = sample(p["slug"]) or {}
@@ -675,7 +694,10 @@ def pack_page(site, items, p, emit, tpl):
                 elements=elements_html(p), price=E(p["price"]), price_note=note,
                 price_attr=' data-exp="price_frame" data-exp-field="price"' if avail else "",
                 buy=buy(items, p["slug"], root=root), facts=pack_facts(p),
-                herobuy=(f'<p class="herobuy">{buy(items, p["slug"], root=root, cta=True)}</p>' if avail else ""), compare=compare_html(site, p, root),
+                herobuy=(f'<p class="herobuy">{buy(items, p["slug"], root=root, cta=True)}<span class="refundline">One-time, instant download. '
+                         f'<a href="{root}refund.html">14-day refund, no questions asked.</a></span></p>' if avail else ""),
+                phero_cls=(" withpv" if avail and hero_preview_html(p, root) else ""),
+                hero_preview=(hero_preview_html(p, root) if avail else ""), compare=compare_html(site, p, root),
                 bottom=bottom + sample_qa_html(p, avail) + free_sample_link(site, p, root) + SAMPLE_NOTES.get(p["slug"], "") + bottom_cta_html(items, p, root, avail) + sticky_html(items, p, root, avail), kicker=f'MCAT {E(p["aamc"])} &middot; one-time' if avail else "Coming soon",
                 related=RELATED.get(p["slug"], ""))
     s = sample(p["slug"]) if avail else None
