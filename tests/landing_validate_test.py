@@ -69,7 +69,11 @@ finally:
 
 d = (ROOT / "tools" / "deploy_pages.sh").read_text()
 i_build, i_tests, i_deploy = d.find("python3 build.py"), d.find("tests/*_test.mjs"), d.find("pages deploy")
-ok(-1 < i_build < i_tests < i_deploy and "tests/*_test.py" in d and "set -euo pipefail" in d, "deploy_pages.sh runs the tests after the build and before deploying")
+i_tests = d.find("tools/run_tests.sh")
+runner = (ROOT / "tools" / "run_tests.sh").read_text()
+ci = (ROOT / ".github" / "workflows" / "ci.yml").read_text()
+ok(-1 < i_build < i_tests < i_deploy and "set -euo pipefail" in d and "tests/*_test.mjs" in runner and "tests/*_test.py" in runner and "tools/run_tests.sh" in ci,
+   "deploy_pages.sh and CI run the same tests/run_tests.sh runner, after the build and before deploying")
 
 print(f"landing_validate_test: {passed} passed, {failed} failed")
 sys.exit(1 if failed else 0)
