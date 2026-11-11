@@ -3,10 +3,18 @@ title: Equivalence Point vs Half-Equivalence Point (and the Second)
 description: Find the equivalence point, half-equivalence point and second equivalence point on a titration curve, with indicator choice and a worked example.
 product: 5a-solutions-acids-bases
 published: 2026-10-20
-related: equivalence-point-second-equivalence-point-titration, henderson-hasselbalch-for-the-mcat, amino-acid-pka-charge-ph-7-4, weak-acid-strong-base-titration-half-equivalence-point
-seo_title: Equivalence vs Half-Equivalence Point on a Titration Curve
-seo_description: Find the equivalence point and half-equivalence point (pH = pKa) on a titration curve, the pH at each, indicator choice and a worked example.
+related: henderson-hasselbalch-for-the-mcat, amino-acid-pka-charge-ph-7-4, strong-vs-weak-acids-ka-pka-conjugate-base-strength, histidine-pka-isoelectric-point-pi-calculation
+seo_title: Equivalence Point, Half-Equivalence and Second Equivalence
+seo_description: Equivalence point: moles base = moles acid. Half-equivalence: pH = pKa. Second equivalence point: twice the first volume. Worked titrations with pH.
 ---
+
+> **Quick answer.** The **equivalence point** is where moles of titrant added equal moles of analyte (M<sub>a</sub>V<sub>a</sub> = M<sub>b</sub>V<sub>b</sub> for a monoprotic acid and NaOH). The **half-equivalence point** is at half that volume, where [HA] = [A<sup>-</sup>] and **pH = pK<sub>a</sub>**. A diprotic acid has a **second equivalence point at exactly twice the volume of the first**, and its half-way point between them gives pK<sub>a2</sub>.
+>
+> **Worked example:** 25.0 mL of 0.100 M acetic acid (pK<sub>a</sub> 4.76) titrated with 0.100 M NaOH reaches equivalence at **25.0 mL** (pH 8.73, basic because acetate is left), and the half-equivalence point is at **12.5 mL, where pH = 4.76**. If the acid were diprotic with its first equivalence point at 25.0 mL, the second would be at **50.0 mL**.
+>
+> Practice: [5A pH, buffers and titration questions](../practice/5a-ph-buffers-titrations-indicators.html).
+
+## Reading a titration curve
 
 A titration curve plots pH against the volume of titrant added. The equivalence point is where moles of added base equal moles of acid originally present (or the reverse), and its pH depends on what is left in the flask: exactly 7 for a strong acid with a strong base, above 7 for a weak acid with a strong base, and below 7 for a weak base with a strong acid. Halfway to the equivalence point, a weak acid is half converted to its conjugate base, so pH = pK<sub>a</sub>. Those two landmarks let you read almost any curve.
 
@@ -78,12 +86,35 @@ An indicator is itself a weak acid whose two forms have different colors. It cha
 
 For a strong acid with a strong base at these concentrations, the jump is so steep that the choice barely matters. In the HCl titration above, the pH goes from 3.70 at 24.9 mL to 10.30 at 25.1 mL, so a change of two drops crosses the ranges of all three indicators. For a weak acid, the jump is shorter and starts higher, so methyl red would change color well before the true equivalence point.
 
-## Polyprotic acids
+## Second equivalence point (diprotic and polyprotic acids)
 
-An acid with two ionizable protons, such as fully protonated glycine, shows two buffer regions and two equivalence points, as long as its pK<sub>a</sub> values are far enough apart. The second equivalence point needs twice the volume of the first, because each proton takes one equivalent of base. The first half-equivalence point gives pK<sub>a1</sub>, and the point midway between the first and second equivalence points gives pK<sub>a2</sub>. The amino acid version of this curve, with its isoelectric point, is worked through in the [amino acid pKa note](amino-acid-pka-charge-ph-7-4.html).
+Each ionizable proton takes one full equivalent of base, so a diprotic acid H<sub>2</sub>A shows two buffer regions and two equivalence points, as long as its pK<sub>a</sub> values are a few units apart.
+
+| Point on the curve | Volume of NaOH | What is in the flask | pH |
+|---|---|---|---|
+| First half-equivalence | V<sub>1</sub>/2 | Equal H<sub>2</sub>A and HA<sup>-</sup> | pK<sub>a1</sub> |
+| **First equivalence** | V<sub>1</sub> | Mostly HA<sup>-</sup> (amphoteric) | About (pK<sub>a1</sub> + pK<sub>a2</sub>) / 2 |
+| Second half-equivalence | 1.5 &times; V<sub>1</sub> | Equal HA<sup>-</sup> and A<sup>2-</sup> | pK<sub>a2</sub> |
+| **Second equivalence** | 2 &times; V<sub>1</sub> | A<sup>2-</sup>, a weak base | Basic, set by A<sup>2-</sup> hydrolysis |
+
+### Worked example: second equivalence point of glycine
+
+Titrate 25.0 mL of 0.100 M fully protonated glycine (pK<sub>a1</sub> = 2.34, pK<sub>a2</sub> = 9.60) with 0.100 M NaOH.
+
+- Glycine present: 0.100 M &times; 25.0 mL = 2.50 mmol, so each proton needs 2.50 mmol of NaOH, which is 25.0 mL.
+- **First equivalence point: 25.0 mL**, pH about (2.34 + 9.60) / 2 = **5.97**. For an amino acid with a neutral side chain this is also its isoelectric point.
+- **Second equivalence point: 50.0 mL.** The flask holds 2.50 mmol of glycinate in 75.0 mL, so [A<sup>-</sup>] = 0.0333 M. K<sub>b</sub> = 10<sup>-14</sup> / 10<sup>-9.60</sup> = 4.0 &times; 10<sup>-5</sup>, [OH<sup>-</sup>] = &radic;(4.0 &times; 10<sup>-5</sup> &times; 0.0333) = 1.15 &times; 10<sup>-3</sup> M, pOH = 2.94, so **pH = 11.06**.
+- Half-equivalence points: pH = 2.34 at 12.5 mL and pH = 9.60 at 37.5 mL.
+
+The amino acid version of this curve, with charge at each pH, is in the [amino acid pKa note](amino-acid-pka-charge-ph-7-4.html).
+
+## Equivalence point vs end point
+
+The **equivalence point** is stoichiometric: you calculate it, or read it from the middle of the steepest part of the curve. The **end point** is what you see: the indicator's color change. A good indicator changes color on the steep part of the curve, so the two differ by a fraction of a drop. In a lab, trial 1 is usually a quick rough run to find the approximate end point; later trials go dropwise near that volume and are averaged.
 
 ## Common traps
 
+- **Assuming the second equivalence point has the same pH as the first.** It needs twice the volume and sits at a much higher pH.
 - **Assuming equivalence means pH 7.** Only for strong with strong. Check what species remain.
 - **Confusing equivalence with the end point.** The equivalence point is the stoichiometric point. The end point is where the indicator changes color. A good indicator makes them nearly the same.
 - **Skipping stoichiometry before Henderson-Hasselbalch.** Convert moles first, then use the ratio.

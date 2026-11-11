@@ -6,7 +6,7 @@ category: 1d-metabolism-bioenergetics
 cluster: Pyruvate dehydrogenase, citric acid cycle, electron transport chain, chemiosmosis, uncouplers, ATP accounting
 product: 1d-metabolism-bioenergetics
 published: 2026-10-20
-notes:
+notes: citric-acid-cycle-steps-products-atp, pyruvate-dehydrogenase-complex-pyruvate-to-acetyl-coa, krebs-cycle-enzymes-in-order-citrate-synthase-to-malate-dehydrogenase
 ---
 
 Aerobic respiration is a chain of handoffs. Pyruvate dehydrogenase links glycolysis to the citric acid cycle by converting pyruvate to acetyl-CoA, CO2 and NADH. Each acetyl-CoA turning the cycle yields 3 NADH, 1 FADH2, 1 GTP (or ATP) and 2 CO2. NADH and FADH2 then give electrons to the electron transport chain in the inner mitochondrial membrane, where complexes I, III and IV pump protons from the matrix into the intermembrane space. Complex II (succinate dehydrogenase) passes electrons to the chain but pumps no protons.

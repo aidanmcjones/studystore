@@ -108,7 +108,7 @@ export async function forward(v, env, fetcher = fetch) {
 const PAGE = (title, msg, status = 200) => new Response(
   `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex"><title>${title} | StudyStore</title><link rel="stylesheet" href="/assets/style.css"></head>
-<body><main class="wrap narrow legal"><h1>${title}</h1><p>${msg}</p><p><a href="/">Back to StudyStore</a> &middot; <a href="/notes/index.html">Free notes</a></p></main></body></html>`,
+<body><main class="wrap narrow legal"><h1>${title}</h1><p>${msg}</p><p><a href="/">Back to StudyStore</a> &middot; <a href="/notes/">Free notes</a></p></main></body></html>`,
   { status, headers: { "Cache-Control": "no-store", "X-Robots-Tag": "noindex", "Content-Type": "text/html; charset=utf-8" } });
 
 const MSG = {

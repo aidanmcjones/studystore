@@ -3,7 +3,7 @@ title: Glycolysis Intermediates in Order: First Intermediate and Which Steps Mak
 description: List the ten glycolysis intermediates in order, the enzyme at each step, the first intermediate (glucose-6-phosphate), and which steps use or make ATP and NADH.
 product: 1d-metabolism-bioenergetics
 published: 2026-11-05
-related: glycolysis-steps-enzymes-net-atp, glycolysis-regulation-irreversible-steps-hexokinase-pfk-1, net-yield-of-glycolysis-atp-nadh-pyruvate-per-glucose
+related: glycolysis-steps-enzymes-net-atp, glycolysis-regulation-irreversible-steps-hexokinase-pfk-1
 seo_title: Glycolysis Intermediates in Order and ATP Steps | MCAT
 seo_description: The first intermediate in glycolysis is glucose-6-phosphate. See every intermediate, enzyme, and which steps use or make ATP, with a quiz.
 ---

@@ -656,5 +656,6 @@ for u, lm in urls:
     sm.append(f"  <url><loc>{u}</loc>" + (f"<lastmod>{lm}</lastmod>" if lm else "") + "</url>")
 sm += ["</urlset>", ""]
 (ROOT / "sitemap.xml").write_text("\n".join(sm))
-(ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {site['base_url']}/sitemap.xml\n")
+# /cdn-cgi/ is Cloudflare's own path (email-obfuscation links 404 for crawlers); nothing there is a page.
+(ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /cdn-cgi/\n\nSitemap: {site['base_url']}/sitemap.xml\n")
 print(f"built {len(PAGES)} pages + {len(notes)} notes")

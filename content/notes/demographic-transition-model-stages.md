@@ -3,10 +3,34 @@ title: Demographic Transition Model: The 5 Stages Explained for the MCAT
 description: What happens to birth rates, death rates and population growth in each stage of the demographic transition model, with growth-rate and doubling-time math.
 product: 9b-demographics
 published: 2026-10-20
-related: population-pyramids-demographic-transition-stages-1-to-5, epidemiologic-transition-causes-of-death-by-dtm-stage
-seo_title: Demographic Transition Model: 5 Stages, Pyramids, Examples
-seo_description: The 5 demographic transition model stages in one table: birth and death rates, growth, population pyramid shape and a real country for each.
+related: epidemiologic-transition-causes-of-death-by-dtm-stage, dtm-stage-5-below-replacement-fertility-population-decline, fertility-transition-and-migration-transition-mcat, conflict-theory-mcat-marx-weber-dahrendorf-mills
+seo_title: Demographic Transition Model: Stages 1-5, Graph and Pyramids
+seo_description: The 5 stages of the demographic transition model in one table: birth and death rates, growth and pyramid shape, plus which stage has the biggest gap.
 ---
+
+> **Quick answer: the 5 stages of the demographic transition model.** Death rates fall first, birth rates follow, and the gap between them is when the population booms.
+>
+> | Stage | Birth rate | Death rate | Growth |
+> |---|---|---|---|
+> | 1 High stationary | High | High | Slow |
+> | 2 Early expanding | High | **Falling fast** | **Fastest** |
+> | 3 Late expanding | **Falling** | Low | Slowing |
+> | 4 Low stationary | Low | Low | Near zero |
+> | 5 Declining | Below replacement | Low or rising | Negative |
+>
+> **Example:** a country where vaccines and clean water have just cut child deaths but families still have five or six children is in **Stage 2**, and its population is growing fastest. Practice: [9B demographics practice questions](../practice/9b-demographic-transition-population-growth-migration.html).
+
+## Exam questions this model answers
+
+- **Which stage has the greatest gap between birth rate and death rate?** Late Stage 2 (into early Stage 3). The death rate has already fallen sharply while the birth rate is still high, so natural increase peaks.
+- **Which stage shows the greatest decline in death rate?** Stage 2, driven by better food supply, sanitation, clean water and medicine.
+- **Which stage is the fertility transition, the period of declining fertility?** Stage 3. Death rates are already low and birth rates now fall.
+- **What is Stage 5?** A later addition for societies whose fertility is below replacement: deaths can exceed births, and the population shrinks and ages unless immigration makes up the difference. See the [Stage 5 note](dtm-stage-5-below-replacement-fertility-population-decline.html).
+- **What do Stage 1 to 5 population pyramids look like?** Wide base in Stages 1 and 2, a narrowing base in Stage 3, a column in Stage 4, and a base narrower than the middle in Stage 5. Read the base first: it shows recent births.
+- **What does the model show?** How birth rates, death rates and growth change as a society industrializes. It describes a pattern seen in Europe and North America; it is not a law every country must follow on the same timetable.
+- **What changes in causes of death across the stages?** That is the [epidemiologic transition](epidemiologic-transition-causes-of-death-by-dtm-stage.html): infections and famine early, chronic diseases such as heart disease and cancer later.
+
+## The model in one paragraph
 
 The **demographic transition model** describes how a society's birth and death rates change as it industrializes. It starts with high birth and death rates and slow growth (Stage 1), moves through a phase where **death rates fall first** and the population grows quickly (Stage 2), then a phase where **birth rates fall** and growth slows (Stage 3), and ends with low birth and death rates and little growth (Stage 4). Many modern descriptions add a Stage 5, where births drop below deaths and the population shrinks and ages. The key idea is the **lag**: death rates fall before birth rates do, and the gap between them is when populations boom.
 

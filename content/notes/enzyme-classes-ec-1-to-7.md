@@ -4,9 +4,25 @@ description: The 7 enzyme classes in order, the reaction each catalyzes, naming 
 product: 1a-amino-acids-proteins
 published: 2026-10-20
 related: enzyme-inhibition-types-compared, michaelis-menten-and-lineweaver-burk, protein-structure-levels-and-denaturation
-seo_title: The 7 Enzyme Classes (EC 1-7) with Examples and Mnemonic
-seo_description: All 7 EC enzyme classes with the reaction each catalyzes, a real enzyme example and the name clues that tell them apart on the MCAT.
+seo_title: 7 Classes of Enzymes (EC 1-7): Reactions and Examples
+seo_description: The 7 classes of enzymes in order: oxidoreductases, transferases, hydrolases, lyases, isomerases, ligases, translocases. Reaction, example and name clues.
 ---
+
+> **Quick answer: the 7 classes of enzymes, in EC order.**
+>
+> | Class | Reaction | Example |
+> |---|---|---|
+> | 1 Oxidoreductases | Redox | Lactate dehydrogenase |
+> | 2 Transferases | Move a group between molecules | Hexokinase |
+> | 3 Hydrolases | Split a bond with water | Trypsin, lipase |
+> | 4 Lyases | Break or form bonds without water or redox | Aldolase |
+> | 5 Isomerases | Rearrange one molecule | Triose phosphate isomerase |
+> | 6 Ligases | Join two molecules using ATP | DNA ligase |
+> | 7 Translocases | Move ions or molecules across membranes | ATP synthase |
+>
+> **Memory aid (our own):** O-T-H-L-I-L-T, "Oh, The Huge Lizard Is Leaving Town." **Worked example:** glucose + ATP to glucose-6-phosphate + ADP moves a phosphate group from ATP to glucose, so hexokinase is a **transferase (EC 2)**. ATP is the group donor here; a ligase instead spends ATP to join two separate molecules.
+>
+> Practice: [1A enzyme practice questions](../practice/1a-enzyme-inhibition-allosteric-regulation.html).
 
 Enzymes are named by what they do, and the Enzyme Commission (EC) system sorts every enzyme into a numbered class by the type of reaction it catalyzes. The MCAT does not ask you to memorize EC numbers, but it does ask you to look at a reaction, or at a name, and say which class it belongs to. The skill is recognizing the reaction pattern.
 

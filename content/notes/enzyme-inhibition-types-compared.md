@@ -8,6 +8,19 @@ seo_title: Enzyme Inhibition Types Compared: Km and Vmax Effects
 seo_description: Competitive, noncompetitive, uncompetitive and mixed inhibition in one table: effect on Km and Vmax and how to spot each on a Lineweaver-Burk plot.
 ---
 
+> **Quick answer: enzyme inhibition types and their effect on K<sub>m</sub> and V<sub>max</sub>.**
+>
+> | Type (binds) | K<sub>m</sub> | V<sub>max</sub> | Lineweaver-Burk |
+> |---|---|---|---|
+> | Competitive (free E) | Up | Same | Cross on y-axis |
+> | Noncompetitive (E and ES equally) | Same | Down | Cross on x-axis |
+> | Uncompetitive (ES only) | Down | Down | Parallel |
+> | Mixed (E and ES unequally) | Up or down | Down | Cross off both axes |
+>
+> **Worked example:** an inhibitor raises the apparent K<sub>m</sub> from 2 mM to 6 mM but V<sub>max</sub> stays at 50 &micro;mol/min. Only competitive inhibition changes K<sub>m</sub> alone, and enough substrate outcompetes it, so V<sub>max</sub> is still reachable.
+>
+> Practice: [1A enzyme inhibition practice questions](../practice/1a-enzyme-inhibition-allosteric-regulation.html).
+
 Inhibition questions are some of the most predictable on the MCAT, and also some of the most commonly missed, because students memorize a table without understanding where the table came from. This note derives the table from one question: **which enzyme form does the inhibitor bind?** Once you can answer that, the effects on K<sub>m</sub> and V<sub>max</sub> follow.
 
 ## Setup: the three enzyme forms

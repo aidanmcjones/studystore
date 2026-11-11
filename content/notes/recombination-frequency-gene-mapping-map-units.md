@@ -3,10 +3,20 @@ title: Recombination Frequency: Formula and How to Find Map Units
 description: Recombination frequency is recombinants divided by total offspring. See how to convert it to map units (cM), worked examples and why it caps at 50 percent.
 product: 1c-heredity-evolution
 published: 2026-10-20
-related: hardy-weinberg-equation-practice-problems, mitosis-vs-meiosis-differences, how-to-calculate-map-units-from-recombination-frequency, recombination-frequency-vs-map-distance-50-percent-limit
-seo_title: Recombination Frequency to Map Units: Formula + Examples
-seo_description: Recombination frequency = recombinants / total offspring, and 1% = 1 map unit (cM). Worked examples, the 50% ceiling and a 5-question quiz.
+related: three-point-cross-gene-order-double-crossover, hardy-weinberg-equation-practice-problems, mitosis-vs-meiosis-differences, hfr-interrupted-mating-gene-order-conjugation-mapping
+seo_title: Recombination Frequency and Map Units: How to Calculate
+seo_description: Recombination frequency = recombinants / total offspring x 100, and 1% = 1 map unit (cM). How to calculate map units, worked crosses, the 50% limit.
 ---
+
+> **Quick answer: how to calculate map units from recombination frequency.** Count the recombinant offspring from a test cross, divide by the total offspring and multiply by 100. **That percent is the distance in map units: 1 percent recombination = 1 map unit = 1 centimorgan (cM).**
+>
+> **Worked example:** a test cross gives 1,000 offspring, and the two rare (recombinant) classes have 46 and 54 offspring. (46 + 54) / 1,000 = 0.10 = 10 percent, so the genes are **10 map units apart**.
+>
+> **In reverse:** genes 8 map units apart give about 8 percent recombinant offspring, so 200 of 2,500, split about evenly between the two recombinant classes (about 100 each).
+>
+> Try it on exam-style questions: [1C genetics and linkage practice questions](../practice/1c-mendelian-genetics-pedigrees-linkage.html). For three genes, see the [three-point cross and gene order note](three-point-cross-gene-order-double-crossover.html).
+
+## What recombination frequency means
 
 Recombination frequency is the fraction of offspring that carry a new combination of alleles not seen in either parental chromosome. **Recombination frequency (percent) = recombinant offspring / total offspring &times; 100, and 1 percent recombination = 1 map unit = 1 centimorgan (cM).** Genes that are close together on a chromosome rarely have a crossover between them, so they recombine rarely; genes far apart recombine more often. The expected observed value never goes above 50 percent, which is what unlinked genes show.
 
@@ -98,6 +108,20 @@ If crossovers in the two intervals were independent, the expected double crossov
 
 Positive interference means one crossover makes another nearby crossover less likely. An interference value of 0 would mean the two intervals behave independently.
 
+## Map units vs recombination frequency: when they stop matching
+
+For genes close together, the percent recombinants and the map distance are the same number. As genes get farther apart, hidden double crossovers make the observed percent fall behind the true distance, and it levels off at 50 percent.
+
+| What you observe | What to conclude |
+|---|---|
+| About 5 percent recombinants | About 5 map units apart, tightly linked |
+| 10 to 20 percent recombinants | Linked; percent recombinants is a good estimate of map units |
+| Close to 50 percent recombinants | Unlinked (different chromosomes) or very far apart on one chromosome; the cross cannot tell which |
+| More than 50 percent for one gene pair | Not possible as an expected value; recheck which classes are parental |
+| Sum of two short intervals larger than the direct long-interval measurement | Double crossovers were missed in the long-interval count |
+
+Use the short intervals and add them, as in worked example 2, whenever you need a long distance.
+
 ## Common traps
 
 - **Parental classes are the most common, not the dominant ones.** Read phase from the counts.
@@ -116,9 +140,7 @@ Related: see the [Three-point cross and gene order note](three-point-cross-gene-
 
 Related: see the [Hfr strains and interrupted mating note](hfr-interrupted-mating-gene-order-conjugation-mapping.html).
 
-Related: see the [How to calculate map units note](how-to-calculate-map-units-from-recombination-frequency.html).
 
-Related: see the [Recombination frequency vs map distance note](recombination-frequency-vs-map-distance-50-percent-limit.html).
 
 Related: see the [Hardy-Weinberg practice problems note](hardy-weinberg-equation-practice-problems.html).
 

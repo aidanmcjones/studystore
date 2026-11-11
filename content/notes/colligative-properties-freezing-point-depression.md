@@ -4,11 +4,15 @@ description: Calculate freezing point depression, boiling point elevation, vapor
 product: 5a-solutions-acids-bases
 published: 2026-10-20
 related: passive-vs-active-transport, henderson-hasselbalch-for-the-mcat, acid-base-titration-curves-equivalence-point, osmotic-pressure-vant-hoff-factor-colligative, ksp-solubility-product-common-ion-effect
-seo_title: Freezing Point Depression Formula and Worked Examples
-seo_description: Freezing point depression formula with worked examples, plus boiling point elevation, vapor pressure lowering, osmotic pressure and the van't Hoff factor.
+seo_title: Colligative Properties: Freezing Point Depression Formula
+seo_description: Freezing point depression: delta Tf = i Kf m, with worked examples, plus boiling point elevation, vapor pressure lowering, osmotic pressure and van't Hoff.
 ---
 
-Colligative properties are the solution properties that depend on how many solute particles are dissolved, not on what those particles are. There are four: vapor pressure lowering, boiling point elevation, freezing point depression, and osmotic pressure. Freezing point depression is calculated with **&Delta;T<sub>f</sub> = i K<sub>f</sub> m**, where i is the van't Hoff factor, K<sub>f</sub> is a constant for the solvent (about 1.86 &deg;C kg/mol for water), and m is the molality. Boiling point elevation uses the same form with K<sub>b</sub> (about 0.512 &deg;C kg/mol for water).
+> **Quick answer.** Colligative properties are the solution properties that depend on how many solute particles are dissolved, not on what those particles are. There are four: vapor pressure lowering, boiling point elevation, freezing point depression, and osmotic pressure. Freezing point depression is calculated with **&Delta;T<sub>f</sub> = i K<sub>f</sub> m**, where i is the van't Hoff factor, K<sub>f</sub> is a constant for the solvent (about 1.86 &deg;C kg/mol for water), and m is the molality. Boiling point elevation uses the same form with K<sub>b</sub> (about 0.512 &deg;C kg/mol for water).
+>
+> **Worked example:** 1.0 mol NaCl dissolved in 1.0 kg of water. NaCl gives 2 ions, so i = 2. &Delta;T<sub>f</sub> = 2 &times; 1.86 &times; 1.0 = **3.72 &deg;C**, so the solution freezes at about **-3.7 &deg;C**.
+>
+> Practice: [5A solutions practice questions](../practice/5a-solubility-ksp-common-ion.html).
 
 ## The four equations
 

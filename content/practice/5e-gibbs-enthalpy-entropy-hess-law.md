@@ -6,7 +6,7 @@ category: 5e-thermo-kinetics
 cluster: Enthalpy and Hess's law, Bond dissociation energy, Entropy and the second law, Gibbs free energy and spontaneity, Temperature dependence of spontaneity, Free energy and the equilibrium constant, Coupled reactions in biology
 product: 5e-thermo-kinetics
 published: 2026-10-30
-notes:
+notes: gibbs-free-energy-delta-g-spontaneity
 ---
 
 Enthalpy is a state function, so the &Delta;H of a reaction depends only on its start and end points. That is why Hess's law works: reverse a step and flip the sign of its &Delta;H, scale a step and scale its &Delta;H by the same factor, then add. Bond dissociation energies give an estimate of the same quantity: energy spent breaking reactant bonds minus energy released forming product bonds.

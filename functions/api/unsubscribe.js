@@ -6,7 +6,7 @@ const TOKEN_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
 const page = (title, msg, status = 200) => new Response(
   `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex"><title>${title} | StudyStore</title><link rel="stylesheet" href="/assets/style.css"></head>
-<body><main class="wrap narrow legal"><h1>${title}</h1><p>${msg}</p><p><a href="/">Back to StudyStore</a> &middot; <a href="/privacy.html">Privacy policy</a></p></main></body></html>`,
+<body><main class="wrap narrow legal"><h1>${title}</h1><p>${msg}</p><p><a href="/">Back to StudyStore</a> &middot; <a href="/privacy">Privacy policy</a></p></main></body></html>`,
   { status, headers: { "Cache-Control": "no-store", "X-Robots-Tag": "noindex", "Content-Type": "text/html; charset=utf-8" } });
 
 async function unsubscribe(request, env) {

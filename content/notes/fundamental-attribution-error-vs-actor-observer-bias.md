@@ -4,9 +4,35 @@ description: Fundamental attribution error vs self-serving bias vs actor-observe
 product: 8b-social-thinking
 published: 2026-10-20
 seo_title: Fundamental Attribution Error vs Self-Serving Bias
-seo_description: Fundamental attribution error blames others' character, self-serving bias protects your ego, actor-observer splits by role. One table with examples.
-related: attribution-theory-kelley-covariation-dispositional-situational
+seo_description: The difference: the fundamental attribution error blames others' character; self-serving bias credits you for wins, luck for losses. Table with examples.
+related: attribution-theory-kelley-covariation-dispositional-situational, cognitive-dissonance-and-elaboration-likelihood-model, conformity-vs-obedience-asch-milgram
 ---
+
+> **Quick answer: fundamental attribution error vs self-serving bias.** The **fundamental attribution error** is about **other people**: we blame their behavior on their character and underrate their situation. **Self-serving bias** is about **your own outcomes**: you credit your successes to yourself and blame your failures on circumstances. The **actor-observer bias** sits between them: your own behavior gets a situational explanation, other people's gets a dispositional one, whatever the outcome.
+>
+> **Two questions decide it:** whose behavior is being explained, and does the scenario turn on success vs failure?
+
+## Self-serving bias vs fundamental attribution error vs actor-observer bias
+
+| | Fundamental attribution error | Self-serving bias | Actor-observer bias |
+|---|---|---|---|
+| Whose behavior | Someone else's | Your own | Your own compared with someone else's |
+| Cause favored | Their disposition (character) | Success: you. Failure: the situation | You: situation. Them: disposition |
+| Does the outcome matter? | No | Yes, it flips with success vs failure | No |
+| Main driver | The person is more noticeable than the situation | Protecting self-esteem | Seeing the scene from your own vantage point |
+| Example | "She was curt because she is rude" | "I aced it because I studied; I failed because the test was unfair" | "I was late because of traffic; he was late because he is careless" |
+
+### One event, three biases
+
+Two students both fail the same organic chemistry midterm.
+
+- Jordan says the exam covered material the professor skipped. Jordan is explaining **his own failure** with the situation: **self-serving bias**.
+- Jordan then hears that Priya also failed and decides she must not have studied. He is explaining **someone else's** result with her disposition while ignoring the same hard exam: **fundamental attribution error**.
+- Put the two together (situation for me, disposition for her, same event) and you have the **actor-observer bias**.
+
+If the passage stresses the **outcome** (Jordan later aces the final and says it was because he is good at chemistry), the self-serving pattern is the better answer. If it stresses the **contrast between self and other**, choose actor-observer.
+
+## The three biases in one paragraph
 
 All three biases are mistakes in **attribution**, the explanations people give for behavior. The **fundamental attribution error** is overestimating personality and underestimating the situation when explaining **other people's** behavior. The **actor-observer bias** is the contrast between how we explain **our own** behavior (situation) and **others'** behavior (personality). The **self-serving bias** depends on the **outcome**: we credit ourselves for successes and blame circumstances for failures. To tell them apart, ask two questions: whose behavior is being explained, and was the outcome good or bad?
 
@@ -59,14 +85,6 @@ A note on evidence: the actor-observer asymmetry is less robust than many study 
 
 ![Two-by-two grid of whose behavior and outcome, showing which attribution each bias predicts](assets/notes/fundamental-attribution-error-vs-actor-observer-bias.png "Whose behavior is being explained (rows) and whether the outcome was good or bad (columns) decide which bias applies. Orange cells lean dispositional, teal cells lean situational.")
 
-## Side-by-side comparison
-
-| Bias | Whose behavior | Prediction | Key driver |
-|---|---|---|---|
-| Fundamental attribution error | Others | Too much disposition, too little situation | Salience, effortful correction |
-| Actor-observer bias | Self vs others | Self: situation. Others: disposition | Perspective |
-| Self-serving bias | Self | Success: disposition. Failure: situation | Protecting self-esteem |
-
 ## Kelley's covariation model: how attributions should work
 
 Harold Kelley proposed that people decide between dispositional and situational causes by checking three kinds of information. Suppose Maya laughs at a particular comedian.
@@ -117,7 +135,7 @@ The trap in Scenario B is to focus on the 3/3 consistency. Consistency is high i
 - Kelley: high consensus + high distinctiveness + high consistency points to the situation; low + low + high points to the person.
 - Individualistic cultures show a stronger fundamental attribution error than collectivistic cultures.
 
-Related: see the [Self-serving bias vs actor-observer bias note](self-serving-bias-vs-actor-observer-bias.html).
+Practice: [8B social thinking practice questions](../practice/8b-attribution-theory-fundamental-attribution-error.html). Related: [Kelley's covariation model note](attribution-theory-kelley-covariation-dispositional-situational.html).
 
 :::quiz
 Q: A manager assumes a new employee is lazy after she misses a deadline, without learning that her computer crashed. Which bias is this?

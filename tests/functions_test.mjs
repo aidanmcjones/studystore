@@ -142,9 +142,9 @@ await post(pubMsg, { key: OWNER_KEY });
 ok(pend.status === "approved" && pend.requests === 2, "owner resend of a pending public report approves it");
 // form post (no JS): 303 to #sent / #rerror
 r = await post({ ...good, message: "No-JS form post about a typo here" }, { form: true });
-ok(r.status === 303 && r.headers.get("Location").endsWith("/report.html#sent"), "form post success is 303 to #sent");
+ok(r.status === 303 && r.headers.get("Location").endsWith("/report#sent"), "form post success is 303 to #sent");
 r = await post({ ...good, message: "tiny" }, { form: true });
-ok(r.status === 303 && r.headers.get("Location").endsWith("/report.html#rerror"), "form post failure is 303 to #rerror");
+ok(r.status === 303 && r.headers.get("Location").endsWith("/report#rerror"), "form post failure is 303 to #rerror");
 // body cap
 r = await post(JSON.stringify({ ...good, message: "z".repeat(5000) }));
 ok(r.status === 413, "body over 4 KB is 413");

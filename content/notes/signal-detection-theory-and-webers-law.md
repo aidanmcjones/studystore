@@ -8,7 +8,11 @@ seo_title: Signal Detection Theory and Weber's Law: d' and JND
 seo_description: Signal detection theory (hits, misses, d', response bias) and Weber's law (JND = k x stimulus) with worked numbers and a quiz.
 ---
 
-Weber's law and signal detection theory both come from psychophysics, the study of how physical stimulus intensity relates to what people report sensing. **Weber's law** says the smallest change you can notice, the just noticeable difference (JND), is a constant fraction of the starting intensity: &Delta;I / I = k. **Signal detection theory** (SDT) says that whether you report a faint stimulus depends on two separate things: how well your sensory system separates signal from noise (sensitivity, d') and how willing you are to say "yes" (your response criterion, or bias). Weber's law is about telling two stimuli apart. SDT is about deciding whether a stimulus was there at all.
+> **Quick answer.** Weber's law and signal detection theory both come from psychophysics, the study of how physical stimulus intensity relates to what people report sensing. **Weber's law** says the smallest change you can notice, the just noticeable difference (JND), is a constant fraction of the starting intensity: &Delta;I / I = k. **Signal detection theory** (SDT) says that whether you report a faint stimulus depends on two separate things: how well your sensory system separates signal from noise (sensitivity, d') and how willing you are to say "yes" (your response criterion, or bias). Weber's law is about telling two stimuli apart. SDT is about deciding whether a stimulus was there at all.
+>
+> **Worked example (Weber):** if you can just tell 100 g from 102 g, k = 2/100 = 0.02, so at 500 g the JND is 0.02 &times; 500 = **10 g**. **Worked example (SDT):** a radiologist who calls more scans positive gains hits and false alarms together; that is a lower criterion (bias), not better sensitivity.
+>
+> Practice: [6A thresholds and signal detection questions](../practice/6a-thresholds-weber-law-signal-detection-adaptation.html).
 
 ## Two kinds of threshold
 

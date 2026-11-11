@@ -8,7 +8,11 @@ seo_title: Citric Acid Cycle: Steps, Enzymes, Products, ATP
 seo_description: Citric acid cycle steps with enzymes: the 8 reactions, products per turn (3 NADH, 1 FADH2, 1 GTP), regulation and ATP count, plus a quiz.
 ---
 
-The citric acid cycle (also called the Krebs cycle or TCA cycle) runs in the mitochondrial matrix and oxidizes the equivalent of the two-carbon acetyl group of acetyl-CoA to two CO<sub>2</sub>. **Each turn makes 3 NADH, 1 FADH<sub>2</sub>, 1 GTP (or ATP) and 2 CO<sub>2</sub>**, and regenerates the oxaloacetate it started with. One glucose gives two pyruvate and therefore two acetyl-CoA, so the cycle turns twice per glucose. The cycle itself makes very little ATP directly; its real job is loading electron carriers for the electron transport chain.
+> **Quick answer.** The citric acid cycle (also called the Krebs cycle or TCA cycle) runs in the mitochondrial matrix and oxidizes the equivalent of the two-carbon acetyl group of acetyl-CoA to two CO<sub>2</sub>. **Each turn makes 3 NADH, 1 FADH<sub>2</sub>, 1 GTP (or ATP) and 2 CO<sub>2</sub>**, and regenerates the oxaloacetate it started with. One glucose gives two pyruvate and therefore two acetyl-CoA, so the cycle turns twice per glucose. The cycle itself makes very little ATP directly; its real job is loading electron carriers for the electron transport chain.
+>
+> **Worked example:** per glucose the cycle turns twice, so it makes **6 NADH, 2 FADH<sub>2</sub>, 2 GTP and 4 CO<sub>2</sub>**. At about 2.5 ATP per NADH and 1.5 per FADH<sub>2</sub>, that is 15 + 3 + 2 = **20 ATP** from the cycle itself after oxidative phosphorylation.
+>
+> Practice: [1D TCA cycle and ATP yield questions](../practice/1d-pdh-tca-cycle-electron-transport-atp-yield.html).
 
 ## Before the cycle: pyruvate dehydrogenase
 

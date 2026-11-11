@@ -3,7 +3,7 @@ title: Three-Point Cross: Gene Order and Double Crossovers
 description: How to read a three-point test cross, find the middle gene from the rarest classes, and compute map distances, with a worked example.
 product: 1c-heredity-evolution
 published: 2026-11-05
-related: recombination-frequency-gene-mapping-map-units, how-to-calculate-map-units-from-recombination-frequency, recombination-frequency-vs-map-distance-50-percent-limit, mendelian-genetics-practice-problems-mcat
+related: recombination-frequency-gene-mapping-map-units, mendelian-genetics-practice-problems-mcat
 seo_title: Three-Point Cross: Gene Order and Map Distance (MCAT)
 seo_description: Find gene order from a three-point test cross: parentals are most common, double crossovers are rarest, and the gene that switched is in the middle. Worked example.
 ---

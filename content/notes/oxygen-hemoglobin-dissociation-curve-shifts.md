@@ -8,7 +8,11 @@ seo_title: Hemoglobin Dissociation Curve: Right vs Left Shift
 seo_description: Hemoglobin dissociation curve: why it is sigmoidal, what P50 means and what shifts the oxygen curve left or right, with a 5-question quiz.
 ---
 
-The oxygen-hemoglobin dissociation curve plots percent hemoglobin saturation against the partial pressure of oxygen (PO<sub>2</sub>). It is **S-shaped (sigmoidal)** because the four subunits of hemoglobin bind oxygen cooperatively. A **right shift** means lower affinity and easier unloading, caused by more CO<sub>2</sub>, more H<sup>+</sup> (lower pH), higher temperature, or more 2,3-BPG. A **left shift** means higher affinity and tighter holding, as seen with fetal hemoglobin, carbon monoxide, and the opposite of each right-shift factor.
+> **Quick answer.** The oxygen-hemoglobin dissociation curve plots percent hemoglobin saturation against the partial pressure of oxygen (PO<sub>2</sub>). It is **S-shaped (sigmoidal)** because the four subunits of hemoglobin bind oxygen cooperatively. A **right shift** means lower affinity and easier unloading, caused by more CO<sub>2</sub>, more H<sup>+</sup> (lower pH), higher temperature, or more 2,3-BPG. A **left shift** means higher affinity and tighter holding, as seen with fetal hemoglobin, carbon monoxide, and the opposite of each right-shift factor.
+>
+> **Worked example:** in exercising muscle, CO<sub>2</sub>, H<sup>+</sup> and temperature all rise, so the curve shifts right. Normal P<sub>50</sub> is about 26 to 27 mmHg; a right shift raises it, so at the same tissue PO<sub>2</sub> of 40 mmHg hemoglobin releases more of its oxygen.
+>
+> Practice: [hemoglobin and oxygen binding questions](../practice/1a-hemoglobin-myoglobin-oxygen-binding.html).
 
 ## Reading the axes and P50
 

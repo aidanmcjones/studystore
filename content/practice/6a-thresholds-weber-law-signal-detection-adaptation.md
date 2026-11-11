@@ -6,7 +6,7 @@ category: 6a-sensation-perception
 cluster: Sensory thresholds and Weber's law, Signal detection theory, Sensory adaptation, Psychophysics
 product: 6a-sensation-perception
 published: 2026-10-20
-notes:
+notes: signal-detection-theory-and-webers-law, weber-fraction-formula-jnd-worked-examples, absolute-threshold-vs-difference-threshold-jnd
 seo_title: Weber's Law and Signal Detection Practice (MCAT) with Answers
 seo_description: Free MCAT practice on Weber's law, JND, absolute threshold and signal detection: 10 questions with full explanations and sensory adaptation.
 ---

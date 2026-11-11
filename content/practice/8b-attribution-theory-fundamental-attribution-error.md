@@ -6,7 +6,7 @@ category: 8b-social-thinking
 cluster: Attribution theory, Fundamental attribution error and actor-observer bias, Self-serving bias, Cultural effects on attribution, Halo effect and just-world hypothesis, Social perception and impression formation
 product: 8b-social-thinking
 published: 2026-10-20
-notes:
+notes: fundamental-attribution-error-vs-actor-observer-bias, attribution-theory-kelley-covariation-dispositional-situational
 ---
 
 Attribution theory, which began with Heider, asks how people explain behavior: by dispositional (internal) causes such as traits and effort, or situational (external) causes such as luck, task difficulty or other people. Kelley's covariation model uses three kinds of information. High consensus (others act the same way), high distinctiveness (the person acts this way only with this target) and high consistency point to the situation or stimulus; low consensus, low distinctiveness and high consistency point to the person. Weiner added stability and controllability, so effort is internal and unstable while luck is external and unstable.

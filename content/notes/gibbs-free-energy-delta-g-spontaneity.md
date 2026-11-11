@@ -8,7 +8,11 @@ seo_title: Gibbs Free Energy: Delta G = Delta H - T Delta S (MCAT)
 seo_description: When is a reaction spontaneous? Delta G = delta H - T delta S sign table, crossover temperature and delta G vs K and Q, with worked examples.
 ---
 
-Gibbs free energy tells you whether a process can happen on its own at constant temperature and pressure. The working equation is **&Delta;G = &Delta;H - T&Delta;S**. If &Delta;G is negative the process is spontaneous (exergonic), if it is positive the process is nonspontaneous as written (endergonic) and the reverse direction is favored, and if it is zero the system is at equilibrium. Spontaneous means thermodynamically allowed. It says nothing about speed.
+> **Quick answer.** Gibbs free energy tells you whether a process can happen on its own at constant temperature and pressure. The working equation is **&Delta;G = &Delta;H - T&Delta;S**. If &Delta;G is negative the process is spontaneous (exergonic), if it is positive the process is nonspontaneous as written (endergonic) and the reverse direction is favored, and if it is zero the system is at equilibrium. Spontaneous means thermodynamically allowed. It says nothing about speed.
+>
+> **Worked example:** &Delta;H = +40 kJ/mol and &Delta;S = +0.100 kJ/(mol&middot;K). At 298 K, &Delta;G = 40 - 298(0.100) = **+10.2 kJ/mol** (nonspontaneous). It becomes spontaneous above T = &Delta;H/&Delta;S = 40/0.100 = **400 K**.
+>
+> Practice: [5E Gibbs free energy practice questions](../practice/5e-gibbs-enthalpy-entropy-hess-law.html).
 
 ## Where the equation comes from
 

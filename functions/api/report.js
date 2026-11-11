@@ -51,7 +51,7 @@ export function validate(b) {
 }
 
 const back = (url, frag) =>
-  new Response(null, { status: 303, headers: { "Cache-Control": "no-store", Location: new URL("/report.html#" + frag, url).toString() } });
+  new Response(null, { status: 303, headers: { "Cache-Control": "no-store", Location: new URL("/report#" + frag, url).toString() } });
 
 export async function onRequestPost({ request, env }) {
   const ctype = (request.headers.get("Content-Type") || "").toLowerCase();

@@ -6,7 +6,7 @@ category: 1a-amino-acids-proteins
 cluster: Reversible and irreversible inhibition, allosteric regulation and cooperativity, covalent modification, feedback inhibition
 product: 1a-amino-acids-proteins
 published: 2026-10-20
-notes: enzyme-inhibition-types-compared, michaelis-menten-and-lineweaver-burk
+notes: enzyme-inhibition-types-compared, michaelis-menten-and-lineweaver-burk, enzyme-classes-ec-1-to-7
 ---
 
 Predict inhibition by asking which enzyme form the inhibitor binds. A competitive inhibitor binds free enzyme at the active site: Vmax is unchanged, apparent Km rises, and the effect can be overcome with more substrate. A noncompetitive inhibitor binds E and ES equally at a separate site: Vmax falls, Km is unchanged. An uncompetitive inhibitor binds only ES: both Vmax and apparent Km fall by the same factor, giving parallel Lineweaver-Burk lines. Mixed inhibition binds both forms unequally.

@@ -6,7 +6,7 @@ category: 5a-solutions-acids-bases
 cluster: pH and pOH calculations, Strong versus weak acids and bases, Ka Kb pKa and conjugate pairs, Polyprotic acids, Buffers and Henderson-Hasselbalch, Bicarbonate buffer in blood, Titration curves and equivalence points, Indicators
 product: 5a-solutions-acids-bases
 published: 2026-10-20
-notes: henderson-hasselbalch-for-the-mcat
+notes: acid-base-titration-curves-equivalence-point, henderson-hasselbalch-for-the-mcat
 ---
 
 Most acid-base questions come down to deciding what is actually in the flask. A strong acid or base dissociates completely, so its pH follows straight from its concentration (at 25 C, pH + pOH = 14). A weak acid only partly dissociates; when it is much more concentrated than its Ka, [H<sup>+</sup>] is about the square root of Ka times the concentration. For a conjugate pair, Ka times Kb equals Kw, so a weaker acid has a stronger conjugate base.

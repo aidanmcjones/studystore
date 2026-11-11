@@ -3,7 +3,7 @@ title: Which Steps of Glycolysis Make or Use ATP and NADH?
 description: Which glycolysis steps use ATP, which make ATP by substrate-level phosphorylation, and where NADH forms, with the enzymes and the net yield per glucose.
 product: 1d-metabolism-bioenergetics
 published: 2026-11-09
-related: glycolysis-steps-enzymes-net-atp, net-yield-of-glycolysis-atp-nadh-pyruvate-per-glucose, glycolysis-regulation-irreversible-steps-hexokinase-pfk-1
+related: glycolysis-steps-enzymes-net-atp, glycolysis-regulation-irreversible-steps-hexokinase-pfk-1
 seo_title: Glycolysis: Which Steps Produce ATP and NADH | MCAT
 seo_description: Which steps of glycolysis use ATP, produce ATP and make NADH: hexokinase, PFK-1, PGK, pyruvate kinase and GAPDH, with a 5-question quiz.
 ---
@@ -42,7 +42,7 @@ Spent: 2 ATP. Made: 4 ATP. Net: **2 ATP** and **2 NADH**, plus 2 pyruvate.
 - NADH made: GAPDH. ATP made: PGK and pyruvate kinase.
 - Net per glucose: 2 ATP, 2 NADH, 2 pyruvate.
 
-Related: see the [net yield of glycolysis](net-yield-of-glycolysis-atp-nadh-pyruvate-per-glucose.html).
+Related: see the [net yield of glycolysis](glycolysis-steps-enzymes-net-atp.html).
 
 :::quiz
 Q: Which two glycolysis enzymes use ATP?

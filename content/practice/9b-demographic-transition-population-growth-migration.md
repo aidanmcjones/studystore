@@ -6,7 +6,7 @@ category: 9b-demographics
 cluster: Fertility, mortality and migration, Demographic transition, Population pyramids, Malthusian theory, Population aging and dependency ratio, Push and pull factors in migration
 product: 9b-demographics
 published: 2026-10-20
-notes:
+notes: demographic-transition-model-stages, epidemiologic-transition-causes-of-death-by-dtm-stage, dtm-stage-5-below-replacement-fertility-population-decline
 ---
 
 Population change equals births minus deaths plus immigrants minus emigrants. Crude birth and death rates are expressed per 1,000 people, so a growth rate of 10 per 1,000 is 1 percent per year. The rule of 70 estimates doubling time: 70 divided by the percent growth rate. The total dependency ratio compares people under 15 and 65 and over with those aged 15 to 64, times 100. A total fertility rate of about 2.1 is replacement level in low-mortality populations.

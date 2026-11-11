@@ -3,7 +3,7 @@ title: Cognitive Dissonance and the Elaboration Likelihood Model for the MCAT
 description: How people change attitudes, covering cognitive dissonance, central and peripheral routes to persuasion in the elaboration likelihood model, and the ABC components of an attitude.
 product: 8b-social-thinking
 published: 2026-11-04
-related: fundamental-attribution-error-vs-actor-observer-bias, self-serving-bias-vs-fundamental-attribution-error, conformity-vs-obedience-asch-milgram
+related: fundamental-attribution-error-vs-actor-observer-bias, conformity-vs-obedience-asch-milgram
 seo_title: Cognitive Dissonance and ELM MCAT: Attitude Change Explained
 seo_description: Cognitive dissonance and the elaboration likelihood model for the MCAT: central versus peripheral persuasion, the ABC attitude components and a quiz.
 ---

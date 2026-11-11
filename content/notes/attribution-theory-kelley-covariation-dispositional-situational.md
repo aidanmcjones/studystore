@@ -3,7 +3,7 @@ title: Attribution Theory: Dispositional vs Situational and Kelley's Covariation
 description: Internal vs external attributions, how consensus, distinctiveness and consistency predict them, and how fundamental attribution error and self-serving bias fit in.
 product: 8b-social-thinking
 published: 2026-11-04
-related: fundamental-attribution-error-vs-actor-observer-bias, self-serving-bias-vs-fundamental-attribution-error, cognitive-dissonance-and-elaboration-likelihood-model
+related: fundamental-attribution-error-vs-actor-observer-bias, cognitive-dissonance-and-elaboration-likelihood-model
 seo_title: Attribution Theory and Kelley's Covariation Model | MCAT
 seo_description: Dispositional vs situational attribution, Kelley's consensus, distinctiveness and consistency, with fundamental attribution error links and a quiz.
 ---
@@ -48,7 +48,7 @@ The fundamental attribution error is weaker in collectivist cultures than in ind
 - Kelley: consensus, distinctiveness, consistency.
 - Biases skew who gets blamed.
 
-Related: see the [Self-serving bias vs actor-observer bias note](self-serving-bias-vs-actor-observer-bias.html).
+Related: see the [Self-serving bias vs actor-observer bias note](fundamental-attribution-error-vs-actor-observer-bias.html).
 
 :::quiz
 Q: What is a dispositional attribution?
