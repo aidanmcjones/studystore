@@ -1891,7 +1891,7 @@
     "name": "Binder",
     "price": "$29",
     "price_usd": 29,
-    "version": "1.0.3",
+    "version": "1.0.4",
     "checkout_url": "https://buy.polar.sh/polar_cl_VI11xjqetKpwMwcDMzuK1JPjJVykp6B5l3c7Z4DBiv5",
     "bundle": {
       "name": "Binder + Complete MCAT",
@@ -1903,6 +1903,14 @@
     },
     "source_base": "https://source.studystore.co/binder",
     "releases": [
+      {
+        "version": "1.0.4",
+        "file": "binder-1.0.4-source.tar.gz",
+        "sha256": "cf026fd04a305c5b706f13eb4828564c43a274ba21c4860c77a24c5c247cb110",
+        "size_bytes": 5970649,
+        "date": "2026-11-12",
+        "uploaded": true
+      },
       {
         "version": "1.0.3",
         "file": "binder-1.0.3-source.tar.gz",
@@ -1941,7 +1949,7 @@
         "id": "mac",
         "platform": "Mac",
         "label": "Mac (Apple Silicon)",
-        "file": "binder-1.0.3-mac-apple.dmg",
+        "file": "binder-1.0.4-mac-apple.dmg",
         "requires": "macOS 13 (Ventura) or later on a Mac with Apple Silicon (M1 or later). Intel Macs are not supported in this release.",
         "requires_short": "macOS 13 or later, Apple Silicon",
         "unsigned_note": "Version 1 is not signed with an Apple Developer ID, so macOS blocks the first launch. This is expected. Open it once like this:",
@@ -1956,12 +1964,12 @@
         "id": "windows",
         "platform": "Windows",
         "label": "Windows (64-bit)",
-        "file": "binder-1.0.3-win-x64.exe",
+        "file": "binder-1.0.4-win-x64.exe",
         "requires": "Windows 10 or 11, 64-bit.",
         "requires_short": "Windows 10 or 11, 64-bit",
         "unsigned_note": "Version 1 is not signed with a Microsoft certificate, so Windows SmartScreen may warn on first run. This is expected.",
         "how_to_open": [
-          "Run binder-1.0.3-win-x64.exe. It installs for your account only, no admin needed.",
+          "Run binder-1.0.4-win-x64.exe. It installs for your account only, no admin needed.",
           "If SmartScreen says Windows protected your PC, choose More info, then Run anyway.",
           "Open Binder from the Start menu or the Desktop shortcut."
         ],
