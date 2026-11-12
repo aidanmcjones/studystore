@@ -1891,7 +1891,7 @@
     "name": "Binder",
     "price": "$29",
     "price_usd": 29,
-    "version": "1.0.0",
+    "version": "1.0.1",
     "checkout_url": "https://buy.polar.sh/polar_cl_VI11xjqetKpwMwcDMzuK1JPjJVykp6B5l3c7Z4DBiv5",
     "bundle": {
       "name": "Binder + Complete MCAT",
@@ -1904,10 +1904,18 @@
     "source_base": "https://source.studystore.co/binder",
     "releases": [
       {
+        "version": "1.0.1",
+        "file": "binder-1.0.1-source.tar.gz",
+        "sha256": "3d2a68d16e9c30077de8037ed55b25e15d86cdc27163fee4c659d5dc02566d77",
+        "size_bytes": 5824677,
+        "date": "2026-11-11",
+        "uploaded": true
+      },
+      {
         "version": "1.0.0",
         "file": "binder-1.0.0-source.tar.gz",
-        "sha256": "4f7283f8e4dc8355705084b73c6f91c381511f2f70a3b4ec2fbbd13856bc985d",
-        "size_bytes": 20165147,
+        "sha256": "2e74cbc6dea2d93b57662ef99baf7d21a5ffd440bd61e959591201128118b2e6",
+        "size_bytes": 5613861,
         "date": "2026-11-06",
         "uploaded": true
       }
@@ -1917,7 +1925,7 @@
         "id": "mac",
         "platform": "Mac",
         "label": "Mac (Apple Silicon)",
-        "file": "binder-1.0.0-mac-apple.dmg",
+        "file": "binder-1.0.1-mac-apple.dmg",
         "requires": "macOS 13 (Ventura) or later on a Mac with Apple Silicon (M1 or later). Intel Macs are not supported in this release.",
         "requires_short": "macOS 13 or later, Apple Silicon",
         "unsigned_note": "Version 1 is not signed with an Apple Developer ID, so macOS blocks the first launch. This is expected. Open it once like this:",
@@ -1932,12 +1940,12 @@
         "id": "windows",
         "platform": "Windows",
         "label": "Windows (64-bit)",
-        "file": "binder-1.0.0-win-x64.exe",
+        "file": "binder-1.0.1-win-x64.exe",
         "requires": "Windows 10 or 11, 64-bit.",
         "requires_short": "Windows 10 or 11, 64-bit",
         "unsigned_note": "Version 1 is not signed with a Microsoft certificate, so Windows SmartScreen may warn on first run. This is expected.",
         "how_to_open": [
-          "Run binder-1.0.0-win-x64.exe. It installs for your account only, no admin needed.",
+          "Run binder-1.0.1-win-x64.exe. It installs for your account only, no admin needed.",
           "If SmartScreen says Windows protected your PC, choose More info, then Run anyway.",
           "Open Binder from the Start menu or the Desktop shortcut."
         ],
