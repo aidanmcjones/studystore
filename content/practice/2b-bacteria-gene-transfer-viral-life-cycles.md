@@ -6,7 +6,7 @@ category: 2b-prokaryotes-viruses
 cluster: Prokaryote cell structure, Gram stain and cell walls, bacterial growth curve, binary fission, transformation, conjugation and F factor, transduction, virus structure and classification, lytic and lysogenic cycles, retroviruses
 product: 2b-prokaryotes-viruses
 published: 2026-10-20
-notes:
+notes: hfr-interrupted-mating-gene-order-conjugation-mapping, transformation-transduction-conjugation, bacteria-vs-viruses-differences
 ---
 
 Bacteria are prokaryotes: no nucleus or membrane-bound organelles, a circular chromosome in the nucleoid, 70S ribosomes, and often extra plasmids. Gram-positive cells have a thick peptidoglycan wall with teichoic acids that holds the crystal violet stain. Gram-negative cells have a thin wall plus an outer membrane carrying lipopolysaccharide, so they lose the violet stain and pick up the pink counterstain. Bacteria divide by binary fission, and a culture moves through lag, exponential (log), stationary and death phases. In log phase the count doubles once per generation time, so N = N0 x 2^n.

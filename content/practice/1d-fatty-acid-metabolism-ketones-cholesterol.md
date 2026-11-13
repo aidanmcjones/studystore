@@ -6,7 +6,7 @@ category: 1d-metabolism-bioenergetics
 cluster: Beta oxidation, fatty acid synthesis, ketone bodies, cholesterol synthesis, lipoproteins
 product: 1d-metabolism-bioenergetics
 published: 2026-10-20
-notes:
+notes: beta-oxidation-fatty-acid-breakdown-ketone-bodies, fatty-acid-synthesis-vs-beta-oxidation
 ---
 
 Fat metabolism is built from two-carbon units. Beta oxidation in the mitochondrial matrix removes acetyl-CoA from a fatty acyl-CoA two carbons at a time, generating 1 FADH2 and 1 NADH per cycle. Long-chain fatty acids enter the matrix through the carnitine shuttle, whose rate-limiting enzyme CPT-I is inhibited by malonyl-CoA. Fatty acid synthesis is the cytosolic mirror image: acetyl-CoA carboxylase makes malonyl-CoA (needing biotin and ATP), and fatty acid synthase then adds two carbons at a time using NADPH.
