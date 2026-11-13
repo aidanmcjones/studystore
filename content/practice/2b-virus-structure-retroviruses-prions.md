@@ -6,7 +6,7 @@ category: 2b-prokaryotes-viruses
 cluster: Viral host range and replication, Prions and viroids
 product: 2b-prokaryotes-viruses
 published: 2026-11-10
-notes:
+notes: bacteria-vs-viruses-differences
 ---
 
 A virus is a nucleic acid genome wrapped in a protein capsid, sometimes surrounded by a lipid envelope taken from a host membrane as the virus buds out. Viruses have no ribosomes and no metabolism of their own, so they replicate only inside a host cell. The genome type decides what the virus must bring: a positive-sense RNA genome can be read by host ribosomes at once, while a negative-sense RNA genome must first be copied, so the virion carries its own RNA-dependent RNA polymerase. Retroviruses carry reverse transcriptase, copy their RNA into DNA and insert that DNA into a host chromosome as a provirus. Host range depends largely on whether viral surface proteins can bind receptors on a given cell.
