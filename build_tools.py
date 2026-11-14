@@ -30,8 +30,8 @@ TOOLS = [
      "Free MCAT amino acid quiz with the 20 standard residues: names and codes, structures, side-chain class, charge at a chosen pH and pI. No signup."),
     ("pka-trainer", "pKa and Charge at pH Trainer", "pKa Quiz: Free MCAT pKa and Charge at pH Practice",
      "Free pKa quiz for the MCAT: quiz yourself on pKa values, protonation and peptide charge at any pH with Henderson-Hasselbalch, working shown. No signup."),
-    ("mcat-study-schedule", "MCAT Study Schedule Generator", "MCAT Study Schedule Generator: Free Week-by-Week Study Plan | StudyStore",
-     "Free MCAT study plan generator: enter your 2027 test date, weekly hours, weak sections and full-length count for a week-by-week MCAT study schedule. Printable, runs in your browser."),
+    ("mcat-study-schedule", "MCAT Study Schedule Generator", "MCAT Study Schedule Template and Generator: Free Week-by-Week Plan | StudyStore",
+     "A free MCAT study schedule template you fill in with your 2027 test date and weekly hours, plus weak sections and full-length count, for a week-by-week plan. Printable, runs in your browser."),
     ("mcat-percentile", "MCAT Score Calculator: Percentile and Target Score", "MCAT Score Calculator: Percentile and Target Score",
      "Free MCAT score calculator: total and section percentile ranks from the official AAMC table (May 2026 to April 2027) and the score for a target percentile."),
 ]
@@ -187,13 +187,23 @@ def build(emit, site, products, notes_meta, notes_by_aamc=None, practice_by_aamc
 <div class="checks"><label><input type="checkbox" id="w-bio_biochem"> Bio/Biochem</label><label><input type="checkbox" id="w-chem_phys"> Chem/Phys</label><label><input type="checkbox" id="w-psych_soc"> Psych/Soc</label><label><input type="checkbox" id="w-cars"> CARS</label></div></fieldset>
 <p><button class="tbtn primary" type="submit">Build my plan</button></p></form>
 <div id="result" aria-live="polite"></div>"""
-    page("mcat-study-schedule", "MCAT Study Schedule Generator",
+    page("mcat-study-schedule", "MCAT Study Schedule Template and Generator",
          "Choose your 2027 test date, your weekly hours and your weak sections. Get a week-by-week plan by AAMC content category, with a calendar file and a printable view.",
          form, '<script src="{{root}}assets/js/tools/schedule.js" defer></script>',
          """<h2>How the plan is built</h2>
 <p>The plan counts the weeks between your start date and your test date, then divides them into three stretches. Early weeks are <strong>content review</strong>. Middle weeks shift toward <strong>practice and targeted review</strong>. The last week is a <strong>final stretch</strong> with no new content in the last two days. CARS gets a steady slice of every week because it rewards daily repetition more than cramming.</p>
 <p>During content review, your hours are split across the AAMC content categories in proportion to how many subtopics each one covers, using StudyStore's own topic titles and the public category codes (such as 1A or 5D). Marking a section as weak raises the weight of every category in it by half. Each week links the free StudyStore notes and free practice sets for its categories, so you can read first and then test yourself on the same topic. Practice weeks link the practice sets for the categories you are re-drilling.</p>
 <p>The 35 test dates come from the AAMC 2027 calendar (<a href="https://students-residents.aamc.org/register-mcat-exam/us-mcat-calendar-scheduling-deadlines-and-score-release-dates-0" rel="noopener">AAMC U.S. MCAT calendar</a>, checked October 21, 2026). AAMC notes that U.S. and Canada testing on January 30, May 14, July 9 and August 28 is limited to select locations. Dates less than a week away are not offered. To keep the plan, print it or save it as a PDF; the print view shows only the plan.</p>
+<h2>A simple MCAT study schedule template</h2>
+<p>This is the generic shape every plan from the generator follows. Your own plan fills it in with real dates, hours and topics.</p>
+<div class="tablewrap"><table><thead><tr><th>Stage</th><th>Where it falls</th><th>What you do</th></tr></thead><tbody>
+<tr><td>Content review</td><td>The early weeks</td><td>Work through the AAMC content categories, giving larger and weaker areas more hours.</td></tr>
+<tr><td>Practice and targeted review</td><td>The middle weeks</td><td>Timed passages and section-length blocks, plus re-drilling the categories you missed most.</td></tr>
+<tr><td>CARS</td><td>Every week</td><td>A few passages most days; steady beats cramming.</td></tr>
+<tr><td>Full-length exams</td><td>Spaced out toward test day</td><td>The last one lands in the second-to-last week, earlier ones two weeks apart (one week if they would not otherwise fit), each followed by a review day.</td></tr>
+<tr><td>Final stretch</td><td>The last week</td><td>Light timed sets only, no new content in the last two days, and time for sleep and logistics.</td></tr>
+</tbody></table></div>
+<p>To turn this template into your own schedule, use the generator above and fill in your test date, start date and weekly hours.</p>
 <p>The plan organizes your time and makes no claim about score outcomes. Adjust it to your own situation, and check dates and registration deadlines on the AAMC website. To see what a target score means in percentile terms, use the <a href="mcat-percentile.html">percentile lookup</a>.</p>""",
          f'<script type="application/json" id="sched-data">{jsn(sched)}</script>', embed=False)
 
