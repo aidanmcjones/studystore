@@ -198,7 +198,7 @@ def build(emit, site, products, notes_meta, notes_by_aamc=None, practice_by_aamc
 <p>This is the generic shape every plan from the generator follows. Your own plan fills it in with real dates, hours and topics.</p>
 <div class="tablewrap"><table><thead><tr><th>Stage</th><th>Where it falls</th><th>What you do</th></tr></thead><tbody>
 <tr><td>Content review</td><td>The early weeks</td><td>Work through the AAMC content categories, giving larger and weaker areas more hours.</td></tr>
-<tr><td>Practice and targeted review</td><td>The middle weeks</td><td>Timed passages and section-length blocks, plus re-drilling the categories you missed most.</td></tr>
+<tr><td>Practice and targeted review</td><td>The middle weeks</td><td>Timed passages and section-length blocks, plus review of the heaviest categories, weighted toward the sections you mark as weak.</td></tr>
 <tr><td>CARS</td><td>Every week</td><td>A few passages most days; steady beats cramming.</td></tr>
 <tr><td>Full-length exams</td><td>Spaced out toward test day</td><td>The last one lands in the second-to-last week, earlier ones two weeks apart (one week if they would not otherwise fit), each followed by a review day.</td></tr>
 <tr><td>Final stretch</td><td>The last week</td><td>Light timed sets only, no new content in the last two days, and time for sleep and logistics.</td></tr>
