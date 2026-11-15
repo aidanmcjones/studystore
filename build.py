@@ -97,6 +97,8 @@ SOCIAL_CTA_PAGES = [
 CTA_ARM_PAGES |= set(SOCIAL_CTA_PAGES)
 practice_build.CTA_ARM_PAGES = CTA_ARM_PAGES
 practice_build.SECTION_OF = {p["aamc"]: p["section_name"] for p in site["products"]}
+practice_build.BUNDLES = site.get("bundles", [])
+practice_build.SECTION_SLUGS = {sn: [p["slug"] for p in site["products"] if p["section_name"] == sn] for sn in {p["section_name"] for p in site["products"]}}
 practice_build.SOCIAL_CTA_PAGES = set(SOCIAL_CTA_PAGES)
 
 def topbuy(slug, root=""):

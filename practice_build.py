@@ -167,6 +167,20 @@ SOCIAL_CTA_PAGES = set()  # set by build.py
 SECTION_ORDER = ["Bio/Biochem", "Chem/Phys", "Psych/Soc", "CARS"]
 SECTION_OF = {}  # AAMC code -> MCAT section name; set by build.py from site.json products
 
+BUNDLES = []  # site.json bundles; set by build.py
+SECTION_SLUGS = {}  # MCAT section name -> product slugs; set by build.py
+
+def _blink(b):
+    return f'<a href="{{{{root}}}}products/{b["slug"]}.html" data-track="cta">{{{{title:{b["slug"]}}}}}</a> {{{{price:{b["slug"]}}}}}'
+
+def _section_bundle(sec):
+    """The bundle whose members are exactly the packs of this section; CARS falls back to the all-sections bundle."""
+    want = set(SECTION_SLUGS.get(sec, ()))
+    for b in BUNDLES:
+        if want and set(b["members"]) == want:
+            return b
+    return max(BUNDLES, key=lambda b: len(b["members"]), default=None) if sec == "CARS" else None
+
 def build_all(emit, root, pages, cats, notes_by_slug, base_url):
     tpl = (Path(root) / "templates" / "practice.html").read_text()
     hub_tpl = (Path(root) / "templates" / "practice_hub.html").read_text()
@@ -241,9 +255,11 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
                  f'each with a short concept primer and a full explanation for every answer choice. Work a topic page, check the explanation, then read the matching note.</p>')
         prods = [x["meta"]["product"] for x in items if x["meta"]["product"] != "none"]
         hub_cta = ("{{topbuy:%s}}" % max(set(prods), key=prods.count)) if prods else ""
+        bun = _section_bundle(SECTION_OF.get(code))
+        bundle_html = (f'<p class="meta">Studying the whole section? Get the bundle: {_blink(bun)}.</p>') if bun else ""
         body = fill(hub_tpl, dict(eyebrow=f"Free MCAT-style practice, {code}", title=html.escape(f"{c['title']} Practice Questions"),
                                   lead=html.escape(c["blurb"] + " Original questions with full explanations, free, no signup."),
-                                  body=f'{hub_cta}{intro}{topics_html}<h2>Topic pages</h2><ul class="catlist">{lis}</ul>{samples_html}{notes_html}{pack_html}<p><a href="{{{{root}}}}practice/index.html">All practice categories</a></p>'))
+                                  body=f'{hub_cta}{bundle_html}{intro}{topics_html}<h2>Topic pages</h2><ul class="catlist">{lis}</ul>{samples_html}{notes_html}{pack_html}<p><a href="{{{{root}}}}practice/index.html">All practice categories</a></p>'))
         emit(f"practice/{c['slug']}/index.html", f"MCAT {c['title']} Practice Questions | StudyStore",
              f"Free MCAT-style {c['title']} practice: {nq} original questions across {len(items)} topic page{'s' if len(items) != 1 else ''}, with the topics covered, sample questions and full explanations.", body,
              head_extra=STYLE + _crumbs_ld(base_url, ("Practice questions", f"{base_url}/practice/index.html"),
@@ -264,9 +280,10 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
         secs += (f'<h3><a href="{{{{root}}}}practice/{c["slug"]}/index.html">{code}: {html.escape(c["title"])}</a></h3>'
                  f'<p class="meta">{html.escape(c["blurb"])}</p><ul>{lis}</ul>')
     total = sum(len(x["qs"]) for x in live)
+    main_bundle = (f'<p class="meta">Studying more than one topic? Section bundles: {", ".join(_blink(b) for b in BUNDLES[:-1])}, or {_blink(BUNDLES[-1])}.</p>') if BUNDLES else ""
     body = fill(hub_tpl, dict(eyebrow="Free MCAT-style practice", title="MCAT Practice Questions by Topic",
                               lead=f"{total} original practice questions across {len(live)} topic pages, each with a concept primer and a full explanation for every answer. Free, no signup.",
-                              body="{{topbuy:feat}}" + secs))
+                              body="{{topbuy:feat}}" + main_bundle + secs))
     emit("practice/index.html", "Free MCAT Practice Questions by Topic | StudyStore",
          f"{total} free, original MCAT-style practice questions by topic with full explanations: biology, biochemistry, general and organic chemistry, physics, psychology and sociology.",
          body, head_extra=STYLE + _crumbs_ld(base_url, ("Practice questions", f"{base_url}/practice/index.html")), lastmod="2026-11-04")
