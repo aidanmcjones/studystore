@@ -203,13 +203,15 @@ def build_all(emit, root, pages, cats, notes_by_slug, base_url):
         more = "".join(f'<li><a href="{{{{root}}}}practice/{x["slug"]}.html">{html.escape(x["meta"]["title"])}</a></li>' for x in same)
         more += f'<li><a href="{{{{root}}}}practice/{p["cat"]["slug"]}/index.html">All {m["aamc"]} practice pages</a></li>'
         more += '<li><a href="{{root}}practice/index.html">All practice questions</a></li><li><a href="{{root}}notes/index.html">Free study notes</a></li><li><a href="{{root}}tools/mcat-study-schedule.html">Build an MCAT study schedule</a></li>'
+        bun = _section_bundle(SECTION_OF.get(m["aamc"]))
+        bundle_line = (f'<p class="meta">Practicing across the whole section? Get the bundle: {_blink(bun)}.</p>') if bun else ""
         body = fill(tpl, dict(
             cat_slug=p["cat"]["slug"], cat_code=m["aamc"], cat_title=html.escape(p["cat"]["title"]),
             title=html.escape(m["title"]), published=html.escape(m["published"]), nq=str(len(p["qs"])),
             mins=str(max(5, round(len(p["qs"]) * 1.5))), description=html.escape(m["description"]),
             primer=convert(_esc(p["primer_md"])), notelinks=notelinks,
             offer_mid="{{offer:mid:%s:p.%s}}" % (m["product"], p["slug"]), offer_end="{{offer:end:%s:p.%s}}" % (m["product"], p["slug"]),
-            questions="".join(_q_html(i, q) for i, q in enumerate(p["qs"], 1)), more=more))
+            questions="".join(_q_html(i, q) for i, q in enumerate(p["qs"], 1)), more=more, bundle_line=bundle_line))
         emit(f"practice/{p['slug']}.html", m.get("seo_title") or f'{m["title"]} | StudyStore', m.get("seo_description") or m["description"], body,
              noindex=p["noindex"], og_type="article", head_extra=STYLE + _jsonld(p, base_url, notes_by_slug),
              lastmod=m.get("updated", m["published"]))
