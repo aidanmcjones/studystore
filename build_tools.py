@@ -3,7 +3,7 @@
 Everything is client-side. Data files (data/*.json) are inlined into each page as application/json
 so nothing but HTML, CSS and JS needs to be deployed. Stdlib only.
 """
-import json, html, datetime
+import json, html
 import products_build as PB
 import safeurl
 from pathlib import Path
@@ -71,6 +71,15 @@ FAQ = {
  ],
 }
 
+
+# Last real content change to each tools page (dateModified and sitemap lastmod). Bump the entry by hand when that
+# page changes. A build-date stamp here re-dirtied the committed pages and sitemap on every build, which made
+# ops/experiments.py refuse every publish ("site repo has other uncommitted edits").
+TOOLS_LASTMOD = {"mcat-study-schedule": "2026-11-14", "index": "2026-11-14"}   # #123 changed the schedule page and its card
+TOOLS_LASTMOD_DEFAULT = "2026-11-11"   # #110, the last change to the other tool pages
+def tools_lastmod(slug):
+    return TOOLS_LASTMOD.get(slug, TOOLS_LASTMOD_DEFAULT)
+
 def ld(*objs):
     return "".join(f'<script type="application/ld+json">{safeurl.json_script(o)}</script>\n' for o in objs)
 
@@ -83,7 +92,6 @@ def faq_html(slug):
 def build(emit, site, products, notes_meta, notes_by_aamc=None, practice_by_aamc=None):
     """notes_meta: {slug: title}. notes_by_aamc / practice_by_aamc: {AAMC code: [(slug, title), ...]} for the schedule."""
     base = site["base_url"]
-    today = datetime.date.today().isoformat()
     # ---- public catalog data (slug, aamc, title, subtopic_count, section only) ----
     data_dir = ROOT / "data"
     if CATALOG_SRC.exists():
@@ -115,7 +123,7 @@ def build(emit, site, products, notes_meta, notes_by_aamc=None, practice_by_aamc
                   "applicationCategory": "EducationalApplication", "operatingSystem": "Any (runs in a web browser)",
                   "browserRequirements": "Requires JavaScript", "isAccessibleForFree": True, "inLanguage": "en",
                   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
-                  "image": f"{base}/assets/tools/og-{slug}.png", "datePublished": "2026-10-20", "dateModified": today,
+                  "image": f"{base}/assets/tools/og-{slug}.png", "datePublished": "2026-10-20", "dateModified": tools_lastmod(slug),
                   "publisher": {"@type": "Organization", "name": "StudyStore", "url": base + "/"}}
         faq = {"@context": "https://schema.org", "@type": "FAQPage",
                "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ[slug]]}
@@ -146,7 +154,7 @@ def build(emit, site, products, notes_meta, notes_by_aamc=None, practice_by_aamc
 <script src="{{{{root}}}}assets/js/tools/common.js" defer></script>
 {scripts}
 </div>"""
-        emit(f"tools/{slug}.html", title, desc, body, og_image=f"{base}/assets/tools/og-{slug}.png", head_extra=head, lastmod=today)
+        emit(f"tools/{slug}.html", title, desc, body, og_image=f"{base}/assets/tools/og-{slug}.png", head_extra=head, lastmod=tools_lastmod(slug))
 
     aa_json = f'<script type="application/json" id="aa-data">{jsn(aa)}</script>'
 
@@ -247,4 +255,4 @@ def build(emit, site, products, notes_meta, notes_by_aamc=None, practice_by_aamc
          "Free interactive MCAT tools: amino acid quiz, pKa and charge at pH trainer, 2027 study schedule generator and AAMC percentile lookup. No signup.",
          idx, og_image=f"{base}/assets/tools/og-index.png", head_extra='<link rel="stylesheet" href="{{root}}assets/tools.css">' + ld(itemlist, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "StudyStore", "item": base + "/"},
-            {"@type": "ListItem", "position": 2, "name": "Free tools", "item": base + "/tools/"}]}), lastmod=today)
+            {"@type": "ListItem", "position": 2, "name": "Free tools", "item": base + "/tools/"}]}), lastmod=tools_lastmod("index"))
