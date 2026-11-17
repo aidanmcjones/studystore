@@ -6,7 +6,7 @@ category: 1a-amino-acids-proteins
 cluster: Michaelis-Menten kinetics, Km, Vmax, kcat, catalytic efficiency, Lineweaver-Burk plots
 product: 1a-amino-acids-proteins
 published: 2026-10-20
-notes: michaelis-menten-and-lineweaver-burk, enzyme-inhibition-types-compared
+notes: michaelis-menten-and-lineweaver-burk, catalytic-efficiency-kcat-km-enzyme-perfection, enzyme-inhibition-types-compared
 ---
 
 The Michaelis-Menten equation, v = Vmax[S] / (Km + [S]), describes a hyperbola. Vmax is the plateau reached when every enzyme is occupied, so it scales with the amount of enzyme: Vmax = kcat[E]total. Km is the substrate concentration at which v is half of Vmax, and for many simple enzymes a lower Km means tighter substrate binding. The ratio kcat/Km is the best single measure of how well an enzyme turns over substrate at low concentration, and its upper limit is set by diffusion.
