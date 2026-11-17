@@ -6,7 +6,7 @@ category: 5c-separations-spectroscopy
 cluster: Infrared spectroscopy, UV-Vis spectroscopy and Beer-Lambert law, 1H NMR: shift integration splitting, 13C NMR basics, Mass spectrometry
 product: 5c-separations-spectroscopy
 published: 2026-10-20
-notes: infrared-spectroscopy-mcat-functional-group-peaks-table
+notes: infrared-spectroscopy-mcat-functional-group-peaks-table, how-to-read-ir-and-nmr-spectra
 ---
 
 Each technique answers a different question. Infrared spectroscopy identifies functional groups from bond vibrations: a strong, sharp peak near 1700 cm<sup>-1</sup> means C=O, a broad band from about 3200 to 3600 cm<sup>-1</sup> means an alcohol O-H, and a very broad band from about 2500 to 3300 cm<sup>-1</sup> overlapping the C-H region means a carboxylic acid. Mass spectrometry gives molecular mass from the molecular ion, and isotope patterns reveal halogens.
