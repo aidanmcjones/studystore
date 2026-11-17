@@ -6,7 +6,7 @@ category: 4d-light-sound-optics
 cluster: Spherical mirrors, Thin lenses and the lens equation, Magnification and power of lenses, Multiple lens systems and the eye, Vision correction
 product: 4d-light-sound-optics
 published: 2026-10-20
-notes:
+notes: thin-lens-mirror-equation-sign-conventions, concave-vs-convex-mirrors-focal-length-sign
 ---
 
 Mirrors and thin lenses obey the same equation, 1/f = 1/d<sub>o</sub> + 1/d<sub>i</sub>, with magnification m = &minus;d<sub>i</sub>/d<sub>o</sub>. These questions use the common sign convention: converging elements (concave mirrors, convex lenses) have positive f, diverging elements (convex mirrors, concave lenses) have negative f, a positive image distance means a real image, and a negative one means a virtual image. A negative m means the image is inverted; |m| greater than 1 means it is enlarged. Real images form where light actually converges (in front of a mirror, behind a lens).
