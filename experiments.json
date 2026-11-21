@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-21T02:20:12Z",
+  "updated": "2026-11-21T05:20:12Z",
   "theme": "bundle_push",
   "note": "Edited by ops/experiments.py and the marketing job. Variant ids are never reused. Text must be true of the product. {orig} is replaced with the element's original text (used to keep prices in sync with site.json).",
   "experiments": [
@@ -171,7 +171,7 @@
         {
           "id": "a",
           "status": "active",
-          "weight": 0.7467,
+          "weight": 0.7471,
           "created": "2026-10-20",
           "angle": "control: bare price",
           "fields": {
@@ -181,7 +181,7 @@
         {
           "id": "b",
           "status": "active",
-          "weight": 0.1196,
+          "weight": 0.1231,
           "created": "2026-10-20",
           "angle": "one-time, no subscription",
           "fields": {
@@ -203,7 +203,7 @@
         {
           "id": "d",
           "status": "active",
-          "weight": 0.1337,
+          "weight": 0.1298,
           "created": "2026-10-20",
           "angle": "one-time plus refund, catalog-neutral",
           "theme": "free_sampler_push",
